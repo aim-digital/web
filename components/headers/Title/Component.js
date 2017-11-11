@@ -1,17 +1,9 @@
 import React, {Component} from 'react';
-import {PropTypes} from 'prop-types';
-import {connect} from 'react-redux';
 import ReactGA from 'react-ga';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@vitruvian-tech/app-studio-vitruvian-tech/components/layout';
 
-@connect(state => ({ config: state['@vitruvian-tech/app-studio-core'].Config }))
-
 export default class extends Header {
-  static propTypes = {
-    config: PropTypes.object
-  };
-
   state = {
     loaded: false
   };
@@ -36,7 +28,7 @@ export default class extends Header {
             <div className={styles.logo}>
               <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 350 }}>
                 {this.state.loaded && (
-                  <img src={this.props.config.isProduction ? require('./images/insignia.png') : '/assets/images/insignia.png'}
+                  <img src={require('./images/insignia.png')}
                        alt="The Digital Special Forces for custom software and marketing solutions."
                        title="Vitruvian Technology, Corp."/>
                 )}
