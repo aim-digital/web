@@ -19,11 +19,15 @@
   .logo {
     margin: 1.25em auto;
     position: absolute;
-    bottom: 23vh;
+    bottom: 24vh;
     width: 100%;
 
     img {
       max-width: 13em;
+
+      @media (min-width: 768px) {
+        max-width: 14em;
+      }
     }
   }
 

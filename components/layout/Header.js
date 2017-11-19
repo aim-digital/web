@@ -3,7 +3,7 @@ import {PropTypes} from 'prop-types';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@vitruvian-tech/app-studio-core/components/layout';
 
-const SECONDS_IDLE = 60 * 5;
+const SECONDS_IDLE = 60 * 15;
 
 export default class extends Header {
   static propTypes = {
@@ -73,16 +73,16 @@ export default class extends Header {
         <div className="brand">
           <h1>VitruvianTech</h1>
           <h2>
-            <span className="color-secondary-red">Sapient</span>&nbsp;
-            <span className="color-primary-yellow">Secure</span>&nbsp;
-            <span className="color-secondary-blue">Software</span>&nbsp;
-            <span><small className="color-secondary-green">for</small></span>&nbsp;
-            <span className="color-secondary-green">All</span>
+            <span className="color-primary-blue">Sentient</span>&nbsp;
+            <span className="color-secondary-green">Secure</span>&nbsp;
+            <span className="color-primary-yellow">Quality</span>&nbsp;
+            <span><small className="color-secondary-red">for</small></span>&nbsp;
+            <span className="color-secondary-red">All</span>
           </h2>
         </div>
         {children.length ? (
           <div>
-            <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 350, begin: this.begin, complete: this.complete }}>
+            <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 75, begin: this.begin, complete: this.complete }}>
               {children[index]}
             </VelocityTransitionGroup>
             <div className="flippers">

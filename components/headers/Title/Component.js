@@ -26,7 +26,7 @@ export default class extends Header {
         {[
           <div className={[styles.content, 'content', styles.virtues].join(' ')} key="0">
             <div className={styles.logo}>
-              <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 350 }}>
+              <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 200 }}>
                 {this.state.loaded && (
                   <img src={require('./images/insignia.png')}
                        alt="The Digital Special Forces for custom software and marketing solutions."
@@ -37,7 +37,7 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Virtues</h3>
               <ul className={'columns'}>
-                <li><i className="fa fa-universal-access"/> Mindfulness</li>
+                <li><i className="fa fa-universal-access"/> Intelligence</li>
                 <li><i className="fa fa-exchange"/> Communication</li>
                 <li><i className="fa fa-balance-scale"/> Balance</li>
                 <li><i className="fa fa-diamond"/> Elegance</li>
@@ -70,18 +70,18 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>App Studio</strong> <i>Universal UI</i> <span className={[styles.price].join(' ')}><strong>$2,499<sub><sup>.99</sup>/license</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i>Scalable mobile/desktop app development platform.</i></small></li>
-                <li className={styles.asterisk}><small><i>CMS <strong>bundle integrations</strong> (i.e., Shopify, WordPress.)</i></small></li>
+                <li><strong>Machete</strong> <i>App Platform</i> <span className={[styles.price].join(' ')}><strong>$2,499<sub><sup>.99</sup>/license</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> app theming platform.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available plugins.</i></small></li>
                 <li className={styles.asterisk}><small><i>Perfect for high-end <strong>e-comm and publishing</strong> solutions!</i></small></li>
-                <li><strong>App Studio</strong> <i>Enterprise</i> <span className={[styles.price].join(' ')}><strong>$250k<sub>/yr.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i>Platform as a Service (PaaS), with <strong>hosting included.</strong></i></small></li>
+                <li><strong>Machete</strong> <i>Enterprise</i> <span className={[styles.price].join(' ')}><strong><small>Starting at</small> $199k<sub>/yr.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Platform as a Service</strong> (high-scale hosting included.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>2 dedicated developers</strong>, 1 consultant, and 24/7 support.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Swipe right</strong> or <strong>scroll down</strong> to learn more. &darr;&rarr;</i></small></li>
-                <li><strong>Ad-Hoc</strong> <i>Freelance</i> <span className={[styles.price].join(' ')}><strong>30% <small>service fee per resource</small></strong></span></li>
+                <li><strong>Ad-Hoc</strong> <i>Freelance</i> <span className={[styles.price].join(' ')}><strong>+30%<sub>/resource</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>FREE membership</strong> with access to all available services.</i></small></li>
-                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$3k<sub>/1 mo.</sub></strong> &bull; <strong>$15k<sub>/6 mo.</sub></strong></span></li>
+                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$3k<sub>/1 mo.</sub></strong> / <strong>$15k<sub>/6 mo.</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>No service fee</strong> for all resources.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>20 FREE hours/mo.</strong> applied to any/all available services.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>30-day money back guarantee</strong> applied to plan fee.</i></small></li>
@@ -97,7 +97,7 @@ export default class extends Header {
               <ul>
                 <li>Software Developers <span className={[styles.price].join(' ')}><strong>$40-75<sub>/hr.</sub></strong></span></li>
                 <li>Marketers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
-                <li>Consultants <span className={[styles.price].join(' ')}><strong>$75-95<sub>/hr.</sub></strong></span></li>
+                <li>Project Managers <span className={[styles.price].join(' ')}><strong>$75-95<sub>/hr.</sub></strong></span></li>
                 <li>Designers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                 <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                 <li>Security Analysts/Investigators <span className={[styles.price].join(' ')}><strong>$25-75<sub>/hr.</sub></strong></span></li>
@@ -156,7 +156,7 @@ export default class extends Header {
                   <a href="mailto:jessica@jesyousif.com?subject=<VitruvianTech>%20Connect" target="_blank">
                     <i className="fa fa-envelope"/>
                   </a>
-                  <span>Jes Yousif<small> / Marketing / Production</small></span>
+                  <span>Jes Yousif<small> / Branding / Imagery</small></span>
                 </li>
                 <li>
                   <a href="mailto:reza@evolvinx.com?subject=<VitruvianTech>%20Connect" target="_blank">
@@ -174,10 +174,10 @@ export default class extends Header {
                   <a href="https://www.linkedin.com/in/pamelasisson/" target="_blank">
                     <i className="fa fa-linkedin-square"/>
                   </a>
-                  <span>Pamela Sisson<small> / Public Relations</small></span>
+                  <span>Pamela Sisson<small> / Design</small></span>
                 </li>
                 <li style={{'padding': '10px 0'}}>
-                  <p className={'humility' + ' ' + 'instruction'}><strong>"Joy is enlightenment.</strong> Don't take yourself too seriously: Be humane, respectful, determined, and prepared. Strive to be more valuable tomorrow, than you are today. We can achieve incredible feats, if we all communicate responsibly and understand each other."<i>-Peter C. Romano, Founder</i></p>
+                  <p className={'humility' + ' ' + 'instruction'}>"You just gotta show up, and don’t be bad. As long as everyone’s happy, that’s all you need to do. Happiness is quality, and our objective is to secure quality for all."<i> -Peter C. Romano, Founder</i></p>
                   <p className={'humility' + ' ' + 'instruction'}><small><strong>Swipe right</strong> or <strong>scroll down</strong> to <strong>contact us</strong> today! &darr;&rarr;</small></p>
                 </li>
               </ul>
