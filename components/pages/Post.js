@@ -2,7 +2,7 @@ import React from 'react';
 import {asyncConnect} from 'redux-async-connect';
 import {connect} from 'react-redux';
 import {Page} from '@vitruvian-tech/app-studio-vitruvian-tech/components/layout';
-import {load} from '@vitruvian-tech/app-studio-contentful/reducers/Entry';
+import {load} from '@vitruvian-tech/app-studio-contentful/controllers/Entry';
 
 @asyncConnect([{
   promise: ({store: {dispatch, getState}, params: { id }}) => dispatch(load(id))
