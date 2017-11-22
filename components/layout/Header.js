@@ -74,7 +74,7 @@ export default class extends Header {
           <h1>VitruvianTech</h1>
           <h2>
             <span className="color-primary-blue">Sentient</span>&nbsp;
-            <span className="color-secondary-green">Secure</span>&nbsp;
+            <span className="color-primary-green">Secure</span>&nbsp;
             <span className="color-primary-yellow">Quality</span>&nbsp;
             <span><small className="color-secondary-red">for</small></span>&nbsp;
             <span className="color-secondary-red">All</span>
