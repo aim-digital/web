@@ -70,8 +70,8 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>Machete</strong> <i>App Platform</i> <span className={[styles.price].join(' ')}><strong>$2,499<sub><sup>.99</sup>/license</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> app theming platform.</i></small></li>
+                <li><strong>Machete</strong> <i>App Theming Platform</i> <span className={[styles.price].join(' ')}><strong>$2,499<sub><sup>.99</sup>/license</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> user interface development framework.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available plugins.</i></small></li>
                 <li className={styles.asterisk}><small><i>Perfect for high-end <strong>e-comm and publishing</strong> solutions!</i></small></li>
@@ -177,7 +177,7 @@ export default class extends Header {
                   <span>Pamela Sisson<small> / Design</small></span>
                 </li>
                 <li style={{'padding': '10px 0'}}>
-                  <p className={'humility' + ' ' + 'instruction'}>"You just gotta show up, and do your best work. 'Perfection' is the merely the pursuit of perfection, in incremental, well-managed steps. After all, great management leads to quality, and our objective is to secure quality for all."<i> -Peter C. Romano, Founder</i></p>
+                  <p className={'humility' + ' ' + 'instruction'}>"You just gotta show up, and do your best work. 'Perfection' is merely the <em>pursuit</em> of perfection, in incremental, well-managed steps. After all, great management leads to quality, and our objective is to secure quality for all."<i> -Peter C. Romano, Founder</i></p>
                   <p className={'humility' + ' ' + 'instruction'}><small><strong>Swipe right</strong> or <strong>scroll down</strong> to <strong>contact us</strong> today! &darr;&rarr;</small></p>
                 </li>
               </ul>

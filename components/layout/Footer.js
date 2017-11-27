@@ -41,7 +41,7 @@ export default class extends Footer {
           &nbsp;
           <div><i className="fa fa-globe"/>Based in <strong>Long Island City, NYC</strong></div>
           &nbsp;
-          <div><i className="fa fa-clock-o"/>Operational between <strong>8am-8pm</strong> (GMT-4)</div>
+          <div><i className="fa fa-clock-o"/>Operational between <strong>8am-8pm</strong> (GMT-5)</div>
           &nbsp;
           <div className="clear" />
           <p><small><i>&copy;</i>2017 Vitruvian Technology, Corp.</small></p>
