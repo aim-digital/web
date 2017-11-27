@@ -177,7 +177,7 @@ export default class extends Header {
                   <span>Pamela Sisson<small> / Design</small></span>
                 </li>
                 <li style={{'padding': '10px 0'}}>
-                  <p className={'humility' + ' ' + 'instruction'}>"You just gotta show up, and don’t be bad. As long as everyone’s happy, that’s all you need to do. Happiness is quality, and our objective is to secure quality for all."<i> -Peter C. Romano, Founder</i></p>
+                  <p className={'humility' + ' ' + 'instruction'}>"You just gotta show up, and do your best work. 'Perfection' is the merely the pursuit of perfection, in incremental, well-managed steps. After all, great management leads to quality, and our objective is to secure quality for all."<i> -Peter C. Romano, Founder</i></p>
                   <p className={'humility' + ' ' + 'instruction'}><small><strong>Swipe right</strong> or <strong>scroll down</strong> to <strong>contact us</strong> today! &darr;&rarr;</small></p>
                 </li>
               </ul>
