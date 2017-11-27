@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import NukaCarousel from 'nuka-carousel';
-import {Page} from '@vitruvian-tech/app-studio-core/components/layout';
-import {Footer} from '@vitruvian-tech/app-studio-vitruvian-tech/components/layout';
+import {Page} from '@machete-platform/core-bundle/components/layout';
+import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
 
 export default class extends Page {
   render() {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Footer} from '@vitruvian-tech/app-studio-core/components/layout';
+import {Footer} from '@machete-platform/core-bundle/components/layout';
 
 export default class extends Footer {
   render() {

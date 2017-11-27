@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactGA from 'react-ga';
-import {Header} from '@vitruvian-tech/app-studio-vitruvian-tech/components/layout';
+import {Header} from '@vitruvian-tech/machete-bundle/components/layout';
 
 export default class extends Header {
   transitionComplete = state => {

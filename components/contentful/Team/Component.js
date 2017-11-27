@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {Member} from '@vitruvian-tech/app-studio-vitruvian-tech/components/contentful';
+import {Member} from '@vitruvian-tech/machete-bundle/components/contentful';
 import Slider from 'nuka-carousel';
 
-@connect(state => ({team: state['@vitruvian-tech/app-studio-contentful'].Entry.data}))
+@connect(state => ({team: state['@machete-platform/contentful-bundle'].Entry.data}))
 
 export default class extends Component {
   static propTypes = {

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {Header} from '@vitruvian-tech/app-studio-vitruvian-tech/components/layout';
+import {Header} from '@vitruvian-tech/machete-bundle/components/layout';
 
-@connect(state => ({post: state['@vitruvian-tech/app-studio-contentful'].Entry.data}))
+@connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.data}))
 
 export default class extends Header {
   static propTypes = {

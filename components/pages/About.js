@@ -1,6 +1,6 @@
 import {asyncConnect} from 'redux-async-connect';
-import {Page} from '@vitruvian-tech/app-studio-vitruvian-tech/components/layout';
-import {list} from '@vitruvian-tech/app-studio-contentful/controllers/Entry';
+import {Page} from '@vitruvian-tech/machete-bundle/components/layout';
+import {list} from '@machete-platform/contentful-bundle/controllers/Entry';
 
 @asyncConnect([{
   promise: ({store: {dispatch, getState}}) => dispatch(list('team'))

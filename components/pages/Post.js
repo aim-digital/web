@@ -1,15 +1,15 @@
 import React from 'react';
 import {asyncConnect} from 'redux-async-connect';
 import {connect} from 'react-redux';
-import {Page} from '@vitruvian-tech/app-studio-vitruvian-tech/components/layout';
-import {load} from '@vitruvian-tech/app-studio-contentful/controllers/Entry';
+import {Page} from '@vitruvian-tech/machete-bundle/components/layout';
+import {load} from '@machete-platform/contentful-bundle/controllers/Entry';
 
 @asyncConnect([{
   promise: ({store: {dispatch, getState}, params: { id }}) => dispatch(load(id))
 }])
 
 @connect(state => {
-  const { title, tagline } = state['@vitruvian-tech/app-studio-contentful'].Entry.data;
+  const { title, tagline } = state['@machete-platform/contentful-bundle'].Entry.data;
 
   return {
     title: `${title} - VitruvianTech`,

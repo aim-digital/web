@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Section} from '@vitruvian-tech/app-studio-core/components/layout';
-import {Team} from '@vitruvian-tech/app-studio-vitruvian-tech/components/contentful';
+import {Section} from '@machete-platform/core-bundle/components/layout';
+import {Team} from '@vitruvian-tech/machete-bundle/components/contentful';
 
 export default class extends Section {
 

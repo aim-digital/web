@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {VelocityTransitionGroup} from 'velocity-react';
-import {Header} from '@vitruvian-tech/app-studio-core/components/layout';
+import {Header} from '@machete-platform/core-bundle/components/layout';
 
 const SECONDS_IDLE = 60 * 15;
 
