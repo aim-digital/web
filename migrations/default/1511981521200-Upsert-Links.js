@@ -5,7 +5,7 @@ export default class {
     models = getModels();
 
     await models.Link.create({
-      rel: 'prefecth',
+      rel: 'prefetch',
       href: '/dist/51883aaa25eec87770e2b91e169c9609.png'
     });
   }
@@ -15,7 +15,7 @@ export default class {
 
     await models.Link.destroy({
       where: {
-        rel: 'prefecth',
+        rel: 'prefetch',
         href: '/dist/51883aaa25eec87770e2b91e169c9609.png'
       }
     });
