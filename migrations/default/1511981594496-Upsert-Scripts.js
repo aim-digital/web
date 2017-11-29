@@ -1,0 +1,57 @@
+import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+
+export default class {
+  static async up(models, sequelize, DataTypes) {
+    models = getModels();
+
+    await models.Script.create({
+      content: 'https://use.typekit.net/ftk6yva.js'
+    });
+
+    await models.Script.create({
+      content: 'try{Typekit.load({ async: false });}catch(e){}',
+      external: false
+    });
+
+    await models.Script.create({
+      content: '(new Image()).src = \'/dist/51883aaa25eec87770e2b91e169c9609.png\';',
+      external: false
+    });
+
+    await models.Script.create({
+      content: '(new Image()).src = \'/dist/4e7af0cd1facc04162020dda7cfb0eec.jpg\';',
+      external: false
+    });
+  }
+
+  static async down(models, sequelize, DataTypes) {
+    models = getModels();
+
+    await models.Script.destroy({
+      where: {
+        content: 'https://use.typekit.net/ftk6yva.js'
+      }
+    });
+
+    await models.Script.destroy({
+      where: {
+        content: 'try{Typekit.load({ async: false });}catch(e){}',
+        external: false
+      }
+    });
+
+    await models.Script.destroy({
+      where: {
+        content: '(new Image()).src = \'/dist/51883aaa25eec87770e2b91e169c9609.png\';',
+        external: false
+      }
+    });
+
+    await models.Script.destroy({
+      where: {
+        content: '(new Image()).src = \'/dist/4e7af0cd1facc04162020dda7cfb0eec.jpg\';',
+        external: false
+      }
+    });
+  }
+}
