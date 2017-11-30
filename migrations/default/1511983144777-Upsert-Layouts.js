@@ -2,9 +2,9 @@ import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
-    models = getModels();
+    const {Layout} = getModels();
 
-    await models.Layout.create({
+    await Layout.create({
       title: 'VitruvianTech',
       theme: '@vitruvian-tech/machete-bundle',
       app: '@machete-platform/core-bundle:App',
@@ -13,9 +13,9 @@ export default class {
   }
 
   static async down(models, sequelize, DataTypes) {
-    models = getModels();
+    const {Layout} = getModels();
 
-    await models.Layout.destroy({
+    await Layout.destroy({
       where: {
         title: 'VitruvianTech',
         theme: '@vitruvian-tech/machete-bundle',
