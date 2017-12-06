@@ -77,15 +77,15 @@ export default class extends Header {
                 <li className={styles.asterisk}><small><i>Perfect for high-end <strong>e-comm and publishing</strong> solutions!</i></small></li>
                 <li><strong>Machete</strong> <i>Enterprise</i> <span className={[styles.price].join(' ')}><strong><small>Starting at</small> $199k<sub>/yr.</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>Platform as a Service</strong> (high-scale hosting included.)</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>2 dedicated developers</strong>, 1 consultant, and 24/7 support.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>2 dedicated developers</strong>, 1 project manager, and 24/7 support.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Swipe right</strong> or <strong>scroll down</strong> to learn more. &darr;&rarr;</i></small></li>
-                <li><strong>Ad-Hoc</strong> <i>Freelance</i> <span className={[styles.price].join(' ')}><strong>+30%<sub>/resource</sub></strong></span></li>
+                <li><strong>Ad-Hoc</strong> <i>Freelance</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/resource</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>FREE membership</strong> with access to all available services.</i></small></li>
-                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$3k<sub>/1 mo.</sub></strong> / <strong>$15k<sub>/6 mo.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>No service fee</strong> for all resources.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>20 FREE hours/mo.</strong> applied to any/all available services.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>30-day money back guarantee</strong> applied to plan fee.</i></small></li>
+                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2,750k<sub>/1 mo.</sub></strong> / <strong>$15k<sub>/6 mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>30 FREE hours/mo.</strong> applied to any/all available services.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>No resource fee</strong> for all services.</i></small></li>
                 <li className={styles.asterisk}><small><i>Up to <strong>15% (or more) in savings</strong> over leading competitors.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>30-day money back guarantee</strong> applied to plan deposit.</i></small></li>
                 <li className={'more'}/>
               </ul>
             </section>
