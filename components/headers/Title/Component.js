@@ -70,7 +70,7 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2,750k<sub>/1 mo.</sub></strong> / <strong>$15k<sub>/6 mo.</sub></strong></span></li>
+                <li><strong>Shock</strong> <i>Absorber</i> <span className={[styles.price].join(' ')}><strong>$2,750k<sub>/1 mo.</sub></strong> / <strong>$15k<sub>/6 mo.</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>30 FREE hours/mo.</strong> applied to any/all available services.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>No resource fee</strong> for all services.</i></small></li>
                 <li className={styles.asterisk}><small><i>Up to <strong>15% (or more) in savings</strong> over leading competitors.</i></small></li>
