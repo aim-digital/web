@@ -70,22 +70,22 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>Shock</strong> <i>Absorber</i> <span className={[styles.price].join(' ')}><strong>$2,750k<sub>/1 mo.</sub></strong> / <strong>$15k<sub>/6 mo.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>30 FREE hours/mo.</strong> applied to any/all available services.</i></small></li>
+                <li><strong>Strategic</strong> <i>(Shock Absorber)</i> <span className={[styles.price].join(' ')}><strong>$2,750<sub>/mo.</sub></strong> / <strong>$15k<sub>/6 mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>30 hours</strong> applied to any/all available services.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>No resource fee</strong> for all services.</i></small></li>
                 <li className={styles.asterisk}><small><i>Up to <strong>15% (or more) in savings</strong> over leading competitors.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>30-day money back guarantee</strong> applied to plan deposit.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>30-day money-back guarantee</strong> applied to plan fee.</i></small></li>
                 <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$1,999<sub><sup>.99</sup>/license</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> user interface development framework.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                 <li className={styles.asterisk}><small><i>Perfect for high-end <strong>e-comm and publishing</strong> solutions!</i></small></li>
                 <li><strong>Machete</strong> <i>Enterprise</i> <span className={[styles.price].join(' ')}><strong>$500k<sub>/yr.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>10 <em>Machete Theme Framework</em> licenses/yr.</strong> included.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Platform as a Service</strong> (high-scale hosting included.)</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>10 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>3 full-time resources</strong> (i.e., 2 developers, 1 project manager.)</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>Platform as a Service</strong> (highly scalable, high-availability hosting.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Swipe right</strong> or <strong>scroll down</strong> to contact us! &darr;&rarr;</i></small></li>
-                <li><strong>Freelance</strong> <i>T&amp;M</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/resource</sub></strong></span></li>
+                <li><strong>Freelance</strong> <i>(T&amp;M)</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/resource</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>Industry standard</strong>, based on <strong>time and materials</strong> (T&amp;M.)</i></small></li>
                 <li className={styles.asterisk}><small><i>Typical for most <strong>ad-hoc projects</strong>.</i></small></li>
                 <li className={'more'}/>

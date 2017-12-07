@@ -1,6 +1,6 @@
 {
   "name": "@vitruvian-tech/machete-bundle",
-  "version": "1.0.0-pre.2",
+  "version": "1.0.0-pre.3",
   "description": "",
   "scripts": {
     "lint": "machete lint --bundle $(pwd)",
