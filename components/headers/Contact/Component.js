@@ -79,7 +79,7 @@ export default class extends Header {
                   <span className={styles.code}>Location</span>
                 </li>
                 <li className={styles.caption}>
-                  <small><i className="fa fa-clock-o"/> <strong>10am-8pm (GMT-5)</strong></small>
+                  <small><i className="fa fa-clock-o"/> <strong>10am-6pm (GMT-5)</strong></small>
                   <span className={styles.code}>Hours of Operation</span>
                 </li>
                 <li className={styles.caption}>

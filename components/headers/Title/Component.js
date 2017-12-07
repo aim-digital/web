@@ -52,7 +52,7 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Services</h3>
               <ul>
-                <li>Project Management <span className={[styles.service].join(' ')}>Process / Sourcing / Scheduling</span></li>
+                <li>Project Management <span className={[styles.service].join(' ')}>Scheduling / Process / Sourcing</span></li>
                 <li>Software Development <span className={[styles.service].join(' ')}>Web / Mobile / Server</span></li>
                 <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Apparel</span></li>
                 <li>Design <span className={[styles.service].join(' ')}>Software / UI / UX / Graphic / Product</span></li>
@@ -60,7 +60,6 @@ export default class extends Header {
                 <li>Creative <span className={[styles.service].join(' ')}>Photo / Video / Audio / Costume / Culinary</span></li>
                 <li>IT/System Admin. <span className={[styles.service].join(' ')}>Database / Network / Cloud</span></li>
                 <li>Security <span className={[styles.service].join(' ')}>Background / Surveillance / Forensics</span></li>
-                <li>Sourcing <span className={[styles.service].join(' ')}>Human Capital / Product Development</span></li>
                 <li>Legal <span className={[styles.service].join(' ')}>Investigatory / Collections / Domestic Violence</span></li>
                 <li className={'more'}/>
               </ul>
@@ -81,12 +80,14 @@ export default class extends Header {
                 <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                 <li className={styles.asterisk}><small><i>Perfect for high-end <strong>e-comm and publishing</strong> solutions!</i></small></li>
-                <li><strong>Machete</strong> <i>Enterprise</i> <span className={[styles.price].join(' ')}><strong><small>Starting at</small> $500k<sub>/yr.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>10 FREE <em>Machete Theme Platform</em> licenses/yr.</strong> included.</i></small></li>
+                <li><strong>Machete</strong> <i>Enterprise</i> <span className={[styles.price].join(' ')}><strong>$500k<sub>/yr.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>10 <em>Machete Theme Framework</em> licenses/yr.</strong> included.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Platform as a Service</strong> (high-scale hosting included.)</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Full-time dedicated resources:</strong> 2 developers, 1 project manager.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>3 full-time resources</strong> (i.e., 2 developers, 1 project manager.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Swipe right</strong> or <strong>scroll down</strong> to contact us! &darr;&rarr;</i></small></li>
-                <li><strong>Freelance</strong> <i>Ad-Hoc</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/resource</sub></strong></span></li>
+                <li><strong>Freelance</strong> <i>T&amp;M</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/resource</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Industry standard</strong>, based on <strong>time and materials</strong> (T&amp;M.)</i></small></li>
+                <li className={styles.asterisk}><small><i>Typical for most <strong>ad-hoc projects</strong>.</i></small></li>
                 <li className={'more'}/>
               </ul>
             </section>
@@ -96,8 +97,8 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Rates</h3>
               <ul>
-                <li>Project Managers <span className={[styles.price].join(' ')}><strong>$75-95<sub>/hr.</sub></strong></span></li>
-                <li>Software Developers <span className={[styles.price].join(' ')}><strong>$40-75<sub>/hr.</sub></strong></span></li>
+                <li>Project Managers <span className={[styles.price].join(' ')}><strong>$75-85<sub>/hr.</sub></strong></span></li>
+                <li>Software Developers <span className={[styles.price].join(' ')}><strong>$40-85<sub>/hr.</sub></strong></span></li>
                 <li>Marketers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                 <li>Designers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                 <li>Creative Producers <span className={[styles.price].join(' ')}><strong>$25-75<sub>/hr.</sub></strong></span></li>
