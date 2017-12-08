@@ -52,6 +52,7 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Services</h3>
               <ul>
+                <li>Consulting <span className={[styles.service].join(' ')}>Counseling / Strategy / Assessments</span></li>
                 <li>Project Management <span className={[styles.service].join(' ')}>Scheduling / Process / Sourcing</span></li>
                 <li>Software Development <span className={[styles.service].join(' ')}>Web / Mobile / Server</span></li>
                 <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Apparel</span></li>
@@ -70,11 +71,11 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>Strategic</strong> <i>(Shock Absorber)</i> <span className={[styles.price].join(' ')}><strong>$2,750<sub>/mo.</sub></strong> / <strong>$15k<sub>/6 mo.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>30 hours</strong> applied to any/all available services.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>No resource fee</strong> for all services.</i></small></li>
-                <li className={styles.asterisk}><small><i>Up to <strong>15% (or more) in savings</strong> over leading competitors.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>30-day money-back guarantee</strong> applied to plan fee.</i></small></li>
+                <li><strong>Managed</strong> <i>(Subscription)</i> <span className={[styles.price].join(' ')}><strong>$2k<sub>/mo.</sub></strong> / <strong>$10k<sub>/6 mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Agile-based</strong> project management (<strong>$500 value</strong>.)</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>20 hours</strong> applied to any/all available services.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>12.5% discount</strong> applied to subsequent subscriptions.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>30-day money-back guarantee</strong>.</i></small></li>
                 <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$1,999<sub><sup>.99</sup>/license</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> user interface development framework.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
@@ -84,7 +85,7 @@ export default class extends Header {
                 <li className={styles.asterisk}><small><i><strong>10 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>3 full-time resources</strong> (i.e., 2 developers, 1 project manager.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Platform as a Service</strong> (highly scalable, high-availability hosting.)</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Swipe right</strong> or <strong>scroll down</strong> to contact us! &darr;&rarr;</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us! &darr;&rarr;</i></small></li>
                 <li><strong>Freelance</strong> <i>(T&amp;M)</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/resource</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>Industry standard</strong>, based on <strong>time and materials</strong> (T&amp;M.)</i></small></li>
                 <li className={styles.asterisk}><small><i>Typical for most <strong>ad-hoc projects</strong>.</i></small></li>
@@ -97,6 +98,7 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Rates</h3>
               <ul>
+                <li>Consultants <span className={[styles.price].join(' ')}><strong>$75-85<sub>/hr.</sub></strong></span></li>
                 <li>Project Managers <span className={[styles.price].join(' ')}><strong>$75-85<sub>/hr.</sub></strong></span></li>
                 <li>Software Developers <span className={[styles.price].join(' ')}><strong>$40-85<sub>/hr.</sub></strong></span></li>
                 <li>Marketers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
@@ -180,7 +182,7 @@ export default class extends Header {
                 </li>
                 <li style={{'padding': '10px 0'}}>
                   <p className={'humility' + ' ' + 'instruction'}>"We meticulously plan every detail of an operation, and prepare as best as we can, because we are trained to be as ready as possible for when the operation (almost inevitably, always) goes south."<i> -Peter C. Romano, Founder</i></p>
-                  <p className={'humility' + ' ' + 'instruction'}><small><strong>Swipe right</strong> or <strong>scroll down</strong> to <strong>contact us</strong> today! &darr;&rarr;</small></p>
+                  <p className={'humility' + ' ' + 'instruction'}><small><strong>Scroll down</strong> or <strong>swipe right</strong> to <strong>contact us</strong> today! &darr;&rarr;</small></p>
                 </li>
               </ul>
             </section>
