@@ -16,7 +16,7 @@ export default class extends Header {
     const map = require('./images/map.png');
 
     return (
-      <Header timer className={styles.slide} onTransitionComplete={this.transitionComplete}>
+      <Header className={styles.slide} onTransitionComplete={this.transitionComplete}>
         {[
           <div className={[styles.content, 'content', styles.links].join(' ')} key="0">
             <section className={['preview'].join(' ')}>
