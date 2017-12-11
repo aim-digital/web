@@ -71,8 +71,8 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2k<sub>/mo.</sub></strong> / <strong>$10k<sub>/6 mo.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>Agile-based</strong> project management (<strong>$500 value</strong>.)</i></small></li>
+                <li><strong>Managed</strong> <i>Team</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> / <strong>$7k<sub>/3 mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Agile-based</strong> project management (<strong>$500+ value</strong>.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>20 hours</strong> applied to any/all available services.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>12.5% discount</strong> applied to all additional subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
@@ -86,9 +86,12 @@ export default class extends Header {
                 <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                 <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm and publishing</strong> solutions!</i></small></li>
-                <li><strong>Machete</strong> <i>Professional</i> <span className={[styles.price].join(' ')}><strong>$500k<sub>/yr.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>10 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Platform as a Service</strong> (highly scalable, high-availability hosting.)</i></small></li>
+                <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$49<sub><sup>.99</sup>/mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>User-friendly Platform as a Service</strong> and customer support.</i></small></li>
+                <li className={styles.asterisk}><small><i>Exclusively designed for <strong><em>Machete Theme Platform</em> licenses</strong>.</i></small></li>
+                <li><strong>Start-Up</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$250k<sub>/6 mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>5 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>3 full-time resources</strong> (i.e., 2 developers, 1 project manager.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
               </ul>
