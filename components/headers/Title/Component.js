@@ -52,7 +52,7 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Services</h3>
               <ul>
-                <li>Consulting <span className={[styles.service].join(' ')}>Counseling / Strategy / Assessments</span></li>
+                <li>Consulting <span className={[styles.service].join(' ')}>\Strategic Development / Assessments</span></li>
                 <li>Project Management <span className={[styles.service].join(' ')}>Scheduling / Process / Sourcing</span></li>
                 <li>Software Development <span className={[styles.service].join(' ')}>Web / Mobile / Server</span></li>
                 <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Advertising</span></li>
@@ -71,28 +71,29 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>Managed</strong> <i>Team</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> / <strong>$7k<sub>/3 mo.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>Agile-based</strong> project management (<strong>$500+ value</strong>.)</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>20 hours</strong> applied to any/all available services.</i></small></li>
+                <li><strong>Managed</strong> <i>Team</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> / <strong>$7k<sub>/3 mo.</sub></strong> / <strong>$12k<sub>/6 mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Agile-based</strong> project management (<strong>$500+/mo.</strong> value.)</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>20 hours/mo.</strong> applied to any/all available services.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>12.5% discount</strong> applied to all additional subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
                 <li><strong>Freelance</strong> <i>Mercenary</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/resource rate</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i>Access to our <strong>freelancer and partner</strong> resource networks.</i></small></li>
+                <li className={styles.asterisk}><small><i>Access to our <strong>freelancer</strong> and <strong>partner</strong> resource networks.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (as per client/resource negotiations.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Industry standard</strong> pricing, based on <strong>time and materials</strong> (T&amp;M.)</i></small></li>
-                <li className={styles.asterisk}><small><i>Typical for most <strong>ad-hoc projects</strong>.</i></small></li>
+                <li className={styles.asterisk}><small><i>Typical for most <strong>ad-hoc</strong> projects.</i></small></li>
                 <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$1,999<sub><sup>.99</sup>/license</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> app/website development framework.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> app/website <strong>development framework</strong>.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
-                <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm and publishing</strong> solutions!</i></small></li>
+                <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm</strong> and <strong>publishing</strong> solutions!</i></small></li>
                 <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$49<sub><sup>.99</sup>/mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i>Exclusively designed for the <strong><em>Machete Theme Platform</em></strong>.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>User-friendly Platform as a Service</strong> and customer support.</i></small></li>
-                <li className={styles.asterisk}><small><i>Exclusively designed for <strong><em>Machete Theme Platform</em> licenses</strong>.</i></small></li>
-                <li><strong>Start-Up</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$250k<sub>/6 mo.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>5 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>3 full-time resources</strong> (i.e., 2 developers, 1 project manager.)</i></small></li>
+                <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$50k<sub>/3 mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>8 <em>Managed Team</em></strong> (1 x "full-time") quarterly subscriptions.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>2 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>Optional</strong> <em>Machete Cloud</em> hosting.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
               </ul>
             </section>
