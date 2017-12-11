@@ -52,7 +52,7 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Services</h3>
               <ul>
-                <li>Consulting <span className={[styles.service].join(' ')}>\Strategic Development / Assessments</span></li>
+                <li>Consulting <span className={[styles.service].join(' ')}>Strategic Development / Assessments</span></li>
                 <li>Project Management <span className={[styles.service].join(' ')}>Scheduling / Process / Sourcing</span></li>
                 <li>Software Development <span className={[styles.service].join(' ')}>Web / Mobile / Server</span></li>
                 <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Advertising</span></li>
