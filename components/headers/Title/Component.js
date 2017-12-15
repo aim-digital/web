@@ -72,9 +72,9 @@ export default class extends Header {
               <h3>Plans</h3>
               <ul>
                 <li><strong>Managed</strong> <i>Team</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> / <strong>$7k<sub>/3 mo.</sub></strong> / <strong>$12k<sub>/6 mo.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i><strong>Agile-based</strong> project management (<strong>$500+/mo.</strong> value.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>20 hours/mo.</strong> applied to any/all available services.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>12.5% discount</strong> applied to all additional subscriptions.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong><em>Foxtrot One&#8480;</em></strong> target tracking &amp; <strong>project management</strong> system.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any additional subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
                 <li><strong>Freelance</strong> <i>Mercenary</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/resource rate</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i>Access to our <strong>freelancer</strong> and <strong>partner</strong> resource networks.</i></small></li>
@@ -93,13 +93,33 @@ export default class extends Header {
                 <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$50k<sub>/3 mo.</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>8 <em>Managed Team</em></strong> (1 x "full-time") quarterly subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>2 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Optional</strong> <em>Machete Cloud</em> hosting.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
               </ul>
             </section>
           </div>,
 
-          <div className={[styles.content, 'content', styles.portfolio].join(' ')} key="3">
+          <div className={[styles.content, 'content', styles.pricing].join(' ')} key="3">
+            <section className={['preview'].join(' ')}>
+              <h3>Rates</h3>
+              <ul>
+                <li>Consultants <span className={[styles.price].join(' ')}><strong>$75-85<sub>/hr.</sub></strong></span></li>
+                <li>Project Managers <span className={[styles.price].join(' ')}><strong>$75-85<sub>/hr.</sub></strong></span></li>
+                <li>Software Developers <span className={[styles.price].join(' ')}><strong>$40-85<sub>/hr.</sub></strong></span></li>
+                <li>Marketers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
+                <li>Designers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
+                <li>Creative Producers <span className={[styles.price].join(' ')}><strong>$25-75<sub>/hr.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i>Our studio includes copywriters, product developers, videographers, photographers, printers, musicians, costume designers, culinary artists, and brand curators.</i></small></li>
+                <li>Interns <span className={[styles.price].join(' ')}><strong>$20<sub>/hr.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i>Boost your project's performance while maximizing workforce potential by providing training opportunities for young professionals and aspiring individuals.</i></small></li>
+                <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
+                <li>Security Analysts/Investigators <span className={[styles.price, styles.starting].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
+                <li>Legal Counselors <span className={[styles.price, styles.starting].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
+                <li className={'more'}/>
+              </ul>
+            </section>
+          </div>,
+
+          <div className={[styles.content, 'content', styles.portfolio].join(' ')} key="4">
             <section className={['preview'].join(' ')}>
               <h3>Missions</h3>
               <ul className={'columns'}>
@@ -126,30 +146,9 @@ export default class extends Header {
             </section>
           </div>,
 
-          <div className={[styles.content, 'content', styles.pricing].join(' ')} key="4">
-            <section className={['preview'].join(' ')}>
-              <h3>Rates</h3>
-              <ul>
-                <li>Consultants <span className={[styles.price].join(' ')}><strong>$75-85<sub>/hr.</sub></strong></span></li>
-                <li>Project Managers <span className={[styles.price].join(' ')}><strong>$75-85<sub>/hr.</sub></strong></span></li>
-                <li>Software Developers <span className={[styles.price].join(' ')}><strong>$40-85<sub>/hr.</sub></strong></span></li>
-                <li>Marketers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
-                <li>Designers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
-                <li>Creative Producers <span className={[styles.price].join(' ')}><strong>$25-75<sub>/hr.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i>Our studio includes copywriters, product developers, videographers, photographers, printers, musicians, costume designers, culinary artists, and brand curators.</i></small></li>
-                <li>Interns <span className={[styles.price].join(' ')}><strong>$20<sub>/hr.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i>Boost your project's performance while maximizing workforce potential by providing training opportunities for young professionals and aspiring individuals.</i></small></li>
-                <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
-                <li>Security Analysts/Investigators <span className={[styles.price, styles.starting].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
-                <li>Legal Counselors <span className={[styles.price, styles.starting].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
-                <li className={'more'}/>
-              </ul>
-            </section>
-          </div>,
-
           <div className={[styles.content, 'content', styles.team].join(' ')} key="5">
             <section className={['preview'].join(' ')}>
-              <h3>Management</h3>
+              <h3>Leadership</h3>
               <ul>
                 <li>
                   <a href="mailto:pete@vitruvian.tech?subject=<VitruvianTech>%20Connect" target="_blank">
@@ -167,7 +166,7 @@ export default class extends Header {
                   <a href="https://github.com/peteromano" target="_blank">
                     <i className="fa fa-github"/>
                   </a>
-                  <span>Peter C. Romano<small> / Founder</small></span>
+                  <span>Peter C. Romano<small> / Founder / CEO</small></span>
                 </li>
                 <li>
                   <a href="mailto:jessica@jesyousif.com?subject=<VitruvianTech>%20Connect" target="_blank">
@@ -236,6 +235,18 @@ export default class extends Header {
                   <span>SoftGreat<small> / Belarus / Partner</small></span>
                 </li>
                 <li>
+                  <a href="https://www.rishabhsoft.com/" target="_blank">
+                    <i className="fa fa-external-link"/>
+                  </a>
+                  <span>Rishabh Software<small> / Dallas / Partner</small></span>
+                </li>
+                <li>
+                  <a href="http://http://triboroprinting.com/" target="_blank">
+                    <i className="fa fa-external-link"/>
+                  </a>
+                  <span>Triboro Printing<small> / NYC / Partner</small></span>
+                </li>
+                <li>
                   <a href="http://www.rethink-films.com/" target="_blank">
                     <i className="fa fa-external-link"/>
                   </a>
@@ -243,12 +254,6 @@ export default class extends Header {
                     <i className="fa fa-facebook-official"/>
                   </a>
                   <span>Rethink Films<small> / NYC / Partner</small></span>
-                </li>
-                <li>
-                  <a href="http://http://triboroprinting.com/" target="_blank">
-                    <i className="fa fa-external-link"/>
-                  </a>
-                  <span>Triboro Printing<small> / NYC / Partner</small></span>
                 </li>
                 <li>
                   <a href="http://anniecatdesign.studio/" target="_blank">
