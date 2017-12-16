@@ -169,12 +169,6 @@ export default class extends Header {
                   <span>Peter C. Romano<small> / Founder / CEO</small></span>
                 </li>
                 <li>
-                  <a href="mailto:jessica@jesyousif.com?subject=<VitruvianTech>%20Connect" target="_blank">
-                    <i className="fa fa-envelope"/>
-                  </a>
-                  <span>Jes Yousif<small> / Branding / Imagery</small></span>
-                </li>
-                <li>
                   <a href="mailto:reza@evolvinx.com?subject=<VitruvianTech>%20Connect" target="_blank">
                     <i className="fa fa-envelope"/>
                   </a>
