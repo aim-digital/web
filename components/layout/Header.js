@@ -2,8 +2,12 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@machete-platform/core-bundle/components/layout';
+import {connect} from 'react-redux';
+import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 
 const SECONDS_IDLE = 60 * 15;
+
+@connect((state, props) => ({ slide: state['@machete-platform/core-bundle'].Transition.slide || props.slide || 0 }), {transition})
 
 export default class extends Header {
   static propTypes = {
@@ -11,7 +15,8 @@ export default class extends Header {
     runOnMount: PropTypes.bool,
     timer: PropTypes.bool,
     children: PropTypes.any,
-    classNames: PropTypes.object
+    classNames: PropTypes.object,
+    slide: PropTypes.number.isRequired
   };
 
   static defaultProps = {
@@ -38,9 +43,9 @@ export default class extends Header {
     return this;
   };
 
-  next = () => this.setState({index: Math.min(this.state.index + 1, 6)});
+  next = () => this.props.transition('slide', Math.min(this.props.slide + 1, 6));
 
-  previous = () => this.setState({index: Math.max(this.state.index - 1, 0)});
+  previous = () => this.props.transition('slide', Math.max(this.props.slide - 1, 0));
 
   begin = () => this.setState({ animating: true });
 
@@ -59,12 +64,12 @@ export default class extends Header {
   };
 
   render() {
-    const { className, classNames, children, runOnMount } = this.props;
-    const {index, animating} = this.state;
+    const { className, classNames, children, runOnMount, slide } = this.props;
+    const {animating} = this.state;
 
     const getFlipState = (direction = 'next') => {
       return {
-        disabled: (index === children.length - 1 && direction === 'next') || (!index && direction === 'previous')
+        disabled: (slide === children.length - 1 && direction === 'next') || (!slide && direction === 'previous')
       };
     };
 
@@ -83,7 +88,7 @@ export default class extends Header {
         {children.length ? (
           <div>
             <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 75, begin: this.begin, complete: this.complete }}>
-              {children[index]}
+              {children[slide]}
             </VelocityTransitionGroup>
             <div className="flippers">
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left">&larr;</button>
