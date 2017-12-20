@@ -71,12 +71,12 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>Managed</strong> <i>Team</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> / <strong>$7k<sub>/3 mo.</sub></strong> / <strong>$12k<sub>/6 mo.</sub></strong></span></li>
+                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> / <strong>$7k<sub>/3 mo.</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>20 hours/mo.</strong> applied to any/all available services.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong><em>Foxtrot One&#8480;</em></strong> target tracking &amp; <strong>project management</strong> system.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any additional subscriptions.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking &amp; <strong>project management</strong> system.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any/all simultaneous subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
-                <li><strong>Freelance</strong> <i>Mercenary</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/resource rate</sub></strong></span></li>
+                <li><strong>Freelance</strong> <i>Hourly</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/hourly rate</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i>Access to our <strong>freelancer</strong> and <strong>partner</strong> resource networks.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (as per client/resource negotiations.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Industry standard</strong> pricing, based on <strong>time and materials</strong> (T&amp;M.)</i></small></li>
