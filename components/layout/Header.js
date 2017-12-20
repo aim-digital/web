@@ -44,7 +44,7 @@ export default class extends Header {
     return this;
   };
 
-  next = () => this.props.transition('slide', Math.min(this.props.slide + 1, 6));
+  next = () => this.props.transition('slide', Math.min(this.props.slide + 1, this.props.children.length));
 
   previous = () => this.props.transition('slide', Math.max(this.props.slide - 1, 0));
 

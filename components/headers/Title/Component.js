@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactGA from 'react-ga';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@vitruvian-tech/machete-bundle/components/layout';
