@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
+import {connect} from 'react-redux';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@machete-platform/core-bundle/components/layout';
-import {connect} from 'react-redux';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 
 const SECONDS_IDLE = 60 * 15;
@@ -16,7 +16,8 @@ export default class extends Header {
     timer: PropTypes.bool,
     children: PropTypes.any,
     classNames: PropTypes.object,
-    slide: PropTypes.number.isRequired
+    slide: PropTypes.number.isRequired,
+    transition: PropTypes.func.isRequired
   };
 
   static defaultProps = {
