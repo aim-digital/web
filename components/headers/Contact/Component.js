@@ -33,6 +33,11 @@ export default class extends Header {
                   </a>
                 </li>
                 <li>
+                  <a title="GitHub: @vitruvian-tech" href="https://github.com/vitruvian-tech" target="_blank">
+                    <i className="fa fa-github"/> vitruvian-tech
+                  </a>
+                </li>
+                <li>
                   <a title="LinkedIn: VitruvianTech" href="https://www.linkedin.com/company/vitruvian-technology-corp." target="_blank">
                     <i className="fa fa-linkedin-square"/> VitruvianTech
                   </a>
@@ -50,11 +55,6 @@ export default class extends Header {
                 <li>
                   <a title="Twitter: @VitruvianTechHQ" href="https://twitter.com/VitruvianTechHQ" target="_blank">
                     <i className="fa fa-twitter"/> VitruvianTechHQ
-                  </a>
-                </li>
-                <li>
-                  <a title="GitHub: @vitruvian-tech" href="https://github.com/vitruvian-tech" target="_blank">
-                    <i className="fa fa-github"/> vitruvian-tech
                   </a>
                 </li>
                 <li>

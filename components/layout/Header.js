@@ -12,6 +12,7 @@ const SECONDS_IDLE = 60 * 15;
 export default class extends Header {
   static propTypes = {
     onTransitionComplete: PropTypes.func,
+    onTransitionBegin: PropTypes.func,
     runOnMount: PropTypes.bool,
     timer: PropTypes.bool,
     children: PropTypes.any,
@@ -48,7 +49,15 @@ export default class extends Header {
 
   previous = () => this.props.transition('slide', Math.max(this.props.slide - 1, 0));
 
-  begin = () => this.setState({ animating: true });
+  begin = () => {
+    const { onTransitionBegin } = this.props;
+
+    this.setState({ animating: true });
+
+    if (onTransitionBegin) {
+      onTransitionBegin(this.state);
+    }
+  };
 
   complete = () => {
     const { timer, onTransitionComplete } = this.props;
@@ -88,7 +97,7 @@ export default class extends Header {
         </div>
         {children.length ? (
           <div>
-            <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 75, begin: this.begin, complete: this.complete }}>
+            <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 250, begin: this.begin, complete: this.complete }}>
               {children[slide]}
             </VelocityTransitionGroup>
             <div className="flippers">

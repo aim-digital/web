@@ -8,6 +8,10 @@ export default class extends Header {
     loaded: false
   };
 
+  transitionBegin = () => {
+    this.setState({ loaded: false });
+  };
+
   transitionComplete = state => {
     this.setState({ loaded: true });
 
@@ -22,19 +26,19 @@ export default class extends Header {
     const styles = require('./Component.scss');
 
     return (
-      <Header runOnMount className={styles.slide} onTransitionComplete={this.transitionComplete}>
+      <Header runOnMount className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin}>
         {[
           <div className={[styles.content, 'content', styles.virtues].join(' ')} key="0">
-            <div className={styles.logo}>
-              <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 200 }}>
-                {this.state.loaded && (
-                  <img src={require('./images/insignia.png')}
-                       alt="The Digital Special Forces for custom software and marketing solutions."
-                       title="Vitruvian Technology, Corp."/>
-                )}
-              </VelocityTransitionGroup>
-            </div>
             <section className={['preview'].join(' ')}>
+              <div className={styles.logo}>
+                <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 750 }}>
+                  {this.state.loaded && (
+                      <img src={require('./images/insignia.png')}
+                           alt="The Digital Special Forces for custom software and marketing solutions."
+                           title="Vitruvian Technology, Corp."/>
+                  )}
+                </VelocityTransitionGroup>
+              </div>
               <h3>Virtues</h3>
               <ul className={'columns'}>
                 <li><i className="fa fa-universal-access"/> Intelligence</li>
@@ -53,7 +57,7 @@ export default class extends Header {
               <h3>Services</h3>
               <ul>
                 <li>Consulting <span className={[styles.service].join(' ')}>Strategic Development / Assessments</span></li>
-                <li>Project Management <span className={[styles.service].join(' ')}>Scheduling / Process / Sourcing</span></li>
+                <li>Project Management <span className={[styles.service].join(' ')}>Scheduling / Process</span></li>
                 <li>Software Development <span className={[styles.service].join(' ')}>Web / Mobile / Server</span></li>
                 <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Advertising</span></li>
                 <li>Design <span className={[styles.service].join(' ')}>Software / UI / UX / Graphic / Product</span></li>
@@ -79,17 +83,13 @@ export default class extends Header {
                 <li><strong>Freelance</strong> <i>Hourly</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/hourly rate</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i>Access to our <strong>freelancer</strong> and <strong>partner</strong> resource networks.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (as per client/resource negotiations.)</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Industry standard</strong> pricing, based on <strong>time and materials</strong> (T&amp;M.)</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>Industry standard</strong> pricing, based on <strong>time and materials</strong>.</i></small></li>
                 <li className={styles.asterisk}><small><i>Typical for most <strong>ad-hoc</strong> projects.</i></small></li>
                 <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$1,999<sub><sup>.99</sup>/license</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> app/website <strong>development framework</strong>.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                 <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm</strong> and <strong>publishing</strong> solutions!</i></small></li>
-                <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$49<sub><sup>.99</sup>/mo.</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i>Exclusively designed for the <strong><em>Machete Theme Platform</em></strong>.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>User-friendly Platform as a Service</strong> and customer support.</i></small></li>
                 <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$50k<sub>/3 mo.</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>8 <em>Managed Team</em></strong> (1 x "full-time") quarterly subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>2 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
@@ -119,7 +119,20 @@ export default class extends Header {
             </section>
           </div>,
 
-          <div className={[styles.content, 'content', styles.portfolio].join(' ')} key="4">
+          <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="4">
+            <section className={['preview'].join(' ')}>
+              <h3>Hosting</h3>
+              <ul>
+                <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$49<sub><sup>.99</sup>/mo.</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i>Exclusively designed for the <strong><em>Machete Theme Platform</em></strong>.</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
+                <li className={styles.asterisk}><small><i><strong>User-friendly Platform as a Service</strong> and customer support.</i></small></li>
+                <li className={'more'}/>
+              </ul>
+            </section>
+          </div>,
+
+          <div className={[styles.content, 'content', styles.portfolio].join(' ')} key="5">
             <section className={['preview'].join(' ')}>
               <h3>Missions</h3>
               <ul className={'columns'}>
@@ -146,7 +159,7 @@ export default class extends Header {
             </section>
           </div>,
 
-          <div className={[styles.content, 'content', styles.team].join(' ')} key="5">
+          <div className={[styles.content, 'content', styles.team].join(' ')} key="6">
             <section className={['preview'].join(' ')}>
               <h3>Leadership</h3>
               <ul>
@@ -166,7 +179,7 @@ export default class extends Header {
                   <a href="https://github.com/peteromano" target="_blank">
                     <i className="fa fa-github"/>
                   </a>
-                  <span>Peter C. Romano<small> / Founder / CEO</small></span>
+                  <span>Peter C. Romano<small> / Founder</small></span>
                 </li>
                 <li>
                   <a href="mailto:reza@evolvinx.com?subject=<VitruvianTech>%20Connect" target="_blank">
@@ -194,7 +207,7 @@ export default class extends Header {
             </section>
           </div>,
 
-          <div className={[styles.content, 'content', styles.partners].join(' ')} key="6">
+          <div className={[styles.content, 'content', styles.partners].join(' ')} key="7">
             <section className={['preview'].join(' ')}>
               <h3>Network</h3>
               <ul>

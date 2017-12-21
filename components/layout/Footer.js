@@ -15,6 +15,10 @@ export default class extends Footer {
             <i className="fa fa-envelope"/>services@vitruvian.tech
           </a>
           &nbsp;
+          <a title="GitHub: @vitruvian-tech" href="https://github.com/vitruvian-tech" target="_blank">
+            <i className="fa fa-github"/>vitruvian-tech
+          </a>
+          &nbsp;
           <a title="LinkedIn: VitruvianTech" href="https://www.linkedin.com/company/vitruvian-technology-corp." target="_blank">
             <i className="fa fa-linkedin-square"/>VitruvianTech
           </a>
@@ -29,10 +33,6 @@ export default class extends Footer {
           &nbsp;
           <a title="Twitter: @VitruvianTechHQ" href="https://twitter.com/VitruvianTechHQ" target="_blank">
             <i className="fa fa-twitter"/>VitruvianTechHQ
-          </a>
-          &nbsp;
-          <a title="GitHub: @vitruvian-tech" href="https://github.com/vitruvian-tech" target="_blank">
-            <i className="fa fa-github"/>vitruvian-tech
           </a>
           &nbsp;
           <a title="Instagram: @vitruvian.tech" href="https://www.instagram.com/vitruvian.tech/" target="_blank">

@@ -1,3 +1,15 @@
+//@-webkit-keyframes glow {
+//  from { background: $black-color; color: $primary-yellow-color; }
+//  50% { background: $primary-yellow-color; color: $background-color; }
+//  to { background: $black-color; color: $primary-yellow-color; }
+//}
+
+@-webkit-keyframes glow {
+  from { transform: scale3d(1, 1, 1); box-shadow: 0 0 1.5em rgba(89, 159, 198, .25); }
+  50% { transform: scale3d(1.15, 1.15, 1); box-shadow: 0 0 1.25em rgba(89, 159, 198, .5); }
+  to { transform: scale3d(1, 1, 1); box-shadow: 0 0 1.5em rgba(89, 159, 198, .25); }
+}
+
 .header.container {
   .slider {
     > div:last-of-type {
@@ -29,6 +41,7 @@
 .slide {
   &.animating {
     .preview, .flippers button {
+      -webkit-animation-name: none !important;
       opacity: 0;
       transform: translate3d(0, 40em, 0);
     }
@@ -105,8 +118,8 @@
     color: $primary-yellow-color;
     border-radius: 0;
 
+
     &:hover {
-      opacity: 1;
       transition: none;
       background: $primary-yellow-color;
       color: $background-color;
@@ -137,6 +150,9 @@
 
     &.right {
       left: 50%;
+      -webkit-animation-name: glow;
+      -webkit-animation-duration: 1.125s;
+      -webkit-animation-iteration-count: infinite;
 
       &:before {
         content: 'more';
@@ -148,6 +164,7 @@
       color: $humility;
       background: $black-color;
       opacity: .20;
+      -webkit-animation-name: none;
     }
   }
 
@@ -198,10 +215,14 @@
       font-family: $font-family-brand;
       padding: 0 6px;
 
-      &.columns li {
-        display: inline-block;
-        width: 50%;
-        line-height: 1;
+      &.columns {
+        margin-top: .5em;
+
+        li {
+          display: inline-block;
+          width: 50%;
+          line-height: 1;
+        }
       }
 
       &:before {
