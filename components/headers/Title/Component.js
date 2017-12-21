@@ -31,7 +31,7 @@ export default class extends Header {
           <div className={[styles.content, 'content', styles.virtues].join(' ')} key="0">
             <section className={['preview'].join(' ')}>
               <div className={styles.logo}>
-                <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 750 }}>
+                <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 650 }}>
                   {this.state.loaded && (
                       <img src={require('./images/insignia.png')}
                            alt="The Digital Special Forces for custom software and marketing solutions."
@@ -57,7 +57,7 @@ export default class extends Header {
               <h3>Services</h3>
               <ul>
                 <li>Consulting <span className={[styles.service].join(' ')}>Strategic Development / Assessments</span></li>
-                <li>Project Management <span className={[styles.service].join(' ')}>Scheduling / Process</span></li>
+                <li>Project Management <span className={[styles.service].join(' ')}>Planning / Process / Sourcing</span></li>
                 <li>Software Development <span className={[styles.service].join(' ')}>Web / Mobile / Server</span></li>
                 <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Advertising</span></li>
                 <li>Design <span className={[styles.service].join(' ')}>Software / UI / UX / Graphic / Product</span></li>
@@ -75,16 +75,14 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> / <strong>$7k<sub>/3 mo.</sub></strong></span></li>
+                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> <strong>$7k<sub>/3 mo.</sub></strong> <strong>$12k<sub>/6 mo.</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>20 hours/mo.</strong> applied to any/all available services.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking &amp; <strong>project management</strong> system.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any/all simultaneous subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
-                <li><strong>Freelance</strong> <i>Hourly</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/hourly rate</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i>Access to our <strong>freelancer</strong> and <strong>partner</strong> resource networks.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (as per negotiations.)</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Industry standard</strong> pricing, based on <strong>time and materials</strong>.</i></small></li>
-                <li className={styles.asterisk}><small><i>Typical for most <strong>ad-hoc</strong> projects.</i></small></li>
+                <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/hourly rate</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (per contract negotiations.)</i></small></li>
+                <li className={styles.asterisk}><small><i>Typical for most hourly-based <strong>ad-hoc</strong> projects.</i></small></li>
                 <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$1,999<sub><sup>.99</sup>/license</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> app/website <strong>development framework</strong>.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
@@ -94,7 +92,7 @@ export default class extends Header {
                 <li className={styles.asterisk}><small><i><strong>8 <em>Managed Team</em></strong> (1 x "full-time") quarterly subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>2 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
-                {/*<li className={'more'} data-next="Rates"/>*/}
+                <li className={'more'} data-next="Rates"/>
               </ul>
             </section>
           </div>,
@@ -200,10 +198,11 @@ export default class extends Header {
                   </a>
                   <span>Pamela Sisson<small> / Design</small></span>
                 </li>
-                <li style={{'padding': '10px 0'}}>
+                <li style={{'padding': '1.25em 0 0'}}>
                   <p className={'humility' + ' ' + 'instruction'}>"You just gotta show up, and be consistent. 'Perfection' is merely the <em>pursuit</em> of perfection, with quality engineered over time by a well-planned, incremental process. After all, great management leads to quality, and our objective is to secure quality for all."<i> -Peter C. Romano, Founder</i></p>
-                  <p className={'humility' + ' ' + 'instruction'}><small><strong>Scroll down</strong> or <strong>swipe right</strong> to <strong>contact us</strong> today! &darr;&rarr;</small></p>
+                  <p className={'humility'} style={{'margin': '0'}}><small><strong>Scroll down</strong> or <strong>swipe right</strong> to <strong>contact us</strong> today! &darr;&rarr;</small></p>
                 </li>
+                <li className={'more'} data-next="Network"/>
               </ul>
             </section>
           </div>,

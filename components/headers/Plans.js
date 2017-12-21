@@ -21,16 +21,14 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Plans</h3>
               <ul>
-                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> / <strong>$7k<sub>/3 mo.</sub></strong></span></li>
+                <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> <strong>$7k<sub>/3 mo.</sub></strong> <strong>$12k<sub>/6 mo.</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>20 hours/mo.</strong> applied to any/all available services.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking &amp; <strong>project management</strong> system.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any/all simultaneous subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
-                <li><strong>Freelance</strong> <i>Hourly</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/hourly rate</sub></strong></span></li>
-                <li className={styles.asterisk}><small><i>Access to our <strong>freelancer</strong> and <strong>partner</strong> resource networks.</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (as per negotiations.)</i></small></li>
-                <li className={styles.asterisk}><small><i><strong>Industry standard</strong> pricing, based on <strong>time and materials</strong>.</i></small></li>
-                <li className={styles.asterisk}><small><i>Typical for most <strong>ad-hoc</strong> projects.</i></small></li>
+                <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/hourly rate</sub></strong></span></li>
+                <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (per contract negotiations.)</i></small></li>
+                <li className={styles.asterisk}><small><i>Typical for most hourly-based <strong>ad-hoc</strong> projects.</i></small></li>
                 <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$1,999<sub><sup>.99</sup>/license</sub></strong></span></li>
                 <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> app/website <strong>development framework</strong>.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
