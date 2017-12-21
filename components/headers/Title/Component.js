@@ -47,7 +47,7 @@ export default class extends Header {
                 <li><i className="fa fa-diamond"/> Elegance</li>
                 <li><i className="fa fa-hand-peace-o"/> Trustworthiness</li>
                 <li><i className="fa fa-check-square-o"/> Readiness</li>
-                <li className={'more'}/>
+                <li className={'more'} data-next="Services"/>
               </ul>
             </section>
           </div>,
@@ -66,7 +66,7 @@ export default class extends Header {
                 <li>IT/System Admin. <span className={[styles.service].join(' ')}>Database / Network / Cloud</span></li>
                 <li>Security <span className={[styles.service].join(' ')}>Background / Surveillance / Forensics</span></li>
                 <li>Legal <span className={[styles.service].join(' ')}>Investigatory / Collections / Domestic Violence</span></li>
-                <li className={'more'}/>
+                <li className={'more'} data-next="Plans"/>
               </ul>
             </section>
           </div>,
@@ -94,6 +94,7 @@ export default class extends Header {
                 <li className={styles.asterisk}><small><i><strong>8 <em>Managed Team</em></strong> (1 x "full-time") quarterly subscriptions.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>2 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
+                <li className={'more'} data-next="Rates"/>
               </ul>
             </section>
           </div>,
@@ -114,7 +115,7 @@ export default class extends Header {
                 <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                 <li>Security Analysts/Investigators <span className={[styles.price, styles.starting].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
                 <li>Legal Counselors <span className={[styles.price, styles.starting].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
-                <li className={'more'}/>
+                <li className={'more'} data-next="Hosting"/>
               </ul>
             </section>
           </div>,
@@ -127,7 +128,7 @@ export default class extends Header {
                 <li className={styles.asterisk}><small><i>Exclusively designed for the <strong><em>Machete Theme Platform</em></strong>.</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
                 <li className={styles.asterisk}><small><i><strong>User-friendly Platform as a Service</strong> and customer support.</i></small></li>
-                <li className={'more'}/>
+                <li className={'more'} data-next="Missions"/>
               </ul>
             </section>
           </div>,
@@ -154,7 +155,7 @@ export default class extends Header {
                 <li>UrbanDaddy</li>
                 <li>OneRx®</li>
                 <li>RealtyMX™</li>
-                <li className={'more'}/>
+                <li className={'more'} data-next="Leadership"/>
               </ul>
             </section>
           </div>,
