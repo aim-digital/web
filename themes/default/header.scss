@@ -1,9 +1,3 @@
-//@-webkit-keyframes glow {
-//  from { background: $black-color; color: $primary-yellow-color; }
-//  50% { background: $primary-yellow-color; color: $background-color; }
-//  to { background: $black-color; color: $primary-yellow-color; }
-//}
-
 @-webkit-keyframes glow {
   from { transform: scale3d(1, 1, 1); box-shadow: 0 0 1.5em rgba(89, 159, 198, .25); }
   50% { transform: scale3d(1.15, 1.15, 1); box-shadow: 0 0 1.25em rgba(89, 159, 198, .5); }
@@ -74,7 +68,7 @@
 
     h2 {
       font-family: $font-family-brand;
-      font-size: .925em;
+      font-size: 1.025em;
       margin: 0;
       word-spacing: 2px;
 
