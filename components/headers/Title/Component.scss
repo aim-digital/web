@@ -17,7 +17,7 @@
   }
 
   .logo {
-    margin: 0 auto 1.5em;
+    margin: 0 auto 2em;
     position: absolute;
     bottom: 100%;
     width: 100%;
@@ -25,25 +25,21 @@
     text-align: center;
 
     img {
-      max-width: 13em;
-    }
+      max-width: 14em;
 
-    @media (min-width: 360px) {
-      img {
-        max-width: 16em;
-      }
-    }
-
-    @media (min-width: 414px) {
-      img {
+      @media (min-width: 360px) {
         max-width: 15em;
+      }
+
+      @media (min-width: 768px) {
+        max-width: 14em;
       }
     }
   }
 
   .content {
     &.virtues {
-      margin-top: 18vh;
+      margin-top: 25vh;
     }
 
     &.virtues {

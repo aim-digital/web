@@ -1,15 +1,11 @@
 body {
   font-size: 12px;
-}
 
-@media (min-width: 360px) {
-  body {
+  @media (min-width: 360px) {
     font-size: 13px;
   }
-}
 
-@media (min-width: 768px) {
-  body {
+  @media (min-width: 768px) {
     font-size: 14px;
   }
 }
