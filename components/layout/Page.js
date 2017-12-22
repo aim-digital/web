@@ -6,17 +6,23 @@ import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
 
-@connect(state => ({}), {transition})
+@connect(state => ({ header: state['@machete-platform/core-bundle'].Transition.header || 0 }), {transition})
 
 export default class extends Page {
   static propTypes = {
-    transition: PropTypes.func.isRequired
+    transition: PropTypes.func.isRequired,
+    header: PropTypes.number.isRequired
   };
 
-  afterSlide = () => this.props.transition('slide', 0);
+  componentWillMount = () => this.props.transition('slide', 0);
+
+  afterSlide = async index => {
+    await this.props.transition('header', index);
+    await this.props.transition('slide', 0);
+  };
 
   render() {
-    const { sections, headers } = this.props;
+    const { sections, headers, header } = this.props;
     const single = headers.length === 1;
 
     return (
@@ -24,7 +30,7 @@ export default class extends Page {
         {headers.length ? (
           <section className={`${single ? 'single' : ''} header container`}>
             {single ? headers : (
-              <NukaCarousel initialSlideWidth={970} afterSlide={this.afterSlide}>
+              <NukaCarousel initialSlideWidth={970} afterSlide={this.afterSlide} slideIndex={header}>
                 {headers}
               </NukaCarousel>
             )}
