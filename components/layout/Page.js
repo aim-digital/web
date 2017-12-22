@@ -16,9 +16,11 @@ export default class extends Page {
 
   componentWillMount = () => this.props.transition('slide', 0);
 
-  afterSlide = async index => {
-    await this.props.transition('header', index);
-    await this.props.transition('slide', 0);
+  afterSlide = index => {
+    const { transition } = this.props;
+
+    transition('slide', 0);
+    transition('header', index);
   };
 
   render() {
@@ -30,7 +32,10 @@ export default class extends Page {
         {headers.length ? (
           <section className={`${single ? 'single' : ''} header container`}>
             {single ? headers : (
-              <NukaCarousel initialSlideWidth={970} afterSlide={this.afterSlide} slideIndex={header}>
+              <NukaCarousel
+                initialSlideWidth={970}
+                afterSlide={this.afterSlide}
+                slideIndex={header}>
                 {headers}
               </NukaCarousel>
             )}
