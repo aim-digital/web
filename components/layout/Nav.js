@@ -32,10 +32,7 @@ export default class extends Nav {
       <Nav className="container" fixedTop>
         <Navbar.Header>
           <Navbar.Brand>
-            <IndexLink to="/" onClick={async () => {
-              await transition('header', 0);
-              await transition('slide', 0);
-            }}>
+            <IndexLink to="/" onClick={() => transition({ header: 0 })}>
               <div className="brand">
                 <img src={require('../../../../../static/assets/images/logo.png')}
                      height="80%"

@@ -6,22 +6,23 @@ import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
 
-@connect(state => ({ header: state['@machete-platform/core-bundle'].Transition.header || 0 }), {transition})
+@connect(state => {
+  const { header = 0, slide = 0 } = state['@machete-platform/core-bundle'].Transition;
+  return { header, slide };
+}, {transition})
 
 export default class extends Page {
   static propTypes = {
     transition: PropTypes.func.isRequired,
-    header: PropTypes.number.isRequired
+    header: PropTypes.number.isRequired,
+    slide: PropTypes.number.isRequired
   };
 
-  componentWillMount = () => this.props.transition('slide', 0);
+  componentWillMount = () => this.transition('slide', 0);
 
-  afterSlide = index => {
-    const { transition } = this.props;
+  transition = (type, index) => this.props[type] === index ? Promise.resolve() : this.props.transition({ [type]: index });
 
-    transition('slide', 0);
-    transition('header', index);
-  };
+  afterSlide = header => this.transition('slide', 0).then(() => this.transition('header', header));
 
   render() {
     const { sections, headers, header } = this.props;
