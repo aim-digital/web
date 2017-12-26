@@ -267,7 +267,7 @@ nav > a.toggle {
 @media only screen and (min-width: 769px) {
   nav {
     padding: 0;
-    max-height: 72px;
+    max-height: 40px;
     white-space: nowrap;
   }
 
@@ -276,27 +276,31 @@ nav > a.toggle {
   }
 
   nav > a.logo {
-    width: 60px;
-    height: 24px;
-    margin: 24px;
-    transition: none;
+    width: 20px;
+    height: 30px;
+    margin: 0 10px;
+    margin-right: 12px;
+    opacity: .85;
+    transition: opacity .35s;
+  }
+
+  nav > a.logo:hover {
     opacity: 1;
   }
 
   nav > ul {
-    font-size: 20px;
+    font-size: 1.25em;
     display: inline-block;
     position: static;
     background: transparent;
     height: auto;
     width: auto;
     color: #fff;
-    line-height: 72px;
+    line-height: 40px;
     overflow: visible;
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
     transition: none;
-    margin-left: 24px;
     margin-top: 0;
     box-shadow: none;
   }
@@ -311,7 +315,7 @@ nav > a.toggle {
   }
 
   nav li a {
-    padding: 0 24px;
+    padding: 0 12px;
   }
 
   nav li:hover,
@@ -334,6 +338,10 @@ nav > a.toggle {
   nav > ul > li:last-child {
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  nav > ul > li > a:focus {
+    color: inherit;
   }
 
   nav > ul > li.active {
