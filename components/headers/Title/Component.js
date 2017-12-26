@@ -47,7 +47,7 @@ export default class extends Header {
                   <li><i className="fa fa-diamond"/> Elegance</li>
                   <li><i className="fa fa-hand-peace-o"/> Trustworthiness</li>
                   <li><i className="fa fa-check-square-o"/> Readiness</li>
-                  <li className={'more'} data-next="Missions"/>
+                  <li className={'more'} data-next="past Missions"/>
                 </ul>
               </section>
             </div>,
@@ -153,6 +153,8 @@ export default class extends Header {
                   <li className={styles.asterisk}><small><i>Exclusively designed for the <strong><em>Machete Theme Platform</em></strong>.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>User-friendly Platform as a Service</strong> and customer support.</i></small></li>
+                  <li><strong>Managed</strong> <i>Standard</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$19<sub><sup>.99</sup>/mo.</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong><em>Amazon Web Services</em></strong> high-availability hosting.</i></small></li>
                   <li className={'more'} data-next="Leadership"/>
                 </ul>
               </section>
@@ -295,6 +297,7 @@ export default class extends Header {
                   <li>
                     <span>Generativ<small> / NYC / Partner</small></span>
                   </li>
+                  <li className={styles.asterisk} style={{marginTop: '10px'}}><small><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</small></li>
                 </ul>
               </section>
             </div>
