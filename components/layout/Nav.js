@@ -2,13 +2,53 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {IndexLink} from 'react-router';
-import Navbar from 'react-bootstrap/lib/Navbar';
 import {Nav} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import * as Auth from '@machete-platform/core-bundle/controllers/Auth';
+// import Navbar from 'react-bootstrap/lib/Navbar';
 // import NavItem from 'react-bootstrap/lib/NavItem';
 // import Nav from 'react-bootstrap/lib/Nav';
 // import {LinkContainer} from 'react-router-bootstrap';
+
+let load = () => {
+  const TOGGLE_CLASS = 'nav-open';
+  const body = document.body;
+  const app = document.getElementById('app');
+  const items = document.querySelectorAll('.nav nav ul > li');
+  const links = document.querySelectorAll('.nav nav ul a');
+
+  links.forEach(link => link.addEventListener('click', () => {
+    const item = link.parentNode;
+
+    // Remove active state for all items
+    items.forEach(item => item.classList.remove('active'));
+
+    if(item.querySelectorAll('ul').length) {
+      // If item has a subnav, set nav `active` class
+      app.classList.add(TOGGLE_CLASS);
+      item.classList.add('active');
+    } else {
+      // If item has no subnav, unset nav `active` class
+      app.classList.remove(TOGGLE_CLASS);
+      item.classList.remove('active');
+    }
+  }));
+
+  // Bind click event for toggle ("hamburger") button to toggle nav active state
+  document.querySelector('.nav .toggle').addEventListener('click', () => {
+    body.classList.toggle(TOGGLE_CLASS);
+    app.classList.toggle(TOGGLE_CLASS);
+  });
+
+  // Bind click event on mask to exit nav active state
+  document.querySelector('#app > div > .page').addEventListener('click', function() {
+    app.classList.remove(TOGGLE_CLASS, app.classList.contains(TOGGLE_CLASS));
+    body.classList.remove(TOGGLE_CLASS, body.classList.contains(TOGGLE_CLASS));
+    items.forEach(item => item.classList.remove('active'));
+  });
+
+  load = () => ({});
+};
 
 @connect(state => ({ user: state['@machete-platform/core-bundle'].Auth.user }), { transition, logout: Auth.logout })
 
@@ -19,6 +59,8 @@ export default class extends Nav {
     logout: PropTypes.func.isRequired
   };
 
+  componentDidMount = () => load();
+
   handleLogout = (event) => {
     event.preventDefault();
     this.props.logout();
@@ -26,52 +68,24 @@ export default class extends Nav {
 
   render() {
     const { transition } = this.props;
-    // const { user } = this.props;
 
     return (
-      <Nav className="container" fixedTop>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <IndexLink to="/" onClick={() => transition({ header: 0 })}>
-              <div className="brand">
-                <img src={require('../../../../../static/assets/images/logo.png')}
-                     height="80%"
-                     alt="Based in NYC, Vitruvian Technology, Corp. specializes in Web/Software Development, Marketing, Design, QA, Studio Production, Sourcing, IT/System Administration, Security, and Investigatory services."
-                     title="Sentient. Secure. Quality for all."/>
-              </div>
-            </IndexLink>
-          </Navbar.Brand>
-          <Navbar.Toggle/>
-        </Navbar.Header>
-        {/* <Navbar.Collapse eventKey={0}>  */}
-        {/* <Nav navbar>  */}
-        {/* {user && <LinkContainer to="/chat">  */}
-        {/* <NavItem eventKey={1}>Chat</NavItem>  */}
-        {/* </LinkContainer>}  */}
-        {/* {!user &&  */}
-        {/* <LinkContainer to="/login">  */}
-        {/* <NavItem eventKey={5}>Login</NavItem>  */}
-        {/* </LinkContainer>}  */}
-        {/* {user &&  */}
-        {/* <LinkContainer to="/logout">  */}
-        {/* <NavItem eventKey={6} className="logout-link" onClick={this.handleLogout}>  */}
-        {/* Logout  */}
-        {/* </NavItem>  */}
-        {/* </LinkContainer>}  */}
-        {/* <LinkContainer to="/about">  */}
-        {/* <NavItem eventKey={4}>About Us</NavItem>  */}
-        {/* </LinkContainer>  */}
-        {/* <LinkContainer to="/widgets">  */}
-        {/* <NavItem eventKey={2}>Widgets</NavItem>  */}
-        {/* </LinkContainer>  */}
-        {/* <LinkContainer to="/survey">  */}
-        {/* <NavItem eventKey={3}>Survey</NavItem>  */}
-        {/* </LinkContainer>  */}
-        {/* </Nav>  */}
-        {/* {user &&  */}
-        {/* <p className="navbar-text"><strong>{user.name ? '@' + user.name : ''}</strong></p>}  */}
-        {/* </Navbar.Collapse>  */}
-      </Nav>
+      <section className="nav">
+        <nav>
+          <a href="/" className="logo" onClick={() => transition({ slide: 0, header: 0 })}/>
+          <a href="#" className="toggle" role="button"/>
+          <ul><li><a href="#/work">Work</a></li><li className="subnav"><a href="#/about">About</a><ul><li><a href="#/about/what-we-do">What we do</a></li><li><a href="#/about/how-we-work">How we work</a></li><li><a href="#/about/leadership">Leadership</a></li></ul></li><li className="subnav"><a href="#/careers">Careers</a><ul><li><a href="#/careers/client-services">Client Services</a></li><li><a href="#/careers/creative">Creative</a></li><li><a href="#/careers/motion-and-media">Motion &amp; Media</a></li><li><a href="#/careers/operations">Operations</a></li><li><a href="#/careers/people">People</a></li><li><a href="#/careers/strategy">Strategy</a></li><li><a href="#/careers/technology">Technology</a></li><li><a href="#/careers/ux-and-product-design">UX &amp; Product Design</a></li></ul></li><li className="subnav"><a href="#/ideas">Ideas</a><ul><li><a href="#/ideas/reports">Reports</a></li><li><a href="#/ideas/perspectives">Perspectives</a></li><li><a href="#/ideas/books">Books</a></li><li><a href="#/ideas/videos">Videos</a></li></ul></li><li><a href="#/news">News</a></li><li><a href="#/events">Events</a></li><li className="subnav"><a href="#/contact">Contact</a><ul><li><a href="#/contact/atlanta">Atlanta</a></li><li><a href="#/contact/brooklyn">Brooklyn</a></li><li><a href="#/contact/dc">DC</a></li><li><a href="#/contact/london">London</a></li><li><a href="#/contact/los-angeles">Los Angeles</a></li><li><a href="#/contact/portland">Portland</a></li><li><a href="#/contact/rio">Rio</a></li><li><a href="#/contact/san-francisco">San Francisco</a></li></ul></li></ul>
+        </nav>
+      </section>
     );
   }
 }
+
+{/*<IndexLink to="/" onClick={() => transition({ slide: 0, header: 0 })}>*/}
+  {/*<div className="brand">*/}
+    {/*<img src={require('../../../../../static/assets/images/logo.png')}*/}
+         {/*height="80%"*/}
+         {/*alt="Based in NYC, Vitruvian Technology, Corp. specializes in Web/Software Development, Marketing, Design, QA, Studio Production, Sourcing, IT/System Administration, Security, and Investigatory services."*/}
+         {/*title="Sentient. Secure. Quality for all."/>*/}
+  {/*</div>*/}
+{/*</IndexLink>*/}
