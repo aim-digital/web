@@ -5,10 +5,6 @@ import {Link} from 'react-router';
 import {Nav} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import * as Auth from '@machete-platform/core-bundle/controllers/Auth';
-// import Navbar from 'react-bootstrap/lib/Navbar';
-// import NavItem from 'react-bootstrap/lib/NavItem';
-// import Nav from 'react-bootstrap/lib/Nav';
-// import {LinkContainer} from 'react-router-bootstrap';
 
 let load = () => {
   const TOGGLE_CLASS = 'nav-open';
