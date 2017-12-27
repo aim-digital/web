@@ -10,7 +10,7 @@
       & > ul {
         li:nth-child(1) button {
           &:before {
-            content: 'discover()';
+            content: 'about()';
           }
 
           &:after {

@@ -59,6 +59,17 @@ nav > ul {
   margin-top: 1px;
   margin-right: 2vw;
   box-shadow: 0 2px 2vw $black-color;
+
+  &:after {
+    content: '\A9 2018 Vitruvian Technology, Corp.';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: .6em;
+    padding: .5em 1em;
+    color: $humility;
+  }
 }
 
 #app.nav-open nav > ul {
@@ -114,23 +125,21 @@ nav li li.active > a {
 nav > ul > li > ul {
   background: $black-color;
   margin: 0 -15px;
-  border-bottom: solid 1px #000;
-  width: 0;
   height: 0;
 }
 
 nav > ul > li.active > ul {
   height: auto;
-  width: auto;
+  border-bottom: solid 1px #000;
 }
 
 nav > ul > li > ul > li {
   opacity: 0;
-  transition: opacity .25s;
 }
 
 nav > ul > li.active > ul > li {
   opacity: 1;
+  transition: opacity .25s;
 }
 
 nav > ul > li > ul > li,

@@ -44,7 +44,7 @@ export default class extends Footer {
           <div><i className="fa fa-clock-o"/>Operational between <strong>10am-6pm</strong> (GMT-5)</div>
           &nbsp;
           <div className="clear" />
-          <p><small><i>&copy;</i>2017 Vitruvian Technology, Corp.</small></p>
+          <p><small><i>&copy;</i>2018 Vitruvian Technology, Corp.</small></p>
         </section>
       </Footer>
     );

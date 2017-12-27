@@ -76,68 +76,41 @@ export default class extends Nav {
   render() {
     const { transition } = this.props;
     const preventDefault = e => e.preventDefault();
+    const slide = (header, slide) => () => transition({ header }).then(() => transition({ slide }));
 
     return (
       <section className="nav">
         <nav>
-          <Link to="/" className="logo" onClick={() => transition({ slide: 0, header: 0 })}/>
+          <Link to="/" className="logo" onClick={slide(0, 0)}/>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
 
           <ul>
-            <li><a href="#/work">Work</a></li>
+            <li><Link to="/" onClick={slide(0, 1)}>Work</Link></li>
 
             <li className="subnav">
               <a href="#" onClick={preventDefault}>About</a>
-
               <ul>
-                <li><a href="#/about/what-we-do">What we do</a></li>
-                <li><a href="#/about/how-we-work">How we work</a></li>
-                <li><a href="#/about/leadership">Leadership</a></li>
+                <li><Link to="/" onClick={slide(0, 2)}>What we do</Link></li>
+                <li><Link to="/" onClick={slide(0, 6)}>Who we are (leadership)</Link></li>
+                <li><Link to="/" onClick={slide(0, 0)}>Our <em>Vitruvian Virtues</em></Link></li>
+                <li><Link to="/" onClick={slide(0, 7)}>Partners and network</Link></li>
               </ul>
             </li>
 
             <li className="subnav">
-              <a href="#" onClick={preventDefault}>Careers</a>
-
+              <a href="#" onClick={preventDefault}>Pricing</a>
               <ul>
-                <li><a href="#/careers/client-services">Client Services</a></li>
-                <li><a href="#/careers/creative">Creative</a></li>
-                <li><a href="#/careers/motion-and-media">Motion &amp; Media</a></li>
-                <li><a href="#/careers/operations">Operations</a></li>
-                <li><a href="#/careers/people">People</a></li>
-                <li><a href="#/careers/strategy">Strategy</a></li>
-                <li><a href="#/careers/technology">Technology</a></li>
-                <li><a href="#/careers/ux-and-product-design">UX &amp; Product Design</a></li>
+                <li><Link to="/" onClick={slide(0, 3)}>Plans and products</Link></li>
+                <li><Link to="/" onClick={slide(0, 4)}>Hourly rates</Link></li>
+                <li><Link to="/" onClick={slide(0, 5)}>Hosting services</Link></li>
               </ul>
             </li>
-
-            <li className="subnav">
-              <a href="#" onClick={preventDefault}>Ideas</a>
-
-              <ul>
-                <li><a href="#/ideas/reports">Reports</a></li>
-                <li><a href="#/ideas/perspectives">Perspectives</a></li>
-                <li><a href="#/ideas/books">Books</a></li>
-                <li><a href="#/ideas/videos">Videos</a></li>
-              </ul>
-            </li>
-
-            <li><a href="#/news">News</a></li>
-
-            <li><a href="#/events">Events</a></li>
 
             <li className="subnav">
               <a href="#" onClick={preventDefault}>Contact</a>
-
               <ul>
-                <li><a href="#/contact/atlanta">Atlanta</a></li>
-                <li><a href="#/contact/brooklyn">Brooklyn</a></li>
-                <li><a href="#/contact/dc">DC</a></li>
-                <li><a href="#/contact/london">London</a></li>
-                <li><a href="#/contact/los-angeles">Los Angeles</a></li>
-                <li><a href="#/contact/portland">Portland</a></li>
-                <li><a href="#/contact/rio">Rio</a></li>
-                <li><a href="#/contact/san-francisco">San Francisco</a></li>
+                <li><Link to="/" onClick={slide(1, 0)}>Connect with us today!</Link></li>
+                <li><Link to="/" onClick={slide(1, 1)}>Base of operations</Link></li>
               </ul>
             </li>
           </ul>

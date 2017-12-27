@@ -47,7 +47,7 @@ export default class extends Header {
                   <li><i className="fa fa-diamond"/> Elegance</li>
                   <li><i className="fa fa-hand-peace-o"/> Trustworthiness</li>
                   <li><i className="fa fa-check-square-o"/> Readiness</li>
-                  <li className={'more'} data-next="past Missions"/>
+                  <li className={'more'} data-next="Missions"/>
                 </ul>
               </section>
             </div>,
@@ -149,12 +149,15 @@ export default class extends Header {
               <section className={['preview'].join(' ')}>
                 <h3>Hosting</h3>
                 <ul>
-                  <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$49<sub><sup>.99</sup>/mo.</sub></strong></span></li>
+                  <li><strong>Managed</strong> <i>Standard</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$19<sub><sup>.95</sup>/mo.</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong><em>Amazon Web Services</em></strong> high-availability hosting.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Dedicated hosting</strong> services available.</i></small></li>
+                  <li className={styles.asterisk}><small><i>Web, database, and storage <strong>server management</strong>.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Infrastructure design</strong> and architecture.</i></small></li>
+                  <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$49<sub><sup>.95</sup>/mo.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Exclusively designed for the <strong><em>Machete Theme Platform</em></strong>.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>User-friendly Platform as a Service</strong> and customer support.</i></small></li>
-                  <li><strong>Managed</strong> <i>Standard</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$19<sub><sup>.99</sup>/mo.</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong><em>Amazon Web Services</em></strong> high-availability hosting.</i></small></li>
                   <li className={'more'} data-next="Leadership"/>
                 </ul>
               </section>
