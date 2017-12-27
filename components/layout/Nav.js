@@ -35,6 +35,11 @@ let load = () => {
       app.classList.add(TOGGLE_CLASS);
       body.classList.add(TOGGLE_CLASS);
       item.classList[isActive ? 'remove' : 'add']('active');
+
+      if (isActive && window.innerWidth > 768) {
+        body.classList.remove(TOGGLE_CLASS);
+        app.classList.remove(TOGGLE_CLASS);
+      }
     } else {
       // If item has no subnav, unset nav `active` class
       app.classList.remove(TOGGLE_CLASS);
