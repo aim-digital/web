@@ -149,7 +149,12 @@ export default class extends Header {
               <section className={['preview'].join(' ')}>
                 <h3>Hosting</h3>
                 <ul>
-                  <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$49<sub><sup>.99</sup>/mo.</sub></strong></span></li>
+                  <li><strong>Managed</strong> <i>Standard</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$19<sub><sup>.95</sup>/mo.</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong><em>Amazon Web Services</em></strong> high-availability hosting.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Dedicated hosting</strong> services available.</i></small></li>
+                  <li className={styles.asterisk}><small><i>Web, database, and storage <strong>server management</strong>.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Infrastructure design</strong> and architecture.</i></small></li>
+                  <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$49<sub><sup>.95</sup>/mo.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Exclusively designed for the <strong><em>Machete Theme Platform</em></strong>.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>User-friendly Platform as a Service</strong> and customer support.</i></small></li>
@@ -295,6 +300,7 @@ export default class extends Header {
                   <li>
                     <span>Generativ<small> / NYC / Partner</small></span>
                   </li>
+                  <li className={styles.asterisk} style={{marginTop: '10px'}}><small><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</small></li>
                 </ul>
               </section>
             </div>

@@ -1,14 +1,61 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {IndexLink} from 'react-router';
-import Navbar from 'react-bootstrap/lib/Navbar';
+import {Link} from 'react-router';
 import {Nav} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import * as Auth from '@machete-platform/core-bundle/controllers/Auth';
+// import Navbar from 'react-bootstrap/lib/Navbar';
 // import NavItem from 'react-bootstrap/lib/NavItem';
 // import Nav from 'react-bootstrap/lib/Nav';
 // import {LinkContainer} from 'react-router-bootstrap';
+
+let load = () => {
+  const TOGGLE_CLASS = 'nav-open';
+  const body = document.body;
+  const app = document.getElementById('app');
+  const items = document.querySelectorAll('.nav nav ul > li');
+  const links = document.querySelectorAll('.nav nav ul a');
+
+  const close = () => {
+    app.classList.remove(TOGGLE_CLASS, app.classList.contains(TOGGLE_CLASS));
+    body.classList.remove(TOGGLE_CLASS, body.classList.contains(TOGGLE_CLASS));
+    items.forEach(item => item.classList.remove('active'));
+  };
+
+  links.forEach(link => link.addEventListener('click', () => {
+    const item = link.parentNode;
+    const isActive = item.classList.contains('active');
+
+    // Remove active state for all items
+    items.forEach(item => item.classList.remove('active'));
+
+    if(item.querySelectorAll('ul').length) {
+      // If item has a subnav, set nav `active` class
+      app.classList.add(TOGGLE_CLASS);
+      body.classList.add(TOGGLE_CLASS);
+      item.classList[isActive ? 'remove' : 'add']('active');
+    } else {
+      // If item has no subnav, unset nav `active` class
+      app.classList.remove(TOGGLE_CLASS);
+      body.classList.remove(TOGGLE_CLASS);
+      item.classList.remove('active');
+    }
+  }));
+
+  // Bind click event for toggle ("hamburger") button to toggle nav active state
+  document.querySelector('.nav .toggle').addEventListener('click', e => {
+    e.preventDefault();
+    body.classList.toggle(TOGGLE_CLASS);
+    app.classList.toggle(TOGGLE_CLASS);
+  });
+
+  // Bind click event on mask to exit nav active state
+  document.querySelector('#app > div > .page').addEventListener('click', close);
+  document.querySelector('.nav .logo').addEventListener('click', close);
+
+  load = () => ({});
+};
 
 @connect(state => ({ user: state['@machete-platform/core-bundle'].Auth.user }), { transition, logout: Auth.logout })
 
@@ -19,6 +66,8 @@ export default class extends Nav {
     logout: PropTypes.func.isRequired
   };
 
+  componentDidMount = () => load();
+
   handleLogout = (event) => {
     event.preventDefault();
     this.props.logout();
@@ -26,52 +75,47 @@ export default class extends Nav {
 
   render() {
     const { transition } = this.props;
-    // const { user } = this.props;
+    const preventDefault = e => e.preventDefault();
+    const slide = (header, slide) => () => transition({ header }).then(() => transition({ slide }));
 
     return (
-      <Nav className="container" fixedTop>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <IndexLink to="/" onClick={() => transition({ header: 0 })}>
-              <div className="brand">
-                <img src={require('../../../../../static/assets/images/logo.png')}
-                     height="80%"
-                     alt="Based in NYC, Vitruvian Technology, Corp. specializes in Web/Software Development, Marketing, Design, QA, Studio Production, Sourcing, IT/System Administration, Security, and Investigatory services."
-                     title="Sentient. Secure. Quality for all."/>
-              </div>
-            </IndexLink>
-          </Navbar.Brand>
-          <Navbar.Toggle/>
-        </Navbar.Header>
-        {/* <Navbar.Collapse eventKey={0}>  */}
-        {/* <Nav navbar>  */}
-        {/* {user && <LinkContainer to="/chat">  */}
-        {/* <NavItem eventKey={1}>Chat</NavItem>  */}
-        {/* </LinkContainer>}  */}
-        {/* {!user &&  */}
-        {/* <LinkContainer to="/login">  */}
-        {/* <NavItem eventKey={5}>Login</NavItem>  */}
-        {/* </LinkContainer>}  */}
-        {/* {user &&  */}
-        {/* <LinkContainer to="/logout">  */}
-        {/* <NavItem eventKey={6} className="logout-link" onClick={this.handleLogout}>  */}
-        {/* Logout  */}
-        {/* </NavItem>  */}
-        {/* </LinkContainer>}  */}
-        {/* <LinkContainer to="/about">  */}
-        {/* <NavItem eventKey={4}>About Us</NavItem>  */}
-        {/* </LinkContainer>  */}
-        {/* <LinkContainer to="/widgets">  */}
-        {/* <NavItem eventKey={2}>Widgets</NavItem>  */}
-        {/* </LinkContainer>  */}
-        {/* <LinkContainer to="/survey">  */}
-        {/* <NavItem eventKey={3}>Survey</NavItem>  */}
-        {/* </LinkContainer>  */}
-        {/* </Nav>  */}
-        {/* {user &&  */}
-        {/* <p className="navbar-text"><strong>{user.name ? '@' + user.name : ''}</strong></p>}  */}
-        {/* </Navbar.Collapse>  */}
-      </Nav>
+      <section className="nav">
+        <nav>
+          <Link to="/" className="logo" onClick={slide(0, 0)}/>
+          <a href="#" className="toggle" role="button" onClick={preventDefault}/>
+
+          <ul>
+            <li><Link to="/" onClick={slide(0, 1)}>Work</Link></li>
+
+            <li className="subnav">
+              <a href="#" onClick={preventDefault}>About</a>
+              <ul>
+                <li><Link to="/" onClick={slide(0, 2)}>What we do</Link></li>
+                <li><Link to="/" onClick={slide(0, 6)}>Who we are (leadership)</Link></li>
+                <li><Link to="/" onClick={slide(0, 0)}>Our <em>Vitruvian Virtues</em></Link></li>
+                <li><Link to="/" onClick={slide(0, 7)}>Partners and network</Link></li>
+              </ul>
+            </li>
+
+            <li className="subnav">
+              <a href="#" onClick={preventDefault}>Pricing</a>
+              <ul>
+                <li><Link to="/" onClick={slide(0, 3)}>Plans and products</Link></li>
+                <li><Link to="/" onClick={slide(0, 4)}>Hourly rates</Link></li>
+                <li><Link to="/" onClick={slide(0, 5)}>Hosting services</Link></li>
+              </ul>
+            </li>
+
+            <li className="subnav">
+              <a href="#" onClick={preventDefault}>Contact</a>
+              <ul>
+                <li><Link to="/" onClick={slide(1, 0)}>Connect with us today!</Link></li>
+                <li><Link to="/" onClick={slide(1, 1)}>Base of operations</Link></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </section>
     );
   }
 }
