@@ -19,6 +19,7 @@ let load = () => {
 
   links.forEach(link => link.addEventListener('click', () => {
     const item = link.parentNode;
+    const isActive = item.classList.contains('active');
 
     // Remove active state for all items
     items.forEach(item => item.classList.remove('active'));
@@ -26,10 +27,12 @@ let load = () => {
     if(item.querySelectorAll('ul').length) {
       // If item has a subnav, set nav `active` class
       app.classList.add(TOGGLE_CLASS);
-      item.classList.add('active');
+      body.classList.add(TOGGLE_CLASS);
+      item.classList[isActive ? 'remove' : 'add']('active');
     } else {
       // If item has no subnav, unset nav `active` class
       app.classList.remove(TOGGLE_CLASS);
+      body.classList.remove(TOGGLE_CLASS);
       item.classList.remove('active');
     }
   }));

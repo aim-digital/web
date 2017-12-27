@@ -115,8 +115,8 @@ nav {
   min-height: 20px;
   max-height: 100vh;
   opacity: .95;
-  box-shadow: 0 0 .5em #292929;
-  background: #292929;
+  box-shadow: 0 0 .5em $background-color;
+  background: $background-color;
 }
 
 nav ul {
@@ -140,7 +140,7 @@ nav li a,
 nav li a:hover,
 nav li a:focus {
   text-decoration: none;
-  color: #292929;
+  color: #fff;
 }
 
 nav > ul {
@@ -153,13 +153,13 @@ nav > ul {
   right: 100%;
   transition: right .35s;
   background: $background-color;
-  height: 93vh;
+  height: 93.5vh;
   overflow: scroll;
   font-size: 20px;
   line-height: 20px;
   color: #fff;
   margin-top: 1px;
-  box-shadow: 0 2px 2vw #151515;
+  box-shadow: 0 2px 2vw $black-color;
 }
 
 #app.nav-open nav > ul {
@@ -188,16 +188,16 @@ nav li.subnav:before {
 nav li.subnav.active:before {
   transform: rotate(225deg);
   top: 18px;
-  border-right: 2px solid $background-color;
-  border-bottom: 2px solid $background-color;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
 }
 
 nav li:hover,
 nav li:active,
 nav li:focus,
 nav li.active {
-  background: #eee;
-  color: #292929;
+  background: $secondary-green-color;
+  color: #fff;
 }
 
 nav li li:hover,
@@ -208,22 +208,34 @@ nav li li:hover > a,
 nav li li:active > a,
 nav li li:focus > a,
 nav li li.active > a {
-  color: #292929;
+  color: #fff;
 }
 
 nav > ul > li > ul {
-  background: #fff;
+  background: $black-color;
   margin: 0 -15px;
-  display: none;
+  border-bottom: solid 1px #000;
+  width: 0;
+  height: 0;
 }
 
 nav > ul > li.active > ul {
-  display: block;
+  height: auto;
+  width: auto;
+}
+
+nav > ul > li > ul > li {
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+nav > ul > li.active > ul > li {
+  opacity: 1;
 }
 
 nav > ul > li > ul > li,
 nav > ul > li > ul > li a {
-  color: #000;
+  color: #fff;
 }
 
 nav > ul > li > ul > li {
@@ -289,7 +301,7 @@ nav > a.toggle {
   }
 
   nav > ul {
-    font-size: 1.25em;
+    font-size: 1em;
     display: inline-block;
     position: static;
     background: transparent;
@@ -316,11 +328,12 @@ nav > a.toggle {
 
   nav li a {
     padding: 0 12px;
+    color: $black-color;
   }
 
   nav li:hover,
   nav li.active {
-    color: #292929;
+    color: $background-color;
   }
 
   nav li.subnav:before {
@@ -345,7 +358,8 @@ nav > a.toggle {
   }
 
   nav > ul > li.active {
-    background: #fff;
+    background: #efefef;
+    color: $black-color;
   }
 
   nav > ul > li.active > ul {
@@ -364,12 +378,90 @@ nav > a.toggle {
     white-space: nowrap;
     margin: 0;
     display: block;
+    border-bottom: none;
+    background: #efefef;
+    color: $black-color;
   }
 
   nav > ul > li > ul li {
     line-height: 48px;
     display: block;
+    font-size: .9em;
   }
+
+  nav > ul > li > ul > li,
+  nav > ul > li > ul > li a {
+    color: $black-color;
+  }
+
+  nav li:hover,
+  nav li:hover a {
+    background: inherit;
+    color: inherit;
+  }
+
+  nav li:active,
+  nav li.active,
+  nav li:focus,
+  nav li:active > a,
+  nav li:focus > a,
+  nav li.active > a {
+    color: $black-color;
+    background: #efefef;
+  }
+
+  nav > ul > li {
+    opacity: .85;
+    transition: opacity .35s;
+  }
+
+  nav > ul > li:hover {
+    opacity: 1;
+  }
+
+  nav > ul > li:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: $secondary-green-color;
+    transition: width .35s;
+  }
+
+  nav > ul > li:hover:after {
+    width: 100%;
+  }
+
+  nav > ul > li:active,
+  nav > ul > li.active,
+  nav > ul > li:focus {
+    opacity: 1;
+
+    &:after {
+      width: 0;
+    }
+  }
+
+  nav > ul > li.active {
+    box-shadow: 2px 0 8px #000;
+  }
+
+  nav li li:hover,
+  nav li li:active,
+  nav li li.active,
+  nav li li:focus,
+  nav li li:hover > a,
+  nav li li:active > a,
+  nav li li:focus > a,
+  nav li li.active > a {
+    color: #efefef;
+    background: $secondary-green-color;
+  }
+}
+
+body.nav-open {
+  background: $background-color;
 }
 
 body.nav-open,
@@ -411,6 +503,10 @@ body.nav-open,
 }
 
 @media only screen and (min-width: 769px) {
+  body.nav-open {
+    background: $black-color;
+  }
+
   #app > div > .page {
     //margin-top: 72px;
   }
