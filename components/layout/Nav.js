@@ -86,10 +86,10 @@ export default class extends Nav {
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
 
           <ul>
-            <li><Link to="/" onClick={slide(0, 1)}>Work</Link></li>
+            <li><Link to="/" onClick={slide(0, 1)}><i className="fa fa-code"/> Work</Link></li>
 
             <li className="subnav">
-              <a href="#" onClick={preventDefault}>About</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>
                 <li><Link to="/" onClick={slide(0, 2)}>What we do</Link></li>
                 <li><Link to="/" onClick={slide(0, 6)}>Who we are (leadership)</Link></li>
@@ -99,7 +99,7 @@ export default class extends Nav {
             </li>
 
             <li className="subnav">
-              <a href="#" onClick={preventDefault}>Pricing</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
                 <li><Link to="/" onClick={slide(0, 3)}>Plans and products</Link></li>
                 <li><Link to="/" onClick={slide(0, 4)}>Hourly rates</Link></li>
@@ -108,7 +108,7 @@ export default class extends Nav {
             </li>
 
             <li className="subnav">
-              <a href="#" onClick={preventDefault}>Contact</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>
               <ul>
                 <li><Link to="/" onClick={slide(1, 0)}>Connect with us today!</Link></li>
                 <li><Link to="/" onClick={slide(1, 1)}>Base of operations</Link></li>

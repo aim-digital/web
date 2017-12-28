@@ -6,6 +6,14 @@
   z-index: 4;
 }
 
+nav .fa {
+  font-size: inherit;
+  line-height: inherit;
+  margin-right: .5em;
+  width: 1em;
+  text-align: center;
+}
+
 nav {
   max-width: $page-max-width;
   margin: 0 auto;
@@ -53,21 +61,18 @@ nav > ul {
   background: $background-color;
   height: 93.5vh;
   overflow: scroll;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 1.5em;
+  line-height: 1.5em;
   color: #efefef;
   margin-top: 1px;
   margin-right: 2vw;
-  box-shadow: 0 2px 2vw $black-color;
+  box-shadow: 0 1px 2vw $black-color;
 
   &:after {
     content: '\A9 2018 Vitruvian Technology, Corp.';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     font-size: .6em;
-    padding: .5em 1em;
+    padding: 1em 1.5em;
+    display: block;
     color: $humility;
   }
 }
@@ -131,6 +136,7 @@ nav > ul > li > ul {
 nav > ul > li.active > ul {
   height: auto;
   border-bottom: solid 1px #000;
+  border-top: solid 1px #000;
 }
 
 nav > ul > li > ul > li {
@@ -192,7 +198,8 @@ nav > a.toggle {
     white-space: nowrap;
   }
 
-  nav > a.toggle {
+  nav > a.toggle,
+  nav .fa {
     display: none;
   }
 
@@ -299,10 +306,16 @@ nav > a.toggle {
     margin: 0;
     display: block;
     border-bottom: none;
+    border-top: none;
     background: #efefef;
     color: $black-color;
     //min-width: 100%;
     min-width: 12em;
+  }
+
+  nav > ul > li.active > ul {
+    border-bottom: none;
+    border-top: none;
   }
 
   nav > ul > li > ul li {
