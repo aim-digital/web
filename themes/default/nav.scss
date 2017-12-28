@@ -416,7 +416,7 @@ body.nav-open,
   opacity: 0;
   pointer-events: none;
   z-index: 3;
-  background: rgba(192, 192, 192,.5);
+  background: rgba(192, 192, 192,.35);
   //margin-top: -64px;
 }
 
@@ -449,6 +449,6 @@ body.nav-open,
   }
 
   #app > div > .page:before {
-    background: rgba(0, 0, 0,.5);
+    background: rgba(0, 0, 0,.35);
   }
 }
