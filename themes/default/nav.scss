@@ -22,7 +22,8 @@ nav {
   max-height: 100vh;
   opacity: .95;
   box-shadow: 0 0 .5em $background-color;
-  background: $background-color;
+  background-color: $background-color;
+  transition: background-color .25s;
 }
 
 nav ul {
@@ -61,20 +62,25 @@ nav > ul {
   background: $background-color;
   height: 93.5vh;
   overflow: scroll;
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 1.25em;
+  line-height: 1.25em;
   color: #efefef;
   margin-top: 1px;
   margin-right: 2vw;
   box-shadow: 0 1px 2vw $black-color;
+  padding-top: .5em;
 
   &:after {
     content: '\A9 2018 Vitruvian Technology, Corp.';
     font-size: .6em;
-    padding: 1em 1.5em;
+    padding: 1.25em 1.75em;
     display: block;
     color: $humility;
   }
+}
+
+#app.nav-open nav {
+  background-color: $black-color;
 }
 
 #app.nav-open nav > ul {
@@ -92,9 +98,9 @@ nav li.subnav:before {
   content: '';
   position: absolute;
   right: 15px;
-  width: 12px;
-  height: 12px;
-  top: 12px;
+  width: 10px;
+  height: 10px;
+  top: 15px;
   border-right: 2px solid #efefef;
   border-bottom: 2px solid #efefef;
   transform: rotate(45deg);
@@ -103,7 +109,7 @@ nav li.subnav:before {
 
 nav li.subnav.active:before {
   transform: rotate(225deg);
-  top: 18px;
+  top: 20px;
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
 }
@@ -131,12 +137,14 @@ nav > ul > li > ul {
   background: $black-color;
   margin: 0 -15px;
   height: 0;
+  pointer-events: none
 }
 
 nav > ul > li.active > ul {
   height: auto;
   border-bottom: solid 1px #000;
   border-top: solid 1px #000;
+  pointer-events: auto;
 }
 
 nav > ul > li > ul > li {
@@ -154,7 +162,7 @@ nav > ul > li > ul > li a {
 }
 
 nav > ul > li > ul > li {
-  font-size: 16px;
+  font-size: .85em;
 }
 
 nav > a.logo {
@@ -198,6 +206,10 @@ nav > a.toggle {
     white-space: nowrap;
   }
 
+  #app.nav-open nav {
+    background-color: $background-color;
+  }
+
   nav > a.toggle,
   nav .fa {
     display: none;
@@ -232,6 +244,7 @@ nav > a.toggle {
     margin-top: 0;
     margin-right: 0;
     box-shadow: none;
+    padding-top: 0;
   }
 
   nav > ul:after {

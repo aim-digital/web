@@ -86,7 +86,7 @@ export default class extends Nav {
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
 
           <ul>
-            <li><Link to="/" onClick={slide(0, 1)}><i className="fa fa-code"/> Work</Link></li>
+            <li><Link to="/" onClick={slide(0, 1)}><i className="fa fa-cogs"/> Work</Link></li>
 
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
