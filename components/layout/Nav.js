@@ -49,6 +49,7 @@ let load = () => {
     e.preventDefault();
     body.classList.toggle(TOGGLE_CLASS);
     app.classList.toggle(TOGGLE_CLASS);
+    items.forEach(item => item.classList.remove('active'));
   });
 
   // Bind click event on mask to exit nav active state
