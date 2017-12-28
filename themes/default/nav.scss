@@ -247,7 +247,17 @@ nav > a.toggle {
   }
 
   nav li.subnav:before {
-    content: none;
+    right: -1px;
+    width: 6px;
+    height: 6px;
+    top: 15px;
+    border-right: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    opacity: 1;
+  }
+
+  nav li.active.subnav:before {
+    opacity: 0;
   }
 
   nav > ul > li {
@@ -255,6 +265,7 @@ nav > a.toggle {
     position: relative;
     float: left;
     line-height: inherit;
+    margin: 0 .35em;
   }
 
   nav > ul > li:first-child,
