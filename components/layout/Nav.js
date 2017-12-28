@@ -26,7 +26,7 @@ let load = () => {
     // Remove active state for all items
     items.forEach(item => item.classList.remove('active'));
 
-    if(item.querySelectorAll('ul').length) {
+    if (item.querySelectorAll('ul').length) {
       // If item has a subnav, set nav `active` class
       app.classList.add(TOGGLE_CLASS);
       body.classList.add(TOGGLE_CLASS);
