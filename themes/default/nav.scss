@@ -68,27 +68,34 @@ nav > ul {
   margin-top: 1px;
   margin-right: 2vw;
   box-shadow: 0 1px 2vw $black-color;
-  padding-top: .5em;
+  background: $background-color url('/assets/images/nav.jpg') no-repeat;
+  background-position-x: 100%;
+  background-size: cover;
+  //padding-top: .5em;
 
   &:before {
     content: '';
     background: url(/assets/images/insignia.png) no-repeat;
     display: block;
     background-size: 100%;
-    width: 65vw;
-    height: 65vh;
-    opacity: .2;
+    width: 50vmin;
+    height: 50vmin;
     position: fixed;
-    bottom: 0;
-    margin: -35vmin -25vmin;
+    bottom: 5em;
+    left: -75vmin;
+    transition: all .35s;
+    opacity: .5;
   }
 
   &:after {
-    content: '\A9 2018 Vitruvian Technology, Corp.';
+    content: '\A9 2018 Vitruvian Technology, Corp. (a division of Vitruvian Holdings, LLC.)';
     font-size: .6em;
     padding: 1.25em 1.75em;
     display: block;
     color: $humility;
+    position: fixed;
+    bottom: 0;
+    width: 64vmin;
   }
 }
 
@@ -101,15 +108,19 @@ nav > ul {
   //transform: translate(0, 0);
   right: 30%;
   margin-right: 0;
+
+  &:before {
+    left: 10vmin;
+  }
 }
 
 nav > ul > li a {
   color: inherit;
 }
 
-nav > ul > li {
-  background: $background-color;
-}
+//nav > ul > li {
+//  background: $background-color;
+//}
 
 nav li.subnav:before {
   content: '';
