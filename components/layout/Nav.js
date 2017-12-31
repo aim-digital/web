@@ -111,7 +111,7 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>
               <ul>
-                <li><Link to="/" onClick={slide(1, 0)}>Connect with us today!</Link></li>
+                <li><Link to="/" onClick={slide(1, 0)}>Connect with us</Link></li>
                 <li><Link to="/" onClick={slide(1, 1)}>Base of operations</Link></li>
               </ul>
             </li>

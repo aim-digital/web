@@ -71,7 +71,7 @@ nav > ul {
   background: $background-color url('/assets/images/nav.jpg') no-repeat;
   background-position-x: 100%;
   background-size: cover;
-  //padding-top: .5em;
+  padding-top: .25em;
 
   &:before {
     content: '';
