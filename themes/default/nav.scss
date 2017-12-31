@@ -66,13 +66,13 @@ nav > ul {
   font-size: 1.25em;
   line-height: 1.25em;
   color: #efefef;
-  margin-top: 1px;
   margin-right: 2vw;
   box-shadow: 0 1px 2vw $black-color;
   background: $background-color url('/assets/images/nav.jpg') no-repeat;
-  background-position-x: 0%;
+  background-position: 50%;
   background-size: cover;
   padding-top: .5em;
+  border-top: solid 1px #000;
 
   &:before {
     content: '';
@@ -85,7 +85,7 @@ nav > ul {
     bottom: 4em;
     left: -75vmin;
     transition: all .35s;
-    opacity: .4;
+    opacity: .5;
   }
 
   &:after {
@@ -275,6 +275,7 @@ nav > a.toggle {
     margin-right: 0;
     box-shadow: none;
     padding-top: 0;
+    border-top: none;
   }
 
   nav > ul:after,
