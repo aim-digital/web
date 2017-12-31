@@ -37,6 +37,7 @@ nav li {
   padding: 0 15px;
   line-height: 48px;
   position: relative;
+  z-index: 2;
 }
 
 nav li a {
@@ -60,7 +61,7 @@ nav > ul {
   right: 100%;
   transition: right .35s;
   background: $background-color;
-  height: 93.5vh;
+  height: 96vh;
   overflow: scroll;
   font-size: 1.25em;
   line-height: 1.25em;
@@ -69,9 +70,9 @@ nav > ul {
   margin-right: 2vw;
   box-shadow: 0 1px 2vw $black-color;
   background: $background-color url('/assets/images/nav.jpg') no-repeat;
-  background-position-x: 100%;
+  background-position-x: 0%;
   background-size: cover;
-  padding-top: .25em;
+  padding-top: .5em;
 
   &:before {
     content: '';
@@ -96,6 +97,7 @@ nav > ul {
     position: fixed;
     bottom: 0;
     width: 64vmin;
+    z-index: 1;
   }
 }
 
