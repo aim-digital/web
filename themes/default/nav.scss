@@ -68,11 +68,10 @@ nav > ul {
   color: #efefef;
   margin-right: 2vw;
   box-shadow: 0 1px 2vw $black-color;
-  background: $background-color url('/assets/images/nav.jpg') no-repeat;
+  background: $background-color url('/assets/images/nav.png') no-repeat;
   background-position: 50%;
   background-size: cover;
   padding-top: .5em;
-  border-top: solid 1px #000;
 
   &:before {
     content: '';
@@ -85,7 +84,7 @@ nav > ul {
     bottom: 4em;
     left: -75vmin;
     transition: all .35s;
-    opacity: .5;
+    opacity: .35;
   }
 
   &:after {
