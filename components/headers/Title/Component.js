@@ -186,6 +186,15 @@ export default class extends Header {
                     <span>Peter C. Romano<small> / Founder</small></span>
                   </li>
                   <li>
+                    <a href="mailto:Valk82@gmail.com?subject=<VitruvianTech>%20Connect" target="_blank">
+                      <i className="fa fa-envelope"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/valeria-kalaidjian-70627738/" target="_blank">
+                      <i className="fa fa-linkedin-square"/>
+                    </a>
+                    <span>Valeria Kalaidjian<small> / Marketing</small></span>
+                  </li>
+                  <li>
                     <a href="mailto:reza@evolvinx.com?subject=<VitruvianTech>%20Connect" target="_blank">
                       <i className="fa fa-envelope"/>
                     </a>
