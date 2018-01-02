@@ -78,13 +78,14 @@ nav > ul {
     background: url(/assets/images/insignia.png) no-repeat;
     display: block;
     background-size: 100%;
-    width: 50vmin;
-    height: 50vmin;
+    width: 40vmin;
+    height: 40vmin;
     position: fixed;
-    bottom: 4em;
-    left: -75vmin;
+    bottom: 1.5em;
+    left: -85vmin;
     transition: all .35s;
     opacity: .35;
+    margin: 1em;
   }
 
   &:after {
@@ -111,7 +112,7 @@ nav > ul {
   margin-right: 0;
 
   &:before {
-    left: 10vmin;
+    left: 0;
   }
 }
 
