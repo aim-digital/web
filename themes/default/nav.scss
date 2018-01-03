@@ -68,14 +68,14 @@ nav > ul {
   color: #efefef;
   margin-right: 2vw;
   box-shadow: 0 1px 2vw $black-color;
-  background: $background-color url('/images/nav.png') no-repeat;
+  background: $background-color url('/@vitruvian-tech/machete-bundle/images/nav.png') no-repeat;
   background-position: 50%;
   background-size: cover;
   padding-top: .5em;
 
   &:before {
     content: '';
-    background: url(/assets/images/insignia.png) no-repeat;
+    background: url(/@vitruvian-tech/machete-bundle/images/insignia.png) no-repeat;
     display: block;
     background-size: 100%;
     width: 40vmin;
@@ -196,7 +196,7 @@ nav > ul > li > ul > li {
 }
 
 nav > a.logo {
-  background: url(/assets/images/logo.png) no-repeat;
+  background: url(/@vitruvian-tech/machete-bundle/images/logo.png) no-repeat;
   display: inline-block;
   background-size: 100%;
   width: 20px;
@@ -213,7 +213,7 @@ nav > a.logo {
 
 nav > a.toggle {
   position: absolute;
-  background: url(/images/nav-open.svg) no-repeat;
+  background: url(/@vitruvian-tech/machete-bundle/images/nav-open.svg) no-repeat;
   width: 40px;
   height: 40px;
   background-size: 100%;
@@ -224,7 +224,7 @@ nav > a.toggle {
 }
 
 #app.nav-open nav > a.toggle {
-  background-image: url(/images/nav-close.svg);
+  background-image: url(/@vitruvian-tech/machete-bundle/images/nav-close.svg);
   left: 100%;
   margin-left: -40px;
 }
