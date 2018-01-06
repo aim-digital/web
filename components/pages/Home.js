@@ -85,7 +85,7 @@ export default class extends Page {
               )}
             </section>
           ) : <span/>}
-          <section className="section container" style={{ minHeight: '90px', position: 'relative' }}>
+          <section className="section container" style={{ minHeight: '90px', position: 'relative', display: 'none' }}>
             <VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 750, begin: this.begin, complete: this.complete }}>
               {this.wrap(sections)[index]}
             </VelocityTransitionGroup>
