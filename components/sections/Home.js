@@ -3,10 +3,10 @@ import {Section} from '@machete-platform/core-bundle/components/layout';
 
 export default class extends Section {
     render() {
-        return (
+      return (
             <Section>
                 <h1>Our <em>Vitruvian Virtues</em></h1>
             </Section>
-        );
+      );
     }
 }

@@ -48,7 +48,7 @@ export default class extends Page {
   componentWillMount = () => this.updateHeader();
 
   componentWillUpdate = props => {
-    if (this.props.param.section != props.param.section) {
+    if (this.props.param.section !== props.param.section) {
       this.updateHeader(props);
     }
   };
