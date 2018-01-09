@@ -32,7 +32,8 @@ export default class extends Page {
     classNames: PropTypes.object,
     param: PropTypes.object,
     header: PropTypes.number.isRequired,
-    slide: PropTypes.number.isRequired
+    slide: PropTypes.number.isRequired,
+    section: PropTypes.string
   };
 
   static defaultProps = {
@@ -44,7 +45,7 @@ export default class extends Page {
     animating: false
   };
 
-  componentDidMount = () => this.updateHeader();
+  componentWillMount = () => this.updateHeader();
 
   componentWillUpdate = props => {
     if (this.props.param.section != props.param.section) {
@@ -54,7 +55,7 @@ export default class extends Page {
 
   updateHeader = (props = this.props) => {
     const { transition } = this;
-    const { header, slide } = SECTIONS[props.param.section] || SECTIONS.home;
+    const { header, slide } = SECTIONS[props.section || props.param.section] || SECTIONS.home;
     transition('header', header).then(() => transition('slide', slide));
   };
 
@@ -69,10 +70,10 @@ export default class extends Page {
   wrap = sections => sections.map((section, i) => <div key={String(i)}>{section}</div>);
 
   render() {
-    const { headers, sections, className, classNames = {}, param, header } = this.props;
+    const { headers, sections, className, classNames = {}, param, header, section } = this.props;
     const { animating } = this.state;
     const single = headers.length === 1;
-    const { index, prev, next } = SECTIONS[param.section] || SECTIONS.home;
+    const { index, prev, next } = SECTIONS[section || param.section] || SECTIONS.home;
 
     return (
         <Page className={`${className} ${animating ? `${classNames.animating || ''} animating` : ''}`} {...this.props}>
@@ -87,7 +88,7 @@ export default class extends Page {
           ) : <span/>}
           <section className="section container" style={{ minHeight: '90px', position: 'relative', display: 'none' }}>
             <VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 750, begin: this.begin, complete: this.complete }}>
-              {this.wrap(sections)[index]}
+              {this.wrap(sections)[section ? 0 : index]}
             </VelocityTransitionGroup>
             <div style={{ position: 'absolute', bottom: '0' }}>
               {prev && <Link to={`/home/${SECTIONS[prev].param}`}>&larr; Previous</Link>} {next && <Link to={`/home/${SECTIONS[next].param}`}>Next &rarr;</Link>}

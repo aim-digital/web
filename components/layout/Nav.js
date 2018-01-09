@@ -87,9 +87,9 @@ export default class extends Nav {
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>
                 <li><Link to="/home/services">What we do</Link></li>
-                <li><Link to="/home/leadership">Who we are (leadership)</Link></li>
-                <li><Link to="/home/virtues">Our <em>Vitruvian Virtues</em></Link></li>
+                <li><Link to="/home/leadership">Who we are</Link></li>
                 <li><Link to="/home/network">Partners and network</Link></li>
+                <li><Link to="/home/virtues">Our <em>Vitruvian Virtues</em></Link></li>
               </ul>
             </li>
 

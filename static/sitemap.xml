@@ -36,6 +36,30 @@
     </image:image>
   </url>
   <url>
-    <loc>http://www.vitruvian.tech/contact</loc>
+    <loc>http://www.vitruvian.tech/missions</loc>
+  </url>
+  <url>
+    <loc>http://www.vitruvian.tech/services</loc>
+  </url>
+  <url>
+    <loc>http://www.vitruvian.tech/plans</loc>
+  </url>
+  <url>
+    <loc>http://www.vitruvian.tech/rates</loc>
+  </url>
+  <url>
+    <loc>http://www.vitruvian.tech/hosting</loc>
+  </url>
+  <url>
+    <loc>http://www.vitruvian.tech/leadership</loc>
+  </url>
+  <url>
+    <loc>http://www.vitruvian.tech/network</loc>
+  </url>
+  <url>
+    <loc>http://www.vitruvian.tech/communications</loc>
+  </url>
+  <url>
+    <loc>http://www.vitruvian.tech/headquarters</loc>
   </url>
 </urlset>

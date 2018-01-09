@@ -5,7 +5,7 @@ export default class extends Section {
     render() {
         return (
             <Section>
-                <h1>Home</h1>
+                <h1>Our <em>Vitruvian Virtues</em></h1>
             </Section>
         );
     }

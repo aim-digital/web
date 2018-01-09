@@ -5,7 +5,7 @@ export default class extends Section {
     render() {
         return (
             <Section>
-                <h1>Network</h1>
+                <h1>Partners and Network</h1>
             </Section>
         );
     }
