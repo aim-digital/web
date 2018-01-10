@@ -4,21 +4,27 @@ import {connect} from 'react-redux';
 import NukaCarousel from 'nuka-carousel';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
+import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
 import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
 
 @connect(state => {
   const { header = 0, slide = 0 } = state['@machete-platform/core-bundle'].Transition;
   return { header, slide };
-}, {transition})
+}, {transition, dismiss})
 
 export default class extends Page {
   static propTypes = {
     transition: PropTypes.func.isRequired,
+    dismiss: PropTypes.func.isRequired,
     header: PropTypes.number.isRequired,
     slide: PropTypes.number.isRequired
   };
 
+  componentDidMount = () => document.querySelector('#app > div > .page').addEventListener('click', this.props.dismiss);
+
   componentWillMount = () => this.transition('slide', 0);
+
+  componentWillUnmount = () => document.querySelector('#app > div > .page').removeEventListener('click', this.props.dismiss);
 
   transition = (type, index) => this.props[type] === index ? Promise.resolve() : this.props.transition({ [type]: index });
 

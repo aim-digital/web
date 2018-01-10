@@ -5,6 +5,7 @@ import {Link} from 'react-router';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
+import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
 import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
 import NukaCarousel from 'nuka-carousel';
 
@@ -24,11 +25,12 @@ const SECTIONS = {
 @connect(state => {
   const { header = 0, slide = 0 } = state['@machete-platform/core-bundle'].Transition;
   return ({ param: state.router.params, header, slide });
-}, {transition})
+}, {transition, dismiss})
 
 export default class extends Page {
   static propTypes = {
     transition: PropTypes.func.isRequired,
+    dismiss: PropTypes.func.isRequired,
     classNames: PropTypes.object,
     param: PropTypes.object,
     header: PropTypes.number.isRequired,
@@ -45,7 +47,11 @@ export default class extends Page {
     animating: false
   };
 
+  componentDidMount = () => document.querySelector('#app > div > .page').addEventListener('click', this.props.dismiss);
+
   componentWillMount = () => this.updateHeader();
+
+  componentWillUnmount = () => document.querySelector('#app > div > .page').removeEventListener('click', this.props.dismiss);
 
   componentWillUpdate = props => {
     if (this.props.param.section !== props.param.section) {
