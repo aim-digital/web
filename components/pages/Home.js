@@ -86,11 +86,11 @@ export default class extends Page {
               )}
             </section>
           ) : <span/>}
-          <section className="section container" style={{ minHeight: '90px', position: 'relative', display: 'none' }}>
+          <section className="section container" style={{ minHeight: '90px', position: 'relative', paddingBottom: '10px', display: 'none' }}>
             <VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 750, begin: this.begin, complete: this.complete }}>
               {this.wrap(sections)[section ? 0 : index]}
             </VelocityTransitionGroup>
-            <div style={{ position: 'absolute', bottom: '0' }}>
+            <div style={{ position: 'absolute', bottom: '10px' }}>
               {prev && <Link to={`/home/${SECTIONS[prev].param}`}>&larr; Previous</Link>} {next && <Link to={`/home/${SECTIONS[next].param}`}>Next &rarr;</Link>}
             </div>
           </section>

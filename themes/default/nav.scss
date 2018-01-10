@@ -15,7 +15,8 @@ nav .fa {
 }
 
 nav {
-  max-width: $page-max-width;
+  //max-width: $page-max-width;
+  max-width: 100%;
   margin: 0 auto;
   height: 40px;
   min-height: 20px;
