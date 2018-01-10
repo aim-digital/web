@@ -77,7 +77,7 @@ export default class extends Nav {
     return (
       <section className="nav">
         <nav>
-          <Link to="/home" className="logo"/>
+          <Link to="/" className="logo"/>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
 
           <ul>
