@@ -34,7 +34,7 @@ export default class extends Page {
           <section className={`${single ? 'single' : ''} header container`}>
             {single ? headers : (
               <NukaCarousel
-                initialSlideWidth={970}
+                initialSlideWidth={2000}
                 afterSlide={this.afterSlide}
                 slideIndex={header}>
                 {headers}
