@@ -73,11 +73,13 @@ export default class extends Nav {
 
   render() {
     const preventDefault = e => e.preventDefault();
+    const { transition } = this.props;
+    const slide = (header, slide) => () => transition({ header }).then(() => transition({ slide }));
 
     return (
       <section className="nav">
         <nav>
-          <Link to="/" className="logo"/>
+          <Link to="/home" className="logo" onClick={slide(0, 0)}/>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
 
           <ul>
