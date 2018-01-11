@@ -59,6 +59,12 @@ export default class extends Page {
     }
   };
 
+  scrollTo = () => {
+    if (global.scrollTo) {
+      global.scrollTo(0, document.querySelector('.section.container').offsetTop - 40);
+    }
+  };
+
   updateHeader = (props = this.props) => {
     const { transition } = this;
     const { header, slide } = SECTIONS[props.section || props.param.section] || SECTIONS.home;
@@ -82,7 +88,7 @@ export default class extends Page {
     const { animating } = this.state;
 
     return (
-        <Page className={`${className} ${animating ? `${classNames.animating || ''} animating` : ''}`} {...this.props}>
+        <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           {headers.length ? (
             <section className={`${single ? 'single' : ''} header container`}>
               {single ? headers : (
@@ -92,12 +98,12 @@ export default class extends Page {
               )}
             </section>
           ) : <span/>}
-          <section className="section container" style={{ minHeight: '90px', position: 'relative', paddingBottom: '10px', display: 'none' }}>
-            <VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 750, begin: this.begin, complete: this.complete }}>
+          <section className="section container">
+            <VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 500, begin: this.begin, complete: this.complete }}>
               {this.wrap(sections)[section ? 0 : index]}
             </VelocityTransitionGroup>
             <div style={{ position: 'absolute', bottom: '10px' }}>
-              {prev && <Link to={`/home/${SECTIONS[prev].param}`}>&larr; Previous</Link>} {next && <Link to={`/home/${SECTIONS[next].param}`}>Next &rarr;</Link>}
+              {prev && <Link to={`/home/${SECTIONS[prev].param}`} onClick={this.scrollTo}>&larr; Previous</Link>} {next && <Link to={`/home/${SECTIONS[next].param}`} onClick={this.scrollTo}>Next &rarr;</Link>}
             </div>
           </section>
           <Footer/>

@@ -1,0 +1,38 @@
+.section.container {
+  .home & {
+    position: relative;
+    padding-bottom: 10px;
+    min-height: $page-height!important;
+    display: none;
+
+    @media (min-width: 1400px) {
+      min-height: $page-height-xl!important;
+    }
+
+    .section p:last-child {
+      padding-bottom: 1em;
+    }
+  }
+
+  .section {
+    h1 {
+      font-family: 'Nike Combat Stencil', $font-family-brand;
+      text-align: center;
+      padding: .5em 0;
+      font-size: 3em;
+      color: $black-color;
+    }
+
+    h2 {
+      font-family: 'Oswald', $font-family-brand;
+      color: $background-color;
+    }
+
+    p {
+      font-family: 'Oswald', $font-family-brand;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: $black-color;
+    }
+  }
+}

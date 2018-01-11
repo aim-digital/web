@@ -26,6 +26,12 @@ export default class extends Nav {
     this.props.logout();
   };
 
+  scrollTo = () => {
+    if (global.scrollTo) {
+      global.scrollTo(0, 0);
+    }
+  };
+
   render() {
     const preventDefault = e => e.preventDefault();
     const { transition } = this.props;
@@ -34,36 +40,36 @@ export default class extends Nav {
     return (
       <section className="nav">
         <nav>
-          <Link to="/home" className="logo" onClick={slide(0, 0)}/>
+          <Link to="/home" className="logo" onClick={() => { slide(0, 0)(); this.scrollTo(); }}/>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
 
           <ul>
-            <li><Link to="/home/missions"><i className="fa fa-cogs"/> Work</Link></li>
+            <li><Link to="/home/missions" onClick={this.scrollTo}><i className="fa fa-cogs"/> Work</Link></li>
 
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>
-                <li><Link to="/home/services">What we do</Link></li>
-                <li><Link to="/home/leadership">Who we are</Link></li>
-                <li><Link to="/home/network">Partners and network</Link></li>
-                <li><Link to="/home/virtues">Our <em>Vitruvian Virtues</em></Link></li>
+                <li><Link to="/home/services" onClick={this.scrollTo}>What we do</Link></li>
+                <li><Link to="/home/leadership" onClick={this.scrollTo}>Who we are</Link></li>
+                <li><Link to="/home/network" onClick={this.scrollTo}>Partner network</Link></li>
+                <li><Link to="/home/virtues" onClick={this.scrollTo}><em>Vitruvian Virtues</em></Link></li>
               </ul>
             </li>
 
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link to="/home/plans">Plans and products</Link></li>
-                <li><Link to="/home/rates">Hourly rates</Link></li>
-                <li><Link to="/home/hosting">Hosting services</Link></li>
+                <li><Link to="/home/plans" onClick={this.scrollTo}>Plans and products</Link></li>
+                <li><Link to="/home/rates" onClick={this.scrollTo}>Hourly rates</Link></li>
+                <li><Link to="/home/hosting" onClick={this.scrollTo}>Hosting packages</Link></li>
               </ul>
             </li>
 
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>
               <ul>
-                <li><Link to="/home/communications">Connect with us</Link></li>
-                <li><Link to="/home/headquarters">Base of operations</Link></li>
+                <li><Link to="/home/communications" onClick={this.scrollTo}>Connect with us</Link></li>
+                <li><Link to="/home/headquarters" onClick={this.scrollTo}>Base of operations</Link></li>
               </ul>
             </li>
           </ul>

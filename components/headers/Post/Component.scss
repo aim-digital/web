@@ -30,8 +30,8 @@
   }
 
   .title {
-    margin: 3em auto 0;
-    max-width: 600px;
+    margin: -2.25vh auto 0;
+    max-width: 520px;
     padding: 0 20px;
 
     h1 {
@@ -42,10 +42,10 @@
     }
 
     h2 {
-      font-size: 1.25em;
-      margin: 1em auto;
+      font-size: 2em;
+      margin: .5em auto;
       color: $gray;
-      line-height: 1.25em;
+      line-height: 1em;
     }
   }
 }

@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Blank Blizzkrieg';
+    src: url('/@vitruvian-tech/machete-bundle/fonts/BlankBlizzkrieg/BlankBlizzkrieg.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}

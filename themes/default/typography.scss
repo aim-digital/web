@@ -1,3 +1,6 @@
+@import "../../node_modules/@vitruvian-tech/machete-bundle/static/fonts/NikeCombatStencil/NikeCombatStencil.css";
+@import "../../node_modules/@vitruvian-tech/machete-bundle/static/fonts/Oswald/Oswald.css";
+
 body {
   font-size: 12px;
 
@@ -6,10 +9,6 @@ body {
   }
 
   @media (min-width: 768px) {
-    font-size: 14.5px;
-  }
-
-  @media (min-width: 1440px) {
     font-size: 14.5px;
   }
 }

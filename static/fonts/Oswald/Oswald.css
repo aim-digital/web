@@ -1,0 +1,23 @@
+/* Webfont: Oswald.css */@font-face {
+    font-family: 'Oswald';
+    src: url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Regular.eot'); /* IE9 Compat Modes */
+    src: url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Regular.woff') format('woff'), /* Modern Browsers */
+    url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Regular.svg#Sophia.css') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Oswald.css */@font-face {
+    font-family: 'Oswald';
+    src: url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Light.eot'); /* IE9 Compat Modes */
+    src: url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Light.woff') format('woff'), /* Modern Browsers */
+    url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/@vitruvian-tech/machete-bundle/fonts/Oswald/Oswald-Light.svg#Sophia.css') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
