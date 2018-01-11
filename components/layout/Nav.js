@@ -35,41 +35,42 @@ export default class extends Nav {
   render() {
     const preventDefault = e => e.preventDefault();
     const { transition } = this.props;
-    const slide = (header, slide) => () => transition({ header }).then(() => transition({ slide }));
+    const { scrollTo } = this;
+    const update = (header, slide) => () => transition({ header }).then(() => transition({ slide })).then(scrollTo);
 
     return (
       <section className="nav">
         <nav>
-          <Link to="/home" className="logo" onClick={() => { slide(0, 0)(); this.scrollTo(); }}/>
+          <Link to="/home" className="logo" onClick={update(0, 0)}/>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
 
           <ul>
-            <li><Link to="/home/missions" onClick={this.scrollTo}><i className="fa fa-cogs"/> Work</Link></li>
+            <li><Link to="/home/missions" onClick={update(0, 1)}><i className="fa fa-cogs"/> Work</Link></li>
 
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>
-                <li><Link to="/home/services" onClick={this.scrollTo}>What we do</Link></li>
-                <li><Link to="/home/leadership" onClick={this.scrollTo}>Who we are</Link></li>
-                <li><Link to="/home/network" onClick={this.scrollTo}>Partner network</Link></li>
-                <li><Link to="/home/virtues" onClick={this.scrollTo}><em>Vitruvian Virtues</em></Link></li>
+                <li><Link to="/home/services" onClick={update(0, 2)}>What we do</Link></li>
+                <li><Link to="/home/leadership" onClick={update(0, 66)}>Who we are</Link></li>
+                <li><Link to="/home/network" onClick={update(0, 7)}>Partner network</Link></li>
+                <li><Link to="/home/virtues" onClick={update(0, 0)}><em>Vitruvian Virtues</em></Link></li>
               </ul>
             </li>
 
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link to="/home/plans" onClick={this.scrollTo}>Plans and products</Link></li>
-                <li><Link to="/home/rates" onClick={this.scrollTo}>Hourly rates</Link></li>
-                <li><Link to="/home/hosting" onClick={this.scrollTo}>Hosting packages</Link></li>
+                <li><Link to="/home/plans" onClick={update(0, 3)}>Plans and products</Link></li>
+                <li><Link to="/home/rates" onClick={update(0, 4)}>Hourly rates</Link></li>
+                <li><Link to="/home/hosting" onClick={update(0, 5)}>Hosting packages</Link></li>
               </ul>
             </li>
 
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>
               <ul>
-                <li><Link to="/home/communications" onClick={this.scrollTo}>Connect with us</Link></li>
-                <li><Link to="/home/headquarters" onClick={this.scrollTo}>Base of operations</Link></li>
+                <li><Link to="/home/communications" onClick={update(1, 0)}>Connect with us</Link></li>
+                <li><Link to="/home/headquarters" onClick={update(1, 1)}>Base of operations</Link></li>
               </ul>
             </li>
           </ul>
