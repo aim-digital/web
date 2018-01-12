@@ -33,7 +33,7 @@ export default class extends Header {
                 <div className={styles.logo}>
                   <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 650 }}>
                     {this.state.loaded && (
-                        <img src={require('./images/insignia.png')}
+                        <img src="/@vitruvian-tech/machete-bundle/images/insignia.png"
                              alt="The Digital Special Forces for custom software and marketing solutions."
                              title="Vitruvian Technology, Corp."/>
                     )}
