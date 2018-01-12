@@ -31,21 +31,27 @@
 
   .title {
     margin: -2.25vh auto 0;
-    max-width: 520px;
     padding: 0 20px;
 
     h1 {
       color: #fff;
       -webkit-text-fill-color: #fff;
       -webkit-text-stroke-color: $secondary-blue-color;
-      font-size: 3em;
+      font-size: 4em;
+      -webkit-text-stroke-width: 1px;
+      line-height: .85;
     }
 
     h2 {
-      font-size: 2em;
-      margin: .5em auto;
+      font-size: 1.75em;
+      margin: 1em auto;
       color: $gray;
       line-height: 1em;
+      max-width: 320px;
+
+      @media only screen and (min-width: 400px) {
+        max-width: 480px;
+      }
     }
   }
 }

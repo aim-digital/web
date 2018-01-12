@@ -18,7 +18,6 @@ export default class extends Header {
       <Header className={styles.slide}>
         <div className={styles.title}>
           <h1>{post.title}</h1>
-          <h2>{post.tagline}</h2>
         </div>
       </Header>
     );

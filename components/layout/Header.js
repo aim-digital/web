@@ -102,6 +102,9 @@ export default class extends Header {
             <div className="flippers">
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left">&larr;</button>
               <button {...getFlipState('next')} onClick={this.next} className="flip right">&rarr;</button>
+              <div className="scroll">
+                <button><span/></button>
+              </div>
             </div>
           </div>
         ) : children}

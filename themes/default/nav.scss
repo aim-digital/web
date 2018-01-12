@@ -35,8 +35,8 @@ nav ul {
 
 nav li {
   list-style-type: none;
-  padding: 0 15px;
-  line-height: 48px;
+  padding: 0 30px;
+  line-height: 2.75em;
   position: relative;
   z-index: 2;
 }
@@ -70,27 +70,28 @@ nav > ul {
   margin-right: 2vw;
   box-shadow: 0 1px 2vw $black-color;
   background: $background-color url('/@vitruvian-tech/machete-bundle/images/nav.png') no-repeat;
-  background-position: 50%;
+  background-position: 45%;
   background-size: cover;
-  padding-top: .5em;
+  padding-top: .75em;
+  border-top: solid 1px $black-color;
 
   &:before {
     content: '';
     background: url(/@vitruvian-tech/machete-bundle/images/insignia.png) no-repeat;
     display: block;
     background-size: 100%;
-    width: 40vmin;
-    height: 40vmin;
+    width: 42vmin;
+    height: 42vmin;
     position: fixed;
     bottom: 1.5em;
     left: -85vmin;
     transition: all .35s;
-    opacity: .35;
+    opacity: .5;
     margin: 1em;
   }
 
   &:after {
-    content: '\A9 2018 Vitruvian Technology, Corp. (a division of Vitruvian Holdings, LLC.)';
+    content: '\A9 2018 Vitruvian Technology, Corp. (a subsidiary of Vitruvian Holdings, LLC.)';
     font-size: .6em;
     padding: 1.25em 1.75em;
     display: block;
@@ -117,23 +118,33 @@ nav > ul {
   }
 }
 
-nav > ul > li a {
-  color: inherit;
-}
+nav > ul > li {
+  font-family: 'Oswald', $font-family-brand;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: -1px 1px 1px $black-color;
 
-//nav > ul > li {
-//  background: $background-color;
-//}
+  a {
+    color: inherit;
+  }
+
+  li {
+    font-family: $font-family-brand;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 3em;
+  }
+}
 
 nav li.subnav:before {
   content: '';
   position: absolute;
-  right: 15px;
+  right: 30px;
   width: 10px;
   height: 10px;
   top: 15px;
-  border-right: 1px solid #fff;
-  border-bottom: 1px solid #fff;
+  border-right: 2px solid #efefef;
+  border-bottom: 2px solid #efefef;
   transform: rotate(45deg);
   transition: all .35s;
 }
@@ -166,7 +177,7 @@ nav li li.active > a {
 
 nav > ul > li > ul {
   background: $black-color;
-  margin: 0 -15px;
+  margin: 0 -30px;
   height: 0;
   pointer-events: none
 }
@@ -193,7 +204,8 @@ nav > ul > li > ul > li a {
 }
 
 nav > ul > li > ul > li {
-  font-size: .85em;
+  font-size: .95em;
+  line-height: 3.5em;
 }
 
 nav > a.logo {
@@ -260,7 +272,7 @@ nav > a.toggle {
   }
 
   nav > ul {
-    font-size: 1em;
+    font-size: 1.125em;
     display: inline-block;
     position: static;
     background: transparent;
@@ -320,6 +332,10 @@ nav > a.toggle {
     line-height: inherit;
     margin: 0 .35em;
     background: transparent;
+    font-family: $font-family-brand;
+    text-transform: none;
+    letter-spacing: 0;
+    text-shadow: none;
   }
 
   nav > ul > li:first-child,
@@ -472,11 +488,11 @@ body.nav-open,
   height: 100%;
   top: 0;
   left: 0;
-  transition: opacity .35s;
+  transition: opacity .75s;
   opacity: 0;
   pointer-events: none;
   z-index: 3;
-  background: rgba(0, 0, 0, .35);
+  background: #7Bc586;
 }
 
 #app.nav-open > div > .page {
@@ -485,7 +501,7 @@ body.nav-open,
 }
 
 #app.nav-open > div > .page:before {
-  opacity: 1;
+  opacity: .5;
   pointer-events: auto;
 }
 
@@ -497,5 +513,10 @@ body.nav-open,
   #app.nav-open > div > .page {
     -webkit-transform: none;
     transform: none;
+  }
+
+  #app > div > .page:before {
+    transition: opacity .35s;
+    background: $black-color;
   }
 }

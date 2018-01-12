@@ -15,7 +15,6 @@ export default class extends Section {
 
     return (
       <Section className={`post`}>
-        <h1>{post.title}</h1>
         <h2>{post.tagline}</h2>
         <p>{post.summary}</p>
       </Section>

@@ -25,6 +25,8 @@
     text-align: center;
 
     img {
+      border-radius: 50%;
+      box-shadow: 0 0 0.5em #151515;
       max-width: 15em;
 
       @media (min-width: 768px) {
@@ -36,10 +38,10 @@
   .content {
     &.virtues {
       margin-top: 25vh;
-    }
 
-    &.pricing {
-      margin-top: -2.85em;
+      @media (min-width: 768px) {
+        margin-top: 20vh;
+      }
     }
 
     &.virtues {

@@ -102,7 +102,7 @@ export default class extends Page {
             <VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 500, begin: this.begin, complete: this.complete }}>
               {this.wrap(sections)[section ? 0 : index]}
             </VelocityTransitionGroup>
-            <div style={{ position: 'absolute', bottom: '10px' }}>
+            <div style={{ position: 'absolute', bottom: '10px', left: '15px' }}>
               {prev && <Link to={`/home/${SECTIONS[prev].param}`} onClick={this.scrollTo}>&larr; Previous</Link>} {next && <Link to={`/home/${SECTIONS[next].param}`} onClick={this.scrollTo}>Next &rarr;</Link>}
             </div>
           </section>
