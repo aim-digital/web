@@ -25,15 +25,15 @@ export default class extends Footer {
 
     return (
       <Footer>
-        <div className="x container">
+        <div className="colors container">
           <div className="row">
-            <div className="a col-sm-3"></div>
-            <div className="b col-sm-3"></div>
-            <div className="c col-sm-3"></div>
-            <div className="d col-sm-3"></div>
+            <div className="blue col-sm-3"></div>
+            <div className="green col-sm-3"></div>
+            <div className="yellow col-sm-3"></div>
+            <div className="red col-sm-3"></div>
           </div>
         </div>
-        <div className="y container">
+        <div className="content container">
           <div className="row">
             <div className="col-xs-12 logo text-center">
               <Link to="/" onClick={update(0, 0)}>

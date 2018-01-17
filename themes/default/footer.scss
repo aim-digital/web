@@ -64,7 +64,7 @@ footer {
     background: $black-color;
     border-radius: 50%;
     margin: 2em auto .5em;
-    box-shadow: 0 -.5em 55vw #7Bc586;
+    box-shadow: 0 -0.25em 10vw #7Bc586;
     max-width: 320px;
     width: 15%;
   }
@@ -186,24 +186,28 @@ footer {
     font-size: .6em;
   }
 
-  .y {
+  .content {
     overflow: hidden;
     position: relative;
     z-index: 2;
+
+    @media (min-width: 768px) {
+      padding: 0 2em;
+    }
   }
 
-  .x {
+  .colors {
     position: absolute;
     height: 100%;
     width: 100%;
   }
 
-  .x .row {
+  .colors .row {
     overflow: hidden;
     height: 100%;
   }
 
-  .x .row > div {
+  .colors .row > div {
     position: relative;
     height: 25%;
     background: $secondary-blue-color;
@@ -227,27 +231,27 @@ footer {
       content: none;
     }
 
-    &.a:before, &.a:after {
+    &.blue:before, &.blue:after {
       background: $secondary-blue-color;
       right: -150%;
     }
 
-    &.b:before, &.b:after {
+    &.green:before, &.green:after {
       background: $secondary-green-color;
       right: -170%;
     }
 
-    &.c:before, &.c:after {
+    &.yellow:before, &.yellow:after {
       background: $primary-yellow-color;
       right: -185%;
     }
 
-    &.d:before, &.d:after  {
+    &.red:before, &.red:after  {
       background: $secondary-red-color;
       right: -200%;
     }
 
-    &.d:after  {
+    &.red:after  {
       content: '';
       background: $secondary-blue-color;
       right: -215%;
