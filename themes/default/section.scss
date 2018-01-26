@@ -7,7 +7,7 @@
     position: relative;
     padding-bottom: 10px;
     min-height: $page-height!important;
-    display: none;
+    //display: none;
 
     @media (min-height: 900px) {
       min-height: $page-height-xl!important;
