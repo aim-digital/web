@@ -47,11 +47,11 @@ export default class extends Page {
     animating: false
   };
 
-  componentDidMount = () => document.querySelector('#app > div > .page').addEventListener('click', this.props.dismiss);
+  componentDidMount = () => document.querySelector('#app > div > span > .page').addEventListener('click', this.props.dismiss);
 
   componentWillMount = () => this.updateHeader();
 
-  componentWillUnmount = () => document.querySelector('#app > div > .page').removeEventListener('click', this.props.dismiss);
+  componentWillUnmount = () => document.querySelector('#app > div > span > .page').removeEventListener('click', this.props.dismiss);
 
   componentWillUpdate = props => {
     if (this.props.param.section !== props.param.section) {

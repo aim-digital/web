@@ -64,7 +64,7 @@ footer {
     background: $black-color;
     border-radius: 50%;
     margin: 2em auto .5em;
-    box-shadow: 0 -0.25em 10vw #7Bc586;
+    box-shadow: 0 0 .5em #efefef;
     max-width: 320px;
     width: 15%;
   }
@@ -184,6 +184,7 @@ footer {
 
   small {
     font-size: .6em;
+    color: #efefef;
   }
 
   .content {
