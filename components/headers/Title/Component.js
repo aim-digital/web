@@ -60,7 +60,7 @@ export default class extends Header {
                   <li>Viacom</li>
                   <li>The Daily Beast</li>
                   <li>Refinery29</li>
-                  <li>The Wall Street Journal</li>
+                  <li>Wall Street Journal</li>
                   <li>Condé Nast</li>
                   <li>The New Yorker</li>
                   <li>GQ</li>
@@ -89,10 +89,8 @@ export default class extends Header {
                   <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Advertising</span></li>
                   <li>Design <span className={[styles.service].join(' ')}>Software / UI / UX / Graphic / Product</span></li>
                   <li>Quality Assurance <span className={[styles.service].join(' ')}>Performance / Automation</span></li>
-                  <li>Creative <span className={[styles.service].join(' ')}>Photo / Video / Audio / Costume / Culinary</span></li>
+                  <li>Content <span className={[styles.service].join(' ')}>Photo / Video / Audio / Costume / Culinary</span></li>
                   <li>IT/System Admin. <span className={[styles.service].join(' ')}>Database / Network / Cloud</span></li>
-                  <li>Security <span className={[styles.service].join(' ')}>Background / Surveillance / Forensics</span></li>
-                  <li>Legal <span className={[styles.service].join(' ')}>Investigatory / Collections / Domestic Violence</span></li>
                   <li className={'more'} data-next="Plans"/>
                 </ul>
               </section>
@@ -115,9 +113,9 @@ export default class extends Header {
                   <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                   <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm</strong> and <strong>publishing</strong> solutions!</i></small></li>
-                  <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$50k<sub>/3 mo.</sub></strong></span></li>
+                  <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$40k<sub>/3 mo.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong>8 <em>Managed Team</em></strong> (1 x "full-time") quarterly subscriptions.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>2 <em>Machete Theme Platform</em></strong> licenses.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>1 <em>Machete Theme Platform</em></strong> license.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
                   <li className={'more'} data-next="Rates"/>
                 </ul>

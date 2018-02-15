@@ -82,7 +82,7 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-universal-access"/> About</h4>
                   <ul>
-                    <li><Link to="/missions" onClick={update(0, 1)}>Our Work</Link></li>
+                    <li><Link to="/missions" onClick={update(0, 1)}>Our work</Link></li>
                     <li><Link to="/services" onClick={update(0, 2)}>What we do</Link></li>
                     <li><Link to="/leadership" onClick={update(0, 6)}>Who we are</Link></li>
                     <li><Link to="/network" onClick={update(0, 7)}>Partner network</Link></li>

@@ -2,28 +2,129 @@
   position: relative;
   z-index: 1;
   box-shadow: 0 -2px 20px rgba(41, 41, 41, 1);
+  min-height: $page-height!important;
+
+  @media (min-height: 900px) {
+    min-height: $page-height-xl!important;
+  }
 
   .home.page & {
-    position: relative;
-    padding-bottom: 10px;
-    min-height: $page-height!important;
-    display: none;
+    //display: none;
 
-    @media (min-height: 900px) {
-      min-height: $page-height-xl!important;
+    .section {
+      background: transparent;
+      max-width: 1280px;
+
+      > div > div {
+        position: relative;
+        margin-left: -15px;
+        margin-right: -15px;
+
+        @media (min-width: 1200px) {
+          min-height: $page-height !important;
+
+          h1 {
+            padding-bottom: 0;
+          }
+        }
+
+        @media (min-height: 900px) {
+          min-height: $page-height-xl!important;
+        }
+
+        h1, > .row {
+          position: relative;
+          z-index: 3;
+        }
+
+        > .background {
+          &, > div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
+
+          .film {
+            background: #f8f8f8;
+            opacity: .85;
+            z-index: 2;
+          }
+
+          .image {
+            z-index: 1;
+            background-size: cover;
+            background-position: 50%;
+            box-shadow: 0px 0 30px $background-color;
+          }
+        }
+
+        > .row {
+          display: table;
+          margin: 0 auto;
+          max-width: 640px;
+
+          @media (min-width: 1200px) {
+            max-width: 100%;
+          }
+
+          > [class*="col-lg"] {
+            padding: 15px;
+
+            &.valign-middle {
+              vertical-align: middle;
+            }
+
+            @media (min-width: 414px) {
+              padding: 30px;
+            }
+
+            @media (min-width: 1200px) {
+              float: none;
+              display: table-cell;
+              vertical-align: top;
+
+              &:last-child {
+                ul {
+                  float: right;
+                  text-align: right;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 
   .section {
-    max-width: 970px;
     margin: 0 auto;
     padding: 0;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+
+      @media (min-width: 1200px) {
+        text-align: left;
+      }
+
+      li {
+        list-style-type: none;
+      }
+    }
+
+    h2, h3, h4 {
+      font-weight: 600;
+    }
 
     h1 {
       font-family: 'Nike Combat Stencil', $font-family-brand;
       text-align: center;
-      padding: .5em 0;
-      font-size: 3em;
+      padding: .5em;
+      font-size: 3.25em;
       color: $black-color;
     }
 
@@ -31,19 +132,74 @@
       font-family: 'Oswald', $font-family-brand;
       color: $background-color;
       text-transform: uppercase;
-      font-size: 3em;
-      line-height: 1.25;
+      font-size: 2.65em;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      margin-top: 0;
+      margin-bottom: .75em;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 3.25em;
+      font-family: 'Oswald', $font-family-brand;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    strong {
+      font-weight: 900;
+    }
+
+    blockquote {
+      margin: 0;
+      font-size: 1em;
+      border-left: none;
+      padding: .5em 30px;
+
+      strong {
+        font-size: 1.5em;
+        line-height: .5;
+      }
+
+      p {
+        font-size: 1.35em;
+        display: inline-block;
+
+        span {
+          background: cyan;
+          position: relative;
+
+          &:before, &:after {
+            font-size: 3em;
+            position: absolute;
+          }
+        }
+
+        &:first-child span:before {
+          content: '“';
+          right: 100%;
+          margin-top: -25px;
+          margin-right: 5px;
+        }
+
+        &:last-child span:after {
+          content: '”';
+          left: 100%;
+          margin-top: -8px;
+          margin-left: 5px;
+        }
+      }
     }
 
     p {
-      font-family: 'Oswald', $font-family-brand;
-      font-weight: 300;
-      letter-spacing: 1px;
-      color: $black-color;
+      font-family: $font-family-brand;
       font-size: 1.25em;
+      color: $black-color;
+      margin: 0;
 
-      &:last-child {
-        padding-bottom: 30px;
+      & + p {
+        margin-top: 1.25em;
       }
     }
   }
