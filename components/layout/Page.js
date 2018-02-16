@@ -20,11 +20,11 @@ export default class extends Page {
     slide: PropTypes.number.isRequired
   };
 
-  componentDidMount = () => document.querySelector('#app > div > span > .page').addEventListener('click', this.props.dismiss);
+  componentDidMount = () => document.querySelector('#app .nav + span > .page').addEventListener('click', this.props.dismiss);
 
   componentWillMount = () => this.transition('slide', 0);
 
-  componentWillUnmount = () => document.querySelector('#app > div > span > .page').removeEventListener('click', this.props.dismiss);
+  componentWillUnmount = () => document.querySelector('#app .nav + span > .page').removeEventListener('click', this.props.dismiss);
 
   transition = (type, index) => this.props[type] === index ? Promise.resolve() : this.props.transition({ [type]: index });
 
