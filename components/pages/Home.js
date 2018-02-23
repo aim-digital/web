@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
+import {initialize} from 'redux-form';
 import {Link} from 'react-router';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
 import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
+import {create} from '@machete-platform/core-bundle/controllers/Contact';
+import * as forms from '@machete-platform/core-bundle/components/forms';
 import NukaCarousel from 'nuka-carousel';
 
 const SECTIONS = {
@@ -25,7 +28,7 @@ const SECTIONS = {
 @connect(state => {
   const { header = 0, slide = 0 } = state['@machete-platform/core-bundle'].Transition;
   return ({ param: state.router.params, header, slide });
-}, {transition, dismiss})
+}, {transition, dismiss, initialize, create})
 
 export default class extends Page {
   static propTypes = {
@@ -35,7 +38,9 @@ export default class extends Page {
     param: PropTypes.object,
     header: PropTypes.number.isRequired,
     slide: PropTypes.number.isRequired,
-    section: PropTypes.string
+    section: PropTypes.string,
+    initialize: PropTypes.func.isRequired,
+    create: PropTypes.func
   };
 
   static defaultProps = {
@@ -44,7 +49,8 @@ export default class extends Page {
   };
 
   state = {
-    animating: false
+    animating: false,
+    data: null
   };
 
   componentDidMount = () => document.querySelector('#app .nav + span > .page').addEventListener('click', this.props.dismiss);
@@ -62,6 +68,14 @@ export default class extends Page {
   scrollTo = () => {
     if (global.scrollTo) {
       global.scrollTo(0, document.querySelector('.section.container').offsetTop - 40);
+    }
+  };
+
+  submit = (values) => {
+    const { initialize, create } = this.props;
+    // initialize('contact', {});
+    if (values.email) {
+      create(values).then(data => this.setState({ data }));
     }
   };
 
@@ -85,7 +99,7 @@ export default class extends Page {
     const { headers, sections, className, classNames = {}, param, header, section } = this.props;
     const { index, prev, next } = SECTIONS[section || param.section] || SECTIONS.home;
     const single = headers.length === 1;
-    const { animating } = this.state;
+    const { animating, data } = this.state;
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
@@ -99,13 +113,17 @@ export default class extends Page {
             </section>
           ) : <span/>}
           <section className="section container">
-            <VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 500, begin: this.begin, complete: this.complete }}>
+            {this.wrap(sections)[0]}
+            {/*<VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 350, begin: this.begin, complete: this.complete }}>
               {this.wrap(sections)[section ? 0 : index]}
             </VelocityTransitionGroup>
-            <div style={{ position: 'absolute', bottom: '10px', left: '15px' }}>
+            <div style={{ position: 'absolute', top: '15px', left: '15px', zIndex: 5 }}>
               {prev && <Link to={`/home/${SECTIONS[prev].param}`} onClick={this.scrollTo}>&larr; Previous</Link>} {next && <Link to={`/home/${SECTIONS[next].param}`} onClick={this.scrollTo}>Next &rarr;</Link>}
-            </div>
+            </div>*/}
           </section>
+          {/*<section className="contact">
+            {data ? <span>{JSON.stringify(data)}</span> : <forms.Contact onSubmit={this.submit}/>}
+          </section>}*/}
           <Footer/>
         </Page>
     );
