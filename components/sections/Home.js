@@ -17,7 +17,7 @@ export default class extends Section {
             <p>We are the <strong>Digital Special Forces</strong> for custom software and marketing solutions. Based in NYC, <em>Vitruvian Technology, Corp.</em> specializes in Project Management, Web/Software Development, Marketing, Design, QA, IT/System Administration, Content Production, Security, and Investigatory services.</p>
           </div>
           <div className="col-lg-4 col-xs-12 valign-middle">
-            <blockquote>
+            <blockquote data-credit="Wikipedia">
               <p><span><strong>Marcus<br />Vitruvius<br />Pollio</strong> (born c. 80–70 BC, died after c. 15 BC), commonly known as Vitruvius, was a Roman author, architect, civil engineer and military engineer during the 1st century BC, known for his multi-volume work entitled De architectura.</span></p>
               <p><span>His discussion of perfect proportion in architecture and the human body, led to the famous Renaissance drawing by Da Vinci of Vitruvian Man.</span></p>
             </blockquote>
