@@ -3,6 +3,6 @@ import Home from './Home';
 
 export default class extends Home {
   render() {
-    return <Home section="missions" {...this.props}/>;
+    return <Home section="missions" {...this.props} hide/>;
   }
 }

@@ -82,11 +82,11 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-universal-access"/> About</h4>
                   <ul>
-                    <li><Link to="/missions" onClick={update(0, 1)}>Our work</Link></li>
-                    <li><Link to="/services" onClick={update(0, 2)}>What we do</Link></li>
-                    <li><Link to="/leadership" onClick={update(0, 6)}>Who we are</Link></li>
-                    <li><Link to="/network" onClick={update(0, 7)}>Partner network</Link></li>
-                    <li><Link to="/virtues" onClick={update(0, 0)}><em>Vitruvian Virtues</em></Link></li>
+                    <li><Link to="/home/missions" onClick={update(0, 1)}>Our work</Link></li>
+                    <li><Link to="/home/services" onClick={update(0, 2)}>What we do</Link></li>
+                    <li><Link to="/home/leadership" onClick={update(0, 6)}>Who we are</Link></li>
+                    <li><Link to="/home/network" onClick={update(0, 7)}>Partner network</Link></li>
+                    <li><Link to="/home/virtues" onClick={update(0, 0)}><em>Vitruvian Virtues</em></Link></li>
                   </ul>
                 </li>
               </ul>
@@ -94,9 +94,9 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/plans" onClick={update(0, 3)}>Plans and products</Link></li>
-                    <li><Link to="/rates" onClick={update(0, 4)}>Hourly rates</Link></li>
-                    <li><Link to="/hosting" onClick={update(0, 5)}>Hosting packages</Link></li>
+                    <li><Link to="/home/plans" onClick={update(0, 3)}>Plans and products</Link></li>
+                    <li><Link to="/home/rates" onClick={update(0, 4)}>Hourly rates</Link></li>
+                    <li><Link to="/home/hosting" onClick={update(0, 5)}>Hosting packages</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -104,8 +104,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-envelope"/> Contact</h4>
                   <ul>
-                    <li><Link to="/communications" onClick={update(1, 0)}>Connect with us</Link></li>
-                    <li><Link to="/headquarters" onClick={update(1, 1)}>Base of operations</Link></li>
+                    <li><Link to="/home/communications" onClick={update(1, 0)}>Connect with us</Link></li>
+                    <li><Link to="/home/headquarters" onClick={update(1, 1)}>Base of operations</Link></li>
                   </ul>
                 </li>
               </ul>

@@ -248,6 +248,12 @@ export default class extends Header {
                     <span>Evolvinx<small> / NYC / Partner</small></span>
                   </li>
                   <li>
+                    <a href="http://skywellworld.com/" target="_blank">
+                      <i className="fa fa-external-link"/>
+                    </a>
+                    <span>Skywell<small> / Ukraine / Partner</small></span>
+                  </li>
+                  <li>
                     <a href="http://softgreat.com/" target="_blank">
                       <i className="fa fa-external-link"/>
                     </a>

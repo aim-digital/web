@@ -40,7 +40,8 @@ export default class extends Page {
     slide: PropTypes.number.isRequired,
     section: PropTypes.string,
     initialize: PropTypes.func.isRequired,
-    create: PropTypes.func
+    create: PropTypes.func,
+    hide: PropTypes.bool
   };
 
   static defaultProps = {
@@ -96,7 +97,7 @@ export default class extends Page {
   wrap = sections => sections.map((section, i) => <div key={String(i)}>{section}</div>);
 
   render() {
-    const { headers, sections, className, classNames = {}, param, header, section } = this.props;
+    const { headers, sections, className, classNames = {}, param, header, section, hide } = this.props;
     const { index, prev, next } = SECTIONS[section || param.section] || SECTIONS.home;
     const single = headers.length === 1;
     const { animating, data } = this.state;
@@ -112,15 +113,17 @@ export default class extends Page {
               )}
             </section>
           ) : <span/>}
-          <section className="section container">
-            {this.wrap(sections)[0]}
-            {/*<VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 350, begin: this.begin, complete: this.complete }}>
-              {this.wrap(sections)[section ? 0 : index]}
-            </VelocityTransitionGroup>
-            <div style={{ position: 'absolute', top: '15px', left: '15px', zIndex: 5 }}>
-              {prev && <Link to={`/home/${SECTIONS[prev].param}`} onClick={this.scrollTo}>&larr; Previous</Link>} {next && <Link to={`/home/${SECTIONS[next].param}`} onClick={this.scrollTo}>Next &rarr;</Link>}
-            </div>*/}
-          </section>
+          {!hide && (
+            <section className="section container">
+              {this.wrap(sections)[0]}
+              {/*<VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 350, begin: this.begin, complete: this.complete }}>
+                {this.wrap(sections)[section ? 0 : index]}
+              </VelocityTransitionGroup>
+              <div style={{ position: 'absolute', top: '15px', left: '15px', zIndex: 5 }}>
+                {prev && <Link to={`/home/${SECTIONS[prev].param}`} onClick={this.scrollTo}>&larr; Previous</Link>} {next && <Link to={`/home/${SECTIONS[next].param}`} onClick={this.scrollTo}>Next &rarr;</Link>}
+              </div>*/}
+            </section>
+          )}
           {/*<section className="contact">
             {data ? <span>{JSON.stringify(data)}</span> : <forms.Contact onSubmit={this.submit}/>}
           </section>}*/}
