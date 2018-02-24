@@ -52,6 +52,16 @@ footer {
     font-size: .85em;
     padding: .25em 0;
     margin: 0;
+
+    a {
+      font-size: 1em;
+      display: inline-block;
+      padding: 0;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: .75em;
+    }
   }
 
   p {
@@ -67,12 +77,14 @@ footer {
     // box-shadow: 0 0 .5em #efefef;
     max-width: 320px;
     width: 15%;
+    min-width: 92px;
   }
 
   a img {
     width: 100%;
     margin: 1em auto .5em;
     box-shadow: 0 0 .5em $black-color;
+    min-width: 0;
   }
 
   .logo {
@@ -178,13 +190,15 @@ footer {
     }
 
     @media (min-width: 1280px) {
-      font-size: 1em;
+      font-size: .9em;
     }
   }
 
   small {
     font-size: .65em;
     color: #efefef;
+    line-height: 1.75;
+    display: inline-block;
   }
 
   .content {

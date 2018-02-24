@@ -9,8 +9,6 @@
   }
 
   .home.page & {
-    //display: none;
-
     .section {
       background: transparent;
       max-width: 1280px;
@@ -132,7 +130,7 @@
       font-family: 'Oswald', $font-family-brand;
       color: $background-color;
       text-transform: uppercase;
-      font-size: 2.65em;
+      font-size: 2.5em;
       line-height: 1.5;
       margin-top: 0;
       margin-bottom: .75em;

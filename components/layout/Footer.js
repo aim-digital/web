@@ -112,12 +112,12 @@ export default class extends Footer {
             </div>
             <div className="col-sm-3 col-xs-12">
               <h4><i className="fa fa-info-circle"/> Support</h4>
-              <p>Operating hours are Mon.-Fri., 10am-6pm (GMT-5).</p>
-              <p>For sales, customer service, or technical support please call/text <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank">+1 (646) 204-1732</a>, or email us at <a title="Email: services@vitruvian.tech" href="mailto:services@vitruvian.tech?subject=<VitruvianTech>%20Connect">services@vitruvian.tech</a>.</p>
+              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank">+1 (646) 204-1732</a>, or email us at <a title="Email: services@vitruvian.tech" href="mailto:services@vitruvian.tech?subject=<VitruvianTech>%20Connect">services@vitruvian.tech</a>.</p>
+              <p>Operating hours:<br /><em>M-F, 10am-6pm (GMT-5)</em></p>
             </div>
             <div className="col-xs-12 text-center">
               <img src="/@vitruvian-tech/machete-bundle/images/insignia.png" alt="The Digital Special Forces for custom software and marketing solutions." title="Vitruvian Technology, Corp."/>
-              <p><small>&copy; 2018 Vitruvian Technology, Corp. (a subsidiary of Vitruvian Holdings, LLC.)</small></p>
+              <p><small>&copy; 2018 Vitruvian Technology, Corp.<br />(a subsidiary of Vitruvian Holdings, LLC.)</small></p>
             </div>
           </div>
         </div>
