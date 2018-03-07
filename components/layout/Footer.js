@@ -36,7 +36,7 @@ export default class extends Footer {
         <div className="content container">
           <div className="row">
             <div className="col-xs-12 logo text-center">
-              <Link to="/" onClick={update(0, 0)}>
+              <Link to="/home" onClick={update(0, 0)}>
                 <img src="/@vitruvian-tech/machete-bundle/images/logo.png" alt="Roman Inspired Software Designers" title="Vitruvian Technology, Corp."/>
               </Link>
             </div>
@@ -82,7 +82,7 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-universal-access"/> About</h4>
                   <ul>
-                    <li><Link to="/home/missions" onClick={update(0, 1)}>Our work</Link></li>
+                    <li><Link to="/home/missions" onClick={update(0, 1)}>Work</Link></li>
                     <li><Link to="/home/services" onClick={update(0, 2)}>What we do</Link></li>
                     <li><Link to="/home/leadership" onClick={update(0, 6)}>Who we are</Link></li>
                     <li><Link to="/home/network" onClick={update(0, 7)}>Partner network</Link></li>

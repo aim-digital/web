@@ -9,8 +9,7 @@ export default class extends Section {
       <div className="background">
         <div className="film" style={{ opacity: '.85' }}></div>
         <div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/insignia.png)', zIndex: '2', backgroundSize: '75%', backgroundPosition: '50% 65%' }}></div>
-        <div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/home/missions-2.jpg)', opacity: '1' }}></div>
-        {/*<div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/home/missions-1.jpg)', opacity: '.5' }}></div>*/}
+        <div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/home/missions.jpg)', opacity: '1' }}></div>
       </div>
       <div className="row">
         <div className="col-lg-4 col-xs-12">
