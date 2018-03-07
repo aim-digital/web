@@ -115,7 +115,7 @@ export default class extends Page {
           ) : <span/>}
           {!hide && (
             <section className="section container">
-              {this.wrap(sections)[0]}
+              {this.wrap(sections)[!section && index <= 1 ? index : 0]}
               {/*<VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 350, begin: this.begin, complete: this.complete }}>
                 {this.wrap(sections)[section ? 0 : index]}
               </VelocityTransitionGroup>
