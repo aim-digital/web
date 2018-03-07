@@ -8,7 +8,7 @@ export default class extends Section {
       <h1>Our Work</h1>
       <div className="background">
         <div className="film" style={{ opacity: '.85' }}></div>
-        <div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/insignia.png)', zIndex: '2', backgroundSize: '75%', backgroundPosition: '50% 65%' }}></div>
+        <div className="insignia image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/insignia.png)', zIndex: '2' }}></div>
         <div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/home/missions.jpg)', opacity: '1' }}></div>
       </div>
       <div className="row">
