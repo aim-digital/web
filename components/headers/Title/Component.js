@@ -57,8 +57,8 @@ export default class extends Header {
                 <h3>Missions</h3>
                 <ul className={'columns'}>
                   <li>Verizon</li>
-                  <li>Halliburton</li>
                   <li>Viacom</li>
+                  <li>Halliburton</li>
                   <li>HUGE</li>
                   <li>The Daily Beast</li>
                   <li>Refinery29</li>
