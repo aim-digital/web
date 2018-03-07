@@ -13,7 +13,7 @@ export default class extends Section {
         <div className="row">
           <div className="col-lg-4 col-xs-12">
             <h2>Roman Inspired<br />Software Designers</h2>
-            <p>Drawing inspiration from innovative engineering throughout Roman history, our work and culture is founded on our <em>“Vitruvian Virtues”</em>, and is modeled after military organizations and fundamental natural elements, adapted to software design and development for growing businesses in today’s world.</p>
+            <p>Drawing inspiration from innovative engineering throughout <em>Roman</em> history, our work and culture is founded on our <em>“Vitruvian Virtues”</em>, and is modeled after military organizations and fundamental natural elements, adapted to software design and development for growing businesses in today’s world.</p>
             <p>We are the <strong>Digital Special Forces</strong> for custom software and marketing solutions. Based in NYC, <em>Vitruvian Technology, Corp.</em> specializes in Project Management, Web/Software Development, Marketing, Design, QA, IT/System Administration, Content Production, Security, and Investigatory services.</p>
           </div>
           <div className="col-lg-4 col-xs-12 valign-middle">

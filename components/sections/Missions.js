@@ -26,7 +26,7 @@ export default class extends Section {
           </div>
           <div className="col-lg-4 col-xs-12">
             <h2 className="text-center">The Process</h2>
-            <p><em>Foxtrot<sup>(sm)</sup></em> is our project management solution, based on Agile process methodologies.</p>
+            <p><em>Foxtrot<sup>(sm)</sup></em> is our project management solution, based on <em>Agile</em> process methodologies.</p>
             <p><strong>Three unique</strong> tracking systems (<em>Foxtrot One, Two,</em> and <em>Three</em>) lets you choose the process that best suits your projects’ needs - from quick ad-hoc projects, to large-scale product life-cycles.</p>
             <p><em>Any of our three Foxtrot<sup>(sm)</sup> systems is included - free of charge - with our <strong>Managed Subscription</strong> plan!</em></p>
           </div>
