@@ -136,8 +136,6 @@ export default class extends Header {
                   <li>Interns <span className={[styles.price].join(' ')}><strong>$20<sub>/hr.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Boost your project's performance while maximizing workforce potential by providing training opportunities for young professionals and aspiring individuals.</i></small></li>
                   <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
-                  <li>Security Analysts/Investigators <span className={[styles.price, styles.starting].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
-                  <li>Legal Counselors <span className={[styles.price, styles.starting].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
                   <li className={'more'} data-next="Hosting"/>
                 </ul>
               </section>
