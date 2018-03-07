@@ -131,11 +131,11 @@ export default class extends Header {
                   <li>Software Developers <span className={[styles.price].join(' ')}><strong>$40-85<sub>/hr.</sub></strong></span></li>
                   <li>Marketers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                   <li>Designers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
+                  <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                   <li>Creative Producers <span className={[styles.price].join(' ')}><strong>$25-75<sub>/hr.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Our studio includes copywriters, product developers, videographers, photographers, printers, musicians, costume designers, culinary artists, and brand curators.</i></small></li>
                   <li>Interns <span className={[styles.price].join(' ')}><strong>$20<sub>/hr.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Boost your project's performance while maximizing workforce potential by providing training opportunities for young professionals and aspiring individuals.</i></small></li>
-                  <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                   <li className={'more'} data-next="Hosting"/>
                 </ul>
               </section>
