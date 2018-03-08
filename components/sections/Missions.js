@@ -15,7 +15,7 @@ export default class extends Section {
           <div className="col-lg-4 col-xs-12">
             <h2 className="text-center">The Mission</h2>
             <p>Birthed from agency backgrounds and “front-end” (UI/UX) skill-sets, <em>VitruvianTech</em> puts an emphasis on design and the bottom line - which includes security and performance around everything we touch.</p>
-            <p>Built from our <em>Roman</em>-based principles, we believe design in any product must be minimal, absolutely functional, unconditionally  awless, and beautiful.</p>
+            <p>Built from our <em>Roman</em>-based principles, we believe design in any product must be minimal, absolutely functional, unconditionally flawless, and beautiful.</p>
             <p><em>As the <strong>Digital Special Forces</strong>, we are the first line of defense in affecting your product’s digital presence.</em></p>
           </div>
           <div className="col-lg-4 col-xs-12 valign-middle">
