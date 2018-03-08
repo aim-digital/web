@@ -91,8 +91,9 @@ export default class extends Header {
                   <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Advertising</span></li>
                   <li>Design <span className={[styles.service].join(' ')}>Software / UI / UX / Graphic / Product</span></li>
                   <li>Quality Assurance <span className={[styles.service].join(' ')}>Performance / Automation</span></li>
-                  <li>Content <span className={[styles.service].join(' ')}>Photo / Video / Audio / Costume / Culinary</span></li>
                   <li>IT/System Admin. <span className={[styles.service].join(' ')}>Database / Network / Cloud</span></li>
+                  <li>Content <span className={[styles.service].join(' ')}>Photo / Video / Audio / Costume / Culinary</span></li>
+                  <li>Data Science <span className={[styles.service].join(' ')}>A.I. / Analytics / Data Modeling</span></li>
                   <li className={'more'} data-next="Plans"/>
                 </ul>
               </section>
@@ -134,8 +135,9 @@ export default class extends Header {
                   <li>Marketers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                   <li>Designers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                   <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
+                  <li>Data Scientists <span className={[styles.price].join(' ')}><strong>$85-95<sub>/hr.</sub></strong></span></li>
                   <li>Content Producers <span className={[styles.price].join(' ')}><strong>$25-75<sub>/hr.</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i>Our studio includes copywriters, product developers, videographers, photographers, printers, musicians, costume designers, culinary artists, and brand curators.</i></small></li>
+                  <li className={styles.asterisk}><small><i>Our studio includes copywriters, videographers, photographers, printers, musicians, costume designers, culinary artists, and brand curators.</i></small></li>
                   <li>Interns <span className={[styles.price].join(' ')}><strong>$20<sub>/hr.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Boost your project's performance while maximizing workforce potential by providing training opportunities for young professionals and aspiring individuals.</i></small></li>
                   <li className={'more'} data-next="Hosting"/>
@@ -281,37 +283,19 @@ export default class extends Header {
                     <span>Rethink Films<small> / NYC / Partner</small></span>
                   </li>
                   <li>
-                    <a href="http://anniecatdesign.studio/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Annie Cat Design<small> / NYC / Partner</small></span>
-                  </li>
-                  <li>
                     <a href="http://onilab.com/" target="_blank">
                       <i className="fa fa-external-link"/>
                     </a>
                     <span>Onilab<small> / Belarus / Partner</small></span>
                   </li>
                   <li>
-                    <a href="http://www.chudovo.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Chudovo<small> / Germany / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="http://mozidev.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Mozi Development<small> / UK / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="http://intelegencia.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Intelegencia<small> / Atlanta / Partner</small></span>
-                  </li>
-                  <li>
                     <span>Generativ<small> / NYC / Partner</small></span>
+                  </li>
+                  <li>
+                    <a href="http://anniecatdesign.studio/" target="_blank">
+                      <i className="fa fa-external-link"/>
+                    </a>
+                    <span>Annie Cat Design<small> / NYC / Partner</small></span>
                   </li>
                   <li className={styles.asterisk} style={{marginTop: '10px'}}><small><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</small></li>
                 </ul>
