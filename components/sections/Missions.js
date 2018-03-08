@@ -8,14 +8,14 @@ export default class extends Section {
     index: 0
   };
 
-  change = index => this.setState({ index });
+  change = index => {
+    this.setState({ index });
+    this.scrollTo();
+  };
 
   begin = () => this.setState({ animating: true });
 
-  complete = () => {
-    this.setState({ animating: false });
-    this.scrollTo();
-  }
+  complete = () => this.setState({ animating: false });
 
   scrollTo = () => {
     if (global.scrollTo) {
