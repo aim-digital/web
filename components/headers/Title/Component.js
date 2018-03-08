@@ -93,7 +93,7 @@ export default class extends Header {
                   <li>Quality Assurance <span className={[styles.service].join(' ')}>Performance / Automation</span></li>
                   <li>IT/System Admin. <span className={[styles.service].join(' ')}>Database / Network / Cloud</span></li>
                   <li>Content <span className={[styles.service].join(' ')}>Photo / Video / Audio / Costume / Culinary</span></li>
-                  <li>Data Science <span className={[styles.service].join(' ')}>A.I. / Analytics / Data Modeling</span></li>
+                  <li>Data Science <span className={[styles.service].join(' ')}>A.I. / Machine Learning / Analytics</span></li>
                   <li className={'more'} data-next="Plans"/>
                 </ul>
               </section>
