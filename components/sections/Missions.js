@@ -63,7 +63,6 @@ export default class extends Section {
             <span>The Daily Beast</span>
             <span>OneRx</span>
             <span>Saks 5th Avenue</span>
-            <span>True Motto</span>
             <span>The New Yorker</span>
             <span>Refinery29</span>
             <span>Viacom</span>
