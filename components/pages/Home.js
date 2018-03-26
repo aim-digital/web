@@ -9,7 +9,7 @@ import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
 import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
 import {create} from '@machete-platform/core-bundle/controllers/Contact';
-import * as forms from '@machete-platform/core-bundle/components/forms';
+// import * as forms from '@machete-platform/core-bundle/components/forms';
 import NukaCarousel from 'nuka-carousel';
 
 const SECTIONS = {
@@ -126,7 +126,7 @@ export default class extends Page {
           )}
           {/*<section className="contact">
             {data ? <span>{JSON.stringify(data)}</span> : <forms.Contact onSubmit={this.submit}/>}
-          </section>}*/}
+          </section>*/}
           <Footer/>
         </Page>
     );

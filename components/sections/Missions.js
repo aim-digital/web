@@ -34,7 +34,7 @@ export default class extends Section {
         </div>
         <div className="col-lg-4 col-xs-12 valign-middle">
           <h2 className="text-center">Remote / Control</h2>
-          <p>Using state-of-the-art communication tools (<em>Slack</em>, <em>Skype</em>, <em>G Suite</em>, etc.), conferencing services, and optimized project management tools> (<em>JIRA</em>), our consultants and developers are all <strong>remote-based autonomous experts</strong>.</p>
+          <p>Using state-of-the-art communication tools (<em>Slack</em>, <em>Skype</em>, <em>G Suite</em>, etc.), conferencing services, and optimized project management tools (<em>JIRA</em>), our consultants and developers are all <strong>remote-based autonomous experts</strong>.</p>
           <p>We have a proven track record of excellent project performance and price cuts by eliminating over-head with <strong>well-written requirements, constant communication from our staff, and flexible developer shifts</strong>, yielding a balanced work/life culture, and highly motivated team members.</p>
           <p><em><strong>Communication is key</strong>, and we focus on deliverables and customer service, backed by our virtues.</em></p>
         </div>
@@ -63,7 +63,6 @@ export default class extends Section {
             <span>The Daily Beast</span>
             <span>OneRx</span>
             <span>Saks 5th Avenue</span>
-            <span>True Motto</span>
             <span>The New Yorker</span>
             <span>Refinery29</span>
             <span>Viacom</span>
