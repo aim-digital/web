@@ -34,14 +34,14 @@ export default class extends Section {
         </div>
         <div className="col-lg-4 col-xs-12 valign-middle">
           <h2 className="text-center">Remote / Control</h2>
-          <p>Using state-of-the-art communication tools (<em>Slack</em>, <em>Skype</em>, <em>G Suite</em>, etc.), conferencing services, and optimized project management tools (<em>JIRA</em>), our consultants and developers are all <strong>remote-based autonomous experts</strong>.</p>
-          <p>We have a proven track record of excellent project performance and price cuts by eliminating over-head with <strong>well-written requirements, constant communication from our staff, and flexible developer shifts</strong>, yielding a balanced work/life culture, and highly motivated team members.</p>
+          <p>Using state-of-the-art communication tools (<em>Slack</em>, <em>Skype</em>, <em>G Suite</em>, etc.), conferencing services, and optimized project management tools (<em>JIRA</em>), our consultants and developers are all remote-based autonomous experts.</p>
+          <p>We have a proven track record of excellent project performance and price cuts by eliminating over-head with well-written requirements, constant communication from our staff, and flexible developer shifts, yielding a balanced work/life culture, and highly motivated team members.</p>
           <p><em><strong>Communication is key</strong>, and we focus on deliverables and customer service, backed by our virtues.</em></p>
         </div>
         <div className="col-lg-4 col-xs-12">
           <h2 className="text-center">The Process</h2>
           <p><em>Foxtrot<sup>(sm)</sup></em> is our project management solution, based on <em>Agile</em> process methodologies.</p>
-          <p><strong>Three unique</strong> tracking systems (<em>Foxtrot One, Two,</em> and <em>Three</em>) lets you choose the process that best suits your projects’ needs - from quick ad-hoc projects, to large-scale product life-cycles.</p>
+          <p><strong>Three unique tracking systems</strong> (<em>Foxtrot One, Two,</em> and <em>Three</em>) lets you choose the process that best suits your projects’ needs - from quick ad-hoc projects, to large-scale product life-cycles.</p>
           <p><em>Any of our three Foxtrot<sup>(sm)</sup> systems is included - free of charge - with our <strong>Managed Subscription</strong> plan!</em></p>
         </div>
       </div>
