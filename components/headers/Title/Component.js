@@ -103,7 +103,7 @@ export default class extends Header {
               <section className={['preview'].join(' ')}>
                 <h3>Plans</h3>
                 <ul>
-                  <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> <strong>$7k<sub>/3 mo.</sub></strong> <strong>$12k<sub>/6 mo.</sub></strong></span></li>
+                  <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> <strong>$7k<sub>/3 mo.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong>20 hours/mo.</strong> applied to any/all available services.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking and <strong>project management</strong> system.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any/all simultaneous subscriptions.</i></small></li>
@@ -116,7 +116,7 @@ export default class extends Header {
                   <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                   <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm</strong> and <strong>publishing</strong> solutions!</i></small></li>
-                  <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$40k<sub>/3 mo.</sub></strong></span></li>
+                  <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$45k<sub>/3 mo.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong>8 <em>Managed Team</em></strong> (1 x "full-time") quarterly subscriptions.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>1 <em>Machete Theme Platform</em></strong> license.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
