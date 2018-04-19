@@ -10,7 +10,7 @@ export default class extends Section {
           <div className="film"></div>
           <div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/home/virtues.jpg)' }}></div>
         </div>
-        <span>
+        <span className="content">
           <section>
             <div className="row">
               <div className="col-lg-4 col-xs-12">
