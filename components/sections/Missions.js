@@ -96,12 +96,14 @@ export default class extends Section {
           <div className="insignia image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/insignia.png)', zIndex: '2' }}></div>
           <div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/home/missions.jpg)', opacity: '1' }}></div>
         </div>
-        <VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 150, begin: this.begin, complete: this.complete }}>
+        <VelocityTransitionGroup
+          className="content"
+          enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 150, begin: this.begin, complete: this.complete }}>
           {sections[index]}
         </VelocityTransitionGroup>
         <div className="toggle">
           <div>
-            <button onClick={() => change(+!index)}>Read <strong>{`${index ? 'Less' : 'More'}`}</strong></button>
+            <button onClick={() => change(+!index)}>Read about <strong>{`${index ? 'Our Process' : 'Our Featured Missions'}`}</strong></button>
           </div>
         </div>
       </Section>
