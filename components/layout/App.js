@@ -49,8 +49,8 @@ export default class extends App {
       <App {...this.props} nav={<Nav/>}>
         <span>
           {this.props.children}
-          <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>
-          <script dangerouslySetInnerHTML={{__html: `
+          {/*<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>*/}
+          {/*<script dangerouslySetInnerHTML={{__html: `
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -60,7 +60,7 @@ export default class extends App {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '176357943093978');
-            fbq('track', 'PageView');`}} />
+            fbq('track', 'PageView');`}} />*/}
           {/*<noscript>*/}
           {/*<img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=176357943093978&ev=PageView&noscript=1" />*/}
           {/*</noscript>*/}

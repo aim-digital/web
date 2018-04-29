@@ -192,7 +192,7 @@ export default class extends Header {
                     <a href="https://www.linkedin.com/in/valeria-kalaidjian-70627738/" target="_blank">
                       <i className="fa fa-linkedin-square"/>
                     </a>
-                    <span>Valeria Kalaidjian<small> / Marketing</small></span>
+                    <span>Valeria Kalaidjian<small> / Administration</small></span>
                   </li>
                   <li>
                     <a href="mailto:reza@evolvinx.com?subject=<VitruvianTech>%20Connect" target="_blank">
