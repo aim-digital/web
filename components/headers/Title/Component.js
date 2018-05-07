@@ -149,15 +149,15 @@ export default class extends Header {
               <section className={['preview'].join(' ')}>
                 <h3>Hosting</h3>
                 <ul>
-                  <li><strong>Managed</strong> <i>Standard</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$19<sub><sup>.95</sup>/mo.</sub></strong></span></li>
+                  <li><strong>Managed</strong> <i>Shared</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$19<sub><sup>.99</sup>/mo.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong><em>Amazon Web Services</em></strong> high-availability hosting.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Dedicated hosting</strong> services available.</i></small></li>
                   <li className={styles.asterisk}><small><i>Web, database, and storage <strong>server management</strong>.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>Infrastructure design</strong> and architecture.</i></small></li>
-                  <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$49<sub><sup>.95</sup>/mo.</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong>Infrastructure design</strong> and architecture consulting.</i></small></li>
+                  <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$99-149<sub><sup>.99</sup>/mo.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Exclusively designed for the <strong><em>Machete Theme Platform</em></strong>.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>User-friendly Platform as a Service</strong> and customer support.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> multi-clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>User-friendly Infrastructure as a Service</strong> and customer support.</i></small></li>
                   <li className={'more'} data-next="Leadership"/>
                 </ul>
               </section>
