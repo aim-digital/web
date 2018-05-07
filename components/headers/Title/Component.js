@@ -117,7 +117,7 @@ export default class extends Header {
                   <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                   <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm</strong> and <strong>publishing</strong> solutions!</i></small></li>
                   <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$50k<sub>/3 mo.</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong>1 dedicated developer</strong> (8 <em>Managed Team</em> subscriptions.)</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>1 dedicated developer</strong> (8 <em>Managed Team</em> 3 mo. subscriptions.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>1 <em>Machete Theme Platform</em></strong> license.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
                   <li className={'more'} data-next="Rates"/>
