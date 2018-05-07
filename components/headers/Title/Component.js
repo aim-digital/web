@@ -103,21 +103,21 @@ export default class extends Header {
               <section className={['preview'].join(' ')}>
                 <h3>Plans</h3>
                 <ul>
-                  <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$2.5k<sub>/mo.</sub></strong> <strong>$7k<sub>/3 mo.</sub></strong></span></li>
+                  <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$3k<sub>/mo.</sub></strong> <strong>$8k<sub>/3 mo.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong>20 hours/mo.</strong> applied to any/all available services.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking and <strong>project management</strong> system.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking and project management system.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any/all simultaneous subscriptions.</i></small></li>
                   <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
                   <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/hourly rate</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (per contract negotiations.)</i></small></li>
                   <li className={styles.asterisk}><small><i>Typical for most hourly-based <strong>ad-hoc</strong> projects.</i></small></li>
-                  <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$1,999<sub><sup>.99</sup>/license</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong>Mobile/desktop</strong> app/website <strong>development framework</strong>.</i></small></li>
+                  <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$2,999<sub><sup>.99</sup>/license</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong>Universal mobile/desktop app UI PaaS</strong> for marketers.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                   <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm</strong> and <strong>publishing</strong> solutions!</i></small></li>
-                  <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$45k<sub>/3 mo.</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong>8 <em>Managed Team</em></strong> (1 x "full-time") quarterly subscriptions.</i></small></li>
+                  <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$50k<sub>/3 mo.</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong>1 dedicated developer</strong> (8 <em>Managed Team</em> subscriptions.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>1 <em>Machete Theme Platform</em></strong> license.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
                   <li className={'more'} data-next="Rates"/>
@@ -186,15 +186,6 @@ export default class extends Header {
                     <span>Peter C. Romano<small> / Founder</small></span>
                   </li>
                   <li>
-                    <a href="mailto:Valk82@gmail.com?subject=<VitruvianTech>%20Connect" target="_blank">
-                      <i className="fa fa-envelope"/>
-                    </a>
-                    <a href="https://www.linkedin.com/in/valeria-kalaidjian-70627738/" target="_blank">
-                      <i className="fa fa-linkedin-square"/>
-                    </a>
-                    <span>Valeria Kalaidjian<small> / Administration</small></span>
-                  </li>
-                  <li>
                     <a href="mailto:reza@evolvinx.com?subject=<VitruvianTech>%20Connect" target="_blank">
                       <i className="fa fa-envelope"/>
                     </a>
@@ -202,6 +193,15 @@ export default class extends Header {
                       <i className="fa fa-linkedin-square"/>
                     </a>
                     <span>Reza Khan<small> / Infrastructure</small></span>
+                  </li>
+                  <li>
+                    <a href="mailto:Valk82@gmail.com?subject=<VitruvianTech>%20Connect" target="_blank">
+                      <i className="fa fa-envelope"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/valeria-kalaidjian-70627738/" target="_blank">
+                      <i className="fa fa-linkedin-square"/>
+                    </a>
+                    <span>Valeria Kalaidjian<small> / Administration</small></span>
                   </li>
                   <li>
                     <a href="http://www.pamelasisson.com/" target="_blank">
