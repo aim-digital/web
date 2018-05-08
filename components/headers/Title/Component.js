@@ -108,7 +108,7 @@ export default class extends Header {
                   <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking and project management system.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any/all simultaneous subscriptions.</i></small></li>
                   <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
-                  <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+25%<sub>/hourly rate</sub></strong></span></li>
+                  <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+30%<sub>/hourly rate</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (per contract negotiations.)</i></small></li>
                   <li className={styles.asterisk}><small><i>Typical for most hourly-based <strong>ad-hoc</strong> projects.</i></small></li>
                   <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$2,999<sub><sup>.99</sup>/license</sub></strong></span></li>
@@ -195,13 +195,13 @@ export default class extends Header {
                     <span>Reza Khan<small> / Infrastructure</small></span>
                   </li>
                   <li>
-                    <a href="mailto:Valk82@gmail.com?subject=<VitruvianTech>%20Connect" target="_blank">
+                    <a href="mailto:pamelaschwilk@gmail.com?subject=<VitruvianTech>%20Connect" target="_blank">
                       <i className="fa fa-envelope"/>
                     </a>
-                    <a href="https://www.linkedin.com/in/valeria-kalaidjian-70627738/" target="_blank">
+                    <a href="https://www.linkedin.com/in/pamelaschwilk/" target="_blank">
                       <i className="fa fa-linkedin-square"/>
                     </a>
-                    <span>Valeria Kalaidjian<small> / Administration</small></span>
+                    <span>Pamela Schwilk<small> / Marketing</small></span>
                   </li>
                   <li>
                     <a href="http://www.pamelasisson.com/" target="_blank">
@@ -211,6 +211,15 @@ export default class extends Header {
                       <i className="fa fa-linkedin-square"/>
                     </a>
                     <span>Pamela Sisson<small> / Design</small></span>
+                  </li>
+                  <li>
+                    <a href="mailto:Valk82@gmail.com?subject=<VitruvianTech>%20Connect" target="_blank">
+                      <i className="fa fa-envelope"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/valeria-kalaidjian-70627738/" target="_blank">
+                      <i className="fa fa-linkedin-square"/>
+                    </a>
+                    <span>Valeria Kalaidjian<small> / Administration</small></span>
                   </li>
                   <li style={{'padding': '1.25em 0 0'}}>
                     <p className={'humility' + ' ' + 'instruction'}>"You just gotta show up, and be consistent. 'Perfection' is merely the <em>pursuit</em> of perfection, with quality engineered over time by a well-planned, incremental process. After all, great management leads to quality, and our objective is to secure quality for all."<i> -Peter C. Romano, Founder</i></p>
@@ -250,22 +259,16 @@ export default class extends Header {
                     <span>Evolvinx<small> / NYC / Partner</small></span>
                   </li>
                   <li>
-                    <a href="http://skywellworld.com/" target="_blank">
+                    <a href="https://www.oxfordcorp.com/" target="_blank">
                       <i className="fa fa-external-link"/>
                     </a>
-                    <span>Skywell<small> / Ukraine / Partner</small></span>
+                    <span>Oxford Global<small> / Global / Partner</small></span>
                   </li>
                   <li>
-                    <a href="http://softgreat.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
+                    <a href="mailto:ajfprintworks@gmail.com ?subject=<VitruvianTech>%20Connect" target="_blank">
+                      <i className="fa fa-envelope"/>
                     </a>
-                    <span>SoftGreat<small> / Belarus / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="https://www.rishabhsoft.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Rishabh Software<small> / Dallas / Partner</small></span>
+                    <span>AJF Print Works<small> / NYC / Partner</small></span>
                   </li>
                   <li>
                     <a href="http://http://triboroprinting.com/" target="_blank">
@@ -283,13 +286,22 @@ export default class extends Header {
                     <span>Rethink Films<small> / NYC / Partner</small></span>
                   </li>
                   <li>
+                    <a href="https://www.rishabhsoft.com/" target="_blank">
+                      <i className="fa fa-external-link"/>
+                    </a>
+                    <span>Rishabh Software<small> / Dallas / Partner</small></span>
+                  </li>
+                  <li>
+                    <a href="http://softgreat.com/" target="_blank">
+                      <i className="fa fa-external-link"/>
+                    </a>
+                    <span>SoftGreat<small> / Belarus / Partner</small></span>
+                  </li>
+                  <li>
                     <a href="http://onilab.com/" target="_blank">
                       <i className="fa fa-external-link"/>
                     </a>
                     <span>Onilab<small> / Belarus / Partner</small></span>
-                  </li>
-                  <li>
-                    <span>Generativ<small> / NYC / Partner</small></span>
                   </li>
                   <li>
                     <a href="http://anniecatdesign.studio/" target="_blank">
