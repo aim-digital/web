@@ -2,10 +2,10 @@ import React from 'react';
 import {asyncConnect} from 'redux-async-connect';
 import {connect} from 'react-redux';
 import {Page} from '@vitruvian-tech/machete-bundle/components/layout';
-import {load} from '@machete-platform/contentful-bundle/controllers/Entry';
+import {post} from '@machete-platform/contentful-bundle/controllers/Entry';
 
 @asyncConnect([{
-  promise: ({store: {dispatch, getState}, params: { id }}) => dispatch(load(id))
+  promise: ({store: {dispatch, getState}, params: { id }}) => dispatch(post(id))
 }])
 
 @connect(state => {
