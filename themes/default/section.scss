@@ -319,6 +319,10 @@
       color: $black-color;
       margin: 0;
 
+      &.humility {
+        color: $humility;
+      }
+
       & + p {
         margin-top: 1.25em;
       }

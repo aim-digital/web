@@ -5,9 +5,13 @@
   position: relative;
   height: $page-height;
 
-  &:before {
+  > div {
+    position: static;
+  }
+
+  .hero {
     content: '';
-    background: $background-color url('./images/background.jpg') no-repeat;
+    background: $background-color no-repeat;
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -32,6 +36,7 @@
   .title {
     margin: -2.25vh auto 0;
     padding: 0 20px;
+    max-width: 780px;
 
     h1 {
       color: #fff;

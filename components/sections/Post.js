@@ -15,8 +15,9 @@ export default class extends Section {
 
     return (
       <Section className={`post`}>
+        <h3>{post.title}</h3>
         <h2>{post.tagline}</h2>
-        <p>{post.summary}</p>
+        <p className="humility">{post.summary}</p>
       </Section>
     );
   }
