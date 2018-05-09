@@ -6,7 +6,7 @@
   height: $page-height;
 
   > div {
-    position: static;
+    position: static !important;
   }
 
   .hero {

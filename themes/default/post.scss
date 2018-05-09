@@ -1,0 +1,12 @@
+.post {
+  article {
+    > div {
+      margin: 1em 0;
+    }
+
+    .media {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+  }
+}
