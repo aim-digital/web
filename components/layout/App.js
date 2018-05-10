@@ -49,7 +49,7 @@ export default class extends App {
       <App {...this.props} nav={<Nav/>}>
         <span>
           {this.props.children}
-          {/*<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>*/}
+          <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>
           {/*<script dangerouslySetInnerHTML={{__html: `
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
