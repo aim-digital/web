@@ -36,20 +36,20 @@
   .title {
     margin: -2.25vh auto 0;
     padding: 0 20px;
-    max-width: 780px;
+    max-width: 640px;
 
     h1 {
       color: #fff;
       -webkit-text-fill-color: #fff;
       -webkit-text-stroke-color: $secondary-blue-color;
-      font-size: 4em;
+      font-size: 3.5em;
       -webkit-text-stroke-width: 1px;
-      line-height: .85;
+      line-height: .95;
     }
 
     h2 {
-      font-size: 1.75em;
-      margin: 1em auto;
+      font-size: 2.25em;
+      margin: .5em auto;
       color: $gray;
       line-height: 1em;
       max-width: 320px;
@@ -57,6 +57,19 @@
       @media only screen and (min-width: 400px) {
         max-width: 480px;
       }
+    }
+
+    span {
+      background: $primary-green-color;
+      display: inline-block;
+      padding: 0 15px;
+      font-family: $font-family-oswald;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+      color: $black-color;
+      font-size: 1.5em;
+      margin: .125em 0;
     }
   }
 }

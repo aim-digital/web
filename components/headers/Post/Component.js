@@ -25,9 +25,10 @@ export default class extends Header {
             <h1>{post.title}</h1>
             <h2>{post.tagline}</h2>
             <br />
+            <br />
             <span>By <strong>{post.author.name}</strong></span>
             <br />
-            <span>Published <strong>{moment(post.published).format('MMMM Do YYYY, h:mm a [(EDT)]')}</strong></span>
+            <span>Published <strong>{moment(post.published).format('MMMM Do YYYY, h:mm a')}</strong></span>
             <br />
             <span>From <strong>{post.area}</strong></span>
           </div>

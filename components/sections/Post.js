@@ -19,13 +19,13 @@ export default class extends Section {
         {content.type === 'paragraph' && <p>{content.body}</p>}
         {content.type === 'quote' && <blockquote data-credit={content.credit}><p><span>{content.body}</span></p></blockquote>}
         {content.type === 'image' && (<span>
-          <span className="type">{content.type}</span>
+          <span className="type">Photo</span>
           <img width="100%" src={content.url || content.file.url} />
           {content.caption && <p className="caption">{content.caption}</p>}
           {content.credit && <span className="credit">{content.credit}</span>}
         </span>)}
         {content.type === 'video' && (<span>
-          <span className="type">{content.type}</span>
+          <span className="type">Video</span>
           <video id={`video-${(this.videos++)}`} className="video-js" width="100%" controls preload="auto">
             <source src={content.url || content.file.url} type="video/mp4" />
           </video>
