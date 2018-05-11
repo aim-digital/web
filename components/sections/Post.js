@@ -14,12 +14,24 @@ export default class extends Section {
 
   renderContent = () => {
     return this.props.post.content.map((content, i) => {
-      return (<div key={i} className={content.type ? `${content.type} media` : 'paragraph'}>
-        {content.body && <p>{content.body}</p>}
-        {content.type === 'image' && <img width="100%" src={content.url || content.file.url} />}
-        {content.type === 'video' && (<video id={`video-${(this.videos++)}`} className="video-js" width="100%" controls preload="auto">
-          <source src={content.url || content.file.url} type="video/mp4" />
-        </video>)}
+      return (<div key={i} className={`${content.type} ${content.type === 'image' || content.type === 'video' ? 'media' : 'text'}`}>
+        {content.type === 'heading' && <h3>{content.body}</h3>}
+        {content.type === 'paragraph' && <p>{content.body}</p>}
+        {content.type === 'quote' && <blockquote data-credit={content.credit}><p><span>{content.body}</span></p></blockquote>}
+        {content.type === 'image' && (<span>
+          <span className="type">{content.type}</span>
+          <img width="100%" src={content.url || content.file.url} />
+          {content.caption && <p className="caption">{content.caption}</p>}
+          {content.credit && <span className="credit">{content.credit}</span>}
+        </span>)}
+        {content.type === 'video' && (<span>
+          <span className="type">{content.type}</span>
+          <video id={`video-${(this.videos++)}`} className="video-js" width="100%" controls preload="auto">
+            <source src={content.url || content.file.url} type="video/mp4" />
+          </video>
+          {content.caption && <p className="caption"><span>{content.caption}</span></p>}
+          {content.credit && <span className="credit">{content.credit}</span>}
+        </span>)}
       </div>)
     });
   };
@@ -59,7 +71,7 @@ export default class extends Section {
       <Section className={`post`}>
         <h1>{post.title}</h1>
         <h2>{post.tagline}</h2>
-        <p className="humility">{post.summary}</p>
+        <p className="summary">{post.summary}</p>
         <article>
           {this.renderContent()}
         </article>

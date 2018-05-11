@@ -1,4 +1,8 @@
 .post {
+  h1, h2, h3 {
+    text-align: center;
+  }
+
   h1 {
     font-family: $font-family-oswald !important;
     text-transform: uppercase;
@@ -8,11 +12,15 @@
 
   h2 {
     font-size: 2.5em;
-    text-align: center;
     font-weight: 400 !important;
   }
 
-  > div > div > p {
+  h3 {
+    font-size: 2em !important;
+  }
+
+  .summary {
+    color: $humility !important;
     text-align: center;
     max-width: 640px;
     margin: 0 auto !important;
@@ -20,8 +28,43 @@
 
   article {
     > div {
-      margin: 1.5em auto;
+      margin: 1.5em auto !important;
       padding: 0 5px;
+      max-width: 970px;
+    }
+
+    .type {
+      font-family: $font-family-oswald;
+      font-size: 1.75em !important;
+      padding: .25em 0;
+      text-transform: uppercase;
+    }
+
+    .credit {
+      font-size: .85em;
+      font-weight: bold;
+      display: inline-block;
+      padding: .25em .5em;
+      background: $primary-green-color;
+
+      &:before {
+        content: 'Media by ';
+        font-style: italic;
+        font-weight: normal;
+      }
+    }
+
+    .caption {
+      font-family: $font-family-oswald !important;
+      font-size: 1em !important;
+      padding: .25em !important;
+      background: $black-color;
+      box-shadow: 0 1px 2px $background-color;
+
+      span {
+        background: cyan;
+        line-height: 1.75;
+      }
     }
 
     .paragraph {
@@ -34,22 +77,77 @@
       }
     }
 
-    .media {
+    .media, .quote {
       max-width: 640px;
     }
 
-    > img, .video-js {
+    .image img, .video-js {
       width: 100%;
       height: 50vh;
       margin: 0 auto;
+      box-shadow: 0 1px 2px $background-color;
+      border: solid .125em $black-color;
+      border-collapse: collapse;
+    }
+
+    .image img {
+      height: auto;
+      position: relative;
     }
 
     .video-js {
+      background: $background-color;
+
       .vjs-big-play-button {
         top: 50%;
         left: 50%;
         margin-left: -1.5em;
         margin-top: -.75em;
+      }
+    }
+
+    .quote blockquote {
+      margin: 0;
+      font-size: 1em;
+      border-left: none;
+      padding: .5em 30px;
+
+      &:after {
+        content: "―" attr(data-credit);
+        display: block;
+        font-style: italic;
+        font-family: $font-family-brand;
+        font-size: 1.5em;
+        margin-top: 1em;
+      }
+
+      p {
+        font-size: 1.35em;
+        display: inline-block;
+
+        span {
+          background: cyan;
+          position: relative;
+
+          &:before, &:after {
+            font-size: 3em;
+            position: absolute;
+          }
+        }
+
+        &:first-child span:before {
+          content: '“';
+          right: 100%;
+          margin-top: -25px;
+          margin-right: 5px;
+        }
+
+        &:last-child span:after {
+          content: '”';
+          left: 100%;
+          margin-top: -8px;
+          margin-left: 5px;
+        }
       }
     }
   }
