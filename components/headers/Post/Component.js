@@ -15,7 +15,7 @@ export default class extends Header {
 
   render() {
     const styles = require('./Component.scss');
-    const {post} = this.props;
+    const { post } = this.props;
 
     return (
       <Header className={styles.slide}>
@@ -24,8 +24,8 @@ export default class extends Header {
           <div className={styles.title}>
             <h1>{post.title}</h1>
             <h2>{post.tagline}</h2>
-            <br />
-            <br />
+          </div>
+          <div className={styles.meta}>
             <span>By <strong>{post.author.name}</strong></span>
             <br />
             <span>Published <strong>{moment(post.published).format('MMMM Do YYYY, h:mm a')}</strong></span>

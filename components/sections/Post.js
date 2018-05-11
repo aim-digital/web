@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
+import {ShareButtons} from 'react-share';
 import {Section} from '@machete-platform/core-bundle/components/layout';
+
+const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
 @connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.data}))
 
@@ -36,6 +39,24 @@ export default class extends Section {
     });
   };
 
+  renderShare() {
+    const { post } = this.props;
+    const { id, slug } = post;
+    const url = `http://vitruvian.tech/post/${slug}/${id}`;
+
+    return (<div className="share">
+      <FacebookShareButton url={`${url}`}>
+        <img src="/@vitruvian-tech/machete-bundle/images/facebook.png" />
+      </FacebookShareButton>
+      <TwitterShareButton url={`${url}`}>
+        <img src="/@vitruvian-tech/machete-bundle/images/twitter.png" />
+      </TwitterShareButton>
+      <EmailShareButton url={`${url}`} subject={`\<VitruvianTech\> ${post.title}`} body={post.summary}>
+        <img src="/@vitruvian-tech/machete-bundle/images/email.png" />
+      </EmailShareButton>
+    </div>);
+  }
+
   componentWillMount() {
     if(global.document) {
       var link = document.createElement("link");
@@ -65,16 +86,23 @@ export default class extends Section {
   }
 
   render() {
-    const {post} = this.props;
+    const { post } = this.props;
 
     return (
       <Section className={`post`}>
         <h1>{post.title}</h1>
         <h2>{post.tagline}</h2>
         <p className="summary">{post.summary}</p>
+        {this.renderShare()}
+        <br />
         <article>
           {this.renderContent()}
         </article>
+        {this.renderShare()}
+        <p className="text-center humility">
+          <small>© 2018 Vitruvian Technology, Corp.</small>
+        </p>
+        <br />
       </Section>
     );
   }
