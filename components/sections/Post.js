@@ -24,7 +24,7 @@ export default class extends Section {
         {content.type === 'image' && (<span>
           <span className="type">Photo</span>
           <img width="100%" src={content.url || content.file.url} />
-          {content.caption && <p className="caption">{content.caption}</p>}
+          {content.caption && <p className="caption"><span>{content.caption}</span></p>}
           {content.credit && <span className="credit">{content.credit}</span>}
         </span>)}
         {content.type === 'video' && (<span>

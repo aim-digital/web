@@ -39,7 +39,7 @@
       }
 
       img {
-        width: 2.5em;
+        width: 2.75em;
       }
     }
   }
@@ -49,6 +49,10 @@
       margin: 1.5em auto !important;
       padding: 0 5px;
       max-width: 970px;
+
+      + .heading {
+        margin-top: 3em !important;
+      }
     }
 
     .type {
