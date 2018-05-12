@@ -24,16 +24,16 @@ export default class extends Section {
         {content.type === 'image' && (<span>
           <span className="type">Photo</span>
           <img width="100%" src={content.url || content.file.url} />
-          {content.caption && <p className="caption"><span>{content.caption}</span></p>}
           {content.credit && <span className="credit">{content.credit}</span>}
+          {content.caption && <p className="caption"><span>{content.caption}</span></p>}
         </span>)}
         {content.type === 'video' && (<span>
           <span className="type">Video</span>
           <video id={`video-${(this.videos++)}`} className="video-js" width="100%" controls preload="auto">
             <source src={content.url || content.file.url} type="video/mp4" />
           </video>
-          {content.caption && <p className="caption"><span>{content.caption}</span></p>}
           {content.credit && <span className="credit">{content.credit}</span>}
+          {content.caption && <p className="caption"><span>{content.caption}</span></p>}
         </span>)}
       </div>)
     });
