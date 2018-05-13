@@ -6,6 +6,8 @@ import {Section} from '@machete-platform/core-bundle/components/layout';
 
 const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
+const RE_ANCHOR_MARKDOWN = /\[([^\]]*)\]\(([^\s|\)]*)(?:\s"([^\)]*)")?\)/g;
+
 @connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.data}))
 
 export default class extends Section {
@@ -19,16 +21,16 @@ export default class extends Section {
     return this.props.post.content.map((content, i) => {
       return (<div key={i} className={`${content.type} ${content.type === 'image' || content.type === 'video' ? 'media' : 'text'}`}>
         {content.type === 'heading' && <h3>{content.body}</h3>}
-        {content.type === 'paragraph' && <p>{content.body}</p>}
+        {content.type === 'paragraph' && <p dangerouslySetInnerHTML={{__html: content.body.replace(RE_ANCHOR_MARKDOWN, '<a href="$2" title="$3" target="_blank">$1</a>')}} />}
         {content.type === 'quote' && <blockquote data-credit={content.credit}><p><span>{content.body}</span></p></blockquote>}
         {content.type === 'image' && (<span>
-          <span className="type">Photo</span>
+          <span className="type">Look</span>
           <img width="100%" src={content.url || content.file.url} />
           {content.credit && <span className="credit">{content.credit}</span>}
           {content.caption && <p className="caption"><span>{content.caption}</span></p>}
         </span>)}
         {content.type === 'video' && (<span>
-          <span className="type">Video</span>
+          <span className="type">Watch</span>
           <video id={`video-${(this.videos++)}`} className="video-js" width="100%" controls preload="auto">
             <source src={content.url || content.file.url} type="video/mp4" />
           </video>
@@ -87,12 +89,12 @@ export default class extends Section {
 
   render() {
     const { post } = this.props;
-
+//dangerouslySetInnerHTML
     return (
       <Section className={`post`}>
         <h1>{post.title}</h1>
         <h2>{post.tagline}</h2>
-        <p className="summary">{post.summary}</p>
+        <p className="summary" dangerouslySetInnerHTML={{__html: post.summary.replace(RE_ANCHOR_MARKDOWN, '<a href="$2" title="$3" target="_blank">$1</a>')}} />
         {this.renderShare()}
         <br />
         <article>

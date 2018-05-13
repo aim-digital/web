@@ -19,6 +19,20 @@
     font-size: 2em !important;
   }
 
+  a {
+    border-bottom: solid 2px $black-color;
+    text-decoration: none;
+    color: $black-color;
+    opacity: .85;
+    transition: opacity 250ms;
+    background: $primary-green-color;
+    padding: 0 .25em;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
   .summary {
     color: $humility !important;
     text-align: center;
@@ -97,6 +111,13 @@
       + .paragraph p {
         text-indent: 0;
       }
+    }
+
+    .media + .paragraph,
+    .media + .quote,
+    .paragraph + .media,
+    .quote + .media {
+      margin-top: 3em !important;
     }
 
     .media, .quote {
