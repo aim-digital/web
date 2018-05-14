@@ -69,6 +69,9 @@ export default class extends Nav {
                 <li><Link to="/home/headquarters" onClick={update(1, 1)}>Base of operations</Link></li>
               </ul>
             </li>
+            <li>
+              <Link to="/post/music-tech-and-steven-tyler-collide-in-NOLA/05-04-2018/2H9AEB2WpicAiMiO88YsSY"><i className="fa fa-commenting"/> Blog</Link>
+            </li>
           </ul>
         </nav>
       </section>
