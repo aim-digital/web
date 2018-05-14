@@ -41,7 +41,7 @@
   }
 
   .share {
-    margin: 2em auto;
+    margin: 3em auto 1.5em;
     text-align: center;
 
     > div {
@@ -116,7 +116,9 @@
     .media + .paragraph,
     .media + .quote,
     .paragraph + .media,
-    .quote + .media {
+    .paragraph + .quote,
+    .quote + .media,
+    .quote + .paragraph {
       margin-top: 3em !important;
     }
 
