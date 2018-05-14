@@ -20,16 +20,15 @@
   }
 
   a {
-    border-bottom: solid 2px $black-color;
+    border-bottom: solid 1px $primary-green-color;
     text-decoration: none;
-    color: $black-color;
-    opacity: .85;
-    transition: opacity 250ms;
-    background: $primary-green-color;
-    padding: 0 .25em;
+    color: $primary-green-color;
+    transition: all 150ms;
 
     &:hover {
-      opacity: 1;
+      border-bottom: solid 1px $black-color;
+      background: $primary-green-color;
+      color: $black-color;
     }
   }
 
