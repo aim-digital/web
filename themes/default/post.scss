@@ -118,7 +118,9 @@
     .paragraph + .media,
     .paragraph + .quote,
     .quote + .media,
-    .quote + .paragraph {
+    .quote + .paragraph,
+    .video + .image,
+    .image + .video {
       margin-top: 3em !important;
     }
 
