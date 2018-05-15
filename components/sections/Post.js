@@ -53,7 +53,7 @@ export default class extends Section {
       <TwitterShareButton url={`${url}`}>
         <img src="/@vitruvian-tech/machete-bundle/images/twitter.png" />
       </TwitterShareButton>
-      <EmailShareButton url={`${url}`} subject={`\<VitruvianTech\> ${post.title}`} body={post.summary}>
+      <EmailShareButton url={`${url}`} subject={`\<VitruvianTech\> ${post.title}`} body={`${post.summary}\n\n${url}`}>
         <img src="/@vitruvian-tech/machete-bundle/images/email.png" />
       </EmailShareButton>
     </div>);
