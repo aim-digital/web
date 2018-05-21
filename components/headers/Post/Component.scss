@@ -5,10 +5,6 @@
   position: relative;
   height: $page-height;
 
-  > div:first-child {
-    margin-top: .75em;
-  }
-
   > div {
     position: static !important;
   }

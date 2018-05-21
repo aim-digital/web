@@ -86,15 +86,15 @@ export default class extends Header {
     return (
       <Header className={['slide', className, animating ? `${classNames.animating || ''} animating` : ''].join(' ')}>
         <div className="brand">
-          <h1>
+          <div className="name">
             <span>VitruvianTech</span>
-          </h1>
-          <h2>
+          </div>
+          <div className="tagline">
             <span className="color-primary-blue">Roman</span>&nbsp;
             <span className="color-primary-green">Inspired</span>&nbsp;
             <span className="color-primary-yellow">Software</span>&nbsp;
             <span className="color-secondary-red">Designers</span>
-          </h2>
+          </div>
         </div>
         {children.length ? (
           <div>
