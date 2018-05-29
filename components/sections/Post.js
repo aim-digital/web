@@ -44,7 +44,7 @@ export default class extends Section {
   renderShare() {
     const { post } = this.props;
     const { id, slug } = post;
-    const url = `http://vitruvian.tech/post/${slug}/${id}`;
+    const url = `https://vitruvian.tech/post/${slug}/${id}`;
 
     return (<div className="share">
       <FacebookShareButton url={`${url}`}>
@@ -62,14 +62,14 @@ export default class extends Section {
   componentWillMount() {
     if(global.document) {
       var link = document.createElement("link");
-      link.href = 'http://vjs.zencdn.net/6.8.0/video-js.css';
+      link.href = 'https://vjs.zencdn.net/6.8.0/video-js.css';
       link.type = "text/css";
       link.rel = "stylesheet";
       link.media = "screen,print";
       document.getElementsByTagName("head")[0].appendChild(link);
 
       var script = document.createElement("script");
-      script.src = 'http://vjs.zencdn.net/6.8.0/video.js';
+      script.src = 'https://vjs.zencdn.net/6.8.0/video.js';
       script.type = "text/javascript";
       document.getElementsByTagName("head")[0].appendChild(script);
     }
