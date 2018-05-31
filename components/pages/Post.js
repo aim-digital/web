@@ -21,6 +21,7 @@ const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
       {property: 'og:url', content: `https://vitruvian.tech/post/${slug}/${id}`},
       {property: 'og:title', content: title},
       {property: 'og:description', content: summary},
+      {property: 'og:image:secure_url', content: hero ? getHeroImage(hero) : 'https://vitruvian.tech/dist/d6f6372a18fec2c0e6c0b81aa74de8cf.jpg'},
       {property: 'og:image', content: hero ? getHeroImage(hero) : 'https://vitruvian.tech/dist/d6f6372a18fec2c0e6c0b81aa74de8cf.jpg'},
       {property: 'twitter:card', content: 'article'},
       {property: 'twitter:title', content: title},
