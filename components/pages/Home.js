@@ -8,7 +8,7 @@ import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
 import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
-import {create} from '@machete-platform/core-bundle/controllers/Contact';
+// import {create} from '@machete-platform/core-bundle/controllers/Contact';
 // import * as forms from '@machete-platform/core-bundle/components/forms';
 import NukaCarousel from 'nuka-carousel';
 
@@ -28,7 +28,7 @@ const SECTIONS = {
 @connect(state => {
   const { header = 0, slide = 0 } = state['@machete-platform/core-bundle'].Transition;
   return ({ param: state.router.params, header, slide });
-}, {transition, dismiss, initialize, create})
+}, {transition, dismiss/*, initialize, create*/})
 
 export default class extends Page {
   static propTypes = {
@@ -39,8 +39,8 @@ export default class extends Page {
     header: PropTypes.number.isRequired,
     slide: PropTypes.number.isRequired,
     section: PropTypes.string,
-    initialize: PropTypes.func.isRequired,
-    create: PropTypes.func,
+    //initialize: PropTypes.func.isRequired,
+    //create: PropTypes.func,
     hide: PropTypes.bool
   };
 
@@ -51,7 +51,7 @@ export default class extends Page {
 
   state = {
     animating: false,
-    data: null
+    //contact: null
   };
 
   componentDidMount = () => document.querySelector('#app .nav + span > .page').addEventListener('click', this.props.dismiss);
@@ -72,13 +72,13 @@ export default class extends Page {
     }
   };
 
-  submit = (values) => {
-    const { initialize, create } = this.props;
-    // initialize('contact', {});
-    if (values.email) {
-      create(values).then(data => this.setState({ data }));
-    }
-  };
+  // submit = (values) => {
+  //   const { initialize, create } = this.props;
+  //   // initialize('contact', {});
+  //   if (values.email) {
+  //     create(values).then(contact => this.setState({ contact }));
+  //   }
+  // };
 
   updateHeader = (props = this.props) => {
     const { transition } = this;
@@ -98,9 +98,9 @@ export default class extends Page {
 
   render() {
     const { headers, sections, className, classNames = {}, param, header, section, hide } = this.props;
-    const { index, prev, next } = SECTIONS[section || param.section] || SECTIONS.home;
+    const { index/*, prev, next*/ } = SECTIONS[section || param.section] || SECTIONS.home;
     const single = headers.length === 1;
-    const { animating, data } = this.state;
+    const { animating/*, contact*/ } = this.state;
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
@@ -125,7 +125,7 @@ export default class extends Page {
             </section>
           )}
           {/*<section className="contact">
-            {data ? <span>{JSON.stringify(data)}</span> : <forms.Contact onSubmit={this.submit}/>}
+            {contact ? <span>{JSON.stringify(contact)}</span> : <forms.Contact onSubmit={this.submit}/>}
           </section>*/}
           <Footer/>
         </Page>

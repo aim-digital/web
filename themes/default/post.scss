@@ -1,6 +1,7 @@
 .post {
   h1, h2, h3 {
     text-align: center;
+    text-shadow: 0 2px 1px $humility;
   }
 
   h1 {
@@ -32,6 +33,10 @@
     }
   }
 
+  small {
+    font-size: .65em;
+  }
+
   .summary {
     color: $humility !important;
     text-align: center;
@@ -54,6 +59,41 @@
       img {
         width: 2.75em;
       }
+    }
+  }
+
+  .newsletter {
+    margin: 3em auto !important;
+    max-width: 360px;
+    border-top: solid 1px $humility;
+    border-bottom: solid 1px $humility;
+    padding: 1.5em 5px;
+
+    p {
+      margin: 1.5em auto 3em !important;
+      text-align: center;
+      font-size: .9em !important;
+    }
+
+    .error,
+    .success {
+      font-size: .85em;
+      font-weight: normal;
+      background: #efefef;
+      padding: 10px 15px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+    .error {
+      color: $primary-red-color;
+      margin-top: 20px;
+    }
+
+    .success {
+      color: $secondary-green-color;
+      text-align: center;
+      margin-top: -20px;
     }
   }
 
@@ -123,7 +163,8 @@
       margin-top: 3em !important;
     }
 
-    .media, .quote {
+    .media,
+    .quote {
       max-width: 640px;
     }
 
@@ -194,6 +235,38 @@
           margin-top: -8px;
           margin-left: 5px;
         }
+      }
+    }
+  }
+
+  form {
+    .firstName,
+    .lastName {
+      width: 50%;
+      float: left;
+    }
+
+    .firstName {
+      padding-right: 10px;
+    }
+
+    .lastName {
+      padding-left: 10px;
+    }
+
+    .email {
+      clear: left;
+    }
+
+    .submit {
+      text-align: center;
+    }
+
+    .form-group {
+      margin: 0 0 20px !important;
+
+      &:last-child {
+        margin-bottom: 10px !important;
       }
     }
   }

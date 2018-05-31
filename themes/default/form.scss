@@ -1,0 +1,61 @@
+form {
+  .form-group {
+    position: relative;
+
+    input {
+      margin-top: 5px;
+      color: #292929;
+    }
+
+    input,
+    .btn {
+      border-radius: 3px;
+    }
+
+    .btn {
+      font-family: $font-family-oswald;
+      text-transform: uppercase;
+      font-size: 1.35em;
+    }
+
+    .btn-success {
+      background-color: $secondary-green-color;
+      color: #efefef;
+      border-color: $primary-green-color;
+      transition: all 150ms;
+
+      &:hover, &:active {
+        background-color: $primary-green-color;
+        color: $white-color;
+        border-color: $secondary-green-color;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    > div:before {
+      content: attr(data-label);
+      font-weight: bold;
+      font-family: $font-family-oswald;
+      text-transform: uppercase;
+    }
+
+    &.has-error {
+      .form-control {
+        border-color: $primary-red-color;
+      }
+
+      > div:after {
+        content: attr(data-error);
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: $primary-red-color;
+        font-size: .85em;
+        line-height: 2;
+      }
+    }
+  }
+}

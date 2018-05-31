@@ -3,23 +3,45 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {ShareButtons} from 'react-share';
 import {Section} from '@machete-platform/core-bundle/components/layout';
+import {create} from '@machete-platform/core-bundle/controllers/Contact';
+import * as forms from '@machete-platform/core-bundle/components/forms';
 
 const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
 const RE_ANCHOR_MARKDOWN = /\[([^\]]*)\]\(([^\s|\)]*)(?:\s"([^\)]*)")?\)/g;
 
-@connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.data}))
+const CONTENT_NEWSLETTER = 'Join the VitruvianNation newsletter to get updates on our views on world news, politics, society, work culture, and technology!';
+
+@connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.data}), {create})
 
 export default class extends Section {
   static propTypes = {
     post: PropTypes.object
   };
 
+  state = {
+    contact: null,
+    form: {
+      message: null
+    }
+  };
+
   videos = 0;
 
-  renderContent = () => {
+  submit = values => {
+    const { create } = this.props;
+
+    if (values.email) {
+      create(values)
+        .then(contact => this.setState({ contact, form: { message: null } }))
+        .catch(({message}) => this.setState({ form: { message } }));
+    }
+  };
+
+  renderContent() {
     return this.props.post.content.map((content, i) => {
       return (<div key={i} className={`${content.type} ${content.type === 'image' || content.type === 'video' ? 'media' : 'text'}`}>
+        {content.type === 'newsletter' && this.renderNewsletter(content.body)}
         {content.type === 'heading' && <h3>{content.body}</h3>}
         {content.type === 'paragraph' && <p dangerouslySetInnerHTML={{__html: content.body.replace(RE_ANCHOR_MARKDOWN, '<a href="$2" title="$3" target="_blank">$1</a>')}} />}
         {content.type === 'quote' && <blockquote data-credit={content.credit}><p><span>{content.body}</span></p></blockquote>}
@@ -40,6 +62,18 @@ export default class extends Section {
       </div>)
     });
   };
+
+  renderNewsletter(content) {
+    const { contact } = this.state;
+    const { message } = this.state.form;
+
+    return <span>
+      <h3>Newsletter</h3>
+      <p>{content || CONTENT_NEWSLETTER}</p>
+      {contact ? <div className="success">Thank you, {contact.firstName}, for your subscription.<br /><strong>Welcome to <em>VitruvianNation</em>!</strong></div> : <forms.Contact onSubmit={this.submit}/>}
+      {message && <div className="error">{message}</div>}
+    </span>;
+  }
 
   renderShare() {
     const { post } = this.props;
@@ -89,7 +123,7 @@ export default class extends Section {
 
   render() {
     const { post } = this.props;
-//dangerouslySetInnerHTML
+
     return (
       <Section className={`post`}>
         <h1>{post.title}</h1>
@@ -99,10 +133,13 @@ export default class extends Section {
         <br />
         <article>
           {this.renderContent()}
+          <div className="newsletter text">
+            {this.renderNewsletter()}
+          </div>
         </article>
         {this.renderShare()}
         <p className="text-center humility">
-          <small>© 2018 Vitruvian Technology, Corp.</small>
+          <small>© 2018 Vitruvian Technology, Corp. (subsidiary of Vitruvian Holdings, LLC.)</small>
         </p>
         <br />
       </Section>
