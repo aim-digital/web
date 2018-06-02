@@ -95,6 +95,38 @@
       text-align: center;
       margin-top: -20px;
     }
+
+    form {
+      .firstName,
+      .lastName {
+        width: 50%;
+        float: left;
+      }
+
+      .firstName {
+        padding-right: 10px;
+      }
+
+      .lastName {
+        padding-left: 10px;
+      }
+
+      .email {
+        clear: left;
+      }
+
+      .submit {
+        text-align: center;
+      }
+
+      .form-group {
+        margin: 0 0 20px !important;
+
+        &:last-child {
+          margin-bottom: 10px !important;
+        }
+      }
+    }
   }
 
   article {
@@ -235,38 +267,6 @@
           margin-top: -8px;
           margin-left: 5px;
         }
-      }
-    }
-  }
-
-  form {
-    .firstName,
-    .lastName {
-      width: 50%;
-      float: left;
-    }
-
-    .firstName {
-      padding-right: 10px;
-    }
-
-    .lastName {
-      padding-left: 10px;
-    }
-
-    .email {
-      clear: left;
-    }
-
-    .submit {
-      text-align: center;
-    }
-
-    .form-group {
-      margin: 0 0 20px !important;
-
-      &:last-child {
-        margin-bottom: 10px !important;
       }
     }
   }

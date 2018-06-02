@@ -32,7 +32,7 @@ export default class extends Section {
     const { create } = this.props;
 
     if (values.email) {
-      create(values)
+      create({ ...values, newsletter: true })
         .then(contact => this.setState({ contact, form: { message: null } }))
         .catch(({message}) => this.setState({ form: { message } }));
     }
@@ -70,7 +70,7 @@ export default class extends Section {
     return <span>
       <h3>Newsletter</h3>
       <p>{content || CONTENT_NEWSLETTER}</p>
-      {contact ? <div className="success">Thank you, {contact.firstName}, for your subscription.<br /><strong>Welcome to <em>VitruvianNation</em>!</strong></div> : <forms.Contact onSubmit={this.submit}/>}
+      {contact ? <div className="success">Thank you, {contact.firstName}, for your subscription.<br /><strong>Welcome to the <em>VitruvianNation</em>!</strong></div> : <forms.Contact onSubmit={this.submit}/>}
       {message && <div className="error">{message}</div>}
     </span>;
   }
@@ -87,7 +87,7 @@ export default class extends Section {
       <TwitterShareButton url={`${url}`}>
         <img src="/@vitruvian-tech/machete-bundle/images/twitter.png" />
       </TwitterShareButton>
-      <EmailShareButton url={`${url}`} subject={`\<VitruvianTech\> ${post.title}`} body={`${post.summary}\n\n${url}`}>
+      <EmailShareButton url={`${url}`} subject={`\<VitruvianTech\> ${post.title}`} body={`${post.summary}\n\n${url}\n\n`}>
         <img src="/@vitruvian-tech/machete-bundle/images/email.png" />
       </EmailShareButton>
     </div>);

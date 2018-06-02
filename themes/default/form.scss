@@ -1,15 +1,26 @@
 form {
+  label {
+    margin: 0;
+    font-weight: normal;
+  }
+
   .form-group {
     position: relative;
 
-    input {
+    input,
+    textarea {
       margin-top: 5px;
       color: #292929;
     }
 
     input,
+    textarea,
     .btn {
       border-radius: 3px;
+    }
+
+    input[type="checkbox"] {
+      margin: 0 5px 0;
     }
 
     .btn {

@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {initialize} from 'redux-form';
 import {Link} from 'react-router';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
 import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
-// import {create} from '@machete-platform/core-bundle/controllers/Contact';
-// import * as forms from '@machete-platform/core-bundle/components/forms';
+import {create} from '@machete-platform/core-bundle/controllers/Contact';
+import * as forms from '@machete-platform/core-bundle/components/forms';
 import NukaCarousel from 'nuka-carousel';
 
 const SECTIONS = {
@@ -28,7 +27,7 @@ const SECTIONS = {
 @connect(state => {
   const { header = 0, slide = 0 } = state['@machete-platform/core-bundle'].Transition;
   return ({ param: state.router.params, header, slide });
-}, {transition, dismiss/*, initialize, create*/})
+}, {transition, dismiss, create})
 
 export default class extends Page {
   static propTypes = {
@@ -39,8 +38,6 @@ export default class extends Page {
     header: PropTypes.number.isRequired,
     slide: PropTypes.number.isRequired,
     section: PropTypes.string,
-    //initialize: PropTypes.func.isRequired,
-    //create: PropTypes.func,
     hide: PropTypes.bool
   };
 
@@ -51,7 +48,10 @@ export default class extends Page {
 
   state = {
     animating: false,
-    //contact: null
+    contact: null,
+    form: {
+      message: null
+    }
   };
 
   componentDidMount = () => document.querySelector('#app .nav + span > .page').addEventListener('click', this.props.dismiss);
@@ -72,13 +72,15 @@ export default class extends Page {
     }
   };
 
-  // submit = (values) => {
-  //   const { initialize, create } = this.props;
-  //   // initialize('contact', {});
-  //   if (values.email) {
-  //     create(values).then(contact => this.setState({ contact }));
-  //   }
-  // };
+  submit = values => {
+    const { create } = this.props;
+
+    if (values.email) {
+      create({ ...values, quote: true })
+        .then(contact => this.setState({ contact, form: { message: null } }))
+        .catch(({message}) => this.setState({ form: { message } }));
+    }
+  };
 
   updateHeader = (props = this.props) => {
     const { transition } = this;
@@ -90,9 +92,9 @@ export default class extends Page {
 
   afterSlide = header => this.transition('slide', 0).then(() => this.transition('header', header));
 
-  begin = () => this.setState({ animating: true });
-
-  complete = () => this.setState({ animating: false });
+  // begin = () => this.setState({ animating: true });
+  //
+  // complete = () => this.setState({ animating: false });
 
   wrap = sections => sections.map((section, i) => <div key={String(i)}>{section}</div>);
 
@@ -100,7 +102,8 @@ export default class extends Page {
     const { headers, sections, className, classNames = {}, param, header, section, hide } = this.props;
     const { index/*, prev, next*/ } = SECTIONS[section || param.section] || SECTIONS.home;
     const single = headers.length === 1;
-    const { animating/*, contact*/ } = this.state;
+    const { animating, contact } = this.state;
+    const { message } = this.state.form;
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
@@ -124,9 +127,16 @@ export default class extends Page {
               </div>*/}
             </section>
           )}
-          {/*<section className="contact">
-            {contact ? <span>{JSON.stringify(contact)}</span> : <forms.Contact onSubmit={this.submit}/>}
-          </section>*/}
+          <section className="quote">
+            <div>
+              <h3>Get a Quote</h3>
+              <p>Interested in our products or services? Connect with us to learn more about how we can help your business grow!</p>
+              {contact ?
+                <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry.</strong><br />We will contact you within 24 hours!</div> :
+                <forms.Contact quote submitText="Submit" newsletterText="Join the VitruvianNation newsletter!" onSubmit={this.submit}/>}
+              {message && <div className="error">{message}</div>}
+            </div>
+          </section>
           <Footer/>
         </Page>
     );
