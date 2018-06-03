@@ -76,7 +76,7 @@ export default class extends Page {
     const { create } = this.props;
 
     if (values.email) {
-      create({ ...values, quote: true })
+      create({ ...values, quote: true, newsletter: !(values.newsletter === false) })
         .then(contact => this.setState({ contact, form: { message: null } }))
         .catch(({message}) => this.setState({ form: { message } }));
     }
@@ -132,7 +132,7 @@ export default class extends Page {
               <h3>Get a Quote</h3>
               <p>Interested in our products or services? Connect with us to learn more about how we can help your business grow!</p>
               {contact ?
-                <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry.</strong><br />We will contact you within 24 hours!</div> :
+                <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
                 <forms.Contact quote submitText="Submit" newsletterText="Join the VitruvianNation newsletter!" onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>

@@ -7,7 +7,7 @@
 .section.container {
   position: relative;
   z-index: 1;
-  box-shadow: 0 -5px 15px rgba(41, 41, 41, .85);
+  box-shadow: 0 -2px 20px rgba(41, 41, 41, 1);
   min-height: $page-height!important;
 
   @media (min-height: 900px) {
