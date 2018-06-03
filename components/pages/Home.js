@@ -135,7 +135,7 @@ export default class extends Page {
           <section className="quote">
             <div>
               <h3>Get a Quote</h3>
-              <p>Interested in our products or services? Connect with us to learn more about how we can help your business grow!</p>
+              <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
               {contact ?
                 <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
                 <forms.Contact quote submitText="Submit" newsletterText="Join the VitruvianNation newsletter!" onSubmit={this.submit}/>}
