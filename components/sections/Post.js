@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {ShareButtons} from 'react-share';
+import ReactGA from 'react-ga';
 import {Section} from '@machete-platform/core-bundle/components/layout';
 import {create} from '@machete-platform/core-bundle/controllers/Contact';
 import * as forms from '@machete-platform/core-bundle/components/forms';
@@ -30,10 +31,14 @@ export default class extends Section {
 
   submit = values => {
     const { create } = this.props;
+    const ga = { category: 'Newsletter Form', action: 'Sign Up' };
 
     if (values.email) {
+      ReactGA.event({ ...ga, label: 'Attempt' });
+
       create({ ...values, newsletter: true })
         .then(contact => this.setState({ contact, form: { message: null } }))
+        .then(() => ReactGA.event({ ...ga, label: `Success` }))
         .catch(({message}) => this.setState({ form: { message } }));
     }
   };

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
+import ReactGA from 'react-ga';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
@@ -74,10 +75,14 @@ export default class extends Page {
 
   submit = values => {
     const { create } = this.props;
+    const ga = { category: 'Quote Form', action: 'Submit' };
 
     if (values.email) {
+      ReactGA.event({ ...ga, label: `Attempt` });
+
       create({ ...values, quote: true, newsletter: !(values.newsletter === false) })
         .then(contact => this.setState({ contact, form: { message: null } }))
+        .then(() => ReactGA.event({ ...ga, label: `Success` }))
         .catch(({message}) => this.setState({ form: { message } }));
     }
   };
