@@ -106,4 +106,59 @@ section.quote {
   .section.container {
     background: linear-gradient(rgba(89, 159, 198, .5), rgba(21, 21, 21, 0));
   }
+
+  section.solutions {
+    background: $background-color;
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+
+    .solution {
+      margin: .5em 0;
+      width: 100%;
+    }
+  
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      min-height: 100vh;
+      width: 100%;
+      background: none;
+      pointer-events: none;
+
+      > div {
+        vertical-align: middle;
+        position: absolute;
+        pointer-events: auto;
+        bottom: 65px;
+
+        &:first-child {
+          left: 0;
+        }
+  
+        &:last-child {
+          right: 0;
+        }
+      }
+
+      .solution {
+        margin: 1.5em;
+        max-width: 25vw;
+        font-size: .9em;
+        position: relative;
+
+        @media (min-width: 1200px) {
+          font-size: 1em;
+        }
+
+        @media (min-width: 1400px) {
+          font-size: 1.1em;
+        }
+
+        @media (min-width: 1600px) {
+          max-width: 20vw;
+        }
+      }
+    }
+  }
 }

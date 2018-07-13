@@ -8,9 +8,12 @@ import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
 import {Footer, Modal} from '@vitruvian-tech/machete-bundle/components/layout'
+import {Action} from '@vitruvian-tech/machete-bundle/components/solutions'
 import {create} from '@machete-platform/core-bundle/controllers/Contact';
 import * as forms from '@machete-platform/core-bundle/components/forms';
 import NukaCarousel from 'nuka-carousel';
+
+const SOLUTION_DELAY = 100;
 
 const SECTIONS = {
   home: { index: 0, header: 0, slide: 0, param: '', next: 'missions' },
@@ -121,6 +124,26 @@ export default class extends Page {
               )}
             </section>
           ) : <span/>}
+          <section className="solutions">
+            <div>
+              {[
+                'I need to migrate my system to a new platform.',
+                'I need to migrate my system to a new platform.',
+                'I need to migrate my system to a new platform.',
+                'I need to migrate my system to a new platform.',
+                'I need to migrate my system to a new platform.'
+              ].map((action, i) => <Action key={i} transition={{ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{action}</Action>)}
+            </div>
+            <div>
+              {[
+                'I need maintenance on my existing platform.',
+                'I need maintenance on my existing platform.',
+                'I need maintenance on my existing platform.',
+                'I need maintenance on my existing platform.',
+                'I need maintenance on my existing platform.'
+              ].map((action, i) => <Action key={i} transition={{ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{action}</Action>)}
+            </div>
+          </section>
           {!hide && (
             <section className="section container">
               {this.wrap(sections)[!section && index <= 1 ? index : 0]}

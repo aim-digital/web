@@ -1,0 +1,36 @@
+.solution {
+  box-shadow: 1px 1px 2px #000;
+  background: $black-color;
+  color: $primary-yellow-color;
+  display: table;
+  opacity: .85;
+  transition: all .35s;
+  line-height: 1.5em;
+
+  &:hover {
+    opacity: 1 !important;
+    background: $primary-yellow-color;
+    color: $background-color;
+  }
+
+  i, button {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  button {
+    background: none;
+    outline: none;
+    border: none;
+    text-align: left;
+    padding: .5em 1em;
+  }
+
+  i {
+    color: $black-color;
+    background: $primary-green-color;
+    font-size: 1.5em;
+    padding: .5em;
+    width: 1.5em;
+  }
+}
