@@ -14,18 +14,25 @@ footer {
   box-shadow: 0 -1px 10px rgba(41, 41, 41,.5);
   text-shadow: -1px 1px 1px $black-color;
 
-  &:before {
+  &:before, &:after {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: .65;
+    opacity: .35;
     background: $black-color;
     z-index: 2;
   }
 
+  &:after {
+    background: linear-gradient(rgba(21, 21, 21, 0), #151515);
+    height: 75%;
+    bottom: 0;
+    opacity: 1;
+  }
+
   a {
-    opacity: .75;
+    opacity: .85;
     transition: opacity .25s;
     color: #f8f8f8;
 
@@ -81,11 +88,12 @@ footer {
 
   img {
     border-radius: 50%;
-    margin: 2em auto .5em;
-    box-shadow: 0 0 .25em #151515;
+    margin: 2em auto 1em;
+    box-shadow: 0 0 .5em rgba(89, 159, 198, 1);
     max-width: 320px;
-    width: 15%;
+    width: 10%;
     min-width: 92px;
+    background: $black-color;
   }
 
   a img {
@@ -209,7 +217,7 @@ footer {
     }
 
     @media (min-width: 1280px) {
-      font-size: .9em;
+      font-size: .85em;
     }
   }
 
@@ -223,7 +231,7 @@ footer {
   .content {
     overflow: hidden;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 
     @media (min-width: 768px) {
       padding: 0 1.5em;

@@ -48,29 +48,35 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/services" onClick={update(0, 2)}>What we do</Link></li>
-                <li><Link rel="nofollow" to="/home/leadership" onClick={update(0, 6)}>Who we are</Link></li>
-                <li><Link rel="nofollow" to="/home/network" onClick={update(0, 7)}>Partner network</Link></li>
-                <li><Link rel="nofollow" to="/home/virtues" onClick={update(0, 0)}><em>Vitruvian Virtues</em></Link></li>
+                <li><Link rel="nofollow" to="/home/services" onClick={update(0, 2)}>What We Do</Link></li>
+                <li><Link rel="nofollow" to="/home/leadership" onClick={update(0, 6)}>Who We Are</Link></li>
+                <li><Link rel="nofollow" to="/home/network" onClick={update(0, 7)}>Partner Network</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/plans" onClick={update(0, 3)}>Plans and products</Link></li>
-                <li><Link rel="nofollow" to="/home/rates" onClick={update(0, 4)}>Hourly rates</Link></li>
-                <li><Link rel="nofollow" to="/home/hosting" onClick={update(0, 5)}>Hosting packages</Link></li>
+                <li><Link rel="nofollow" to="/home/plans" onClick={update(0, 3)}>Plans &amp; Products</Link></li>
+                <li><Link rel="nofollow" to="/home/rates" onClick={update(0, 4)}>Hourly Rates</Link></li>
+                <li><Link rel="nofollow" to="/home/hosting" onClick={update(0, 5)}>Hosting Packages</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/communications" onClick={update(1, 0)}>Connect with us</Link></li>
-                <li><Link rel="nofollow" to="/home/headquarters" onClick={update(1, 1)}>Base of operations</Link></li>
+                <li><Link rel="nofollow" to="/home/communications" onClick={update(1, 0)}>Connect with Us</Link></li>
+                <li><Link rel="nofollow" to="/home/headquarters" onClick={update(1, 1)}>Base of Operations</Link></li>
               </ul>
             </li>
-            <li>
-              <Link to="/post/music-tech-and-steven-tyler-collide-in-NOLA/05-04-2018/2H9AEB2WpicAiMiO88YsSY"><i className="fa fa-commenting"/> Blog</Link>
+            <li className="subnav">
+              <a href="#" onClick={preventDefault}><i className="fa fa-commenting"/> Blog</a>
+              <ul>
+                <li>
+                  <Link to="/post/music-tech-and-steven-tyler-collide-in-NOLA/05-04-2018/2H9AEB2WpicAiMiO88YsSY">
+                    <marquee><span>Music, Tech, and Steven Tyler Collide in NOLA</span> <span className="humility">/ Collision Conf. 2018</span></marquee>
+                  </Link>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>

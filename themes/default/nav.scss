@@ -27,6 +27,10 @@ nav {
   transition: background-color .25s;
 }
 
+nav marquee {
+  margin-bottom: -20px;
+}
+
 nav ul {
   margin: 0;
   padding: 0;
@@ -120,7 +124,7 @@ nav > ul {
 }
 
 nav > ul > li {
-  font-family: 'Oswald', $font-family-brand;
+  font-family: $font-family-oswald;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: -1px 1px 1px $black-color;
@@ -190,10 +194,6 @@ nav > ul > li.active > ul {
   pointer-events: auto;
 }
 
-nav > ul > li > ul > li {
-  opacity: 0;
-}
-
 nav > ul > li.active > ul > li {
   opacity: 1;
   transition: opacity .35s;
@@ -205,8 +205,14 @@ nav > ul > li > ul > li a {
 }
 
 nav > ul > li > ul > li {
+  opacity: 0;
   font-size: .95em;
   line-height: 3em;
+  border-bottom: solid 1px #292929;
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 nav > a.logo {
@@ -333,8 +339,6 @@ nav > a.toggle {
     line-height: inherit;
     margin: 0 .35em;
     background: transparent;
-    font-family: $font-family-brand;
-    text-transform: none;
     letter-spacing: 0;
     text-shadow: none;
   }
@@ -386,6 +390,7 @@ nav > a.toggle {
     line-height: 48px;
     display: block;
     font-size: .9em;
+    border-bottom: solid 1px $humility;
   }
 
   nav > ul > li > ul > li,

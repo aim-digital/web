@@ -83,10 +83,9 @@ export default class extends Footer {
                   <h4><i className="fa fa-universal-access"/> About</h4>
                   <ul>
                     <li><Link to="/missions" onClick={update(0, 1)}>Work</Link></li>
-                    <li><Link to="/services" onClick={update(0, 2)}>What we do</Link></li>
-                    <li><Link to="/leadership" onClick={update(0, 6)}>Who we are</Link></li>
-                    <li><Link to="/network" onClick={update(0, 7)}>Partner network</Link></li>
-                    <li><Link to="/virtues" onClick={update(0, 0)}><em>Vitruvian Virtues</em></Link></li>
+                    <li><Link to="/services" onClick={update(0, 2)}>What We Do</Link></li>
+                    <li><Link to="/leadership" onClick={update(0, 6)}>Who We Are</Link></li>
+                    <li><Link to="/network" onClick={update(0, 7)}>Partner Network</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -94,9 +93,9 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/plans" onClick={update(0, 3)}>Plans and products</Link></li>
-                    <li><Link to="/rates" onClick={update(0, 4)}>Hourly rates</Link></li>
-                    <li><Link to="/hosting" onClick={update(0, 5)}>Hosting packages</Link></li>
+                    <li><Link to="/plans" onClick={update(0, 3)}>Plans &amp; Products</Link></li>
+                    <li><Link to="/rates" onClick={update(0, 4)}>Hourly Rates</Link></li>
+                    <li><Link to="/hosting" onClick={update(0, 5)}>Hosting Packages</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -104,8 +103,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-envelope"/> Contact</h4>
                   <ul>
-                    <li><Link to="/communications" onClick={update(1, 0)}>Connect with us</Link></li>
-                    <li><Link to="/headquarters" onClick={update(1, 1)}>Base of operations</Link></li>
+                    <li><Link to="/communications" onClick={update(1, 0)}>Connect with Us</Link></li>
+                    <li><Link to="/headquarters" onClick={update(1, 1)}>Base of Operations</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -113,7 +112,7 @@ export default class extends Footer {
             <div className="col-sm-3 col-xs-12">
               <h4><i className="fa fa-info-circle"/> Support</h4>
               <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank">+1 (646) 204-1732</a>, or email us at <a title="Email: services@vitruvian.tech" href="mailto:services@vitruvian.tech?subject=<VitruvianTech>%20Connect">services@vitruvian.tech</a>.</p>
-              <p>Operating hours:<br />M-F 10am-6pm (EDT)</p>
+              <p>Operating hours:<br />10am-6pm (EDT) / M-F</p>
             </div>
             <div className="col-xs-12 text-center">
               <img src="/@vitruvian-tech/machete-bundle/images/insignia.png" alt="The Digital Special Forces for custom software and marketing solutions." title="Vitruvian Technology, Corp."/>

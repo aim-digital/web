@@ -108,7 +108,7 @@ export default class extends Header {
                   <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking and project management system.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any/all simultaneous subscriptions.</i></small></li>
                   <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
-                  <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+30%<sub>/hourly rate</sub></strong></span></li>
+                  <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+27%<sub>/hourly rate</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (per contract negotiations.)</i></small></li>
                   <li className={styles.asterisk}><small><i>Typical for most hourly-based <strong>ad-hoc</strong> projects.</i></small></li>
                   <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$2,999<sub><sup>.99</sup>/license</sub></strong></span></li>

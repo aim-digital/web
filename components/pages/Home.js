@@ -7,7 +7,7 @@ import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
-import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
+import {Footer} from '@vitruvian-tech/machete-bundle/components/layout'
 import {create} from '@machete-platform/core-bundle/controllers/Contact';
 import * as forms from '@machete-platform/core-bundle/components/forms';
 import NukaCarousel from 'nuka-carousel';
@@ -138,7 +138,7 @@ export default class extends Page {
               <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
               {contact ?
                 <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
-                <forms.Contact quote submitText="Submit" newsletterText="Join the VitruvianNation newsletter!" onSubmit={this.submit}/>}
+                <forms.Contact quote submitText="Submit" newsletterText="Join the VitruvianArmy newsletter!" onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>

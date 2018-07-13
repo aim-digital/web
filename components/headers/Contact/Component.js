@@ -24,7 +24,7 @@ export default class extends Header {
               <ul className={'columns'}>
                 <li>
                   <a title="Email: services@vitruvian.tech" href="mailto:services@vitruvian.tech?subject=<VitruvianTech>%20Connect">
-                    <i className="fa fa-envelope"/> Sales and Support
+                    <i className="fa fa-envelope"/> Sales &amp; Support
                   </a>
                 </li>
                 <li>
