@@ -526,3 +526,10 @@ body.nav-open,
     background: $black-color;
   }
 }
+
+.nav .progress-loader {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  bottom: -1px;
+}
