@@ -3,6 +3,7 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 
+const PROGRESS_SPEED = 500;
 const PROGRESS_INTERVAL = .20;
 
 @connect(state => ({ progress: state['@machete-platform/core-bundle'].Transition.progress }), { transition })
@@ -21,15 +22,16 @@ export default class extends Component {
 
   componentDidUpdate() {
     const { progress, transition } = this.props;
+    const { loading } = this.state;
 
     clearTimeout(this.timer);
 
     if (progress === 1) {
-      this.state.loading && setTimeout(() => this.setState({ loading: false }), 250);
-      setTimeout(() => transition({ progress: 0 }), 500);
+      loading && setTimeout(() => this.setState({ loading: false }), PROGRESS_SPEED / 2);
+      setTimeout(() => transition({ progress: 0 }), PROGRESS_SPEED);
     } else if (progress > 0) {
-      !this.state.loading && this.setState({ loading: true });
-      this.timer = setTimeout(() => transition({ progress: (progress + PROGRESS_INTERVAL) - (progress * PROGRESS_INTERVAL) }), 500);
+      !loading && this.setState({ loading: true });
+      this.timer = setTimeout(() => transition({ progress: (progress + PROGRESS_INTERVAL) - (progress * PROGRESS_INTERVAL) }), PROGRESS_SPEED);
     }
   }
 
