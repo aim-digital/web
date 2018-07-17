@@ -3,7 +3,7 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {Nav} from '@machete-platform/core-bundle/components/layout';
-import {Progress} from '@vitruvian-tech/machete-bundle/components/layout';
+import {Progress} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {load} from '@vitruvian-tech/machete-bundle/controllers/Nav';
 import * as Auth from '@machete-platform/core-bundle/controllers/Auth';
