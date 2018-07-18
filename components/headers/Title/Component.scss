@@ -17,7 +17,7 @@
   }
 
   .logo {
-    margin: 0 auto 2.25em;
+    margin: 0 auto 2em;
     position: absolute;
     bottom: 100%;
     width: 100%;
@@ -31,6 +31,10 @@
 
       @media (min-width: 768px) {
         max-width: 14em;
+      }
+
+      @media (min-width: 1400px) {
+        max-width: 17em;
       }
     }
   }
