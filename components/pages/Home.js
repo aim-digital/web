@@ -7,7 +7,7 @@ import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
-import {Footer} from '@vitruvian-tech/machete-bundle/components/layout'
+import {Footer, Modal} from '@vitruvian-tech/machete-bundle/components/layout'
 import {create} from '@machete-platform/core-bundle/controllers/Contact';
 import * as forms from '@machete-platform/core-bundle/components/forms';
 import NukaCarousel from 'nuka-carousel';
