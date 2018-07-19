@@ -33,9 +33,9 @@ export default class extends Component {
     const { style } = this.state;
 
     return (
-      <div className="solution" style={style}>
+      <div className="solution" style={style} onClick={onClick}>
         {icon && <i className={`fa fa-${icon}`}></i>}
-        <button onClick={onClick}>
+        <button>
           {this.props.children}
         </button>
       </div>

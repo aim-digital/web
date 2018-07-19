@@ -2,15 +2,16 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import ReactGA from 'react-ga';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
-import {Footer, Modal} from '@vitruvian-tech/machete-bundle/components/layout'
-import {Solution} from '@vitruvian-tech/machete-bundle/components/buttons'
+import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
+import {Solution} from '@vitruvian-tech/machete-bundle/components/buttons';
 import {create} from '@machete-platform/core-bundle/controllers/Contact';
+import * as modals from '@vitruvian-tech/machete-bundle/components/modals';
 import * as forms from '@machete-platform/core-bundle/components/forms';
+import ReactGA from 'react-ga';
 import NukaCarousel from 'nuka-carousel';
 
 const SOLUTION_DELAY = 100;
@@ -173,7 +174,7 @@ export default class extends Page {
             </div>
           </section>
           <Footer/>
-          <Modal show={!!solution} title={solution} onHide={() => this.setState({ solution: null })}/>
+          <modals.Solution show={!!solution} title={solution} onHide={() => this.setState({ solution: null })}/>
         </Page>
     );
   }
