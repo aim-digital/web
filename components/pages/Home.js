@@ -2,16 +2,18 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import ReactGA from 'react-ga';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
-import {Footer, Modal} from '@vitruvian-tech/machete-bundle/components/layout'
-import {Action} from '@vitruvian-tech/machete-bundle/components/solutions'
+import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
+import {Solution} from '@vitruvian-tech/machete-bundle/components/buttons';
 import {create} from '@machete-platform/core-bundle/controllers/Contact';
+import * as modals from '@vitruvian-tech/machete-bundle/components/modals';
 import * as forms from '@machete-platform/core-bundle/components/forms';
+import ReactGA from 'react-ga';
 import NukaCarousel from 'nuka-carousel';
+import {solutions} from '@vitruvian-tech/machete-bundle/content';
 
 const SOLUTION_DELAY = 100;
 
@@ -53,6 +55,7 @@ export default class extends Page {
   state = {
     animating: false,
     contact: null,
+    solution: null,
     form: {
       message: null
     }
@@ -110,7 +113,7 @@ export default class extends Page {
     const { headers, sections, className, classNames = {}, param, header, section, hide } = this.props;
     const { index/*, prev, next*/ } = SECTIONS[section || param.section] || SECTIONS.home;
     const single = headers.length === 1;
-    const { animating, contact } = this.state;
+    const { animating, contact, solution } = this.state;
     const { message } = this.state.form;
 
     return (
@@ -126,22 +129,18 @@ export default class extends Page {
           ) : <span/>}
           <section className="solutions">
             <div>
-              {[
-                'I need to migrate my system to a new platform.',
-                'I need to migrate my system to a new platform.',
-                'I need to migrate my system to a new platform.',
-                'I need to migrate my system to a new platform.',
-                'I need to migrate my system to a new platform.'
-              ].map((action, i) => <Action key={i} transition={{ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{action}</Action>)}
+              {solutions.slice(0, 4).map((solution, i) => <Solution
+                key={i}
+                onClick={() => this.setState({ solution })}
+                icon={solution.icon}
+                transition={{ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{solution.summary}</Solution>)}
             </div>
             <div>
-              {[
-                'I need maintenance on my existing platform.',
-                'I need maintenance on my existing platform.',
-                'I need maintenance on my existing platform.',
-                'I need maintenance on my existing platform.',
-                'I need maintenance on my existing platform.'
-              ].map((action, i) => <Action key={i} transition={{ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{action}</Action>)}
+              {solutions.slice(4).map((solution, i) => <Solution
+                key={i}
+                onClick={() => this.setState({ solution })}
+                icon={solution.icon}
+                transition={{ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{solution.summary}</Solution>)}
             </div>
           </section>
           {!hide && (
@@ -166,6 +165,7 @@ export default class extends Page {
             </div>
           </section>
           <Footer/>
+          <modals.Solution show={!!solution} solution={solution || {}} onHide={() => this.setState({ solution: null })}/>
         </Page>
     );
   }

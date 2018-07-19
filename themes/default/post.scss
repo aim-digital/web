@@ -21,15 +21,23 @@
   }
 
   a {
-    border-bottom: solid 1px $primary-green-color;
+    position: relative;
     text-decoration: none;
     color: $secondary-blue-color;
-    transition: all 150ms;
 
-    &:hover {
-      border-bottom: solid 1px $black-color;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
       background: $primary-green-color;
-      color: $black-color;
+      transition: all 150ms;
+      top: 100%;
+      left: 0;
+    }
+
+    &:hover:after {
+      width: 100%;
     }
   }
 

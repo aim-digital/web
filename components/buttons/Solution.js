@@ -5,11 +5,12 @@ export default class extends Component {
   static propTypes = {
     children: PropTypes.string,
     icon: PropTypes.string,
-    transition: PropTypes.object
+    transition: PropTypes.object,
+    onClick: PropTypes.func
   };
 
   static defaultProps = {
-    icon: 'info-circle'
+    onClick: () => {}
   };
 
   state = {
@@ -27,11 +28,11 @@ export default class extends Component {
   }
 
   render() {
-    const { icon } = this.props;
+    const { icon, onClick } = this.props;
     const { style } = this.state;
 
     return (
-      <div className="solution" style={style}>
+      <div className="solution button" style={style} onClick={onClick}>
         {icon && <i className={`fa fa-${icon}`}></i>}
         <button>
           {this.props.children}

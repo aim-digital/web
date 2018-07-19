@@ -1,16 +1,16 @@
-.solution {
+.solution.button {
   box-shadow: 1px 1px 2px #000;
-  background: $black-color;
-  color: $primary-yellow-color;
   display: table;
-  opacity: .85;
   transition: all .35s;
   line-height: 1.5em;
+  opacity: .85;
+  background: $black-color;
+  color: $white-color;
 
   &:hover {
     opacity: 1 !important;
-    background: $primary-yellow-color;
-    color: $background-color;
+    background: $secondary-green-color;
+    color: $black-color;
   }
 
   i, button {
@@ -24,6 +24,7 @@
     border: none;
     text-align: left;
     padding: .5em 1em;
+    width: 100%;
   }
 
   i {
@@ -32,5 +33,7 @@
     font-size: 1.5em;
     padding: .5em;
     width: 1.5em;
+    box-shadow: 0 0 10px $background-color;
+    border-right: solid 1px $black-color;
   }
 }

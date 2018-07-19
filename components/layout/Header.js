@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
+import {Logo} from '@vitruvian-tech/machete-bundle/components/layout';
 
 const SECONDS_IDLE = 60 * 15;
 
@@ -85,17 +86,7 @@ export default class extends Header {
 
     return (
       <Header className={['slide', className, animating ? `${classNames.animating || ''} animating` : ''].join(' ')}>
-        <div className="brand">
-          <div className="name">
-            <span>VitruvianTech</span>
-          </div>
-          <div className="tagline">
-            <span className="color-primary-blue">Roman</span>&nbsp;
-            <span className="color-primary-green">Inspired</span>&nbsp;
-            <span className="color-primary-yellow">Software</span>&nbsp;
-            <span className="color-secondary-red">Designers</span>
-          </div>
-        </div>
+        <Logo/>
         {children.length ? (
           <div>
             <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 250, begin: this.begin, complete: this.complete }}>
