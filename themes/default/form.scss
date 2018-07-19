@@ -19,6 +19,10 @@ form {
       border-radius: 3px;
     }
 
+    textarea {
+      min-height: 5em;
+    }
+
     input[type="checkbox"] {
       margin: 0 5px 0 0;
     }
@@ -27,6 +31,10 @@ form {
       font-family: $font-family-oswald;
       text-transform: uppercase;
       font-size: 1.35em;
+
+      & + .btn {
+        margin-left: .5em;
+      }
     }
 
     .btn-success {

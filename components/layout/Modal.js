@@ -20,7 +20,7 @@ export default class extends Component {
     const { children, title, icon, className } = this.props;
 
     return (
-      <Modal {...this.props} className={`${className}`}>
+      <Modal {...this.props} className={`${className}`} title="">
         <div className="modal-nav">
           <Modal.Dismiss className="dismiss">
             <i className="fa fa-arrow-circle-left"></i>
@@ -28,7 +28,7 @@ export default class extends Component {
         </div>
         <Modal.Header>
           <Logo/>
-          <Modal.Title>{icon && <i className={`fa fa-${icon}`}></i>}{title}</Modal.Title>
+          <Modal.Title>{icon && <div><i className={`fa fa-${icon}`}></i></div>}<span>{title}</span></Modal.Title>
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>

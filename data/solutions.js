@@ -2,7 +2,7 @@ const PLANS = [
     {
         id: 1,
         name: 'Value',
-        description: 'Feature Point System',
+        description: 'Point System',
         pricing: [{ label: '$300', unit: 'pt.' }],
         details: [
             'Foxtrot℠ target tracking and project management system.',

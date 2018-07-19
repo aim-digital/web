@@ -13,7 +13,7 @@ import * as modals from '@vitruvian-tech/machete-bundle/components/modals';
 import * as forms from '@machete-platform/core-bundle/components/forms';
 import ReactGA from 'react-ga';
 import NukaCarousel from 'nuka-carousel';
-import {solutions} from '@vitruvian-tech/machete-bundle/content';
+import {solutions} from '@vitruvian-tech/machete-bundle/data';
 
 const SOLUTION_DELAY = 100;
 
@@ -79,6 +79,17 @@ export default class extends Page {
     }
   };
 
+  openSolutionModal = solution => {
+    this.setState({ solution });
+    ReactGA.event({ category: `Solution`, action: `Click`, label: solution.summary });
+  };
+
+  prepareSolutionList = transition => (solution, i) => <Solution
+    key={i}
+    onClick={() => this.openSolutionModal(solution)}
+    icon={solution.icon}
+    transition={transition(i)}>{solution.summary}</Solution>
+
   submit = values => {
     const { create } = this.props;
     const ga = { category: 'Quote Form', action: 'Submit' };
@@ -115,6 +126,7 @@ export default class extends Page {
     const single = headers.length === 1;
     const { animating, contact, solution } = this.state;
     const { message } = this.state.form;
+    const { prepareSolutionList } = this;
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
@@ -128,20 +140,9 @@ export default class extends Page {
             </section>
           ) : <span/>}
           <section className="solutions">
-            <div>
-              {solutions.slice(0, 4).map((solution, i) => <Solution
-                key={i}
-                onClick={() => this.setState({ solution })}
-                icon={solution.icon}
-                transition={{ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{solution.summary}</Solution>)}
-            </div>
-            <div>
-              {solutions.slice(4).map((solution, i) => <Solution
-                key={i}
-                onClick={() => this.setState({ solution })}
-                icon={solution.icon}
-                transition={{ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{solution.summary}</Solution>)}
-            </div>
+            <h3>Find a Solution</h3>
+            <div className="left">{solutions.slice(0, 4).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+            <div className="right">{solutions.slice(4).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
           </section>
           {!hide && (
             <section className="section container">
@@ -160,7 +161,7 @@ export default class extends Page {
               <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
               {contact ?
                 <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
-                <forms.Contact quote submitText="Submit" newsletterText="Join the VitruvianArmy newsletter!" onSubmit={this.submit}/>}
+                <forms.Contact quote newsletterText="Join the VitruvianArmy newsletter!" onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>

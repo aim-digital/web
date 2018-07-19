@@ -45,7 +45,7 @@ export default class extends Nav {
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
           <ul>
             <li>
-              <Link rel="nofollow" to="/home/missions" onClick={update(0, 1)}><i className="fa fa-code"/> Work</Link>
+              <Link rel="nofollow" to="/home/missions" onClick={update(0, 1)}><i className="fa fa-bar-chart-o"/> Work</Link>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
@@ -64,20 +64,34 @@ export default class extends Nav {
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-code"/> Software</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/communications" onClick={update(1, 0)}>Connect with Us</Link></li>
-                <li><Link rel="nofollow" to="/home/headquarters" onClick={update(1, 1)}>Base of Operations</Link></li>
+                <li>
+                  <a href="https://github.com/vitruvian-tech/jira" target="_blank" title="An open source Docker image of VitruvianTech's JIRA server (and configuration.)">VitruvianTech® JIRA Server</a>
+                </li>
+                <li>
+                  <a href="https://github.com/vitruvian-tech/sms-db-importer" target="_blank" title="This project was developed for legal case building to submit text records into evidence in a clean, comprehensive, and queryable format.">Android SMS DB Importer</a>
+                </li>
+                <li>
+                  <a href="https://github.com/soundcloud-downloader/collection-scraper" target="_blank" title="Take back what's yours by downloading all of your SoundCloud tracks.">SoundCloud Downloader</a>
+                </li>
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-commenting"/> Blog</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> <sup>VT://</sup>TV</a>
               <ul>
                 <li>
                   <Link to="/post/music-tech-and-steven-tyler-collide-in-NOLA/05-04-2018/2H9AEB2WpicAiMiO88YsSY" onClick={() => transition({ progress: .20 })}>
                     <marquee><span>Music, Tech, and Steven Tyler Collide in NOLA</span> <span className="humility">/ Collision Conf. 2018</span></marquee>
                   </Link>
                 </li>
+              </ul>
+            </li>
+            <li className="subnav">
+              <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>
+              <ul>
+                <li><Link rel="nofollow" to="/home/communications" onClick={update(1, 0)}>Connect with Us</Link></li>
+                <li><Link rel="nofollow" to="/home/headquarters" onClick={update(1, 1)}>Base of Operations</Link></li>
               </ul>
             </li>
           </ul>

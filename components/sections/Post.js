@@ -75,7 +75,7 @@ export default class extends Section {
     return <span>
       <h3>Newsletter</h3>
       <p>{content || CONTENT_NEWSLETTER}</p>
-      {contact ? <div className="success">Thank you, {contact.firstName}, for your subscription.<br /><strong>Welcome to the <em>VitruvianArmy</em>!</strong></div> : <forms.Contact onSubmit={this.submit}/>}
+      {contact ? <div className="success">Thank you, {contact.firstName}, for your subscription.<br /><strong>Welcome to the <em>VitruvianArmy</em>!</strong></div> : <forms.Contact submitText="Sign Up" onSubmit={this.submit}/>}
       {message && <div className="error">{message}</div>}
     </span>;
   }
