@@ -10,7 +10,6 @@ export default class extends Component {
   };
 
   static defaultProps = {
-    icon: 'info-circle',
     onClick: () => {}
   };
 
@@ -33,7 +32,7 @@ export default class extends Component {
     const { style } = this.state;
 
     return (
-      <div className="solution" style={style} onClick={onClick}>
+      <div className="solution button" style={style} onClick={onClick}>
         {icon && <i className={`fa fa-${icon}`}></i>}
         <button>
           {this.props.children}

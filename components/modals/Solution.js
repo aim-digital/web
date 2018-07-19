@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PropTypes} from 'react';
 import ReactGA from 'react-ga';
 import _ from 'lodash';
 import {connect} from 'react-redux';
@@ -8,6 +8,10 @@ import {Contact} from '@machete-platform/core-bundle/components/forms';
 
 @connect(() => ({}), {create})
 export default class extends Modal {
+  static propTypes = {
+    solution: PropTypes.object
+  };
+
   state = {
     contact: null,
     form: {
@@ -16,13 +20,13 @@ export default class extends Modal {
   };
 
   submit = values => {
-    const { create } = this.props;
-    const ga = { category: 'Quote Form', action: 'Submit' };
+    const { create, solution } = this.props;
+    const ga = { category: 'Solution Form', action: 'Submit' };
 
     if (values.email) {
       ReactGA.event({ ...ga, label: `Attempt` });
 
-      create({ ...values, quote: true, newsletter: !(values.newsletter === false) })
+      create({ ...values, solution: solution.id, quote: true, newsletter: !(values.newsletter === false) })
         .then(contact => this.setState({ contact, form: { message: null } }))
         .then(() => ReactGA.event({ ...ga, label: `Success` }))
         .catch(({message}) => this.setState({ form: { message } }));
@@ -30,14 +34,17 @@ export default class extends Modal {
   };
 
   render() {
+    const { solution } = this.props;
     const { contact } = this.state;
     const { message } = this.state.form;
 
     return (
-      <Modal {..._.omit(this.props, 'create')}>
-        <section className="quote">
+      <Modal {..._.omit(this.props, ['create', 'solution'])} className="solution" title={solution.summary} icon={solution.icon}>
+        <section>
+          <p className="description">{solution.description}</p>
+          <section className="quote">
             <div>
-              <h3>Get a Quote</h3>
+              <h3>{solution.cta}</h3>
               <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
               {contact ?
                 <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
@@ -45,6 +52,7 @@ export default class extends Modal {
               {message && <div className="error">{message}</div>}
             </div>
           </section>
+        </section>
       </Modal>
     );
   }

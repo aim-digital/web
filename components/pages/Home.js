@@ -13,6 +13,7 @@ import * as modals from '@vitruvian-tech/machete-bundle/components/modals';
 import * as forms from '@machete-platform/core-bundle/components/forms';
 import ReactGA from 'react-ga';
 import NukaCarousel from 'nuka-carousel';
+import {solutions} from '@vitruvian-tech/machete-bundle/content';
 
 const SOLUTION_DELAY = 100;
 
@@ -128,28 +129,18 @@ export default class extends Page {
           ) : <span/>}
           <section className="solutions">
             <div>
-              {[
-                'I need to migrate my system to a new platform.',
-                'I need to migrate my system to a new platform.',
-                'I need to migrate my system to a new platform.',
-                'I need to migrate my system to a new platform.',
-                'I need to migrate my system to a new platform.'
-              ].map((solution, i) => <Solution
+              {solutions.slice(0, 4).map((solution, i) => <Solution
                 key={i}
                 onClick={() => this.setState({ solution })}
-                transition={{ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{solution}</Solution>)}
+                icon={solution.icon}
+                transition={{ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{solution.summary}</Solution>)}
             </div>
             <div>
-              {[
-                'I need maintenance on my existing platform.',
-                'I need maintenance on my existing platform.',
-                'I need maintenance on my existing platform.',
-                'I need maintenance on my existing platform.',
-                'I need maintenance on my existing platform.'
-              ].map((solution, i) => <Solution
+              {solutions.slice(4).map((solution, i) => <Solution
                 key={i}
                 onClick={() => this.setState({ solution })}
-                transition={{ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{solution}</Solution>)}
+                icon={solution.icon}
+                transition={{ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } }}>{solution.summary}</Solution>)}
             </div>
           </section>
           {!hide && (
@@ -174,7 +165,7 @@ export default class extends Page {
             </div>
           </section>
           <Footer/>
-          <modals.Solution show={!!solution} title={solution} onHide={() => this.setState({ solution: null })}/>
+          <modals.Solution show={!!solution} solution={solution || {}} onHide={() => this.setState({ solution: null })}/>
         </Page>
     );
   }

@@ -7,7 +7,8 @@ export default class extends Component {
     onHide: PropTypes.func,
     children: PropTypes.object,
     className: PropTypes.string,
-    title: PropTypes.string
+    title: PropTypes.string,
+    icon: PropTypes.string
   };
 
   static defaultProps = {
@@ -16,7 +17,7 @@ export default class extends Component {
   };
 
   render() {
-    const { children, title, className } = this.props;
+    const { children, title, icon, className } = this.props;
 
     return (
       <Modal {...this.props} className={`${className}`}>
@@ -27,7 +28,7 @@ export default class extends Component {
         </div>
         <Modal.Header>
           <Logo/>
-          <Modal.Title>{title}</Modal.Title>
+          <Modal.Title>{icon && <i className={`fa fa-${icon}`}></i>}{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>
