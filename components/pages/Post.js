@@ -14,6 +14,7 @@ const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
   const { id, title, summary, hero, slug } = state['@machete-platform/contentful-bundle'].Entry.data;
 
   return {
+    className: 'post',
     title: `${title} - VitruvianTech`,
     meta: [
       {name: 'description', content: title},

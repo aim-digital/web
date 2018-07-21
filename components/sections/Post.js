@@ -11,7 +11,7 @@ const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButto
 
 const RE_ANCHOR_MARKDOWN = /\[([^\]]*)\]\(([^\s|\)]*)(?:\s"([^\)]*)")?\)/g;
 
-const CONTENT_NEWSLETTER = 'Join the VitruvianArmy newsletter to get updates on our views on world news, politics, society, work culture, and technology!';
+const CONTENT_NEWSLETTER = 'Join the VTTV newsletter for project management tips, industry trends, free software, and more.';
 
 @connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.data}), {create})
 

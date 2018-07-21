@@ -123,10 +123,10 @@ export default class extends Page {
   render() {
     const { headers, sections, className, classNames = {}, param, header, section, hide } = this.props;
     const { index/*, prev, next*/ } = SECTIONS[section || param.section] || SECTIONS.home;
-    const single = headers.length === 1;
     const { animating, contact, solution } = this.state;
     const { message } = this.state.form;
     const { prepareSolutionList } = this;
+    const single = headers.length === 1;
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
@@ -161,7 +161,7 @@ export default class extends Page {
               <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
               {contact ?
                 <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
-                <forms.Contact quote newsletterText="Join the VitruvianArmy newsletter!" onSubmit={this.submit}/>}
+                <forms.Contact quote newsletterText="Join the VTTV newsletter for project management tips, industry trends, free software, and more." onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>

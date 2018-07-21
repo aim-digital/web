@@ -49,8 +49,25 @@ export default class extends Modal {
 
     return (
       <Modal {..._.omit(this.props, ['create', 'solution'])} onHide={this.onHide} className="solution" title={solution.summary} icon={solution.icon}>
-        <section>
-          <p className="description">{solution.description}</p>
+        {solution.id && <section>
+          {/*<p className="description">{solution.description}</p>*/}
+          <section className="criteria">
+            <h5>Potential Cases</h5>
+            <ul>
+              {solution.criteria.map((criterion, i) => <li key={i}>{criterion}</li>)}
+            </ul>
+          </section>
+          <section className="plans">
+            {solution.plans.map((plan, i) => <div key={i}>
+              <h5>{plan.name} {plan.description}</h5>
+              <span className="pricing">
+                {plan.pricing.map((price, i) => <span key={i}>{price.label}<sub>/{price.unit}</sub></span>)}
+              </span>
+              <ul>
+                {plan.details.map((detail, i) => <li key={i}>{detail}</li>)}
+              </ul>
+            </div>)}
+          </section>
           <section className="quote">
             <div>
               <h3>{solution.cta}</h3>
@@ -62,11 +79,11 @@ export default class extends Modal {
                   <br />
                   <button className="btn btn-success" onClick={this.onHide}>Close</button>
                 </div> :
-                <Contact quote cancelText="Back" onCancel={this.onHide} newsletterText="Join the VitruvianArmy newsletter!" onSubmit={this.submit}/>}
+                <Contact quote cancelText="Back" onCancel={this.onHide} newsletterText="Join the VTTV newsletter for project management tips, industry trends, free software, and more." onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>
-        </section>
+        </section>}
       </Modal>
     );
   }
