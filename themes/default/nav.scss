@@ -1,6 +1,7 @@
 .nav {
   position: fixed;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   top: 0;
   left: 0;
   z-index: 4;
@@ -12,6 +13,47 @@ nav .fa {
   margin-right: .5em;
   width: 1em;
   text-align: center;
+}
+
+nav .social {
+  float: right;
+  padding: 0 .35em;
+  font-size: 1.5em;
+  transition: opacity .35s;
+  opacity: 1;
+
+  #app.nav-open & {
+    opacity: 0;
+
+    @media only screen and (min-width: 769px) {
+      opacity: 1;
+    }
+  }
+
+  a {
+    display: inline-block;
+    color: inherit;
+    opacity: .85;
+    margin: 0 .35em;
+    color: $white-color;
+    transition: opacity .35s;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .fa {
+    display: inline;
+  }
+
+  i {
+    width: 20px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0;
+  }
 }
 
 nav {

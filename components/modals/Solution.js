@@ -5,6 +5,9 @@ import {connect} from 'react-redux';
 import {create} from '@vitruvian-tech/machete-bundle/controllers/Solution';
 import {Modal} from '@vitruvian-tech/machete-bundle/components/layout';
 import {Contact} from '@machete-platform/core-bundle/components/forms';
+import {ShareButtons} from 'react-share';
+
+const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
 @connect(() => ({}), {create})
 export default class extends Modal {
@@ -46,9 +49,16 @@ export default class extends Modal {
     const { solution } = this.props;
     const { contact } = this.state;
     const { message } = this.state.form;
+    const { location = {} } = global;
+    const share = { url: `${location.protocol}//${location.host}${location.pathname}?solution=${solution.id}`, message: solution.description, caption: solution.cta };
 
     return (
-      <Modal {..._.omit(this.props, ['create', 'solution'])} onHide={this.onHide} className="solution" title={solution.summary} icon={solution.icon}>
+      <Modal {..._.omit(this.props, ['create', 'solution'])}
+        onHide={this.onHide}
+        className="solution"
+        title={solution.summary}
+        icon={solution.icon}
+        share={share}>
         {solution.id && <section>
           {/*<p className="description">{solution.description}</p>*/}
           <section className="criteria">
@@ -77,9 +87,23 @@ export default class extends Modal {
                   <strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.
                   <br />
                   <br />
+                  <div className="share">
+                    <strong>Share this Solution</strong>
+                    <br />
+                    <FacebookShareButton url={share.url} quote={share.caption}>
+                      <i className="fa fa-facebook-official"/>
+                    </FacebookShareButton>
+                    <TwitterShareButton url={share.url} title={share.caption}>
+                      <i className="fa fa-twitter"/>
+                    </TwitterShareButton>
+                    <EmailShareButton url={share.url} subject={`\<VitruvianTech\> ${share.caption}`} body={`${share.message}\n\n${share.url}\n\n`}>
+                      <i className="fa fa-envelope"/>
+                    </EmailShareButton>
+                  </div>
+                  <br />
                   <button className="btn btn-success" onClick={this.onHide}>Close</button>
                 </div> :
-                <Contact quote cancelText="Back" onCancel={this.onHide} newsletterText="Join the VTTV newsletter for project management tips, industry trends, free software, and more." onSubmit={this.submit}/>}
+                <Contact quote cancelText="Cancel" onCancel={this.onHide} newsletterText="Join the VTTV newsletter for project management tips, industry trends, free software, and more." onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>

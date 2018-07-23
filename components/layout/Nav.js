@@ -43,6 +43,17 @@ export default class extends Nav {
         <nav>
           <Link rel="nofollow" to="/home" className="logo" onClick={update(0, 0)}/>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
+          <div className="social">
+            <a title="Facebook: @VitruvianTechHQ" href="https://www.facebook.com/VitruvianTechHQ/" target="_blank">
+              <i className="fa fa-facebook-official"/>
+            </a>
+            <a title="Twitter: @VitruvianTechHQ" href="https://twitter.com/VitruvianTechHQ" target="_blank">
+              <i className="fa fa-twitter"/>
+            </a>
+            <a title="Instagram: @vitruvian.tech" href="https://www.instagram.com/vitruvian.tech/" target="_blank">
+              <i className="fa fa-instagram"/>
+            </a>
+          </div>
           <ul>
             <li>
               <Link rel="nofollow" to="/home/missions" onClick={update(0, 1)}><i className="fa fa-bar-chart-o"/> Work</Link>
