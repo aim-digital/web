@@ -2,7 +2,7 @@ const PLANS = [
     {
         id: 1,
         name: 'Value',
-        description: 'Feature Point System',
+        description: 'Point System',
         pricing: [{ label: '$300', unit: 'pt.' }],
         details: [
             'Foxtrot℠ target tracking and project management system.',
@@ -24,7 +24,7 @@ const PLANS = [
     {
         id: 3,
         name: 'Freelance',
-        description: 'Time &amp; Materials',
+        description: 'Time & Materials',
         pricing: [{ label: '+27%', unit: 'hourly rate' }],
         details: [,
             'Independently managed (per contract negotiations.)',
@@ -62,7 +62,7 @@ export default [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit erat nunc, in laoreet massa pretium eget. Nulla facilisi. Curabitur magna felis, sodales sit amet neque at, porttitor dictum purus.',
         cta: 'Get a Migration Quote',
         icon: 'exchange',
-        plans: [PLANS[0], PLANS[1], PLANS[2]],
+        plans: [PLANS[0], PLANS[1]],
         criteria: [
             'Business is switching software vendors.',
             'Existing platform is/will be obsolete.',
@@ -75,7 +75,7 @@ export default [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit erat nunc, in laoreet massa pretium eget. Nulla facilisi. Curabitur magna felis, sodales sit amet neque at, porttitor dictum purus.',
         cta: 'Get a Migration Quote',
         icon: 'exchange',
-        plans: [PLANS[0], PLANS[1], PLANS[2]],
+        plans: [PLANS[0], PLANS[1]],
         criteria: [
             'Business is switching software vendors.',
             'Existing platform is/will be obsolete.',
@@ -88,7 +88,7 @@ export default [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit erat nunc, in laoreet massa pretium eget. Nulla facilisi. Curabitur magna felis, sodales sit amet neque at, porttitor dictum purus.',
         cta: 'Get a Migration Quote',
         icon: 'exchange',
-        plans: [PLANS[0], PLANS[1], PLANS[2]],
+        plans: [PLANS[0], PLANS[1]],
         criteria: [
             'Business is switching software vendors.',
             'Existing platform is/will be obsolete.',
@@ -101,7 +101,7 @@ export default [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit erat nunc, in laoreet massa pretium eget. Nulla facilisi. Curabitur magna felis, sodales sit amet neque at, porttitor dictum purus.',
         cta: 'Get a Migration Quote',
         icon: 'exchange',
-        plans: [PLANS[0], PLANS[1], PLANS[2]],
+        plans: [PLANS[0], PLANS[1]],
         criteria: [
             'Business is switching software vendors.',
             'Existing platform is/will be obsolete.',
@@ -114,7 +114,7 @@ export default [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit erat nunc, in laoreet massa pretium eget. Nulla facilisi. Curabitur magna felis, sodales sit amet neque at, porttitor dictum purus.',
         cta: 'Get a Maintenance Quote',
         icon: 'wrench',
-        plans: [PLANS[0], PLANS[1], PLANS[2]],
+        plans: [PLANS[0], PLANS[2]],
         criteria: [
             'Business is switching software vendors.',
             'Existing platform is/will be obsolete.',
@@ -127,7 +127,7 @@ export default [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit erat nunc, in laoreet massa pretium eget. Nulla facilisi. Curabitur magna felis, sodales sit amet neque at, porttitor dictum purus.',
         cta: 'Get a Maintenance Quote',
         icon: 'wrench',
-        plans: [PLANS[0], PLANS[1], PLANS[2]],
+        plans: [PLANS[0], PLANS[2]],
         criteria: [
             'Business is switching software vendors.',
             'Existing platform is/will be obsolete.',
@@ -140,7 +140,7 @@ export default [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit erat nunc, in laoreet massa pretium eget. Nulla facilisi. Curabitur magna felis, sodales sit amet neque at, porttitor dictum purus.',
         cta: 'Get a Maintenance Quote',
         icon: 'wrench',
-        plans: [PLANS[0], PLANS[1], PLANS[2]],
+        plans: [PLANS[0], PLANS[2]],
         criteria: [
             'Business is switching software vendors.',
             'Existing platform is/will be obsolete.',
@@ -153,7 +153,7 @@ export default [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit erat nunc, in laoreet massa pretium eget. Nulla facilisi. Curabitur magna felis, sodales sit amet neque at, porttitor dictum purus.',
         cta: 'Get a Maintenance Quote',
         icon: 'wrench',
-        plans: [PLANS[0], PLANS[1], PLANS[2]],
+        plans: [PLANS[0], PLANS[2]],
         criteria: [
             'Business is switching software vendors.',
             'Existing platform is/will be obsolete.',

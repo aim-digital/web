@@ -35,18 +35,6 @@ section.quote {
       text-transform: uppercase;
     }
 
-    .newsletter {
-      input {
-        display: inline-block;
-        float: left;
-      }
-
-      span {
-        font-size: .9em;
-        float: left;
-      }
-    }
-
     .error,
     .success {
       font-size: .85em;
@@ -102,62 +90,70 @@ section.quote {
   }
 }
 
-.home.page {
-  .section.container {
-    background: linear-gradient(rgba(89, 159, 198, .5), rgba(21, 21, 21, 0));
+section.solutions {
+  background: $background-color linear-gradient(rgba(89, 159, 198, .45), rgba(21, 21, 41, 1));
+  position: relative;
+  z-index: 2;
+  padding: 10px 15px;
+
+  h3 {
+    font-family: $font-family-oswald;
+    text-transform: uppercase;
+    color: $white-color;
+    text-align: center;
+    margin: .25em auto .75em;
+    text-shadow: 0 2px 1px $black-color;
+    font-size: 2em;
   }
 
-  section.solutions {
-    background: $background-color;
-    position: relative;
-    z-index: 2;
-    padding: 10px 15px;
+  .solution {
+    margin: .5em 0;
+    width: 100%;
+  }
 
-    .solution {
-      margin: .5em 0;
-      width: 100%;
+  @media (min-width: 769px) {
+    position: absolute;
+    top: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+
+    h3 {
+      display: none;
     }
-  
-    @media (min-width: 768px) {
+
+    > div {
+      vertical-align: middle;
       position: absolute;
-      top: 0;
-      min-height: 100vh;
-      width: 100%;
-      background: none;
-      pointer-events: none;
+      pointer-events: auto;
+      bottom: 65px;
 
-      > div {
-        vertical-align: middle;
-        position: absolute;
-        pointer-events: auto;
-        bottom: 65px;
-
-        &:first-child {
-          left: 0;
-        }
-  
-        &:last-child {
-          right: 0;
-        }
+      &.left {
+        left: 0;
       }
 
-      .solution {
-        margin: 1.5em;
-        max-width: 25vw;
-        font-size: .9em;
-        position: relative;
+      &.right {
+        right: 0;
+      }
+    }
 
-        @media (min-width: 1200px) {
-          font-size: 1em;
-        }
+    .solution {
+      margin: 1.5em;
+      max-width: 25vw;
+      font-size: .9em;
+      position: relative;
 
-        @media (min-width: 1400px) {
-          font-size: 1.1em;
-        }
+      @media (min-width: 1200px) {
+        font-size: 1em;
+      }
 
-        @media (min-width: 1600px) {
-          max-width: 20vw;
-        }
+      @media (min-width: 1400px) {
+        font-size: 1.1em;
+      }
+
+      @media (min-width: 1600px) {
+        max-width: 20vw;
       }
     }
   }
