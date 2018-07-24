@@ -13,7 +13,7 @@ const PLANS = [
         id: 2,
         name: 'Managed',
         description: 'Subscription',
-        pricing: [{ label: '$3k', unit: 'mo.' }, { label: '$8k', unit: 'mo.' }],
+        pricing: [{ label: '$3k', unit: 'mo.' }, { label: '$8k', unit: '3 mo.' }],
         details: [
             '20 hours/mo. applied to any/all available services.',
             'Foxtrot℠ target tracking and project management system.',
