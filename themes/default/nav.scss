@@ -19,13 +19,15 @@ nav .social {
   float: right;
   padding: 0 .35em;
   font-size: 1.5em;
-  transition: opacity .35s;
+  transition: all .35s;
   opacity: 1;
 
   #app.nav-open & {
+    transform: translate3d(200%,0,0);
     opacity: 0;
 
     @media only screen and (min-width: 769px) {
+      transform: none; 
       opacity: 1;
     }
   }
@@ -531,7 +533,7 @@ body.nav-open,
   height: 100%;
   top: 0;
   left: 0;
-  transition: opacity .75s;
+  transition: opacity .35s;
   opacity: 0;
   pointer-events: none;
   z-index: 5;
