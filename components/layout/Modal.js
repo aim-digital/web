@@ -1,38 +1,52 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import {PropTypes} from 'prop-types';
 import Modal from 'react-bootstrap-modal';
+import {Logo} from '@vitruvian-tech/machete-bundle/components/layout';
+import {ShareButtons} from 'react-share';
+import _ from 'lodash';
+
+const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
 export default class extends Component {
   static propTypes = {
     onHide: PropTypes.func,
     children: PropTypes.object,
     className: PropTypes.string,
-    title: PropTypes.string
+    title: PropTypes.string,
+    icon: PropTypes.string,
+    share: PropTypes.object
   };
 
   static defaultProps = {
     onHide: () => {},
-    className: ''
+    className: '',
+    share: {}
   };
 
   render() {
-    const { children, title, className } = this.props;
+    const { children, title, icon, className, share: { url, message, caption } } = this.props;
 
     return (
-      <Modal {...this.props} aria-labelledby="modal-title" className={`${className}`}>
+      <Modal {..._.omit(this.props, ['share'])} className={`${className}`} title="">
+        <div className="modal-nav">
+          <Modal.Dismiss className="dismiss">
+            <i className="fa fa-arrow-circle-left"></i>
+          </Modal.Dismiss>
+          {url && <div className="share">
+            <FacebookShareButton url={url} quote={caption}>
+              <i className="fa fa-facebook-official"/>
+            </FacebookShareButton>
+            <TwitterShareButton url={url} title={caption}>
+              <i className="fa fa-twitter"/>
+            </TwitterShareButton>
+            <EmailShareButton url={url} subject={`\<VitruvianTech\> ${caption}`} body={`${message}\n\n${url}\n\n`}>
+              <i className="fa fa-envelope"/>
+            </EmailShareButton>
+          </div>}
+        </div>
         <Modal.Header>
-          <Modal.Dismiss className="close"/>
-          <div className="brand">
-            <div className="name">
-              <span>VitruvianTech</span>
-            </div>
-            <div className="tagline">
-              <span className="color-primary-blue">Roman</span>&nbsp;
-              <span className="color-primary-green">Inspired</span>&nbsp;
-              <span className="color-primary-yellow">Software</span>&nbsp;
-              <span className="color-secondary-red">Designers</span>
-            </div>
-          </div>
-          <Modal.Title id="modal-title">{title}</Modal.Title>
+          <Logo/>
+          <Modal.Title>{icon && <div><i className={`fa fa-${icon}`}></i></div>}<span>{title}</span></Modal.Title>
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>

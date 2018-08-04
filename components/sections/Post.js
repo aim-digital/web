@@ -11,7 +11,7 @@ const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButto
 
 const RE_ANCHOR_MARKDOWN = /\[([^\]]*)\]\(([^\s|\)]*)(?:\s"([^\)]*)")?\)/g;
 
-const CONTENT_NEWSLETTER = 'Join the VitruvianArmy newsletter to get updates on our views on world news, politics, society, work culture, and technology!';
+const CONTENT_NEWSLETTER = 'Join the VTTV newsletter for project management tips, industry trends, free software, and more.';
 
 @connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.data}), {create})
 
@@ -75,7 +75,7 @@ export default class extends Section {
     return <span>
       <h3>Newsletter</h3>
       <p>{content || CONTENT_NEWSLETTER}</p>
-      {contact ? <div className="success">Thank you, {contact.firstName}, for your subscription.<br /><strong>Welcome to the <em>VitruvianArmy</em>!</strong></div> : <forms.Contact onSubmit={this.submit}/>}
+      {contact ? <div className="success">Thank you, {contact.firstName}, for your subscription.<br /><strong>Welcome to the <em>VitruvianArmy</em>!</strong></div> : <forms.Contact submitText="Sign Up" onSubmit={this.submit}/>}
       {message && <div className="error">{message}</div>}
     </span>;
   }

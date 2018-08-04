@@ -1,0 +1,84 @@
+button.btn {
+  font-family: $font-family-oswald;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  transition: all 150ms;
+  box-shadow: 1px 1px 2px #000;
+  line-height: 1.5em;
+  outline: 0;
+
+  & + .btn {
+    margin-left: .5em;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.btn-success {
+    font-size: 1.35em;
+    background: $black-color;
+    color: $primary-yellow-color;
+
+    &:hover, &:active {
+      background: $secondary-green-color;
+      color: $black-color;
+    }
+  }
+
+  &.btn-danger {
+    font-size: 1em;
+    background: $black-color;
+    color: $humility;
+
+    &:hover, &:active {
+      background: $primary-yellow-color;
+      color: $black-color;
+    }
+  }
+}
+
+.solution.button {
+  box-shadow: 1px 1px 2px #000;
+  display: table;
+  line-height: 1.5em;
+  opacity: .85;
+  background: $black-color;
+  color: $white-color;
+
+  @media only screen and (min-width: 769px) {
+    transition: all .25s;
+  }
+
+  &:hover {
+    opacity: 1 !important;
+    background: $primary-green-color;
+    color: $black-color;
+  }
+
+  i, button {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  button {
+    background: none;
+    outline: none;
+    border: none;
+    text-align: left;
+    padding: .5em 1em;
+    width: 100%;
+  }
+
+  i {
+    color: $black-color;
+    background: $primary-green-color;
+    font-size: 1.5em;
+    padding: .5em;
+    width: 1.5em;
+    box-shadow: 0 0 .5em $black-color;
+    width: 2.5em;
+    text-align: center;
+  }
+}

@@ -2,15 +2,21 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import ReactGA from 'react-ga';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/controllers/Transition';
 import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
-import {Footer, Modal} from '@vitruvian-tech/machete-bundle/components/layout'
+import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
+import {Solution} from '@vitruvian-tech/machete-bundle/components/buttons';
 import {create} from '@machete-platform/core-bundle/controllers/Contact';
+import * as modals from '@vitruvian-tech/machete-bundle/components/modals';
 import * as forms from '@machete-platform/core-bundle/components/forms';
+import ReactGA from 'react-ga';
 import NukaCarousel from 'nuka-carousel';
+import {solutions} from '@vitruvian-tech/machete-bundle/data';
+import _ from 'lodash';
+
+const SOLUTION_DELAY = 100;
 
 const SECTIONS = {
   home: { index: 0, header: 0, slide: 0, param: '', next: 'missions' },
@@ -27,7 +33,7 @@ const SECTIONS = {
 
 @connect(state => {
   const { header = 0, slide = 0 } = state['@machete-platform/core-bundle'].Transition;
-  return ({ param: state.router.params, header, slide });
+  return ({ param: state.router.params, header, slide, query: state.router.location.query });
 }, {transition, dismiss, create})
 
 export default class extends Page {
@@ -36,6 +42,7 @@ export default class extends Page {
     dismiss: PropTypes.func.isRequired,
     classNames: PropTypes.object,
     param: PropTypes.object,
+    query: PropTypes.object,
     header: PropTypes.number.isRequired,
     slide: PropTypes.number.isRequired,
     section: PropTypes.string,
@@ -50,6 +57,7 @@ export default class extends Page {
   state = {
     animating: false,
     contact: null,
+    solution: null,
     form: {
       message: null
     }
@@ -57,7 +65,12 @@ export default class extends Page {
 
   componentDidMount = () => document.querySelector('#app .nav + span > .page').addEventListener('click', this.props.dismiss);
 
-  componentWillMount = () => this.updateHeader();
+  componentWillMount = () => {
+    const { solution } = this.props.query;
+
+    this.updateHeader();
+    this.setState({ solution: _.find(solutions, ['id', 1 * solution]) || null });
+  };
 
   componentWillUnmount = () => document.querySelector('#app .nav + span > .page').removeEventListener('click', this.props.dismiss);
 
@@ -72,6 +85,17 @@ export default class extends Page {
       global.scrollTo(0, document.querySelector('.section.container').offsetTop - 40);
     }
   };
+
+  openSolutionModal = solution => {
+    this.setState({ solution });
+    ReactGA.event({ category: `Solution`, action: `Click`, label: solution.summary });
+  };
+
+  prepareSolutionList = transition => (solution, i) => <Solution
+    key={i}
+    onClick={() => this.openSolutionModal(solution)}
+    icon={solution.icon}
+    transition={transition(i)}>{solution.summary}</Solution>
 
   submit = values => {
     const { create } = this.props;
@@ -106,10 +130,11 @@ export default class extends Page {
   render() {
     const { headers, sections, className, classNames = {}, param, header, section, hide } = this.props;
     const { index/*, prev, next*/ } = SECTIONS[section || param.section] || SECTIONS.home;
-    const single = headers.length === 1;
-    const { animating, contact } = this.state;
+    const { animating, contact, solution } = this.state;
     const { message } = this.state.form;
-
+    const { prepareSolutionList } = this;
+    const single = headers.length === 1;
+  
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           {headers.length ? (
@@ -121,6 +146,11 @@ export default class extends Page {
               )}
             </section>
           ) : <span/>}
+          <section className="solutions">
+            <h3>Find a Solution</h3>
+            <div className="left">{solutions.slice(0, 5).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+            <div className="right">{solutions.slice(5).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+          </section>
           {!hide && (
             <section className="section container">
               {this.wrap(sections)[!section && index <= 1 ? index : 0]}
@@ -138,11 +168,12 @@ export default class extends Page {
               <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
               {contact ?
                 <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
-                <forms.Contact quote submitText="Submit" newsletterText="Join the VitruvianArmy newsletter!" onSubmit={this.submit}/>}
+                <forms.Contact quote newsletterText="Join the VTTV newsletter for project management tips, industry trends, free software, and more." onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>
           <Footer/>
+          <modals.Solution show={!!solution} solution={solution || {}} onHide={() => this.setState({ solution: null })}/>
         </Page>
     );
   }

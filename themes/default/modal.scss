@@ -1,101 +1,145 @@
 .modal {
     display: block;
+    padding-left: 0 !important;
+
+    &.fade {
+      opacity: 1;
+    }
+
+    &.fade .modal-dialog {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      -ms-transform: translate3d(-100%, 0, 0);
+      -o-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    &.in .modal-dialog {
+      -webkit-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
   
     .modal-dialog {
       margin: 0;
       width: 100%;
       height: 100%;
+      // height: auto;
+      // min-height: 100;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        background: linear-gradient($background-color, rgba(41, 41, 41, 0));
+        height: 100%;
+        top: 0;
+      }
     }
   
     .modal-content {
+      z-index: 2;
       background: $background-color;
       border-radius: 0;
-      box-shadow: none;
+      box-shadow: 0px 0 10px rgba(21,21,21, 0.85);
       border: none;
       min-height: 100%;
+      opacity: .95;
     }
-  
-    .modal-header {
-      .close {
-        width: 1em;
-        height: 1em;
-        background: url(/@vitruvian-tech/machete-bundle/images/nav-close.svg) no-repeat;
-        background-position: center;
+
+    .modal-nav {
+      height: 40px;
+      background: $black-color;
+      opacity: .95;
+      box-shadow: 0 0 .5em $black-color;
+      font-size: 1.5em;
+
+      i {
+        width: 20px;
+        line-height: 40px;
         color: $white-color;
         opacity: .85;
-        transition: opacity .35s;
-        outline: 0;
+        transition: opacity .25s;
+        text-align: center;
 
-        &.hover {
+        &:hover {
            opacity: 1;
         }
       }
 
-      .brand {
-        margin: 0 auto;
-        width: 20em;
-        padding: 30px 0;
-        text-indent: 3.5em;
-        text-shadow: 1px 2px $black-color;
-        font-family: $font-family-brand;
-    
-        .name {
-          color: #fff;
-          -webkit-text-fill-color: #fff; /* Will override color (regardless of order) */
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: $primary-yellow-color;
-          font-size: 2.75em;
-          margin: -.5em auto -.4em;
-    
-          span {
-            position: relative;
-    
-            &:before {
-              content: '';
-              position: absolute;
-              background: url(/@vitruvian-tech/machete-bundle/images/logo.png) no-repeat;
-              background-size: 100%;
-              right: 100%;
-              top: 0;
-              width: 1em;
-              height: 1em;
-              margin: .2em .25em;
-            }
-    
-            &:after {
-              content: '®';
-              position: absolute;
-              right: 0;
-              top: 0;
-              margin: -.25em -10px;
-              font-size: .35em;
-              -webkit-text-fill-color: $primary-yellow-color;
-              -webkit-text-stroke-width: 0;
-              color: $primary-yellow-color;
-              opacity: .5;
-              font-family: $font-family-oswald;
-            }
-          }
-        }
-    
-        .tagline {
+      .share, .dismiss {
+        position: relative;
+        padding: 0 .5em;
+
+        &:after {
           font-family: $font-family-brand;
-          font-size: 1.025em;
-          margin: 0;
-          word-spacing: 2px;
-    
-          span {
-            display: inline-block;
-            text-indent: 0;
-    
-            small {
-              opacity: .85;
-              text-transform: none;
-              font-size: inherit;
-            }
-          }
+          left: 100%;
+          position: absolute;
+          white-space: nowrap;
+          color: $humility;
+          background: $background-color;
+          border-radius: .25em;
+          padding: 0 .5em;
+          margin: -1em -.25em 0;
+          font-size: .65em;
+          line-height: 2em;
+          top: 50%;
         }
       }
+
+      .dismiss {
+        outline: 0;
+        float: left;
+        background: none;
+        border: none;
+
+        &:after {
+          content: 'close';
+        }
+      }
+
+      .share {
+        float: right;
+        padding: 0 .75em;
+
+        > div {
+          display: inline-block;
+          outline: none;
+
+          & + div {
+            margin-left: 5px;
+
+            @media only screen and (min-width: 769px) {
+              margin-left: 10px;
+            }
+          }
+        }
+
+        &:after {
+          content: 'share';
+          left: auto;
+          right: 100%;
+        }
+      }
+    }
+
+    .brand {
+      padding: 6vh 0;
+    }
+
+    .modal-body,
+    .modal-header {
+      max-width: 738px;
+      margin: auto;
+    }
+
+    .modal-body {
+      max-width: 480px;
+    }
+
+    .modal-header {
+      padding: 0;
     }
   
     .modal-title {
@@ -104,16 +148,41 @@
       font-size: 2em;
       text-transform: uppercase;
       font-family: $font-family-oswald;
-      text-align: center;
       letter-spacing: -1px;
-      padding: 15px;
+      padding: 1vh 15px;
+      display: table;
+      text-align: left;
+      margin: 0 auto;
+
+      div, span {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      div {
+        background: $primary-green-color;
+      }
+
+      span {
+        padding-left: .5em;
+      }
+
+      i {
+        background: $primary-green-color;
+        color: $black-color;
+        padding: .25em;
+      }
     }
   
     .modal-body {
       color: $white-color;
-      padding-bottom: 60px;
-      max-width: 768px;
+      padding: 30px 0;
+      padding-bottom: 45px;
       margin: 0 auto;
+
+      h3, h4 {
+        text-shadow: 0 2px 1px $black-color;
+      }
     }
   
     .modal-footer {
@@ -128,5 +197,81 @@
     .modal-header,
     .modal-footer {
       border: none;
+    }
+  }
+
+  .solution.modal {
+    h3 {
+      text-align: center;
+      font-size: 2em !important;
+      font-family: $font-family-oswald;
+      margin: .25em auto;
+      text-transform: uppercase;
+    }
+
+    .description,
+    .plans,
+    .criteria {
+      padding: 0 15px;
+    }
+
+    .success {
+      .share {
+        color: $black-color;
+        font-size: 1.25em;
+  
+        > div {
+          display: inline-block;
+          font-size: 2.25em;
+          margin: 0 .25em;
+        }
+  
+        i {
+          opacity: .85;
+          transition: opacity .35s;
+          text-align: center;
+  
+          &:hover {
+             opacity: 1;
+          }
+        }
+      }
+    }
+
+    .plans {
+      > div {
+        margin: 1.5em 0;
+      }
+
+      ul {
+        font-size: .9em;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        list-style-type: none;
+        margin: .5em 0;
+      }
+
+      .pricing {
+        padding: 0 .25em;
+        color: $secondary-green-color;
+        font-size: .9em;
+
+        span {
+          display: inline-block;
+          margin-left: .5em;
+        }
+      }
+    }
+
+    .quote {
+      background: none;
+      padding: 0;
+
+      &:first-child > div {
+        margin-top: -1.5em !important;
+      }
     }
   }

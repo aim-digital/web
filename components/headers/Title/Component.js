@@ -85,15 +85,14 @@ export default class extends Header {
               <section className={['preview'].join(' ')}>
                 <h3>Services</h3>
                 <ul>
-                  <li>Consulting <span className={[styles.service].join(' ')}>Strategic Development / Assessments</span></li>
+                  <li>Consulting <span className={[styles.service].join(' ')}>Strategic / Tactical / Business / Analysis</span></li>
                   <li>Project Management <span className={[styles.service].join(' ')}>Planning / Process / Sourcing</span></li>
-                  <li>Software Development <span className={[styles.service].join(' ')}>Web / Mobile / Server</span></li>
-                  <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Advertising</span></li>
+                  <li>Software Development <span className={[styles.service].join(' ')}>Web / Mobile / eCommerce</span></li>
+                  <li>Marketing <span className={[styles.service].join(' ')}> SEO / Social Media / Print / Merchandise</span></li>
                   <li>Design <span className={[styles.service].join(' ')}>Software / UI / UX / Graphic / Product</span></li>
                   <li>Quality Assurance <span className={[styles.service].join(' ')}>Performance / Automation</span></li>
                   <li>IT/System Admin. <span className={[styles.service].join(' ')}>Database / Network / Cloud</span></li>
-                  <li>Content <span className={[styles.service].join(' ')}>Photo / Video / Audio / Costume / Culinary</span></li>
-                  <li>Data Science <span className={[styles.service].join(' ')}>A.I. / Machine Learning / Analytics</span></li>
+                  <li>Content Production <span className={[styles.service].join(' ')}>Photo / Video / Audio</span></li>
                   <li className={'more'} data-next="Plans"/>
                 </ul>
               </section>
@@ -103,11 +102,14 @@ export default class extends Header {
               <section className={['preview'].join(' ')}>
                 <h3>Plans</h3>
                 <ul>
+                  <li><strong>Value</strong> <i>Point System</i> <span className={[styles.price].join(' ')}><strong>$300<sub>/pt.</sub></strong> <strong>$100<sub>/pt.</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong>Only pay</strong> for the net feature value (points) we produce.</i></small></li>
+                  <li className={styles.asterisk}><small><i>Warranty included for <strong>guaranteed quality assurance</strong>.</i></small></li>
+                  <li className={styles.asterisk}><small><i>Point prices vary based on <strong>internal or external resources</strong>.</i></small></li>
                   <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$3k<sub>/mo.</sub></strong> <strong>$8k<sub>/3 mo.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong>20 hours/mo.</strong> applied to any/all available services.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking and project management system.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any/all simultaneous subscriptions.</i></small></li>
-                  <li className={styles.asterisk}><small><i>30-day <strong>money-back guarantee</strong>.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong><em>Foxtrot&#8480;</em></strong> target tracking and project management system.</i></small></li>
                   <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+27%<sub>/hourly rate</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (per contract negotiations.)</i></small></li>
                   <li className={styles.asterisk}><small><i>Typical for most hourly-based <strong>ad-hoc</strong> projects.</i></small></li>
@@ -116,9 +118,6 @@ export default class extends Header {
                   <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                   <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm</strong> and <strong>publishing</strong> solutions!</i></small></li>
-                  <li><strong>Full-Time</strong> <i>Accelerator</i> <span className={[styles.price].join(' ')}><strong>$50k<sub>/3 mo.</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong>1 dedicated developer</strong> (8 <em>Managed Team</em> 3 mo. subscriptions.)</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>1 <em>Machete Theme Platform</em></strong> license.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
                   <li className={'more'} data-next="Rates"/>
                 </ul>
@@ -135,9 +134,8 @@ export default class extends Header {
                   <li>Marketers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                   <li>Designers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
                   <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
-                  <li>Data Scientists <span className={[styles.price].join(' ')}><strong>$85-95<sub>/hr.</sub></strong></span></li>
                   <li>Content Producers <span className={[styles.price].join(' ')}><strong>$25-75<sub>/hr.</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i>Our studio includes copywriters, videographers, photographers, printers, musicians, costume designers, culinary artists, and brand curators.</i></small></li>
+                  <li className={styles.asterisk}><small><i>Our studio includes copywriters, videographers, photographers, printers, musicians, and brand curators.</i></small></li>
                   <li>Interns <span className={[styles.price].join(' ')}><strong>$20<sub>/hr.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Boost your project's performance while maximizing workforce potential by providing training opportunities for young professionals and aspiring individuals.</i></small></li>
                   <li className={'more'} data-next="Hosting"/>

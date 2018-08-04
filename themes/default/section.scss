@@ -14,6 +14,32 @@
     min-height: $page-height-xl!important;
   }
 
+  .post.page &,
+  .home.page & {
+    background: $background-color linear-gradient(rgba(89, 159, 198, .45), $background-color);
+  }
+
+  .post.page & {
+    padding: 0;
+
+    .section {
+      padding: 0 15px;
+      box-shadow: 0px 0 30px $background-color;
+
+      &:first-child {
+        &:before {
+          content: '';
+          position: absolute;
+          box-shadow: 0px 0 30px $background-color;
+          width: 100%;
+          height: 10px;
+          top: -10px;
+          left: 0;
+        }
+      }
+    }
+  }
+
   .home.page & {
     .section {
       background: transparent;
@@ -212,6 +238,7 @@
   }
 
   .section {
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0;
 
