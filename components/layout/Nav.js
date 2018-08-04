@@ -78,7 +78,7 @@ export default class extends Nav {
               <a href="#" onClick={preventDefault}><i className="fa fa-code"/> Software</a>
               <ul>
                 <li>
-                  <a href="https://github.com/vitruvian-tech/jira" target="_blank" title="An open source Docker image of VitruvianTech's JIRA server (and configuration.)">VitruvianTech® JIRA Server</a>
+                  <a href="https://github.com/vitruvian-tech/jira" target="_blank" title="An open source Docker image of VitruvianTech's JIRA server (and configuration.)">VitruvianTech™ JIRA Server</a>
                 </li>
                 <li>
                   <a href="https://github.com/vitruvian-tech/sms-db-importer" target="_blank" title="This project was developed for legal case building to submit text records into evidence in a clean, comprehensive, and queryable format.">Android SMS DB Importer</a>
