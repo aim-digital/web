@@ -49,6 +49,7 @@ export default class extends Modal {
     const { solution } = this.props;
     const { contact } = this.state;
     const { message } = this.state.form;
+    const { plans } = solution;
     const { location = {} } = global;
     const share = { url: `${location.protocol}//${location.host}${location.pathname}?solution=${solution.id}`, message: solution.description, caption: solution.cta };
 
@@ -61,15 +62,16 @@ export default class extends Modal {
         share={share}>
         {solution.id && <section>
           {/*<p className="description">{solution.description}</p>*/}
-          <section className="criteria">
+          {/*<section className="criteria">
             <h5>Potential Cases</h5>
             <ul>
               {solution.criteria.map((criterion, i) => <li key={i}>{criterion}</li>)}
             </ul>
-          </section>
-          <section className="plans">
-            {solution.plans.map((plan, i) => <div key={i}>
-              <h5>{plan.name} {plan.description}</h5>
+          </section>*/}
+          {plans.length > 0 && <section className="plans">
+            <h3>Recommended Plans</h3>
+            {plans.map((plan, i) => <div key={i}>
+              <strong>{plan.name}</strong> {plan.description}
               <span className="pricing">
                 {plan.pricing.map((price, i) => <span key={i}>{price.label}<sub>/{price.unit}</sub></span>)}
               </span>
@@ -77,7 +79,7 @@ export default class extends Modal {
                 {plan.details.map((detail, i) => <li key={i}>{detail}</li>)}
               </ul>
             </div>)}
-          </section>
+          </section>}
           <section className="quote">
             <div>
               <h3>{solution.cta}</h3>

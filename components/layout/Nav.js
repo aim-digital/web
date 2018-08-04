@@ -56,7 +56,7 @@ export default class extends Nav {
           </div>
           <ul>
             <li>
-              <Link rel="nofollow" to="/home/missions" onClick={update(0, 1)}><i className="fa fa-bar-chart-o"/> Work</Link>
+              <Link rel="nofollow" to="/home/missions" onClick={update(0, 1)}><i className="fa fa-cogs"/> Work</Link>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>

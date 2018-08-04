@@ -176,7 +176,7 @@
   
     .modal-body {
       color: $white-color;
-      padding: 15px 0;
+      padding: 30px 0;
       padding-bottom: 45px;
       margin: 0 auto;
 
@@ -201,7 +201,17 @@
   }
 
   .solution.modal {
-    .description, .plans, .criteria {
+    h3 {
+      text-align: center;
+      font-size: 2em !important;
+      font-family: $font-family-oswald;
+      margin: .25em auto;
+      text-transform: uppercase;
+    }
+
+    .description,
+    .plans,
+    .criteria {
       padding: 0 15px;
     }
 
@@ -229,21 +239,39 @@
     }
 
     .plans {
-      h5 {
-        display: inline-block;
-      }
-
-      .pricing {
-        padding: 0 .5em;
+      > div {
+        margin: 1.5em 0;
       }
 
       ul {
         font-size: .9em;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        list-style-type: none;
+        margin: .5em 0;
+      }
+
+      .pricing {
+        padding: 0 .25em;
+        color: $secondary-green-color;
+        font-size: .9em;
+
+        span {
+          display: inline-block;
+          margin-left: .5em;
+        }
       }
     }
 
     .quote {
       background: none;
       padding: 0;
+
+      &:first-child > div {
+        margin-top: -1.5em !important;
+      }
     }
   }
