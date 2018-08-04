@@ -60,7 +60,7 @@ const PLANS = [
 export default [
     {
         id: 1,
-        summary: 'I need upgrades to my existing product or platform.',
+        summary: 'I need upgrades to an existing product or platform.',
         description: DESCRIPTION,
         cta: 'Get a Maintenance Quote',
         icon: 'wrench',
