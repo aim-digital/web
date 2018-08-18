@@ -15,8 +15,8 @@ export default class extends Section {
             <div className="row">
               <div className="col-lg-4 col-xs-12">
                 <h2>Roman Inspired<br />Software Designers</h2>
-                <p>The Digital Special Forces™ for custom software and project management solutions. Based in NYC, we specialize in Tactical Project Management, Web/Software Development, Marketing, Design, Quality Assurance, IT/System Administration, and Content Production services.</p>
-                <p>Drawing inspiration from innovative engineering throughout <em>Roman</em> history, our work and culture is founded on our <em>Vitruvian Virtues</em>, and is modeled after military organizations and fundamental natural elements, adapted to software design and development for businesses in today’s world.</p>
+                <p>The Digital Special Forces™ for custom software and project management solutions. Based in NYC, we specialize in Project Management, Web/Software Development, Marketing, Design, Quality Assurance, IT/System Administration, and Content Production services.</p>
+                <p>Drawing inspiration from innovative engineering throughout Roman history, our work and culture is founded by our <em>Vitruvian Virtues</em>, modeled after military organizations and fundamental natural elements, adapted to software design and development for businesses in today’s world.</p>
               </div>
               <div className="col-lg-4 col-xs-12 valign-middle">
                 <blockquote data-credit="Wikipedia">

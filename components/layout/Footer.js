@@ -46,22 +46,22 @@ export default class extends Footer {
                   <h4><i>@</i> Follow Us</h4>
                   <ul className="social">
                     <li>
-                      <a title="Facebook: @VitruvianTechHQ" href="https://www.facebook.com/VitruvianTechHQ/" target="_blank">
+                      <a title="Facebook: @VitruvianTechTV" href="https://www.facebook.com/VitruvianTechTV" target="_blank">
                         <i className="fa fa-facebook-official"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Twitter: @VitruvianTechHQ" href="https://twitter.com/VitruvianTechHQ" target="_blank">
+                      <a title="Twitter: @VitruvianTechTV" href="https://twitter.com/VitruvianTechTV" target="_blank">
                         <i className="fa fa-twitter"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Instagram: @vitruvian.tech" href="https://www.instagram.com/vitruvian.tech/" target="_blank">
+                      <a title="Instagram: @VitruvianTechTV" href="https://www.instagram.com/VitruvianTechTV" target="_blank">
                         <i className="fa fa-instagram"/>
                       </a>
                     </li>
                     <li>
-                      <a title="GitHub: @vitruvian-tech" href="https://github.com/vitruvian-tech" target="_blank">
+                      <a title="GitHub: VitruvianTech" href="https://github.com/VitruvianTech" target="_blank">
                         <i className="fa fa-github"/>
                       </a>
                     </li>

@@ -24,17 +24,27 @@ export default class extends Header {
               <ul className={'columns'}>
                 <li>
                   <a title="Email: services@vitruvian.tech" href="mailto:services@vitruvian.tech?subject=<VitruvianTech>%20Connect">
-                    <i className="fa fa-envelope"/> Sales &amp; Support
+                    <i className="fa fa-envelope"/> services@vitruvian...
                   </a>
                 </li>
                 <li>
                   <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank" className={styles.phone}>
-                    <i className="fa fa-phone"/> (646) 204-1732
+                    <i className="fa fa-phone"/> +1 (646) 204-1732
                   </a>
                 </li>
                 <li>
-                  <a title="GitHub: @vitruvian-tech" href="https://github.com/vitruvian-tech" target="_blank">
-                    <i className="fa fa-github"/> vitruvian-tech
+                  <a title="Facebook: @VitruvianTechTV" href="https://www.facebook.com/VitruvianTechTV" target="_blank">
+                    <i className="fa fa-facebook-official"/> @VitruvianTechTV
+                  </a>
+                </li>
+                <li>
+                  <a title="GitHub: VitruvianTech" href="https://github.com/VitruvianTech" target="_blank">
+                    <i className="fa fa-github"/> VitruvianTech
+                  </a>
+                </li>
+                <li>
+                  <a title="Twitter: @VitruvianTechTV" href="https://twitter.com/VitruvianTechTV" target="_blank">
+                    <i className="fa fa-twitter"/> @VitruvianTechTV
                   </a>
                 </li>
                 <li>
@@ -43,23 +53,13 @@ export default class extends Header {
                   </a>
                 </li>
                 <li>
+                  <a title="Instagram: @VitruvianTechTV" href="https://www.instagram.com/VitruvianTechTV" target="_blank">
+                    <i className="fa fa-instagram"/> @VitruvianTechTV
+                  </a>
+                </li>
+                <li>
                   <a title="AngelList: VitruvianTech" href="https://angel.co/vitruvian-technology-1" target="_blank">
                     <i className="fa fa-angellist"/> VitruvianTech
-                  </a>
-                </li>
-                <li>
-                  <a title="Facebook: @VitruvianTechHQ" href="https://www.facebook.com/VitruvianTechHQ/" target="_blank">
-                    <i className="fa fa-facebook-official"/> VitruvianTechHQ
-                  </a>
-                </li>
-                <li>
-                  <a title="Twitter: @VitruvianTechHQ" href="https://twitter.com/VitruvianTechHQ" target="_blank">
-                    <i className="fa fa-twitter"/> VitruvianTechHQ
-                  </a>
-                </li>
-                <li>
-                  <a title="Instagram: @vitruvian.tech" href="https://www.instagram.com/vitruvian.tech/" target="_blank">
-                    <i className="fa fa-instagram"/> vitruvian.tech
                   </a>
                 </li>
                 <li style={{ marginLeft: '6px' }} className={'more'} data-next="Headquarters"/>

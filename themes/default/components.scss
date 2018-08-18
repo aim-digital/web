@@ -9,6 +9,16 @@
 @import "./button.scss";
 @import "./logo.scss";
 
+::selection {
+    background: $primary-green-color;
+    color: $white-color;
+}
+
+::-moz-selection {
+    background: $primary-green-color;
+    color: $white-color;
+}
+
 body {
     overflow-x: hidden;
 }
