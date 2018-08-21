@@ -3,35 +3,37 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Header} from '@vitruvian-tech/machete-bundle/components/layout';
 import moment from 'moment';
+import {postCollection} from '@vitruvian-tech/machete-bundle/data';
 
 const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
 
-@connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.data}))
+@connect(state => ({data: state['@machete-platform/contentful-bundle'].Entry.data}))
 
 export default class extends Header {
   static propTypes = {
-    post: PropTypes.object
+    data: PropTypes.object
   };
 
   render() {
     const styles = require('./Component.scss');
-    const { post } = this.props;
+    let { data } = this.props;
+    data = { ...postCollection, ...data };
 
     return (
       <Header className={styles.slide}>
         <div>
-          <div className={styles.hero} style={{ backgroundImage: `url(${post.hero ? getHeroImage(post.hero) : require('./images/background.jpg')})` }}/>
+          <div className={styles.hero} style={{ backgroundImage: `url(${data.hero ? getHeroImage(data.hero) : require('./images/background.jpg')})` }}/>
           <div className={styles.title}>
-            <h1>{post.title}</h1>
-            <h2>{post.tagline}</h2>
+            <h1>{data.title || 'VitruvianTech TV'}</h1>
+            <h2>{data.tagline}</h2>
           </div>
-          <div className={styles.meta}>
-            <span>By <strong>{post.author.name}</strong></span>
+          {!data.posts && <div className={styles.meta}>
+            <span>By <strong>{data.author.name}</strong></span>
             <br />
-            <span>Published <strong>{moment(post.published).format('MMMM Do YYYY, h:mm a')}</strong></span>
+            <span>Published <strong>{moment(data.published).format('MMMM Do YYYY, h:mm a')}</strong></span>
             <br />
-            <span>From <strong>{post.area}</strong></span>
-          </div>
+            <span>From <strong>{data.area}</strong></span>
+          </div>}
         </div>
       </Header>
     );

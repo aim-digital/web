@@ -9,4 +9,4 @@ export Network from './Network';
 export Communications from './Communications';
 export Headquarters from './Headquarters';
 export Post from './Post';
-export About from './About';
+export PostCollection from './PostCollection';

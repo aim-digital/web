@@ -13,7 +13,7 @@ const RE_ANCHOR_MARKDOWN = /\[([^\]]*)\]\(([^\s|\)]*)(?:\s"([^\)]*)")?\)/g;
 
 const CONTENT_NEWSLETTER = 'Join the VTTV newsletter for project management tips, industry trends, free software, and more.';
 
-@connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.data}), {create})
+@connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.post}), {create})
 
 export default class extends Section {
   static propTypes = {
