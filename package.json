@@ -15,7 +15,7 @@
   "author": "Peter C. Romano <pete@vitruvian.tech> (http://github.com/VitruvianTech)",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "react-bootstrap-modal": "^4.1.1",
-    "react-share": "^1.19.1"
+    "react-bootstrap-modal": "4.1.1",
+    "react-share": "1.19.1"
   }
 }

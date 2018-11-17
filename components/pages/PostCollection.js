@@ -20,7 +20,7 @@ const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
   slug = slug || postCollection.slug;
 
   return {
-    className: 'collection',
+    className: 'post',
     title: title ? `${title} - VitruvianTech TV` : 'VitruvianTech TV',
     meta: [
       {name: 'description', content: title},
