@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import ReactGA from 'react-ga';
 import _ from 'lodash';
 import {connect} from 'react-redux';
@@ -11,10 +11,6 @@ const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButto
 
 @connect(() => ({}), {create})
 export default class extends Modal {
-  static propTypes = {
-    solution: PropTypes.object
-  };
-
   static defaultProps = {
     onHide: () => {}
   };

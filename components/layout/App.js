@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {asyncConnect} from 'redux-async-connect';
+import {asyncConnect} from 'redux-async-connect-react16';
 import {push as pushState} from 'react-router-redux';
 import {App} from '@machete-platform/core-bundle/components/layout';
 import {Nav} from '@vitruvian-tech/machete-bundle/components/layout';
