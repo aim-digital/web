@@ -72,7 +72,7 @@ export default class extends Header {
                   <li>Architectural Digest</li>
                   <li>Condé Nast Traveler</li>
                   <li>Saks 5th Avenue</li>
-                  <li>Marvel Comics</li>
+                  {/*<li>Marvel Comics</li>*/}
                   <li>UrbanDaddy</li>
                   <li>OneRx®</li>
                   <li>RealtyMX™</li>

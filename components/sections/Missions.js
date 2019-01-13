@@ -76,7 +76,7 @@ export default class extends Section {
             <span>Last Look</span>
             <span>Bon Appetit</span>
             <span>Conde Nast Traveler</span>
-            <span>Marvel Comics</span>
+            {/*<span>Marvel Comics</span>*/}
             <span>Wired Magazine</span>
           </div>
         </div>
