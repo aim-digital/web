@@ -102,23 +102,24 @@ export default class extends Header {
               <section className={['preview'].join(' ')}>
                 <h3>Plans</h3>
                 <ul>
-                  <li><strong>Value</strong> <i>Point System</i> <span className={[styles.price].join(' ')}><strong>$300<sub>/pt.</sub></strong> <strong>$100<sub>/pt.</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong>Only pay</strong> for the net feature value (points) we produce.</i></small></li>
-                  <li className={styles.asterisk}><small><i>Warranty included for <strong>guaranteed quality assurance</strong>.</i></small></li>
-                  <li className={styles.asterisk}><small><i>Point prices vary based on <strong>internal or external resources</strong>.</i></small></li>
-                  <li><strong>Managed</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$3k<sub>/mo.</sub></strong> <strong>$8k<sub>/3 mo.</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong>20 hours/mo.</strong> applied to any/all available services.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>20% discount</strong> applied to any/all simultaneous subscriptions.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong><em>Foxtrot℠</em></strong> target tracking and project management system.</i></small></li>
-                  <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+27%<sub>/hourly rate</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong>Independently managed</strong> (per contract negotiations.)</i></small></li>
-                  <li className={styles.asterisk}><small><i>Typical for most hourly-based <strong>ad-hoc</strong> projects.</i></small></li>
-                  <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$2,999<sub><sup>.99</sup>/license</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong>Universal mobile/desktop app UI PaaS</strong> for marketers.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>CMS bundle</strong> integrations (i.e., Shopify, WordPress.)</i></small></li>
+                  <li><strong>Team</strong> <i>Subscription</i> <span className={[styles.price].join(' ')}><strong>$3k<sub>/mo. (per resource)</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong>High quality</strong> (most cost-effective.)</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Flat monthly fee</strong>, per resource.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Includes proprietary <em>Foxtrot℠</em></strong> project management system.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Requires</strong> at least <strong>two</strong> simultaneous subscriptions (resources.)</i></small></li>
+                  <li className={styles.asterisk}><small><i>Cost of resources <strong>not included</strong>.</i></small></li>
+                  <li><strong>Freelance</strong> <i>Time &amp; Materials</i> <span className={[styles.price].join(' ')}><strong>+25% <sub>(of resource rate)</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong>Industry-standard quality</strong> (least cost-effective.)</i></small></li>
+                  <li className={styles.asterisk}><small><i>Resource is <strong>independently managed</strong>.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Conventional</strong> for hourly-based, <strong>ad-hoc projects</strong>.</i></small></li>
+                  <li><strong>Value</strong> <i>Point System</i> <span className={[styles.price].join(' ')}><strong>$250<sub>/pt.</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong>Highest quality</strong> (<strong>guaranteed quality assurance</strong>.)</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Only pay</strong> for <strong>warrantied features</strong> produced.</i></small></li>
+                  <li className={styles.asterisk}><small><i><strong>Includes proprietary <em>Foxtrot℠</em></strong> project management system.</i></small></li>
+                  <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$2,999<sub><sup>.99</sup>/project</sub></strong></span></li>
+                  <li className={styles.asterisk}><small><i><strong>Universal</strong> mobile/desktop app theming PaaS <strong>for marketers</strong>.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
                   <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm</strong> and <strong>publishing</strong> solutions!</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</i></small></li>
                   <li className={'more'} data-next="Rates"/>
                 </ul>
               </section>
@@ -128,13 +129,13 @@ export default class extends Header {
               <section className={['preview'].join(' ')}>
                 <h3>Rates</h3>
                 <ul>
-                  <li>Consultants <span className={[styles.price].join(' ')}><strong>$75-85<sub>/hr.</sub></strong></span></li>
-                  <li>Project Managers <span className={[styles.price].join(' ')}><strong>$75-85<sub>/hr.</sub></strong></span></li>
-                  <li>Software Developers <span className={[styles.price].join(' ')}><strong>$40-85<sub>/hr.</sub></strong></span></li>
-                  <li>Marketers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
-                  <li>Designers <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
-                  <li>System Administrators <span className={[styles.price, styles.starting].join(' ')}><strong>$65<sub>/hr.</sub></strong></span></li>
-                  <li>Content Producers <span className={[styles.price].join(' ')}><strong>$25-75<sub>/hr.</sub></strong></span></li>
+                  <li>Consultants <span className={[styles.price].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
+                  <li>Project Managers <span className={[styles.price].join(' ')}><strong>$75<sub>/hr.</sub></strong></span></li>
+                  <li>Software Developers <span className={[styles.price].join(' ')}><strong>$50-75<sub>/hr.</sub></strong></span></li>
+                  <li>Marketers <span className={[styles.price].join(' ')}><strong>$50-75<sub>/hr.</sub></strong></span></li>
+                  <li>Designers <span className={[styles.price].join(' ')}><strong>$50-75<sub>/hr.</sub></strong></span></li>
+                  <li>System Administrators <span className={[styles.price].join(' ')}><strong>$50-75<sub>/hr.</sub></strong></span></li>
+                  <li>Content Producers <span className={[styles.price, styles.starting].join(' ')}><strong>$25<sub>/hr.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Our studio includes copywriters, videographers, photographers, printers, musicians, and brand curators.</i></small></li>
                   <li>Interns <span className={[styles.price].join(' ')}><strong>$20<sub>/hr.</sub></strong></span></li>
                   <li className={styles.asterisk}><small><i>Boost your project's performance while maximizing workforce potential by providing training opportunities for young professionals and aspiring individuals.</i></small></li>

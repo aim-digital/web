@@ -5,32 +5,35 @@ const PLANS = [
         id: 1,
         name: 'Value',
         description: 'Point System',
-        pricing: [{ label: '$300', unit: 'pt.' }, { label: '$100', unit: 'pt.' }],
+        pricing: [{ label: '$250', unit: 'pt.' }],
         details: [
-            'Only pay for the net feature value (points) we produce.',
-            'Warranty included for guaranteed quality assurance.',
-            'Point prices vary based on internal or external resources.'
+            'Highest quality (guaranteed quality assurance.)',
+            'Only pay for warrantied features produced.',
+            'Includes proprietary Foxtrot℠ project management system.'
         ]
     },
     {
         id: 2,
-        name: 'Managed',
+        name: 'Team',
         description: 'Subscription',
-        pricing: [{ label: '$3k', unit: 'mo.' }, { label: '$8k', unit: '3 mo.' }],
+        pricing: [{ label: '$3k', unit: 'mo.', note: '(per resource)' }],
         details: [
-            '20 hours/mo. applied to any/all available services.',
-            '20% discount applied to any/all simultaneous subscriptions.',
-            'Foxtrot℠ target tracking and project management system.'
+            'High quality (most cost-effective.)',
+            'Flat monthly fee, per resource.',
+            'Includes proprietary Foxtrot℠ project management system.',
+            'Requires at least two simultaneous subscriptions (resources.)',
+            'Cost of resources not included.'
         ]
     },
     {
         id: 3,
         name: 'Freelance',
         description: 'Time & Materials',
-        pricing: [{ label: '+27%', unit: 'hourly rate' }],
+        pricing: [{ label: '+25%', note: '(of resource rate)' }],
         details: [,
-            'Independently managed (per contract negotiations.)',
-            'Typical for most hourly-based ad-hoc projects.'
+            'Industry-standard quality (least cost-effective.)',
+            'Resource is independently managed.',
+            'Conventional for hourly-based, ad-hoc projects.'
         ]
     },
     {
@@ -39,8 +42,7 @@ const PLANS = [
         description: 'Theme Platform',
         pricing: [{ label: '$2,999', unit: 'license' }],
         details: [
-            'Universal mobile/desktop app UI PaaS for marketers.',
-            'CMS bundle integrations (i.e., Shopify, WordPress.)',
+            'Universal mobile/desktop app theming PaaS for marketers.',
             'Hundreds of thousands of available libraries and plugins.',
             'Perfect for custom e-comm and publishing solutions!'
         ]

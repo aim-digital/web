@@ -69,10 +69,10 @@ export default class extends Modal {
             {plans.map((plan, i) => <div key={i}>
               <strong>{plan.name}</strong> {plan.description}
               <span className="pricing">
-                {plan.pricing.map((price, i) => <span key={i}>{price.label}<sub>/{price.unit}</sub></span>)}
+                {plan.pricing.map((price, i) => <span key={i}>{price.label}<sub>{price.unit ? `/${price.unit}` : ''}{price.note ? ` ${price.note}` : ''}</sub></span>)}
               </span>
               <ul>
-                {plan.details.map((detail, i) => <li key={i}>{detail}</li>)}
+                {plan.details.map((detail, i) => <li key={i}>* {detail}</li>)}
               </ul>
             </div>)}
           </section>}
