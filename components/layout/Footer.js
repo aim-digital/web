@@ -116,7 +116,7 @@ export default class extends Footer {
             </div>
             <div className="col-xs-12 text-center">
               <img src="/@vitruvian-tech/machete-bundle/images/insignia.png" alt="The Digital Special Forces for custom software and marketing solutions." title="Vitruvian Technology, Corp."/>
-              <p><small>&copy; 2018 Vitruvian Technology, Corp. (subsidiary of Vitruvian Holdings, LLC.)</small></p>
+              <p><small>&copy; 2019 Vitruvian Technology, Corp. (subsidiary of Vitruvian Holdings, LLC.)</small></p>
             </div>
           </div>
         </div>
