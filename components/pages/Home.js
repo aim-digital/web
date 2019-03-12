@@ -72,7 +72,10 @@ export default class extends Page {
     this.setState({ solution: _.find(solutions, ['id', 1 * solution]) || null });
   };
 
-  componentWillUnmount = () => document.querySelector('#app .nav + span > .page').removeEventListener('click', this.props.dismiss);
+  componentWillUnmount = () => {
+    document.querySelector('#app .nav + span > .page').removeEventListener('click', this.props.dismiss);
+    this.props.transition({ progress: 0.2 });
+  }
 
   componentWillUpdate = props => {
     if (this.props.param.section !== props.param.section) {
@@ -115,6 +118,7 @@ export default class extends Page {
     const { transition } = this;
     const { header, slide } = SECTIONS[props.section || props.param.section] || SECTIONS.home;
     transition('header', header).then(() => transition('slide', slide));
+    this.props.transition({ progress: 1 });
   };
 
   transition = (type, index) => this.props[type] === index ? Promise.resolve() : this.props.transition({ [type]: index });

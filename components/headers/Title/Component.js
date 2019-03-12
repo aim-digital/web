@@ -75,7 +75,7 @@ export default class extends Header {
                   {/*<li>Marvel Comics</li>*/}
                   <li>UrbanDaddy</li>
                   <li>OneRx®</li>
-                  <li>RealtyMX™</li>
+                  {/* <li>RealtyMX™</li> */}
                   <li className={'more'} data-next="Services"/>
                 </ul>
               </section>

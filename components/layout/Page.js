@@ -22,7 +22,6 @@ export default class extends Page {
 
   componentDidMount = () => {
     document.querySelector('#app .nav + span > .page').addEventListener('click', this.props.dismiss);
-    this.props.transition({ progress: 1 });
   }
 
   componentWillMount = () => this.transition('slide', 0);
