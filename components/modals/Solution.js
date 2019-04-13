@@ -22,8 +22,8 @@ export default class extends Modal {
     }
   };
 
-  onHide = () => {
-    this.props.onHide.apply(this, arguments);
+  onHide = (...args) => {
+    this.props.onHide.apply(this, args);
     this.setState({ contact: null, form: { message: null } });
   };
 
