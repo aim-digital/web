@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {asyncConnect} from 'redux-async-connect-react16';
@@ -47,10 +47,8 @@ export default class extends App {
   render() {
     return (
       <App {...this.props} nav={<Nav/>}>
-        <span>
-          {this.props.children}
-          <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>
-        </span>
+        {this.props.children}
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>
       </App>
     );
   }

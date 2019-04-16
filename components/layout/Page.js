@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import NukaCarousel from 'nuka-carousel';
@@ -21,12 +21,12 @@ export default class extends Page {
   };
 
   componentDidMount = () => {
-    document.querySelector('#app .nav + span > .page').addEventListener('click', this.props.dismiss);
+    document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
   }
 
   componentWillMount = () => this.transition('slide', 0);
 
-  componentWillUnmount = () => document.querySelector('#app .nav + span > .page').removeEventListener('click', this.props.dismiss);
+  componentWillUnmount = () => document.querySelector('#app .nav + .page').removeEventListener('click', this.props.dismiss);
 
   transition = (type, index) => this.props[type] === index ? Promise.resolve() : this.props.transition({ [type]: index });
 

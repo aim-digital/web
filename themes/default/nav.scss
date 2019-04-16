@@ -518,7 +518,7 @@ body.nav-open,
   overflow: hidden;
 }
 
-#app .nav + span > .page {
+#app .nav + .page {
   position: relative;
   z-index: 1;
   transition: transform .35s;
@@ -526,7 +526,7 @@ body.nav-open,
   //min-height: 92vh;
 }
 
-#app .nav + span > .page:before {
+#app .nav + .page:before {
   content: '';
   position: fixed;
   width: 100vw;
@@ -540,12 +540,12 @@ body.nav-open,
   background: #7Bc586;
 }
 
-#app.nav-open .nav + span > .page {
+#app.nav-open .nav + .page {
   -webkit-transform: translate3d(70%, 0, 0);
   transform: translate3d(70%, 0, 0);
 }
 
-#app.nav-open .nav + span > .page:before {
+#app.nav-open .nav + .page:before {
   opacity: .5;
   pointer-events: auto;
 }
@@ -555,12 +555,12 @@ body.nav-open,
     background: $black-color;
   }
 
-  #app.nav-open .nav + span > .page {
+  #app.nav-open .nav + .page {
     -webkit-transform: none;
     transform: none;
   }
 
-  #app .nav + span > .page:before {
+  #app .nav + .page:before {
     transition: opacity .35s;
     background: $black-color;
   }

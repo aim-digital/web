@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
@@ -63,7 +63,7 @@ export default class extends Page {
     }
   };
 
-  componentDidMount = () => document.querySelector('#app .nav + span > .page').addEventListener('click', this.props.dismiss);
+  componentDidMount = () => document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
 
   componentWillMount = () => {
     const { solution } = this.props.query;
@@ -73,7 +73,7 @@ export default class extends Page {
   };
 
   componentWillUnmount = () => {
-    document.querySelector('#app .nav + span > .page').removeEventListener('click', this.props.dismiss);
+    document.querySelector('#app .nav + .page').removeEventListener('click', this.props.dismiss);
     this.props.transition({ progress: 0.2 });
   }
 
