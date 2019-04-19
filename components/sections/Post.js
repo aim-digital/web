@@ -144,7 +144,7 @@ export default class extends Section {
         </article>
         {this.renderShare()}
         <p className="text-center humility">
-          <small>© 2018 Vitruvian Technology, Corp. (subsidiary of Vitruvian Holdings, LLC.)</small>
+          <small>© 2019 VitruvianTech (subsidiary of Vitruvian Holdings, LLC.)</small>
         </p>
         <br />
       </Section>
