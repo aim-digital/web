@@ -17,6 +17,7 @@
   .slider {
     > div:last-of-type {
       z-index: 4;
+      transform: none!important;
 
       & > ul {
         box-shadow: 0 0 1em #000;

@@ -76,9 +76,13 @@ button.btn {
     background: $primary-green-color;
     font-size: 1.5em;
     padding: .5em;
-    width: 1.5em;
     box-shadow: 0 0 .5em $black-color;
-    width: 2.5em;
     text-align: center;
+    width: 2.5em;
+
+    &:before {
+      width: 1.5em;
+      display: inline-block;
+    }
   }
 }
