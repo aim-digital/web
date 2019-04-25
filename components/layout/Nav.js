@@ -4,9 +4,9 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {Nav} from '@machete-platform/core-bundle/components/layout';
 import {Progress} from '@machete-platform/core-bundle/components/layout';
-import {transition} from '@machete-platform/core-bundle/controllers/Transition';
-import {load} from '@vitruvian-tech/machete-bundle/controllers/Nav';
-import * as Auth from '@machete-platform/core-bundle/controllers/Auth';
+import {transition} from '@machete-platform/core-bundle/actions/Transition';
+import {load} from '@vitruvian-tech/machete-bundle/actions/Nav';
+import * as Auth from '@machete-platform/core-bundle/actions/Auth';
 
 @connect(state => ({ user: state['@machete-platform/core-bundle'].Auth.user }), { transition, logout: Auth.logout, load })
 

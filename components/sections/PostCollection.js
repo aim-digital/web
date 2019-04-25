@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {ShareButtons} from 'react-share';
 import ReactGA from 'react-ga';
 import {Section} from '@machete-platform/core-bundle/components/layout';
-import {create} from '@machete-platform/core-bundle/controllers/Contact';
+import {create} from '@machete-platform/core-bundle/actions/Contact';
 import {postCollection} from '@vitruvian-tech/machete-bundle/data';
 import * as forms from '@machete-platform/core-bundle/components/forms';
 

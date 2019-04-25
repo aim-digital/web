@@ -3,7 +3,7 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@machete-platform/core-bundle/components/layout';
-import {transition} from '@machete-platform/core-bundle/controllers/Transition';
+import {transition} from '@machete-platform/core-bundle/actions/Transition';
 import {Logo} from '@vitruvian-tech/machete-bundle/components/layout';
 
 const SECONDS_IDLE = 60 * 15;

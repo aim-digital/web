@@ -1,8 +1,7 @@
-import React from 'react';
 import {asyncConnect} from 'redux-async-connect-react16';
 import {connect} from 'react-redux';
 import {Page} from '@vitruvian-tech/machete-bundle/components/layout';
-import {post} from '@machete-platform/contentful-bundle/controllers/Entry';
+import {post} from '@machete-platform/contentful-bundle/actions/Entry';
 
 const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
 

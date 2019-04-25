@@ -3,7 +3,7 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {Footer} from '@machete-platform/core-bundle/components/layout';
-import {transition} from '@machete-platform/core-bundle/controllers/Transition';
+import {transition} from '@machete-platform/core-bundle/actions/Transition';
 
 @connect(state => ({}), { transition })
 

@@ -3,8 +3,8 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import NukaCarousel from 'nuka-carousel';
 import {Page} from '@machete-platform/core-bundle/components/layout';
-import {transition} from '@machete-platform/core-bundle/controllers/Transition';
-import {dismiss} from '@vitruvian-tech/machete-bundle/controllers/Nav';
+import {transition} from '@machete-platform/core-bundle/actions/Transition';
+import {dismiss} from '@vitruvian-tech/machete-bundle/actions/Nav';
 import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
 
 @connect(state => {

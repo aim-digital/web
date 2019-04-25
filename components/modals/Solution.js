@@ -2,7 +2,7 @@ import React from 'react';
 import ReactGA from 'react-ga';
 import _ from 'lodash';
 import {connect} from 'react-redux';
-import {create} from '@vitruvian-tech/machete-bundle/controllers/Solution';
+import {create} from '@vitruvian-tech/machete-bundle/actions/Solution';
 import {Modal} from '@vitruvian-tech/machete-bundle/components/layout';
 import {Contact} from '@machete-platform/core-bundle/components/forms';
 import {ShareButtons} from 'react-share';

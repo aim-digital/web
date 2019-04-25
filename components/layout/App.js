@@ -5,8 +5,8 @@ import {asyncConnect} from 'redux-async-connect-react16';
 import {push as pushState} from 'react-router-redux';
 import {App} from '@machete-platform/core-bundle/components/layout';
 import {Nav} from '@vitruvian-tech/machete-bundle/components/layout';
-import * as Config from '@machete-platform/core-bundle/controllers/Config';
-import * as Auth from '@machete-platform/core-bundle/controllers/Auth';
+import * as Config from '@machete-platform/core-bundle/actions/Config';
+import * as Auth from '@machete-platform/core-bundle/actions/Auth';
 
 @asyncConnect([{
   promise: ({store: {dispatch, getState}}) => {
