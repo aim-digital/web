@@ -6,9 +6,9 @@ import {Nav} from '@machete-platform/core-bundle/components/layout';
 import {Progress} from '@machete-platform/core-bundle/components/layout';
 import {transition} from '@machete-platform/core-bundle/actions/Transition';
 import {load} from '@vitruvian-tech/machete-bundle/actions/Nav';
-import * as Auth from '@machete-platform/core-bundle/actions/Auth';
+import * as Session from '@machete-platform/core-bundle/actions/Session';
 
-@connect(state => ({ user: state['@machete-platform/core-bundle'].Auth.user }), { transition, logout: Auth.logout, load })
+@connect(state => ({ user: state['@machete-platform/core-bundle'].Session.user }), { transition, logout: Session.logout, load })
 
 export default class extends Nav {
   static propTypes = {

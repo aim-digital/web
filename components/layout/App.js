@@ -6,7 +6,7 @@ import {push as pushState} from 'react-router-redux';
 import {App} from '@machete-platform/core-bundle/components/layout';
 import {Nav} from '@vitruvian-tech/machete-bundle/components/layout';
 import * as Config from '@machete-platform/core-bundle/actions/Config';
-import * as Auth from '@machete-platform/core-bundle/actions/Auth';
+import * as Session from '@machete-platform/core-bundle/actions/Session';
 
 @asyncConnect([{
   promise: ({store: {dispatch, getState}}) => {
@@ -17,15 +17,15 @@ import * as Auth from '@machete-platform/core-bundle/actions/Auth';
       promises.push(dispatch(Config.components('@machete-platform/core-bundle')));
     }
 
-    if (!Auth.isLoaded(state)) {
-      promises.push(dispatch(Auth.load()));
+    if (!Session.isLoaded(state)) {
+      promises.push(dispatch(Session.load()));
     }
 
     return Promise.all(promises);
   }
 }])
 
-@connect(state => ({ user: state['@machete-platform/core-bundle'].Auth.user }), {pushState})
+@connect(state => ({ user: state['@machete-platform/core-bundle'].Session.user }), {pushState})
 
 export default class extends App {
   static propTypes = {
