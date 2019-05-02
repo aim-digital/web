@@ -20,9 +20,7 @@ export default class extends Page {
     slide: PropTypes.number.isRequired
   };
 
-  componentDidMount = () => {
-    document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
-  }
+  componentDidMount = () => document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
 
   componentWillMount = () => this.transition('slide', 0);
 
