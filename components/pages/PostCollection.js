@@ -25,15 +25,15 @@ const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
     meta: [
       {name: 'description', content: title},
       {property: 'og:type', content: 'article'},
-      {property: 'og:url', content: slug ? `https://vitruvian.tech/posts/${slug}` : `https://vitruvian.tech/posts`},
+      {property: 'og:url', content: slug ? `https://vitruvian.tech/tv/${slug}` : `https://vitruvian.tech/tv`},
       {property: 'og:title', content: title},
       {property: 'og:description', content: summary},
-      {property: 'og:image:secure_url', content: hero ? getHeroImage(hero) : 'https://vitruvian.tech/dist/d6f6372a18fec2c0e6c0b81aa74de8cf.jpg'},
-      {property: 'og:image', content: hero ? getHeroImage(hero) : 'https://vitruvian.tech/dist/d6f6372a18fec2c0e6c0b81aa74de8cf.jpg'},
+      {property: 'og:image:secure_url', content: hero ? getHeroImage(hero) : 'https://s3.amazonaws.com/vitruvian-tech/cover.jpg'},
+      {property: 'og:image', content: hero ? getHeroImage(hero) : 'https://s3.amazonaws.com/vitruvian-tech/cover.jpg'},
       {property: 'twitter:card', content: 'article'},
       {property: 'twitter:title', content: title},
       {property: 'twitter:description', content: summary},
-      {property: 'twitter:image', content: hero ? getHeroImage(hero) : 'https://vitruvian.tech/dist/d6f6372a18fec2c0e6c0b81aa74de8cf.jpg'}
+      {property: 'twitter:image', content: hero ? getHeroImage(hero) : 'https://s3.amazonaws.com/vitruvian-tech/cover.jpg'}
     ]
   };
 })
