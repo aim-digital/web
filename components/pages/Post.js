@@ -1,11 +1,11 @@
-import {asyncConnect} from 'redux-async-connect-react16';
 import {connect} from 'react-redux';
-import {Page} from '@vitruvian-tech/machete-bundle/components/layout';
+import {sync} from '@machete-platform/core-bundle/lib/Fetch';
 import {post} from '@machete-platform/contentful-bundle/actions/Entry';
+import {Page} from '@vitruvian-tech/machete-bundle/components/layout';
 
 const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
 
-@asyncConnect([{
+@sync([{
   promise: ({store: {dispatch}, params: { id }}) => dispatch(post(id))
 }])
 
