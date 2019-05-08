@@ -4,18 +4,8 @@ export default class {
   static async up(models, sequelize, DataTypes) {
     const {Layout} = getModels();
 
-    try {
-        await Layout.update({
-          enabled: false
-        }, {
-        where: {
-            title: 'Machete™ Theme Platform'
-        }
-        });
-    } catch (e) {}
-
     await Layout.update({
-      enabled: true
+      auth: 'login'
     }, {
       where: {
         title: 'VitruvianTech'
@@ -26,18 +16,8 @@ export default class {
   static async down(models, sequelize, DataTypes) {
     const {Layout} = getModels();
 
-    try {
-        await Layout.update({
-          enabled: true
-        }, {
-        where: {
-            title: 'Machete™ Theme Platform'
-        }
-        });
-    } catch (e) {}
-
     await Layout.update({
-      enabled: false
+      auth: null
     }, {
       where: {
         title: 'VitruvianTech'
