@@ -1,4 +1,4 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
@@ -9,7 +9,7 @@ export default class {
           enabled: false
         }, {
         where: {
-            title: 'Machete™ Theme Platform'
+            title: 'BoilerplateJS™ - App Development Platform'
         }
         });
     } catch (e) {}
@@ -31,7 +31,7 @@ export default class {
           enabled: true
         }, {
         where: {
-            title: 'Machete™ Theme Platform'
+            title: 'BoilerplateJS™ - App Development Platform'
         }
         });
     } catch (e) {}

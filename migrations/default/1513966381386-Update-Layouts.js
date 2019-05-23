@@ -1,11 +1,11 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
     const {Layout} = getModels();
 
     await Layout.update({
-      app: '@vitruvian-tech/machete-bundle:App'
+      app: '@vitruviantech/web:App'
     }, {
       where: {
         title: 'VitruvianTech'
@@ -17,7 +17,7 @@ export default class {
     const {Layout} = getModels();
 
     await Layout.update({
-      app: '@machete-platform/core-bundle:App'
+      app: '@boilerplatejs/core:App'
     }, {
       where: {
         title: 'VitruvianTech'

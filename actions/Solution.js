@@ -1,6 +1,6 @@
-const CREATE = '@vitruvian-tech/machete-bundle/Solution/CREATE';
-const CREATE_SUCCESS = '@vitruvian-tech/machete-bundle/Solution/CREATE_SUCCESS';
-const CREATE_FAIL = '@vitruvian-tech/machete-bundle/Solution/CREATE_FAIL';
+const CREATE = '@vitruviantech/web/Solution/CREATE';
+const CREATE_SUCCESS = '@vitruviantech/web/Solution/CREATE_SUCCESS';
+const CREATE_FAIL = '@vitruviantech/web/Solution/CREATE_FAIL';
 
 const initialState = {
   error: null
@@ -10,9 +10,9 @@ export function create(data) {
   return {
     types: [CREATE, CREATE_SUCCESS, CREATE_FAIL],
     promise: (client) => client
-        .post('/@machete-platform/core-bundle/Contact/create', { data })
+        .post('/@boilerplatejs/core/Contact/create', { data })
         .then(async () => {
-            await client.post('/@vitruvian-tech/machete-bundle/Solution/create', { data });
+            await client.post('/@vitruviantech/web/Solution/create', { data });
             return data;
         })
   };

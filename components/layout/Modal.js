@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import Modal from 'react-bootstrap-modal';
-import {Logo} from '@vitruvian-tech/machete-bundle/components/layout';
+import {Logo} from '@vitruviantech/web/components/layout';
 import {ShareButtons} from 'react-share';
 import _ from 'lodash';
 

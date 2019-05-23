@@ -2,13 +2,13 @@ import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import NukaCarousel from 'nuka-carousel';
-import {Page} from '@machete-platform/core-bundle/components/layout';
-import {transition} from '@machete-platform/core-bundle/actions/Transition';
-import {dismiss} from '@vitruvian-tech/machete-bundle/actions/Nav';
-import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
+import {Page} from '@boilerplatejs/core/components/layout';
+import {transition} from '@boilerplatejs/core/actions/Transition';
+import {dismiss} from '@vitruviantech/web/actions/Nav';
+import {Footer} from '@vitruviantech/web/components/layout';
 
 @connect(state => {
-  const { header = 0, slide = 0 } = state['@machete-platform/core-bundle'].Transition;
+  const { header = 0, slide = 0 } = state['@boilerplatejs/core'].Transition;
   return { header, slide };
 }, {transition, dismiss})
 

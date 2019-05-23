@@ -1,4 +1,4 @@
-import {ContactSolution} from '@vitruvian-tech/machete-bundle/models/default';
+import {ContactSolution} from '@vitruviantech/web/models/default';
 
 export const create = async req => {
     const {email, solution} = req.body;

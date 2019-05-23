@@ -1,9 +1,9 @@
 import React from 'react';
 import {asyncConnect} from 'redux-async-connect-react16';
 import {connect} from 'react-redux';
-import {Page} from '@vitruvian-tech/machete-bundle/components/layout';
-import {posts} from '@machete-platform/contentful-bundle/actions/Entry';
-import {postCollection} from '@vitruvian-tech/machete-bundle/data';
+import {Page} from '@vitruviantech/web/components/layout';
+import {posts} from '@boilerplatejs/contentful/actions/Entry';
+import {postCollection} from '@vitruviantech/web/data';
 
 const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
 
@@ -12,7 +12,7 @@ const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
 }])
 
 @connect(state => {
-  let { title, summary, hero, slug } = state['@machete-platform/contentful-bundle'].Entry.collection;
+  let { title, summary, hero, slug } = state['@boilerplatejs/contentful'].Entry.collection;
 
   title = title || postCollection.title;
   summary = summary || postCollection.summary;

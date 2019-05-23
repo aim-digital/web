@@ -3,9 +3,9 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {ShareButtons} from 'react-share';
 import ReactGA from 'react-ga';
-import {Section} from '@machete-platform/core-bundle/components/layout';
-import {create} from '@machete-platform/core-bundle/actions/Contact';
-import * as forms from '@machete-platform/core-bundle/components/forms';
+import {Section} from '@boilerplatejs/core/components/layout';
+import {create} from '@boilerplatejs/core/actions/Contact';
+import * as forms from '@boilerplatejs/core/components/forms';
 
 const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
@@ -13,7 +13,7 @@ const RE_ANCHOR_MARKDOWN = /\[([^\]]*)\]\(([^\s|\)]*)(?:\s"([^\)]*)")?\)/g;
 
 const CONTENT_NEWSLETTER = 'Join the VTTV newsletter for project management tips, industry trends, free software, and more.';
 
-@connect(state => ({post: state['@machete-platform/contentful-bundle'].Entry.post}), {create})
+@connect(state => ({post: state['@boilerplatejs/contentful'].Entry.post}), {create})
 
 export default class extends Section {
   static propTypes = {
@@ -87,13 +87,13 @@ export default class extends Section {
 
     return (<div className="share">
       <FacebookShareButton url={`${url}`}>
-        <img src="/@vitruvian-tech/machete-bundle/images/facebook.png" />
+        <img src="/@vitruviantech/web/images/facebook.png" />
       </FacebookShareButton>
       <TwitterShareButton url={`${url}`}>
-        <img src="/@vitruvian-tech/machete-bundle/images/twitter.png" />
+        <img src="/@vitruviantech/web/images/twitter.png" />
       </TwitterShareButton>
       <EmailShareButton url={`${url}`} subject={`\<VitruvianTech\> ${post.title}`} body={`${post.summary}\n\n${url}\n\n`}>
-        <img src="/@vitruvian-tech/machete-bundle/images/email.png" />
+        <img src="/@vitruviantech/web/images/email.png" />
       </EmailShareButton>
     </div>);
   }

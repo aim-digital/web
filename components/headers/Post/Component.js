@@ -1,13 +1,13 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {Header} from '@vitruvian-tech/machete-bundle/components/layout';
+import {Header} from '@vitruviantech/web/components/layout';
 import moment from 'moment';
-import {postCollection} from '@vitruvian-tech/machete-bundle/data';
+import {postCollection} from '@vitruviantech/web/data';
 
 const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
 
-@connect(state => ({data: state['@machete-platform/contentful-bundle'].Entry.data}))
+@connect(state => ({data: state['@boilerplatejs/contentful'].Entry.data}))
 
 export default class extends Header {
   static propTypes = {

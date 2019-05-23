@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {VelocityTransitionGroup} from 'velocity-react';
-import {Header} from '@machete-platform/core-bundle/components/layout';
-import {transition} from '@machete-platform/core-bundle/actions/Transition';
-import {Logo} from '@vitruvian-tech/machete-bundle/components/layout';
+import {Header} from '@boilerplatejs/core/components/layout';
+import {transition} from '@boilerplatejs/core/actions/Transition';
+import {Logo} from '@vitruviantech/web/components/layout';
 
 const SECONDS_IDLE = 60 * 15;
 
-@connect((state, props) => ({ slide: state['@machete-platform/core-bundle'].Transition.slide || props.slide || 0 }), {transition})
+@connect((state, props) => ({ slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0 }), {transition})
 
 export default class extends Header {
   static propTypes = {

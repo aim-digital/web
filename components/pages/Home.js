@@ -3,17 +3,17 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {VelocityTransitionGroup} from 'velocity-react';
-import {Page} from '@machete-platform/core-bundle/components/layout';
-import {transition} from '@machete-platform/core-bundle/actions/Transition';
-import {dismiss} from '@vitruvian-tech/machete-bundle/actions/Nav';
-import {Footer} from '@vitruvian-tech/machete-bundle/components/layout';
-import {Solution} from '@vitruvian-tech/machete-bundle/components/buttons';
-import {create} from '@machete-platform/core-bundle/actions/Contact';
-import * as modals from '@vitruvian-tech/machete-bundle/components/modals';
-import * as forms from '@machete-platform/core-bundle/components/forms';
+import {Page} from '@boilerplatejs/core/components/layout';
+import {transition} from '@boilerplatejs/core/actions/Transition';
+import {dismiss} from '@vitruviantech/web/actions/Nav';
+import {Footer} from '@vitruviantech/web/components/layout';
+import {Solution} from '@vitruviantech/web/components/buttons';
+import {create} from '@boilerplatejs/core/actions/Contact';
+import * as modals from '@vitruviantech/web/components/modals';
+import * as forms from '@boilerplatejs/core/components/forms';
 import ReactGA from 'react-ga';
 import NukaCarousel from 'nuka-carousel';
-import {solutions} from '@vitruvian-tech/machete-bundle/data';
+import {solutions} from '@vitruviantech/web/data';
 import _ from 'lodash';
 
 const SOLUTION_DELAY = 100;
@@ -32,7 +32,7 @@ const SECTIONS = {
 };
 
 @connect(state => {
-  const { header = 0, slide = 0 } = state['@machete-platform/core-bundle'].Transition;
+  const { header = 0, slide = 0 } = state['@boilerplatejs/core'].Transition;
   return ({ param: state.router.params, header, slide, query: state.router.location.query });
 }, {transition, dismiss, create})
 

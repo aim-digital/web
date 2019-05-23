@@ -1,4 +1,4 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
@@ -7,29 +7,29 @@ export default class {
     await Page.create({
       route: '/',
       title: 'VitruvianTech - Sentient. Secure. Quality for All.',
-      headers: '["@vitruvian-tech/machete-bundle:Title", "@vitruvian-tech/machete-bundle:Contact"]'
+      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]'
     });
 
     await Page.create({
       route: 'about',
       title: 'VitruvianTech - About Us',
-      page: '@vitruvian-tech/machete-bundle:About',
-      headers: '["@vitruvian-tech/machete-bundle:Title", "@vitruvian-tech/machete-bundle:Contact"]',
-      sections: '["@vitruvian-tech/machete-bundle:About"]'
+      page: '@vitruviantech/web:About',
+      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+      sections: '["@vitruviantech/web:About"]'
     });
 
     await Page.create({
       route: 'contact',
       title: 'VitruvianTech - Contact Us',
-      headers: '["@vitruvian-tech/machete-bundle:Contact"]',
-      sections: '["@machete-platform/core-bundle:Contact"]'
+      headers: '["@vitruviantech/web:Contact"]',
+      sections: '["@boilerplatejs/core:Contact"]'
     });
 
     await Page.create({
       route: 'post/:title/:date/:id',
-      page: '@vitruvian-tech/machete-bundle:Post',
-      headers: '["@vitruvian-tech/machete-bundle:Post"]',
-      sections: '["@vitruvian-tech/machete-bundle:Post"]'
+      page: '@vitruviantech/web:Post',
+      headers: '["@vitruviantech/web:Post"]',
+      sections: '["@vitruviantech/web:Post"]'
     });
   }
 
@@ -40,7 +40,7 @@ export default class {
       where: {
         route: '/',
         title: 'VitruvianTech - Sentient. Secure. Quality for All.',
-        headers: '["@vitruvian-tech/machete-bundle:Title", "@vitruvian-tech/machete-bundle:Contact"]'
+        headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]'
       }
     });
 
@@ -48,9 +48,9 @@ export default class {
       where: {
         route: 'about',
         title: 'VitruvianTech - About Us',
-        page: '@vitruvian-tech/machete-bundle:About',
-        headers: '["@vitruvian-tech/machete-bundle:Title", "@vitruvian-tech/machete-bundle:Contact"]',
-        sections: '["@vitruvian-tech/machete-bundle:About"]'
+        page: '@vitruviantech/web:About',
+        headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+        sections: '["@vitruviantech/web:About"]'
       }
     });
 
@@ -58,17 +58,17 @@ export default class {
       where: {
         route: 'contact',
         title: 'VitruvianTech - Contact Us',
-        headers: '["@vitruvian-tech/machete-bundle:Contact"]',
-        sections: '["@machete-platform/core-bundle:Contact"]'
+        headers: '["@vitruviantech/web:Contact"]',
+        sections: '["@boilerplatejs/core:Contact"]'
       }
     });
 
     await Page.destroy({
       where: {
         route: 'post/:title/:date/:id',
-        page: '@vitruvian-tech/machete-bundle:Post',
-        headers: '["@vitruvian-tech/machete-bundle:Post"]',
-        sections: '["@vitruvian-tech/machete-bundle:Post"]'
+        page: '@vitruviantech/web:Post',
+        headers: '["@vitruviantech/web:Post"]',
+        sections: '["@vitruviantech/web:Post"]'
       }
     });
   }

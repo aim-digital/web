@@ -2,9 +2,9 @@ import React from 'react';
 import ReactGA from 'react-ga';
 import _ from 'lodash';
 import {connect} from 'react-redux';
-import {create} from '@vitruvian-tech/machete-bundle/actions/Solution';
-import {Modal} from '@vitruvian-tech/machete-bundle/components/layout';
-import {Contact} from '@machete-platform/core-bundle/components/forms';
+import {create} from '@vitruviantech/web/actions/Solution';
+import {Modal} from '@vitruviantech/web/components/layout';
+import {Contact} from '@boilerplatejs/core/components/forms';
 import {ShareButtons} from 'react-share';
 
 const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;

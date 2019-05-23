@@ -1,11 +1,11 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
     const {Link} = getModels();
 
     await Link.update({
-      href: '/@vitruvian-tech/machete-bundle/images/favicon.png'
+      href: '/@vitruviantech/web/images/favicon.png'
     }, {
       where: {
         href: '/favicon.png'
@@ -20,7 +20,7 @@ export default class {
       href: '/favicon.png'
     }, {
       where: {
-        href: '/@vitruvian-tech/machete-bundle/images/favicon.png'
+        href: '/@vitruviantech/web/images/favicon.png'
       }
     });
   }

@@ -1,4 +1,4 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
@@ -6,9 +6,9 @@ export default class {
 
     await Layout.create({
       title: 'VitruvianTech',
-      theme: '@vitruvian-tech/machete-bundle',
-      app: '@machete-platform/core-bundle:App',
-      page: '@vitruvian-tech/machete-bundle:Page'
+      theme: '@vitruviantech/web',
+      app: '@boilerplatejs/core:App',
+      page: '@vitruviantech/web:Page'
     });
   }
 
@@ -18,9 +18,9 @@ export default class {
     await Layout.destroy({
       where: {
         title: 'VitruvianTech',
-        theme: '@vitruvian-tech/machete-bundle',
-        app: '@machete-platform/core-bundle:App',
-        page: '@vitruvian-tech/machete-bundle:Page'
+        theme: '@vitruviantech/web',
+        app: '@boilerplatejs/core:App',
+        page: '@vitruviantech/web:Page'
       }
     });
   }

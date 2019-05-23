@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
-import {sync} from '@machete-platform/core-bundle/lib/Fetch';
-import {post} from '@machete-platform/contentful-bundle/actions/Entry';
-import {Page} from '@vitruvian-tech/machete-bundle/components/layout';
+import {sync} from '@boilerplatejs/core/lib/Fetch';
+import {post} from '@boilerplatejs/contentful/actions/Entry';
+import {Page} from '@vitruviantech/web/components/layout';
 
 const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
 
@@ -10,7 +10,7 @@ const getHeroImage = hero => hero.file ? hero.file.url : hero.url;
 }])
 
 @connect(state => {
-  const { id, title, summary, hero, slug } = state['@machete-platform/contentful-bundle'].Entry.post;
+  const { id, title, summary, hero, slug } = state['@boilerplatejs/contentful'].Entry.post;
 
   return {
     className: 'post',

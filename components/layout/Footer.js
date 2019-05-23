@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import {Footer} from '@machete-platform/core-bundle/components/layout';
-import {transition} from '@machete-platform/core-bundle/actions/Transition';
+import {Footer} from '@boilerplatejs/core/components/layout';
+import {transition} from '@boilerplatejs/core/actions/Transition';
 
 @connect(state => ({}), { transition })
 
@@ -37,7 +37,7 @@ export default class extends Footer {
           <div className="row">
             <div className="col-xs-12 logo text-center">
               <Link to="/" onClick={update(0, 0)}>
-                <img src="/@vitruvian-tech/machete-bundle/images/logo.png" alt="Roman Inspired Software Designers" title="Vitruvian Technology, Corp."/>
+                <img src="/@vitruviantech/web/images/logo.png" alt="Roman Inspired Software Designers" title="Vitruvian Technology, Corp."/>
               </Link>
             </div>
             <div className="col-sm-9 col-xs-12">
@@ -115,7 +115,7 @@ export default class extends Footer {
               <p>Operating hours:<br />10am-6pm (EDT) / M-F</p>
             </div>
             <div className="col-xs-12 text-center">
-              <img src="/@vitruvian-tech/machete-bundle/images/insignia.png" alt="The Digital Special Forces for custom software and marketing solutions." title="Vitruvian Technology, Corp."/>
+              <img src="/@vitruviantech/web/images/insignia.png" alt="The Digital Special Forces for custom software and marketing solutions." title="Vitruvian Technology, Corp."/>
               <p><small>&copy; 2019 VitruvianTech (subsidiary of Vitruvian Holdings, LLC.)</small></p>
             </div>
           </div>

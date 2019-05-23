@@ -2,7 +2,7 @@
 @import "./variables.scss";
 
 // Extend from Core default components theme as a base
-@import "../../../../@machete-platform/core-bundle/themes/default/components.scss";
+@import "../../../../@boilerplatejs/core/themes/default/components.scss";
 
 // Override base theme with VitruvianTech theme
 @import "./typography.scss";

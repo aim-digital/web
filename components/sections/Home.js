@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Section} from '@machete-platform/core-bundle/components/layout';
+import {Section} from '@boilerplatejs/core/components/layout';
 
 export default class extends Section {
   render() {
@@ -8,7 +8,7 @@ export default class extends Section {
         <h1>Vitruvian Virtues</h1>
         <div className="background">
           <div className="film"></div>
-          <div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/home/virtues.jpg)' }}></div>
+          <div className="image" style={{ backgroundImage: 'url(/@vitruviantech/web/images/home/virtues.jpg)' }}></div>
         </div>
         <span className="content">
           <section>

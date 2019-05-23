@@ -3,18 +3,18 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {asyncConnect} from 'redux-async-connect-react16';
 import {push as pushState} from 'react-router-redux';
-import {App} from '@machete-platform/core-bundle/components/layout';
-import {Nav} from '@vitruvian-tech/machete-bundle/components/layout';
-import * as Config from '@machete-platform/core-bundle/actions/Config';
-import * as Session from '@machete-platform/core-bundle/actions/Session';
+import {App} from '@boilerplatejs/core/components/layout';
+import {Nav} from '@vitruviantech/web/components/layout';
+import * as Config from '@boilerplatejs/core/actions/Config';
+import * as Session from '@boilerplatejs/core/actions/Session';
 
 @asyncConnect([{
   promise: ({store: {dispatch, getState}}) => {
     const state = getState();
     const promises = [];
 
-    if (!state['@machete-platform/core-bundle'].Config['@machete-platform/core-bundle']) {
-      promises.push(dispatch(Config.components('@machete-platform/core-bundle')));
+    if (!state['@boilerplatejs/core'].Config['@boilerplatejs/core']) {
+      promises.push(dispatch(Config.components('@boilerplatejs/core')));
     }
 
     if (!Session.isLoaded(state)) {
@@ -25,7 +25,7 @@ import * as Session from '@machete-platform/core-bundle/actions/Session';
   }
 }])
 
-@connect(state => ({ user: state['@machete-platform/core-bundle'].Session.user }), {pushState})
+@connect(state => ({ user: state['@boilerplatejs/core'].Session.user }), {pushState})
 
 export default class extends App {
   static propTypes = {

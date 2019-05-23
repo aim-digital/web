@@ -1,10 +1,10 @@
-const LOAD = '@vitruvian-tech/machete-bundle/Nav/LOAD';
-const LOAD_SUCCESS = '@vitruvian-tech/machete-bundle/Nav/LOAD_SUCCESS';
-const LOAD_FAIL = '@vitruvian-tech/machete-bundle/Nav/LOAD_FAIL';
+const LOAD = '@vitruviantech/web/Nav/LOAD';
+const LOAD_SUCCESS = '@vitruviantech/web/Nav/LOAD_SUCCESS';
+const LOAD_FAIL = '@vitruviantech/web/Nav/LOAD_FAIL';
 
-const DISMISS = '@vitruvian-tech/machete-bundle/Nav/DISMISS';
-const DISMISS_SUCCESS = '@vitruvian-tech/machete-bundle/Nav/DISMISS_SUCCESS';
-const DISMISS_FAIL = '@vitruvian-tech/machete-bundle/Nav/DISMISS_FAIL';
+const DISMISS = '@vitruviantech/web/Nav/DISMISS';
+const DISMISS_SUCCESS = '@vitruviantech/web/Nav/DISMISS_SUCCESS';
+const DISMISS_FAIL = '@vitruviantech/web/Nav/DISMISS_FAIL';
 
 const TOGGLE_CLASS = 'nav-open';
 

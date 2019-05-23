@@ -1,4 +1,4 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
@@ -15,22 +15,22 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'https://vitruvian.tech/@vitruvian-tech/machete-bundle/images/cover.jpg'
+      content: 'https://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
         value: 'og:image',
-        content: 'http://vitruvian.tech/@vitruvian-tech/machete-bundle/images/cover.jpg'
+        content: 'http://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
       }
     });
 
     await MetaTag.update({
-      content: 'https://vitruvian.tech/@vitruvian-tech/machete-bundle/images/cover.jpg'
+      content: 'https://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
         value: 'twitter:image',
-        content: 'http://vitruvian.tech/@vitruvian-tech/machete-bundle/images/cover.jpg'
+        content: 'http://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
       }
     });
   }
@@ -49,22 +49,22 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'http://vitruvian.tech/@vitruvian-tech/machete-bundle/images/cover.jpg'
+      content: 'http://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
         value: 'og:image',
-        content: 'https://vitruvian.tech/@vitruvian-tech/machete-bundle/images/cover.jpg'
+        content: 'https://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
       }
     });
 
     await MetaTag.update({
-      content: 'http://vitruvian.tech/@vitruvian-tech/machete-bundle/images/cover.jpg'
+      content: 'http://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
         value: 'twitter:image',
-        content: 'https://vitruvian.tech/@vitruvian-tech/machete-bundle/images/cover.jpg'
+        content: 'https://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
       }
     });
   }

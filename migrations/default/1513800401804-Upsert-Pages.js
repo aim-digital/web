@@ -1,4 +1,4 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
@@ -7,7 +7,7 @@ export default class {
     await Page.create({
       route: 'plans',
       title: 'VitruvianTech - Pricing Plans',
-      headers: '["@vitruvian-tech/machete-bundle:Plans", "@vitruvian-tech/machete-bundle:Contact"]'
+      headers: '["@vitruviantech/web:Plans", "@vitruviantech/web:Contact"]'
     });
   }
 
@@ -18,7 +18,7 @@ export default class {
       where: {
         route: 'plans',
         title: 'VitruvianTech - Pricing Plans',
-        headers: '["@vitruvian-tech/machete-bundle:Plans", "@vitruvian-tech/machete-bundle:Contact"]'
+        headers: '["@vitruviantech/web:Plans", "@vitruviantech/web:Contact"]'
       }
     });
   }

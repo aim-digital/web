@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {VelocityTransitionGroup} from 'velocity-react';
-import {Section} from '@machete-platform/core-bundle/components/layout';
+import {Section} from '@boilerplatejs/core/components/layout';
 
 export default class extends Section {
   state = {
@@ -93,8 +93,8 @@ export default class extends Section {
         <h1>Our Work</h1>
         <div className="background">
           <div className="film" style={{ opacity: '.85' }}></div>
-          <div className="insignia image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/insignia.png)', zIndex: '2' }}></div>
-          <div className="image" style={{ backgroundImage: 'url(/@vitruvian-tech/machete-bundle/images/home/missions.jpg)', opacity: '1' }}></div>
+          <div className="insignia image" style={{ backgroundImage: 'url(/@vitruviantech/web/images/insignia.png)', zIndex: '2' }}></div>
+          <div className="image" style={{ backgroundImage: 'url(/@vitruviantech/web/images/home/missions.jpg)', opacity: '1' }}></div>
         </div>
         <VelocityTransitionGroup
           className="content"

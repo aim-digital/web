@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import {Nav} from '@machete-platform/core-bundle/components/layout';
-import {Progress} from '@machete-platform/core-bundle/components/layout';
-import {transition} from '@machete-platform/core-bundle/actions/Transition';
-import {load} from '@vitruvian-tech/machete-bundle/actions/Nav';
-import * as Session from '@machete-platform/core-bundle/actions/Session';
+import {Nav} from '@boilerplatejs/core/components/layout';
+import {Progress} from '@boilerplatejs/core/components/layout';
+import {transition} from '@boilerplatejs/core/actions/Transition';
+import {load} from '@vitruviantech/web/actions/Nav';
+import * as Session from '@boilerplatejs/core/actions/Session';
 
-@connect(state => ({ user: state['@machete-platform/core-bundle'].Session.user }), { transition, logout: Session.logout, load })
+@connect(state => ({ user: state['@boilerplatejs/core'].Session.user }), { transition, logout: Session.logout, load })
 
 export default class extends Nav {
   static propTypes = {

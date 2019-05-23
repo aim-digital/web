@@ -1,4 +1,4 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
@@ -23,7 +23,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'VitruvianTech, Vitruvian Tech, Vitruvian Technology, Vitruvian Technology Corp., Digital Special Forces, Long Island City, NYC, New York, Machete Theme Platform, project management, tactical project management, custom software, web design, software development, web development, ui design, ux design, product design, marketing, seo, content production, information technology, quality assurance, system administration, vitruvian.tech, vitruvian-tech, VitruvianTechHQ, Peter C. Romano'
+      content: 'VitruvianTech, Vitruvian Tech, Vitruvian Technology, Vitruvian Technology Corp., Digital Special Forces, Long Island City, NYC, New York, BoilerplateJS™, Developemtn Platform, project management, tactical project management, custom software, web design, software development, web development, ui design, ux design, product design, marketing, seo, content production, information technology, quality assurance, system administration, vitruvian.tech, vitruvian-tech, VitruvianTechHQ, Peter C. Romano'
     }, {
       where: {
         key: 'name',

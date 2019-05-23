@@ -1,4 +1,4 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
@@ -6,7 +6,7 @@ export default class {
 
     await Page.update({
       title: 'VitruvianTech - Plans and Products',
-      sections: '["@vitruvian-tech/machete-bundle:Plans"]',
+      sections: '["@vitruviantech/web:Plans"]',
       meta: '[{"name":"description","content":"Learn about our flexible plans and economical product offerings."},{"property":"og:description","content":"Learn about our flexible plans and economical product offerings."},{"property":"twitter:description","content":"Learn about our flexible plans and economical product offerings."},{"property":"og:url","content":"http://Vitruvian.Tech/plans"}]'
     }, {
       where: {

@@ -1,12 +1,12 @@
-import {getModels} from '@machete-platform/core-bundle/lib/Sequelize';
+import {getModels} from '@boilerplatejs/core/lib/Sequelize';
 
 export default class {
   static async up(models, sequelize, DataTypes) {
     const {Page} = getModels();
 
     await Page.update({
-      page: '@vitruvian-tech/machete-bundle:Home',
-      sections: '["@vitruvian-tech/machete-bundle:Home"]'
+      page: '@vitruviantech/web:Home',
+      sections: '["@vitruviantech/web:Home"]'
     }, {
       where: {
         route: '/'
