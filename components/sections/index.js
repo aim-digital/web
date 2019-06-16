@@ -8,5 +8,3 @@ export Leadership from './Leadership';
 export Network from './Network';
 export Communications from './Communications';
 export Headquarters from './Headquarters';
-export Post from './Post';
-export PostCollection from './PostCollection';

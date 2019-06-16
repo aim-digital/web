@@ -24,13 +24,6 @@ export default class {
       headers: '["@vitruviantech/web:Contact"]',
       sections: '["@boilerplatejs/core:Contact"]'
     });
-
-    await Page.create({
-      route: 'post/:title/:date/:id',
-      page: '@vitruviantech/web:Post',
-      headers: '["@vitruviantech/web:Post"]',
-      sections: '["@vitruviantech/web:Post"]'
-    });
   }
 
   static async down(models, sequelize, DataTypes) {
@@ -60,15 +53,6 @@ export default class {
         title: 'VitruvianTech - Contact Us',
         headers: '["@vitruviantech/web:Contact"]',
         sections: '["@boilerplatejs/core:Contact"]'
-      }
-    });
-
-    await Page.destroy({
-      where: {
-        route: 'post/:title/:date/:id',
-        page: '@vitruviantech/web:Post',
-        headers: '["@vitruviantech/web:Post"]',
-        sections: '["@vitruviantech/web:Post"]'
       }
     });
   }
