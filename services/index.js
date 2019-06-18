@@ -1,1 +1,0 @@
-export * as Solution from './Solution';

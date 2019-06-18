@@ -9,11 +9,11 @@ import {dismiss} from '@vitruviantech/web/actions/Nav';
 import {Footer} from '@vitruviantech/web/components/layout';
 import {Solution} from '@vitruviantech/web/components/buttons';
 import {create} from '@boilerplatejs/core/actions/Contact';
-import * as modals from '@vitruviantech/web/components/modals';
+import * as modals from '@vitruviantech/services/components/modals';
 import * as forms from '@boilerplatejs/core/components/forms';
 import ReactGA from 'react-ga';
 import NukaCarousel from 'nuka-carousel';
-import {solutions} from '@vitruviantech/web/data';
+import {solutions} from '@vitruviantech/services/data';
 import _ from 'lodash';
 
 const SOLUTION_DELAY = 100;
