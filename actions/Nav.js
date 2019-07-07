@@ -18,7 +18,7 @@ const close = () => {
   items.forEach(item => item.classList.remove('active'));
 };
 
-export function load() {
+export function load(breakpoint) {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
     promise: () => new Promise(resolve => {
@@ -40,7 +40,7 @@ export function load() {
           body.classList.add(TOGGLE_CLASS);
           item.classList[isActive ? 'remove' : 'add']('active');
 
-          if (isActive && window.innerWidth > 768) {
+          if (isActive && window.innerWidth > (breakpoint || 768)) {
             body.classList.remove(TOGGLE_CLASS);
             app.classList.remove(TOGGLE_CLASS);
           }
