@@ -44,13 +44,13 @@ export default class extends Nav {
           <Link rel="nofollow" to="/home" className="logo" onClick={update(0, 0)}/>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
           <div className="social">
-            <a title="Facebook: @VitruvianTechTV" href="https://www.facebook.com/VitruvianTechTV" target="_blank">
+            <a title="Facebook: @AIMDigitalTV" href="https://www.facebook.com/AIMDigitalTV" target="_blank">
               <i className="fa fa-facebook-official"/>
             </a>
-            <a title="Twitter: @VitruvianTechTV" href="https://twitter.com/VitruvianTechTV" target="_blank">
+            <a title="Twitter: @AIMDigitalTV" href="https://twitter.com/AIMDigitalTV" target="_blank">
               <i className="fa fa-twitter"/>
             </a>
-            <a title="Instagram: @VitruvianTechTV" href="https://www.instagram.com/VitruvianTechTV" target="_blank">
+            <a title="Instagram: @AIMDigitalTV" href="https://www.instagram.com/AIMDigitalTV" target="_blank">
               <i className="fa fa-instagram"/>
             </a>
           </div>
@@ -89,7 +89,7 @@ export default class extends Nav {
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> <sup>VT://</sup>TV</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> <sup>AIM://</sup>TV</a>
               <ul>
                 <li>
                   <Link to="/tv/music-tech-and-steven-tyler-collide-in-NOLA/05-04-2018/2H9AEB2WpicAiMiO88YsSY">

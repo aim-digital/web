@@ -37,7 +37,7 @@ export default class extends Footer {
           <div className="row">
             <div className="col-xs-12 logo text-center">
               <Link to="/" onClick={update(0, 0)}>
-                <img src="/@aim-digital/web/images/logo.png" alt="Roman Inspired Software Designers" title="Vitruvian Technology, Corp."/>
+                <img src="/@aim-digital/web/images/Logo-04.png" title="American Interactive Media"/>
               </Link>
             </div>
             <div className="col-sm-9 col-xs-12">
@@ -46,33 +46,28 @@ export default class extends Footer {
                   <h4><i>@</i> Follow Us</h4>
                   <ul className="social">
                     <li>
-                      <a title="Facebook: @VitruvianTechTV" href="https://www.facebook.com/VitruvianTechTV" target="_blank">
+                      <a title="Facebook: @AIMDigitalTV" href="https://www.facebook.com/AIMDigitalTV" target="_blank">
                         <i className="fa fa-facebook-official"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Twitter: @VitruvianTechTV" href="https://twitter.com/VitruvianTechTV" target="_blank">
+                      <a title="Twitter: @AIMDigitalTV" href="https://twitter.com/AIMDigitalTV" target="_blank">
                         <i className="fa fa-twitter"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Instagram: @VitruvianTechTV" href="https://www.instagram.com/VitruvianTechTV" target="_blank">
+                      <a title="Instagram: @AIMDigitalTV" href="https://www.instagram.com/AIMDigitalTV" target="_blank">
                         <i className="fa fa-instagram"/>
                       </a>
                     </li>
                     <li>
-                      <a title="GitHub: VitruvianTech" href="https://github.com/VitruvianTech" target="_blank">
+                      <a title="GitHub: AIM™ Digital" href="https://github.com/AIM-Digital" target="_blank">
                         <i className="fa fa-github"/>
                       </a>
                     </li>
                     <li>
-                      <a title="LinkedIn: VitruvianTech" href="https://www.linkedin.com/company/vitruvian-technology-corp." target="_blank">
+                      <a title="LinkedIn: AIM™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
                         <i className="fa fa-linkedin-square"/>
-                      </a>
-                    </li>
-                    <li>
-                      <a title="AngelList: VitruvianTech" href="https://angel.co/vitruvian-technology-1" target="_blank">
-                        <i className="fa fa-angellist"/>
                       </a>
                     </li>
                   </ul>
@@ -111,12 +106,12 @@ export default class extends Footer {
             </div>
             <div className="col-sm-3 col-xs-12">
               <h4><i className="fa fa-info-circle"/> Support</h4>
-              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank">+1 (646) 204-1732</a>, or email us at <a title="Email: services@vitruvian.tech" href="mailto:services@vitruvian.tech?subject=<VitruvianTech>%20Connect">services@vitruvian.tech</a>.</p>
+              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank">+1 (646) 204-1732</a>, or email us at <a title="Email: hello@aimdigital.media" href="mailto:hello@aimdigital.media?subject=Hello!">hello@aimdigital.media</a>.</p>
               <p>Operating hours:<br />10am-6pm (EDT) / M-F</p>
             </div>
             <div className="col-xs-12 text-center">
-              <img src="/@aim-digital/web/images/insignia.png" alt="The Digital Special Forces for custom software and marketing solutions." title="Vitruvian Technology, Corp."/>
-              <p><small>&copy; 2019 VitruvianTech (subsidiary of Vitruvian Holdings, LLC.)</small></p>
+              <img src="/@aim-digital/web/images/logo.png" title="American Interactive Media"/>
+              <p><small>&copy; American Interactive Media (A VitruvianTech® Company)</small></p>
             </div>
           </div>
         </div>

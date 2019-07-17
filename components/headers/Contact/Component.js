@@ -23,8 +23,8 @@ export default class extends Header {
               <h3>Communications</h3>
               <ul className={'columns'}>
                 <li>
-                  <a title="Email: services@vitruvian.tech" href="mailto:services@vitruvian.tech?subject=<VitruvianTech>%20Connect">
-                    <i className="fa fa-envelope"/> services@vitruvian...
+                  <a title="Email: hello@aimdigital.media" href="mailto:hello@aimdigital.media?subject=Hello!">
+                    <i className="fa fa-envelope"/> hello@aimdigital...
                   </a>
                 </li>
                 <li>
@@ -33,33 +33,28 @@ export default class extends Header {
                   </a>
                 </li>
                 <li>
-                  <a title="Facebook: @VitruvianTechTV" href="https://www.facebook.com/VitruvianTechTV" target="_blank">
-                    <i className="fa fa-facebook-official"/> @VitruvianTechTV
+                  <a title="Facebook: @AIMDigitalTV" href="https://www.facebook.com/AIMDigitalTV" target="_blank">
+                    <i className="fa fa-facebook-official"/> @AIMDigitalTV
                   </a>
                 </li>
                 <li>
-                  <a title="GitHub: VitruvianTech" href="https://github.com/VitruvianTech" target="_blank">
-                    <i className="fa fa-github"/> VitruvianTech
+                  <a title="GitHub: AIM™ Digital" href="https://github.com/AIM-Digital" target="_blank">
+                    <i className="fa fa-github"/> AIM™ Digital
                   </a>
                 </li>
                 <li>
-                  <a title="Twitter: @VitruvianTechTV" href="https://twitter.com/VitruvianTechTV" target="_blank">
-                    <i className="fa fa-twitter"/> @VitruvianTechTV
+                  <a title="Twitter: @AIMDigitalTV" href="https://twitter.com/AIMDigitalTV" target="_blank">
+                    <i className="fa fa-twitter"/> @AIMDigitalTV
                   </a>
                 </li>
                 <li>
-                  <a title="LinkedIn: VitruvianTech" href="https://www.linkedin.com/company/vitruvian-technology-corp." target="_blank">
-                    <i className="fa fa-linkedin-square"/> VitruvianTech
+                  <a title="LinkedIn: AIM™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
+                    <i className="fa fa-linkedin-square"/> AIM™
                   </a>
                 </li>
                 <li>
-                  <a title="Instagram: @VitruvianTechTV" href="https://www.instagram.com/VitruvianTechTV" target="_blank">
-                    <i className="fa fa-instagram"/> @VitruvianTechTV
-                  </a>
-                </li>
-                <li>
-                  <a title="AngelList: VitruvianTech" href="https://angel.co/vitruvian-technology-1" target="_blank">
-                    <i className="fa fa-angellist"/> VitruvianTech
+                  <a title="Instagram: @AIMDigitalTV" href="https://www.instagram.com/AIMDigitalTV" target="_blank">
+                    <i className="fa fa-instagram"/> @AIMDigitalTV
                   </a>
                 </li>
                 <li style={{ marginLeft: '6px' }} className={'more'} data-next="Headquarters"/>

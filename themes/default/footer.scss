@@ -87,7 +87,7 @@ footer {
   }
 
   img {
-    border-radius: 50%;
+    // border-radius: 50%;
     margin: 2em auto 1em;
     box-shadow: 0 0 .5em rgba(89, 159, 198, 1);
     max-width: 320px;
@@ -98,7 +98,7 @@ footer {
 
   a img {
     width: 100%;
-    margin: 1em auto .5em;
+    margin: 1em auto;
     box-shadow: 0 0 .5em $black-color;
     min-width: 0;
   }
@@ -111,7 +111,7 @@ footer {
       position: absolute;
       top: 50%;
       height: 1px;
-      background: #99CA3E;
+      background: #efefef;
       width: 35%;
       margin: 5px 40px;
       box-shadow: 0 0 0.5em $black-color;
@@ -252,7 +252,7 @@ footer {
   .colors .row > div {
     position: relative;
     height: 25%;
-    background: $secondary-blue-color;
+    background: #151515;
 
     &:before, &:after {
       content: '';
@@ -274,28 +274,28 @@ footer {
     }
 
     &.blue:before, &.blue:after {
-      background: $secondary-blue-color;
+      background: #151515;
       right: -150%;
     }
 
     &.green:before, &.green:after {
-      background: $secondary-green-color;
+      background: #ea4234;
       right: -170%;
     }
 
     &.yellow:before, &.yellow:after {
-      background: $primary-yellow-color;
+      background: #fff;
       right: -185%;
     }
 
     &.red:before, &.red:after  {
-      background: $secondary-red-color;
+      background: #8fd7eb;
       right: -200%;
     }
 
     &.red:after  {
       content: '';
-      background: $secondary-blue-color;
+      background: #151515;
       right: -215%;
       top: 90%;
 

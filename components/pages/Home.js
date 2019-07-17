@@ -155,7 +155,7 @@ export default class extends Page {
             <div className="left">{solutions.slice(0, 5).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
             <div className="right">{solutions.slice(5).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
           </section>
-          {!hide && (
+          {!/*hide*/true && (
             <section className="section container">
               {this.wrap(sections)[!section && index <= 1 ? index : 0]}
               {/*<VelocityTransitionGroup enter={{ easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.fadeIn', duration: 350, begin: this.begin, complete: this.complete }}>
@@ -168,11 +168,11 @@ export default class extends Page {
           )}
           <section className="quote">
             <div>
-              <h3>Get a Quote</h3>
-              <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
+              <h3>Get a Free Consultation</h3>
+              <p>Say hello to our guaranteed services and fair prices!</p>
               {contact ?
                 <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
-                <forms.Contact quote newsletterText="Join the VTTV newsletter for project management tips, industry trends, free software, and more." onSubmit={this.submit}/>}
+                <forms.Contact quote newsletterText="Join the AIM™ TV newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>
