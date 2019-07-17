@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {asyncConnect} from 'redux-async-connect-react16';
 import {push as pushState} from 'react-router-redux';
 import {App} from '@boilerplatejs/core/components/layout';
-import {Nav} from '@vitruviantech/web/components/layout';
+import {Nav} from '@aim-digital/web/components/layout';
 import * as Config from '@boilerplatejs/core/actions/Config';
 import * as Session from '@boilerplatejs/core/actions/Session';
 
@@ -48,7 +48,7 @@ export default class extends App {
     return (
       <App {...this.props} nav={<Nav/>}>
         {this.props.children}
-        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>
+        {/*<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>*/}
       </App>
     );
   }

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
-import {Logo} from '@vitruviantech/web/components/layout';
+import {Logo} from '@aim-digital/web/components/layout';
 
 const SECONDS_IDLE = 60 * 15;
 

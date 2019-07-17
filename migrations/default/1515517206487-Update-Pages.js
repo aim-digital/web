@@ -5,8 +5,8 @@ export default class {
     const {Page} = getModels();
 
     await Page.update({
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
-      page: '@vitruviantech/web:Plans'
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
+      page: '@aim-digital/web:Plans'
     }, {
       where: {
         route: 'plans'
@@ -18,7 +18,7 @@ export default class {
     const {Page} = getModels();
 
     await Page.update({
-      headers: '["@vitruviantech/web:Plans", "@vitruviantech/web:Contact"]',
+      headers: '["@aim-digital/web:Plans", "@aim-digital/web:Contact"]',
       page: null
     }, {
       where: {

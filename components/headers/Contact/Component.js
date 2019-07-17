@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import {Header} from '@vitruviantech/web/components/layout';
+import {Header} from '@aim-digital/web/components/layout';
 
 export default class extends Header {
   transitionComplete = state => {

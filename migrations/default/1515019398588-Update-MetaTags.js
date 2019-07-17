@@ -5,7 +5,7 @@ export default class {
     const {MetaTag} = getModels();
 
     await MetaTag.update({
-      content: 'http://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
+      content: 'http://vitruvian.tech/@aim-digital/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
@@ -15,7 +15,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'http://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
+      content: 'http://vitruvian.tech/@aim-digital/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
@@ -34,7 +34,7 @@ export default class {
       where: {
         key: 'property',
         value: 'og:image',
-        content: 'http://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
+        content: 'http://vitruvian.tech/@aim-digital/web/images/cover.jpg'
       }
     });
 
@@ -44,7 +44,7 @@ export default class {
       where: {
         key: 'property',
         value: 'twitter:image',
-        content: 'http://vitruvian.tech/@vitruviantech/web/images/cover.jpg'
+        content: 'http://vitruvian.tech/@aim-digital/web/images/cover.jpg'
       }
     });
   }

@@ -1,11 +1,16 @@
-// Import VitruvianTech variables
 @import "./variables.scss";
 
-// Extend from Core default components theme as a base
+/**
+ * Import core platform styles (after imported bundle variables.)
+ * 
+ * Example (if bundle/package name has a scope):
+ *  - `@import "../../../../@boilerplatejs/core/themes/default/components.scss";`
+
+ * Example (if bundle/package name does not have a scope):
+ *  - `@import "../../../@boilerplatejs/core/themes/default/components.scss";`
+ */
 @import "../../../../@boilerplatejs/core/themes/default/components.scss";
 
-// Override base theme with VitruvianTech theme
 @import "./typography.scss";
 @import "./components.scss";
 @import "../../../tv/themes/default/components.scss";
-@import "../../../services/themes/default/components.scss";

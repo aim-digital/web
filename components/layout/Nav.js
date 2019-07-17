@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 import {Nav} from '@boilerplatejs/core/components/layout';
 import {Progress} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
-import {load} from '@vitruviantech/web/actions/Nav';
+import {load} from '@aim-digital/web/actions/Nav';
 import * as Session from '@boilerplatejs/core/actions/Session';
 
 @connect(state => ({ user: state['@boilerplatejs/core'].Session.user }), { transition, logout: Session.logout, load })

@@ -6,10 +6,10 @@ export default class {
 
     await Page.create({
       route: 'home(/:section)',
-      page: '@vitruviantech/web:Home',
+      page: '@aim-digital/web:Home',
       title: 'VitruvianTech - Sentient. Secure. Quality for All.',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
-      sections: '["@vitruviantech/web:Home", "@vitruviantech/web:Missions", "@vitruviantech/web:Services", "@vitruviantech/web:Plans", "@vitruviantech/web:Rates", "@vitruviantech/web:Hosting", "@vitruviantech/web:Leadership", "@vitruviantech/web:Network", "@vitruviantech/web:Communications", "@vitruviantech/web:Headquarters"]'
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
+      sections: '["@aim-digital/web:Home", "@aim-digital/web:Missions", "@aim-digital/web:Services", "@aim-digital/web:Plans", "@aim-digital/web:Rates", "@aim-digital/web:Hosting", "@aim-digital/web:Leadership", "@aim-digital/web:Network", "@aim-digital/web:Communications", "@aim-digital/web:Headquarters"]'
     });
   }
 
@@ -19,10 +19,10 @@ export default class {
     await Page.destroy({
       where: {
         route: 'home(/:section)',
-        page: '@vitruviantech/web:Home',
+        page: '@aim-digital/web:Home',
         title: 'VitruvianTech - Sentient. Secure. Quality for All.',
-        headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
-        sections: '["@vitruviantech/web:Home", "@vitruviantech/web:Missions", "@vitruviantech/web:Services", "@vitruviantech/web:Plans", "@vitruviantech/web:Rates", "@vitruviantech/web:Hosting", "@vitruviantech/web:Leadership", "@vitruviantech/web:Network", "@vitruviantech/web:Communications", "@vitruviantech/web:Headquarters"]'
+        headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
+        sections: '["@aim-digital/web:Home", "@aim-digital/web:Missions", "@aim-digital/web:Services", "@aim-digital/web:Plans", "@aim-digital/web:Rates", "@aim-digital/web:Hosting", "@aim-digital/web:Leadership", "@aim-digital/web:Network", "@aim-digital/web:Communications", "@aim-digital/web:Headquarters"]'
       }
     });
   }

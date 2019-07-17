@@ -4,19 +4,23 @@ export default class {
   static async up(models, sequelize, DataTypes) {
     const {Link} = getModels();
 
-    await Link.create({
-      rel: 'prefetch',
-      href: '/dist/2bf241969ee53a14f4333bc1a80a2abc.jpg'
+    await Link.update({
+      href: '/@aim-digital/web/images/favicon.png'
+    }, {
+      where: {
+        rel: 'shortcut icon'
+      }
     });
   }
 
   static async down(models, sequelize, DataTypes) {
     const {Link} = getModels();
 
-    await Link.destroy({
+    await Link.update({
+      href: '/@boilerplatejs/core/images/favicon.png'
+    }, {
       where: {
-        rel: 'prefetch',
-        href: '/dist/2bf241969ee53a14f4333bc1a80a2abc.jpg'
+        rel: 'shortcut icon'
       }
     });
   }

@@ -1,6 +1,6 @@
 {
-  "name": "@vitruviantech/web",
-  "version": "1.0.0",
+  "name": "@aim-digital/web",
+  "version": "1.0.0-pre.1",
   "scripts": {
     "lint": "boilerplate lint --bundle $(pwd)",
     "mount": "boilerplate mount --bundle $(pwd)",
@@ -11,7 +11,7 @@
     "upgrade": "boilerplate migrate up --bundle $npm_package_name",
     "downgrade": "boilerplate migrate down --bundle $npm_package_name"
   },
-  "author": "Peter C. Romano <pete@vitruvian.tech> (http://github.com/VitruvianTech)",
+  "author": "Peter C. Romano <pete@vitruvian.tech> (http://github.com/AIM-Digital)",
   "license": "BSD-3-Clause",
   "dependencies": {
     "react-bootstrap-modal": "^4.1.1",

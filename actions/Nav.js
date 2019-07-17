@@ -1,10 +1,10 @@
-const LOAD = '@vitruviantech/web/Nav/LOAD';
-const LOAD_SUCCESS = '@vitruviantech/web/Nav/LOAD_SUCCESS';
-const LOAD_FAIL = '@vitruviantech/web/Nav/LOAD_FAIL';
+const LOAD = '@aim-digital/web/Nav/LOAD';
+const LOAD_SUCCESS = '@aim-digital/web/Nav/LOAD_SUCCESS';
+const LOAD_FAIL = '@aim-digital/web/Nav/LOAD_FAIL';
 
-const DISMISS = '@vitruviantech/web/Nav/DISMISS';
-const DISMISS_SUCCESS = '@vitruviantech/web/Nav/DISMISS_SUCCESS';
-const DISMISS_FAIL = '@vitruviantech/web/Nav/DISMISS_FAIL';
+const DISMISS = '@aim-digital/web/Nav/DISMISS';
+const DISMISS_SUCCESS = '@aim-digital/web/Nav/DISMISS_SUCCESS';
+const DISMISS_FAIL = '@aim-digital/web/Nav/DISMISS_FAIL';
 
 const TOGGLE_CLASS = 'nav-open';
 

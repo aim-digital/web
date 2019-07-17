@@ -44,7 +44,7 @@ import {getModels} from '@boilerplatejs/core/lib/Sequelize';
  */
 export default class {
   static async up(models, sequelize, DataTypes) {
-    return await sequelize.queryInterface.dropTable('ContactSolutions');
+    return await sequelize.sync();
   }
 
   static async down(models, sequelize, DataTypes) {}

@@ -5,7 +5,11 @@ export default class {
     const {Script} = getModels();
 
     await Script.create({
-      content: '(new Image()).src = \'/dist/2bf241969ee53a14f4333bc1a80a2abc.jpg\';',
+      content: 'https://use.typekit.net/ftk6yva.js'
+    });
+
+    await Script.create({
+      content: 'try{Typekit.load({ async: false });}catch(e){}',
       external: false
     });
   }
@@ -15,7 +19,13 @@ export default class {
 
     await Script.destroy({
       where: {
-        content: '(new Image()).src = \'/dist/2bf241969ee53a14f4333bc1a80a2abc.jpg\';',
+        content: 'https://use.typekit.net/ftk6yva.js'
+      }
+    });
+
+    await Script.destroy({
+      where: {
+        content: 'try{Typekit.load({ async: false });}catch(e){}',
         external: false
       }
     });

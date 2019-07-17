@@ -7,72 +7,72 @@ export default class {
     await Page.create({
       route: 'missions',
       title: 'Our Work - VitruvianTech',
-      page: '@vitruviantech/web:Missions',
-      sections: '["@vitruviantech/web:Missions"]',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+      page: '@aim-digital/web:Missions',
+      sections: '["@aim-digital/web:Missions"]',
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
       meta: '[{"name":"description","content":"Learn about our work and past missions."},{"property":"og:description","content":"Learn about our work and past missions."},{"property":"twitter:description","content":"Learn about our work and past missions."},{"property":"og:url","content":"http://Vitruvian.Tech/home/missions"}]'
     });
 
     await Page.create({
       route: 'services',
       title: 'What We Do - VitruvianTech',
-      page: '@vitruviantech/web:Services',
-      sections: '["@vitruviantech/web:Services"]',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+      page: '@aim-digital/web:Services',
+      sections: '["@aim-digital/web:Services"]',
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
       meta: '[{"name":"description","content":"Learn about our work and past missions."},{"property":"og:description","content":"Learn about our work and past missions."},{"property":"twitter:description","content":"Learn about our work and past missions."},{"property":"og:url","content":"http://Vitruvian.Tech/home/services"}]'
     });
 
     await Page.create({
       route: 'rates',
       title: 'Hourly Rates - VitruvianTech',
-      page: '@vitruviantech/web:Rates',
-      sections: '["@vitruviantech/web:Rates"]',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+      page: '@aim-digital/web:Rates',
+      sections: '["@aim-digital/web:Rates"]',
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
       meta: '[{"name":"description","content":"Learn about our work and past missions."},{"property":"og:description","content":"Learn about our work and past missions."},{"property":"twitter:description","content":"Learn about our work and past missions."},{"property":"og:url","content":"http://Vitruvian.Tech/home/rates"}]'
     });
 
     await Page.create({
       route: 'hosting',
       title: 'Hosting - VitruvianTech',
-      page: '@vitruviantech/web:Hosting',
-      sections: '["@vitruviantech/web:Hosting"]',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+      page: '@aim-digital/web:Hosting',
+      sections: '["@aim-digital/web:Hosting"]',
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
       meta: '[{"name":"description","content":"Learn about our work and past missions."},{"property":"og:description","content":"Learn about our work and past missions."},{"property":"twitter:description","content":"Learn about our work and past missions."},{"property":"og:url","content":"http://Vitruvian.Tech/home/hosting"}]'
     });
 
     await Page.create({
       route: 'leadership',
       title: 'Who We Are - VitruvianTech',
-      page: '@vitruviantech/web:Leadership',
-      sections: '["@vitruviantech/web:Leadership"]',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+      page: '@aim-digital/web:Leadership',
+      sections: '["@aim-digital/web:Leadership"]',
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
       meta: '[{"name":"description","content":"Learn about our work and past missions."},{"property":"og:description","content":"Learn about our work and past missions."},{"property":"twitter:description","content":"Learn about our work and past missions."},{"property":"og:url","content":"http://Vitruvian.Tech/home/leadership"}]'
     });
 
     await Page.create({
       route: 'network',
       title: 'Partners - VitruvianTech',
-      page: '@vitruviantech/web:Network',
-      sections: '["@vitruviantech/web:Network"]',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+      page: '@aim-digital/web:Network',
+      sections: '["@aim-digital/web:Network"]',
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
       meta: '[{"name":"description","content":"Learn about our work and past missions."},{"property":"og:description","content":"Learn about our work and past missions."},{"property":"twitter:description","content":"Learn about our work and past missions."},{"property":"og:url","content":"http://Vitruvian.Tech/home/network"}]'
     });
 
     await Page.create({
       route: 'communications',
       title: 'Connect with Us - VitruvianTech',
-      page: '@vitruviantech/web:Communications',
-      sections: '["@vitruviantech/web:Communications"]',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+      page: '@aim-digital/web:Communications',
+      sections: '["@aim-digital/web:Communications"]',
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
       meta: '[{"name":"description","content":"Learn about our work and past missions."},{"property":"og:description","content":"Learn about our work and past missions."},{"property":"twitter:description","content":"Learn about our work and past missions."},{"property":"og:url","content":"http://Vitruvian.Tech/home/communications"}]'
     });
 
     await Page.create({
       route: 'headquarters',
       title: 'Base of Operations - VitruvianTech',
-      page: '@vitruviantech/web:Headquarters',
-      sections: '["@vitruviantech/web:Headquarters"]',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
+      page: '@aim-digital/web:Headquarters',
+      sections: '["@aim-digital/web:Headquarters"]',
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
       meta: '[{"name":"description","content":"Learn about our work and past missions."},{"property":"og:description","content":"Learn about our work and past missions."},{"property":"twitter:description","content":"Learn about our work and past missions."},{"property":"og:url","content":"http://Vitruvian.Tech/home/headquarters"}]'
     });
   }

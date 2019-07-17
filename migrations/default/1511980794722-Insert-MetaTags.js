@@ -29,12 +29,6 @@ export default class {
     });
 
     await MetaTag.create({
-      key: 'name',
-      value: 'google-site-verification',
-      content: 'Q2VPruTR5TqMZbptXFiJZd2wPag6crUFNmLGgijJN0w'
-    });
-
-    await MetaTag.create({
       key: 'itemprop',
       value: 'name',
       content: 'VitruvianTech'
@@ -193,14 +187,6 @@ export default class {
         key: 'name',
         value: 'theme-color',
         content: '#080808'
-      }
-    });
-
-    await MetaTag.destroy({
-      where: {
-        key: 'name',
-        value: 'google-site-verification',
-        content: 'Q2VPruTR5TqMZbptXFiJZd2wPag6crUFNmLGgijJN0w'
       }
     });
 

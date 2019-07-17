@@ -7,7 +7,7 @@ export default class {
     await Page.create({
       route: 'plans',
       title: 'VitruvianTech - Pricing Plans',
-      headers: '["@vitruviantech/web:Plans", "@vitruviantech/web:Contact"]'
+      headers: '["@aim-digital/web:Plans", "@aim-digital/web:Contact"]'
     });
   }
 
@@ -18,7 +18,7 @@ export default class {
       where: {
         route: 'plans',
         title: 'VitruvianTech - Pricing Plans',
-        headers: '["@vitruviantech/web:Plans", "@vitruviantech/web:Contact"]'
+        headers: '["@aim-digital/web:Plans", "@aim-digital/web:Contact"]'
       }
     });
   }

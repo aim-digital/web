@@ -8,9 +8,9 @@ export default class {
       where: {
         route: 'about',
         title: 'VitruvianTech - About Us',
-        page: '@vitruviantech/web:About',
-        headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
-        sections: '["@vitruviantech/web:About"]'
+        page: '@aim-digital/web:About',
+        headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
+        sections: '["@aim-digital/web:About"]'
       }
     });
 
@@ -18,7 +18,7 @@ export default class {
       where: {
         route: 'contact',
         title: 'VitruvianTech - Contact Us',
-        headers: '["@vitruviantech/web:Contact"]',
+        headers: '["@aim-digital/web:Contact"]',
         sections: '["@boilerplatejs/core:Contact"]'
       }
     });
@@ -30,15 +30,15 @@ export default class {
     await Page.create({
       route: 'about',
       title: 'VitruvianTech - About Us',
-      page: '@vitruviantech/web:About',
-      headers: '["@vitruviantech/web:Title", "@vitruviantech/web:Contact"]',
-      sections: '["@vitruviantech/web:About"]'
+      page: '@aim-digital/web:About',
+      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
+      sections: '["@aim-digital/web:About"]'
     });
 
     await Page.create({
       route: 'contact',
       title: 'VitruvianTech - Contact Us',
-      headers: '["@vitruviantech/web:Contact"]',
+      headers: '["@aim-digital/web:Contact"]',
       sections: '["@boilerplatejs/core:Contact"]'
     });
   }

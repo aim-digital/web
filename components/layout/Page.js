@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import NukaCarousel from 'nuka-carousel';
 import {Page} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
-import {dismiss} from '@vitruviantech/web/actions/Nav';
-import {Footer} from '@vitruviantech/web/components/layout';
+import {dismiss} from '@aim-digital/web/actions/Nav';
+import {Footer} from '@aim-digital/web/components/layout';
 
 @connect(state => {
   const { header = 0, slide = 0 } = state['@boilerplatejs/core'].Transition;
