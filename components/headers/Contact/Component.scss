@@ -1,29 +1,9 @@
 @import "../../../themes/default/variables.scss";
 
 .slide {
-  background: $background-color url('/@aim-digital/web/images/logo.svg') no-repeat;
-  background-position: -150px 115px;
-  background-size: 180%;
-
-  @media screen and (orientation: landscape) {
-    background-position: -90px 110px;
-    background-size: 125%;
-  }
-
-  @media (min-width: 768px) {
-    background-position: -155px 140px;
-    background-size: 140%;
-  }
-
-  @media (min-width: 1024px) {
-    background-position: -145px 170px;
-    background-size: 130%;
-  }
-
-  @media (min-width: 1200px) {
-    background-position: 3px 170px;
-    background-size: 100%;
-  }
+  background: $background-color url('/@aim-digital/web/images/Logo-04.svg') no-repeat;
+  background-position: center;
+  background-size: 25em;
 
   .map {
     position: relative;

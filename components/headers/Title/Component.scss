@@ -16,6 +16,12 @@
     opacity: .5;
   }
 
+  .corporate {
+    margin-top: -7em!important;
+    margin-left: auto!important;
+    font-size: 1em!important;
+  }
+
   .logo {
     margin: 0 auto 2em;
     position: absolute;
@@ -25,14 +31,14 @@
     text-align: center;
 
     img {
-      max-width: 15em;
+      max-width: 11em;
 
       @media (min-width: 768px) {
-        max-width: 14em;
+        max-width: 10em;
       }
 
       @media (min-width: 1400px) {
-        max-width: 17em;
+        max-width: 13em;
       }
     }
   }
