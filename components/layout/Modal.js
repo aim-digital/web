@@ -50,7 +50,7 @@ export default class extends Component {
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>
-          <span>© 2018 Vitruvian Technology, Corp. (subsidiary of Vitruvian Holdings, LLC.)</span>
+          <span>© American Interactive Media (A VitruvianTech® Company)</span>
         </Modal.Footer>
       </Modal>
     );

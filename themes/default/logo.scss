@@ -1,9 +1,13 @@
 
 .logo {
   text-align: center;
+  padding: 1em;
   
   > img {
-    width: 10em;
+    width: 7.5em;
+    background: #292929;
+    box-shadow: 0 0 0.5em #151515;
+    position: relative;
   }
 
   // > div {
@@ -18,8 +22,13 @@
   // }
 
   .text {
-    opacity: .75;
-    zoom: .75;
+    opacity: .9;
+    box-shadow: 0 0 0.25em #151515;
+  }
+
+  .graphic {
+    margin: auto -1px;
+    z-index: 1;
   }
 
   .corporate {

@@ -259,10 +259,10 @@ nav > a.logo {
   background-size: 100%;
   width: 20px;
   height: 20px;
-  margin: 10px 15px;
+  margin: 5px;
   transition: opacity .35s;
   opacity: 0;
-  transform: scale3d(1.25, 1.25, 1);
+  // transform: scale3d(1.25, 1.25, 1);
 }
 
 #app.nav-open nav > a.logo {
@@ -306,7 +306,7 @@ nav > a.toggle {
   nav > a.logo {
     width: 20px;
     height: 30px;
-    margin: 0 10px;
+    margin: 5px;
     margin-right: 12px;
     opacity: .85;
     transition: opacity .35s;
