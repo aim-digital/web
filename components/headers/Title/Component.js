@@ -31,7 +31,7 @@ export default class extends Header {
             <div className={[styles.content, 'content', styles.virtues].join(' ')} key="0">
               <section className={['preview'].join(' ')}>
                 <div className={styles.logo}>
-                  <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 650 }}>
+                  <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.shrinkIn', duration: 500 }}>
                     {this.state.loaded && (
                       <div className="logo">
                         <div className={`${styles.corporate} corporate`}>

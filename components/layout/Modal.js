@@ -39,7 +39,7 @@ export default class extends Component {
             <TwitterShareButton url={url} title={caption}>
               <i className="fa fa-twitter"/>
             </TwitterShareButton>
-            <EmailShareButton url={url} subject={`\<VitruvianTech\> ${caption}`} body={`${message}\n\n${url}\n\n`}>
+            <EmailShareButton url={url} subject={`Hello! ${caption}`} body={`${message}\n\n${url}\n\n`}>
               <i className="fa fa-envelope"/>
             </EmailShareButton>
           </div>}

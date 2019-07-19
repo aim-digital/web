@@ -94,14 +94,14 @@ export default class extends Modal {
                     <TwitterShareButton url={share.url} title={share.caption}>
                       <i className="fa fa-twitter"/>
                     </TwitterShareButton>
-                    <EmailShareButton url={share.url} subject={`\<VitruvianTech\> ${share.caption}`} body={`${share.message}\n\n${share.url}\n\n`}>
+                    <EmailShareButton url={share.url} subject={`Hello! ${share.caption}`} body={`${share.message}\n\n${share.url}\n\n`}>
                       <i className="fa fa-envelope"/>
                     </EmailShareButton>
                   </div>
                   <br />
                   <button className="btn btn-success" onClick={this.onHide}>Close</button>
                 </div> :
-                <Contact quote cancelText="Cancel" onCancel={this.onHide} newsletterText="Join the VTTV newsletter for project management tips, industry trends, free software, and more." onSubmit={this.submit}/>}
+                <Contact quote cancelText="Cancel" onCancel={this.onHide} newsletterText="Join the AIM™ TV newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>

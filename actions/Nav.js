@@ -64,7 +64,10 @@ export function load(breakpoint) {
       document.querySelector('.nav .logo').addEventListener('click', close);
       // document.querySelector('#app > div > .page').addEventListener('click', close);
 
-      resolve({ loaded: true });
+      setTimeout(() => {
+        document.querySelectorAll('.nav nav ul')[0].classList.add('loaded');
+        resolve({ loaded: true });
+      }, 1000);
     })
   };
 }

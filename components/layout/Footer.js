@@ -106,7 +106,7 @@ export default class extends Footer {
             </div>
             <div className="col-sm-3 col-xs-12">
               <h4><i className="fa fa-info-circle"/> Support</h4>
-              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank">+1 (646) 204-1732</a>, or email us at <a title="Email: hello@aimdigital.media" href="mailto:hello@aimdigital.media?subject=Hello!">hello@aimdigital.media</a>.</p>
+              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank">+1 (646) 204-1732</a>, or <a title="Email: hello@aimdigital.media" href="mailto:hello@aimdigital.media?subject=Hello!">email us</a>.</p>
               <p>Operating hours:<br />10am-6pm (EDT) / M-F</p>
             </div>
             <div className="col-xs-12 text-center">
