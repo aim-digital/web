@@ -29,7 +29,7 @@
           }
 
           &:after {
-            content: 'Our mission and services.';
+            content: 'Learn about our services.';
           }
         }
 
@@ -39,7 +39,7 @@
           }
 
           &:after {
-            content: 'Connect with us.';
+            content: 'Get in touch to learn more.';
           }
         }
       }
@@ -172,7 +172,7 @@
       text-transform: lowercase;
 
       &:before {
-        content: 'VT:\\>';
+        content: 'AIM:\\>';
         text-transform: none;
         font-size: .75em;
         font-weight: normal;
@@ -207,7 +207,7 @@
         position: absolute;
         width: 100%;
         height: 120%;
-        background: linear-gradient(rgba(89, 159, 198, .5), rgba(21, 21, 21, 0));
+        background: linear-gradient(rgba(89, 159, 198, 1), rgba(21, 21, 21, 0));
         top: 0;
         left: 0;
         margin: 0;
@@ -216,7 +216,7 @@
       }
 
       li {
-        color: $gray !important;
+        color: #efefef !important;
         text-align: left;
         display: block;
         position: relative;

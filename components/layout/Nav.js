@@ -55,9 +55,9 @@ export default class extends Nav {
             </a>
           </div>
           <ul>
-            <li>
+            {/*<li>
               <Link rel="nofollow" to="/home/missions" onClick={update(0, 1)}><i className="fa fa-cogs"/> Work</Link>
-            </li>
+            </li>*/}
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>
@@ -74,7 +74,7 @@ export default class extends Nav {
                 <li><Link rel="nofollow" to="/home/hosting" onClick={update(0, 5)}>Hosting Packages</Link></li>
               </ul>
             </li>
-            <li className="subnav">
+            {/*<li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-code"/> Software</a>
               <ul>
                 <li>
@@ -87,7 +87,7 @@ export default class extends Nav {
                   <a href="https://github.com/soundcloud-downloader/collection-scraper" target="_blank" title="Take back what's yours by downloading all of your SoundCloud tracks.">SoundCloud Downloader</a>
                 </li>
               </ul>
-            </li>
+            </li>*/}
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-television"/> <sup>AIM://</sup>TV</a>
               <ul>

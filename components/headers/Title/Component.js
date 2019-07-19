@@ -49,47 +49,47 @@ export default class extends Header {
                     )}
                   </VelocityTransitionGroup>
                 </div>
-                <h3>Virtues</h3>
+                <h3>Beauty-Tech-Management</h3>
                 <ul className={'columns'}>
-                  <li><i className="fa fa-universal-access"/> Intelligence</li>
-                  <li><i className="fa fa-exchange"/> Communication</li>
-                  <li><i className="fa fa-balance-scale"/> Balance</li>
-                  <li><i className="fa fa-diamond"/> Elegance</li>
-                  <li><i className="fa fa-hand-peace-o"/> Trustworthiness</li>
-                  <li><i className="fa fa-check-square-o"/> Readiness</li>
-                  <li className={'more'} data-next="Missions"/>
-                </ul>
-              </section>
-            </div>,
-
-            <div className={[styles.content, 'content', styles.portfolio].join(' ')} key="1">
-              <section className={['preview'].join(' ')}>
-                <h3>Missions</h3>
-                <ul className={'columns'}>
-                  <li>Verizon</li>
-                  <li>Viacom</li>
-                  <li>Halliburton</li>
-                  <li>HUGE</li>
-                  <li>The Daily Beast</li>
-                  <li>Refinery29</li>
-                  <li>Wall Street Journal</li>
-                  <li>Condé Nast</li>
-                  <li>The New Yorker</li>
-                  <li>GQ</li>
-                  <li>Wired Magazine</li>
-                  <li>Bon Appétit</li>
-                  <li>Golf Digest</li>
-                  <li>Architectural Digest</li>
-                  <li>Condé Nast Traveler</li>
-                  <li>Saks 5th Avenue</li>
-                  {/*<li>Marvel Comics</li>*/}
-                  <li>UrbanDaddy</li>
-                  <li>OneRx®</li>
-                  {/* <li>RealtyMX™</li> */}
+                  <li><i className="fa fa-universal-access"/> Personnel Mgmt.</li>
+                  <li><i className="fa fa-cubes"/> App Development</li>
+                  <li><i className="fa fa-comment"/> Artist Marketing</li>
+                  <li><i className="fa fa-money"/> Payment Handling</li>
+                  <li><i className="fa fa-hashtag"/> Content Creation</li>
+                  <li><i className="fa fa-clock-o"/> Appt. Booking</li>
                   <li className={'more'} data-next="Services"/>
                 </ul>
               </section>
             </div>,
+
+            // <div className={[styles.content, 'content', styles.portfolio].join(' ')} key="1">
+            //   <section className={['preview'].join(' ')}>
+            //     <h3>Missions</h3>
+            //     <ul className={'columns'}>
+            //       <li>Verizon</li>
+            //       <li>Viacom</li>
+            //       <li>Halliburton</li>
+            //       <li>HUGE</li>
+            //       <li>The Daily Beast</li>
+            //       <li>Refinery29</li>
+            //       <li>Wall Street Journal</li>
+            //       <li>Condé Nast</li>
+            //       <li>The New Yorker</li>
+            //       <li>GQ</li>
+            //       <li>Wired Magazine</li>
+            //       <li>Bon Appétit</li>
+            //       <li>Golf Digest</li>
+            //       <li>Architectural Digest</li>
+            //       <li>Condé Nast Traveler</li>
+            //       <li>Saks 5th Avenue</li>
+            //       {/*<li>Marvel Comics</li>*/}
+            //       <li>UrbanDaddy</li>
+            //       <li>OneRx®</li>
+            //       {/* <li>RealtyMX™</li> */}
+            //       <li className={'more'} data-next="Services"/>
+            //     </ul>
+            //   </section>
+            // </div>,
 
             <div className={[styles.content, 'content', styles.services].join(' ')} key="2">
               <section className={['preview'].join(' ')}>
@@ -126,10 +126,6 @@ export default class extends Header {
                   <li className={styles.asterisk}><small><i><strong>Highest quality</strong> (<strong>guaranteed quality assurance</strong>.)</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Only pay</strong> for <strong>warrantied features</strong> produced.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Includes proprietary <em>Foxtrot℠</em></strong> project management system.</i></small></li>
-                  <li><strong>Machete</strong> <i>Theme Platform</i> <span className={[styles.price].join(' ')}><strong>$2,999<sub><sup>.99</sup>/project</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i><strong>Universal</strong> mobile/desktop app theming PaaS <strong>for marketers</strong>.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>Hundreds of thousands</strong> of available libraries and plugins.</i></small></li>
-                  <li className={styles.asterisk}><small><i>Perfect for custom <strong>e-comm</strong> and <strong>publishing</strong> solutions!</i></small></li>
                   <li className={'more'} data-next="Rates"/>
                 </ul>
               </section>
@@ -163,10 +159,6 @@ export default class extends Header {
                   <li className={styles.asterisk}><small><i><strong>Dedicated hosting</strong> services available.</i></small></li>
                   <li className={styles.asterisk}><small><i>Web, database, and storage <strong>server management</strong>.</i></small></li>
                   <li className={styles.asterisk}><small><i><strong>Infrastructure design</strong> and architecture consulting.</i></small></li>
-                  <li><strong>Machete</strong> <i>Cloud</i> <span className={[styles.price, styles.starting].join(' ')}><strong>$99-149<sub><sup>.99</sup>/mo.</sub></strong></span></li>
-                  <li className={styles.asterisk}><small><i>Exclusively designed for the <strong><em>Machete Theme Platform</em></strong>.</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>Highly scalable</strong> multi-clustered hosting (<strong>guaranteed reliability</strong>.)</i></small></li>
-                  <li className={styles.asterisk}><small><i><strong>User-friendly Infrastructure as a Service</strong> and customer support.</i></small></li>
                   <li className={'more'} data-next="Leadership"/>
                 </ul>
               </section>

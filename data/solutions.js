@@ -62,9 +62,9 @@ const PLANS = [
 export default [
     {
         id: 1,
-        summary: 'I need upgrades to an existing product or platform.',
+        summary: 'I need an app for booking makeup, hair, and nail artists.',
         description: DESCRIPTION,
-        cta: 'Get a Maintenance Quote',
+        cta: 'Talk to Me',
         icon: 'wrench',
         plans: [PLANS[0], PLANS[1], PLANS[2]],
         criteria: [
@@ -75,9 +75,9 @@ export default [
     },
     {
         id: 2,
-        summary: 'I need a project manager to optimize my team.',
+        summary: 'I need a promotional website for my beauty services.',
         description: DESCRIPTION,
-        cta: 'Get a Tactical Project Management Quote',
+        cta: 'Talk to Me',
         icon: 'line-chart',
         plans: [PLANS[0], PLANS[1]],
         criteria: [
@@ -88,87 +88,9 @@ export default [
     },
     {
         id: 3,
-        summary: 'I need a task force to guarantee a project deadline.',
+        summary: 'I need content production to market my beauty services.',
         description: DESCRIPTION,
-        cta: 'Get a Team Quote',
-        icon: 'life-ring',
-        plans: [PLANS[0], PLANS[2]],
-        criteria: [
-            'Business is switching software vendors.',
-            'Existing platform is/will be obsolete.',
-            'Existing system no longer scales to meet business\' needs.'
-        ]
-    },
-    {
-        id: 4,
-        summary: 'I need to migrate my system to a new platform.',
-        description: DESCRIPTION,
-        cta: 'Get a Migration Quote',
-        icon: 'exchange',
-        plans: [PLANS[0], PLANS[1]],
-        criteria: [
-            'Business is switching software vendors.',
-            'Existing platform is/will be obsolete.',
-            'Existing system no longer scales to meet business\' needs.'
-        ]
-    },
-    {
-        id: 5,
-        summary: 'I need quality assurance and testing for my product.',
-        description: DESCRIPTION,
-        cta: 'Get a QA/Testing Quote',
-        icon: 'check-square-o',
-        plans: [PLANS[0], PLANS[1], PLANS[2]],
-        criteria: [
-            'Business is switching software vendors.',
-            'Existing platform is/will be obsolete.',
-            'Existing system no longer scales to meet business\' needs.'
-        ]
-    },
-    {
-        id: 6,
-        summary: 'I need to build a new web or mobile application.',
-        description: DESCRIPTION,
-        cta: 'Get a Dev Quote',
-        icon: 'cubes',
-        plans: [PLANS[0], PLANS[1]],
-        criteria: [
-            'Business is switching software vendors.',
-            'Existing platform is/will be obsolete.',
-            'Existing system no longer scales to meet business\' needs.'
-        ]
-    },
-    {
-        id: 7,
-        summary: 'I need a viral landing page for a marketing campaign.',
-        description: DESCRIPTION,
-        cta: 'Get a Microsite Quote',
-        icon: 'share-alt',
-        plans: [PLANS[0], PLANS[2]],
-        criteria: [
-            'Business is switching software vendors.',
-            'Existing platform is/will be obsolete.',
-            'Existing system no longer scales to meet business\' needs.'
-        ]
-    },
-    {
-        id: 8,
-        summary: 'I need an eCommerce website to sell my products.',
-        description: DESCRIPTION,
-        cta: 'Get an eCommerce Quote',
-        icon: 'money',
-        plans: [PLANS[0], PLANS[1]],
-        criteria: [
-            'Business is switching software vendors.',
-            'Existing platform is/will be obsolete.',
-            'Existing system no longer scales to meet business\' needs.'
-        ]
-    },
-    {
-        id: 9,
-        summary: 'I need to enhance my SEO and social media presence.',
-        description: DESCRIPTION,
-        cta: 'Get a Marketing Quote',
+        cta: 'Talk to Me',
         icon: 'hashtag',
         plans: [PLANS[0], PLANS[2]],
         criteria: [
@@ -178,7 +100,33 @@ export default [
         ]
     },
     {
-        id: 10,
+        id: 4,
+        summary: 'I need a marketing campaign to advertise my beauticians.',
+        description: DESCRIPTION,
+        cta: 'Talk to Me',
+        icon: 'share-alt',
+        plans: [PLANS[0], PLANS[1]],
+        criteria: [
+            'Business is switching software vendors.',
+            'Existing platform is/will be obsolete.',
+            'Existing system no longer scales to meet business\' needs.'
+        ]
+    },
+    {
+        id: 5,
+        summary: 'I need an ecommerce site to sell my beauty products.',
+        description: DESCRIPTION,
+        cta: 'Talk to Me',
+        icon: 'money',
+        plans: [PLANS[0], PLANS[1], PLANS[2]],
+        criteria: [
+            'Business is switching software vendors.',
+            'Existing platform is/will be obsolete.',
+            'Existing system no longer scales to meet business\' needs.'
+        ]
+    },
+    {
+        id: 6,
         summary: 'I need a free consultation.',
         description: DESCRIPTION,
         cta: 'Talk to Me',

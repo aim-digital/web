@@ -18,7 +18,7 @@
       }
 
       a {
-        color: $primary-green-color !important;
+        color: #fff !important;
         opacity: .9;
         font-size: .9em;
         padding: 4px 8px;
@@ -29,7 +29,7 @@
         margin: 0 2px;
 
         i {
-          color: $secondary-green-color;
+          color: #fff;
           width: 1em;
         }
 
@@ -42,7 +42,7 @@
           margin: 0;
 
           &:after {
-            color: $primary-green-color;
+            color: #fff;
             content: '+1';
             font-size: .85em;
             margin-left: 8px;
@@ -68,7 +68,7 @@
         }
 
         a {
-          color: $primary-green-color;
+          color: #fff;
         }
 
         .code {

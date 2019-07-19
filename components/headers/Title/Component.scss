@@ -58,13 +58,13 @@
         display: inline-block;
         text-align: center;
         //color: $secondary-green-color;
-        color: $gray;
+        color: #fff;
       }
     }
 
     &.pricing, &.services, &.portfolio {
       .price, .service, .project {
-        color: $humility;
+        color: #fff;
         font-size: .9em;
       }
 
@@ -78,18 +78,18 @@
         strong {
           font-size: 1.1em;
           font-weight: normal;
-          color: $secondary-green-color;
+          color: #fff;
           opacity: .9;
         }
 
         &.low:before {
           content: '/ As low as ';
-          color: $secondary-green-color;
+          color: #fff;
         }
 
         &.starting:before {
           content: '/ Starting at ';
-          color: $secondary-green-color;
+          color: #fff;
         }
       }
     }
@@ -132,7 +132,7 @@
       }
 
       a {
-        color: $secondary-green-color;
+        color: #fff;
         margin: 0 4px;
         float: right;
         opacity: .65;
