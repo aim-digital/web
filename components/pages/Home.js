@@ -19,16 +19,14 @@ import _ from 'lodash';
 const SOLUTION_DELAY = 100;
 
 const SECTIONS = {
-  home: { index: 0, header: 0, slide: 0, param: '', next: 'missions' },
-  missions: { index: 1, header: 0, slide: 1, param: 'missions', next: 'services', prev: 'home' },
-  services: { index: 2, header: 0, slide: 2, param: 'services', next: 'plans', prev: 'missions' },
-  plans: { index: 3, header: 0, slide: 3, param: 'plans', next: 'rates', prev: 'services' },
-  rates: { index: 4, header: 0, slide: 4, param: 'rates', next: 'hosting', prev: 'plans' },
-  hosting: { index: 5, header: 0, slide: 5, param: 'hosting', next: 'leadership', prev: 'rates' },
-  leadership: { index: 6, header: 0, slide: 6, param: 'leadership', next: 'network', prev: 'hosting' },
-  network: { index: 7, header: 0, slide: 7, param: 'network', next: 'communications', prev: 'leadership' },
-  communications: { index: 8, header: 1, slide: 0, param: 'communications', next: 'headquarters', prev: 'network' },
-  headquarters: { index: 9, header: 1, slide: 1, param: 'headquarters', prev: 'communications' }
+  home: { index: 0, header: 0, slide: 0, param: '', next: 'services' },
+  services: { index: 1, header: 0, slide: 1, param: 'services', next: 'plans', prev: 'home' },
+  plans: { index: 2, header: 0, slide: 2, param: 'plans', next: 'rates', prev: 'services' },
+  rates: { index: 3, header: 0, slide: 3, param: 'rates', next: 'hosting', prev: 'plans' },
+  hosting: { index: 4, header: 0, slide: 4, param: 'hosting', next: 'leadership', prev: 'rates' },
+  leadership: { index: 5, header: 0, slide: 5, param: 'leadership', next: 'communications', prev: 'hosting' },
+  communications: { index: 6, header: 1, slide: 0, param: 'communications', next: 'headquarters', prev: 'network' },
+  headquarters: { index: 7, header: 1, slide: 1, param: 'headquarters', prev: 'communications' }
 };
 
 @connect(state => {

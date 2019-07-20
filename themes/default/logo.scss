@@ -1,5 +1,18 @@
+.slide > .logo:after {
+  content: 'Beauty Tech Accelerator';
+  position: absolute;
+  top: 7.5em;
+  left: 50%;
+  transform: translate(-50%);
+  font-family: 'Fjalla One';
+  font-size: 1.25em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 12px #151515;
+  color: #fff;
+  opacity: .85;
+}
 
-.logo {
+.modal .logo, .page .logo {
   text-align: center;
   padding: 1em;
   

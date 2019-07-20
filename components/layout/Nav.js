@@ -55,23 +55,19 @@ export default class extends Nav {
             </a>
           </div>
           <ul>
-            {/*<li>
-              <Link rel="nofollow" to="/home/missions" onClick={update(0, 1)}><i className="fa fa-cogs"/> Work</Link>
-            </li>*/}
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/services" onClick={update(0, 2)}>What We Do</Link></li>
-                <li><Link rel="nofollow" to="/home/leadership" onClick={update(0, 6)}>Who We Are</Link></li>
-                <li><Link rel="nofollow" to="/home/network" onClick={update(0, 7)}>Partner Network</Link></li>
+                <li><Link rel="nofollow" to="/home/services" onClick={update(0, 1)}>What We Do</Link></li>
+                <li><Link rel="nofollow" to="/home/leadership" onClick={update(0, 5)}>Who We Are</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/plans" onClick={update(0, 3)}>Plans &amp; Products</Link></li>
-                <li><Link rel="nofollow" to="/home/rates" onClick={update(0, 4)}>Hourly Rates</Link></li>
-                <li><Link rel="nofollow" to="/home/hosting" onClick={update(0, 5)}>Hosting Packages</Link></li>
+                <li><Link rel="nofollow" to="/home/plans" onClick={update(0, 2)}>Plans &amp; Products</Link></li>
+                <li><Link rel="nofollow" to="/home/rates" onClick={update(0, 3)}>Hourly Rates</Link></li>
+                <li><Link rel="nofollow" to="/home/hosting" onClick={update(0, 4)}>Hosting Packages</Link></li>
               </ul>
             </li>
             {/*<li className="subnav">

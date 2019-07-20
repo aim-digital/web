@@ -259,9 +259,9 @@ nav > a.logo {
   background: url(/@aim-digital/web/images/Logo-04.png) no-repeat;
   display: inline-block;
   background-size: 100%;
-  width: 20px;
-  height: 20px;
-  margin: .5em;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
   transition: opacity .35s;
   opacity: 0;
 }
@@ -305,9 +305,6 @@ nav > a.toggle {
   }
 
   nav > a.logo {
-    width: 20px;
-    height: 20px;
-    margin: 5px;
     opacity: .85;
     transition: opacity .35s;
   }

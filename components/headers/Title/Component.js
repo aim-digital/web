@@ -49,7 +49,7 @@ export default class extends Header {
                     )}
                   </VelocityTransitionGroup>
                 </div>
-                <h3>Beauty-Tech-Management</h3>
+                <h3>accelerator-program</h3>
                 <ul className={'columns'}>
                   <li><i className="fa fa-universal-access"/> Personnel Mgmt.</li>
                   <li><i className="fa fa-cubes"/> App Development</li>
@@ -91,7 +91,7 @@ export default class extends Header {
             //   </section>
             // </div>,
 
-            <div className={[styles.content, 'content', styles.services].join(' ')} key="2">
+            <div className={[styles.content, 'content', styles.services].join(' ')} key="1">
               <section className={['preview'].join(' ')}>
                 <h3>Services</h3>
                 <ul>
@@ -108,7 +108,7 @@ export default class extends Header {
               </section>
             </div>,
 
-            <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="3">
+            <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="2">
               <section className={['preview'].join(' ')}>
                 <h3>Plans</h3>
                 <ul>
@@ -131,7 +131,7 @@ export default class extends Header {
               </section>
             </div>,
 
-            <div className={[styles.content, 'content', styles.pricing].join(' ')} key="4">
+            <div className={[styles.content, 'content', styles.pricing].join(' ')} key="3">
               <section className={['preview'].join(' ')}>
                 <h3>Rates</h3>
                 <ul>
@@ -150,7 +150,7 @@ export default class extends Header {
               </section>
             </div>,
 
-            <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="5">
+            <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="4">
               <section className={['preview'].join(' ')}>
                 <h3>Hosting</h3>
                 <ul>
@@ -164,7 +164,7 @@ export default class extends Header {
               </section>
             </div>,
 
-            <div className={[styles.content, 'content', styles.team].join(' ')} key="6">
+            <div className={[styles.content, 'content', styles.team].join(' ')} key="5">
               <section className={['preview'].join(' ')}>
                 <h3>Leadership</h3>
                 <ul>
@@ -227,90 +227,6 @@ export default class extends Header {
                     <p className={'humility'} style={{'margin': '0'}}><small><strong>Scroll down</strong> or <strong>swipe right</strong> to <strong>contact us</strong> today! &darr;&rarr;</small></p>
                   </li>
                   <li className={'more'} data-next="Network"/>
-                </ul>
-              </section>
-            </div>,
-
-            <div className={[styles.content, 'content', styles.partners].join(' ')} key="7">
-              <section className={['preview'].join(' ')}>
-                <h3>Network</h3>
-                <ul>
-                  <li>
-                    <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank" className={styles.phone}>
-                      <i className="fa fa-phone"/>
-                    </a>
-                    <a title="Email: services@vitruvian.tech" href="mailto:services@vitruvian.tech?subject=<VitruvianTech>%20Connect">
-                      <i className="fa fa-envelope"/>
-                    </a>
-                    <a title="LinkedIn: VitruvianTech" href="https://www.linkedin.com/company/vitruvian-technology-corp." target="_blank">
-                      <i className="fa fa-linkedin-square"/>
-                    </a>
-                    <a title="Facebook: @VitruvianTechHQ" href="https://www.facebook.com/VitruvianTechHQ/" target="_blank">
-                      <i className="fa fa-facebook-official"/>
-                    </a>
-                    <a title="GitHub: @vitruvian-tech" href="https://github.com/vitruvian-tech" target="_blank">
-                      <i className="fa fa-github"/>
-                    </a>
-                    <span>VitruvianTech<small> / NYC / Direct</small></span>
-                  </li>
-                  <li>
-                    <a href="http://www.evolvinx.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Evolvinx<small> / NYC / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="https://www.oxfordcorp.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Oxford Global<small> / Global / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="mailto:ajfprintworks@gmail.com ?subject=<VitruvianTech>%20Connect" target="_blank">
-                      <i className="fa fa-envelope"/>
-                    </a>
-                    <span>AJF Print Works<small> / NYC / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="http://http://triboroprinting.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Triboro Printing<small> / NYC / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="http://www.rethink-films.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <a href="https://www.facebook.com/rethinkfilms/" target="_blank">
-                      <i className="fa fa-facebook-official"/>
-                    </a>
-                    <span>Rethink Films<small> / NYC / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="https://www.rishabhsoft.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Rishabh Software<small> / Dallas / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="http://softgreat.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>SoftGreat<small> / Belarus / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="http://onilab.com/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Onilab<small> / Belarus / Partner</small></span>
-                  </li>
-                  <li>
-                    <a href="http://anniecatdesign.studio/" target="_blank">
-                      <i className="fa fa-external-link"/>
-                    </a>
-                    <span>Annie Cat Design<small> / NYC / Partner</small></span>
-                  </li>
-                  <li className={styles.asterisk} style={{marginTop: '10px'}}><small><strong>Scroll down</strong> or <strong>swipe right</strong> to contact us today! &darr;&rarr;</small></li>
                 </ul>
               </section>
             </div>

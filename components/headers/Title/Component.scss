@@ -103,7 +103,7 @@
         line-height: 1em;
         font-size: .9em;
         padding:  .125em .5em;
-        color: $humility !important;
+        color: #e0e0e0 !important;
         opacity: .9;
 
         &:before {
@@ -124,7 +124,7 @@
     &.team,
     &.partners {
       small {
-        color: $humility;
+        color: #e0e0e0;
       }
 
       span {

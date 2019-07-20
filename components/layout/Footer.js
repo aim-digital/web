@@ -77,10 +77,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-universal-access"/> About</h4>
                   <ul>
-                    {/*<li><Link to="/missions" onClick={update(0, 1)}>Work</Link></li>*/}
-                    <li><Link to="/services" onClick={update(0, 2)}>What We Do</Link></li>
-                    <li><Link to="/leadership" onClick={update(0, 6)}>Who We Are</Link></li>
-                    <li><Link to="/network" onClick={update(0, 7)}>Partner Network</Link></li>
+                    <li><Link to="/services" onClick={update(0, 1)}>What We Do</Link></li>
+                    <li><Link to="/leadership" onClick={update(0, 5)}>Who We Are</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -88,9 +86,9 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/plans" onClick={update(0, 3)}>Plans &amp; Products</Link></li>
-                    <li><Link to="/rates" onClick={update(0, 4)}>Hourly Rates</Link></li>
-                    <li><Link to="/hosting" onClick={update(0, 5)}>Hosting Packages</Link></li>
+                    <li><Link to="/plans" onClick={update(0, 2)}>Plans &amp; Products</Link></li>
+                    <li><Link to="/rates" onClick={update(0, 3)}>Hourly Rates</Link></li>
+                    <li><Link to="/hosting" onClick={update(0, 4)}>Hosting Packages</Link></li>
                   </ul>
                 </li>
               </ul>
