@@ -1,6 +1,6 @@
 {
   "name": "@aim-digital/web",
-  "version": "0.1.0",
+  "version": "1.0.0-pre.1",
   "scripts": {
     "lint": "boilerplate lint --bundle $(pwd)",
     "mount": "boilerplate mount --bundle $(pwd)",
