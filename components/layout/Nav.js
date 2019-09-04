@@ -88,7 +88,7 @@ export default class extends Nav {
               <a href="#" onClick={preventDefault}><i className="fa fa-television"/> <sup>AIM://</sup>TV</a>
               <ul>
                 <li>
-                  <Link to="/tv/music-tech-and-steven-tyler-collide-in-NOLA/05-04-2018/2H9AEB2WpicAiMiO88YsSY">
+                  <Link to="/tv/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                     <marquee><span>Music, Tech, and Steven Tyler Collide in NOLA</span> <span className="humility">/ Collision Conf. 2018</span></marquee>
                   </Link>
                 </li>
