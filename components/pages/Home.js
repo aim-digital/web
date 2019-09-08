@@ -8,7 +8,7 @@ import {transition} from '@boilerplatejs/core/actions/Transition';
 import {dismiss} from '@aim-digital/web/actions/Nav';
 import {Footer} from '@aim-digital/web/components/layout';
 import {Solution} from '@aim-digital/web/components/buttons';
-import {create} from '@boilerplatejs/core/actions/Contact';
+import {update} from '@boilerplatejs/hubspot/actions/Contact';
 import * as modals from '@aim-digital/web/components/modals';
 import * as forms from '@boilerplatejs/core/components/forms';
 import ReactGA from 'react-ga';
@@ -32,7 +32,7 @@ const SECTIONS = {
 @connect(state => {
   const { header = 0, slide = 0 } = state['@boilerplatejs/core'].Transition;
   return ({ param: state.router.params, header, slide, query: state.router.location.query });
-}, {transition, dismiss, create})
+}, {transition, dismiss, update})
 
 export default class extends Page {
   static propTypes = {
@@ -99,13 +99,23 @@ export default class extends Page {
     transition={transition(i)}>{solution.summary}</Solution>
 
   submit = values => {
-    const { create } = this.props;
+    const { update } = this.props;
+    const { email } = values;
     const ga = { category: 'Quote Form', action: 'Submit' };
 
-    if (values.email) {
+    if (email) {
       ReactGA.event({ ...ga, label: `Attempt` });
 
-      create({ ...values, quote: true, newsletter: !(values.newsletter === false) })
+      update({
+        lead: true,
+        newsletter: !(values.newsletter === false),
+        properties: {
+          email,
+          message: values.comment,
+          firstname: values.firstName,
+          lastname: values.lastName
+        }
+      })
         .then(contact => this.setState({ contact, form: { message: null } }))
         .then(() => ReactGA.event({ ...ga, label: `Success` }))
         .catch(({message}) => this.setState({ form: { message } }));
@@ -169,7 +179,7 @@ export default class extends Page {
               <h3>Get a Free Consultation</h3>
               <p>Say hello to our guaranteed services and fair prices!</p>
               {contact ?
-                <div className="success"><strong>Thank you, {contact.firstName}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
+                <div className="success"><strong>Thank you, {contact.firstname.value}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
                 <forms.Contact quote newsletterText="Join the AIM™ TV newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
