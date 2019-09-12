@@ -37,7 +37,7 @@ export default class extends Footer {
           <div className="row">
             <div className="col-xs-12 logo text-center">
               <Link to="/" onClick={update(0, 0)}>
-                <img src="/@aim-digital/web/images/Logo-04.png" title="American Interactive Media"/>
+                <img src="/@aim-digital/web/images/icon.png" title="American Interactive Media"/>
               </Link>
             </div>
             <div className="col-sm-9 col-xs-12">
@@ -108,8 +108,8 @@ export default class extends Footer {
               <p>Operating hours:<br />10am-6pm (EDT) / M-F</p>
             </div>
             <div className="col-xs-12 text-center">
-              <img src="/@aim-digital/web/images/logo.png" title="American Interactive Media"/>
-              <p><small>&copy; American Interactive Media (A VitruvianTech® Company)</small></p>
+              <img src="/@aim-digital/web/images/logo-transparent.png" title="American Interactive Media"/>
+              <p><small>&copy; American Interactive Media (a VitruvianTech® company)</small></p>
             </div>
           </div>
         </div>

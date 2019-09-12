@@ -87,20 +87,18 @@ footer {
   }
 
   img {
-    // border-radius: 50%;
-    margin: 2em auto 1em;
-    box-shadow: 0 0 .5em rgba(89, 159, 198, 1);
+    margin: 1em auto 0;
     max-width: 320px;
     width: 10%;
     min-width: 92px;
-    background: $black-color;
   }
 
   a img {
     width: 100%;
-    margin: 1em auto;
     box-shadow: 0 0 .5em $black-color;
     min-width: 0;
+    background: $black-color;
+    border-radius: 50%;
   }
 
   .logo {
@@ -289,7 +287,7 @@ footer {
     }
 
     &.red:before, &.red:after  {
-      background: #8fd7eb;
+      background: #20ADE4;
       right: -200%;
     }
 

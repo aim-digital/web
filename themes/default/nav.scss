@@ -126,7 +126,7 @@ nav > ul {
 
   &:before {
     content: '';
-    background: url(/@aim-digital/web/images/logo.png) no-repeat;
+    background: url(/@aim-digital/web/images/logo-transparent.png) no-repeat;
     display: block;
     background-size: 100%;
     width: 42vmin;
@@ -134,7 +134,7 @@ nav > ul {
     position: fixed;
     bottom: 2.25em;
     left: 0;
-    margin: 1em .5em;
+    margin: 1em;
   }
 
   &:after {
@@ -256,7 +256,7 @@ nav > ul > li > ul > li {
 }
 
 nav > a.logo {
-  background: url(/@aim-digital/web/images/Logo-04.png) no-repeat;
+  background: url(/@aim-digital/web/images/icon.png) no-repeat;
   display: inline-block;
   background-size: 100%;
   width: 30px;
