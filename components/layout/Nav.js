@@ -18,7 +18,7 @@ export default class extends Nav {
     logout: PropTypes.func.isRequired
   };
 
-  componentDidMount = () => this.props.load();
+  componentDidMount = () => this.props.load(2000);
 
   handleLogout = (event) => {
     event.preventDefault();
@@ -39,9 +39,9 @@ export default class extends Nav {
 
     return (
       <section className="nav">
+        <div className="nav"/>
         <Progress />
         <nav>
-          <Link rel="nofollow" to="/home" className="logo" onClick={update(0, 0)}/>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
           <div className="social">
             <a title="Facebook: @AIMDigitalTV" href="https://www.facebook.com/AIMDigitalTV" target="_blank">
@@ -55,6 +55,9 @@ export default class extends Nav {
             </a>
           </div>
           <ul>
+            <li>
+              <Link rel="nofollow" to="/home" className="logo" onClick={update(0, 0)}/>
+            </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>

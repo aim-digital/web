@@ -4,7 +4,8 @@ import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@aim-digital/web/components/layout';
 
 const IMAGES = [
-  require('./images/background.jpg')
+  require('./images/background.jpg'),
+  require('../Contact/images/map.png')
 ];
 
 export default class extends Header {

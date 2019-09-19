@@ -26,6 +26,7 @@ export function load(breakpoint) {
       const app = document.getElementById('app');
       const items = document.querySelectorAll('.nav nav ul > li');
       const links = document.querySelectorAll('.nav nav ul a');
+      const isPortrait = () => window.innerHeight > window.innerWidth;
 
       links.forEach(link => link.addEventListener('click', () => {
         const item = link.parentNode;
@@ -40,11 +41,11 @@ export function load(breakpoint) {
           body.classList.add(TOGGLE_CLASS);
           item.classList[isActive ? 'remove' : 'add']('active');
 
-          if (isActive && window.innerWidth > (breakpoint || 768)) {
-            body.classList.remove(TOGGLE_CLASS);
-            app.classList.remove(TOGGLE_CLASS);
-          }
-        } else {
+          // if (isActive && window.innerWidth > (breakpoint || 768)) {
+          //   body.classList.remove(TOGGLE_CLASS);
+          //   app.classList.remove(TOGGLE_CLASS);
+          // }
+        } else if (isPortrait()) {
           // If item has no subnav, unset nav `active` class
           app.classList.remove(TOGGLE_CLASS);
           body.classList.remove(TOGGLE_CLASS);
@@ -54,18 +55,38 @@ export function load(breakpoint) {
 
       // Bind click event for toggle ("hamburger") button to toggle nav active state
       document.querySelector('.nav .toggle').addEventListener('click', e => {
-        e.preventDefault();
-        body.classList.toggle(TOGGLE_CLASS);
-        app.classList.toggle(TOGGLE_CLASS);
-        items.forEach(item => item.classList.remove('active'));
+        if (isPortrait()) {
+          e.preventDefault();
+          body.classList.toggle(TOGGLE_CLASS);
+          app.classList.toggle(TOGGLE_CLASS);
+          items.forEach(item => item.classList.remove('active'));
+        }
+      });
+
+      document.querySelector('.nav').addEventListener('mouseenter', e => {
+        if (!isPortrait()) {
+          e.preventDefault();
+          body.classList.add(TOGGLE_CLASS);
+          app.classList.add(TOGGLE_CLASS);
+        }
+      });
+
+      document.querySelector('.nav').addEventListener('mouseleave', e => {
+        if (!isPortrait()) {
+          e.preventDefault();
+          body.classList.remove(TOGGLE_CLASS);
+          app.classList.remove(TOGGLE_CLASS);
+          items.forEach(item => item.classList.remove('active'));
+        }
       });
 
       // Bind click event on mask to exit nav active state
-      document.querySelector('.nav .logo').addEventListener('click', close);
+      // document.querySelector('.nav .logo').addEventListener('click', close);
+
       // document.querySelector('#app > div > .page').addEventListener('click', close);
 
       setTimeout(() => {
-        document.querySelectorAll('.nav nav ul')[0].classList.add('loaded');
+        document.querySelectorAll('#app')[0].classList.add('nav-loaded');
         resolve({ loaded: true });
       }, 1000);
     })
