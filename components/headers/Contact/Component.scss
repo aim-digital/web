@@ -1,10 +1,6 @@
 @import "../../../themes/default/variables.scss";
 
 .slide {
-  background: $background-color url('/@aim-digital/web/images/icon.svg') no-repeat;
-  background-position: center;
-  background-size: 80%;
-
   .map {
     position: relative;
     z-index: 2;

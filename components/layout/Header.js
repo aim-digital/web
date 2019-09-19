@@ -19,17 +19,20 @@ export default class extends Header {
     children: PropTypes.any,
     classNames: PropTypes.object,
     slide: PropTypes.number.isRequired,
-    transition: PropTypes.func.isRequired
+    transition: PropTypes.func.isRequired,
+    images: PropTypes.array
   };
 
   static defaultProps = {
     className: '',
     classNames: {},
-    runOnMount: false
+    runOnMount: false,
+    images: []
   };
 
   state = {
     index: 0,
+    previous: undefined,
     animating: true,
     showButtons: false
   };
@@ -38,6 +41,14 @@ export default class extends Header {
 
   componentDidMount() {
     setTimeout(() => this.setState({ showButtons: true }), 350);
+  }
+
+  componentWillReceiveProps(next) {
+    const { slide } = this.props;
+
+    if (slide !== next.slide) {
+      this.setState({ previous: slide });
+    }
   }
 
   clearTimer = () => {
@@ -80,8 +91,8 @@ export default class extends Header {
   };
 
   render() {
-    const { className, classNames, children, runOnMount, slide } = this.props;
-    const {animating} = this.state;
+    const { className, classNames, children, runOnMount, slide, images } = this.props;
+    const { animating, previous } = this.state;
 
     const getFlipState = (direction = 'next') => {
       return {
@@ -90,7 +101,8 @@ export default class extends Header {
     };
 
     return (
-      <Header className={['slide', className, animating ? `${classNames.animating || ''} animating` : ''].join(' ')}>
+      <Header className={['slide', className, global.isNaN(previous) ? 'initial' : '', animating ? `${classNames.animating || ''} animating` : ''].join(' ')}>
+        {images.map((image, i) => <div key={i} className={`hero ${i === slide ? 'current' : ''}`} style={{ backgroundImage: `url(${image})` }}/>)}
         <Logo/>
         {children.length ? (
           <div>

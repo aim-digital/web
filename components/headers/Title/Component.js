@@ -3,6 +3,10 @@ import ReactGA from 'react-ga';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@aim-digital/web/components/layout';
 
+const IMAGES = [
+  require('./images/background.jpg')
+];
+
 export default class extends Header {
   state = {
     loaded: false
@@ -26,7 +30,7 @@ export default class extends Header {
     const styles = require('./Component.scss');
 
     return (
-        <Header runOnMount className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin}>
+        <Header runOnMount className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
           {[
             <div className={[styles.content, 'content', styles.virtues].join(' ')} key="0">
               <section className={['preview'].join(' ')}>

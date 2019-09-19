@@ -16,7 +16,7 @@ export default class extends Header {
     const map = require('./images/map.png');
 
     return (
-      <Header className={styles.slide} onTransitionComplete={this.transitionComplete}>
+      <Header className={styles.slide} onTransitionComplete={this.transitionComplete} images={['/@aim-digital/web/images/icon.svg', '/@aim-digital/web/images/icon.svg']}>
         {[
           <div className={[styles.content, 'content', styles.links].join(' ')} key="0">
             <section className={['preview'].join(' ')}>

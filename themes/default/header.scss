@@ -10,6 +10,10 @@
   to { top: 90%; opacity: .25; }
 }
 
+.nav-open .header.container .slide .hero {
+  filter: blur(10px);
+}
+
 .header.container {
   width: 100%;
   //position: fixed;
@@ -48,11 +52,39 @@
 }
 
 .slide {
+  position: relative;
+
   &.animating {
     .preview, .flippers button {
       -webkit-animation-name: none !important;
       opacity: 0;
       transform: translate3d(0, 40em, 0);
+    }
+  }
+
+  .hero {
+    content: '';
+    transition: filter .25s, opacity .5s;
+    opacity: 0;
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+
+    &.current {
+      opacity: .5;
+    }
+  }
+
+  &.initial .hero {
+    transition: none;
+
+    &.current {
+      transition: filter .25s, opacity .5s;
     }
   }
 
