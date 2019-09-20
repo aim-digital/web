@@ -57,9 +57,15 @@ export default class extends Nav {
             <a title="Instagram: @AIMDigitalTV" href="https://www.instagram.com/AIMDigitalTV" target="_blank">
               <i className="fa fa-instagram"/>
             </a>
+            <a title="GitHub: AIM™ Digital" href="https://www.github.com/AIM-Digital" target="_blank">
+              <i className="fa fa-github"/>
+            </a>
+            <a title="LinkedIn: AIM™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
+              <i className="fa fa-linkedin-square"/>
+            </a>
           </div>
           <ul>
-            <li>
+            <li className="home">
               <Link rel="nofollow" to="/home" className="logo" onClick={update(0, 0)}/>
             </li>
             <li className="subnav">
@@ -77,29 +83,10 @@ export default class extends Nav {
                 <li><Link rel="nofollow" to="/home/hosting" onClick={update(0, 4)}>Hosting Packages</Link></li>
               </ul>
             </li>
-            {/*<li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-code"/> Software</a>
-              <ul>
-                <li>
-                  <a href="https://github.com/vitruvian-tech/jira" target="_blank" title="An open source Docker image of VitruvianTech's JIRA server (and configuration.)">VitruvianTech™ JIRA Server</a>
-                </li>
-                <li>
-                  <a href="https://github.com/vitruvian-tech/sms-db-importer" target="_blank" title="This project was developed for legal case building to submit text records into evidence in a clean, comprehensive, and queryable format.">Android SMS DB Importer</a>
-                </li>
-                <li>
-                  <a href="https://github.com/soundcloud-downloader/collection-scraper" target="_blank" title="Take back what's yours by downloading all of your SoundCloud tracks.">SoundCloud Downloader</a>
-                </li>
-              </ul>
-            </li>*/}
-            <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> <sup>AIM://</sup>TV</a>
-              <ul>
-                <li>
-                  <Link to="/tv/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update(0, 0)}>
-                    <marquee><span>Music, Tech, and Steven Tyler Collide in NOLA</span> <span className="humility">/ Collision Conf. 2018</span></marquee>
-                  </Link>
-                </li>
-              </ul>
+            <li>
+              <Link to="/tv/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update(0, 0)}>
+                <i className="fa fa-television"/> <sup>AIM://</sup>TV
+              </Link>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>

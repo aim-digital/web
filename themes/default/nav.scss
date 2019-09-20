@@ -164,10 +164,6 @@ nav > ul {
     z-index: 1;
     width: 100%;
     text-align: center;
-
-    @media only screen and (min-width: 500px) {
-      font-size: .75em;
-    }
   }
 }
 
@@ -230,6 +226,31 @@ nav li.active {
   color: #fff;
 }
 
+nav li.home {
+  transition: all .15s ease-in;
+  transform: scale3d(.7, .7, 1);
+
+  a {
+    box-shadow: 0 0 20px $black-color;
+    border-radius: 50%;
+    opacity: .95;
+    transition: transform .15s ease-in;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+nav li.home:hover,
+nav li.home:active,
+nav li.home:focus {
+  background: none;
+  color: inherit;
+  opacity: 1;
+  transform: scale3d(.8, .8, 1);
+}
+
 nav li li:hover,
 nav li li:active,
 nav li li.active,
@@ -277,19 +298,12 @@ nav > ul > li > ul > li {
 }
 
 nav li > a.logo {
-  background: url(/@aim-digital/web/images/icon.png) no-repeat;
+  background: url(/@aim-digital/web/images/icon.svg) no-repeat;
   display: block;
   margin: 0 auto;
   background-size: 100%;
   width: 128px;
   height: 128px;
-  transition: opacity .35s;
-  opacity: 0;
-  transform: scale3d(.75, .75, 1);
-}
-
-#app.nav-open nav li > a.logo {
-  opacity: 1;
 }
 
 nav > a.toggle {
