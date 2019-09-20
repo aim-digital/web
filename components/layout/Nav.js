@@ -26,8 +26,12 @@ export default class extends Nav {
   };
 
   scrollTo = () => {
-    if (global.scrollTo) {
-      global.scrollTo(0, 0);
+    const app = document.querySelector('#app');
+
+    if (app.scrollTo) {
+      app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    } else {
+      app.scrollTop = 0;
     }
   };
 
@@ -91,7 +95,7 @@ export default class extends Nav {
               <a href="#" onClick={preventDefault}><i className="fa fa-television"/> <sup>AIM://</sup>TV</a>
               <ul>
                 <li>
-                  <Link to="/tv/music/music-tech-steven-tyler-collision-nola/5/4/2018">
+                  <Link to="/tv/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update(0, 0)}>
                     <marquee><span>Music, Tech, and Steven Tyler Collide in NOLA</span> <span className="humility">/ Collision Conf. 2018</span></marquee>
                   </Link>
                 </li>

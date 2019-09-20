@@ -13,8 +13,12 @@ export default class extends Footer {
   };
 
   scrollTo = () => {
-    if (global.scrollTo) {
-      global.scrollTo(0, 0);
+    const app = document.querySelector('#app');
+
+    if (app.scrollTo) {
+      app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    } else {
+      app.scrollTop = 0;
     }
   };
 
