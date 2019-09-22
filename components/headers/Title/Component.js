@@ -31,29 +31,27 @@ export default class extends Header {
     const styles = require('./Component.scss');
 
     return (
-        <Header runOnMount className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
+        <Header timer={20} runOnMount className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
           {[
             <div className={[styles.content, 'content', styles.virtues].join(' ')} key="0">
-              <section className={['preview'].join(' ')}>
-                <div className={styles.logo}>
-                  <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.shrinkIn', duration: 500 }}>
-                    {this.state.loaded && (
-                      <div className="logo">
-                        <div className={`${styles.corporate} corporate`}>
-                          <div className="name">
-                            <span>VitruvianTech</span>
-                          </div>
-                          <div className="tagline">
-                            <span className="color-primary-blue">Roman</span>&nbsp;
-                            <span className="color-primary-green">Inspired</span>&nbsp;
-                            <span className="color-primary-yellow">Software</span>&nbsp;
-                            <span className="color-secondary-red">Designers</span>
-                          </div>
-                        </div>
+              <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.shrinkIn', duration: 500 }}>
+                {this.state.loaded && (
+                  <div className={`${styles.logo}`} style={{ position: 'static !important' }}>
+                    <div className={`${styles.corporate} corporate`}>
+                      <div className="name">
+                        <span>VitruvianTech</span>
                       </div>
-                    )}
-                  </VelocityTransitionGroup>
-                </div>
+                      <div className="tagline">
+                        <span className="color-primary-blue">Roman</span>&nbsp;
+                        <span className="color-primary-green">Inspired</span>&nbsp;
+                        <span className="color-primary-yellow">Software</span>&nbsp;
+                        <span className="color-secondary-red">Designers</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </VelocityTransitionGroup>
+              <section className={['preview'].join(' ')}>
                 <h3>accelerator-program</h3>
                 <ul className={'columns'}>
                   <li><i className="fa fa-universal-access"/> Personnel Mgmt.</li>

@@ -2,18 +2,12 @@
 
 .slide {
   .corporate {
-    margin-top: -7em!important;
-    margin-left: auto!important;
+    margin: 0 auto!important;
     font-size: 1em!important;
   }
 
   .logo {
-    margin: 0 auto 4em;
-    position: absolute;
-    bottom: 100%;
-    width: 100%;
-    left: 0;
-    text-align: center;
+    padding-bottom: 3.5em;
 
     img {
       max-width: 11em;
