@@ -3,10 +3,14 @@
   padding: 2em;
   
   > img {
-    width: 8.5em;
+    width: 7.5em;
     background: #292929;
     box-shadow: 0 0 0.5em #202020;
     position: relative;
+
+    &.text {
+      width: 7em;
+    }
   }
 
   // > div {
@@ -120,5 +124,13 @@
         font-size: inherit;
       }
     }
+  }
+}
+
+.page .logo > img.text {
+  display: none;
+  
+  @media only screen and (min-width: 769px) {
+    display: inline;
   }
 }

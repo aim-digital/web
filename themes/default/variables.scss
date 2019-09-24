@@ -40,7 +40,8 @@ $brand-info: #5bc0de;
 $font-size-base: 14px;
 $font-family-sans-serif: "Helvetica Neue", Helvetica, sans-serif;
 $font-family-brand: "mr-eaves-xl-modern", $font-family-sans-serif;
-$font-family-oswald: 'Fjalla One', $font-family-brand;
+$font-family-fjalla: 'Fjalla One', $font-family-brand;
+$font-family-oswald: $font-family-fjalla;
 
 $page-max-width: 970px;
 $page-height: 95vh;

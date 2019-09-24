@@ -16,7 +16,7 @@ export default class extends Header {
     const map = require('./images/map.png');
 
     return (
-      <Header className={styles.slide} onTransitionComplete={this.transitionComplete} images={['/@aim-digital/web/images/icon.svg', '/@aim-digital/web/images/icon.svg']}>
+      <Header className={styles.slide} onTransitionComplete={this.transitionComplete} images={[map, map]}>
         {[
           <div className={[styles.content, 'content', styles.links].join(' ')} key="0">
             <section className={['preview'].join(' ')}>
@@ -66,9 +66,6 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Headquarters</h3>
               <ul>
-                <li>
-                  <img className={styles.map} src={map} alt="Based in Long Island City, NYC" title="Based in Long Island City, NYC"/>
-                </li>
                 <li className={styles.caption}>
                   <small><i className="fa fa-globe"/> <strong>Long Island City, NYC</strong></small>
                   <span className={styles.code}>Location</span>

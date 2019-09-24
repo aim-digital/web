@@ -129,7 +129,8 @@ nav > ul {
   margin-right: 2vw;
   box-shadow: 0 1px 2vw $black-color;
   background: $background-color url('/@aim-digital/web/images/nav.png') no-repeat;
-  background-position: 45%;
+  background-color: rgba(153,202,62, .25);
+  background-position: 20%;
   background-size: cover;
   // padding-top: .75em;
   border-top: solid 1px $black-color;
@@ -146,7 +147,7 @@ nav > ul {
     width: 64px;
     height: 64px;
     position: fixed;
-    bottom: 2.5em;
+    bottom: 2em;
     left: 0;
     margin: 1em 0;
     left: 50%;
@@ -222,13 +223,14 @@ nav li:hover,
 nav li:active,
 nav li:focus,
 nav li.active {
-  background: $secondary-green-color;
+  background: rgba(32,173,228, .65);
   color: #fff;
 }
 
 nav li.home {
   transition: all .15s ease-in;
   transform: scale3d(.7, .7, 1);
+  margin: .5em auto 1em;
 
   a {
     box-shadow: 0 0 20px $black-color;
@@ -594,7 +596,7 @@ body.nav-open,
 }
 
 #app.nav-open .nav + .page:before {
-  background-color: #7Bc586;
+  background-color: rgba(32,173,228, .65);
   pointer-events: auto;
 }
 
