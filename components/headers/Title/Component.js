@@ -4,12 +4,12 @@ import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@aim-digital/web/components/layout';
 
 const IMAGES = [
-  '/@aim-digital/web/images/icon.svg',
+  require('./images/S1-BT782_panmkt_M_20190124042812.jpg'),
   require('./images/thynks-full-service-agency_0000s_0000_bigstock-Artist-Photographer-Retouches-91840682.png'),
   require('./images/1540844130883.jpg'),
   require('./images/Insurance-Umbrella-Broker-16.9.jpg'),
   require('./images/istockphoto-995684292-612x612.jpg'),
-  require('./images/S1-BT782_panmkt_M_20190124042812.jpg')
+  require('./images/20th-Sept-1200x540-Blog-Featured-Image.jpg')
 ];
 
 export default class extends Header {

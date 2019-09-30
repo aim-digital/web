@@ -6,6 +6,13 @@
 section.quote {
   background: $white-color;
 
+  .home.page & {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px $black-color;
+  }
+
+
   > div {
     margin: 0 auto !important;
     max-width: 360px;

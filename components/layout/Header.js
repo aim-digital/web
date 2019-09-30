@@ -110,7 +110,7 @@ export default class extends Header {
 
     return (
       <Header className={['slide', className, animating ? `${classNames.animating || ''} animating` : ''].join(' ')}>
-        {images.map((image, i) => <div key={i} className={`hero ${i === slide ? 'current' : i === previous ? 'previous' : ''}`} style={{ opacity: 0, backgroundImage: `url(${image})` }}/>)}
+        {images.map((image, i) => <div key={i} className={`hero ${i === slide ? 'current' : i === previous ? 'previous' : ''} hero-${i}`} style={{ opacity: 0, backgroundImage: `url(${image})` }}/>)}
         <Logo/>
         {children.length ? (
           <div>

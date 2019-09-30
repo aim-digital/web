@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {Link} from 'react-router';
-import {VelocityTransitionGroup} from 'velocity-react';
+// import {Link} from 'react-router';
+// import {VelocityTransitionGroup} from 'velocity-react';
 import {Page} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {dismiss} from '@aim-digital/web/actions/Nav';
@@ -15,6 +15,8 @@ import ReactGA from 'react-ga';
 import NukaCarousel from 'nuka-carousel';
 import {solutions} from '@aim-digital/web/data';
 import _ from 'lodash';
+import 'react-spring';
+import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
 const SOLUTION_DELAY = 100;
 
@@ -146,6 +148,73 @@ export default class extends Page {
     const { message } = this.state.form;
     const { prepareSolutionList } = this;
     const single = headers.length === 1;
+
+    const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
+
+    const P = forwardRef((props, ref) => <Parallax pages={3} style={{ left: 0 }} ref={ref} horizontal="true">
+      <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} horizontal="true" />
+      <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} horizontal="true" />
+      <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} horizontal="true" />
+      <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }} horizontal="true">
+        <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }} horizontal="true">
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }} horizontal="true">
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} horizontal="true" />
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} horizontal="true" />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }} horizontal="true">
+        <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }} horizontal="true">
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }} horizontal="true">
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
+      </ParallaxLayer>
+      <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }} horizontal="true">
+        <img src={url('earth')} style={{ width: '60%' }} />
+      </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={2}
+        speed={-0.3}
+        style={{
+          backgroundSize: '80%',
+          backgroundPosition: 'center',
+          backgroundImage: url('clients', true)
+        }}
+        horizontal="true"
+      />
+
+      <ParallaxLayer
+        offset={0}
+        speed={0.1}
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} horizontal="true">
+        <img src={url('server')} style={{ width: '20%' }} />
+      </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={1}
+        speed={0.1}
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} horizontal="true">
+        <img src={url('bash')} style={{ width: '40%' }} />
+      </ParallaxLayer>
+
+      <ParallaxLayer
+        offset={2}
+        speed={-0}
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} horizontal="true">
+        <img src={url('clients-main')} style={{ width: '40%' }} />
+      </ParallaxLayer>
+    </Parallax>);
   
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
@@ -162,6 +231,11 @@ export default class extends Page {
             <h3>Find a Solution</h3>
             <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
             <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+          </section>
+          <section className="section container">
+            <section className="section">
+              <P />
+            </section>
           </section>
           {!/*hide*/true && (
             <section className="section container">
