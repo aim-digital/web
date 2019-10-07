@@ -55,6 +55,7 @@ export default class extends Page {
     animating: false,
     contact: null,
     solution: null,
+    isPortrait: false,
     form: {
       message: null
     }
@@ -63,12 +64,14 @@ export default class extends Page {
   componentDidMount = () => {
     document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
     document.getElementById('app').classList.add('home');
+    global.addEventListener('orientationchage', this.updateOrientation);
   }
 
   componentWillMount = () => {
     const { solution } = this.props.query;
 
     this.updateHeader();
+    this.updateOrientation();
     this.setState({ solution: _.find(solutions, ['id', 1 * solution]) || null });
   };
 
@@ -76,6 +79,7 @@ export default class extends Page {
     document.querySelector('#app .nav + .page').removeEventListener('click', this.props.dismiss);
     this.props.transition({ progress: 0.2 });
     document.getElementById('app').classList.remove('home');
+    global.removeEventListener('orientationchage', this.updateOrientation);
   }
 
   componentWillUpdate = props => {
@@ -83,6 +87,8 @@ export default class extends Page {
       this.updateHeader(props);
     }
   };
+
+  updateOrientation = () => this.setState({ isPortrait: global.innerHeight > global.innerWidth && global.innerWidth < 1024 });
 
   openSolutionModal = solution => {
     this.setState({ solution });
@@ -133,9 +139,10 @@ export default class extends Page {
   wrap = sections => sections.map((section, i) => <div key={String(i)}>{section}</div>);
 
   render() {
-    const { headers, sections, className, classNames = {}, param, header, section, hide } = this.props;
-    const { index/*, prev, next*/ } = SECTIONS[section || param.section] || SECTIONS.home;
-    const { animating, contact, solution } = this.state;
+    const { headers, className, classNames = {} } = this.props;
+    // const { sections, param, header, section, hide } = this.props;
+    // const { index, prev, next } = SECTIONS[section || param.section] || SECTIONS.home;
+    const { animating, contact, solution, isPortrait } = this.state;
     const { message } = this.state.form;
     const { prepareSolutionList } = this;
     const single = headers.length === 1;
@@ -145,16 +152,14 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            <Parallax className="parallax" pages={5} style={{ left: 0 }}>
-              <section className="solutions">
-                <h3>Find a Solution</h3>
+            <Parallax className="parallax" pages={isPortrait ? global.innerHeight < 800 ? 6 : 5 : 4} style={{ left: 0 }}>
+              {!isPortrait && <section className="solutions">                
                 <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
                 <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-              </section>
-
+              </section>}
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
-              <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
+              <ParallaxLayer offset={0} speed={0} factor={5} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
               <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
                 <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
               </ParallaxLayer>
@@ -183,17 +188,9 @@ export default class extends Page {
                 <img src={url('earth')} style={{ width: '60%' }} />
               </ParallaxLayer>
               <ParallaxLayer
-                offset={2}
-                speed={-0.3}
-                style={{
-                  backgroundSize: '80%',
-                  backgroundPosition: 'center',
-                  backgroundImage: url('clients', true)
-                }}/>
-              <ParallaxLayer
                 offset={0}
                 speed={0.1}
-                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '96vh' }}>
+                style={{ height: '96vh' }}>
                 {headers.length ? (
                   <section className={`${single ? 'single' : ''} header container`}>
                     {single ? headers : (
@@ -213,8 +210,17 @@ export default class extends Page {
                   <h3>Testing</h3>
                 </section>
               </ParallaxLayer>
-              <ParallaxLayer
+              {isPortrait && <ParallaxLayer
                 offset={2}
+                speed={0.1}>
+                <section className="solutions">
+                  <h3>Find a Solution</h3>
+                  <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+                  <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+                </section>
+              </ParallaxLayer>}
+              <ParallaxLayer
+                offset={isPortrait ? 3 : 2}
                 speed={0.1}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <section className="quote">
@@ -229,17 +235,16 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={3}
+                offset={isPortrait ? 4 : 3}
                 speed={-0}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src={url('clients-main')} style={{ width: '40%' }} />
               </ParallaxLayer>
-              <ParallaxLayer
-                offset={4}
+              {isPortrait && global.innerHeight < 800 && <ParallaxLayer
+                offset={5}
                 speed={-0}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Footer/>
-              </ParallaxLayer>
+              </ParallaxLayer>}
+              <Footer/>
             </Parallax>
           </section>
           <modals.Solution show={!!solution} solution={solution || {}} onHide={() => this.setState({ solution: null })}/>

@@ -16,8 +16,12 @@ footer {
 
   .home.page & {
     position: absolute;
-    bottom: 0;
+    bottom: 1vh;
     width: 100%;
+
+    @media (min-width: 768px) {
+      bottom: 0;
+    }
   }
 
   &:before, &:after {
