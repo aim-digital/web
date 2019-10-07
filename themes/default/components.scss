@@ -1,3 +1,4 @@
+@import "./app.scss";
 @import "./nav.scss";
 @import "./header.scss";
 @import "./page.scss";
@@ -7,23 +8,3 @@
 @import "./modal.scss";
 @import "./button.scss";
 @import "./logo.scss";
-
-::selection {
-    background: $primary-green-color;
-    color: $white-color;
-}
-
-::-moz-selection {
-    background: $primary-green-color;
-    color: $white-color;
-}
-
-body {
-    overflow: hidden;
-}
-
-#app {
-    overflow: scroll;
-    overflow-x: hidden;
-    height: 100vh;
-}

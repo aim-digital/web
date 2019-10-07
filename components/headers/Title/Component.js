@@ -35,7 +35,7 @@ export default class extends Header {
     const styles = require('./Component.scss');
 
     return (
-        <Header timer={20} runOnMount className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
+        <Header timer={20000} runOnMount className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
           {[
             <div className={[styles.content, 'content', styles.virtues].join(' ')} key="0">
               <section className={['preview'].join(' ')}>

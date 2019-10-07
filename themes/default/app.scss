@@ -1,0 +1,30 @@
+::selection {
+    background: $primary-green-color;
+    color: $white-color;
+}
+
+::-moz-selection {
+    background: $primary-green-color;
+    color: $white-color;
+}
+
+body {
+    overflow: hidden;
+}
+
+#app {
+    overflow-x: hidden;
+    height: 100vh;
+
+    &.home {
+        overflow: hidden;
+    }
+
+    &.scroll-lock {
+        pointer-events: none;
+
+        .section.container  {
+            pointer-events: auto;
+        }
+    }
+}

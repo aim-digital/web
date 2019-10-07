@@ -27,11 +27,14 @@ export default class extends Nav {
 
   scrollTo = () => {
     const app = document.querySelector('#app');
+    const parallax = app.querySelector('.section.container > .parallax');
 
     if (app.scrollTo) {
       app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      parallax && parallax.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     } else {
       app.scrollTop = 0;
+      parallax && (parallax.scrollTop = 0);
     }
   };
 
