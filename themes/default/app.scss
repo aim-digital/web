@@ -10,6 +10,10 @@
 
 body {
     overflow: hidden;
+
+    @media only screen and (min-width: 4000px) {
+      font-size: 1.5em;
+    }
 }
 
 #app {

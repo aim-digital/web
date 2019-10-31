@@ -162,3 +162,39 @@ section.solutions {
     }
   }
 }
+
+.home.page {
+  .section.container .section {
+    height: auto;
+
+    h3 {
+      text-align: left;
+      font-size: 2em!important;
+      min-width: 320px;
+      max-width: 970px;
+      margin: 0 auto !important;
+      text-shadow: 1px 1px 3px #151515;
+      color: #f8f8f8;
+      padding: 1em;
+      line-height: 1;
+
+      &:after {
+        content: attr(data-dek);
+        color: #F7DE47;
+        display: block;
+        font-size: 2em;
+        margin-top: .25em;
+      }
+    }
+
+    .card {
+      margin-top: 15px;
+
+      p {
+        background: #f8f8f8;
+        padding: 15px;
+        box-shadow: 0 0 10px $black-color;
+      }
+    }
+  }
+}
