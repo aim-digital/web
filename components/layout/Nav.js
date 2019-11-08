@@ -51,7 +51,7 @@ export default class extends Nav {
         <nav>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
           <div className="social">
-            <a title="Facebook: @fox_zero_media" href="https://www.facebook.com/fox_zero_media" target="_blank">
+            <a title="Facebook: @fox.zero.media" href="https://www.facebook.com/fox.zero.media" target="_blank">
               <i className="fa fa-facebook-official"/>
             </a>
             <a title="Twitter: @fox_zero_media" href="https://twitter.com/fox_zero_media" target="_blank">
@@ -60,10 +60,10 @@ export default class extends Nav {
             <a title="Instagram: @fox_zero_media" href="https://www.instagram.com/fox_zero_media" target="_blank">
               <i className="fa fa-instagram"/>
             </a>
-            <a title="GitHub: FoxZero™ Digital" href="https://www.github.com/fox-zero" target="_blank">
+            <a title="GitHub: FoxZero™" href="https://www.github.com/fox-zero" target="_blank">
               <i className="fa fa-github"/>
             </a>
-            <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
+            <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/fox-zero-media" target="_blank">
               <i className="fa fa-linkedin-square"/>
             </a>
           </div>

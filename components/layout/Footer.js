@@ -53,7 +53,7 @@ export default class extends Footer {
                   <h4><i>@</i> Follow Us</h4>
                   <ul className="social">
                     <li>
-                      <a title="Facebook: @fox_zero_media" href="https://www.facebook.com/fox_zero_media" target="_blank">
+                      <a title="Facebook: @fox.zero.media" href="https://www.facebook.com/fox.zero.media" target="_blank">
                         <i className="fa fa-facebook-official"/>
                       </a>
                     </li>
@@ -68,12 +68,12 @@ export default class extends Footer {
                       </a>
                     </li>
                     <li>
-                      <a title="GitHub: FoxZero™ Digital" href="https://github.com/fox-zero" target="_blank">
+                      <a title="GitHub: FoxZero™" href="https://github.com/fox-zero" target="_blank">
                         <i className="fa fa-github"/>
                       </a>
                     </li>
                     <li>
-                      <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
+                      <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/fox-zero-media" target="_blank">
                         <i className="fa fa-linkedin-square"/>
                       </a>
                     </li>
@@ -111,8 +111,8 @@ export default class extends Footer {
             </div>
             <div className="col-sm-3 col-xs-12">
               <h4><i className="fa fa-info-circle"/> Support</h4>
-              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (855) FOX-ZERO" href="tel:+18553473369" target="_blank">+1 (646) 204-1732</a>, or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
-              <p>Operating hours:<br />10am-6pm (EDT) / M-F</p>
+              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (855) FOX-ZERO" href="tel:+18553473369" target="_blank">+1 (855) FOX-ZERO</a>, or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
+              <p>Operating hours:<br />9am-6pm (EDT) / M-F</p>
             </div>
             <div className="col-xs-12 text-center">
               <img src="/@fox-zero/web/images/logo-transparent.png" title="FoxZero Media"/>
