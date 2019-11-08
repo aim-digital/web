@@ -14,6 +14,16 @@ footer {
   box-shadow: 0 -1px 10px rgba(41, 41, 41,.5);
   text-shadow: -1px 1px 1px $black-color;
 
+  .home.page & {
+    position: absolute;
+    bottom: 1vh;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      bottom: 0;
+    }
+  }
+
   &:before, &:after {
     content: '';
     position: absolute;
@@ -81,26 +91,24 @@ footer {
   }
 
   p {
-    padding-bottom: .5em;
+    padding-bottom: .75em;
     max-width: 970px;
     margin: 0 auto;
   }
 
   img {
-    // border-radius: 50%;
-    margin: 2em auto 1em;
-    box-shadow: 0 0 .5em rgba(89, 159, 198, 1);
-    max-width: 320px;
+    margin: 1em auto 0;
+    max-width: 128px;
     width: 10%;
     min-width: 92px;
-    background: $black-color;
   }
 
   a img {
     width: 100%;
-    margin: 1em auto;
     box-shadow: 0 0 .5em $black-color;
     min-width: 0;
+    background: $black-color;
+    border-radius: 50%;
   }
 
   .logo {
@@ -217,7 +225,7 @@ footer {
     }
 
     @media (min-width: 1280px) {
-      font-size: .85em;
+      font-size: .9em;
     }
   }
 
@@ -274,7 +282,7 @@ footer {
     }
 
     &.blue:before, &.blue:after {
-      background: #151515;
+      background: $background-color;
       right: -150%;
     }
 
@@ -289,13 +297,13 @@ footer {
     }
 
     &.red:before, &.red:after  {
-      background: #8fd7eb;
+      background: #20ADE4;
       right: -200%;
     }
 
     &.red:after  {
       content: '';
-      background: #151515;
+      background: $background-color;
       right: -215%;
       top: 90%;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import {Header} from '@aim-digital/web/components/layout';
+import {Header} from '@fox-zero/web/components/layout';
 
 export default class extends Header {
   transitionComplete = state => {
@@ -16,14 +16,14 @@ export default class extends Header {
     const map = require('./images/map.png');
 
     return (
-      <Header className={styles.slide} onTransitionComplete={this.transitionComplete}>
+      <Header className={styles.slide} onTransitionComplete={this.transitionComplete} images={[map, map]}>
         {[
           <div className={[styles.content, 'content', styles.links].join(' ')} key="0">
             <section className={['preview'].join(' ')}>
               <h3>Communications</h3>
               <ul className={'columns'}>
                 <li>
-                  <a title="Email: hello@aimdigital.media" href="mailto:hello@aimdigital.media?subject=Hello!">
+                  <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">
                     <i className="fa fa-envelope"/> hello@aimdigital...
                   </a>
                 </li>
@@ -33,28 +33,28 @@ export default class extends Header {
                   </a>
                 </li>
                 <li>
-                  <a title="Facebook: @AIMDigitalTV" href="https://www.facebook.com/AIMDigitalTV" target="_blank">
-                    <i className="fa fa-facebook-official"/> @AIMDigitalTV
+                  <a title="Facebook: @fox_zero_media" href="https://www.facebook.com/fox_zero_media" target="_blank">
+                    <i className="fa fa-facebook-official"/> @fox_zero_media
                   </a>
                 </li>
                 <li>
-                  <a title="GitHub: AIM™ Digital" href="https://github.com/AIM-Digital" target="_blank">
-                    <i className="fa fa-github"/> AIM™ Digital
+                  <a title="GitHub: FoxZero™ Digital" href="https://github.com/fox-zero" target="_blank">
+                    <i className="fa fa-github"/> FoxZero™ Digital
                   </a>
                 </li>
                 <li>
-                  <a title="Twitter: @AIMDigitalTV" href="https://twitter.com/AIMDigitalTV" target="_blank">
-                    <i className="fa fa-twitter"/> @AIMDigitalTV
+                  <a title="Twitter: @fox_zero_media" href="https://twitter.com/fox_zero_media" target="_blank">
+                    <i className="fa fa-twitter"/> @fox_zero_media
                   </a>
                 </li>
                 <li>
-                  <a title="LinkedIn: AIM™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
-                    <i className="fa fa-linkedin-square"/> AIM™
+                  <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
+                    <i className="fa fa-linkedin-square"/> FoxZero™
                   </a>
                 </li>
                 <li>
-                  <a title="Instagram: @AIMDigitalTV" href="https://www.instagram.com/AIMDigitalTV" target="_blank">
-                    <i className="fa fa-instagram"/> @AIMDigitalTV
+                  <a title="Instagram: @fox_zero_media" href="https://www.instagram.com/fox_zero_media" target="_blank">
+                    <i className="fa fa-instagram"/> @fox_zero_media
                   </a>
                 </li>
                 <li style={{ marginLeft: '6px' }} className={'more'} data-next="Headquarters"/>
@@ -66,9 +66,6 @@ export default class extends Header {
             <section className={['preview'].join(' ')}>
               <h3>Headquarters</h3>
               <ul>
-                <li>
-                  <img className={styles.map} src={map} alt="Based in Long Island City, NYC" title="Based in Long Island City, NYC"/>
-                </li>
                 <li className={styles.caption}>
                   <small><i className="fa fa-globe"/> <strong>Long Island City, NYC</strong></small>
                   <span className={styles.code}>Location</span>

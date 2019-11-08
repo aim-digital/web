@@ -6,6 +6,13 @@
 section.quote {
   background: $white-color;
 
+  .home.page & {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px $black-color;
+  }
+
+
   > div {
     margin: 0 auto !important;
     max-width: 360px;
@@ -82,10 +89,13 @@ section.quote {
 }
 
 section.solutions {
-  background: $background-color linear-gradient(rgba(89, 159, 198, .45), rgba(21, 21, 41, 1));
+  // background: $background-color linear-gradient(rgba(89, 159, 198, .45), rgba(21, 21, 41, 1));
   position: relative;
   z-index: 2;
   padding: 10px 15px;
+  height: auto!important;
+  max-width: 360px;
+  margin: auto;
 
   h3 {
     font-family: $font-family-oswald;
@@ -109,6 +119,9 @@ section.solutions {
     width: 100%;
     background: none;
     pointer-events: none;
+    transform: none!important;
+    height: 0!important;
+    max-width: 100%;
 
     h3 {
       display: none;
@@ -118,7 +131,7 @@ section.solutions {
       vertical-align: middle;
       position: absolute;
       pointer-events: auto;
-      bottom: 65px;
+      bottom: 40px;
 
       &.left {
         left: 0;
@@ -145,6 +158,42 @@ section.solutions {
 
       @media (min-width: 1600px) {
         max-width: 20vw;
+      }
+    }
+  }
+}
+
+.home.page {
+  .section.container .section {
+    height: auto;
+
+    h3 {
+      text-align: left;
+      font-size: 2em!important;
+      min-width: 320px;
+      max-width: 970px;
+      margin: 0 auto !important;
+      text-shadow: 1px 1px 3px #151515;
+      color: #f8f8f8;
+      padding: 1em;
+      line-height: 1;
+
+      &:after {
+        content: attr(data-dek);
+        color: #F7DE47;
+        display: block;
+        font-size: 2em;
+        margin-top: .25em;
+      }
+    }
+
+    .card {
+      margin-top: 15px;
+
+      p {
+        background: #f8f8f8;
+        padding: 15px;
+        box-shadow: 0 0 10px $black-color;
       }
     }
   }

@@ -13,8 +13,15 @@ export default class extends Footer {
   };
 
   scrollTo = () => {
-    if (global.scrollTo) {
-      global.scrollTo(0, 0);
+    const app = document.querySelector('#app');
+    const parallax = app.querySelector('.section.container > .parallax');
+
+    if (app.scrollTo) {
+      app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      parallax && parallax.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    } else {
+      app.scrollTop = 0;
+      parallax && (parallax.scrollTop = 0);
     }
   };
 
@@ -37,7 +44,7 @@ export default class extends Footer {
           <div className="row">
             <div className="col-xs-12 logo text-center">
               <Link to="/" onClick={update(0, 0)}>
-                <img src="/@aim-digital/web/images/Logo-04.png" title="American Interactive Media"/>
+                <img src="/@fox-zero/web/images/icon.png" title="FoxZero Media"/>
               </Link>
             </div>
             <div className="col-sm-9 col-xs-12">
@@ -46,27 +53,27 @@ export default class extends Footer {
                   <h4><i>@</i> Follow Us</h4>
                   <ul className="social">
                     <li>
-                      <a title="Facebook: @AIMDigitalTV" href="https://www.facebook.com/AIMDigitalTV" target="_blank">
+                      <a title="Facebook: @fox_zero_media" href="https://www.facebook.com/fox_zero_media" target="_blank">
                         <i className="fa fa-facebook-official"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Twitter: @AIMDigitalTV" href="https://twitter.com/AIMDigitalTV" target="_blank">
+                      <a title="Twitter: @fox_zero_media" href="https://twitter.com/fox_zero_media" target="_blank">
                         <i className="fa fa-twitter"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Instagram: @AIMDigitalTV" href="https://www.instagram.com/AIMDigitalTV" target="_blank">
+                      <a title="Instagram: @fox_zero_media" href="https://www.instagram.com/fox_zero_media" target="_blank">
                         <i className="fa fa-instagram"/>
                       </a>
                     </li>
                     <li>
-                      <a title="GitHub: AIM™ Digital" href="https://github.com/AIM-Digital" target="_blank">
+                      <a title="GitHub: FoxZero™ Digital" href="https://github.com/fox-zero" target="_blank">
                         <i className="fa fa-github"/>
                       </a>
                     </li>
                     <li>
-                      <a title="LinkedIn: AIM™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
+                      <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
                         <i className="fa fa-linkedin-square"/>
                       </a>
                     </li>
@@ -104,12 +111,12 @@ export default class extends Footer {
             </div>
             <div className="col-sm-3 col-xs-12">
               <h4><i className="fa fa-info-circle"/> Support</h4>
-              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank">+1 (646) 204-1732</a>, or <a title="Email: hello@aimdigital.media" href="mailto:hello@aimdigital.media?subject=Hello!">email us</a>.</p>
+              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (855) FOX-ZERO" href="tel:+18553473369" target="_blank">+1 (646) 204-1732</a>, or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
               <p>Operating hours:<br />10am-6pm (EDT) / M-F</p>
             </div>
             <div className="col-xs-12 text-center">
-              <img src="/@aim-digital/web/images/logo.png" title="American Interactive Media"/>
-              <p><small>&copy; American Interactive Media (A VitruvianTech® Company)</small></p>
+              <img src="/@fox-zero/web/images/logo-transparent.png" title="FoxZero Media"/>
+              <p><small>&copy; FoxZero Media (a VitruvianTech® brand)</small></p>
             </div>
           </div>
         </div>

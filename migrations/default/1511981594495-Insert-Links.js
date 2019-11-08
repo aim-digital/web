@@ -5,7 +5,7 @@ export default class {
     const {Link} = getModels();
 
     await Link.update({
-      href: '/@aim-digital/web/images/favicon.png'
+      href: '/@fox-zero/web/images/favicon.png'
     }, {
       where: {
         rel: 'shortcut icon'

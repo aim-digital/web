@@ -15,22 +15,22 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+      content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
         value: 'og:image',
-        content: 'http://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+        content: 'http://vitruvian.tech/@fox-zero/web/images/cover.jpg'
       }
     });
 
     await MetaTag.update({
-      content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+      content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
         value: 'twitter:image',
-        content: 'http://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+        content: 'http://vitruvian.tech/@fox-zero/web/images/cover.jpg'
       }
     });
   }
@@ -49,22 +49,22 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'http://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+      content: 'http://vitruvian.tech/@fox-zero/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
         value: 'og:image',
-        content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+        content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
       }
     });
 
     await MetaTag.update({
-      content: 'http://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+      content: 'http://vitruvian.tech/@fox-zero/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
         value: 'twitter:image',
-        content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+        content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
       }
     });
   }

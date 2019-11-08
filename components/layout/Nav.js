@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 import {Nav} from '@boilerplatejs/core/components/layout';
 import {Progress} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
-import {load} from '@aim-digital/web/actions/Nav';
+import {load} from '@fox-zero/web/actions/Nav';
 import * as Session from '@boilerplatejs/core/actions/Session';
 
 @connect(state => ({ user: state['@boilerplatejs/core'].Session.user }), { transition, logout: Session.logout, load })
@@ -18,7 +18,7 @@ export default class extends Nav {
     logout: PropTypes.func.isRequired
   };
 
-  componentDidMount = () => this.props.load();
+  componentDidMount = () => this.props.load(2000);
 
   handleLogout = (event) => {
     event.preventDefault();
@@ -26,8 +26,15 @@ export default class extends Nav {
   };
 
   scrollTo = () => {
-    if (global.scrollTo) {
-      global.scrollTo(0, 0);
+    const app = document.querySelector('#app');
+    const parallax = app.querySelector('.section.container > .parallax');
+
+    if (app.scrollTo) {
+      app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      parallax && parallax.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    } else {
+      app.scrollTop = 0;
+      parallax && (parallax.scrollTop = 0);
     }
   };
 
@@ -39,22 +46,31 @@ export default class extends Nav {
 
     return (
       <section className="nav">
+        <div className="nav"/>
         <Progress />
         <nav>
-          <Link rel="nofollow" to="/home" className="logo" onClick={update(0, 0)}/>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
           <div className="social">
-            <a title="Facebook: @AIMDigitalTV" href="https://www.facebook.com/AIMDigitalTV" target="_blank">
+            <a title="Facebook: @fox_zero_media" href="https://www.facebook.com/fox_zero_media" target="_blank">
               <i className="fa fa-facebook-official"/>
             </a>
-            <a title="Twitter: @AIMDigitalTV" href="https://twitter.com/AIMDigitalTV" target="_blank">
+            <a title="Twitter: @fox_zero_media" href="https://twitter.com/fox_zero_media" target="_blank">
               <i className="fa fa-twitter"/>
             </a>
-            <a title="Instagram: @AIMDigitalTV" href="https://www.instagram.com/AIMDigitalTV" target="_blank">
+            <a title="Instagram: @fox_zero_media" href="https://www.instagram.com/fox_zero_media" target="_blank">
               <i className="fa fa-instagram"/>
+            </a>
+            <a title="GitHub: FoxZero™ Digital" href="https://www.github.com/fox-zero" target="_blank">
+              <i className="fa fa-github"/>
+            </a>
+            <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
+              <i className="fa fa-linkedin-square"/>
             </a>
           </div>
           <ul>
+            <li className="home">
+              <Link rel="nofollow" to="/home" className="logo" onClick={update(0, 0)}/>
+            </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>
@@ -70,29 +86,10 @@ export default class extends Nav {
                 <li><Link rel="nofollow" to="/home/hosting" onClick={update(0, 4)}>Hosting Packages</Link></li>
               </ul>
             </li>
-            {/*<li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-code"/> Software</a>
-              <ul>
-                <li>
-                  <a href="https://github.com/vitruvian-tech/jira" target="_blank" title="An open source Docker image of VitruvianTech's JIRA server (and configuration.)">VitruvianTech™ JIRA Server</a>
-                </li>
-                <li>
-                  <a href="https://github.com/vitruvian-tech/sms-db-importer" target="_blank" title="This project was developed for legal case building to submit text records into evidence in a clean, comprehensive, and queryable format.">Android SMS DB Importer</a>
-                </li>
-                <li>
-                  <a href="https://github.com/soundcloud-downloader/collection-scraper" target="_blank" title="Take back what's yours by downloading all of your SoundCloud tracks.">SoundCloud Downloader</a>
-                </li>
-              </ul>
-            </li>*/}
-            <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> <sup>AIM://</sup>TV</a>
-              <ul>
-                <li>
-                  <Link to="/tv/music-tech-and-steven-tyler-collide-in-NOLA/05-04-2018/2H9AEB2WpicAiMiO88YsSY">
-                    <marquee><span>Music, Tech, and Steven Tyler Collide in NOLA</span> <span className="humility">/ Collision Conf. 2018</span></marquee>
-                  </Link>
-                </li>
-              </ul>
+            <li>
+              <Link to="/tv/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update(0, 0)}>
+                <i className="fa fa-television"/> <sup>Fox://</sup>Stream<sup>™</sup>
+              </Link>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>

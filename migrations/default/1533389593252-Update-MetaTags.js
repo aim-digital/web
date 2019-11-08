@@ -5,7 +5,7 @@ export default class {
     const {MetaTag} = getModels();
 
     await MetaTag.update({
-      content: 'https://aimdigital.media/@aim-digital/web/images/logo-dark.png'
+      content: 'https://foxzero.io/@fox-zero/web/images/logo.png'
     }, {
       where: {
         key: 'property',
@@ -14,7 +14,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'https://aimdigital.media/@aim-digital/web/images/logo-dark.png'
+      content: 'https://foxzero.io/@fox-zero/web/images/logo.png'
     }, {
       where: {
         key: 'property',

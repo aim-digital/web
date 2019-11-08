@@ -7,7 +7,7 @@ export default class {
     await MetaTag.create({
       key: 'property',
       value: 'og:image',
-      content: 'https://aimdigital.media/@aim-digital/web/images/logo.png'
+      content: 'https://foxzero.io/@fox-zero/web/images/logo.png'
     });
   }
 

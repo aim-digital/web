@@ -1,4 +1,4 @@
-import {SolutionContact} from '@aim-digital/web/models/default';
+import {SolutionContact} from '@fox-zero/web/models/default';
 
 export const create = async req => {
     const {email, solution} = req.body;

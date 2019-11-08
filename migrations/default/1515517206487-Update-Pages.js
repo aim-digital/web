@@ -5,8 +5,8 @@ export default class {
     const {Page} = getModels();
 
     await Page.update({
-      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
-      page: '@aim-digital/web:Plans'
+      headers: '["@fox-zero/web:Title", "@fox-zero/web:Contact"]',
+      page: '@fox-zero/web:Plans'
     }, {
       where: {
         route: 'plans'
@@ -18,7 +18,7 @@ export default class {
     const {Page} = getModels();
 
     await Page.update({
-      headers: '["@aim-digital/web:Plans", "@aim-digital/web:Contact"]',
+      headers: '["@fox-zero/web:Plans", "@fox-zero/web:Contact"]',
       page: null
     }, {
       where: {

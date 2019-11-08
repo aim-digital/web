@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import Modal from 'react-bootstrap-modal';
-import {Logo} from '@aim-digital/web/components/layout';
+import {Logo} from '@fox-zero/web/components/layout';
 import {ShareButtons} from 'react-share';
 import _ from 'lodash';
 
@@ -50,7 +50,7 @@ export default class extends Component {
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>
-          <span>© American Interactive Media (A VitruvianTech® Company)</span>
+          <span>© FoxZero Media (a VitruvianTech® company)</span>
         </Modal.Footer>
       </Modal>
     );

@@ -5,7 +5,7 @@ export default class {
     const {MetaTag} = getModels();
 
     await MetaTag.update({
-      content: 'AIM, AIM™, AIMDigitalTV, digital media, digital agency, media agency, American Interactive Media, American Interactive Media, VitruvianTech, Vitruvian Tech, Vitruvian Technology, Vitruvian Technology Corp., Long Island City, NYC, New York, BoilerplateJS™, App Development Platform, project management, tactical project management, custom software, app development, web design, software development, web development, ui design, ux design, marketing, seo, content production, quality assurance, system administration, aimdigital.media, aim-digital, Peter C. Romano'
+      content: 'FoxZero™, fox_zero_media, digital media, digital agency, media agency, FoxZero Media, VitruvianTech, Vitruvian Tech, Vitruvian Technology, Vitruvian Technology Corp., Long Island City, NYC, New York, BoilerplateJS™, App Development Platform, project management, tactical project management, custom software, app development, web design, software development, web development, ui design, ux design, marketing, seo, content production, quality assurance, system administration, foxzero.io, fox-zero, Peter C. Romano'
     }, {
       where: {
         key: 'name',
@@ -14,7 +14,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'Dreaming of a project or app to put you on the map? Make your digital dream a reality with AIM\'s guaranteed software, design, innovation, and marketing services. Whether simple or complex, AIM™ for the best.'
+      content: 'Digital media agency specialized in premium UX/software development, product management, design, and marketing services.'
     }, {
       where: {
         key: 'name',
@@ -23,7 +23,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'AIM™'
+      content: 'FoxZero™'
     }, {
       where: {
         key: 'itemprop',
@@ -32,7 +32,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'American Interactive Media'
+      content: 'FoxZero Media'
     }, {
       where: {
         key: 'itemprop',
@@ -41,7 +41,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'AIM™'
+      content: 'FoxZero™'
     }, {
       where: {
         key: 'property',
@@ -50,7 +50,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'https://aimdigital.media'
+      content: 'https://foxzero.io'
     }, {
       where: {
         key: 'property',
@@ -59,7 +59,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'American Interactive Media'
+      content: 'FoxZero Media'
     }, {
       where: {
         key: 'property',
@@ -68,7 +68,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'Dreaming of a project or app to put you on the map? Make your digital dream a reality with AIM\'s guaranteed software, design, innovation, and marketing services. Whether simple or complex, AIM™ for the best.'
+      content: 'Digital media agency specialized in premium UX/software development, product management, design, and marketing services.'
     }, {
       where: {
         key: 'property',
@@ -77,7 +77,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: '@AIMDigitalTV'
+      content: '@fox_zero_media'
     }, {
       where: {
         key: 'property',
@@ -86,7 +86,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: '@AIMDigitalTV'
+      content: '@fox_zero_media'
     }, {
       where: {
         key: 'property',
@@ -95,7 +95,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'https://aimdigital.media/@aim-digital/web/images/logo.png'
+      content: 'https://foxzero.io/@fox-zero/web/images/logo.png'
     }, {
       where: {
         key: 'property',
@@ -122,7 +122,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: '@AIMDigitalTV'
+      content: '@fox_zero_media'
     }, {
       where: {
         key: 'property',
@@ -131,7 +131,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: '@AIMDigitalTV'
+      content: '@fox_zero_media'
     }, {
       where: {
         key: 'property',
@@ -140,7 +140,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'AIM™'
+      content: 'FoxZero™'
     }, {
       where: {
         key: 'property',
@@ -149,7 +149,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'American Interactive Media'
+      content: 'FoxZero Media'
     }, {
       where: {
         key: 'property',
