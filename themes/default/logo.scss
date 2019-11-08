@@ -1,11 +1,9 @@
 .modal .logo, .page .logo {
   text-align: center;
   padding: 2em;
-  
+
   > img {
     width: 7.5em;
-    background: #292929;
-    box-shadow: 0 0 0.5em #202020;
     position: relative;
 
     &.text {
@@ -30,7 +28,9 @@
   }
 
   .graphic {
-    margin: auto -1px;
+    border-radius: 50%;
+    box-shadow: 0 0 0.5em #202020;
+    margin: auto -5px;
     z-index: 1;
   }
 }
