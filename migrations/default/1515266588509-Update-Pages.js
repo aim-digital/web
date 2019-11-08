@@ -5,8 +5,8 @@ export default class {
     const {Page} = getModels();
 
     await Page.update({
-      page: '@aim-digital/web:Home',
-      sections: '["@aim-digital/web:Home"]'
+      page: '@fox-zero/web:Home',
+      sections: '["@fox-zero/web:Home"]'
     }, {
       where: {
         route: '/'

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {asyncConnect} from 'redux-async-connect-react16';
 import {push as pushState} from 'react-router-redux';
 import {App} from '@boilerplatejs/core/components/layout';
-import {Nav} from '@aim-digital/web/components/layout';
+import {Nav} from '@fox-zero/web/components/layout';
 import * as Config from '@boilerplatejs/core/actions/Config';
 import * as Session from '@boilerplatejs/core/actions/Session';
 

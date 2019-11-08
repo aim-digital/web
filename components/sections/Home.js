@@ -8,7 +8,7 @@ export default class extends Section {
         <h1>Vitruvian Virtues</h1>
         <div className="background">
           <div className="film"></div>
-          <div className="image" style={{ backgroundImage: 'url(/@aim-digital/web/images/home/virtues.jpg)' }}></div>
+          <div className="image" style={{ backgroundImage: 'url(/@fox-zero/web/images/home/virtues.jpg)' }}></div>
         </div>
         <span className="content">
           <section>

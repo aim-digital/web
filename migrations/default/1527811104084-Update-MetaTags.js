@@ -10,7 +10,7 @@ export default class {
       where: {
         key: 'property',
         value: 'og:image:secure_url',
-        content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+        content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
       }
     });
 
@@ -20,7 +20,7 @@ export default class {
       where: {
         key: 'property',
         value: 'og:image',
-        content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+        content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
       }
     });
 
@@ -30,7 +30,7 @@ export default class {
       where: {
         key: 'property',
         value: 'twitter:image',
-        content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+        content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
       }
     });
   }
@@ -39,7 +39,7 @@ export default class {
     const {MetaTag} = getModels();
 
     await MetaTag.update({
-      content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+      content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
@@ -49,7 +49,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+      content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',
@@ -59,7 +59,7 @@ export default class {
     });
 
     await MetaTag.update({
-      content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+      content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
     }, {
       where: {
         key: 'property',

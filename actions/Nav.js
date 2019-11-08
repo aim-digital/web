@@ -1,10 +1,10 @@
-const LOAD = '@aim-digital/web/Nav/LOAD';
-const LOAD_SUCCESS = '@aim-digital/web/Nav/LOAD_SUCCESS';
-const LOAD_FAIL = '@aim-digital/web/Nav/LOAD_FAIL';
+const LOAD = '@fox-zero/web/Nav/LOAD';
+const LOAD_SUCCESS = '@fox-zero/web/Nav/LOAD_SUCCESS';
+const LOAD_FAIL = '@fox-zero/web/Nav/LOAD_FAIL';
 
-const DISMISS = '@aim-digital/web/Nav/DISMISS';
-const DISMISS_SUCCESS = '@aim-digital/web/Nav/DISMISS_SUCCESS';
-const DISMISS_FAIL = '@aim-digital/web/Nav/DISMISS_FAIL';
+const DISMISS = '@fox-zero/web/Nav/DISMISS';
+const DISMISS_SUCCESS = '@fox-zero/web/Nav/DISMISS_SUCCESS';
+const DISMISS_FAIL = '@fox-zero/web/Nav/DISMISS_FAIL';
 
 const TOGGLE_CLASS = 'nav-open';
 

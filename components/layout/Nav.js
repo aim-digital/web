@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 import {Nav} from '@boilerplatejs/core/components/layout';
 import {Progress} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
-import {load} from '@aim-digital/web/actions/Nav';
+import {load} from '@fox-zero/web/actions/Nav';
 import * as Session from '@boilerplatejs/core/actions/Session';
 
 @connect(state => ({ user: state['@boilerplatejs/core'].Session.user }), { transition, logout: Session.logout, load })
@@ -51,19 +51,19 @@ export default class extends Nav {
         <nav>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
           <div className="social">
-            <a title="Facebook: @AIMDigitalTV" href="https://www.facebook.com/AIMDigitalTV" target="_blank">
+            <a title="Facebook: @fox_zero_media" href="https://www.facebook.com/fox_zero_media" target="_blank">
               <i className="fa fa-facebook-official"/>
             </a>
-            <a title="Twitter: @AIMDigitalTV" href="https://twitter.com/AIMDigitalTV" target="_blank">
+            <a title="Twitter: @fox_zero_media" href="https://twitter.com/fox_zero_media" target="_blank">
               <i className="fa fa-twitter"/>
             </a>
-            <a title="Instagram: @AIMDigitalTV" href="https://www.instagram.com/AIMDigitalTV" target="_blank">
+            <a title="Instagram: @fox_zero_media" href="https://www.instagram.com/fox_zero_media" target="_blank">
               <i className="fa fa-instagram"/>
             </a>
-            <a title="GitHub: AIM™ Digital" href="https://www.github.com/AIM-Digital" target="_blank">
+            <a title="GitHub: FoxZero™ Digital" href="https://www.github.com/fox-zero" target="_blank">
               <i className="fa fa-github"/>
             </a>
-            <a title="LinkedIn: AIM™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
+            <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
               <i className="fa fa-linkedin-square"/>
             </a>
           </div>
@@ -88,7 +88,7 @@ export default class extends Nav {
             </li>
             <li>
               <Link to="/tv/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update(0, 0)}>
-                <i className="fa fa-television"/> <sup>AIM://</sup>TV
+                <i className="fa fa-television"/> <sup>Fox://</sup>Stream<sup>™</sup>
               </Link>
             </li>
             <li className="subnav">

@@ -67,7 +67,7 @@
   }
 
   &:after {
-    content: 'Company';
+    content: 'Brand';
     top: 100%;
   }
 
@@ -85,7 +85,7 @@
       &:before {
         content: '';
         position: absolute;
-        background: url(/@aim-digital/web/images/corporate.png) no-repeat;
+        background: url(/@fox-zero/web/images/corporate.png) no-repeat;
         background-size: 100%;
         right: 100%;
         top: 0;

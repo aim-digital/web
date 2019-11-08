@@ -7,7 +7,7 @@ export default class {
     await MetaTag.create({
       key: 'property',
       value: 'og:image',
-      content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+      content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
     });
   }
 
@@ -18,7 +18,7 @@ export default class {
       where: {
         key: 'property',
         value: 'og:image',
-        content: 'https://vitruvian.tech/@aim-digital/web/images/cover.jpg'
+        content: 'https://vitruvian.tech/@fox-zero/web/images/cover.jpg'
       }
     });
   }

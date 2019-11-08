@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
-import {Logo} from '@aim-digital/web/components/layout';
+import {Logo} from '@fox-zero/web/components/layout';
 
 @connect((state, props) => ({ slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0 }), {transition})
 

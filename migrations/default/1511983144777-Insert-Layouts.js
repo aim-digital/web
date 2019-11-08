@@ -13,12 +13,12 @@ export default class {
     });
 
     await Layout.create({
-      title: 'VitruvianTech',
+      title: 'FoxZero™',
       fallbackExpression: 'MSIE (?:[0-9]|10).\\d',
       enabled: true,
-      theme: '@aim-digital/web',
-      app: '@aim-digital/web:App',
-      page: '@aim-digital/web:Page'
+      theme: '@fox-zero/web',
+      app: '@fox-zero/web:App',
+      page: '@fox-zero/web:Page'
     });
   }
 
@@ -27,7 +27,7 @@ export default class {
 
     await Layout.destroy({
       where: {
-        title: 'VitruvianTech'
+        title: 'FoxZero®'
       }
     });
 

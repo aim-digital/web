@@ -3,14 +3,14 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Page} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
-import {dismiss} from '@aim-digital/web/actions/Nav';
-import {Footer} from '@aim-digital/web/components/layout';
-import {Solution} from '@aim-digital/web/components/buttons';
+import {dismiss} from '@fox-zero/web/actions/Nav';
+import {Footer} from '@fox-zero/web/components/layout';
+import {Solution} from '@fox-zero/web/components/buttons';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
-import * as modals from '@aim-digital/web/components/modals';
+import * as modals from '@fox-zero/web/components/modals';
 import * as forms from '@boilerplatejs/core/components/forms';
 import ReactGA from 'react-ga';
-import {solutions} from '@aim-digital/web/data';
+import {solutions} from '@fox-zero/web/data';
 import _ from 'lodash';
 import 'react-spring';
 import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
@@ -262,7 +262,7 @@ export default class extends Page {
                     <p>Say hello to our guaranteed services and fair prices!</p>
                     {contact ?
                       <div className="success"><strong>Thank you, {contact.firstname.value}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
-                      <forms.Contact quote newsletterText="Join the AIM™ TV newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
+                      <forms.Contact quote newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
                     {message && <div className="error">{message}</div>}
                   </div>
                 </section>

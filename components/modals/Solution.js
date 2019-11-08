@@ -4,7 +4,7 @@ import _ from 'lodash';
 import {connect} from 'react-redux';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
 import {Contact} from '@boilerplatejs/core/components/forms';
-import {Modal} from '@aim-digital/web/components/layout';
+import {Modal} from '@fox-zero/web/components/layout';
 import {ShareButtons} from 'react-share';
 
 const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
@@ -113,7 +113,7 @@ export default class extends Modal {
                   <br />
                   <button className="btn btn-success" onClick={this.onHide}>Close</button>
                 </div> :
-                <Contact quote cancelText="Cancel" onCancel={this.onHide} newsletterText="Join the AIM™ TV newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
+                <Contact quote cancelText="Cancel" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>

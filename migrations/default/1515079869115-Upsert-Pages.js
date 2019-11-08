@@ -6,10 +6,10 @@ export default class {
 
     await Page.create({
       route: 'home(/:section)',
-      page: '@aim-digital/web:Home',
+      page: '@fox-zero/web:Home',
       title: 'VitruvianTech - Sentient. Secure. Quality for All.',
-      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
-      sections: '["@aim-digital/web:Home", "@aim-digital/web:Missions", "@aim-digital/web:Services", "@aim-digital/web:Plans", "@aim-digital/web:Rates", "@aim-digital/web:Hosting", "@aim-digital/web:Leadership", "@aim-digital/web:Network", "@aim-digital/web:Communications", "@aim-digital/web:Headquarters"]'
+      headers: '["@fox-zero/web:Title", "@fox-zero/web:Contact"]',
+      sections: '["@fox-zero/web:Home", "@fox-zero/web:Missions", "@fox-zero/web:Services", "@fox-zero/web:Plans", "@fox-zero/web:Rates", "@fox-zero/web:Hosting", "@fox-zero/web:Leadership", "@fox-zero/web:Network", "@fox-zero/web:Communications", "@fox-zero/web:Headquarters"]'
     });
   }
 
@@ -19,10 +19,10 @@ export default class {
     await Page.destroy({
       where: {
         route: 'home(/:section)',
-        page: '@aim-digital/web:Home',
+        page: '@fox-zero/web:Home',
         title: 'VitruvianTech - Sentient. Secure. Quality for All.',
-        headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
-        sections: '["@aim-digital/web:Home", "@aim-digital/web:Missions", "@aim-digital/web:Services", "@aim-digital/web:Plans", "@aim-digital/web:Rates", "@aim-digital/web:Hosting", "@aim-digital/web:Leadership", "@aim-digital/web:Network", "@aim-digital/web:Communications", "@aim-digital/web:Headquarters"]'
+        headers: '["@fox-zero/web:Title", "@fox-zero/web:Contact"]',
+        sections: '["@fox-zero/web:Home", "@fox-zero/web:Missions", "@fox-zero/web:Services", "@fox-zero/web:Plans", "@fox-zero/web:Rates", "@fox-zero/web:Hosting", "@fox-zero/web:Leadership", "@fox-zero/web:Network", "@fox-zero/web:Communications", "@fox-zero/web:Headquarters"]'
       }
     });
   }

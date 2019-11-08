@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import {VelocityTransitionGroup} from 'velocity-react';
-import {Header} from '@aim-digital/web/components/layout';
+import {Header} from '@fox-zero/web/components/layout';
 
 const IMAGES = [
   require('./images/S1-BT782_panmkt_M_20190124042812.jpg'),

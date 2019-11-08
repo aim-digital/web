@@ -1,6 +1,6 @@
-const CREATE = '@aim-digital/web/Solution/CREATE';
-const CREATE_SUCCESS = '@aim-digital/web/Solution/CREATE_SUCCESS';
-const CREATE_FAIL = '@aim-digital/web/Solution/CREATE_FAIL';
+const CREATE = '@fox-zero/web/Solution/CREATE';
+const CREATE_SUCCESS = '@fox-zero/web/Solution/CREATE_SUCCESS';
+const CREATE_FAIL = '@fox-zero/web/Solution/CREATE_FAIL';
 
 const initialState = {
   error: null
@@ -12,7 +12,7 @@ export function create(data) {
     promise: (client) => client
         .post('/@boilerplatejs/core/Contact/create', { data })
         .then(async () => {
-            await client.post('/@aim-digital/web/Solution/create', { data });
+            await client.post('/@fox-zero/web/Solution/create', { data });
             return data;
         })
   };

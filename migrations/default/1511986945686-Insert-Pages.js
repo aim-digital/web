@@ -7,21 +7,21 @@ export default class {
     await Page.create({
       route: '/',
       title: 'VitruvianTech - Sentient. Secure. Quality for All.',
-      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]'
+      headers: '["@fox-zero/web:Title", "@fox-zero/web:Contact"]'
     });
 
     await Page.create({
       route: 'about',
       title: 'VitruvianTech - About Us',
-      page: '@aim-digital/web:About',
-      headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
-      sections: '["@aim-digital/web:About"]'
+      page: '@fox-zero/web:About',
+      headers: '["@fox-zero/web:Title", "@fox-zero/web:Contact"]',
+      sections: '["@fox-zero/web:About"]'
     });
 
     await Page.create({
       route: 'contact',
       title: 'VitruvianTech - Contact Us',
-      headers: '["@aim-digital/web:Contact"]',
+      headers: '["@fox-zero/web:Contact"]',
       sections: '["@boilerplatejs/core:Contact"]'
     });
   }
@@ -33,7 +33,7 @@ export default class {
       where: {
         route: '/',
         title: 'VitruvianTech - Sentient. Secure. Quality for All.',
-        headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]'
+        headers: '["@fox-zero/web:Title", "@fox-zero/web:Contact"]'
       }
     });
 
@@ -41,9 +41,9 @@ export default class {
       where: {
         route: 'about',
         title: 'VitruvianTech - About Us',
-        page: '@aim-digital/web:About',
-        headers: '["@aim-digital/web:Title", "@aim-digital/web:Contact"]',
-        sections: '["@aim-digital/web:About"]'
+        page: '@fox-zero/web:About',
+        headers: '["@fox-zero/web:Title", "@fox-zero/web:Contact"]',
+        sections: '["@fox-zero/web:About"]'
       }
     });
 
@@ -51,7 +51,7 @@ export default class {
       where: {
         route: 'contact',
         title: 'VitruvianTech - Contact Us',
-        headers: '["@aim-digital/web:Contact"]',
+        headers: '["@fox-zero/web:Contact"]',
         sections: '["@boilerplatejs/core:Contact"]'
       }
     });

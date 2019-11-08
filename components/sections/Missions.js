@@ -93,8 +93,8 @@ export default class extends Section {
         <h1>Our Work</h1>
         <div className="background">
           <div className="film" style={{ opacity: '.85' }}></div>
-          <div className="insignia image" style={{ backgroundImage: 'url(/@aim-digital/web/images/insignia.png)', zIndex: '2' }}></div>
-          <div className="image" style={{ backgroundImage: 'url(/@aim-digital/web/images/home/missions.jpg)', opacity: '1' }}></div>
+          <div className="insignia image" style={{ backgroundImage: 'url(/@fox-zero/web/images/insignia.png)', zIndex: '2' }}></div>
+          <div className="image" style={{ backgroundImage: 'url(/@fox-zero/web/images/home/missions.jpg)', opacity: '1' }}></div>
         </div>
         <VelocityTransitionGroup
           className="content"
