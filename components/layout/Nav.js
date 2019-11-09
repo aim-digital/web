@@ -87,7 +87,7 @@ export default class extends Nav {
               </ul>
             </li>
             <li>
-              <Link to="/tv/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update(0, 0)}>
+              <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update(0, 0)}>
                 <i className="fa fa-television"/> <sup>Fox://</sup>Stream<sup>™</sup>
               </Link>
             </li>
