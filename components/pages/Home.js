@@ -146,18 +146,17 @@ export default class extends Page {
     const { message } = this.state.form;
     const { prepareSolutionList } = this;
     const single = headers.length === 1;
-    const factor = offset => offset + (isPortrait ? global.innerHeight < 800 ? offset * 1 : offset * .25 : 0);
 
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            <Parallax className="parallax" pages={factor(isPortrait ? global.innerHeight < 800 ? 5 : 5.25 : 5)} style={{ left: 0 }}>
-              {!isPortrait && <section className="solutions">
+            <Parallax className="parallax" pages={isPortrait ? 7 : 6} style={{ left: 0 }}>
+              {/* {!isPortrait && <section className="solutions">
                 <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
                 <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-              </section>}
+              </section>} */}
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
               <ParallaxLayer offset={0} speed={0} factor={5} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -190,7 +189,7 @@ export default class extends Page {
               </ParallaxLayer>
               <ParallaxLayer
                 offset={0}
-                speed={0.1}
+                speed={0}
                 style={{ height: '96vh' }}>
                 {headers.length ? (
                   <section className={`${single ? 'single' : ''} header container`}>
@@ -203,9 +202,18 @@ export default class extends Page {
                   </section>
                 ) : <span/>}
               </ParallaxLayer>
+              {!isPortrait && <ParallaxLayer
+                offset={0}
+                speed={.75}>
+                <section className="solutions">
+                  <h3>Find a Solution</h3>
+                  <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+                  <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+                </section>
+              </ParallaxLayer>}
               <ParallaxLayer
                 offset={1}
-                speed={0.2}>
+                speed={0.25}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">Services</h3>
                   <div className="container">
@@ -224,7 +232,7 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={factor(2)}
+                offset={2}
                 speed={0.3}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">Services</h3>
@@ -243,9 +251,29 @@ export default class extends Page {
                   </div>
                 </section>
               </ParallaxLayer>
+              <ParallaxLayer
+                offset={3}
+                speed={0.35}>
+                <section className="section">
+                  <h3 data-dek="Aim for the Best™ Services">Services</h3>
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-sm-4 card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
+                      </div>
+                      <div className="col-sm-4 card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
+                      </div>
+                      <div className="col-sm-4 card">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </ParallaxLayer>
               {isPortrait && <ParallaxLayer
-                offset={factor(3.3)}
-                speed={0.4}>
+                offset={4}
+                speed={0.25}>
                 <section className="solutions">
                   <h3>Find a Solution</h3>
                   <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
@@ -253,8 +281,8 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>}
               <ParallaxLayer
-                offset={factor(isPortrait ? 3.75 : 3)}
-                speed={0.5}
+                offset={isPortrait ? 5 : 4}
+                speed={0.25}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <section className="quote">
                   <div>
@@ -267,10 +295,6 @@ export default class extends Page {
                   </div>
                 </section>
               </ParallaxLayer>
-              {isPortrait && <ParallaxLayer
-                offset={factor(4.25)}
-                speed={-0}>
-              </ParallaxLayer>}
               <Footer/>
             </Parallax>
           </section>
