@@ -146,13 +146,14 @@ export default class extends Page {
     const { message } = this.state.form;
     const { prepareSolutionList } = this;
     const single = headers.length === 1;
+    const factor = offset => isPortrait ? offset * (5 - (global.innerHeight * .0025)) - offset - 1 : offset;
 
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            <Parallax className="parallax" pages={isPortrait ? 7 : 6} style={{ left: 0 }}>
+            <Parallax className="parallax" pages={isPortrait ? factor(5) : 6} style={{ left: 0 }}>
               {/* {!isPortrait && <section className="solutions">
                 <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
                 <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
@@ -212,7 +213,7 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>}
               <ParallaxLayer
-                offset={1}
+                offset={factor(1)}
                 speed={0.25}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">Services</h3>
@@ -232,7 +233,7 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={2}
+                offset={factor(2)}
                 speed={0.3}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">Services</h3>
@@ -252,8 +253,8 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={3}
-                speed={0.35}>
+                offset={factor(3)}
+                speed={0.4}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">Services</h3>
                   <div className="container">
@@ -272,8 +273,8 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               {isPortrait && <ParallaxLayer
-                offset={4}
-                speed={0.25}>
+                offset={factor(3.875)}
+                speed={0.5}>
                 <section className="solutions">
                   <h3>Find a Solution</h3>
                   <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
@@ -281,8 +282,8 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>}
               <ParallaxLayer
-                offset={isPortrait ? 5 : 4}
-                speed={0.25}
+                offset={factor(isPortrait ? 4.1275 : 4)}
+                speed={0.5}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <section className="quote">
                   <div>
