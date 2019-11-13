@@ -28,6 +28,8 @@ const SECTIONS = {
   headquarters: { index: 7, header: 1, slide: 1, param: 'headquarters', prev: 'communications' }
 };
 
+const SIZE_IPAD = 1792;
+
 @connect(state => {
   const { header = 0, slide = 0 } = state['@boilerplatejs/core'].Transition;
   return ({ param: state.router.params, header, slide, query: state.router.location.query });
@@ -55,7 +57,7 @@ export default class extends Page {
     animating: false,
     contact: null,
     solution: null,
-    isPortrait: false,
+    isMobile: true,
     form: {
       message: null
     }
@@ -64,7 +66,7 @@ export default class extends Page {
   componentDidMount = () => {
     document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
     document.getElementById('app').classList.add('home');
-    global.addEventListener('orientationchage', this.updateOrientation);
+    global.addEventListener('resize', this.updateOrientation);
   }
 
   componentWillMount = () => {
@@ -79,7 +81,7 @@ export default class extends Page {
     document.querySelector('#app .nav + .page').removeEventListener('click', this.props.dismiss);
     this.props.transition({ progress: 0.2 });
     document.getElementById('app').classList.remove('home');
-    global.removeEventListener('orientationchage', this.updateOrientation);
+    global.removeEventListener('resize', this.updateOrientation);
   }
 
   componentWillUpdate = props => {
@@ -88,7 +90,7 @@ export default class extends Page {
     }
   };
 
-  updateOrientation = () => this.setState({ isPortrait: global.innerHeight > global.innerWidth && global.innerWidth < 1024 });
+  updateOrientation = () => this.setState({ isMobile: global.innerWidth < 992 });
 
   openSolutionModal = solution => {
     this.setState({ solution });
@@ -142,22 +144,55 @@ export default class extends Page {
     const { headers, className, classNames = {} } = this.props;
     // const { sections, param, header, section, hide } = this.props;
     // const { index, prev, next } = SECTIONS[section || param.section] || SECTIONS.home;
-    const { animating, contact, solution, isPortrait } = this.state;
+    const { animating, contact, solution, isMobile } = this.state;
     const { message } = this.state.form;
     const { prepareSolutionList } = this;
     const single = headers.length === 1;
-    const factor = offset => isPortrait ? offset * (5 - (global.innerHeight * .0025)) - offset - 1 : offset;
 
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            <Parallax className="parallax" pages={isPortrait ? factor(5) : 6} style={{ left: 0 }}>
-              {/* {!isPortrait && <section className="solutions">
+            {isMobile ? <>
+              {headers.length ? (
+                <section className={`${single ? 'single' : ''} header container`}>
+                  {single ? headers : (headers[0])}
+                </section>
+              ) : <span/>}
+              <section className="section">
+                <h3 data-dek="Aim for the Best™ Services">Services</h3>
+                <div className="container">
+                  <div className="row">
+                    <div className="col-md-4 card">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
+                    </div>
+                    <div className="col-md-4 card">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
+                    </div>
+                    <div className="col-md-4 card">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section className="solutions">
+                <h3>Find a Solution</h3>
                 <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
                 <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-              </section>} */}
+              </section>
+              <section className="quote">
+                <div>
+                  <h3>Get a Free Consultation</h3>
+                  <p>Say hello to our guaranteed services and fair prices!</p>
+                  {contact ?
+                    <div className="success"><strong>Thank you, {contact.firstname.value}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
+                    <forms.Contact quote newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
+                  {message && <div className="error">{message}</div>}
+                </div>
+              </section>
+              <Footer/>
+            </> : <Parallax className="parallax" pages={6} style={{ left: 0 }}>
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
               <ParallaxLayer offset={0} speed={0} factor={5} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -194,18 +229,14 @@ export default class extends Page {
                 style={{ height: '96vh' }}>
                 {headers.length ? (
                   <section className={`${single ? 'single' : ''} header container`}>
-                    {single ? headers : (
-                      // <NukaCarousel initialSlideWidth={2000} afterSlide={this.afterSlide} slideIndex={header}>
-                      //   {headers}
-                      // </NukaCarousel>
-                      headers[0]
-                    )}
+                    {single ? headers : (headers[0])}
                   </section>
                 ) : <span/>}
               </ParallaxLayer>
-              {!isPortrait && <ParallaxLayer
+              {<ParallaxLayer
                 offset={0}
-                speed={.75}>
+                speed={.75}
+                style={{ pointerEvents: 'none' }}>
                 <section className="solutions">
                   <h3>Find a Solution</h3>
                   <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
@@ -213,19 +244,19 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>}
               <ParallaxLayer
-                offset={factor(1)}
+                offset={1}
                 speed={0.25}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">Services</h3>
                   <div className="container">
                     <div className="row">
-                      <div className="col-sm-4 card">
+                      <div className="col-md-4 card">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
                       </div>
-                      <div className="col-sm-4 card">
+                      <div className="col-md-4 card">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
                       </div>
-                      <div className="col-sm-4 card">
+                      <div className="col-md-4 card">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
                       </div>
                     </div>
@@ -233,19 +264,19 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={factor(2)}
+                offset={2}
                 speed={0.3}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">Services</h3>
                   <div className="container">
                     <div className="row">
-                      <div className="col-sm-4 card">
+                      <div className="col-md-4 card">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
                       </div>
-                      <div className="col-sm-4 card">
+                      <div className="col-md-4 card">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
                       </div>
-                      <div className="col-sm-4 card">
+                      <div className="col-md-4 card">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
                       </div>
                     </div>
@@ -253,36 +284,27 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={factor(3)}
+                offset={3}
                 speed={0.4}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">Services</h3>
                   <div className="container">
                     <div className="row">
-                      <div className="col-sm-4 card">
+                      <div className="col-md-4 card">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
                       </div>
-                      <div className="col-sm-4 card">
+                      <div className="col-md-4 card">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
                       </div>
-                      <div className="col-sm-4 card">
+                      <div className="col-md-4 card">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
                       </div>
                     </div>
                   </div>
                 </section>
               </ParallaxLayer>
-              {isPortrait && <ParallaxLayer
-                offset={factor(3.875)}
-                speed={0.5}>
-                <section className="solutions">
-                  <h3>Find a Solution</h3>
-                  <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-                  <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-                </section>
-              </ParallaxLayer>}
               <ParallaxLayer
-                offset={factor(isPortrait ? 4.1275 : 4)}
+                offset={4}
                 speed={0.5}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <section className="quote">
@@ -297,7 +319,7 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <Footer/>
-            </Parallax>
+            </Parallax>}
           </section>
           <modals.Solution show={!!solution} solution={solution || {}} onHide={() => this.setState({ solution: null })}/>
         </Page>

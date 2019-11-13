@@ -127,17 +127,15 @@ nav > ul {
   line-height: 1.25em;
   color: #efefef;
   margin-right: 2vw;
-  box-shadow: 0 1px 2vw $black-color;
   background: $background-color url('/@fox-zero/web/images/nav.png') no-repeat;
   background-color: rgba(153,202,62, .25);
   background-position: 20%;
   background-size: cover;
-  // padding-top: .75em;
   border-top: solid 1px $black-color;
 
-  // @media only screen and (min-width: 769px) {
-  //   width: 25%;
-  // }
+  @media only screen and (min-width: 992px) {
+    box-shadow: 0 1px 2vw $black-color;
+  }
 
   &:before {
     content: '';
@@ -177,6 +175,7 @@ nav > ul {
 }
 
 #app.nav-open nav > ul {
+  box-shadow: 0 1px 2vw $black-color;
   transform: translate3d(0, 0, 0);
   margin-right: 0;
 }
@@ -322,232 +321,12 @@ nav > a.toggle {
 
 #app.nav-open nav > a.toggle {
   background-image: url(/@fox-zero/web/images/nav-close.svg);
-  // left: 100%;
-  // margin-left: -40px;
 
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 1025px) {
     background-image: url(/@fox-zero/web/images/nav-open.svg);
     opacity: 0;
   }
 }
-
-// @media only screen and (min-width: 2000px) {
-//   nav {
-//     padding: 0;
-//     max-height: 40px;
-//     white-space: nowrap;
-//   }
-
-//   // #app.nav-open nav {
-//   //   background-color: $background-color;
-//   // }
-
-//   nav > a.toggle,
-//   nav .fa {
-//     display: none;
-//   }
-
-//   nav > a.logo {
-//     opacity: .85;
-//     transition: opacity .35s;
-//   }
-
-//   nav > a.logo:hover {
-//     opacity: 1;
-//   }
-
-//   nav > ul {
-//     font-size: 1em;
-//     display: inline-block;
-//     position: static;
-//     background: transparent;
-//     height: auto;
-//     width: auto;
-//     color: #efefef;
-//     line-height: 40px;
-//     overflow: visible;
-//     -webkit-transform: translate(0, 0);
-//     transform: translate(0, 0);
-//     transition: none;
-//     margin-top: 0;
-//     margin-right: 0;
-//     box-shadow: none;
-//     padding-top: 0;
-//     border-top: none;
-//   }
-
-//   nav > ul:after,
-//   nav > ul:before {
-//     content: none;
-//   }
-
-//   nav li {
-//     cursor: pointer;
-//     padding: 0;
-//     font-size: 1em;
-//   }
-
-//   nav li a {
-//     padding: 0 12px;
-//     color: $black-color;
-//   }
-
-//   nav li:hover,
-//   nav li.active {
-//     color: $background-color;
-//   }
-
-//   nav li.subnav:before {
-//     right: -2px;
-//     width: 6px;
-//     height: 6px;
-//     top: 15px;
-//     border-right: 1px solid #efefef;
-//     border-bottom: 1px solid #efefef;
-//     opacity: 1;
-//   }
-
-//   nav li.active.subnav:before {
-//     opacity: 0;
-//   }
-
-//   nav > ul > li {
-//     display: block;
-//     position: relative;
-//     float: left;
-//     line-height: inherit;
-//     margin: 0 .35em;
-//     background: transparent;
-//     letter-spacing: 0;
-//     text-shadow: none;
-//   }
-
-//   nav > ul > li:first-child,
-//   nav > ul > li:last-child {
-//     margin-top: 0;
-//     margin-bottom: 0;
-//   }
-
-//   nav > ul > li > a:focus {
-//     color: inherit;
-//   }
-
-//   nav > ul > li.active {
-//     background: #efefef;
-//     color: $black-color;
-//   }
-
-//   nav > ul > li.active > ul {
-//     visibility: visible;
-//     opacity: 1;
-//   }
-
-//   nav > ul > li > ul {
-//     visibility: hidden;
-//     position: absolute;
-//     opacity: 0;
-//     transition: opacity .35s;
-//     top: 100%;
-//     left: 0;
-//     white-space: nowrap;
-//     margin: 0;
-//     display: block;
-//     border-bottom: none;
-//     border-top: none;
-//     background: #efefef;
-//     color: $black-color;
-//     //min-width: 100%;
-//     min-width: 14em;
-//   }
-
-//   nav > ul > li.active > ul {
-//     border-bottom: none;
-//     border-top: none;
-//   }
-
-//   nav > ul > li > ul li {
-//     line-height: 48px;
-//     display: block;
-//     border-bottom: solid 1px $humility;
-//     font-size: 1em;
-//   }
-
-//   nav > ul > li > ul > li,
-//   nav > ul > li > ul > li a {
-//     color: $black-color;
-//   }
-
-//   nav li:hover,
-//   nav li:hover a {
-//     background: inherit;
-//     color: inherit;
-//   }
-
-//   nav > ul > li,
-//   nav > ul > li > ul > li a{
-//     opacity: .85;
-//     transition: opacity .35s;
-//   }
-
-//   nav > ul > li:hover {
-//     opacity: 1;
-//   }
-
-//   nav > ul > li:after,
-//   nav li li:after {
-//     content: '';
-//     position: absolute;
-//     bottom: 0;
-//     width: 0;
-//     height: 2px;
-//     background: $secondary-green-color;
-//     transition: width .35s;
-//   }
-
-//   nav > ul > li:hover:after,
-//   nav li li:hover:after {
-//     width: 100%;
-//   }
-
-//   nav > ul > li:active,
-//   nav > ul > li.active,
-//   nav > ul > li:focus {
-//     opacity: 1;
-
-//     &:after {
-//       width: 0;
-//     }
-//   }
-
-//   nav > ul > li.active {
-//     box-shadow: 2px 0 8px #000;
-//   }
-
-//   nav li li:after {
-//     background: $secondary-green-color;
-//   }
-
-//   nav li li:active,
-//   nav li li.active,
-//   nav li li:focus {
-//     &:after {
-//       width: 0;
-//     }
-//   }
-
-//   nav li li:hover,
-//   nav li li:active,
-//   nav li li.active,
-//   nav li li:focus,
-//   nav li li:hover > a,
-//   nav li li:active > a,
-//   nav li li:focus > a,
-//   nav li li.active > a {
-//     color: $black-color;
-//     background: #fff;
-//     opacity: 1;
-//   }
-// }
 
 body.nav-open {
   background: $background-color;
@@ -562,8 +341,6 @@ body.nav-open,
   position: relative;
   z-index: 1;
   transition: transform .35s;
-  //margin: 64px auto 0;
-  //min-height: 92vh;
 }
 
 #app .nav + .page:before {
@@ -588,33 +365,12 @@ body.nav-open,
 #app.nav-open .nav + .page {
   -webkit-transform: translate3d(20em, 0, 0);
   transform: translate3d(20em 0, 0);
-
-  // @media only screen and (min-width: 769px) {
-  //   -webkit-transform: translate3d(25%, 0, 0);
-  //   transform: translate3d(25%, 0, 0);
-  // }
 }
 
 #app.nav-open .nav + .page:before {
   background-color: rgba(32,173,228, .65);
   pointer-events: auto;
 }
-
-// @media only screen and (min-width: 2000px) {
-//   body.nav-open {
-//     background: $black-color;
-//   }
-
-//   #app.nav-open .nav + .page {
-//     -webkit-transform: none;
-//     transform: none;
-//   }
-
-//   #app .nav + .page:before {
-//     transition: opacity .35s;
-//     background: $black-color;
-//   }
-// }
 
 .nav .progress-loader {
   position: absolute;

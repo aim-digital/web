@@ -9,6 +9,7 @@
   z-index: 1;
   box-shadow: 0 0 20px $black-color;
   min-height: $page-height!important;
+  padding: 0;
 
   @media (min-height: 900px) {
     min-height: $page-height-xl!important;
@@ -43,7 +44,11 @@
   .home.page & {
     .section {
       background: transparent;
-      max-width: 1280px;
+      max-width: 640px;
+
+      @media (min-width: 992px) {
+        max-width: 1280px;
+      }
 
       // > div > div {
       //   position: relative;
