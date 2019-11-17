@@ -317,6 +317,10 @@ nav > a.toggle {
   left: 0;
   transition: opacity .35s;
   transform: scale3d(1.25, 1.25, 1);
+
+  @media (max-width: 991px) and (orientation: landscape) {
+    display: none;
+  }
 }
 
 #app.nav-open nav > a.toggle {

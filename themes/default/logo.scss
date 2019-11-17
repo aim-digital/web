@@ -1,3 +1,13 @@
+.home.page .logo  {
+  @media (max-width: 991px) and (orientation: landscape) {
+    display: none;
+  }
+}
+
+.home.page .footer .logo {
+  display: block;
+}
+
 .modal .logo, .page .logo {
   text-align: center;
   padding: 2em;
