@@ -150,7 +150,7 @@ export default class extends Page {
     const { prepareSolutionList } = this;
     const single = headers.length === 1;
     const scale = global.innerHeight ? 650 / global.innerHeight : 1;
-    const factor = offset => 1.05 + (scale * offset) + (offset * 0.1) + ((offset + 1) % 2 ? 0 : 0.025);
+    const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const speed = offset => 0.2;
 
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
@@ -158,7 +158,7 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(10)} style={{ left: 0 }}>
+            <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(9.5)} style={{ left: 0 }}>
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -225,6 +225,7 @@ export default class extends Page {
               </ParallaxLayer>}
               <ParallaxLayer
                 offset={factor(0)}
+                factor={scale}
                 speed={speed(0)}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">1</h3>
@@ -239,6 +240,7 @@ export default class extends Page {
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(1)}
+                factor={scale}
                 speed={speed(1)}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">2</h3>
@@ -253,6 +255,7 @@ export default class extends Page {
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(2)}
+                factor={scale}
                 speed={speed(2)}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">3</h3>
@@ -267,6 +270,7 @@ export default class extends Page {
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(3)}
+                factor={scale}
                 speed={speed(3)}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">4</h3>
@@ -281,6 +285,7 @@ export default class extends Page {
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(4)}
+                factor={scale}
                 speed={speed(4)}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">5</h3>
@@ -295,6 +300,7 @@ export default class extends Page {
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(5)}
+                factor={scale}
                 speed={speed(5)}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">6</h3>
@@ -309,6 +315,7 @@ export default class extends Page {
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(6)}
+                factor={scale}
                 speed={speed(6)}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">7</h3>
@@ -323,6 +330,7 @@ export default class extends Page {
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(7)}
+                factor={scale}
                 speed={speed(7)}>
                 <section className="section">
                   <h3 data-dek="Aim for the Best™ Services">8</h3>
