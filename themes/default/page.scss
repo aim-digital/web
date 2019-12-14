@@ -173,12 +173,11 @@ section.solutions {
   .section.container .section {
     height: auto;
 
-    h3 {
-      text-align: left;
-      font-size: 2em!important;
-      min-width: 320px;
-      max-width: 970px;
+    h3, h4 {
+      font-size: 2em !important;
       margin: 0 auto !important;
+      min-width: 320px;
+      max-width: 992px;
       text-shadow: 1px 1px 3px #151515;
       color: #f8f8f8;
       padding: 1em;
@@ -196,10 +195,60 @@ section.solutions {
     .card {
       margin-top: 15px;
 
+      img {
+        display: block;
+        width: 80%;
+        padding: 15px;
+      }
+
+      > div, p {
+        padding: 15px;
+      }
+
+      p, img {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       p {
         background: #f8f8f8;
-        padding: 15px;
         box-shadow: 0 0 10px $black-color;
+        text-shadow: 1px 1px 3px #e0e0e0;
+        border-radius: 2px;
+        // text-shadow: 1px 1px 3px #151515;
+        // color: #f8f8f8;
+        font-size: 1.25em;
+        font-family: $font-family-sans-serif;
+      }
+
+      img + p,
+      p + h4 {
+        margin-top: 1.25em !important;
+      }
+
+      h4 {
+        color: #F7DE47;
+        text-align: center;
+        font-size: 3.5em !important;
+        color: #efefef;
+        font-family: $font-family-oswald;
+        text-transform: uppercase;
+        margin: 0 -15px !important;
+        padding: .5em;
+      }
+
+      > div {
+        margin-top: 30px;
+      }
+
+      .solution {
+        margin: 0 auto;
+        font-size: 1.1em;
+
+        @media (min-width: 992px) {
+          max-width: 360px;
+        }
       }
     }
   }

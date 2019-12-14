@@ -12,7 +12,6 @@ import * as forms from '@boilerplatejs/core/components/forms';
 import ReactGA from 'react-ga';
 import {solutions} from '@fox-zero/web/data';
 import _ from 'lodash';
-import 'react-spring';
 import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
 const SOLUTION_DELAY = 100;
@@ -149,7 +148,7 @@ export default class extends Page {
     const { message } = this.state.form;
     const { prepareSolutionList } = this;
     const single = headers.length === 1;
-    const scale = global.innerHeight ? 650 / global.innerHeight : 1;
+    const scale = global.innerHeight ? 1280 / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const speed = offset => 0.2;
 
@@ -158,7 +157,7 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(9.5)} style={{ left: 0 }}>
+            <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(9)} style={{ left: 0 }}>
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -215,7 +214,7 @@ export default class extends Page {
               </ParallaxLayer>
               {!isMobile && <ParallaxLayer
                 offset={0}
-                speed={4}
+                speed={10}
                 style={{ pointerEvents: 'none' }}>
                 <section className="solutions">
                   <h3>Find a Solution</h3>
@@ -228,11 +227,24 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(0)}>
                 <section className="section">
-                  <h3 data-dek="Aim for the Best™ Services">1</h3>
+                  <h3 data-dek="100% Power Every Hour">Services</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
+                        <p className="text-center"><strong>The high-performance/zero-latency trusted digital media agency.™</strong></p>
+                        <p>Optimized for smart and efficient innovation, design, development, testing, hosting, and marketing services, we conceive, build, and maintain digital products and web-based apps for Fortune 500 and well-funded start-up corporations.</p>
+                        <p>Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.</p>
+                        <h4>Full-Service,<br />Zero BS</h4>
+                        <img src="/@fox-zero/web/images/logo.png" />
+                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                        <p>Our FAST™ process is designed for high-quality yet cost-efficient end-to-end product management and rapid time to market.</p>
+                        <div>
+                          <Solution
+                            onClick={() => this.openSolutionModal(solutions[0])}
+                            icon={solutions[0].icon}>
+                            {solutions[0].summary}
+                          </Solution>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -243,11 +255,13 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(1)}>
                 <section className="section">
-                  <h3 data-dek="Aim for the Best™ Services">2</h3>
+                  <h3 data-dek="Introducing FAST™ PLM" className="text-right">Strategy</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
+                        <img src="/@fox-zero/web/images/logo.png" />
+                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                        <p>Our FAST™ process is designed for high-quality yet cost-efficient end-to-end product management and rapid time to market.</p>
                       </div>
                     </div>
                   </div>

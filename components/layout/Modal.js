@@ -50,7 +50,7 @@ export default class extends Component {
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>
-          <span>© FoxZero Media (a VitruvianTech® company)</span>
+          <span>© FoxZero Media (a VitruvianTech® brand)</span>
         </Modal.Footer>
       </Modal>
     );

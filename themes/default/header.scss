@@ -6,7 +6,7 @@
 
 @-webkit-keyframes caret {
   from { top: 0; opacity: .25; }
-  50% { top: 10px; opacity: 1; }
+  50% { top: 10px; opacity: .85; }
   to { top: 90%; opacity: .25; }
 }
 
@@ -88,7 +88,7 @@
     // vertical-align: middle;
     position: absolute;
     width: 100%;
-    bottom: 35%;
+    bottom: 40%;
     transform: translate(0, 50%);
 
     @media only screen and (min-width: 769px) {
@@ -167,7 +167,7 @@
     width: 90%;
     max-width: 610px;
     text-align: center;
-    padding: .5em 15px;
+    padding: 1.5em;
     position: relative;
 
     &:before {
@@ -175,7 +175,7 @@
       position: absolute;
       width: 100%;
       height: 120%;
-      background: linear-gradient(rgba(89, 159, 198, 1), rgba(21, 21, 21, 0));
+      background: linear-gradient(rgba(89, 159, 198, 0.35), rgba(21, 21, 21, 0));
       top: 0;
       left: 0;
       margin: 0;
@@ -300,29 +300,31 @@
     button {
       border-radius: 50%;
       border: none;
-      width: 50px;
-      height: 50px;
+      width: 42px;
+      height: 40px;
       background: transparent;
       position: relative;
       outline: none;
       cursor: pointer;
       overflow: hidden;
-      margin-top: 1em;
+      margin-top: 2em;
       opacity: .5;
+      background: #f8f8f8;
+      box-shadow: 0 0 4px #151515;
     }
 
     button span {
-      border-left: solid 2px #f8f8f8;
-      border-bottom: solid 2px #f8f8f8;
+      border-left: solid 2px #292929;
+      border-bottom: solid 2px #292929;
       transform: rotate(-45deg);
       display: block;
-      width: 1.25em;
-      height: 1.25em;
+      width: 1em;
+      height: 1em;
       position: absolute;
       top: 0;
-      left: 1.5em;
+      left: 15px;
       -webkit-animation-name: caret;
-      -webkit-animation-duration: 2s;
+      -webkit-animation-duration: 1.5s;
       -webkit-animation-iteration-count: infinite;
     }
   }
