@@ -90,6 +90,27 @@ export default class extends Page {
     }
   };
 
+  get solutions() {
+    const { prepareSolutionList } = this;
+
+    return <section className="solutions">
+      <h3>Find a Solution</h3>
+      <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+      <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+    </section>;
+  }
+
+  get header() {
+    const { headers } = this.props;
+    const single = headers.length === 1;
+
+    return headers.length ? (
+      <section className={`${single ? 'single' : ''} header container`}>
+        {single ? headers : (headers[0])}
+      </section>
+    ) : <span/>;
+  }
+
   updateOrientation = () => this.setState({ isMobile: global.innerWidth < 992, isLandscape: global.innerWidth > global.innerHeight });
 
   openSolutionModal = solution => {
@@ -141,13 +162,11 @@ export default class extends Page {
   wrap = sections => sections.map((section, i) => <div key={String(i)}>{section}</div>);
 
   render() {
-    const { headers, className, classNames = {} } = this.props;
+    const { className, classNames = {} } = this.props;
     // const { sections, param, header, section, hide } = this.props;
     // const { index, prev, next } = SECTIONS[section || param.section] || SECTIONS.home;
     const { animating, contact, solution, isMobile, isLandscape } = this.state;
     const { message } = this.state.form;
-    const { prepareSolutionList } = this;
-    const single = headers.length === 1;
     const scale = global.innerHeight ? 1280 / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const speed = offset => 0.2;
@@ -157,7 +176,7 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(9)} style={{ left: 0 }}>
+            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(9)} style={{ left: 0 }}>
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -206,21 +225,13 @@ export default class extends Page {
                 offset={0}
                 speed={0}
                 style={{ height: '96vh' }}>
-                {headers.length ? (
-                  <section className={`${single ? 'single' : ''} header container`}>
-                    {single ? headers : (headers[0])}
-                  </section>
-                ) : <span/>}
+                {this.header}
               </ParallaxLayer>
               {!isMobile && <ParallaxLayer
                 offset={0}
                 speed={10}
                 style={{ pointerEvents: 'none' }}>
-                <section className="solutions">
-                  <h3>Find a Solution</h3>
-                  <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-                  <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-                </section>
+                {this.solutions}
               </ParallaxLayer>}
               <ParallaxLayer
                 offset={factor(0)}
@@ -372,7 +383,10 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <Footer/>
-            </Parallax>
+            </Parallax> : <>
+              {this.header}
+              {this.solutions}
+            </>}
           </section>
           <modals.Solution show={!!solution} solution={solution || {}} onHide={() => this.setState({ solution: null })}/>
         </Page>
