@@ -10,7 +10,7 @@
     width: 20px;
     height: 96vh;
     margin-top: 40px;
-    display: none;
+    display: block;
 
     @media only screen and (min-width: 769px) {
       display: block;
@@ -128,14 +128,11 @@ nav > ul {
   color: #efefef;
   margin-right: 2vw;
   background: $background-color url('/@fox-zero/web/images/nav.png') no-repeat;
-  background-color: rgba(153,202,62, .25);
+  background-color: rgba(153,202,62, .65);
   background-position: 20%;
   background-size: cover;
   border-top: solid 1px $black-color;
-
-  @media only screen and (min-width: 992px) {
-    box-shadow: 0 1px 2vw $black-color;
-  }
+  box-shadow: 0 1px 2vw $black-color;
 
   &:before {
     content: '';
@@ -163,6 +160,7 @@ nav > ul {
     z-index: 1;
     width: 100%;
     text-align: center;
+    text-shadow: 1px 1px 3px #151515;
   }
 }
 
@@ -209,6 +207,7 @@ nav li.subnav:before {
   border-bottom: 2px solid #efefef;
   transform: rotate(45deg);
   transition: all .35s;
+  z-index: 2;
 }
 
 nav li.subnav.active:before {
@@ -218,18 +217,57 @@ nav li.subnav.active:before {
   border-bottom: 2px solid #fff;
 }
 
+nav > ul > li:after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 2.7em;
+  background: rgba(153, 202, 62, .9);
+  transition: width .3s;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom: solid 1px #292929;
+}
+
+nav > ul > li {
+  a, ul {
+    position: relative;
+    z-index: 2;
+  }
+
+  li {
+    transition: background-color .2s;
+    opacity: .9;
+
+    &:hover {
+      opacity: 1;
+      background-color: rgba(153, 202, 62, .75);
+    }
+  }
+}
+
 nav li:hover,
 nav li:active,
 nav li:focus,
 nav li.active {
-  background: rgba(32,173,228, .65);
+  // background: rgba(32,173,228, .65);
   color: #fff;
+
+  &:after {
+    width: 100%;
+  }
 }
 
 nav li.home {
   transition: all .15s ease-in;
   transform: scale3d(.7, .7, 1);
   margin: .5em auto 1em;
+
+  &:after {
+    content: none;
+  }
 
   a {
     box-shadow: 0 0 20px $black-color;
@@ -267,19 +305,21 @@ nav > ul > li > ul {
   background: $black-color;
   margin: 0 -30px;
   height: 0;
-  pointer-events: none
+  pointer-events: none;
+  transition: opacity .3s;
+  opacity: 0;
+  margin-top: -2px;
+
+  @media only screen and (min-width: 992px) {
+    margin-top: 0;
+  }
 }
 
 nav > ul > li.active > ul {
   height: auto;
   border-bottom: solid 1px #000;
-  border-top: solid 1px #000;
   pointer-events: auto;
-}
-
-nav > ul > li.active > ul > li {
   opacity: 1;
-  transition: opacity .35s;
 }
 
 nav > ul > li > ul > li,
@@ -288,7 +328,6 @@ nav > ul > li > ul > li a {
 }
 
 nav > ul > li > ul > li {
-  opacity: 0;
   font-size: .9em;
   line-height: 3em;
   border-bottom: solid 1px #292929;
@@ -317,6 +356,7 @@ nav > a.toggle {
   left: 0;
   transition: opacity .35s;
   transform: scale3d(1.25, 1.25, 1);
+  opacity: .65;
 
   @media (max-width: 991px) and (orientation: landscape) {
     display: none;
@@ -325,6 +365,7 @@ nav > a.toggle {
 
 #app.nav-open nav > a.toggle {
   background-image: url(/@fox-zero/web/images/nav-close.svg);
+  opacity: 1;
 
   @media only screen and (min-width: 1025px) {
     background-image: url(/@fox-zero/web/images/nav-open.svg);
@@ -344,7 +385,11 @@ body.nav-open,
 #app .nav + .page {
   position: relative;
   z-index: 1;
-  transition: transform .35s;
+  left: 0;
+}
+
+#app.nav-loaded .nav + .page {
+  transition: left .3s;
 }
 
 #app .nav + .page:before {
@@ -367,8 +412,9 @@ body.nav-open,
 }
 
 #app.nav-open .nav + .page {
-  -webkit-transform: translate3d(20em, 0, 0);
-  transform: translate3d(20em 0, 0);
+  // -webkit-transform: translate3d(20em, 0, 0);
+  // transform: translate3d(20em 0, 0);
+  left: 20em;
 }
 
 #app.nav-open .nav + .page:before {

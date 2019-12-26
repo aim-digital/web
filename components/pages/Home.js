@@ -66,13 +66,13 @@ export default class extends Page {
     document.getElementById('app').classList.add('home');
     global.addEventListener('orientationchange', this.updateOrientation);
     global.addEventListener('resize', this.updateOrientation);
+    this.updateOrientation();
   }
 
   componentWillMount = () => {
     const { solution } = this.props.query;
 
     this.updateHeader();
-    this.updateOrientation();
     this.setState({ solution: _.find(solutions, ['id', 1 * solution]) || null });
   };
 
@@ -167,7 +167,7 @@ export default class extends Page {
     // const { index, prev, next } = SECTIONS[section || param.section] || SECTIONS.home;
     const { animating, contact, solution, isMobile, isLandscape } = this.state;
     const { message } = this.state.form;
-    const scale = global.innerHeight ? 1280 / global.innerHeight : 1;
+    const scale = global.innerHeight ? 1400 / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const speed = offset => 0.2;
 
@@ -242,10 +242,17 @@ export default class extends Page {
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
-                        <p className="text-center"><strong>The high-performance/zero-latency trusted digital media agency.™</strong></p>
-                        <p>Optimized for smart and efficient innovation, design, development, testing, hosting, and marketing services, we conceive, build, and maintain digital products and web-based apps for Fortune 500 and well-funded start-up corporations.</p>
+                        <p className="text-center"><strong>The High-Performance/Zero-Latency Agency™</strong></p>
+                        <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
                         <p>Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.</p>
-                        <h4>Full-Service,<br />Zero BS</h4>
+                        <div>
+                          <Solution
+                            onClick={() => this.openSolutionModal(solutions[0])}
+                            icon={solutions[0].icon}>
+                            {solutions[0].summary}
+                          </Solution>
+                        </div>
+                        <h4>Full-Service,<br />Zero "BS"</h4>
                         <img src="/@fox-zero/web/images/logo.png" />
                         <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
                         <p>Our FAST™ process is designed for high-quality yet cost-efficient end-to-end product management and rapid time to market.</p>
@@ -371,7 +378,7 @@ export default class extends Page {
               <ParallaxLayer
                 offset={factor(8)}
                 speed={speed(8)}>
-                <section className="quote">
+                <section className="quote"> 
                   <div>
                     <h3>Get a Free Consultation</h3>
                     <p>Say hello to our guaranteed services and fair prices!</p>

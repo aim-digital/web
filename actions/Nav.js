@@ -71,6 +71,14 @@ export function load(breakpoint) {
         }
       });
 
+      document.querySelector('.nav .nav').addEventListener('click', e => {
+        if (isPortrait()) {
+          e.preventDefault();
+          body.classList.add(TOGGLE_CLASS);
+          app.classList.add(TOGGLE_CLASS);
+        }
+      });
+
       document.querySelector('.nav').addEventListener('mouseleave', e => {
         if (!isPortrait()) {
           e.preventDefault();

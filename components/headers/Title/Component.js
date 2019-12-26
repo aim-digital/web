@@ -40,8 +40,8 @@ export default class extends Header {
             <div className={[styles.content, 'content', styles.services].join(' ')} key="0">
               <section className={['preview'].join(' ')}>
                 <h3>100% Power<br />Every Hour</h3>
-                <p><strong>The high-performance/zero-latency<br />trusted digital media agency.™</strong></p>
-                <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.shrinkIn', duration: 750 }}>
+                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                {/* <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.shrinkIn', duration: 750 }}>
                   {this.state.loaded && (
                     <div className={`${styles.logo}`} style={{ position: 'static !important' }}>
                       <div className={`${styles.corporate} corporate`}>
@@ -57,20 +57,20 @@ export default class extends Header {
                       </div>
                     </div>
                   )}
-                </VelocityTransitionGroup>
+                </VelocityTransitionGroup> */}
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.services].join(' ')} key="1">
               <section className={['preview'].join(' ')}>
-                <h3>Introducing<br />FAST™ PLM</h3>
+                <h3>Full-Service<br />Zero "BS"</h3>
                 <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="2">
               <section className={['preview'].join(' ')}>
-                <h3>Plans</h3>
+                <h3>Introducing<br />FAST™ PLM</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id est vel orci vestibulum dictum. Morbi eu vulputate velit, eu eleifend mauris. Sed luctus, lectus sit amet dapibus porttitor, ipsum purus auctor leo, eget viverra lectus nulla nec eros. Nam sed justo sagittis, tincidunt dui a, lacinia sapien.</p>
               </section>
             </div>,

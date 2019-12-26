@@ -92,7 +92,7 @@
     transform: translate(0, 50%);
 
     @media only screen and (min-width: 769px) {
-      bottom: 50%;
+      bottom: 40%;
     }
   }
 
@@ -175,12 +175,20 @@
       position: absolute;
       width: 100%;
       height: 120%;
-      background: linear-gradient(rgba(89, 159, 198, 0.35), rgba(21, 21, 21, 0));
+      background: linear-gradient(rgba(89, 159, 198, 0.5), rgba(21, 21, 21, 0));
       top: 0;
       left: 0;
       margin: 0;
       border-top: rgba(89, 159, 198, .6);
       box-shadow: 0 -5px 10px rgba(41, 41, 41, 0.25);
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #fff;
+      line-height: 1.5;
+      margin-top: 30px;
+      text-align: justify;
     }
 
     p, h3 {
@@ -195,6 +203,7 @@
       color: #F7DE47;
       font-size: 3em;
       margin-top: 10px;
+      line-height: 1;
       // margin: 0 0 .5em;
       // display: inline-block;
       // position: relative;

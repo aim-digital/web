@@ -10,14 +10,27 @@
   box-shadow: 0 0 20px $black-color;
   min-height: $page-height!important;
   padding: 0;
+  background: $background-color linear-gradient(rgba(89, 159, 198, .45), $background-color);
 
-  @media (min-height: 900px) {
+  @media (min-height: 768px) {
     min-height: $page-height-xl!important;
   }
 
-  .post.page &,
-  .home.page & {
-    background: $background-color linear-gradient(rgba(89, 159, 198, .45), $background-color);
+  #app.no-js & {
+    overflow: hidden;
+  }
+
+  #app.no-js &:before {
+    display: table;
+    content: ' ';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #f8f8f8 url(/@fox-zero/web/images/loading.gif) center no-repeat;
   }
 
   .post.page & {

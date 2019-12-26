@@ -4,9 +4,7 @@ export default class extends Component {
   render() {
     return (
       <div className="logo">
-        <img className="text" src="/@fox-zero/web/images/Logo-05.png" />
         <img className="graphic" src="/@fox-zero/web/images/logo.png" />
-        <img className="text" src="/@fox-zero/web/images/Logo-06.png" />
         {/*<div>
           <img src="/@fox-zero/web/images/logo.png" />
           <div className="corporate">
