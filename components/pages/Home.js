@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
@@ -7,11 +8,11 @@ import {dismiss} from '@fox-zero/web/actions/Nav';
 import {Footer} from '@fox-zero/web/components/layout';
 import {Solution} from '@fox-zero/web/components/buttons';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
+import {load} from '@boilerplatejs/strapi/actions/Entry';
 import * as modals from '@fox-zero/web/components/modals';
 import * as forms from '@boilerplatejs/core/components/forms';
 import ReactGA from 'react-ga';
 import {solutions} from '@fox-zero/web/data';
-import _ from 'lodash';
 import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
 const SOLUTION_DELAY = 100;
@@ -30,12 +31,14 @@ const SECTIONS = {
 @connect(state => {
   const { header = 0, slide = 0 } = state['@boilerplatejs/core'].Transition;
   return ({ param: state.router.params, header, slide, query: state.router.location.query });
-}, {transition, dismiss, update})
+}, {transition, dismiss, update, load})
 
 export default class extends Page {
   static propTypes = {
     transition: PropTypes.func.isRequired,
     dismiss: PropTypes.func.isRequired,
+    update: PropTypes.func.isRequired,
+    load: PropTypes.func.isRequired,
     classNames: PropTypes.object,
     param: PropTypes.object,
     query: PropTypes.object,
@@ -66,14 +69,21 @@ export default class extends Page {
     document.getElementById('app').classList.add('home');
     global.addEventListener('orientationchange', this.updateOrientation);
     global.addEventListener('resize', this.updateOrientation);
-    this.updateOrientation();
+
+    if (__CLIENT__) {
+      this.updateOrientation();
+    }
   }
 
   componentWillMount = () => {
-    const { solution } = this.props.query;
+    const { detail } = this.props.query;
+    const entry = _.find(solutions, ['slug', detail]);
 
     this.updateHeader();
-    this.setState({ solution: _.find(solutions, ['id', 1 * solution]) || null });
+
+    if (entry) {
+      this.openSolutionModal(entry);
+    }
   };
 
   componentWillUnmount = () => {
@@ -91,12 +101,12 @@ export default class extends Page {
   };
 
   get solutions() {
-    const { prepareSolutionList } = this;
+    const { renderSolution } = this;
 
     return <section className="solutions">
       <h3>Find a Solution</h3>
-      <div className="left">{solutions.slice(0, 3).map(prepareSolutionList(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-      <div className="right">{solutions.slice(3).map(prepareSolutionList(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+      <div className="left">{solutions.slice(0, 4).map(renderSolution(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+      <div className="right">{solutions.slice(4).map(renderSolution(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
     </section>;
   }
 
@@ -113,14 +123,19 @@ export default class extends Page {
 
   updateOrientation = () => this.setState({ isMobile: global.innerWidth < 992, isLandscape: global.innerWidth > global.innerHeight });
 
-  openSolutionModal = solution => {
-    this.setState({ solution });
-    ReactGA.event({ category: `Solution`, action: `Click`, label: solution.summary });
+  openSolutionModal = async (solution, analytics) => {
+    const { load } = this.props;
+    const{ slug } = solution;
+    this.setState({ solution: { ...solution, ...await load('posts', { slug, published: true }) } });
+
+    if (analytics) {
+      ReactGA.event({ category: `Solution`, action: `Click`, label: solution.summary });
+    }
   };
 
-  prepareSolutionList = transition => (solution, i) => <Solution
+  renderSolution = transition => (solution, i) => <Solution
     key={i}
-    onClick={() => this.openSolutionModal(solution)}
+    onClick={() => this.openSolutionModal(solution, true)}
     icon={solution.icon}
     transition={transition(i)}>{solution.summary}</Solution>
 
@@ -249,7 +264,7 @@ export default class extends Page {
                           <Solution
                             onClick={() => this.openSolutionModal(solutions[0])}
                             icon={solutions[0].icon}>
-                            {solutions[0].summary}
+                            Read more about efficiency
                           </Solution>
                         </div>
                         <h4>Full-Service,<br />Zero "BS"</h4>
@@ -258,9 +273,9 @@ export default class extends Page {
                         <p>Our FAST™ process is designed for high-quality yet cost-efficient end-to-end product management and rapid time to market.</p>
                         <div>
                           <Solution
-                            onClick={() => this.openSolutionModal(solutions[0])}
-                            icon={solutions[0].icon}>
-                            {solutions[0].summary}
+                            onClick={() => this.openSolutionModal(solutions[1])}
+                            icon={solutions[1].icon}>
+                            Read more about our services
                           </Solution>
                         </div>
                       </div>
@@ -378,7 +393,7 @@ export default class extends Page {
               <ParallaxLayer
                 offset={factor(8)}
                 speed={speed(8)}>
-                <section className="quote"> 
+                <section className="quote">
                   <div>
                     <h3>Get a Free Consultation</h3>
                     <p>Say hello to our guaranteed services and fair prices!</p>

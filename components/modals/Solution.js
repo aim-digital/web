@@ -9,6 +9,8 @@ import {ShareButtons} from 'react-share';
 
 const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
+const CAPTION = 'The High-Performance/Zero-Latency Agency™';
+
 @connect(() => ({}), {update})
 export default class extends Modal {
   static defaultProps = {
@@ -57,9 +59,9 @@ export default class extends Modal {
     const { solution } = this.props;
     const { contact } = this.state;
     const { message } = this.state.form;
-    const { plans } = solution;
+    const { content } = solution;
     const { location = {} } = global;
-    const share = { url: `${location.protocol}//${location.host}${location.pathname}?solution=${solution.id}`, message: solution.description, caption: solution.cta };
+    const share = { url: `${location.protocol}//${location.host}${location.pathname}?detail=${encodeURIComponent(solution.slug)}`, caption: content ? content[0].copy : CAPTION, subject: solution.summary };
 
     return (
       <Modal {..._.omit(this.props, ['update', 'solution'])}
@@ -68,29 +70,11 @@ export default class extends Modal {
         title={solution.summary}
         icon={solution.icon}
         share={share}>
-        {solution.id && <section>
-          {/*<p className="description">{solution.description}</p>*/}
-          {/*<section className="criteria">
-            <h5>Potential Cases</h5>
-            <ul>
-              {solution.criteria.map((criterion, i) => <li key={i}>{criterion}</li>)}
-            </ul>
-          </section>*/}
-          {plans.length > 0 && <section className="plans">
-            <h3>Recommended Plans</h3>
-            {plans.map((plan, i) => <div key={i}>
-              <strong>{plan.name}</strong> {plan.description}
-              <span className="pricing">
-                {plan.pricing.map((price, i) => <span key={i}>{price.label}<sub>{price.unit ? `/${price.unit}` : ''}{price.note ? ` ${price.note}` : ''}</sub></span>)}
-              </span>
-              <ul>
-                {plan.details.map((detail, i) => <li key={i}>* {detail}</li>)}
-              </ul>
-            </div>)}
-          </section>}
+        {solution.slug && <section>
+          <p>{content[0].copy}</p>
           <section className="quote">
             <div>
-              <h3>{solution.cta}</h3>
+              <h3>{solution.cta || 'Talk to Me'}</h3>
               <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
               {contact ?
                 <div className="success">

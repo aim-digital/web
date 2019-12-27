@@ -24,7 +24,7 @@ export default class extends Component {
   };
 
   render() {
-    const { children, title, icon, className, share: { url, message, caption } } = this.props;
+    const { children, title, icon, className, share: { url, caption, subject } } = this.props;
 
     return (
       <Modal {..._.omit(this.props, ['share'])} className={`${className}`} title="">
@@ -39,7 +39,7 @@ export default class extends Component {
             <TwitterShareButton url={url} title={caption}>
               <i className="fa fa-twitter"/>
             </TwitterShareButton>
-            <EmailShareButton url={url} subject={`Hello! ${caption}`} body={`${message}\n\n${url}\n\n`}>
+            <EmailShareButton url={url} subject={`FoxZero™ - ${subject}`} body={`${caption}\n\nRead More: ${url}\n\n`}>
               <i className="fa fa-envelope"/>
             </EmailShareButton>
           </div>}

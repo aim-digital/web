@@ -1,1 +1,1 @@
-export solutions from './solutions';
+export solutions from './solutions.json';

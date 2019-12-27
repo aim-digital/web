@@ -142,6 +142,7 @@ section.solutions {
       position: absolute;
       pointer-events: auto;
       bottom: 40px;
+      margin: 15px;
 
       &.left {
         left: 0;
@@ -154,7 +155,7 @@ section.solutions {
 
     .solution {
       margin: 1.5em;
-      max-width: 22vw;
+      max-width: 20vw;
       font-size: .9em;
       position: relative;
 
@@ -167,7 +168,7 @@ section.solutions {
       }
 
       @media (min-width: 1600px) {
-        max-width: 18vw;
+        max-width: 15vw;
       }
     }
   }
@@ -250,10 +251,7 @@ section.solutions {
       .solution {
         margin: 0 auto;
         font-size: 1.1em;
-
-        @media (min-width: 992px) {
-          max-width: 320px;
-        }
+        width: 320px;
       }
     }
   }
