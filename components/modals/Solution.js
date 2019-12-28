@@ -71,7 +71,9 @@ export default class extends Modal {
         icon={solution.icon}
         share={share}>
         {solution.slug && <section>
-          <p>{content[0].copy}</p>
+          <section className="content">
+            <p>{content[0].copy}</p>
+          </section>
           <section className="quote">
             <div>
               <h3>{solution.cta || 'Talk to Me'}</h3>
@@ -97,7 +99,7 @@ export default class extends Modal {
                   <br />
                   <button className="btn btn-success" onClick={this.onHide}>Close</button>
                 </div> :
-                <Contact quote cancelText="Cancel" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
+                <Contact quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
               {message && <div className="error">{message}</div>}
             </div>
           </section>

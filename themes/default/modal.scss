@@ -27,7 +27,7 @@
 
   .modal-dialog {
     margin: 0;
-    width: 95%;
+    width: 90%;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -119,11 +119,7 @@
         outline: none;
 
         & + div {
-          margin-left: 5px;
-
-          @media only screen and (min-width: 769px) {
-            margin-left: 10px;
-          }
+          margin-left: .5em;
         }
       }
 
@@ -220,9 +216,7 @@
     text-transform: uppercase;
   }
 
-  .description,
-  .plans,
-  .criteria {
+  .content {
     padding: 0 15px;
   }
 
@@ -245,34 +239,6 @@
         &:hover {
             opacity: 1;
         }
-      }
-    }
-  }
-
-  .plans {
-    > div {
-      margin: 1.5em 0;
-    }
-
-    ul {
-      font-size: .9em;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      list-style-type: none;
-      margin: .5em 0;
-    }
-
-    .pricing {
-      padding: 0 .25em;
-      color: $secondary-green-color;
-      font-size: .9em;
-
-      span {
-        display: inline-block;
-        margin-left: .5em;
       }
     }
   }

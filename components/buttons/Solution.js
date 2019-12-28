@@ -5,12 +5,14 @@ export default class extends Component {
   static propTypes = {
     children: PropTypes.string,
     icon: PropTypes.string,
+    className: PropTypes.string,
     transition: PropTypes.object,
     onClick: PropTypes.func
   };
 
   static defaultProps = {
-    onClick: () => {}
+    onClick: () => {},
+    className: ''
   };
 
   state = {
@@ -28,14 +30,14 @@ export default class extends Component {
   }
 
   render() {
-    const { icon, onClick } = this.props;
+    const { icon, onClick, className } = this.props;
     const { style } = this.state;
 
     return (
-      <div className="solution button" style={style} onClick={onClick}>
+      <div className={`solution button ${className}`} style={style} onClick={onClick}>
         {icon && <i className={`fa fa-${icon}`}></i>}
         <button>
-          {this.props.children}
+          <span>{this.props.children}</span>
         </button>
       </div>
     );

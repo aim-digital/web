@@ -146,10 +146,18 @@ section.solutions {
 
       &.left {
         left: 0;
+
+        .solution.active {
+          margin-left: 2em;
+        }
       }
 
       &.right {
         right: 0;
+
+        .solution.active {
+          margin-left: 1em;
+        }
       }
     }
 
@@ -249,9 +257,7 @@ section.solutions {
       }
 
       .solution {
-        margin: 0 auto;
-        font-size: 1.1em;
-        width: 320px;
+        width: 280px;
       }
     }
   }

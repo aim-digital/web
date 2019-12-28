@@ -13,6 +13,7 @@ export default class extends Header {
     onTransitionComplete: PropTypes.func,
     onTransitionBegin: PropTypes.func,
     runOnMount: PropTypes.bool,
+    cycle: PropTypes.bool,
     timer: PropTypes.number,
     children: PropTypes.any,
     classNames: PropTypes.object,
@@ -25,6 +26,7 @@ export default class extends Header {
     className: '',
     classNames: {},
     runOnMount: false,
+    cycle: false,
     images: []
   };
 
@@ -99,12 +101,12 @@ export default class extends Header {
   };
 
   render() {
-    const { className, classNames, children, runOnMount, slide, images } = this.props;
+    const { className, classNames, children, runOnMount, slide, images, cycle } = this.props;
     const { animating, previous } = this.state;
 
     const getFlipState = (direction = 'next') => {
       return {
-        disabled: (slide === children.length - 1 && direction === 'next') || (!slide && direction === 'previous')
+        disabled: cycle && ((slide === children.length - 1 && direction === 'next') || (!slide && direction === 'previous'))
       };
     };
 

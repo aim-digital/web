@@ -124,8 +124,9 @@ export default class extends Page {
   updateOrientation = () => this.setState({ isMobile: global.innerWidth < 992, isLandscape: global.innerWidth > global.innerHeight });
 
   openSolutionModal = async (solution, analytics) => {
-    const { load } = this.props;
-    const{ slug } = solution;
+    const { load, transition } = this.props;
+    const{ slide, slug } = solution;
+    await transition('slide', slide);
     this.setState({ solution: { ...solution, ...await load('posts', { slug, published: true }) } });
 
     if (analytics) {
@@ -133,11 +134,16 @@ export default class extends Page {
     }
   };
 
-  renderSolution = transition => (solution, i) => <Solution
-    key={i}
-    onClick={() => this.openSolutionModal(solution, true)}
-    icon={solution.icon}
-    transition={transition(i)}>{solution.summary}</Solution>
+  renderSolution = transition => (solution, i) => {
+    const { slide } = this.props;
+
+    return <Solution
+      className={`${slide === solution.slide ? 'active' : ''}`}
+      key={solution.slug}
+      onClick={() => this.openSolutionModal(solution, true)}
+      icon={solution.icon}
+      transition={transition(i)}>{solution.summary}</Solution>;
+  }
 
   submit = values => {
     const { update } = this.props;
@@ -185,7 +191,6 @@ export default class extends Page {
     const scale = global.innerHeight ? 1400 / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const speed = offset => 0.2;
-
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
     return (
@@ -264,7 +269,7 @@ export default class extends Page {
                           <Solution
                             onClick={() => this.openSolutionModal(solutions[0])}
                             icon={solutions[0].icon}>
-                            Read more about efficiency
+                            {solutions[0].detail}
                           </Solution>
                         </div>
                         <h4>Full-Service,<br />Zero "BS"</h4>
@@ -275,7 +280,7 @@ export default class extends Page {
                           <Solution
                             onClick={() => this.openSolutionModal(solutions[1])}
                             icon={solutions[1].icon}>
-                            Read more about our services
+                            {solutions[1].detail}
                           </Solution>
                         </div>
                       </div>
@@ -406,8 +411,6 @@ export default class extends Page {
               </ParallaxLayer>
               <Footer/>
             </Parallax> : <>
-              {this.header}
-              {this.solutions}
             </>}
           </section>
           <modals.Solution show={!!solution} solution={solution || {}} onHide={() => this.setState({ solution: null })}/>

@@ -1,42 +1,58 @@
 [
     {
+        "slide": 0,
         "slug": "100%-power-every-hour",
-        "summary": "100% Power, Every Hour",
+        "summary": "100% Power Every Hour",
+        "detail": "Read more about our core values",
         "icon": "wrench"
     },
     {
+        "slide": 1,
         "slug": "100%-power-every-hour",
         "summary": "Full-Service, Zero \"BS\"",
+        "detail": "Read more about our services",
         "icon": "comment"
     },
     {
+        "slide": 2,
         "slug": "100%-power-every-hour",
         "summary": "Introducing FAST™ PLM",
+        "detail": "Read more about our strategic process",
         "icon": "hashtag"
     },
     {
+        "slide": 3,
         "slug": "100%-power-every-hour",
         "summary": "FoxZero™ JIRA Tracker",
+        "detail": "Read more about our tactical operations",
         "icon": "share-alt"
     },
     {
+        "slide": 4,
         "slug": "100%-power-every-hour",
         "summary": "Perfect Aim™ 100% Warranty",
+        "detail": "Read more about our project guarantee",
         "icon": "money"
     },
     {
+        "slide": 5,
         "slug": "100%-power-every-hour",
         "summary": "Velocity™ Subscription Plans",
+        "detail": "Read more about our subscription pricing",
         "icon": "line-chart"
     },
     {
+        "slide": 6,
         "slug": "100%-power-every-hour",
         "summary": "Point & Pay™ On-Demand Pricing",
+        "detail": "Read more about our on-demand pricing",
         "icon": "wrench"
     },
     {
+        "slide": 7,
         "slug": "100%-power-every-hour",
         "summary": "FoxStream™ Content Channel",
+        "detail": "Read more about our content channel",
         "icon": "comment"
     }
 ]
