@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import {VelocityTransitionGroup} from 'velocity-react';
+// import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@fox-zero/web/components/layout';
 
 const IMAGES = [
   require('./images/S1-BT782_panmkt_M_20190124042812.jpg'),
   require('./images/thynks-full-service-agency_0000s_0000_bigstock-Artist-Photographer-Retouches-91840682.png'),
-  require('./images/1540844130883.jpg'),
-  require('./images/Insurance-Umbrella-Broker-16.9.jpg'),
   require('./images/istockphoto-995684292-612x612.jpg'),
+  require('./images/istockphoto-995684292-612x612.jpg'),
+  require('./images/Insurance-Umbrella-Broker-16.9.jpg'),
+  require('./images/1540844130883.jpg'),
+  require('./images/1540844130883.jpg'),
   require('./images/20th-Sept-1200x540-Blog-Featured-Image.jpg')
 ];
 
@@ -38,11 +40,11 @@ export default class extends Header {
         <Header timer={20} className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
           {[
             <div className={[styles.content, 'content', styles.services].join(' ')} key="0">
+              <h3>
+                <i className="fa fa-wrench"></i>
+                <span>Full-Service,<br />Zero "BS"</span>
+              </h3>
               <section className={['preview'].join(' ')}>
-                <h3>
-                  <i className="fa fa-wrench"></i>
-                  <span>100% Power<br />Every Hour</span>
-                </h3>
                 <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
                 {/* <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.shrinkIn', duration: 750 }}>
                   {this.state.loaded && (
@@ -65,43 +67,52 @@ export default class extends Header {
             </div>,
 
             <div className={[styles.content, 'content', styles.services].join(' ')} key="1">
+              <h3>
+                <i className="fa fa-comment"></i>
+                <span>100% Power<br />Every Hour</span>
+              </h3>
               <section className={['preview'].join(' ')}>
-                <h3>
-                  <i className="fa fa-comment"></i>
-                  <span>Full-Service,<br />Zero "BS"</span>
-                </h3>
-                <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                <p>Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.</p>
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="2">
+              <h3>
+                <i className="fa fa-hashtag"></i>
+                <span>Introducing<br />FAST™ PLM</span>
+              </h3>
               <section className={['preview'].join(' ')}>
-                <h3>
-                  <i className="fa fa-hashtag"></i>
-                  <span>Introducing<br />FAST™ PLM</span>
-                </h3>
-                <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.pricing].join(' ')} key="3">
+              <h3>
+                <i className="fa fa-wrench"></i>
+                <span>FoxZero™ JIRA Tracker</span>
+              </h3>
               <section className={['preview'].join(' ')}>
-                <h3>Rates</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id est vel orci vestibulum dictum. Morbi eu vulputate velit, eu eleifend mauris. Sed luctus, lectus sit amet dapibus porttitor, ipsum purus auctor leo, eget viverra lectus nulla nec eros. Nam sed justo sagittis, tincidunt dui a, lacinia sapien.</p>
+                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="4">
+              <h3>
+                <i className="fa fa-wrench"></i>
+                <span>Perfect Aim™ 100% Warranty</span>
+              </h3>
               <section className={['preview'].join(' ')}>
-                <h3>Hosting</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id est vel orci vestibulum dictum. Morbi eu vulputate velit, eu eleifend mauris. Sed luctus, lectus sit amet dapibus porttitor, ipsum purus auctor leo, eget viverra lectus nulla nec eros. Nam sed justo sagittis, tincidunt dui a, lacinia sapien.</p>
+                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.team].join(' ')} key="5">
+              <h3>
+                <i className="fa fa-wrench"></i>
+                <span>Velocity™ Subscription Plans</span>
+              </h3>
               <section className={['preview'].join(' ')}>
-                <h3>Leadership</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id est vel orci vestibulum dictum. Morbi eu vulputate velit, eu eleifend mauris. Sed luctus, lectus sit amet dapibus porttitor, ipsum purus auctor leo, eget viverra lectus nulla nec eros. Nam sed justo sagittis, tincidunt dui a, lacinia sapien.</p>
+                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
                 {/* <ul>
                   <li>
                     <a href="mailto:pete@vitruvian.tech?subject=<VitruvianTech>%20Connect" target="_blank">
@@ -163,6 +174,26 @@ export default class extends Header {
                   </li>
                   <li className={'more'} data-next="Network"/>
                 </ul> */}
+              </section>
+            </div>,
+
+            <div className={[styles.content, 'content', styles.pricing].join(' ')} key="6">
+              <h3>
+                <i className="fa fa-wrench"></i>
+                <span>Point &amp; Pay™ On-Demand Pricing</span>
+              </h3>
+              <section className={['preview'].join(' ')}>
+                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
+              </section>
+            </div>,
+
+            <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="7">
+              <h3>
+                <i className="fa fa-wrench"></i>
+                <span>FoxStream™ Content Channel</span>
+              </h3>
+              <section className={['preview'].join(' ')}>
+                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
               </section>
             </div>
           ]}

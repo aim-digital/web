@@ -33,18 +33,13 @@ export default class extends Header {
   state = {
     index: 0,
     previous: undefined,
-    animating: true,
-    buttons: false
+    animating: true
   };
 
   timer = null;
 
-  componentDidMount() {
-    setTimeout(() => this.setState({ buttons: true }), 350);
-  }
-
   componentWillUnmount() {
-    this.setState({ animating: false, index: 0, previous: undefined, buttons: false });
+    this.setState({ animating: false, index: 0, previous: undefined });
 
     if (this.props.timer) {
       this.clearTimer();
@@ -119,13 +114,13 @@ export default class extends Header {
             <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 250, begin: this.begin, complete: this.complete }}>
               {children[slide]}
             </VelocityTransitionGroup>
-            {this.state.buttons && <div className="flippers">
+            <div className="flippers">
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left">&larr;</button>
               <button {...getFlipState('next')} onClick={this.next} className="flip right">&rarr;</button>
               <div className="scroll">
                 <button><span/></button>
               </div>
-            </div>}
+            </div>
           </div>
         ) : children}
       </Header>

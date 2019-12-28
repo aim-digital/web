@@ -23,7 +23,7 @@
   min-height: 96vh;
 
   .home.page & {
-    box-shadow: 0 0 20px #151515;
+    box-shadow: 0 0 20px #000;
   }
 
   .slider {
@@ -160,6 +160,37 @@
     }
   }
 
+  h3 {
+    width: 90%;
+    max-width: 610px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 3px $black-color;
+    text-transform: uppercase;
+    font-family: $font-family-fjalla;
+    color: #F7DE47;
+    font-size: 3em;
+    line-height: 1;
+    margin: 0 auto 30px;
+
+    span {
+      position: relative;
+      z-index: 2;
+    }
+
+    i {
+      position: absolute;
+      z-index: 1;
+      bottom: -15px;
+      left: 0;
+      color: rgba(89, 159, 198, 1);
+      font-size: 4em;
+      width: 100%;
+      display: block;
+      opacity: .65;
+    }
+  }
+
   .preview {
     color: #efefef;
     font-size: 1em;
@@ -187,42 +218,10 @@
       font-size: 1.1em;
       color: #fff;
       line-height: 1.5;
-      margin-top: 30px;
       text-align: left;
-    }
-
-    p, h3 {
       position: relative;
       z-index: 2;
       text-shadow: 1px 1px 3px $black-color;
-    }
-
-    h3 {
-      text-transform: uppercase;
-      font-family: $font-family-fjalla;
-      color: #F7DE47;
-      font-size: 3em;
-      margin-top: 10px;
-      line-height: 1;
-
-      span {
-        position: relative;
-        z-index: 2;
-      }
-
-      i {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        color: rgba(89, 159, 198, 1);
-        font-size: 5em;
-        margin: 15px;
-        width: 100%;
-        display: block;
-        text-align: left;
-        opacity: .5;
-      }
     }
   }
 
@@ -245,7 +244,7 @@
       background: transparent;
       position: relative;
       outline: none;
-      cursor: pointer;
+      cursor: default;
       overflow: hidden;
       margin-top: 2em;
       opacity: .5;

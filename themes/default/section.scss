@@ -11,16 +11,13 @@
   min-height: $page-height!important;
   padding: 0;
   background: $background-color linear-gradient(rgba(89, 159, 198, .45), $background-color);
+  overflow: hidden;
 
   @media (min-height: 768px) {
     min-height: $page-height-xl!important;
   }
 
-  #app.no-js & {
-    overflow: hidden;
-  }
-
-  #app.no-js &:before {
+  &:before {
     display: table;
     content: ' ';
     position: absolute;
@@ -31,6 +28,14 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background: #f8f8f8 url(/@fox-zero/web/images/loading.gif) center no-repeat;
+  }
+
+  #app.nav-loaded & {
+    overflow: inherit;
+
+    &:before {
+      content: none;
+    }
   }
 
   .post.page & {

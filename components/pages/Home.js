@@ -59,18 +59,19 @@ export default class extends Page {
     solution: null,
     isMobile: true,
     isLandscape: false,
+    ready: false,
     form: {
       message: null
     }
   };
 
   componentDidMount = () => {
-    document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
-    document.getElementById('app').classList.add('home');
-    global.addEventListener('orientationchange', this.updateOrientation);
-    global.addEventListener('resize', this.updateOrientation);
-
     if (__CLIENT__) {
+      document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
+      document.getElementById('app').classList.add('home');
+      global.addEventListener('orientationchange', this.updateOrientation);
+      global.addEventListener('resize', this.updateOrientation);
+      global.setTimeout(() => { this.setState({ ready: true }); }, 1000);
       this.updateOrientation();
     }
   }
@@ -81,8 +82,10 @@ export default class extends Page {
 
     this.updateHeader();
 
-    if (entry) {
-      this.openSolutionModal(entry);
+    if (__CLIENT__) {
+      if (entry) {
+        this.openSolutionModal(entry);
+      }
     }
   };
 
@@ -136,10 +139,11 @@ export default class extends Page {
 
   renderSolution = transition => (solution, i) => {
     const { slide } = this.props;
+    const { ready } = this.state;
 
     return <Solution
-      className={`${slide === solution.slide ? 'active' : ''}`}
-      key={solution.slug}
+      className={`${ready && slide === solution.slide ? 'active' : ''}`}
+      key={`detail-button-${i}`}
       onClick={() => this.openSolutionModal(solution, true)}
       icon={solution.icon}
       transition={transition(i)}>{solution.summary}</Solution>;
@@ -188,7 +192,7 @@ export default class extends Page {
     // const { index, prev, next } = SECTIONS[section || param.section] || SECTIONS.home;
     const { animating, contact, solution, isMobile, isLandscape } = this.state;
     const { message } = this.state.form;
-    const scale = global.innerHeight ? 1400 / global.innerHeight : 1;
+    const scale = global.innerHeight ? 1450 / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const speed = offset => 0.2;
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
@@ -196,7 +200,7 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(9)} style={{ left: 0 }}>
+            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(4.65)} style={{ left: 0 }}>
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -249,8 +253,8 @@ export default class extends Page {
               </ParallaxLayer>
               {!isMobile && <ParallaxLayer
                 offset={0}
-                speed={10}
-                style={{ pointerEvents: 'none' }}>
+                speed={-1}
+                style={{ pointerEvents: 'none', zIndex: 1 }}>
                 {this.solutions}
               </ParallaxLayer>}
               <ParallaxLayer
@@ -258,13 +262,13 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(0)}>
                 <section className="section">
-                  <h3 data-dek="100% Power Every Hour">Services</h3>
+                  <h3 data-dek="Full-Service, Zero &quot;BS&quot;">Services</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
-                        <p className="text-center"><strong>The High-Performance/Zero-Latency Agency™</strong></p>
+                        <img src="/@fox-zero/web/images/logo.png" />
                         <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
-                        <p>Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.</p>
+                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
                         <div>
                           <Solution
                             onClick={() => this.openSolutionModal(solutions[0])}
@@ -272,9 +276,9 @@ export default class extends Page {
                             {solutions[0].detail}
                           </Solution>
                         </div>
-                        <h4>Full-Service,<br />Zero "BS"</h4>
-                        <img src="/@fox-zero/web/images/logo.png" />
-                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                        <h4>100% Power<br />Every Hour</h4>
+                        <p className="text-center"><strong>The High-Performance/Zero-Latency Agency™</strong></p>
+                        <p>Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.</p>
                         <p>Our FAST™ process is designed for high-quality yet cost-efficient end-to-end product management and rapid time to market.</p>
                         <div>
                           <Solution
@@ -293,13 +297,31 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(1)}>
                 <section className="section">
-                  <h3 data-dek="Introducing FAST™ PLM" className="text-right">Strategy</h3>
+                  <h3 data-dek="Introducing FAST™ PLM" className="text-right">Process</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
                         <img src="/@fox-zero/web/images/logo.png" />
+                        <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
                         <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                        <div>
+                          <Solution
+                            onClick={() => this.openSolutionModal(solutions[0])}
+                            icon={solutions[0].icon}>
+                            {solutions[0].detail}
+                          </Solution>
+                        </div>
+                        <h4>FoxZero™ JIRA<br />Tracker</h4>
+                        <p className="text-center"><strong>The High-Performance/Zero-Latency Agency™</strong></p>
+                        <p>Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.</p>
                         <p>Our FAST™ process is designed for high-quality yet cost-efficient end-to-end product management and rapid time to market.</p>
+                        <div>
+                          <Solution
+                            onClick={() => this.openSolutionModal(solutions[1])}
+                            icon={solutions[1].icon}>
+                            {solutions[1].detail}
+                          </Solution>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -310,94 +332,39 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(2)}>
                 <section className="section">
-                  <h3 data-dek="Aim for the Best™ Services">3</h3>
+                  <h3 data-dek="Perfect Aim™ 100% Warranty">Pricing</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
+                        <img src="/@fox-zero/web/images/logo.png" />
+                        <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                        <div>
+                          <Solution
+                            onClick={() => this.openSolutionModal(solutions[0])}
+                            icon={solutions[0].icon}>
+                            {solutions[0].detail}
+                          </Solution>
+                        </div>
+                        <h4>Velocity™ Subscription<br />Plans</h4>
+                        <p>Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.</p>
+                        <h4>Point &amp; Pay™ On-Demand<br />Pricing</h4>
+                        <p>Our FAST™ process is designed for high-quality yet cost-efficient end-to-end product management and rapid time to market.</p>
+                        <div>
+                          <Solution
+                            onClick={() => this.openSolutionModal(solutions[1])}
+                            icon={solutions[1].icon}>
+                            {solutions[1].detail}
+                          </Solution>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={factor(3)}
-                factor={scale}
-                speed={speed(3)}>
-                <section className="section">
-                  <h3 data-dek="Aim for the Best™ Services">4</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(4)}
-                factor={scale}
-                speed={speed(4)}>
-                <section className="section">
-                  <h3 data-dek="Aim for the Best™ Services">5</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(5)}
-                factor={scale}
-                speed={speed(5)}>
-                <section className="section">
-                  <h3 data-dek="Aim for the Best™ Services">6</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(6)}
-                factor={scale}
-                speed={speed(6)}>
-                <section className="section">
-                  <h3 data-dek="Aim for the Best™ Services">7</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(7)}
-                factor={scale}
-                speed={speed(7)}>
-                <section className="section">
-                  <h3 data-dek="Aim for the Best™ Services">8</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus velit dapibus, euismod ante eget, cursus sem. Mauris condimentum vehicula lectus in posuere. Ut placerat elementum orci, sed commodo sem pharetra id. Vivamus tincidunt facilisis dolor eu luctus. In mauris ante, tristique eget posuere non, consectetur in sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam id scelerisque mi. Fusce quis diam sit amet enim venenatis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam consectetur arcu tortor, id tristique libero mattis in. Curabitur finibus faucibus tellus, sed egestas eros. Nam tempor ligula ac tortor mattis, at euismod nisl condimentum.</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(8)}
-                speed={speed(8)}>
+                offset={factor(3.15)}
+                speed={speed(3.15)}>
                 <section className="quote">
                   <div>
                     <h3>Get a Free Consultation</h3>
@@ -406,6 +373,30 @@ export default class extends Page {
                       <div className="success"><strong>Thank you, {contact.firstname.value}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
                       <forms.Contact quote newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
                     {message && <div className="error">{message}</div>}
+                  </div>
+                </section>
+              </ParallaxLayer>
+              <ParallaxLayer
+                offset={factor(3.55)}
+                factor={scale}
+                speed={speed(3.55)}>
+                <section className="section">
+                  <h3 data-dek="Full-Service, Zero &quot;BS&quot;" className="text-right">Services</h3>
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-md-12 card">
+                        <img src="/@fox-zero/web/images/logo.png" />
+                        <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                        <div>
+                          <Solution
+                            onClick={() => this.openSolutionModal(solutions[0])}
+                            icon={solutions[0].icon}>
+                            {solutions[0].detail}
+                          </Solution>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </section>
               </ParallaxLayer>

@@ -77,15 +77,11 @@ nav {
   height: 40px;
   min-height: 20px;
   max-height: 100vh;
-  opacity: .95;
-  box-shadow: 0 0 .5em $background-color;
-  background-color: $background-color;
+  opacity: .85;
+  box-shadow: 0 0 .5em #000;
+  background-color: $black-color;
   // background-image: linear-gradient(to, $background-color, transparent, $background-color);
-  transition: background-color .25s;
-}
-
-nav marquee {
-  margin-bottom: -1.125em;
+  transition: opacity .25s;
 }
 
 nav ul {
@@ -169,7 +165,7 @@ nav > ul {
 }
 
 #app.nav-open nav {
-  background-color: $black-color;
+  opacity: 1;
 }
 
 #app.nav-open nav > ul {
