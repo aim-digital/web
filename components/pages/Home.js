@@ -381,7 +381,7 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(3.55)}>
                 <section className="section">
-                  <h3 data-dek="Full-Service, Zero &quot;BS&quot;" className="text-right">Services</h3>
+                  <h3 data-dek="FoxStream™ Content Channel" className="text-right">Media</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
