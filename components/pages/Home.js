@@ -132,10 +132,6 @@ export default class extends Page {
     const{ index, slug } = solution;
     await transition('slide', index);
     this.setState({ solution: { ...solution, ...await load('posts', { slug, published: true }) } });
-
-    if (analytics) {
-      ReactGA.event({ category: `Solution`, action: `Click`, label: solution.title });
-    }
   };
 
   renderSolution = transition => (solution, i) => {
@@ -145,9 +141,14 @@ export default class extends Page {
     return <Solution
       className={`${ready && slide === solution.index ? 'active' : ''}`}
       key={`detail-button-${i}`}
-      onClick={() => this.openSolutionModal(solution, true)}
       icon={solution.icon}
-      transition={transition(i)}>{solution.title}</Solution>;
+      transition={transition(i)}
+      onClick={() => {
+        this.openSolutionModal(solution);
+        ReactGA.event({ category: `Solution`, action: `Click`, label: solution.title });
+      }}>
+        {solution.title}
+      </Solution>;
   }
 
   submit = values => {
@@ -189,7 +190,7 @@ export default class extends Page {
     const { className, classNames = {} } = this.props;
     const { animating, contact, solution, isMobile, isLandscape } = this.state;
     const { message } = this.state.form;
-    const scale = global.innerHeight ? 1000 / global.innerHeight : 1;
+    const scale = global.innerHeight ? 800 / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const speed = offset => 0.2;
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
@@ -197,7 +198,7 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(8)} style={{ left: 0 }}>
+            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(8.5)} style={{ left: 0 }}>
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -259,12 +260,12 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(0)}>
                 <section className="section">
-                  <h3 data-dek="Full-Service, Zero BS">Services</h3>
+                  <h3 data-dek={solutions[0].title}>{solutions[0].section}</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
                         <img src="/@fox-zero/web/images/logo.png" />
-                        <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                        <p>{solutions[0].summary}</p>
                         <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
                         <div>
                           <Solution
@@ -283,13 +284,12 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(1)}>
                 <section className="section">
-                  <h3 data-dek="100% Power Every Hour" className="text-right">Value</h3>
+                  <h3 data-dek={solutions[1].title} className="text-right">{solutions[1].section}</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
                         <img src="/@fox-zero/web/images/logo.png" />
-                        {/* <p className="text-center"><strong>The High-Performance/Zero-Latency Agency™</strong></p> */}
-                        <p>Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.</p>
+                        <p>{solutions[1].summary}</p>
                         <p>Our FAST™ process is designed for high-quality yet cost-efficient end-to-end product management and rapid time to market.</p>
                         <div>
                           <Solution
@@ -308,12 +308,12 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(2)}>
                 <section className="section">
-                  <h3 data-dek="Introducing FAST™ PLM">Strategy</h3>
+                  <h3 data-dek={solutions[2].title}>{solutions[2].section}</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
                         <img src="/@fox-zero/web/images/logo.png" />
-                        <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                        <p>{solutions[2].summary}</p>
                         <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
                         <div>
                           <Solution
@@ -332,12 +332,12 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(3)}>
                 <section className="section">
-                  <h3 data-dek="FoxZero™ JIRA Tracker" className="text-right">Process</h3>
+                  <h3 data-dek={solutions[3].title} className="text-right">{solutions[3].section}</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
                         <img src="/@fox-zero/web/images/logo.png" />
-                        <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                        <p>{solutions[3].summary}</p>
                         <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
                         <div>
                           <Solution
@@ -356,12 +356,12 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(4)}>
                 <section className="section">
-                  <h3 data-dek="Perfect Aim™ 100% Guarantee">Warranty</h3>
+                  <h3 data-dek={solutions[4].title}>{solutions[4].section}</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
                         <img src="/@fox-zero/web/images/logo.png" />
-                        <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                        <p>{solutions[4].summary}</p>
                         <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
                         <div>
                           <Solution
@@ -380,12 +380,12 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(5)}>
                 <section className="section">
-                  <h3 data-dek="Velocity™ Subscription Plans" className="text-right">Pricing</h3>
+                  <h3 data-dek={solutions[5].title} className="text-right">{solutions[5].section}</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
                         <img src="/@fox-zero/web/images/logo.png" />
-                        <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                        <p>{solutions[5].summary}</p>
                         <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
                         <div>
                           <Solution
@@ -400,8 +400,8 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={factor(6)}
-                speed={speed(6)}>
+                offset={factor(6.25)}
+                speed={speed(6.25)}>
                 <section className="quote">
                   <div>
                     <h3>Get a Free Consultation</h3>
@@ -414,11 +414,11 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={factor(6.5)}
+                offset={factor(6.85)}
                 factor={scale}
-                speed={speed(6.5)}>
+                speed={speed(6.85)}>
                 <section className="section">
-                  <h3 data-dek="FoxStream™ Content Channel">Media</h3>
+                  <h3 data-dek="FoxStream™ TV">Content</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
@@ -427,7 +427,7 @@ export default class extends Page {
                         <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
                         <div>
                           <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
-                            <i className="fa fa-television"/> <sup>Fox://</sup>Stream<sup>™</sup>
+                            <i className="fa fa-television"/> <sup>Fox://</sup>Stream™ TV
                           </Link>
                         </div>
                       </div>

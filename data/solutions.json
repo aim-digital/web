@@ -1,44 +1,56 @@
 [
     {
         "index": 0,
+        "section": "Services",
         "slug": "full-service-zero-bs",
         "title": "Full-Service, Zero BS",
         "action": "Read more about our services",
-        "icon": "wrench"
+        "icon": "wrench",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
     },
     {
         "index": 1,
+        "section": "Value",
         "slug": "full-service-zero-bs",
         "title": "100% Power Every Hour",
-        "action": "Read more about our management style",
-        "icon": "comment"
+        "action": "Read more about our value",
+        "icon": "comment",
+        "summary": "Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked."
     },
     {
         "index": 2,
+        "section": "Strategy",
         "slug": "full-service-zero-bs",
         "title": "Introducing FAST™ PLM",
-        "action": "Read more about our strategic process",
-        "icon": "hashtag"
+        "action": "Read more about our strategy",
+        "icon": "hashtag",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
     },
     {
         "index": 3,
+        "section": "Process",
         "slug": "full-service-zero-bs",
         "title": "FoxZero™ JIRA Tracker",
-        "action": "Read more about our tactical operations",
-        "icon": "share-alt"
+        "action": "Read more about our process",
+        "icon": "share-alt",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
     },
     {
         "index": 4,
+        "section": "Warranty",
         "slug": "full-service-zero-bs",
-        "title": "Perfect Aim™ 100% Warranty",
-        "action": "Read more about our project guarantee",
-        "icon": "money"
+        "title": "Perfect Aim™ 100% Guarantee",
+        "action": "Read more about our warranty",
+        "icon": "money",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
     },
     {
         "index": 5,
+        "section": "Pricing",
         "slug": "full-service-zero-bs",
         "title": "Velocity™ Subscription Plans",
-        "action": "Read more about our subscription pricing",
-        "icon": "line-chart"
+        "action": "Read more about our pricing",
+        "icon": "line-chart",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
     }
 ]

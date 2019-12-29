@@ -2,6 +2,7 @@ import React from 'react';
 import ReactGA from 'react-ga';
 // import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@fox-zero/web/components/layout';
+import {solutions} from '@fox-zero/web/data';
 
 const IMAGES = [
   require('./images/S1-BT782_panmkt_M_20190124042812.jpg'),
@@ -35,15 +36,15 @@ export default class extends Header {
     const styles = require('./Component.scss');
 
     return (
-        <Header timer={20} className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
+        <Header timer={30} className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
           {[
             <div className={[styles.content, 'content', styles.services].join(' ')} key="0">
               <h3>
-                <i className="fa fa-wrench"></i>
+                <i className={`fa fa-${solutions[0].icon}`}></i>
                 <span>Full-Service,<br />Zero BS</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>{solutions[0].summary}</p>
                 {/* <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.shrinkIn', duration: 750 }}>
                   {this.state.loaded && (
                     <div className={`${styles.logo}`} style={{ position: 'static !important' }}>
@@ -66,51 +67,51 @@ export default class extends Header {
 
             <div className={[styles.content, 'content', styles.services].join(' ')} key="1">
               <h3>
-                <i className="fa fa-comment"></i>
+                <i className={`fa fa-${solutions[1].icon}`}></i>
                 <span>100% Power<br />Every Hour</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.</p>
+                <p>{solutions[1].summary}</p>
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="2">
               <h3>
-                <i className="fa fa-hashtag"></i>
+                <i className={`fa fa-${solutions[2].icon}`}></i>
                 <span>Introducing<br />FAST™ PLM</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>{solutions[2].summary}</p>
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.pricing].join(' ')} key="3">
               <h3>
-                <i className="fa fa-wrench"></i>
-                <span>FoxZero™ JIRA Tracker</span>
+                <i className={`fa fa-${solutions[3].icon}`}></i>
+                <span>FoxZero™ JIRA<br />Tracker</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>{solutions[3].summary}</p>
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="4">
               <h3>
-                <i className="fa fa-wrench"></i>
-                <span>Perfect Aim™ 100% Warranty</span>
+                <i className={`fa fa-${solutions[4].icon}`}></i>
+                <span>Perfect Aim™<br />100% Guarantee</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>{solutions[4].summary}</p>
               </section>
             </div>,
 
             <div className={[styles.content, 'content', styles.team].join(' ')} key="5">
               <h3>
-                <i className="fa fa-wrench"></i>
-                <span>Velocity™ Subscription Plans</span>
+                <i className={`fa fa-${solutions[5].icon}`}></i>
+                <span>Velocity™<br />Subscription Plans</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>{solutions[5].summary}</p>
                 {/* <ul>
                   <li>
                     <a href="mailto:pete@vitruvian.tech?subject=<VitruvianTech>%20Connect" target="_blank">

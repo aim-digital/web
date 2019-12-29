@@ -9,8 +9,6 @@ import {ShareButtons} from 'react-share';
 
 const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
-const CAPTION = 'The High-Performance/Zero-Latency Agency™';
-
 @connect(() => ({}), {update})
 export default class extends Modal {
   static defaultProps = {
@@ -31,9 +29,9 @@ export default class extends Modal {
 
   submit = values => {
     const { update, solution } = this.props;
-    const { title } = solution;
+    const { section } = solution;
     const { email } = values;
-    const ga = { category: 'Solution Form', label: title };
+    const ga = { category: 'Solution Form', label: section };
 
     if (email) {
       ReactGA.event({ ...ga, action: `Submit` });
@@ -46,7 +44,7 @@ export default class extends Modal {
           message: values.comment,
           firstname: values.firstName,
           lastname: values.lastName,
-          solution: title
+          solution: section
         }
       })
         .then(contact => this.setState({ contact, form: { message: null } }))
@@ -59,24 +57,24 @@ export default class extends Modal {
     const { solution } = this.props;
     const { contact } = this.state;
     const { message } = this.state.form;
-    const { content } = solution;
+    const { slug, content, summary, index, title, icon, section } = solution;
     const { location = {} } = global;
-    const share = { url: `${location.protocol}//${location.host}${location.pathname}?detail=${solution.index}`, caption: content ? content[0].copy : CAPTION, subject: solution.title };
+    const share = { url: `${location.protocol}//${location.host}${location.pathname}?detail=${index}`, caption: summary, subject: `${section} - ${title}` };
 
     return (
       <Modal {..._.omit(this.props, ['update', 'solution'])}
         onHide={this.onHide}
         className="solution"
-        title={solution.title}
-        icon={solution.icon}
+        title={title}
+        icon={icon}
         share={share}>
-        {solution.slug && <section>
+        {slug && <section>
           <section className="content">
             <p>{content[0].copy}</p>
           </section>
           <section className="quote">
             <div>
-              <h3>{solution.cta || 'Talk to Me'}</h3>
+              <h3>Talk to Me</h3>
               <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
               {contact ?
                 <div className="success">
