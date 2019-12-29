@@ -6,12 +6,10 @@ import {Header} from '@fox-zero/web/components/layout';
 const IMAGES = [
   require('./images/S1-BT782_panmkt_M_20190124042812.jpg'),
   require('./images/thynks-full-service-agency_0000s_0000_bigstock-Artist-Photographer-Retouches-91840682.png'),
-  require('./images/istockphoto-995684292-612x612.jpg'),
+  require('./images/20th-Sept-1200x540-Blog-Featured-Image.jpg'),
   require('./images/istockphoto-995684292-612x612.jpg'),
   require('./images/Insurance-Umbrella-Broker-16.9.jpg'),
-  require('./images/1540844130883.jpg'),
-  require('./images/1540844130883.jpg'),
-  require('./images/20th-Sept-1200x540-Blog-Featured-Image.jpg')
+  require('./images/1540844130883.jpg')
 ];
 
 export default class extends Header {
@@ -42,10 +40,10 @@ export default class extends Header {
             <div className={[styles.content, 'content', styles.services].join(' ')} key="0">
               <h3>
                 <i className="fa fa-wrench"></i>
-                <span>Full-Service,<br />Zero "BS"</span>
+                <span>Full-Service,<br />Zero BS</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
                 {/* <VelocityTransitionGroup enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.shrinkIn', duration: 750 }}>
                   {this.state.loaded && (
                     <div className={`${styles.logo}`} style={{ position: 'static !important' }}>
@@ -82,7 +80,7 @@ export default class extends Header {
                 <span>Introducing<br />FAST™ PLM</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
               </section>
             </div>,
 
@@ -92,7 +90,7 @@ export default class extends Header {
                 <span>FoxZero™ JIRA Tracker</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
               </section>
             </div>,
 
@@ -102,7 +100,7 @@ export default class extends Header {
                 <span>Perfect Aim™ 100% Warranty</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
               </section>
             </div>,
 
@@ -112,7 +110,7 @@ export default class extends Header {
                 <span>Velocity™ Subscription Plans</span>
               </h3>
               <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
+                <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
                 {/* <ul>
                   <li>
                     <a href="mailto:pete@vitruvian.tech?subject=<VitruvianTech>%20Connect" target="_blank">
@@ -174,26 +172,6 @@ export default class extends Header {
                   </li>
                   <li className={'more'} data-next="Network"/>
                 </ul> */}
-              </section>
-            </div>,
-
-            <div className={[styles.content, 'content', styles.pricing].join(' ')} key="6">
-              <h3>
-                <i className="fa fa-wrench"></i>
-                <span>Point &amp; Pay™ On-Demand Pricing</span>
-              </h3>
-              <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
-              </section>
-            </div>,
-
-            <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="7">
-              <h3>
-                <i className="fa fa-wrench"></i>
-                <span>FoxStream™ Content Channel</span>
-              </h3>
-              <section className={['preview'].join(' ')}>
-                <p>Optimized for efficient innovation, design, development, testing, hosting, and marketing services, we manage digital products and web-based apps for Fortune 500 and VC-backed companies.</p>
               </section>
             </div>
           ]}

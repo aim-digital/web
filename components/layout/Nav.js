@@ -1,29 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {Nav} from '@boilerplatejs/core/components/layout';
 import {Progress} from '@boilerplatejs/core/components/layout';
-import {transition} from '@boilerplatejs/core/actions/Transition';
 import {load} from '@fox-zero/web/actions/Nav';
-import * as Session from '@boilerplatejs/core/actions/Session';
 
-@connect(state => ({ user: state['@boilerplatejs/core'].Session.user }), { transition, logout: Session.logout, load })
+@connect(() => ({}), { load })
 
 export default class extends Nav {
   static propTypes = {
-    transition: PropTypes.func.isRequired,
-    load: PropTypes.func.isRequired,
-    user: PropTypes.object,
-    logout: PropTypes.func.isRequired
+    load: PropTypes.func.isRequired
   };
 
   componentDidMount = () => this.props.load(2000);
-
-  handleLogout = (event) => {
-    event.preventDefault();
-    this.props.logout();
-  };
 
   scrollTo = () => {
     const app = document.querySelector('#app');
@@ -40,9 +30,7 @@ export default class extends Nav {
 
   render() {
     const preventDefault = e => e.preventDefault();
-    const { transition } = this.props;
     const { scrollTo } = this;
-    const update = (header, slide) => () => transition({ header }).then(() => transition({ slide })).then(scrollTo);
 
     return (
       <section className="nav">
@@ -69,33 +57,33 @@ export default class extends Nav {
           </div>
           <ul>
             <li className="home">
-              <Link rel="nofollow" to="/home" className="logo" onClick={update(0, 0)}/>
+              <Link rel="nofollow" to="/home" className="logo" onClick={scrollTo}/>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/services" onClick={update(0, 1)}>What We Do</Link></li>
-                <li><Link rel="nofollow" to="/home/leadership" onClick={update(0, 5)}>Who We Are</Link></li>
+                <li><Link rel="nofollow" to="/home/services" onClick={scrollTo}>What We Do</Link></li>
+                <li><Link rel="nofollow" to="/home/leadership" onClick={scrollTo}>Who We Are</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/plans" onClick={update(0, 2)}>Plans &amp; Products</Link></li>
-                <li><Link rel="nofollow" to="/home/rates" onClick={update(0, 3)}>Hourly Rates</Link></li>
-                <li><Link rel="nofollow" to="/home/hosting" onClick={update(0, 4)}>Hosting Packages</Link></li>
+                <li><Link rel="nofollow" to="/home/plans" onClick={scrollTo}>Plans &amp; Products</Link></li>
+                <li><Link rel="nofollow" to="/home/rates" onClick={scrollTo}>Hourly Rates</Link></li>
+                <li><Link rel="nofollow" to="/home/hosting" onClick={scrollTo}>Hosting Packages</Link></li>
               </ul>
             </li>
             <li>
-              <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update(0, 0)}>
+              <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                 <i className="fa fa-television"/> <sup>Fox://</sup>Stream<sup>™</sup>
               </Link>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/communications" onClick={update(1, 0)}>Connect with Us</Link></li>
-                <li><Link rel="nofollow" to="/home/headquarters" onClick={update(1, 1)}>Base of Operations</Link></li>
+                <li><Link rel="nofollow" to="/home/communications" onClick={scrollTo}>Connect with Us</Link></li>
+                <li><Link rel="nofollow" to="/home/headquarters" onClick={scrollTo}>Base of Operations</Link></li>
               </ul>
             </li>
           </ul>

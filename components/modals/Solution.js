@@ -31,9 +31,9 @@ export default class extends Modal {
 
   submit = values => {
     const { update, solution } = this.props;
-    const { summary } = solution;
+    const { title } = solution;
     const { email } = values;
-    const ga = { category: 'Solution Form', label: summary };
+    const ga = { category: 'Solution Form', label: title };
 
     if (email) {
       ReactGA.event({ ...ga, action: `Submit` });
@@ -46,7 +46,7 @@ export default class extends Modal {
           message: values.comment,
           firstname: values.firstName,
           lastname: values.lastName,
-          solution: summary
+          solution: title
         }
       })
         .then(contact => this.setState({ contact, form: { message: null } }))
@@ -61,13 +61,13 @@ export default class extends Modal {
     const { message } = this.state.form;
     const { content } = solution;
     const { location = {} } = global;
-    const share = { url: `${location.protocol}//${location.host}${location.pathname}?detail=${encodeURIComponent(solution.slug)}`, caption: content ? content[0].copy : CAPTION, subject: solution.summary };
+    const share = { url: `${location.protocol}//${location.host}${location.pathname}?detail=${solution.index}`, caption: content ? content[0].copy : CAPTION, subject: solution.title };
 
     return (
       <Modal {..._.omit(this.props, ['update', 'solution'])}
         onHide={this.onHide}
         className="solution"
-        title={solution.summary}
+        title={solution.title}
         icon={solution.icon}
         share={share}>
         {solution.slug && <section>

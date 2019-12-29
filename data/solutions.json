@@ -1,58 +1,44 @@
 [
     {
-        "slide": 0,
-        "slug": "100%-power-every-hour",
-        "summary": "Full-Service, Zero \"BS\"",
-        "detail": "Read more about our services",
+        "index": 0,
+        "slug": "full-service-zero-bs",
+        "title": "Full-Service, Zero BS",
+        "action": "Read more about our services",
         "icon": "wrench"
     },
     {
-        "slide": 1,
-        "slug": "100%-power-every-hour",
-        "summary": "100% Power Every Hour",
-        "detail": "Read more about our management style",
+        "index": 1,
+        "slug": "full-service-zero-bs",
+        "title": "100% Power Every Hour",
+        "action": "Read more about our management style",
         "icon": "comment"
     },
     {
-        "slide": 2,
-        "slug": "100%-power-every-hour",
-        "summary": "Introducing FAST™ PLM",
-        "detail": "Read more about our strategic process",
+        "index": 2,
+        "slug": "full-service-zero-bs",
+        "title": "Introducing FAST™ PLM",
+        "action": "Read more about our strategic process",
         "icon": "hashtag"
     },
     {
-        "slide": 3,
-        "slug": "100%-power-every-hour",
-        "summary": "FoxZero™ JIRA Tracker",
-        "detail": "Read more about our tactical operations",
+        "index": 3,
+        "slug": "full-service-zero-bs",
+        "title": "FoxZero™ JIRA Tracker",
+        "action": "Read more about our tactical operations",
         "icon": "share-alt"
     },
     {
-        "slide": 4,
-        "slug": "100%-power-every-hour",
-        "summary": "Perfect Aim™ 100% Warranty",
-        "detail": "Read more about our project guarantee",
+        "index": 4,
+        "slug": "full-service-zero-bs",
+        "title": "Perfect Aim™ 100% Warranty",
+        "action": "Read more about our project guarantee",
         "icon": "money"
     },
     {
-        "slide": 5,
-        "slug": "100%-power-every-hour",
-        "summary": "Velocity™ Subscription Plans",
-        "detail": "Read more about our subscription pricing",
+        "index": 5,
+        "slug": "full-service-zero-bs",
+        "title": "Velocity™ Subscription Plans",
+        "action": "Read more about our subscription pricing",
         "icon": "line-chart"
-    },
-    {
-        "slide": 6,
-        "slug": "100%-power-every-hour",
-        "summary": "Point & Pay™ On-Demand Pricing",
-        "detail": "Read more about our on-demand pricing",
-        "icon": "wrench"
-    },
-    {
-        "slide": 7,
-        "slug": "100%-power-every-hour",
-        "summary": "FoxStream™ Content Channel",
-        "detail": "Read more about our content channel",
-        "icon": "comment"
     }
 ]

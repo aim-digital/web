@@ -1,17 +1,8 @@
-import React, {Component} from 'react';
-import {PropTypes} from 'prop-types';
-import {connect} from 'react-redux';
+import React from 'react';
 import {Link} from 'react-router';
 import {Footer} from '@boilerplatejs/core/components/layout';
-import {transition} from '@boilerplatejs/core/actions/Transition';
-
-@connect(state => ({}), { transition })
 
 export default class extends Footer {
-  static propTypes = {
-    transition: PropTypes.func.isRequired
-  };
-
   scrollTo = () => {
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
@@ -26,9 +17,7 @@ export default class extends Footer {
   };
 
   render() {
-    const { transition } = this.props;
     const { scrollTo } = this;
-    const update = (header, slide) => () => transition({ header }).then(() => transition({ slide })).then(scrollTo);
 
     return (
       <Footer>
@@ -43,7 +32,7 @@ export default class extends Footer {
         <div className="content container">
           <div className="row">
             <div className="col-xs-12 logo text-center">
-              <Link to="/" onClick={update(0, 0)}>
+              <Link to="/" onClick={scrollTo}>
                 <img src="/@fox-zero/web/images/icon.png" title="FoxZero Media"/>
               </Link>
             </div>
@@ -84,8 +73,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-universal-access"/> About</h4>
                   <ul>
-                    <li><Link to="/services" onClick={update(0, 1)}>What We Do</Link></li>
-                    <li><Link to="/leadership" onClick={update(0, 5)}>Who We Are</Link></li>
+                    <li><Link to="/services" onClick={scrollTo}>What We Do</Link></li>
+                    <li><Link to="/leadership" onClick={scrollTo}>Who We Are</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -93,9 +82,9 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/plans" onClick={update(0, 2)}>Plans &amp; Products</Link></li>
-                    <li><Link to="/rates" onClick={update(0, 3)}>Hourly Rates</Link></li>
-                    <li><Link to="/hosting" onClick={update(0, 4)}>Hosting Packages</Link></li>
+                    <li><Link to="/plans" onClick={scrollTo}>Plans &amp; Products</Link></li>
+                    <li><Link to="/rates" onClick={scrollTo}>Hourly Rates</Link></li>
+                    <li><Link to="/hosting" onClick={scrollTo}>Hosting Packages</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -103,8 +92,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-envelope"/> Contact</h4>
                   <ul>
-                    <li><Link to="/communications" onClick={update(1, 0)}>Connect with Us</Link></li>
-                    <li><Link to="/headquarters" onClick={update(1, 1)}>Base of Operations</Link></li>
+                    <li><Link to="/communications" onClick={scrollTo}>Connect with Us</Link></li>
+                    <li><Link to="/headquarters" onClick={scrollTo}>Base of Operations</Link></li>
                   </ul>
                 </li>
               </ul>
