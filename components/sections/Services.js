@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import {Section} from '@boilerplatejs/core/components/layout';
+import React from 'react';
+import {Section} from '@fox-zero/web/components/layout';
+import {solutions} from '@fox-zero/web/data';
 
 export default class extends Section {
   render() {
     return (
-      <Section>
-        <h1>What We Do</h1>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-        <p>Vestibulum pretium mi sem, id viverra nibh semper sit amet. Ut leo nisi, pulvinar at sapien at, vehicula accumsan metus. Maecenas vitae est ut nulla dictum gravida in nec purus. Nunc eget sodales augue, sit amet laoreet lectus. Nulla vitae elit elementum, fringilla nulla eu, lobortis ipsum. Sed laoreet, felis a mollis convallis, libero ex molestie libero, nec bibendum massa eros vitae tortor. In non ante at eros pharetra dapibus quis in mauris. Donec egestas tempus nulla, nec posuere lacus vulputate aliquam. Nam risus quam, dictum quis purus sit amet, ullamcorper dignissim enim. Quisque eu mollis diam. Aliquam et luctus orci, quis viverra elit.</p>
-        <p>Vestibulum pretium mi sem, id viverra nibh semper sit amet. Ut leo nisi, pulvinar at sapien at, vehicula accumsan metus. Maecenas vitae est ut nulla dictum gravida in nec purus. Nunc eget sodales augue, sit amet laoreet lectus. Nulla vitae elit elementum, fringilla nulla eu, lobortis ipsum. Sed laoreet, felis a mollis convallis, libero ex molestie libero, nec bibendum massa eros vitae tortor. In non ante at eros pharetra dapibus quis in mauris. Donec egestas tempus nulla, nec posuere lacus vulputate aliquam. Nam risus quam, dictum quis purus sit amet, ullamcorper dignissim enim. Quisque eu mollis diam. Aliquam et luctus orci, quis viverra elit.</p>
+      <Section solution={solutions[0]} title={<>Full-Service,<br />Zero BS</>}>
+        <img src="/@fox-zero/web/images/logo.png" />
+        <p>{solutions[0].summary}</p>
+        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
       </Section>
     );
   }

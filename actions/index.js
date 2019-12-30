@@ -1,2 +1,2 @@
 export Nav from './Nav';
-export * as Solution from './Solution';
+export Solution from './Solution';

@@ -6,6 +6,7 @@ import {Link} from 'react-router';
 import {Page} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {dismiss} from '@fox-zero/web/actions/Nav';
+import {open, close} from '@fox-zero/web/actions/Solution';
 import {Footer} from '@fox-zero/web/components/layout';
 import {Solution} from '@fox-zero/web/components/buttons';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
@@ -18,6 +19,7 @@ import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
+const PARALLAX_SPEED = 0.2;
 
 const SECTIONS = {
   home: { slide: 0 },
@@ -32,8 +34,9 @@ const SECTIONS = {
 
 @connect(state => {
   const { slide = 0 } = state['@boilerplatejs/core'].Transition;
-  return ({ param: state.router.params, slide, query: state.router.location.query });
-}, {transition, dismiss, update, load})
+  const { current: solution = null } = state['@fox-zero/web'].Solution;
+  return ({ param: state.router.params, slide, query: state.router.location.query, solution });
+}, {transition, dismiss, update, load, open, close})
 
 export default class extends Page {
   static propTypes = {
@@ -41,7 +44,10 @@ export default class extends Page {
     dismiss: PropTypes.func.isRequired,
     update: PropTypes.func.isRequired,
     load: PropTypes.func.isRequired,
+    open: PropTypes.func.isRequired,
+    close: PropTypes.func.isRequired,
     classNames: PropTypes.object,
+    solution: PropTypes.object,
     param: PropTypes.object,
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
@@ -51,13 +57,13 @@ export default class extends Page {
 
   static defaultProps = {
     className: '',
-    classNames: {}
+    classNames: {},
+    solution: null
   };
 
   state = {
     animating: false,
     contact: null,
-    solution: null,
     isMobile: true,
     isLandscape: false,
     ready: false,
@@ -84,7 +90,7 @@ export default class extends Page {
 
     if (__CLIENT__) {
       if (detail) {
-        this.openSolutionModal(detail);
+        this.openSolution(detail);
       }
     }
   };
@@ -135,11 +141,11 @@ export default class extends Page {
     }
   };
 
-  openSolutionModal = async (solution, analytics) => {
-    const { load, transition } = this.props;
-    const{ index, slug } = solution;
-    await transition('slide', index);
-    this.setState({ solution: { ...solution, ...await load('posts', { slug, published: true }) } });
+  openSolution = async (solution) => {
+    const { transition, load, open } = this.props;
+    const { index, slug } = solution;
+    transition('slide', index);
+    open({ ...solution, ...await load('posts', { slug, published: true }) });
   };
 
   renderSolution = transition => (solution, i) => {
@@ -152,8 +158,13 @@ export default class extends Page {
       icon={solution.icon}
       transition={transition(i)}
       onClick={() => {
-        this.openSolutionModal(solution);
-        ReactGA.event({ category: `Solution`, action: `Click`, label: solution.title });
+        this.openSolution(solution);
+
+        ReactGA.event({
+          category: `Solution`,
+          action: `Click`,
+          label: solution.title
+        });
       }}>
         {solution.title}
       </Solution>;
@@ -195,8 +206,8 @@ export default class extends Page {
   wrap = sections => sections.map((section, i) => <div key={String(i)}>{section}</div>);
 
   render() {
-    const { className, classNames = {} } = this.props;
-    const { animating, contact, solution, isMobile, isLandscape } = this.state;
+    const { className, classNames = {}, solution, close } = this.props;
+    const { animating, contact, isMobile, isLandscape } = this.state;
     const { message } = this.state.form;
     const scale = global.innerHeight ? 850 / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
@@ -266,156 +277,42 @@ export default class extends Page {
               <ParallaxLayer
                 offset={factor(0)}
                 factor={scale}
-                speed={speed(0)}>
-                <section className="section">
-                  <h2>{solutions[0].section}</h2>
-                  <h3>Full-Service,<br />Zero BS</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <img src="/@fox-zero/web/images/logo.png" />
-                        <p>{solutions[0].summary}</p>
-                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
-                        <div>
-                          <Solution
-                            onClick={() => this.openSolutionModal(solutions[0])}
-                            icon={solutions[0].icon}>
-                            {solutions[0].action}
-                          </Solution>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+                speed={PARALLAX_SPEED}>
+                {this.props.sections[0]}
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(1)}
                 factor={scale}
-                speed={speed(1)}>
-                <section className="section">
-                  <h2 className="text-right">{solutions[1].section}</h2>
-                  <h3 className="text-right">100% Power<br />Every Hour</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <img src="/@fox-zero/web/images/logo.png" />
-                        <p>{solutions[1].summary}</p>
-                        <p>Our FAST™ process is designed for high-quality yet cost-efficient end-to-end product management and rapid time to market.</p>
-                        <div>
-                          <Solution
-                            onClick={() => this.openSolutionModal(solutions[1])}
-                            icon={solutions[1].icon}>
-                            {solutions[1].action}
-                          </Solution>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+                speed={PARALLAX_SPEED}>
+                {this.props.sections[1]}
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(2)}
                 factor={scale}
-                speed={speed(2)}>
-                <section className="section">
-                  <h2>{solutions[2].section}</h2>
-                  <h3>Introducing<br />FAST™ PLM</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <img src="/@fox-zero/web/images/logo.png" />
-                        <p>{solutions[2].summary}</p>
-                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
-                        <div>
-                          <Solution
-                            onClick={() => this.openSolutionModal(solutions[2])}
-                            icon={solutions[2].icon}>
-                            {solutions[2].action}
-                          </Solution>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+                speed={PARALLAX_SPEED}>
+                {this.props.sections[2]}
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(3)}
                 factor={scale}
-                speed={speed(3)}>
-                <section className="section">
-                  <h2 className="text-right">{solutions[3].section}</h2>
-                  <h3 className="text-right">FoxZero™ JIRA<br />Tracker</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <img src="/@fox-zero/web/images/logo.png" />
-                        <p>{solutions[3].summary}</p>
-                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
-                        <div>
-                          <Solution
-                            onClick={() => this.openSolutionModal(solutions[3])}
-                            icon={solutions[3].icon}>
-                            {solutions[3].action}
-                          </Solution>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+                speed={PARALLAX_SPEED}>
+                {this.props.sections[3]}
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(4)}
                 factor={scale}
-                speed={speed(4)}>
-                <section className="section">
-                  <h2>{solutions[4].section}</h2>
-                  <h3>Perfect Aim™<br />100% Guarantee</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <img src="/@fox-zero/web/images/logo.png" />
-                        <p>{solutions[4].summary}</p>
-                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
-                        <div>
-                          <Solution
-                            onClick={() => this.openSolutionModal(solutions[4])}
-                            icon={solutions[4].icon}>
-                            {solutions[4].action}
-                          </Solution>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+                speed={PARALLAX_SPEED}>
+                {this.props.sections[4]}
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(5)}
                 factor={scale}
-                speed={speed(5)}>
-                <section className="section">
-                  <h2 className="text-right">{solutions[5].section}</h2>
-                  <h3 className="text-right">Velocity™<br />Subscription Plans</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <img src="/@fox-zero/web/images/logo.png" />
-                        <p>{solutions[5].summary}</p>
-                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
-                        <div>
-                          <Solution
-                            onClick={() => this.openSolutionModal(solutions[5])}
-                            icon={solutions[5].icon}>
-                            {solutions[5].action}
-                          </Solution>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+                speed={PARALLAX_SPEED}>
+                {this.props.sections[5]}
               </ParallaxLayer>
               <ParallaxLayer
                 offset={factor(6.1)}
-                speed={speed(6.1)}>
+                speed={PARALLAX_SPEED}>
                 <section className="quote">
                   <div>
                     <h3>Get a Free Consultation</h3>
@@ -430,7 +327,7 @@ export default class extends Page {
               <ParallaxLayer
                 offset={factor(6.85)}
                 factor={scale}
-                speed={speed(6.85)}>
+                speed={PARALLAX_SPEED}>
                 <section className="section">
                   <h2>Content</h2>
                   <h3>FoxStream™ TV</h3>
@@ -453,7 +350,7 @@ export default class extends Page {
             </Parallax> : <>
             </>}
           </section>
-          <modals.Solution show={!!solution} solution={solution || {}} onHide={() => this.setState({ solution: null })}/>
+          <modals.Solution show={!!solution} solution={solution || {}} onHide={close}/>
         </Page>
     );
   }
