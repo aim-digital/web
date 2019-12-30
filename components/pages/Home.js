@@ -70,10 +70,9 @@ export default class extends Page {
     if (__CLIENT__) {
       document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
       document.getElementById('app').classList.add('home');
-      global.addEventListener('orientationchange', this.updateOrientation);
-      global.addEventListener('resize', this.updateOrientation);
+      global.addEventListener('resize', this.updateViewport);
       global.setTimeout(() => { this.setState({ ready: true }); }, 1000);
-      this.updateOrientation();
+      this.updateViewport();
     }
   }
 
@@ -91,11 +90,12 @@ export default class extends Page {
   };
 
   componentWillUnmount = () => {
-    document.querySelector('#app .nav + .page').removeEventListener('click', this.props.dismiss);
-    this.props.transition({ progress: 0.2 });
-    document.getElementById('app').classList.remove('home');
-    global.removeEventListener('orientationchange', this.updateOrientation);
-    global.removeEventListener('resize', this.updateOrientation);
+    if (__CLIENT__) {
+      document.querySelector('#app .nav + .page').removeEventListener('click', this.props.dismiss);
+      this.props.transition({ progress: 0.2 });
+      document.getElementById('app').classList.remove('home');
+      global.removeEventListener('resize', this.updateViewport);
+    }
   }
 
   componentWillUpdate = props => {
@@ -108,7 +108,6 @@ export default class extends Page {
     const { renderSolution } = this;
 
     return <section className="solutions">
-      <h3>Find a Solution</h3>
       <div className="left">{solutions.slice(0, SOLUTION_AVG).map(renderSolution(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
       <div className="right">{solutions.slice(SOLUTION_AVG).map(renderSolution(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
     </section>;
@@ -125,7 +124,16 @@ export default class extends Page {
     ) : <span/>;
   }
 
-  updateOrientation = () => this.setState({ isMobile: global.innerWidth < 992, isLandscape: global.innerWidth > global.innerHeight });
+  updateViewport = () => {
+    const { isLandscape: currentOrientation, ready } = this.state;
+    const isLandscape = global.innerWidth > global.innerHeight;
+
+    this.setState({ isMobile: global.innerWidth < 992, isLandscape });
+
+    if (ready && isLandscape !== currentOrientation) {
+      global.location.reload();
+    }
+  };
 
   openSolutionModal = async (solution, analytics) => {
     const { load, transition } = this.props;
@@ -190,7 +198,7 @@ export default class extends Page {
     const { className, classNames = {} } = this.props;
     const { animating, contact, solution, isMobile, isLandscape } = this.state;
     const { message } = this.state.form;
-    const scale = global.innerHeight ? 800 / global.innerHeight : 1;
+    const scale = global.innerHeight ? 850 / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const speed = offset => 0.2;
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
@@ -198,7 +206,7 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(8.5)} style={{ left: 0 }}>
+            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(8.3)} style={{ left: 0 }}>
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -260,7 +268,8 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(0)}>
                 <section className="section">
-                  <h3 data-dek={solutions[0].title}>{solutions[0].section}</h3>
+                  <h2>{solutions[0].section}</h2>
+                  <h3>Full-Service,<br />Zero BS</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
@@ -284,7 +293,8 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(1)}>
                 <section className="section">
-                  <h3 data-dek={solutions[1].title} className="text-right">{solutions[1].section}</h3>
+                  <h2 className="text-right">{solutions[1].section}</h2>
+                  <h3 className="text-right">100% Power<br />Every Hour</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
@@ -308,7 +318,8 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(2)}>
                 <section className="section">
-                  <h3 data-dek={solutions[2].title}>{solutions[2].section}</h3>
+                  <h2>{solutions[2].section}</h2>
+                  <h3>Introducing<br />FAST™ PLM</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
@@ -332,7 +343,8 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(3)}>
                 <section className="section">
-                  <h3 data-dek={solutions[3].title} className="text-right">{solutions[3].section}</h3>
+                  <h2 className="text-right">{solutions[3].section}</h2>
+                  <h3 className="text-right">FoxZero™ JIRA<br />Tracker</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
@@ -356,7 +368,8 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(4)}>
                 <section className="section">
-                  <h3 data-dek={solutions[4].title}>{solutions[4].section}</h3>
+                  <h2>{solutions[4].section}</h2>
+                  <h3>Perfect Aim™<br />100% Guarantee</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
@@ -380,7 +393,8 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(5)}>
                 <section className="section">
-                  <h3 data-dek={solutions[5].title} className="text-right">{solutions[5].section}</h3>
+                  <h2 className="text-right">{solutions[5].section}</h2>
+                  <h3 className="text-right">Velocity™<br />Subscription Plans</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
@@ -400,8 +414,8 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={factor(6.25)}
-                speed={speed(6.25)}>
+                offset={factor(6.1)}
+                speed={speed(6.1)}>
                 <section className="quote">
                   <div>
                     <h3>Get a Free Consultation</h3>
@@ -418,13 +432,13 @@ export default class extends Page {
                 factor={scale}
                 speed={speed(6.85)}>
                 <section className="section">
-                  <h3 data-dek="FoxStream™ TV">Content</h3>
+                  <h2>Content</h2>
+                  <h3>FoxStream™ TV</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-md-12 card">
                         <img src="/@fox-zero/web/images/logo.png" />
                         <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
-                        <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
                         <div>
                           <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                             <i className="fa fa-television"/> <sup>Fox://</sup>Stream™ TV
