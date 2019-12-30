@@ -22,14 +22,12 @@ const SOLUTION_AVG = solutions.length / 2;
 const PARALLAX_SPEED = 0.2;
 
 const SECTIONS = {
-  home: { slide: 0 },
-  services: { slide: 1 },
-  plans: { slide: 2 },
-  rates: { slide: 3 },
-  hosting: { slide: 4 },
-  leadership: { slide: 5 },
-  communications: { slide: 0 },
-  headquarters: { slide: 1 }
+  services: { slide: 0 },
+  value: { slide: 1 },
+  strategy: { slide: 2 },
+  process: { slide: 3 },
+  warranty: { slide: 4 },
+  pricing: { slide: 5 }
 };
 
 @connect(state => {
@@ -51,8 +49,7 @@ export default class extends Page {
     param: PropTypes.object,
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
-    section: PropTypes.string,
-    hide: PropTypes.bool
+    section: PropTypes.string
   };
 
   static defaultProps = {
@@ -196,7 +193,7 @@ export default class extends Page {
 
   updateHeader = (props = this.props) => {
     const { transition } = this;
-    const { header, slide } = SECTIONS[props.section || props.param.section] || SECTIONS.home;
+    const { header, slide } = SECTIONS[props.section || props.param.section] || SECTIONS.services;
     transition('header', header).then(() => transition('slide', slide));
     this.props.transition({ progress: 1 });
   };

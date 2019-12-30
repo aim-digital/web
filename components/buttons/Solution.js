@@ -30,14 +30,14 @@ export default class extends Component {
   }
 
   render() {
-    const { icon, onClick, className } = this.props;
+    const { icon, onClick, className, children } = this.props;
     const { style } = this.state;
 
     return (
       <div className={`solution button ${className}`} style={style} onClick={onClick}>
         {icon && <i className={`fa fa-${icon}`}></i>}
         <button>
-          <span>{this.props.children}</span>
+          <span>{children}</span>
         </button>
       </div>
     );

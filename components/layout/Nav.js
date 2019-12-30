@@ -57,34 +57,28 @@ export default class extends Nav {
           </div>
           <ul>
             <li className="home">
-              <Link rel="nofollow" to="/home" className="logo" onClick={scrollTo}/>
+              <Link rel="nofollow" to="/digital-media-agency" className="logo" onClick={scrollTo}/>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> About</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> Services</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/services" onClick={scrollTo}>What We Do</Link></li>
-                <li><Link rel="nofollow" to="/home/leadership" onClick={scrollTo}>Who We Are</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/services" onClick={scrollTo}>Services</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/value" onClick={scrollTo}>Value</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/strategy" onClick={scrollTo}>Strategy</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/process" onClick={scrollTo}>Process</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/plans" onClick={scrollTo}>Plans &amp; Products</Link></li>
-                <li><Link rel="nofollow" to="/home/rates" onClick={scrollTo}>Hourly Rates</Link></li>
-                <li><Link rel="nofollow" to="/home/hosting" onClick={scrollTo}>Hosting Packages</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/warranty" onClick={scrollTo}>Warranty</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/pricing" onClick={scrollTo}>Pricing</Link></li>
               </ul>
             </li>
             <li>
               <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                 <i className="fa fa-television"/> <sup>Fox://</sup>Stream™ TV
               </Link>
-            </li>
-            <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-envelope"/> Contact</a>
-              <ul>
-                <li><Link rel="nofollow" to="/home/communications" onClick={scrollTo}>Connect with Us</Link></li>
-                <li><Link rel="nofollow" to="/home/headquarters" onClick={scrollTo}>Base of Operations</Link></li>
-              </ul>
             </li>
           </ul>
         </nav>

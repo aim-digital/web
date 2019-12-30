@@ -16,7 +16,8 @@ export default class extends Section {
     load: PropTypes.func.isRequired,
     open: PropTypes.func.isRequired,
     solution: PropTypes.object,
-    title: PropTypes.object
+    title: PropTypes.any,
+    right: PropTypes.bool
   };
 
   openSolution = async () => {
@@ -27,12 +28,13 @@ export default class extends Section {
   };
 
   render() {
-    const { children, solution, title } = this.props;
+    const { children, solution, title, right } = this.props;
+    const headerClass = right ? 'text-right' : '';
 
     return (
       <Section>
-        <h2>{solution.section}</h2>
-        <h3>{title || solution.title}</h3>
+        <h2 className={headerClass}>{solution.section}</h2>
+        <h3 className={headerClass}>{title || solution.title}</h3>
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">
