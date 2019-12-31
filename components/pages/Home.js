@@ -24,7 +24,7 @@ const PARALLAX_SCALE = 850;
 const PARALLAX_SPEED = 0.2;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
-
+const SECTION_HOME = 'services';
 const SECTIONS = {
   services: { slide: 0 },
   value: { slide: 1 },
@@ -133,10 +133,18 @@ export default class extends Page {
     ) : <span/>;
   }
 
+  get section() {
+    const { props } = this;
+    const section = props.section || props.param.section;
+    return section ? (SECTIONS[section] ? section : SECTION_HOME) : section;
+  }
+
+  get length() {
+    return this.section ? 1 : this.props.sections.length;
+  }
+
   get content() {
-    const { param, sections, section = param.section } = this.props;
-    const length = section ? 1 : sections.length;
-    const headerClass = length % 2 ? 'text-right' : '';
+    const headerClass = this.length % 2 ? 'text-right' : '';
 
     return (
       <section className="section">
@@ -235,10 +243,10 @@ export default class extends Page {
   wrap = sections => sections.map((section, i) => <div key={String(i)}>{section}</div>);
 
   render() {
-    const { param, className, classNames = {}, solution, close, sections, section = param.section } = this.props;
+    const { className, classNames = {}, solution, close, sections } = this.props;
     const { animating, contact, isMobile, isLandscape } = this.state;
+    const { section, length } = this;
     const { message } = this.state.form;
-    const length = section ? 1 : sections.length;
     const filter = component => section ? component.key.replace(RE_SECTION_KEY, '$1').toLowerCase() === section.toLowerCase() : true;
     const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
