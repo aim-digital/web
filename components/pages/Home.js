@@ -346,9 +346,9 @@ export default class extends Page {
               </ParallaxLayer>
               <Footer/>
             </Parallax> : <>
-              {this.header}
               {sections.filter(filter)}
               {this.content}
+              <Footer/>
             </>}
           </section>
           <modals.Solution show={!!solution} solution={solution || {}} onHide={close}/>
