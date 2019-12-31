@@ -169,9 +169,10 @@
     text-transform: uppercase;
     font-family: $font-family-fjalla;
     color: #F7DE47;
-    font-size: 3em;
+    font-size: 3.5em;
     line-height: 1;
-    margin: 0 auto 1.5em;
+    margin: 0 auto 15px;
+    text-align: left;
 
     span {
       position: relative;
@@ -182,7 +183,7 @@
       position: absolute;
       z-index: 1;
       bottom: -.25em;
-      left: 0;
+      left: 15px;
       color: rgba(89, 159, 198, 1);
       font-size: 4em;
       width: 100%;
@@ -200,6 +201,7 @@
     text-align: center;
     padding: 1.5em;
     position: relative;
+    z-index: 3;
 
     &:before {
       content: '';

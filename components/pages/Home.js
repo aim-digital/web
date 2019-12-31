@@ -208,7 +208,6 @@ export default class extends Page {
     const { message } = this.state.form;
     const scale = global.innerHeight ? 850 / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
-    const speed = offset => 0.2;
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
     return (
