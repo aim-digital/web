@@ -267,3 +267,9 @@ section.solutions {
     }
   }
 }
+
+.home.page .section.container .first-section .section > div > div {
+  & > h2, & > h3 {
+    text-align: left !important;
+  }
+}

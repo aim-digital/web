@@ -5,12 +5,14 @@ import {Link} from 'react-router';
 import {Nav} from '@boilerplatejs/core/components/layout';
 import {Progress} from '@boilerplatejs/core/components/layout';
 import {load} from '@fox-zero/web/actions/Nav';
+import {transition} from '@boilerplatejs/core/actions/Transition';
 
-@connect(() => ({}), { load })
+@connect(() => ({}), {load, transition})
 
 export default class extends Nav {
   static propTypes = {
-    load: PropTypes.func.isRequired
+    load: PropTypes.func.isRequired,
+    transition: PropTypes.func.isRequired
   };
 
   componentDidMount = () => this.props.load(2000);
@@ -30,7 +32,9 @@ export default class extends Nav {
 
   render() {
     const preventDefault = e => e.preventDefault();
+    const { transition } = this.props;
     const { scrollTo } = this;
+    const update = i => () => transition('slide', i).then(scrollTo);
 
     return (
       <section className="nav">
@@ -57,22 +61,22 @@ export default class extends Nav {
           </div>
           <ul>
             <li className="home">
-              <Link rel="nofollow" to="/digital-media-agency" className="logo" onClick={scrollTo}/>
+              <Link rel="nofollow" to="/" className="logo" onClick={update(0)}/>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> Services</a>
               <ul>
-                <li><Link rel="nofollow" to="/digital-media-agency/services" onClick={scrollTo}>Services</Link></li>
-                <li><Link rel="nofollow" to="/digital-media-agency/value" onClick={scrollTo}>Value</Link></li>
-                <li><Link rel="nofollow" to="/digital-media-agency/strategy" onClick={scrollTo}>Strategy</Link></li>
-                <li><Link rel="nofollow" to="/digital-media-agency/process" onClick={scrollTo}>Process</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/services" onClick={update(0)}>Services</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/value" onClick={update(1)}>Value</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/strategy" onClick={update(2)}>Strategy</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/process" onClick={update(3)}>Process</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/digital-media-agency/warranty" onClick={scrollTo}>Warranty</Link></li>
-                <li><Link rel="nofollow" to="/digital-media-agency/pricing" onClick={scrollTo}>Pricing</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/warranty" onClick={update(4)}>Warranty</Link></li>
+                <li><Link rel="nofollow" to="/digital-media-agency/pricing" onClick={update(5)}>Pricing</Link></li>
               </ul>
             </li>
             <li>

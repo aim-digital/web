@@ -19,7 +19,11 @@ import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
+
+const PARALLAX_SCALE = 850;
 const PARALLAX_SPEED = 0.2;
+
+const RE_SECTION_KEY = /.*\:(.*)$/;
 
 const SECTIONS = {
   services: { slide: 0 },
@@ -110,10 +114,12 @@ export default class extends Page {
   get solutions() {
     const { renderSolution } = this;
 
-    return <section className="solutions">
-      <div className="left">{solutions.slice(0, SOLUTION_AVG).map(renderSolution(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-      <div className="right">{solutions.slice(SOLUTION_AVG).map(renderSolution(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
-    </section>;
+    return (
+      <section className="solutions">
+        <div className="left">{solutions.slice(0, SOLUTION_AVG).map(renderSolution(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+        <div className="right">{solutions.slice(SOLUTION_AVG).map(renderSolution(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .85 } })))}</div>
+      </section>
+    );
   }
 
   get header() {
@@ -125,6 +131,32 @@ export default class extends Page {
         {single ? headers : (headers[0])}
       </section>
     ) : <span/>;
+  }
+
+  get content() {
+    const { param, sections, section = param.section } = this.props;
+    const length = section ? 1 : sections.length;
+    const headerClass = length % 2 ? 'text-right' : '';
+
+    return (
+      <section className="section">
+        <h2 className={headerClass}>Content</h2>
+        <h3 className={headerClass}>FoxStream™ TV</h3>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 card">
+              <img src="/@fox-zero/web/images/logo.png" />
+              <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
+              <div>
+                <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
+                  <i className="fa fa-television"/> <sup>Fox://</sup>Stream™ TV
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
   }
 
   updateViewport = () => {
@@ -203,17 +235,19 @@ export default class extends Page {
   wrap = sections => sections.map((section, i) => <div key={String(i)}>{section}</div>);
 
   render() {
-    const { className, classNames = {}, solution, close } = this.props;
+    const { param, className, classNames = {}, solution, close, sections, section = param.section } = this.props;
     const { animating, contact, isMobile, isLandscape } = this.state;
     const { message } = this.state.form;
-    const scale = global.innerHeight ? 850 / global.innerHeight : 1;
+    const length = section ? 1 : sections.length;
+    const filter = component => section ? component.key.replace(RE_SECTION_KEY, '$1').toLowerCase() === section.toLowerCase() : true;
+    const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(8.3)} style={{ left: 0 }}>
+            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(length + 2.3)} style={{ left: 0 }}>
               <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
               <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -270,44 +304,20 @@ export default class extends Page {
                 style={{ pointerEvents: 'none', zIndex: 1 }}>
                 {this.solutions}
               </ParallaxLayer>}
+              {sections
+                .filter(filter)
+                .map((component, i) => (
+                  <ParallaxLayer
+                    className={!i ? 'first-section' : ''}
+                    key={`section-${i}`}
+                    offset={factor(i)}
+                    factor={scale}
+                    speed={PARALLAX_SPEED}>
+                    {component}
+                  </ParallaxLayer>
+                ))}
               <ParallaxLayer
-                offset={factor(0)}
-                factor={scale}
-                speed={PARALLAX_SPEED}>
-                {this.props.sections[0]}
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(1)}
-                factor={scale}
-                speed={PARALLAX_SPEED}>
-                {this.props.sections[1]}
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(2)}
-                factor={scale}
-                speed={PARALLAX_SPEED}>
-                {this.props.sections[2]}
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(3)}
-                factor={scale}
-                speed={PARALLAX_SPEED}>
-                {this.props.sections[3]}
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(4)}
-                factor={scale}
-                speed={PARALLAX_SPEED}>
-                {this.props.sections[4]}
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(5)}
-                factor={scale}
-                speed={PARALLAX_SPEED}>
-                {this.props.sections[5]}
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={factor(6.1)}
+                offset={factor(length + 0.1)}
                 speed={PARALLAX_SPEED}>
                 <section className="quote">
                   <div>
@@ -321,29 +331,16 @@ export default class extends Page {
                 </section>
               </ParallaxLayer>
               <ParallaxLayer
-                offset={factor(6.85)}
+                offset={factor(length + 0.85)}
                 factor={scale}
                 speed={PARALLAX_SPEED}>
-                <section className="section">
-                  <h2>Content</h2>
-                  <h3>FoxStream™ TV</h3>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-12 card">
-                        <img src="/@fox-zero/web/images/logo.png" />
-                        <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
-                        <div>
-                          <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
-                            <i className="fa fa-television"/> <sup>Fox://</sup>Stream™ TV
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
+                {this.content}
               </ParallaxLayer>
               <Footer/>
             </Parallax> : <>
+              {this.header}
+              {sections.filter(filter)}
+              {this.content}
             </>}
           </section>
           <modals.Solution show={!!solution} solution={solution || {}} onHide={close}/>
