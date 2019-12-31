@@ -88,12 +88,8 @@
     // vertical-align: middle;
     position: absolute;
     width: 100%;
-    bottom: 40%;
+    bottom: 35%;
     transform: translate(0, 50%);
-
-    @media only screen and (min-width: 769px) {
-      bottom: 40%;
-    }
   }
 
   button {
@@ -181,14 +177,14 @@
 
     i {
       position: absolute;
-      z-index: 1;
-      bottom: -.25em;
+      z-index: 2;
+      bottom: -20px;
       left: 15px;
       color: rgba(89, 159, 198, 1);
-      font-size: 4em;
+      font-size: 3.5em;
       width: 100%;
       display: block;
-      opacity: .65;
+      opacity: .85;
     }
   }
 
@@ -201,7 +197,7 @@
     text-align: center;
     padding: 1.5em;
     position: relative;
-    z-index: 3;
+    z-index: 1;
 
     &:before {
       content: '';
@@ -217,9 +213,9 @@
     }
 
     p {
-      font-size: 1.1em;
+      font-size: 1.25em;
       color: #fff;
-      line-height: 1.5;
+      line-height: 1.25;
       text-align: left;
       position: relative;
       z-index: 2;

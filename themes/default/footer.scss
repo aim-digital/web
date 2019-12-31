@@ -13,6 +13,12 @@ footer {
   z-index: 1;
   box-shadow: 0 -1px 10px rgba(41, 41, 41,.5);
   text-shadow: -1px 1px 1px $black-color;
+  display: none;
+
+  #app.nav-loaded &,
+  #app.no-js & {
+    display: block !important;
+  }
 
   .home.page & {
     bottom: 0;
@@ -278,28 +284,28 @@ footer {
     }
 
     &.blue:before, &.blue:after {
-      background: $background-color;
+      background: #F7DE47;
       right: -150%;
     }
 
     &.green:before, &.green:after {
-      background: #ea4234;
+      background: #6793AE;
       right: -170%;
     }
 
     &.yellow:before, &.yellow:after {
-      background: #fff;
+      background: #F17D30;
       right: -185%;
     }
 
     &.red:before, &.red:after  {
-      background: #20ADE4;
+      background: #99CA3E;
       right: -200%;
     }
 
     &.red:after  {
       content: '';
-      background: $background-color;
+      background: #F7DE47;
       right: -215%;
       top: 90%;
 

@@ -2,8 +2,8 @@
     {
         "index": 0,
         "section": "Services",
-        "slug": "full-service-zero-bs",
-        "title": "Full-Service, Zero BS",
+        "slug": "full-service-digital-agency",
+        "title": "Full-Service Digital Agency",
         "action": "Read more about our services",
         "icon": "wrench",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
@@ -11,7 +11,7 @@
     {
         "index": 1,
         "section": "Value",
-        "slug": "full-service-zero-bs",
+        "slug": "full-service-digital-agency",
         "title": "100% Power Every Hour",
         "action": "Read more about our value",
         "icon": "comment",
@@ -20,7 +20,7 @@
     {
         "index": 2,
         "section": "Strategy",
-        "slug": "full-service-zero-bs",
+        "slug": "full-service-digital-agency",
         "title": "Introducing FAST™ PLM",
         "action": "Read more about our strategy",
         "icon": "hashtag",
@@ -29,7 +29,7 @@
     {
         "index": 3,
         "section": "Process",
-        "slug": "full-service-zero-bs",
+        "slug": "full-service-digital-agency",
         "title": "FoxZero™ JIRA Tracker",
         "action": "Read more about our process",
         "icon": "share-alt",
@@ -38,7 +38,7 @@
     {
         "index": 4,
         "section": "Warranty",
-        "slug": "full-service-zero-bs",
+        "slug": "full-service-digital-agency",
         "title": "Perfect Aim™ 100% Guarantee",
         "action": "Read more about our warranty",
         "icon": "money",
@@ -47,7 +47,7 @@
     {
         "index": 5,
         "section": "Pricing",
-        "slug": "full-service-zero-bs",
+        "slug": "full-service-digital-agency",
         "title": "Velocity™ Subscription Plans",
         "action": "Read more about our pricing",
         "icon": "line-chart",

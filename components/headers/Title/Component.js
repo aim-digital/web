@@ -41,7 +41,7 @@ export default class extends Header {
             <div className={[styles.content, 'content', styles.services].join(' ')} key="0">
               <h3>
                 <i className={`fa fa-${solutions[0].icon}`}></i>
-                <span>Full-Service,<br />Zero BS</span>
+                <span>Full-Service<br />Digital Agency</span>
               </h3>
               <section className={['preview'].join(' ')}>
                 <p>{solutions[0].summary}</p>
