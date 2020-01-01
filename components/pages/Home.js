@@ -24,6 +24,7 @@ const PARALLAX_SCALE = 850;
 const PARALLAX_SPEED = 0.2;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
+const SECTION_OFFSET = 250;
 const SECTION_HOME = 'services';
 const SECTIONS = {
   services: { slide: 0 },
@@ -73,10 +74,14 @@ export default class extends Page {
     }
   };
 
+  positions = [];
+
   componentDidMount = () => {
     if (__CLIENT__) {
+      const { app, parallax } = this.elements;
       document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
-      document.getElementById('app').classList.add('home');
+      app.classList.add('home');
+      global.Element.prototype.getBoundingClientRect && parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 1000));
       global.addEventListener('resize', this.updateViewport);
       global.setTimeout(() => { this.setState({ ready: true }); }, 1000);
       this.updateViewport();
@@ -98,9 +103,11 @@ export default class extends Page {
 
   componentWillUnmount = () => {
     if (__CLIENT__) {
+      const { app, parallax } = this.elements;
       document.querySelector('#app .nav + .page').removeEventListener('click', this.props.dismiss);
       this.props.transition({ progress: 0.2 });
-      document.getElementById('app').classList.remove('home');
+      app.classList.remove('home');
+      global.Element.prototype.getBoundingClientRect && parallax.removeEventListener('scroll', this.onScroll);
       global.removeEventListener('resize', this.updateViewport);
     }
   }
@@ -110,6 +117,42 @@ export default class extends Page {
       this.updateHeader(props);
     }
   };
+
+  componentDidUpdate = props => {
+    if (!this.positions.length) {
+      this.getSectionPositions();
+    }
+  };
+
+  getSectionPositions = () => {
+    const { length, elements } = this;
+    const { parallax } = elements;
+
+    for (let i = 0; i < length; i++)
+      this.positions[i] = parallax.querySelector(`.section-${i}`).getBoundingClientRect().top - global.innerHeight - (i * SECTION_OFFSET);
+  };
+
+  onScroll = () => {
+    const { positions, elements, props } = this;
+    const { length } = positions;
+    const { transition } = props;
+    const { parallax: { scrollTop } } = elements;
+    let slide;
+
+    for (let i = 0; i < length; i++)
+      if (scrollTop >= positions[i])
+        slide = i;
+
+    typeof slide !== 'undefined' && transition('slide', slide);
+  };
+
+  get elements() {
+    const { slide } = this.props;
+    const app = document.querySelector('#app');
+    const parallax = app.querySelector('.section.container > .parallax');
+    const section = parallax.querySelector(`.section-${slide}`);
+    return { app, parallax, section };
+  }
 
   get solutions() {
     const { renderSolution } = this;
@@ -179,9 +222,8 @@ export default class extends Page {
   };
 
   openSolution = async (solution) => {
-    const { transition, load, open } = this.props;
-    const { index, slug } = solution;
-    transition('slide', index);
+    const { load, open } = this.props;
+    const { slug } = solution;
     open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug), published: true }) });
   };
 

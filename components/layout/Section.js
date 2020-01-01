@@ -21,9 +21,8 @@ export default class extends Section {
   };
 
   openSolution = async () => {
-    const { transition, load, open, solution } = this.props;
-    const { index, slug } = solution;
-    transition('slide', index);
+    const { load, open, solution } = this.props;
+    const { slug } = solution;
     open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug), published: true }) });
   };
 

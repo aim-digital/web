@@ -60,6 +60,14 @@ export default class extends Header {
     }
   }
 
+  get elements() {
+    const { slide } = this.props;
+    const app = document.querySelector('#app');
+    const parallax = app.querySelector('.section.container > .parallax');
+    const section = parallax && parallax.querySelector(`.section-${slide}`);
+    return { app, parallax, section };
+  }
+
   clearTimer = () => {
     window.clearTimeout(this.timer);
     this.timer = null;
@@ -94,14 +102,6 @@ export default class extends Header {
       onTransitionComplete(this.state);
     }
   };
-
-  get elements() {
-    const { slide } = this.props;
-    const app = document.querySelector('#app');
-    const parallax = app.querySelector('.section.container > .parallax');
-    const section = parallax.querySelector(`.section-${slide}`);
-    return { app, parallax, section };
-  }
 
   scrollTo = () => {
     const OFFSET = 250;
