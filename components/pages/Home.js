@@ -182,7 +182,7 @@ export default class extends Page {
     const { transition, load, open } = this.props;
     const { index, slug } = solution;
     transition('slide', index);
-    open({ ...solution, ...await load('posts', { slug, published: true }) });
+    open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug), published: true }) });
   };
 
   renderSolution = transition => (solution, i) => {
@@ -316,7 +316,7 @@ export default class extends Page {
                 .filter(filter)
                 .map((component, i) => (
                   <ParallaxLayer
-                    className={!i ? 'first-section' : ''}
+                    className={`section-${i}`}
                     key={`section-${i}`}
                     offset={factor(i)}
                     factor={scale}

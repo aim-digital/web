@@ -38,7 +38,7 @@ export default class extends Header {
     return (
         <Header timer={30} className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
           {[
-            <div className={[styles.content, 'content', styles.services].join(' ')} key="0">
+            <div className={[styles.content, 'content'].join(' ')} key="slide-0">
               <h3>
                 <i className={`fa fa-${solutions[0].icon}`}></i>
                 <span>Full-Service<br />Digital Agency</span>
@@ -65,7 +65,7 @@ export default class extends Header {
               </section>
             </div>,
 
-            <div className={[styles.content, 'content', styles.services].join(' ')} key="1">
+            <div className={[styles.content, 'content'].join(' ')} key="slide-1">
               <h3>
                 <i className={`fa fa-${solutions[1].icon}`}></i>
                 <span>100% Power<br />Every Hour</span>
@@ -75,7 +75,7 @@ export default class extends Header {
               </section>
             </div>,
 
-            <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="2">
+            <div className={[styles.content, 'content'].join(' ')} key="slide-2">
               <h3>
                 <i className={`fa fa-${solutions[2].icon}`}></i>
                 <span>Introducing<br />FAST™ PLM</span>
@@ -85,7 +85,7 @@ export default class extends Header {
               </section>
             </div>,
 
-            <div className={[styles.content, 'content', styles.pricing].join(' ')} key="3">
+            <div className={[styles.content, 'content'].join(' ')} key="3">
               <h3>
                 <i className={`fa fa-${solutions[3].icon}`}></i>
                 <span>FoxZero™ JIRA<br />Tracker</span>
@@ -95,7 +95,7 @@ export default class extends Header {
               </section>
             </div>,
 
-            <div className={[styles.content, 'content', styles.pricing, styles.products].join(' ')} key="4">
+            <div className={[styles.content, 'content'].join(' ')} key="slide-4">
               <h3>
                 <i className={`fa fa-${solutions[4].icon}`}></i>
                 <span>Perfect Aim™<br />100% Guarantee</span>
@@ -105,7 +105,7 @@ export default class extends Header {
               </section>
             </div>,
 
-            <div className={[styles.content, 'content', styles.team].join(' ')} key="5">
+            <div className={[styles.content, 'content'].join(' ')} key="slide-5">
               <h3>
                 <i className={`fa fa-${solutions[5].icon}`}></i>
                 <span>Velocity™<br />Subscription Plans</span>

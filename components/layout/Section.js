@@ -24,7 +24,7 @@ export default class extends Section {
     const { transition, load, open, solution } = this.props;
     const { index, slug } = solution;
     transition('slide', index);
-    open({ ...solution, ...await load('posts', { slug, published: true }) });
+    open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug), published: true }) });
   };
 
   render() {

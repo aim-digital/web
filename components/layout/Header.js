@@ -95,9 +95,33 @@ export default class extends Header {
     }
   };
 
+  get elements() {
+    const { slide } = this.props;
+    const app = document.querySelector('#app');
+    const parallax = app.querySelector('.section.container > .parallax');
+    const section = parallax.querySelector(`.section-${slide}`);
+    return { app, parallax, section };
+  }
+
+  scrollTo = () => {
+    const OFFSET = 250;
+    const { slide } = this.props;
+    const { app, parallax, section } = this.elements;
+    const top = section.getBoundingClientRect().top - OFFSET - (slide * OFFSET);
+
+    if (app.scrollTo) {
+      app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      parallax && parallax.scrollTo({ top, left: 0, behavior: 'smooth' });
+    } else {
+      app.scrollTop = 0;
+      parallax && (parallax.scrollTop = top);
+    }
+  };
+
   render() {
     const { className, classNames, children, runOnMount, slide, images, cycle } = this.props;
     const { animating, previous } = this.state;
+    const { elements } = this;
 
     const getFlipState = (direction = 'next') => {
       return {
@@ -117,9 +141,9 @@ export default class extends Header {
             <div className="flippers">
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left">&larr;</button>
               <button {...getFlipState('next')} onClick={this.next} className="flip right">&rarr;</button>
-              <div className="scroll">
-                <button><span/></button>
-              </div>
+              {elements.section && elements.section.getBoundingClientRect && <div className="scroll">
+                <button onClick={this.scrollTo}><span/></button>
+              </div>}
             </div>
           </div>
         ) : children}
