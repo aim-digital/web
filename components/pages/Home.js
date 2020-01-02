@@ -17,6 +17,8 @@ import ReactGA from 'react-ga';
 import {solutions} from '@fox-zero/web/data';
 import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
+const HEADER_TIMER = 20;
+
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
 
@@ -25,7 +27,7 @@ const PARALLAX_SPEED = 0.2;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
 const SECTION_OFFSET = 250;
-const SECTION_HOME = 'services';
+const SECTION_DEFAULT = 'services';
 const SECTIONS = {
   services: { slide: 0 },
   value: { slide: 1 },
@@ -75,16 +77,19 @@ export default class extends Page {
   };
 
   positions = [];
+  scrollTop = 0;
 
   componentDidMount = () => {
     if (__CLIENT__) {
+      const { transition } = this.props;
       const { app, parallax } = this.elements;
       document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
       app.classList.add('home');
-      global.Element.prototype.getBoundingClientRect && parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 1000));
+      parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 1000, { leading: true }));
       global.addEventListener('resize', this.updateViewport);
       global.setTimeout(() => { this.setState({ ready: true }); }, 1000);
       this.updateViewport();
+      transition('timer', HEADER_TIMER);
     }
   }
 
@@ -107,7 +112,7 @@ export default class extends Page {
       document.querySelector('#app .nav + .page').removeEventListener('click', this.props.dismiss);
       this.props.transition({ progress: 0.2 });
       app.classList.remove('home');
-      global.Element.prototype.getBoundingClientRect && parallax.removeEventListener('scroll', this.onScroll);
+      parallax.removeEventListener('scroll', this.onScroll);
       global.removeEventListener('resize', this.updateViewport);
     }
   }
@@ -133,17 +138,30 @@ export default class extends Page {
   };
 
   onScroll = () => {
-    const { positions, elements, props } = this;
+    const { positions, elements, section, props } = this;
     const { length } = positions;
     const { transition } = props;
     const { parallax: { scrollTop } } = elements;
-    let slide;
+    const first = positions[0];
+    let timer, slide;
 
-    for (let i = 0; i < length; i++)
-      if (scrollTop >= positions[i])
-        slide = i;
+    if (scrollTop >= first) {
+      timer = 0;
 
-    typeof slide !== 'undefined' && transition('slide', slide);
+      for (let i = 0; i < length; i++)
+        if (scrollTop >= positions[i])
+          slide = section ? SECTIONS[section].slide : i;
+    } else if (this.scrollTop >= first) {
+      timer = HEADER_TIMER;
+      slide = SECTIONS[section || SECTION_DEFAULT].slide;
+    }
+
+    this.scrollTop = scrollTop;
+
+    if (typeof slide !== 'undefined') {
+      transition('slide', slide);
+      transition('timer', timer);
+    }
   };
 
   get elements() {
@@ -179,7 +197,7 @@ export default class extends Page {
   get section() {
     const { props } = this;
     const section = props.section || props.param.section;
-    return section ? (SECTIONS[section] ? section : SECTION_HOME) : section;
+    return section ? (SECTIONS[section] ? section : SECTION_DEFAULT) : section;
   }
 
   get length() {

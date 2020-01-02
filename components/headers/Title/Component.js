@@ -1,6 +1,7 @@
 import React from 'react';
+import {PropTypes} from 'prop-types';
+import {connect} from 'react-redux';
 import ReactGA from 'react-ga';
-// import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@fox-zero/web/components/layout';
 import {solutions} from '@fox-zero/web/data';
 
@@ -13,7 +14,17 @@ const IMAGES = [
   require('./images/1540844130883.jpg')
 ];
 
+@connect(state => ({ timer: state['@boilerplatejs/core'].Transition.timer }))
+
 export default class extends Header {
+  static propTypes = {
+    timer: PropTypes.number
+  };
+
+  static defaultProps = {
+    timer: 0
+  };
+
   state = {
     loaded: false
   };
@@ -33,10 +44,11 @@ export default class extends Header {
   };
 
   render() {
+    const { timer } = this.props;
     const styles = require('./Component.scss');
 
     return (
-        <Header timer={20} className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
+        <Header timer={timer} className={styles.slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
           {[
             <div className={[styles.content, 'content'].join(' ')} key="slide-0">
               <h3>

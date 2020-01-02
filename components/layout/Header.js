@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {VelocityTransitionGroup} from 'velocity-react';
@@ -27,7 +27,8 @@ export default class extends Header {
     classNames: {},
     runOnMount: false,
     cycle: false,
-    images: []
+    images: [],
+    timer: 0
   };
 
   state = {
@@ -40,15 +41,14 @@ export default class extends Header {
 
   componentWillUnmount() {
     this.setState({ animating: false, index: 0, previous: undefined });
-
-    if (this.props.timer) {
-      this.clearTimer();
-    }
+    this.clearTimer();
   }
 
   componentDidUpdate() {
+    this.clearTimer();
+
     if (this.props.timer) {
-      this.clearTimer().startTimer();
+      this.startTimer();
     }
   }
 
@@ -121,7 +121,6 @@ export default class extends Header {
   render() {
     const { className, classNames, children, runOnMount, slide, images, cycle } = this.props;
     const { animating, previous } = this.state;
-    const { elements } = this;
 
     const getFlipState = (direction = 'next') => {
       return {
@@ -141,9 +140,9 @@ export default class extends Header {
             <div className="flippers">
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left">&larr;</button>
               <button {...getFlipState('next')} onClick={this.next} className="flip right">&rarr;</button>
-              {elements.section && elements.section.getBoundingClientRect && <div className="scroll">
+              {__CLIENT__ && this.elements.section ? <div className="scroll">
                 <button onClick={this.scrollTo}><span/></button>
-              </div>}
+              </div> : <></>}
             </div>
           </div>
         ) : children}
