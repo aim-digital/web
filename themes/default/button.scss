@@ -58,7 +58,10 @@ button.btn {
 
   &:hover {
     opacity: 1 !important;
-    color: #000;
+
+    span {
+      color: $black-color !important;
+    }
   }
 
   i, button {

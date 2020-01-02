@@ -170,6 +170,10 @@
     margin: 0 auto 15px;
     text-align: left;
 
+    &.text-right {
+      text-align: right;
+    }
+
     span {
       position: relative;
       z-index: 2;

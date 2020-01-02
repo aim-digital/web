@@ -43,7 +43,6 @@ const SECTIONS = {
   return ({
     param: state.router.params,
     slide, query: state.router.location.query,
-    initial: state['@boilerplatejs/core'].Transition['slide.initial'],
     solution
   });
 }, {transition, dismiss, update, load, open, close})
@@ -61,15 +60,13 @@ export default class extends Page {
     param: PropTypes.object,
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
-    initial: PropTypes.any,
     section: PropTypes.string
   };
 
   static defaultProps = {
     className: '',
     classNames: {},
-    solution: null,
-    initial: null
+    solution: null
   };
 
   state = {
@@ -102,12 +99,16 @@ export default class extends Page {
   }
 
   componentWillMount = () => {
-    const { detail: index } = this.props.query;
+    const { section, props } = this;
+    const { transition, query } = props;
+    const { detail: index } = query;
     const detail = solutions[index];
 
     this.updateHeader();
 
     if (__CLIENT__) {
+      transition('slide.initial', section ? SECTIONS[section].slide : null);
+
       if (detail) {
         this.openSolution(detail);
       }
@@ -127,13 +128,12 @@ export default class extends Page {
 
   componentWillUpdate = props => {
     const { section } = this;
-    const { transition, initial, param } = this.props;
+    const { transition, param } = this.props;
 
-    if (initial !== props.initial)
-      transition('slide.initial', section ? SECTIONS[section].slide : null);
-
-    if (param.section !== props.param.section)
+    if (param.section !== props.param.section) {
       this.updateHeader(props);
+      transition('slide.initial', section ? SECTIONS[section].slide : null);
+    }
   };
 
   componentDidUpdate = () => {
