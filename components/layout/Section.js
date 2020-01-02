@@ -42,7 +42,9 @@ export default class extends Section {
                 <Solution
                   onClick={this.openSolution}
                   icon={solution.icon}>
-                  {solution.action}
+                  <>
+                    <span>Read more about our</span> {solution.section.toLowerCase()}
+                  </>
                 </Solution>
               </div>
             </div>

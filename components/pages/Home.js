@@ -40,7 +40,12 @@ const SECTIONS = {
 @connect(state => {
   const { slide = 0 } = state['@boilerplatejs/core'].Transition;
   const { current: solution = null } = state['@fox-zero/web'].Solution;
-  return ({ param: state.router.params, slide, query: state.router.location.query, solution });
+  return ({
+    param: state.router.params,
+    slide, query: state.router.location.query,
+    initial: state['@boilerplatejs/core'].Transition['slide.initial'],
+    solution
+  });
 }, {transition, dismiss, update, load, open, close})
 
 export default class extends Page {
@@ -56,13 +61,15 @@ export default class extends Page {
     param: PropTypes.object,
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
+    initial: PropTypes.any,
     section: PropTypes.string
   };
 
   static defaultProps = {
     className: '',
     classNames: {},
-    solution: null
+    solution: null,
+    initial: null
   };
 
   state = {
@@ -120,13 +127,13 @@ export default class extends Page {
 
   componentWillUpdate = props => {
     const { section } = this;
-    const { transition } = this.props;
+    const { transition, initial, param } = this.props;
 
-    transition('slide.initial', section ? SECTIONS[section].slide : null);
+    if (initial !== props.initial)
+      transition('slide.initial', section ? SECTIONS[section].slide : null);
 
-    if (this.props.param.section !== props.param.section) {
+    if (param.section !== props.param.section)
       this.updateHeader(props);
-    }
   };
 
   componentDidUpdate = () => {
@@ -269,7 +276,9 @@ export default class extends Page {
           label: solution.title
         });
       }}>
-        {solution.title}
+        <>
+          <span>{solution.section} &bull;</span> {solution.title}
+        </>
       </Solution>;
   }
 

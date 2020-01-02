@@ -3,7 +3,7 @@ import {PropTypes} from 'prop-types';
 
 export default class extends Component {
   static propTypes = {
-    children: PropTypes.string,
+    children: PropTypes.any,
     icon: PropTypes.string,
     className: PropTypes.string,
     transition: PropTypes.object,
