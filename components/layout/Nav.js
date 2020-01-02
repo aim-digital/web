@@ -15,7 +15,7 @@ export default class extends Nav {
     transition: PropTypes.func.isRequired
   };
 
-  componentDidMount = () => this.props.load(2000);
+  componentDidMount = () => this.props.load();
 
   scrollTo = () => {
     const app = document.querySelector('#app');
