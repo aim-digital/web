@@ -81,8 +81,9 @@ export default class extends Page {
 
   componentDidMount = () => {
     if (__CLIENT__) {
-      const { transition } = this.props;
-      const { app, parallax } = this.elements;
+      const { props, elements } = this;
+      const { transition } = props;
+      const { app, parallax } = elements;
       document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
       app.classList.add('home');
       parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 1000, { leading: true }));
@@ -118,12 +119,17 @@ export default class extends Page {
   }
 
   componentWillUpdate = props => {
+    const { section } = this;
+    const { transition } = this.props;
+
+    transition('slide.initial', section ? SECTIONS[section].slide : null);
+
     if (this.props.param.section !== props.param.section) {
       this.updateHeader(props);
     }
   };
 
-  componentDidUpdate = props => {
+  componentDidUpdate = () => {
     if (!this.positions.length) {
       this.getSectionPositions();
     }

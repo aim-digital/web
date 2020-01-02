@@ -6,7 +6,10 @@ import {Header} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {Logo} from '@fox-zero/web/components/layout';
 
-@connect((state, props) => ({ slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0 }), {transition})
+@connect((state, props) => ({
+  slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0,
+  initial: state['@boilerplatejs/core'].Transition['slide.initial']
+}), {transition})
 
 export default class extends Header {
   static propTypes = {
@@ -18,6 +21,7 @@ export default class extends Header {
     children: PropTypes.any,
     classNames: PropTypes.object,
     slide: PropTypes.number.isRequired,
+    initial: PropTypes.any,
     transition: PropTypes.func.isRequired,
     images: PropTypes.array
   };
@@ -28,7 +32,8 @@ export default class extends Header {
     runOnMount: false,
     cycle: false,
     images: [],
-    timer: 0
+    timer: 0,
+    initial: null
   };
 
   state = {
@@ -60,12 +65,17 @@ export default class extends Header {
     }
   }
 
-  get elements() {
-    const { slide } = this.props;
+  getElements = () => {
+    const { slide, initial } = this.props;
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
-    const section = parallax && parallax.querySelector(`.section-${slide}`);
+    const section = parallax && parallax.querySelector(`.section-${initial === null ? slide : 0}`);
     return { app, parallax, section };
+  }
+
+  hasScroll = () => {
+    const { slide, initial } = this.props;
+    return (slide !== null && slide === initial) || (initial === null && this.getElements().section);
   }
 
   clearTimer = () => {
@@ -105,9 +115,9 @@ export default class extends Header {
 
   scrollTo = () => {
     const OFFSET = 250;
-    const { slide } = this.props;
-    const { app, parallax, section } = this.elements;
-    const top = section.getBoundingClientRect().top - OFFSET - (slide * OFFSET);
+    const { slide, initial } = this.props;
+    const { app, parallax, section } = this.getElements();
+    const top = section.getBoundingClientRect().top - OFFSET - (initial === null ? slide * OFFSET : 0);
 
     if (app.scrollTo) {
       app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -140,7 +150,7 @@ export default class extends Header {
             <div className="flippers">
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left">&larr;</button>
               <button {...getFlipState('next')} onClick={this.next} className="flip right">&rarr;</button>
-              {__CLIENT__ && this.elements.section ? <div className="scroll">
+              {__CLIENT__ && this.hasScroll() ? <div className="scroll">
                 <button onClick={this.scrollTo}><span/></button>
               </div> : <></>}
             </div>
