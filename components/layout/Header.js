@@ -50,11 +50,7 @@ export default class extends Header {
   }
 
   componentDidUpdate() {
-    this.clearTimer();
-
-    if (this.props.timer) {
-      this.startTimer();
-    }
+    this.resetTimer();
   }
 
   componentWillReceiveProps(next) {
@@ -64,6 +60,14 @@ export default class extends Header {
       this.setState({ previous: slide !== next.slide ? slide : undefined });
     }
   }
+
+  resetTimer = () => {
+    this.clearTimer();
+
+    if (this.props.timer) {
+      this.startTimer();
+    }
+  };
 
   getElements = () => {
     const { slide, initial } = this.props;

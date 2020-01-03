@@ -93,13 +93,13 @@ footer {
   }
 
   p {
-    padding-bottom: 1em;
+    padding-bottom: 1.5em;
     max-width: 970px;
     margin: 0 auto;
   }
 
   img {
-    margin: 1em auto 0;
+    margin: 1em auto .5em;
     max-width: 128px;
     width: 10%;
     min-width: 92px;
@@ -284,28 +284,28 @@ footer {
     }
 
     &.blue:before, &.blue:after {
-      background: #F7DE47;
+      background: #76a8c7;
       right: -150%;
     }
 
     &.green:before, &.green:after {
-      background: #6793AE;
+      background: #009fdd;
       right: -170%;
     }
 
     &.yellow:before, &.yellow:after {
-      background: #F17D30;
+      background: #FC6600;
       right: -185%;
     }
 
     &.red:before, &.red:after  {
-      background: #99CA3E;
+      background: #76a8c7;
       right: -200%;
     }
 
     &.red:after  {
       content: '';
-      background: #F7DE47;
+      background: #009fdd;
       right: -215%;
       top: 90%;
 

@@ -90,7 +90,7 @@ export default class extends Page {
       const { app, parallax } = elements;
       document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
       app.classList.add('home');
-      parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 1000, { leading: true }));
+      parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 950, { leading: true, trailing: true }));
       global.addEventListener('resize', this.updateViewport);
       global.setTimeout(() => { this.setState({ ready: true }); }, 1000);
       this.updateViewport();
@@ -127,10 +127,10 @@ export default class extends Page {
   }
 
   componentWillUpdate = props => {
-    const { section } = this;
     const { transition, param } = this.props;
+    const section = props.param.section;
 
-    if (param.section !== props.param.section) {
+    if (param.section !== section) {
       this.updateHeader(props);
       transition('slide.initial', section ? SECTIONS[section].slide : null);
     }
@@ -223,15 +223,18 @@ export default class extends Page {
     return (
       <section className="section">
         <h2 className={headerClass}>Content</h2>
-        <h3 className={headerClass}>FoxStream™ TV</h3>
+        <h3 className={headerClass}>Follow FoxStream™</h3>
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">
               <img src="/@fox-zero/web/images/logo.png" />
               <p>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</p>
               <div>
-                <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
-                  <i className="fa fa-television"/> <sup>Fox://</sup>Stream™ TV
+                <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
+                  <Solution
+                    icon="television">
+                    <span>Visit</span> FoxStream™
+                  </Solution>
                 </Link>
               </div>
             </div>

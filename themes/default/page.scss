@@ -200,7 +200,7 @@ section.solutions {
   }
 
   h3 {
-    color: #F7DE47;
+    color: #FFDE47;
     display: block;
     font-size: 4em;
     margin-top: .25em;
@@ -243,7 +243,7 @@ section.solutions {
     }
 
     h4 {
-      color: #F7DE47;
+      color: #FFDE47;
       text-align: center;
       font-size: 3.5em !important;
       color: #efefef;
@@ -261,6 +261,10 @@ section.solutions {
     .solution {
       width: 260px;
       margin: 0 auto;
+    }
+
+    a.link {
+      text-decoration: none;
     }
   }
 }
