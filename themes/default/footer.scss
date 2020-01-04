@@ -13,17 +13,16 @@ footer {
   z-index: 1;
   box-shadow: 0 -1px 10px rgba(41, 41, 41,.5);
   text-shadow: -1px 1px 1px $black-color;
-  display: none;
-
-  #app.nav-loaded &,
-  #app.no-js & {
-    display: block !important;
-  }
 
   .home.page & {
     bottom: 0;
     position: absolute;
     width: 100%;
+  }
+
+  .no-js .home.page & {
+    opacity: 0 !important;
+    pointer-events: none;
   }
 
   &:before, &:after {

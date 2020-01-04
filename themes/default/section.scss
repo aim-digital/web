@@ -16,36 +16,11 @@
     min-height: $page-height-xl!important;
   }
 
-  .home.page & {
+  .no-js .home.page & {
     overflow: hidden;
 
     .section {
       display: none;
-    }
-
-    &:before {
-      display: table;
-      content: ' ';
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      background: #f8f8f8 url(/@fox-zero/web/images/loading.gif) center no-repeat;
-    }
-  }
-
-  #app.nav-loaded .home.page & {
-    overflow: inherit;
-
-    .section {
-      display: block;
-    }
-
-    &:before {
-      content: none;
     }
   }
 

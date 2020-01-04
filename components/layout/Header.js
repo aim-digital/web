@@ -6,9 +6,20 @@ import {Header} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {Logo} from '@fox-zero/web/components/layout';
 
+const SECTION_DEFAULT = 'services';
+const SECTIONS = {
+  services: { slide: 0 },
+  value: { slide: 1 },
+  strategy: { slide: 2 },
+  process: { slide: 3 },
+  warranty: { slide: 4 },
+  pricing: { slide: 5 }
+};
+
 @connect((state, props) => ({
   slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0,
-  initial: state['@boilerplatejs/core'].Transition['slide.initial']
+  initial: state['@boilerplatejs/core'].Transition['slide.initial'],
+  param: state.router.params
 }), {transition})
 
 export default class extends Header {
@@ -23,7 +34,8 @@ export default class extends Header {
     slide: PropTypes.number.isRequired,
     initial: PropTypes.any,
     transition: PropTypes.func.isRequired,
-    images: PropTypes.array
+    images: PropTypes.array,
+    param: PropTypes.object
   };
 
   static defaultProps = {
@@ -133,8 +145,10 @@ export default class extends Header {
   };
 
   render() {
-    const { className, classNames, children, runOnMount, slide, images, cycle } = this.props;
+    const { className, classNames, children, runOnMount, slide, images, cycle, param: { section } } = this.props;
     const { animating, previous } = this.state;
+    const { length } = children;
+    const initial = (SECTIONS[section] || SECTIONS[SECTION_DEFAULT]).slide;
 
     const getFlipState = (direction = 'next') => {
       return {
@@ -143,18 +157,20 @@ export default class extends Header {
     };
 
     return (
-      <Header className={['slide', className, animating ? `${classNames.animating || ''} animating` : ''].join(' ')}>
-        {images.map((image, i) => <div key={i} className={`hero ${i === slide ? 'current' : i === previous ? 'previous' : ''} hero-${i}`} style={{ opacity: 0, backgroundImage: `url(${image})` }}/>)}
+      <Header className={['slide', className, length && animating ? `${classNames.animating || ''} animating` : ''].join(' ')}>
+        {images.map((image, i) => <div key={i} className={`hero ${i === (__SERVER__ ? initial : slide) ? 'current' : i === previous ? 'previous' : ''} hero-${i}`} style={{ opacity: 0, backgroundImage: `url(${image})` }}/>)}
         <Logo/>
-        {children.length ? (
+        {length ? (
           <div>
-            <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 250, begin: this.begin, complete: this.complete }}>
-              {children[slide]}
-            </VelocityTransitionGroup>
+            {__SERVER__ ? children[initial] : (
+              <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 250, begin: this.begin, complete: this.complete }}>
+                {children[slide]}
+              </VelocityTransitionGroup>
+            )}
             <div className="flippers">
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left">&larr;</button>
               <button {...getFlipState('next')} onClick={this.next} className="flip right">&rarr;</button>
-              {__CLIENT__ && this.hasScroll() ? <div className="scroll">
+              {__SERVER__ || (__CLIENT__ && this.hasScroll()) ? <div className="scroll">
                 <button onClick={this.scrollTo}><span/></button>
               </div> : <></>}
             </div>
