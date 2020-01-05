@@ -66,7 +66,7 @@ export default class extends Header {
     const { slide, content } = require('./Component.scss');
 
     return (
-        <Header timer={timer} className={slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
+        <Header timer={timer} runOnMount={__CLIENT__} className={slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
           {[
             <>Full-Service<br />Digital Agency</>,
             <>100% Power<br />Every Hour</>,

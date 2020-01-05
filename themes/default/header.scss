@@ -74,8 +74,9 @@
     top: 0;
     width: 100%;
     z-index: 2;
-    opacity: 1;
-    transition: opacity 1s, transform .25s;
+    opacity: 0;
+    transform: scale3d(1.1, 1.1, 1);
+    transition: opacity .35s, transform .35s;
   }
 
   h1, h2, .preview, .flippers button {
@@ -83,8 +84,6 @@
   }
 
   > div:last-of-type {
-    // display: table-cell;
-    // vertical-align: middle;
     position: absolute;
     width: 100%;
     bottom: 35%;
@@ -165,6 +164,7 @@
     line-height: 1;
     margin: 0 auto 10px;
     text-align: left;
+    font-weight: 600;
 
     &.text-right {
       text-align: right;
@@ -173,7 +173,7 @@
 
   h1 {
     color: $white-color;
-    font-size: 2.5em;
+    font-size: 2em;
     z-index: 3;
   }
 
@@ -302,11 +302,14 @@
     background: $white-color url(/@fox-zero/web/images/loading.gif) center no-repeat;
   }
 
-  .logo {
-    opacity: 0;
-  }
-
   .hero {
     display: none;
+  }
+}
+
+.nav-loaded .header.container {
+  .logo {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
   }
 }

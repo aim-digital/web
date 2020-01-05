@@ -28,7 +28,7 @@ export default class extends Footer {
   render() {
     const { transition } = this.props;
     const { scrollTo } = this;
-    const update = i => () => transition('slide', i).then(scrollTo);
+    const update = i => () => scrollTo();//transition('slide', i).then();
 
     return (
       <Footer>

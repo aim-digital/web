@@ -17,7 +17,7 @@ import ReactGA from 'react-ga';
 import {solutions} from '@fox-zero/web/data';
 import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
-const HEADER_TIMER = 20000;
+const HEADER_TIMER = 15;
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
@@ -103,14 +103,17 @@ export default class extends Page {
     const { transition, query } = props;
     const { detail: index } = query;
     const detail = solutions[index];
+    const initial = section ? SECTIONS[section].slide : null;
 
     this.updateHeader();
-    transition('slide.initial', section ? SECTIONS[section].slide : null);
+    transition('slide.initial', initial);
 
     if (__CLIENT__) {
       if (detail) {
         this.openSolution(detail);
       }
+    } else {
+      global.SLIDE_INITIAL = initial;
     }
   };
 

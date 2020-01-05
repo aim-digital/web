@@ -6,20 +6,9 @@ import {Header} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {Logo} from '@fox-zero/web/components/layout';
 
-const SECTION_DEFAULT = 'services';
-const SECTIONS = {
-  services: { slide: 0 },
-  value: { slide: 1 },
-  strategy: { slide: 2 },
-  process: { slide: 3 },
-  warranty: { slide: 4 },
-  pricing: { slide: 5 }
-};
-
 @connect((state, props) => ({
   slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0,
-  initial: state['@boilerplatejs/core'].Transition['slide.initial'],
-  param: state.router.params
+  initial: state['@boilerplatejs/core'].Transition['slide.initial']
 }), {transition})
 
 export default class extends Header {
@@ -34,8 +23,7 @@ export default class extends Header {
     slide: PropTypes.number.isRequired,
     initial: PropTypes.any,
     transition: PropTypes.func.isRequired,
-    images: PropTypes.array,
-    param: PropTypes.object
+    images: PropTypes.array
   };
 
   static defaultProps = {
@@ -145,10 +133,10 @@ export default class extends Header {
   };
 
   render() {
-    const { className, classNames, children, runOnMount, slide, images, cycle, param: { section } } = this.props;
+    const { className, classNames, children, runOnMount, slide, images, cycle, initial: initialSlide } = this.props;
     const { animating, previous } = this.state;
     const { length } = children;
-    const initial = (SECTIONS[section] || SECTIONS[SECTION_DEFAULT]).slide;
+    const initial = global.SLIDE_INITIAL || initialSlide || 0;
 
     const getFlipState = (direction = 'next') => {
       return {
