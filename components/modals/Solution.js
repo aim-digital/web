@@ -57,9 +57,13 @@ export default class extends Modal {
     const { solution } = this.props;
     const { contact } = this.state;
     const { message } = this.state.form;
-    const { slug, content, summary, index, title, icon, section } = solution;
+    const { slug, content, summary, title, icon, section } = solution;
     const { location = {} } = global;
-    const share = { url: `${location.protocol}//${location.host}${location.pathname}?detail=${index}`, caption: summary, subject: `${section} - ${title}` };
+    const share = {
+      url: `${location.protocol}//${location.host}/${(section || '').toLowerCase()}?detail`,
+      caption: summary,
+      subject: `${section} - ${title}`
+    };
 
     return (
       <Modal {..._.omit(this.props, ['update', 'solution'])}

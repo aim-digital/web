@@ -101,16 +101,15 @@ export default class extends Page {
   componentWillMount = () => {
     const { section, props } = this;
     const { transition, query } = props;
-    const { detail: index } = query;
-    const detail = solutions[index];
+    const { detail } = query;
     const initial = section ? SECTIONS[section].slide : null;
 
     this.updateHeader();
     transition('slide.initial', initial);
 
     if (__CLIENT__) {
-      if (detail) {
-        this.openSolution(detail);
+      if (detail || detail === null) {
+        this.openSolution(solutions[initial || 0]);
       }
     } else {
       global.SLIDE_INITIAL = initial;
