@@ -1,17 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {PropTypes} from 'prop-types';
 import {Link} from 'react-router';
 import {Footer} from '@boilerplatejs/core/components/layout';
-import {transition} from '@boilerplatejs/core/actions/Transition';
-
-@connect(() => ({}), {transition})
 
 export default class extends Footer {
-  static propTypes = {
-    transition: PropTypes.func.isRequired
-  };
-
   scrollTo = () => {
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
@@ -26,9 +17,7 @@ export default class extends Footer {
   };
 
   render() {
-    const { transition } = this.props;
     const { scrollTo } = this;
-    const update = i => () => scrollTo();//transition('slide', i).then();
 
     return (
       <Footer>
@@ -43,7 +32,7 @@ export default class extends Footer {
         <div className="content container">
           <div className="row">
             <div className="col-xs-12 logo text-center">
-              <Link to="/" onClick={update(0)}>
+              <Link to="/" onClick={scrollTo}>
                 <img src="/@fox-zero/web/images/icon.png" title="FoxZero Media"/>
               </Link>
             </div>
@@ -84,10 +73,10 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-universal-access"/> Services</h4>
                   <ul>
-                    <li><Link to="/services" onClick={update(0)}>Services</Link></li>
-                    <li><Link to="/value" onClick={update(1)}>Value</Link></li>
-                    <li><Link to="/strategy" onClick={update(2)}>Strategy</Link></li>
-                    <li><Link to="/process" onClick={update(3)}>Process</Link></li>
+                    <li><Link to="/services" onClick={scrollTo}>Services</Link></li>
+                    <li><Link to="/value" onClick={scrollTo}>Value</Link></li>
+                    <li><Link to="/strategy" onClick={scrollTo}>Strategy</Link></li>
+                    <li><Link to="/process" onClick={scrollTo}>Process</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -95,8 +84,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/warranty" onClick={update(4)}>Warranty</Link></li>
-                    <li><Link to="/pricing" onClick={update(5)}>Pricing</Link></li>
+                    <li><Link to="/warranty" onClick={scrollTo}>Warranty</Link></li>
+                    <li><Link to="/pricing" onClick={scrollTo}>Pricing</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -104,7 +93,7 @@ export default class extends Footer {
             <div className="col-sm-3 col-xs-12">
               <h4><i className="fa fa-info-circle"/> Support</h4>
               <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (855) FOX-ZERO" href="tel:+18553473369" target="_blank">+1 (855) FOX-ZERO</a>, or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
-              <p>Operating hours:<br />9am-6pm (EDT) / M-F</p>
+              <p>Operating hours:<br />9am-6pm (EST) / M-F</p>
             </div>
             <div className="col-xs-12 text-center">
               <img src="/@fox-zero/web/images/logo-transparent.png" title="FoxZero Media"/>

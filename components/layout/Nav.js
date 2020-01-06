@@ -17,24 +17,28 @@ export default class extends Nav {
 
   componentDidMount = () => this.props.load();
 
-  scrollTo = () => {
+  scrollTo = slide => {
+    const { transition } = this.props;
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
 
-    if (app.scrollTo) {
-      app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      parallax && parallax.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    if (parallax.scrollTop >= global.innerHeight) {
+      if (app.scrollTo) {
+        app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        parallax && parallax.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      } else {
+        app.scrollTop = 0;
+        parallax && (parallax.scrollTop = 0);
+      }
     } else {
-      app.scrollTop = 0;
-      parallax && (parallax.scrollTop = 0);
+      transition('slide', slide);
     }
   };
 
   render() {
     const preventDefault = e => e.preventDefault();
-    const { transition } = this.props;
     const { scrollTo } = this;
-    const update = i => () => scrollTo();//transition('slide', i).then(scrollTo);
+    const update = i => () => scrollTo(i);
 
     return (
       <section className="nav">
