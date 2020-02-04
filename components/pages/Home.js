@@ -27,10 +27,10 @@ const PARALLAX_SPEED = 0.2;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
 const SECTION_OFFSET = 250;
-const SECTION_DEFAULT = 'services';
+const SECTION_DEFAULT = 'consulting';
 const SECTIONS = {
-  services: { slide: 0 },
-  value: { slide: 1 },
+  consulting: { slide: 0 },
+  development: { slide: 1 },
   strategy: { slide: 2 },
   process: { slide: 3 },
   warranty: { slide: 4 },
@@ -234,7 +234,7 @@ export default class extends Page {
                 <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                   <Solution
                     icon="television">
-                    <span>Visit</span> FoxStream™
+                    <span>Visit</span> FoxStream™ TV
                   </Solution>
                 </Link>
               </div>
@@ -312,7 +312,7 @@ export default class extends Page {
 
   updateHeader = (props = this.props) => {
     const { transition } = this;
-    const { header, slide } = SECTIONS[props.section || props.param.section] || SECTIONS.services;
+    const { header, slide } = SECTIONS[props.section || props.param.section] || SECTIONS[SECTION_DEFAULT];
     transition('header', header).then(() => transition('slide', slide));
     this.props.transition({ progress: 1 });
   };

@@ -1,19 +1,19 @@
 [
     {
         "index": 0,
-        "section": "Services",
-        "slug": "full-service-digital-agency",
-        "title": "Full-Service Digital Agency",
-        "icon": "wrench",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
-    },
-    {
-        "index": 1,
-        "section": "Value",
+        "section": "Consulting",
         "slug": "100%-power-every-hour",
         "title": "100% Power Every Hour",
         "icon": "comment",
         "summary": "Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked."
+    },
+    {
+        "index": 1,
+        "section": "Development",
+        "slug": "full-service-digital-agency",
+        "title": "Full Service Digital Agency",
+        "icon": "wrench",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
     },
     {
         "index": 2,

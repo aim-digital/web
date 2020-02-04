@@ -68,8 +68,8 @@ export default class extends Header {
     return (
         <Header timer={timer} runOnMount={__CLIENT__} className={slide} onTransitionComplete={this.transitionComplete} onTransitionBegin={this.transitionBegin} images={IMAGES}>
           {[
-            <>Full-Service<br />Digital Agency</>,
             <>100% Power<br />Every Hour</>,
+            <>Full Service<br />Digital Agency</>,
             <>Introducing<br />FAST™ PLM</>,
             <>FoxZero™ JIRA<br />Tracker</>,
             <>Perfect Aim™<br />100% Guarantee</>,

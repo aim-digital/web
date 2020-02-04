@@ -70,22 +70,22 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> Services</a>
               <ul>
-                <li><Link rel="nofollow" to="/digital-agency/services" onClick={update(0)}>Services</Link></li>
-                <li><Link rel="nofollow" to="/digital-agency/value" onClick={update(1)}>Value</Link></li>
-                <li><Link rel="nofollow" to="/digital-agency/strategy" onClick={update(2)}>Strategy</Link></li>
-                <li><Link rel="nofollow" to="/digital-agency/process" onClick={update(3)}>Process</Link></li>
+                <li><Link rel="nofollow" to="/services/consulting" onClick={update(0)}>Consulting</Link></li>
+                <li><Link rel="nofollow" to="/services/development" onClick={update(1)}>Development</Link></li>
+                <li><Link rel="nofollow" to="/services/strategy" onClick={update(2)}>Strategy</Link></li>
+                <li><Link rel="nofollow" to="/services/process" onClick={update(3)}>Process</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/digital-agency/warranty" onClick={update(4)}>Warranty</Link></li>
-                <li><Link rel="nofollow" to="/digital-agency/pricing" onClick={update(5)}>Pricing</Link></li>
+                <li><Link rel="nofollow" to="/services/warranty" onClick={update(4)}>Warranty</Link></li>
+                <li><Link rel="nofollow" to="/services/pricing" onClick={update(5)}>Pricing</Link></li>
               </ul>
             </li>
             <li>
               <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
-                <i className="fa fa-television"/> FoxStream™
+                <i className="fa fa-television"/> FoxStream™ TV
               </Link>
             </li>
           </ul>
