@@ -60,7 +60,7 @@ export default class extends Modal {
     const { slug, content, summary, title, icon, section } = solution;
     const { location = {} } = global;
     const share = {
-      url: `${location.protocol}//${location.host}/${(section || '').toLowerCase()}?detail`,
+      url: `${location.protocol}//${location.host}/${(slug || '').toLowerCase()}?detail`,
       caption: summary,
       subject: `${section} - ${title}`
     };

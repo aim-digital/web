@@ -72,15 +72,17 @@ export default class extends Nav {
               <ul>
                 <li><Link rel="nofollow" to="/services/consulting" onClick={update(0)}>Consulting</Link></li>
                 <li><Link rel="nofollow" to="/services/development" onClick={update(1)}>Development</Link></li>
-                <li><Link rel="nofollow" to="/services/strategy" onClick={update(2)}>Strategy</Link></li>
-                <li><Link rel="nofollow" to="/services/process" onClick={update(3)}>Process</Link></li>
+                <li><Link rel="nofollow" to="/services/strategy" onClick={update(2)}>Maintenance</Link></li>
+                <li><Link rel="nofollow" to="/services/strategy" onClick={update(3)}>Strategy</Link></li>
+                <li><Link rel="nofollow" to="/services/process" onClick={update(4)}>Process</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/services/warranty" onClick={update(4)}>Warranty</Link></li>
-                <li><Link rel="nofollow" to="/services/pricing" onClick={update(5)}>Pricing</Link></li>
+                <li><Link rel="nofollow" to="/services/warranty" onClick={update(5)}>Warranty</Link></li>
+                <li><Link rel="nofollow" to="/services/subscription" onClick={update(6)}>Subscription</Link></li>
+                <li><Link rel="nofollow" to="/services/on-demand" onClick={update(7)}>On-Demand</Link></li>
               </ul>
             </li>
             <li>

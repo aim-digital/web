@@ -29,12 +29,14 @@ const RE_SECTION_KEY = /.*\:(.*)$/;
 const SECTION_OFFSET = 250;
 const SECTION_DEFAULT = 'consulting';
 const SECTIONS = {
-  consulting: { slide: 0 },
-  development: { slide: 1 },
-  strategy: { slide: 2 },
-  process: { slide: 3 },
-  warranty: { slide: 4 },
-  pricing: { slide: 5 }
+  'consulting': { slide: 0 },
+  'development': { slide: 1 },
+  'maintenance': { slide: 2 },
+  'strategy': { slide: 3 },
+  'process': { slide: 4 },
+  'warranty': { slide: 5 },
+  'subscription': { slide: 6 },
+  'on-demand': { slide: 7 }
 };
 
 @connect(state => {
@@ -191,8 +193,8 @@ export default class extends Page {
 
     return (
       <section className="solutions">
-        <div className="left">{solutions.slice(0, SOLUTION_AVG).map(renderSolution(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .75 } })))}</div>
-        <div className="right">{solutions.slice(SOLUTION_AVG).map(renderSolution(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .75 } })))}</div>
+        <div className="left">{solutions.slice(0, SOLUTION_AVG).map(renderSolution(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .8 } })))}</div>
+        <div className="right">{solutions.slice(SOLUTION_AVG).map(renderSolution(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .8 } })))}</div>
       </section>
     );
   }
@@ -234,7 +236,7 @@ export default class extends Page {
                 <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                   <Solution
                     icon="television">
-                    <span>Visit</span> FoxStream™ TV
+                    Visit <span>FoxStream™ TV</span>
                   </Solution>
                 </Link>
               </div>
@@ -326,7 +328,7 @@ export default class extends Page {
     const { animating, contact, isMobile, isLandscape } = this.state;
     const { section, length } = this;
     const { message } = this.state.form;
-    const filter = component => section ? component.key.replace(RE_SECTION_KEY, '$1').toLowerCase() === section.toLowerCase() : true;
+    const filter = component => section ? component.key.replace(RE_SECTION_KEY, '$1').toLowerCase() === section.toLowerCase().replace('-', '') : true;
     const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;

@@ -2,49 +2,73 @@
     {
         "index": 0,
         "section": "Consulting",
-        "slug": "100%-power-every-hour",
+        "slug": "consulting",
         "title": "100% Power Every Hour",
         "icon": "comment",
-        "summary": "Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked."
+        "summary": "Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.",
+        "category": "Services"
     },
     {
         "index": 1,
         "section": "Development",
-        "slug": "full-service-digital-agency",
+        "slug": "development",
         "title": "Full Service Digital Agency",
         "icon": "wrench",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": "Services"
     },
     {
         "index": 2,
-        "section": "Strategy",
-        "slug": "introducing-fast-plm",
-        "title": "Introducing FAST™ PLM",
-        "icon": "hashtag",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        "section": "Maintenance",
+        "slug": "maintenance",
+        "title": "Long-Term Support Testing & Hosting",
+        "icon": "wrench",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": "Services"
     },
     {
         "index": 3,
-        "section": "Process",
-        "slug": "foxzero-jira-tracker",
-        "title": "FoxZero™ JIRA Tracker",
-        "icon": "share-alt",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        "section": "Strategy",
+        "slug": "strategy",
+        "title": "Introducing FAST™ PLM",
+        "icon": "hashtag",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": ""
     },
     {
         "index": 4,
-        "section": "Warranty",
-        "slug": "perfect-aim-100%-guarantee",
-        "title": "Perfect Aim™ 100% Guarantee",
-        "icon": "money",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        "section": "Process",
+        "slug": "process",
+        "title": "FoxZero™ JIRA Tracker",
+        "icon": "share-alt",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": ""
     },
     {
         "index": 5,
-        "section": "Pricing",
-        "slug": "velocity-subscription-plans",
-        "title": "Velocity™ Subscription Plans",
+        "section": "Warranty",
+        "slug": "warranty",
+        "title": "Perfect Aim™ 100% Guarantee",
+        "icon": "money",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": ""
+    },
+    {
+        "index": 6,
+        "section": "Subscription",
+        "slug": "subscription",
+        "title": "Velocity™ Pricing Plans",
         "icon": "line-chart",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": "Pricing"
+    },
+    {
+        "index": 7,
+        "section": "On Demand",
+        "slug": "on-demand",
+        "title": "Point & Pay™ Pricing Per Sprint",
+        "icon": "line-chart",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": "Pricing"
     }
 ]

@@ -75,6 +75,7 @@ export default class extends Footer {
                   <ul>
                     <li><Link to="/consulting" onClick={scrollTo}>Consulting</Link></li>
                     <li><Link to="/development" onClick={scrollTo}>Development</Link></li>
+                    <li><Link to="/maintenance" onClick={scrollTo}>Maintenance</Link></li>
                     <li><Link to="/strategy" onClick={scrollTo}>Strategy</Link></li>
                     <li><Link to="/process" onClick={scrollTo}>Process</Link></li>
                   </ul>
@@ -85,7 +86,8 @@ export default class extends Footer {
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
                     <li><Link to="/warranty" onClick={scrollTo}>Warranty</Link></li>
-                    <li><Link to="/pricing" onClick={scrollTo}>Pricing</Link></li>
+                    <li><Link to="/subscription" onClick={scrollTo}>Pricing</Link></li>
+                    <li><Link to="/on-demand" onClick={scrollTo}>On-Demand</Link></li>
                   </ul>
                 </li>
               </ul>
