@@ -57,8 +57,9 @@ export default class extends Modal {
     const { solution } = this.props;
     const { contact } = this.state;
     const { message } = this.state.form;
-    const { slug, content, summary, title, icon, section } = solution;
+    const { slug, content, summary, title, icon, section, media = [] } = solution;
     const { location = {} } = global;
+    const [hero = {}] = media;
     const share = {
       url: `${location.protocol}//${location.host}/${(slug || '').toLowerCase()}?detail`,
       caption: summary,
@@ -70,8 +71,10 @@ export default class extends Modal {
         onHide={this.onHide}
         className="solution"
         title={title}
+        dek={section}
         icon={icon}
-        share={share}>
+        share={share}
+        hero={hero.url}>
         {slug && <section>
           <section className="content">
             <p>{content[0].copy}</p>

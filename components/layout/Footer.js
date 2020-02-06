@@ -33,7 +33,7 @@ export default class extends Footer {
           <div className="row">
             <div className="col-xs-12 logo text-center">
               <Link to="/" onClick={scrollTo}>
-                <img src="/@fox-zero/web/images/icon.png" title="FoxZero Media"/>
+                <img src="/@fox-zero/web/images/icon.png" title="FoxZero Consulting"/>
               </Link>
             </div>
             <div className="col-sm-9 col-xs-12">
@@ -76,6 +76,13 @@ export default class extends Footer {
                     <li><Link to="/consulting" onClick={scrollTo}>Consulting</Link></li>
                     <li><Link to="/development" onClick={scrollTo}>Development</Link></li>
                     <li><Link to="/maintenance" onClick={scrollTo}>Maintenance</Link></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul className="col-sm-3 col-xs-6">
+                <li className="subnav">
+                  <h4><i className="fa fa-universal-access"/> Framework</h4>
+                  <ul>
                     <li><Link to="/strategy" onClick={scrollTo}>Strategy</Link></li>
                     <li><Link to="/process" onClick={scrollTo}>Process</Link></li>
                   </ul>
@@ -86,8 +93,8 @@ export default class extends Footer {
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
                     <li><Link to="/warranty" onClick={scrollTo}>Warranty</Link></li>
-                    <li><Link to="/subscription" onClick={scrollTo}>Pricing</Link></li>
-                    <li><Link to="/on-demand" onClick={scrollTo}>On-Demand</Link></li>
+                    <li><Link to="/subscription" onClick={scrollTo}>Subscription</Link></li>
+                    <li><Link to="/on-demand" onClick={scrollTo}>On Demand</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -98,8 +105,8 @@ export default class extends Footer {
               <p>Operating hours:<br />9am-6pm (EST) / M-F</p>
             </div>
             <div className="col-xs-12 text-center">
-              <img src="/@fox-zero/web/images/logo-transparent.png" title="FoxZero Media"/>
-              <p><small>&copy; FoxZero Media (a VitruvianTech® brand)</small></p>
+              <img src="/@fox-zero/web/images/logo-transparent.png" title="FoxZero Consulting"/>
+              <p><small>&copy; FoxZero Consulting (a VitruvianTech® brand)</small></p>
             </div>
           </div>
         </div>

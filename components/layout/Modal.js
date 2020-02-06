@@ -14,7 +14,8 @@ export default class extends Component {
     className: PropTypes.string,
     title: PropTypes.string,
     icon: PropTypes.string,
-    share: PropTypes.object
+    share: PropTypes.object,
+    hero: PropTypes.string
   };
 
   static defaultProps = {
@@ -24,10 +25,11 @@ export default class extends Component {
   };
 
   render() {
-    const { children, title, icon, className, share: { url, caption, subject } } = this.props;
+    const { children, title, dek, icon, className, share: { url, caption, subject }, hero } = this.props;
 
     return (
-      <Modal {..._.omit(this.props, ['share'])} className={`${className}`} title="">
+      <Modal {..._.omit(this.props, ['share', 'title', 'icon', 'hero'])} className={`${className}`} title="">
+        {hero ? <div className="modal-hero" style={{ backgroundImage: `url(${hero})` }} /> : <></>}
         <div className="modal-nav">
           <Modal.Dismiss className="dismiss">
             <i className="fa fa-arrow-circle-left"></i>
@@ -46,11 +48,13 @@ export default class extends Component {
         </div>
         <Modal.Header>
           <Logo/>
-          <Modal.Title>{icon && <div><i className={`fa fa-${icon}`}></i></div>}<span>{title}</span></Modal.Title>
+          <Modal.Title>
+            {icon && <div data-dek={dek}><i className={`fa fa-${icon}`}></i></div>}<span>{title}</span>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>
-          <span>© FoxZero Media (a VitruvianTech® brand)</span>
+          <span>© FoxZero Consulting (a VitruvianTech® brand)</span>
         </Modal.Footer>
       </Modal>
     );

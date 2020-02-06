@@ -6,7 +6,8 @@
         "title": "100% Power Every Hour",
         "icon": "comment",
         "summary": "Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.",
-        "category": "Services"
+        "category": "Services",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/09602e46d64741d98740ad7820cb2dc0.jpg" }]
     },
     {
         "index": 1,
@@ -15,16 +16,18 @@
         "title": "Full Service Digital Agency",
         "icon": "wrench",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Services"
+        "category": "Services",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fc69876cad544475b514f713362048f7.png" }]
     },
     {
         "index": 2,
         "section": "Maintenance",
         "slug": "maintenance",
-        "title": "Long-Term Support Testing & Hosting",
+        "title": "Long-Term Support",
         "icon": "wrench",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Services"
+        "category": "Services",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/f8e99db2a1934f98830a51cba2a06223.jpg" }]
     },
     {
         "index": 3,
@@ -33,7 +36,8 @@
         "title": "Introducing FAST™ PLM",
         "icon": "hashtag",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": ""
+        "category": "",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/1b0771b568244f6eb6b11eb41f88e984.jpg" }]
     },
     {
         "index": 4,
@@ -42,7 +46,8 @@
         "title": "FoxZero™ JIRA Tracker",
         "icon": "share-alt",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": ""
+        "category": "",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2ff6e0cc7cb140e889db44d3d679c24f.jpg" }]
     },
     {
         "index": 5,
@@ -51,24 +56,27 @@
         "title": "Perfect Aim™ 100% Guarantee",
         "icon": "money",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": ""
+        "category": "",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/4aba938de6b84a27aa9f514e9072b09a.jpg" }]
     },
     {
         "index": 6,
         "section": "Subscription",
         "slug": "subscription",
-        "title": "Velocity™ Pricing Plans",
+        "title": "Velocity™ Plan Pricing",
         "icon": "line-chart",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Pricing"
+        "category": "Pricing",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/550f11bf456e469186ff666e8044bee0.jpg" }]
     },
     {
         "index": 7,
         "section": "On Demand",
         "slug": "on-demand",
-        "title": "Point & Pay™ Pricing Per Sprint",
+        "title": "Point & Pay™ Sprint Pricing",
         "icon": "line-chart",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Pricing"
+        "category": "Pricing",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/a111ee2d21684fb9a81d6410a8e765ec.jpg" }]
     }
 ]

@@ -37,6 +37,7 @@ export default class {
 
     await Page.update({
       route: 'services/:section',
+      title: 'FoxZero - The High Performance/Zero Latency Agency™',
       sections: '["@fox-zero/web:Consulting", "@fox-zero/web:Development", "@fox-zero/web:Strategy", "@fox-zero/web:Process", "@fox-zero/web:Warranty", "@fox-zero/web:Pricing"]'
     }, {
       where: {

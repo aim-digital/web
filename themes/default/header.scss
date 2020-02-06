@@ -43,6 +43,10 @@
     }
   }
 
+  .flippers {
+    margin-top: -1em;
+  }
+
   .hero {
     opacity: 0;
     position: absolute !important;
@@ -179,7 +183,7 @@
 
   h2 {
     color: #FCD700;
-    font-size: 3.5em;
+    font-size: 3.25em;
     z-index: 2;
     margin-bottom: 15px;
 
@@ -257,15 +261,12 @@
       outline: none;
       cursor: pointer;
       overflow: hidden;
-      margin-top: 2em;
-      opacity: .5;
-      background: #f8f8f8;
-      box-shadow: 0 0 4px #151515;
+      margin-top: .5em;
     }
 
     button span {
-      border-left: solid 2px #292929;
-      border-bottom: solid 2px #292929;
+      border-left: solid 2px #f8f8f8;
+      border-bottom: solid 2px #f8f8f8;
       transform: rotate(-45deg);
       display: block;
       width: 1em;

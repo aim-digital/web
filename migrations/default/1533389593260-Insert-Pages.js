@@ -6,7 +6,7 @@ export default class {
 
     await Page.create({
       route: 'maintenance',
-      title: 'Long-Term Support Testing & Hosting - Maintenance - FoxZero™',
+      title: 'Long-Term Support - Maintenance - FoxZero™',
       page: '@fox-zero/web:Maintenance',
       headers: '["@fox-zero/web:Title"]',
       sections: '["@fox-zero/web:Maintenance"]'
@@ -14,7 +14,7 @@ export default class {
 
     await Page.create({
       route: 'on-demand',
-      title: 'Point & Pay™ Pricing Per Sprint - On Demand - FoxZero™',
+      title: 'Point & Pay™ Sprint Pricing - On Demand - FoxZero™',
       page: '@fox-zero/web:OnDemand',
       headers: '["@fox-zero/web:Title"]',
       sections: '["@fox-zero/web:OnDemand"]'
@@ -22,7 +22,7 @@ export default class {
 
     await Page.update({
       route: 'subscription',
-      title: 'Velocity™ Pricing Plans - Subscription - FoxZero™',
+      title: 'Velocity™ Plan Pricing - Subscription - FoxZero™',
       page: '@fox-zero/web:Subscription',
       sections: '["@fox-zero/web:Subscription"]'
     }, {

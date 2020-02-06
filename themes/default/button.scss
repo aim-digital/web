@@ -60,10 +60,11 @@ button.btn {
     opacity: 1 !important;
 
     span {
-      color: $black-color !important;
+      color: $background-color !important;
 
       span {
         font-weight: 600;
+        color: $black-color !important;
       }
     }
   }
