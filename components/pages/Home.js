@@ -32,11 +32,11 @@ const SECTIONS = {
   'consulting': { slide: 0 },
   'development': { slide: 1 },
   'maintenance': { slide: 2 },
-  'strategy': { slide: 3 },
-  'process': { slide: 4 },
-  'insurance': { slide: 5 },
-  'subscription': { slide: 6 },
-  'on-demand': { slide: 7 }
+  'insurance': { slide: 3 },
+  'subscription': { slide: 4 },
+  'on-demand': { slide: 5 },
+  'strategy': { slide: 6 },
+  'process': { slide: 7 }
 };
 
 @connect(state => {
@@ -226,7 +226,7 @@ export default class extends Page {
     return (
       <section className="section">
         <h2 className={headerClass}>Content</h2>
-        <h3 className={headerClass}>Follow FoxStream™</h3>
+        <h3 className={headerClass}>Follow<br />FoxStream™</h3>
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">

@@ -31,36 +31,16 @@
     },
     {
         "index": 3,
-        "section": "Strategy",
-        "slug": "strategy",
-        "title": "Introducing FAST™ PLM",
-        "icon": "hashtag",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/1b0771b568244f6eb6b11eb41f88e984.jpg" }]
-    },
-    {
-        "index": 4,
-        "section": "Process",
-        "slug": "process",
-        "title": "FoxZero™ JIRA Tracker",
-        "icon": "share-alt",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2ff6e0cc7cb140e889db44d3d679c24f.jpg" }]
-    },
-    {
-        "index": 5,
         "section": "Insurance",
         "slug": "insurance",
         "title": "Wingman™ Double Coverage",
         "icon": "money",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "",
+        "category": "Pricing",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/4aba938de6b84a27aa9f514e9072b09a.jpg" }]
     },
     {
-        "index": 6,
+        "index": 4,
         "section": "Subscription",
         "slug": "subscription",
         "title": "Velocity™ Plan Pricing",
@@ -70,7 +50,7 @@
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/550f11bf456e469186ff666e8044bee0.jpg" }]
     },
     {
-        "index": 7,
+        "index": 5,
         "section": "On Demand",
         "slug": "on-demand",
         "title": "Point & Pay™ Sprint Pricing",
@@ -78,5 +58,25 @@
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Pricing",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/a111ee2d21684fb9a81d6410a8e765ec.jpg" }]
+    },
+    {
+        "index": 6,
+        "section": "Strategy",
+        "slug": "strategy",
+        "title": "Introducing FAST™ PLM",
+        "icon": "hashtag",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": "",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/1b0771b568244f6eb6b11eb41f88e984.jpg" }]
+    },
+    {
+        "index": 7,
+        "section": "Process",
+        "slug": "process",
+        "title": "FoxZero™ JIRA Tracker",
+        "icon": "share-alt",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": "",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2ff6e0cc7cb140e889db44d3d679c24f.jpg" }]
     }
 ]
