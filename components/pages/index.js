@@ -4,6 +4,6 @@ export Development from './Development';
 export Maintenance from './Maintenance';
 export Strategy from './Strategy';
 export Process from './Process';
-export Warranty from './Warranty';
+export Insurance from './Insurance';
 export Subscription from './Subscription';
 export OnDemand from './OnDemand';

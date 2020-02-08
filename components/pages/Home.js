@@ -34,7 +34,7 @@ const SECTIONS = {
   'maintenance': { slide: 2 },
   'strategy': { slide: 3 },
   'process': { slide: 4 },
-  'warranty': { slide: 5 },
+  'insurance': { slide: 5 },
   'subscription': { slide: 6 },
   'on-demand': { slide: 7 }
 };

@@ -92,7 +92,7 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/warranty" onClick={scrollTo}>Warranty</Link></li>
+                    <li><Link to="/insurance" onClick={scrollTo}>Insurance</Link></li>
                     <li><Link to="/subscription" onClick={scrollTo}>Subscription</Link></li>
                     <li><Link to="/on-demand" onClick={scrollTo}>On Demand</Link></li>
                   </ul>
