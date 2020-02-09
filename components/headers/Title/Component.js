@@ -67,11 +67,11 @@ export default class extends Header {
             <>100% Power<br />Every Hour</>,
             <>Full Service<br />Digital Agency</>,
             <>Long-Term<br />Support</>,
-            <>Wingman™<br />Double Coverage</>,
-            <>Velocity™<br />Plan Pricing</>,
-            <>Point &amp; Pay™<br />Sprint Pricing</>,
             <>Introducing<br />FAST™ PLM</>,
-            <>FoxZero™ JIRA<br />Tracker</>
+            <>Velocity™<br />Plan Pricing</>,
+            <>Wingman™<br />Double Coverage</>,
+            <>FoxZero™ JIRA<br />Tracker</>,
+            <>Point &amp; Pay™<br />Sprint Pricing</>
           ].map((title, i) => renderTitle(i, content, title))}
         </Header>
     );

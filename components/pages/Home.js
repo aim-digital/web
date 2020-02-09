@@ -32,11 +32,11 @@ const SECTIONS = {
   'consulting': { slide: 0 },
   'development': { slide: 1 },
   'maintenance': { slide: 2 },
-  'insurance': { slide: 3 },
+  'strategy': { slide: 3 },
   'subscription': { slide: 4 },
-  'on-demand': { slide: 5 },
-  'strategy': { slide: 6 },
-  'process': { slide: 7 }
+  'warranty': { slide: 5 },
+  'process': { slide: 6 },
+  'on-demand': { slide: 7 }
 };
 
 @connect(state => {

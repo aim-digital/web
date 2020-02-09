@@ -81,20 +81,20 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-usd"/> Pricing</h4>
+                  <h4><i className="fa fa-universal-access"/> Framework</h4>
                   <ul>
-                    <li><Link to="/insurance" onClick={scrollTo}>Insurance</Link></li>
-                    <li><Link to="/subscription" onClick={scrollTo}>Subscription</Link></li>
-                    <li><Link to="/on-demand" onClick={scrollTo}>On Demand</Link></li>
+                    <li><Link to="/strategy" onClick={scrollTo}>Strategy</Link></li>
+                    <li><Link to="/process" onClick={scrollTo}>Process</Link></li>
                   </ul>
                 </li>
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-universal-access"/> Framework</h4>
+                  <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/strategy" onClick={scrollTo}>Strategy</Link></li>
-                    <li><Link to="/process" onClick={scrollTo}>Process</Link></li>
+                    <li><Link to="/subscription" onClick={scrollTo}>Subscription</Link></li>
+                    <li><Link to="/warranty" onClick={scrollTo}>Warranty</Link></li>
+                    <li><Link to="/on-demand" onClick={scrollTo}>On Demand</Link></li>
                   </ul>
                 </li>
               </ul>
