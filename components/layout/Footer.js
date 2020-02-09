@@ -71,20 +71,20 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-universal-access"/> Services</h4>
+                  <h4><i className="fa fa-cogs"/> Services</h4>
                   <ul>
-                    <li><Link to="/consulting" onClick={scrollTo}>Consulting</Link></li>
-                    <li><Link to="/development" onClick={scrollTo}>Development</Link></li>
-                    <li><Link to="/maintenance" onClick={scrollTo}>Maintenance</Link></li>
+                    <li><Link to="/consulting" onClick={scrollTo}><i className="fa fa-battery-full"/> Consulting</Link></li>
+                    <li><Link to="/development" onClick={scrollTo}><i className="fa fa-code"/> Development</Link></li>
+                    <li><Link to="/maintenance" onClick={scrollTo}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
                   </ul>
                 </li>
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-universal-access"/> Framework</h4>
+                  <h4><i className="fa fa-cubes"/> Framework</h4>
                   <ul>
-                    <li><Link to="/strategy" onClick={scrollTo}>Strategy</Link></li>
-                    <li><Link to="/process" onClick={scrollTo}>Process</Link></li>
+                    <li><Link to="/strategy" onClick={scrollTo}><i className="fa fa-road"/> Strategy</Link></li>
+                    <li><Link to="/process" onClick={scrollTo}><i className="fa fa-tasks"/> Process</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -92,9 +92,9 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/subscription" onClick={scrollTo}>Subscription</Link></li>
-                    <li><Link to="/warranty" onClick={scrollTo}>Warranty</Link></li>
-                    <li><Link to="/on-demand" onClick={scrollTo}>On Demand</Link></li>
+                    <li><Link to="/subscription" onClick={scrollTo}><i className="fa fa-refresh"/> Subscription</Link></li>
+                    <li><Link to="/warranty" onClick={scrollTo}><i className="fa fa-umbrella"/> Warranty</Link></li>
+                    <li><Link to="/on-demand" onClick={scrollTo}><i className="fa fa-power-off"/> On Demand</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -102,7 +102,7 @@ export default class extends Footer {
             <div className="col-sm-3 col-xs-12">
               <h4><i className="fa fa-info-circle"/> Support</h4>
               <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (855) FOX-ZERO" href="tel:+18553473369" target="_blank">+1 (855) FOX-ZERO</a>, or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
-              <p>Operating hours:<br />9am-6pm (EST) / M-F</p>
+              <p><strong>Operating Hours:</strong><br />9am-6pm (EST), M-F</p>
             </div>
             <div className="col-xs-12 text-center">
               <img src="/@fox-zero/web/images/logo-transparent.png" title="FoxZero Consulting"/>

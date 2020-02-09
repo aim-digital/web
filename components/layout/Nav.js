@@ -68,26 +68,26 @@ export default class extends Nav {
               <Link rel="nofollow" to="/" className="logo" onClick={update(0)}/>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> Services</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
               <ul>
-                <li><Link rel="nofollow" to="/services/consulting" onClick={update(0)}>Consulting</Link></li>
-                <li><Link rel="nofollow" to="/services/development" onClick={update(1)}>Development</Link></li>
-                <li><Link rel="nofollow" to="/services/maintenance" onClick={update(2)}>Maintenance</Link></li>
+                <li><Link rel="nofollow" to="/services/consulting" onClick={update(0)}><i className="fa fa-battery-full"/> Consulting</Link></li>
+                <li><Link rel="nofollow" to="/services/development" onClick={update(1)}><i className="fa fa-code"/> Development</Link></li>
+                <li><Link rel="nofollow" to="/services/maintenance" onClick={update(2)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-universal-access"/> Framework</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Framework</a>
               <ul>
-                <li><Link rel="nofollow" to="/services/strategy" onClick={update(3)}>Strategy</Link></li>
-                <li><Link rel="nofollow" to="/services/process" onClick={update(4)}>Process</Link></li>
+                <li><Link rel="nofollow" to="/services/strategy" onClick={update(3)}><i className="fa fa-road"/> Strategy</Link></li>
+                <li><Link rel="nofollow" to="/services/process" onClick={update(4)}><i className="fa fa-tasks"/> Process</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/services/subscription" onClick={update(6)}>Subscription</Link></li>
-                <li><Link rel="nofollow" to="/services/warranty" onClick={update(5)}>Warranty</Link></li>
-                <li><Link rel="nofollow" to="/services/on-demand" onClick={update(7)}>On Demand</Link></li>
+                <li><Link rel="nofollow" to="/services/subscription" onClick={update(6)}><i className="fa fa-refresh"/> Subscription</Link></li>
+                <li><Link rel="nofollow" to="/services/warranty" onClick={update(5)}><i className="fa fa-umbrella"/> Warranty</Link></li>
+                <li><Link rel="nofollow" to="/services/on-demand" onClick={update(7)}><i className="fa fa-power-off"/> On Demand</Link></li>
               </ul>
             </li>
             <li>

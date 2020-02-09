@@ -226,7 +226,7 @@ export default class extends Page {
     return (
       <section className="section">
         <h2 className={headerClass}>Content</h2>
-        <h3 className={headerClass}>Follow<br />FoxStream™</h3>
+        <h3 className={headerClass}>Channel<br />FoxStream™</h3>
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">
@@ -236,7 +236,7 @@ export default class extends Page {
                 <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                   <Solution
                     icon="television">
-                    Visit <span>FoxStream™ TV</span>
+                    View <span>FoxStream™ TV</span>
                   </Solution>
                 </Link>
               </div>

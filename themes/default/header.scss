@@ -195,13 +195,14 @@
     i {
       position: absolute;
       z-index: 2;
-      bottom: -20px;
-      left: 15px;
+      bottom: -10px;
+      right: 0;
       color: rgba(89, 159, 198, 1);
-      font-size: 3.25em;
+      font-size: 3em;
       width: 100%;
       display: block;
-      opacity: .8;
+      opacity: .9;
+      text-align: right;
     }
   }
 

@@ -206,7 +206,7 @@
     }
 
     div {
-      background: $primary-green-color;
+      // background: $primary-green-color;
       position: relative;
 
       &:before {
@@ -225,15 +225,16 @@
     }
 
     span {
-      padding-left: .25em;
+      padding-left: .5em;
       font-size: 1.25em;
     }
 
     i {
-      background: $primary-green-color;
-      color: $black-color;
-      padding: .25em;
-      font-size: 1.25em;
+      color: $primary-green-color;
+      // color: $black-color;
+      // padding: .25em;
+      font-size: 1.5em;
+      opacity: .65;
     }
   }
 
