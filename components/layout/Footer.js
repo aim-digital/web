@@ -42,17 +42,17 @@ export default class extends Footer {
                   <h4><i>@</i> Follow Us</h4>
                   <ul className="social">
                     <li>
-                      <a title="Facebook: @fox.zero.media" href="https://www.facebook.com/fox.zero.media" target="_blank">
+                      <a title="Facebook: @agent.foxzero" href="https://www.facebook.com/agent.foxzero" target="_blank">
                         <i className="fa fa-facebook-official"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Twitter: @fox_zero_media" href="https://twitter.com/fox_zero_media" target="_blank">
+                      <a title="Twitter: @agent_foxzero" href="https://twitter.com/agent_foxzero" target="_blank">
                         <i className="fa fa-twitter"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Instagram: @fox_zero_media" href="https://www.instagram.com/fox_zero_media" target="_blank">
+                      <a title="Instagram: @agent_foxzero" href="https://www.instagram.com/agent_foxzero" target="_blank">
                         <i className="fa fa-instagram"/>
                       </a>
                     </li>
@@ -62,7 +62,7 @@ export default class extends Footer {
                       </a>
                     </li>
                     <li>
-                      <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/fox-zero-media" target="_blank">
+                      <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/foxzero" target="_blank">
                         <i className="fa fa-linkedin-square"/>
                       </a>
                     </li>
@@ -73,8 +73,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-cogs"/> Services</h4>
                   <ul>
-                    <li><Link to="/consulting" onClick={scrollTo}><i className="fa fa-battery-full"/> Consulting</Link></li>
-                    <li><Link to="/development" onClick={scrollTo}><i className="fa fa-code"/> Development</Link></li>
+                    <li><Link to="/consulting" onClick={scrollTo}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
+                    <li><Link to="/development" onClick={scrollTo}><i className="fa fa-wrench"/> Development</Link></li>
                     <li><Link to="/maintenance" onClick={scrollTo}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
                   </ul>
                 </li>

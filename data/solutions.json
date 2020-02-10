@@ -4,7 +4,7 @@
         "section": "Consulting",
         "slug": "consulting",
         "title": "100% Power Every Hour",
-        "icon": "battery-full",
+        "icon": "lightbulb-o",
         "summary": "Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.",
         "category": "Services",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/09602e46d64741d98740ad7820cb2dc0.jpg" }]
@@ -14,7 +14,7 @@
         "section": "Development",
         "slug": "development",
         "title": "Full Service Digital Agency",
-        "icon": "code",
+        "icon": "wrench",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Services",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fc69876cad544475b514f713362048f7.png" }]

@@ -145,7 +145,7 @@
       // -webkit-animation-iteration-count: infinite;
 
       &:before {
-        content: 'more';
+        content: 'next';
         left: 100%;
       }
     }
@@ -183,7 +183,7 @@
 
   h2 {
     color: #FCD700;
-    font-size: 3.25em;
+    font-size: 3.5em;
     z-index: 2;
     margin-bottom: 15px;
 
@@ -195,7 +195,7 @@
     i {
       position: absolute;
       z-index: 2;
-      bottom: -10px;
+      bottom: 0;
       right: 0;
       color: rgba(89, 159, 198, 1);
       font-size: 3em;
@@ -244,6 +244,7 @@
   .scroll {
     width: 100%;
     text-align: center;
+    margin-top: 1.25em;
 
     span {
       display: block;
@@ -262,7 +263,6 @@
       outline: none;
       cursor: pointer;
       overflow: hidden;
-      margin-top: .5em;
     }
 
     button span {

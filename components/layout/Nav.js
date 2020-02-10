@@ -47,19 +47,19 @@ export default class extends Nav {
         <nav>
           <a href="#" className="toggle" role="button" onClick={preventDefault}/>
           <div className="social">
-            <a title="Facebook: @fox.zero.media" href="https://www.facebook.com/fox.zero.media" target="_blank">
+            <a title="Facebook: @agent.foxzero" href="https://www.facebook.com/agent.foxzero" target="_blank">
               <i className="fa fa-facebook-official"/>
             </a>
-            <a title="Twitter: @fox_zero_media" href="https://twitter.com/fox_zero_media" target="_blank">
+            <a title="Twitter: @agent_foxzero" href="https://twitter.com/agent_foxzero" target="_blank">
               <i className="fa fa-twitter"/>
             </a>
-            <a title="Instagram: @fox_zero_media" href="https://www.instagram.com/fox_zero_media" target="_blank">
+            <a title="Instagram: @agent_foxzero" href="https://www.instagram.com/agent_foxzero" target="_blank">
               <i className="fa fa-instagram"/>
             </a>
             <a title="GitHub: FoxZero™" href="https://www.github.com/fox-zero" target="_blank">
               <i className="fa fa-github"/>
             </a>
-            <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/fox-zero-media" target="_blank">
+            <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/foxzero" target="_blank">
               <i className="fa fa-linkedin-square"/>
             </a>
           </div>
@@ -70,8 +70,8 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
               <ul>
-                <li><Link rel="nofollow" to="/services/consulting" onClick={update(0)}><i className="fa fa-battery-full"/> Consulting</Link></li>
-                <li><Link rel="nofollow" to="/services/development" onClick={update(1)}><i className="fa fa-code"/> Development</Link></li>
+                <li><Link rel="nofollow" to="/services/consulting" onClick={update(0)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
+                <li><Link rel="nofollow" to="/services/development" onClick={update(1)}><i className="fa fa-wrench"/> Development</Link></li>
                 <li><Link rel="nofollow" to="/services/maintenance" onClick={update(2)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
               </ul>
             </li>

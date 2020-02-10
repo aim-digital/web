@@ -206,14 +206,15 @@
     }
 
     div {
-      // background: $primary-green-color;
+      background: $primary-green-color;
       position: relative;
 
       &:before {
         content: attr(data-dek);
+        font-size: .95em;
         position: absolute;
         bottom: 100%;
-        margin-bottom: .25em;
+        margin-bottom: 5px;
         color: $white-color;
         white-space: nowrap;
       }
@@ -225,16 +226,15 @@
     }
 
     span {
-      padding-left: .5em;
-      font-size: 1.25em;
+      padding-left: 10px;
+      font-size: 1.35em;
     }
 
     i {
-      color: $primary-green-color;
-      // color: $black-color;
-      // padding: .25em;
+      background-color: $primary-green-color;
+      color: $black-color;
+      padding: .25em 15px;
       font-size: 1.5em;
-      opacity: .65;
     }
   }
 

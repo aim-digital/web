@@ -216,6 +216,12 @@ footer {
     @media (min-width: 1280px) {
       font-size: 1.25em;
     }
+
+    i {
+      display: inline-block;
+      width: 1.5em;
+      text-align: center;
+    }
   }
 
   p {
