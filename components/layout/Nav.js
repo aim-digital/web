@@ -78,16 +78,16 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Framework</a>
               <ul>
-                <li><Link rel="nofollow" to="/services/strategy" onClick={update(3)}><i className="fa fa-road"/> Strategy</Link></li>
-                <li><Link rel="nofollow" to="/services/process" onClick={update(4)}><i className="fa fa-tasks"/> Process</Link></li>
+                <li><Link rel="nofollow" to="/framework/strategy" onClick={update(3)}><i className="fa fa-road"/> Strategy</Link></li>
+                <li><Link rel="nofollow" to="/framework/process" onClick={update(4)}><i className="fa fa-tasks"/> Process</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/services/subscription" onClick={update(6)}><i className="fa fa-refresh"/> Subscription</Link></li>
-                <li><Link rel="nofollow" to="/services/warranty" onClick={update(5)}><i className="fa fa-umbrella"/> Warranty</Link></li>
-                <li><Link rel="nofollow" to="/services/on-demand" onClick={update(7)}><i className="fa fa-power-off"/> On Demand</Link></li>
+                <li><Link rel="nofollow" to="/pricing/subscription" onClick={update(6)}><i className="fa fa-refresh"/> Subscription</Link></li>
+                <li><Link rel="nofollow" to="/pricing/warranty" onClick={update(5)}><i className="fa fa-umbrella"/> Warranty</Link></li>
+                <li><Link rel="nofollow" to="/pricing/on-demand" onClick={update(7)}><i className="fa fa-power-off"/> On Demand</Link></li>
               </ul>
             </li>
             <li>
