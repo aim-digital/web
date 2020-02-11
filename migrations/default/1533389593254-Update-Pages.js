@@ -5,7 +5,7 @@ export default class {
     const {Page, Layout, Script} = getModels();
 
     await Layout.update({
-      title: 'FoxZero™ - The High Performance/Zero Latency Agency™'
+      title: 'FoxZero™ - The High-Performance/Zero-Latency Agency™'
     }, {
       where: {
         title: 'FoxZero™'
@@ -13,7 +13,7 @@ export default class {
     });
 
     await Page.update({
-      title: 'FoxZero™ - The High Performance/Zero Latency Agency™',
+      title: 'FoxZero™ - The High-Performance/Zero-Latency Agency™',
       headers: '["@fox-zero/web:Title"]',
       sections: '["@fox-zero/web:Services", "@fox-zero/web:Value", "@fox-zero/web:Strategy", "@fox-zero/web:Process", "@fox-zero/web:Warranty", "@fox-zero/web:Pricing"]'
     }, {
@@ -23,7 +23,7 @@ export default class {
     });
 
     await Page.update({
-      title: 'FoxZero™ - The High Performance/Zero Latency Agency™',
+      title: 'FoxZero™ - The High-Performance/Zero-Latency Agency™',
       route: 'digital-media-agency(/:section)',
       headers: '["@fox-zero/web:Title"]',
       sections: '["@fox-zero/web:Services", "@fox-zero/web:Value", "@fox-zero/web:Strategy", "@fox-zero/web:Process", "@fox-zero/web:Warranty", "@fox-zero/web:Pricing"]'
