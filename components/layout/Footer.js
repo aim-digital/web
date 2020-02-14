@@ -33,7 +33,7 @@ export default class extends Footer {
           <div className="row">
             <div className="col-xs-12 logo text-center">
               <Link to="/" onClick={scrollTo}>
-                <img src="/@fox-zero/web/images/icon.png" title="FoxZero Consulting"/>
+                <img src="/@fox-zero/web/images/icon.png" title="FoxZero"/>
               </Link>
             </div>
             <div className="col-sm-9 col-xs-12">
@@ -105,8 +105,8 @@ export default class extends Footer {
               <p><strong>Operating Hours:</strong><br />9am-6pm (EST), M-F</p>
             </div>
             <div className="col-xs-12 text-center">
-              <img src="/@fox-zero/web/images/logo-transparent.png" title="FoxZero Consulting"/>
-              <p><small>&copy; FoxZero Consulting (a VitruvianTech® brand)</small></p>
+              <img src="/@fox-zero/web/images/logo-transparent.png" title="FoxZero"/>
+              <p><small>&copy; FoxZero (a VitruvianTech® brand)</small></p>
             </div>
           </div>
         </div>

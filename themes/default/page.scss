@@ -1,6 +1,7 @@
 .page {
   max-width: 100%;
   background: $black-color;
+  padding-top: 0 !important;
 
   #app.no-js & {
     overflow: hidden;
@@ -141,7 +142,7 @@ section.solutions {
       vertical-align: middle;
       position: absolute;
       pointer-events: auto;
-      bottom: 40px;
+      bottom: 0;
       margin: 15px;
 
       &.left {
@@ -277,6 +278,7 @@ section.solutions {
   background: $background-color;
   min-height: $page-height!important;
   max-width: none;
+  padding: 5.25em 0;
 
   @media (min-height: 768px) {
     min-height: $page-height-xl!important;

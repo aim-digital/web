@@ -90,6 +90,14 @@ export default class extends Nav {
                 <li><Link rel="nofollow" to="/pricing/on-demand" onClick={update(7)}><i className="fa fa-power-off"/> On Demand</Link></li>
               </ul>
             </li>
+            <li className="subnav">
+              <a href="#" onClick={preventDefault}><i className="fa fa-info-circle"/> Support</a>
+              <ul>
+                <li><Link to="/contact"><i className="fa fa-envelope"/> Contact Us</Link></li>
+                <li><Link to="/about"><i className="fa fa-id-card-o"/> About Us</Link></li>
+                <li><Link to="/privacy"><i className="fa fa-legal"/> Privacy Policy</Link></li>
+              </ul>
+            </li>
             <li>
               <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                 <i className="fa fa-television"/> FoxStream™ TV

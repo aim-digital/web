@@ -10,7 +10,7 @@
 
 .modal .logo, .page .logo {
   text-align: center;
-  padding: 2em;
+  padding: 5.25em 0 15px;
 
   > img {
     width: 7.5em;
@@ -20,17 +20,6 @@
       width: 7em;
     }
   }
-
-  // > div {
-  //   width: 26em;
-  //   margin: 0 auto;
-
-  //   img:first-child {
-  //     float: left;
-  //     width: 10em;
-  //     margin-right: 1em;
-  //   }
-  // }
 
   .text {
     opacity: .9;
@@ -45,101 +34,17 @@
   }
 }
 
-.corporate {
-  // float: left;
-  // position: relative;
-  // top: 60px;
-  position: relative;
-  font-size: .7em;
-  margin: 0 auto;
-  margin-left: 1em;
-  width: 18.75em;
-  text-indent: 3.5em;
-  text-shadow: 1px 2px $black-color;
-  font-family: $font-family-brand;
+.modal .logo {
+  padding-top: 2.25em;
+}
 
-  &:before, &:after {
-    position: absolute;
-    font-size: 1.5em;
-    left: 50%;
-    font-family: "Fjalla One";
-    text-transform: uppercase;
-    transform: translate(-50%);
-    text-shadow: 0px 0px 4px #FBAA19;
-    opacity: .85;
-    letter-spacing: 1px;
-  }
-
-  &:before {
-    content: 'A';
-    bottom: 95%;
-    margin-bottom: -.5em;
-  }
-
-  &:after {
-    content: 'Brand';
-    top: 100%;
-  }
-
-  .name {
-    color: #fff;
-    -webkit-text-fill-color: #fff; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: $primary-yellow-color;
-    font-size: 2.75em;
-    margin: -.5em auto -.4em;
-
-    span {
-      position: relative;
-
-      &:before {
-        content: '';
-        position: absolute;
-        background: url(/@fox-zero/web/images/corporate.png) no-repeat;
-        background-size: 100%;
-        right: 100%;
-        top: 0;
-        width: 1em;
-        height: 1em;
-        margin: .2em .25em;
-      }
-
-      &:after {
-        content: '®';
-        position: absolute;
-        right: 0;
-        top: 0;
-        margin: -.25em -10px;
-        font-size: .35em;
-        -webkit-text-fill-color: $primary-yellow-color;
-        -webkit-text-stroke-width: 0;
-        color: $primary-yellow-color;
-        opacity: .5;
-        font-family: $font-family-oswald;
-      }
-    }
-  }
-
-  .tagline {
-    font-family: $font-family-brand;
-    font-size: 1.025em;
-    margin: 0;
-    word-spacing: 1px;
-    span {
-      display: inline-block;
-      text-indent: 0;  
-      small {
-        opacity: .85;
-        text-transform: none;
-        font-size: inherit;
-      }
-    }
-  }
+.footer .logo {
+  padding: 0;
 }
 
 .page .logo > img.text {
   display: none;
-  
+
   @media only screen and (min-width: 769px) {
     display: inline;
   }

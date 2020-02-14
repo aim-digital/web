@@ -264,6 +264,10 @@
       outline: none;
       cursor: pointer;
       overflow: hidden;
+
+      &[disabled] {
+        visibility: hidden;
+      }
     }
 
     button span {

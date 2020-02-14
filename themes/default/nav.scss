@@ -7,9 +7,8 @@
   z-index: 4;
 
   .nav {
-    width: 30px;
-    height: 96vh;
-    margin-top: 40px;
+    width: 40px;
+    height: 100%;
     display: block;
 
     @media only screen and (min-width: 769px) {
@@ -31,23 +30,16 @@ nav .social {
   padding: 0 .35em;
   font-size: 1.5em;
   transition: opacity .35s;
-  opacity: .65;
+  opacity: .8;
 
   #app.nav-open & {
     opacity: 1;
-    // transform: translate3d(200%,0,0);
-    // opacity: 0;
-
-    // @media only screen and (min-width: 2000px) {
-    //   transform: none; 
-    //   opacity: 1;
-    // }
   }
 
   a {
     display: inline-block;
     color: inherit;
-    opacity: .85;
+    opacity: .65;
     margin: 0 .35em;
     color: $white-color;
     transition: opacity .35s;
@@ -71,17 +63,28 @@ nav .social {
 }
 
 nav {
-  //max-width: $page-max-width;
   max-width: 100%;
   margin: 0 auto;
   height: 40px;
   min-height: 20px;
   max-height: 100vh;
-  opacity: .85;
-  box-shadow: 0 0 .5em #000;
-  background-color: $black-color;
-  // background-image: linear-gradient(to, $background-color, transparent, $background-color);
   transition: opacity .25s;
+  opacity: .85;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 .5em #000;
+    background-color: $black-color;
+    z-index: 1;
+  }
+
+  .toggle, .social {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 nav ul {
@@ -114,19 +117,15 @@ nav li a:focus {
 nav > ul {
   transform: translate3d(-100%, 0, 0);
   position: absolute;
-  top: 40px;
+  top: 0;
   width: 16em;
   background: $background-color;
-  height: 96vh;
-  min-height: 528px;
+  height: 100%;
+  min-height: 100vh;
   font-size: 1.25em;
   line-height: 1.25em;
   color: #efefef;
   margin-right: 2vw;
-  background: $background-color url('/@fox-zero/web/images/iStock-962093578.jpg') no-repeat;
-  background-color: rgba(0,159,221, .65);
-  background-position: 60%;
-  background-size: cover;
   border-top: solid 1px $black-color;
   box-shadow: 0 1px 2vw $black-color;
 
@@ -141,16 +140,21 @@ nav > ul {
     opacity: .65;
     pointer-events: none;
     z-index: 1;
+    filter: blur(5px);
+    background: $background-color url('/@fox-zero/web/images/iStock-962093578.jpg') no-repeat;
+    background-color: rgba(0,159,221, .65);
+    background-position: 60%;
+    background-size: cover;
   }
 
   &:after {
-    content: '\A9 FoxZero Consulting';
-    font-size: .7em;
+    content: '\A9 FoxZero (a VitruvianTech® brand)';
+    font-size: .65em;
     padding: 1.25em 1.75em;
     display: block;
     color: $humility;
     position: fixed;
-    bottom: .5em;
+    bottom: 0;
     z-index: 1;
     width: 100%;
     text-align: center;
@@ -257,7 +261,7 @@ nav li.active {
 nav li.home {
   transition: all .15s ease-in;
   transform: scale3d(.7, .7, 1);
-  margin: .5em auto 1em;
+  margin: 2.75em 0 15px;
 
   &:after {
     content: none;

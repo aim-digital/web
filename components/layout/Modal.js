@@ -54,7 +54,7 @@ export default class extends Component {
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>
-          <span>© FoxZero Consulting (a VitruvianTech® brand)</span>
+          <span>© FoxZero (a VitruvianTech® brand)</span>
         </Modal.Footer>
       </Modal>
     );
