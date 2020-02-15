@@ -211,8 +211,8 @@ section.solutions {
   .card {
     img {
       display: block;
-      width: 80%;
-      padding: 15px;
+      width: 75%;
+      max-width: 360px;
     }
 
     > div, p {
@@ -220,43 +220,27 @@ section.solutions {
     }
 
     p, img {
-      max-width: 640px;
       margin-left: auto;
       margin-right: auto;
     }
 
     p {
-      // background: #f8f8f8;
-      // box-shadow: 0 0 10px $black-color;
-      // text-shadow: 1px 1px 3px #e0e0e0;
       text-shadow: 1px 1px 3px #151515;
       color: #fff;
       font-size: 1.25em;
       font-family: $font-family-sans-serif;
 
       &:first-of-type {
-        position: relative;
-        margin-bottom: 2em;
-        margin-top: -1em;
+        margin-bottom: 2.5em;
+        margin-top: -2.5em;
 
         span {
-          position: relative;
-          z-index: 2;
-        }
-
-        &:before {
-          content: '';
+          padding: 15px;
+          display: inline-block;
           border-radius: 2px;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: rgba(89, 159, 198, 0.9);
-          top: 0;
-          left: 0;
-          margin: 0;
+          background: rgba(89, 159, 198, 0.85);
           border-top: rgba(89, 159, 198, .6);
           box-shadow: 0 5px 10px rgba(41, 41, 41, 0.25);
-          z-index: 1;
         }
       }
     }
@@ -264,7 +248,7 @@ section.solutions {
     p + p,
     p + img,
     img + p {
-      margin-top: 1.25em !important;
+      margin-top: 1em !important;
     }
 
     h4 {

@@ -22,7 +22,7 @@ const HEADER_TIMER = 15;
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
 
-const PARALLAX_SCALE = 850;
+const PARALLAX_SCALE = 750;
 const PARALLAX_SPEED = 0.2;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
@@ -232,6 +232,7 @@ export default class extends Page {
             <div className="col-md-12 card">
               <p><span>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</span></p>
               <img src="/@fox-zero/web/images/logo.png" />
+              <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
               <div>
                 <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                   <Solution
@@ -336,13 +337,13 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(length + 2.3)} style={{ left: 0 }}>
-              <ParallaxLayer offset={1.5} speed={1} style={{ backgroundColor: '#65BCDE', opacity: '.85' }} />
-              <ParallaxLayer offset={3.5} speed={1} style={{ backgroundColor: '#DA6600', opacity: '.85' }} />
-              <ParallaxLayer offset={5.5} speed={1} style={{ backgroundColor: '#87BCDE', opacity: '.85' }} />
-              <ParallaxLayer offset={7.5} speed={1} style={{ backgroundColor: '#DA6600', opacity: '.85' }} />
-              <ParallaxLayer offset={9.5} speed={1} style={{ backgroundColor: '#87BCDE', opacity: '.85' }} />
-              <ParallaxLayer offset={11.5} speed={1} style={{ backgroundColor: '#DA6600' }} />
+            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(length + 2.5)} style={{ left: 0 }}>
+              <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#65BCDE', opacity: '.35' }} />
+              <ParallaxLayer offset={3} speed={1} style={{ backgroundColor: '#DA6600', opacity: '.8' }} />
+              <ParallaxLayer offset={5} speed={1} style={{ backgroundColor: '#87BCDE', opacity: '.35' }} />
+              <ParallaxLayer offset={7} speed={1} style={{ backgroundColor: '#DA6600', opacity: '.8' }} />
+              <ParallaxLayer offset={9} speed={1} style={{ backgroundColor: '#87BCDE', opacity: '.35' }} />
+              <ParallaxLayer offset={11} speed={1} style={{ backgroundColor: '#DA6600', opacity: '.8' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
               <ParallaxLayer offset={5} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
               <ParallaxLayer offset={10} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
@@ -443,13 +444,13 @@ export default class extends Page {
                 <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
               </ParallaxLayer>
               <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                <img src={url('earth')} style={{ width: '60%' }} />
+                <img src={url('earth')} style={{ width: '60%', opacity: '.65' }} />
               </ParallaxLayer>
               <ParallaxLayer offset={6.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                <img src={url('earth')} style={{ width: '60%' }} />
+                <img src={url('earth')} style={{ width: '60%', opacity: '.65' }} />
               </ParallaxLayer>
               <ParallaxLayer offset={10.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                <img src={url('earth')} style={{ width: '60%' }} />
+                <img src={url('earth')} style={{ width: '60%', opacity: '.65' }} />
               </ParallaxLayer>
               <ParallaxLayer
                 offset={0}

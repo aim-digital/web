@@ -30,7 +30,7 @@ nav .social {
   padding: 0 .35em;
   font-size: 1.5em;
   transition: opacity .35s;
-  opacity: .8;
+  opacity: .85;
 
   #app.nav-open & {
     opacity: 1;
@@ -39,7 +39,7 @@ nav .social {
   a {
     display: inline-block;
     color: inherit;
-    opacity: .65;
+    opacity: .75;
     margin: 0 .35em;
     color: $white-color;
     transition: opacity .35s;
@@ -69,7 +69,7 @@ nav {
   min-height: 20px;
   max-height: 100vh;
   transition: opacity .25s;
-  opacity: .85;
+  opacity: .9;
 
   &:before {
     content: '';
