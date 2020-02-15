@@ -28,6 +28,7 @@ const PARALLAX_SPEED = 0.2;
 const RE_SECTION_KEY = /.*\:(.*)$/;
 const SECTION_OFFSET = 250;
 const SECTION_DEFAULT = 'consulting';
+const SECTION_FORM = 6;
 const SECTIONS = {
   'consulting': { slide: 0 },
   'development': { slide: 1 },
@@ -87,7 +88,7 @@ export default class extends Page {
 
   componentDidMount = () => {
     if (__CLIENT__) {
-      const { props, elements } = this;
+      const { props, elements, section } = this;
       const { transition } = props;
       const { app, parallax } = elements;
       document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
@@ -96,7 +97,15 @@ export default class extends Page {
       global.addEventListener('resize', this.updateViewport);
       global.setTimeout(() => { this.setState({ ready: true }); }, 1000);
       this.updateViewport();
-      transition('timer', HEADER_TIMER);
+      this.cycleHeader();
+    }
+  }
+
+  cycleHeader = (timer = HEADER_TIMER) => {
+    const { transition } = this.props;
+
+    if (__CLIENT__) {
+      transition('timer', this.sections.length > 1 ? timer : 0);
     }
   }
 
@@ -140,6 +149,8 @@ export default class extends Page {
   };
 
   componentDidUpdate = () => {
+    this.cycleHeader();
+
     if (!this.positions.length) {
       this.getSectionPositions();
     }
@@ -176,7 +187,7 @@ export default class extends Page {
 
     if (typeof slide !== 'undefined') {
       transition('slide', slide);
-      transition('timer', timer);
+      this.cycleHeader(timer);
     }
   };
 
@@ -214,6 +225,10 @@ export default class extends Page {
     const { props } = this;
     const section = props.section || props.param.section;
     return section ? (SECTIONS[section] ? section : SECTION_DEFAULT) : section;
+  }
+
+  get sections() {
+    return this.props.sections.filter(this.filter);
   }
 
   get length() {
@@ -324,29 +339,58 @@ export default class extends Page {
 
   wrap = sections => sections.map((section, i) => <div key={String(i)}>{section}</div>);
 
+  filter = component => {
+    const { section } = this;
+    return section ? component.key.replace(RE_SECTION_KEY, '$1').toLowerCase() === section.toLowerCase().replace('-', '') : true;
+  }
+
   render() {
-    const { className, classNames = {}, solution, close, sections } = this.props;
-    const { animating, contact, isMobile, isLandscape } = this.state;
-    const { section, length } = this;
-    const { message } = this.state.form;
-    const filter = component => section ? component.key.replace(RE_SECTION_KEY, '$1').toLowerCase() === section.toLowerCase().replace('-', '') : true;
+    const { props, state, sections, length } = this;
+    const { className, classNames = {}, solution, close } = props;
+    const { animating, contact, isMobile, isLandscape } = state;
+    const { message } = state.form;
     const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
+
+    const SINGLE_LENGTH = sections.length > 1;
+
+    const renderLayer = (index = 0, offset = 0) => (component, i) => (
+      <ParallaxLayer
+        className={`section-${i + index}`}
+        key={`section-${i + index}`}
+        offset={factor(i + index + offset)}
+        factor={scale}
+        speed={PARALLAX_SPEED}>
+        {component}
+      </ParallaxLayer>
+    );
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
             {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(length + 2.5)} style={{ left: 0 }}>
-              <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#65BCDE', opacity: '.35' }} />
-              <ParallaxLayer offset={3} speed={1} style={{ backgroundColor: '#DA6600', opacity: '.8' }} />
-              <ParallaxLayer offset={5} speed={1} style={{ backgroundColor: '#87BCDE', opacity: '.35' }} />
-              <ParallaxLayer offset={7} speed={1} style={{ backgroundColor: '#DA6600', opacity: '.8' }} />
-              <ParallaxLayer offset={9} speed={1} style={{ backgroundColor: '#87BCDE', opacity: '.35' }} />
-              <ParallaxLayer offset={11} speed={1} style={{ backgroundColor: '#DA6600', opacity: '.8' }} />
+              <ParallaxLayer offset={factor(0)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.65' }} />
+              <ParallaxLayer offset={factor(1)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.75' }} />
+              <ParallaxLayer offset={factor(2.25)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.65' }} />
+              <ParallaxLayer offset={factor(3.25)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.75' }} />
+              <ParallaxLayer offset={factor(4.1)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.65' }} />
+              <ParallaxLayer offset={factor(4.95)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.75' }} />
+              <ParallaxLayer offset={factor(7.1)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.65' }} />
+              <ParallaxLayer offset={factor(8.1)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.75' }} />
+              <ParallaxLayer offset={factor(9.1)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.65' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
               <ParallaxLayer offset={5} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
               <ParallaxLayer offset={10} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
+              <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+                <img src={url('earth')} style={{ width: '60%', opacity: '.8' }} />
+              </ParallaxLayer>
+              <ParallaxLayer offset={6.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+                <img src={url('earth')} style={{ width: '60%', opacity: '.8' }} />
+              </ParallaxLayer>
+              <ParallaxLayer offset={10.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+                <img src={url('earth')} style={{ width: '60%', opacity: '.8' }} />
+              </ParallaxLayer>
               <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
                 <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
               </ParallaxLayer>
@@ -443,19 +487,10 @@ export default class extends Page {
                 <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
                 <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
               </ParallaxLayer>
-              <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                <img src={url('earth')} style={{ width: '60%', opacity: '.65' }} />
-              </ParallaxLayer>
-              <ParallaxLayer offset={6.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                <img src={url('earth')} style={{ width: '60%', opacity: '.65' }} />
-              </ParallaxLayer>
-              <ParallaxLayer offset={10.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                <img src={url('earth')} style={{ width: '60%', opacity: '.65' }} />
-              </ParallaxLayer>
               <ParallaxLayer
                 offset={0}
                 speed={0}
-                style={{ height: '96vh' }}>
+                style={{ height: '100vh' }}>
                 {this.header}
               </ParallaxLayer>
               {!isMobile && <ParallaxLayer
@@ -464,20 +499,9 @@ export default class extends Page {
                 style={{ pointerEvents: 'none', zIndex: 1 }}>
                 {this.solutions}
               </ParallaxLayer>}
-              {sections
-                .filter(filter)
-                .map((component, i) => (
-                  <ParallaxLayer
-                    className={`section-${i}`}
-                    key={`section-${i}`}
-                    offset={factor(i)}
-                    factor={scale}
-                    speed={PARALLAX_SPEED}>
-                    {component}
-                  </ParallaxLayer>
-                ))}
+              {sections.slice(0, SINGLE_LENGTH ? SECTION_FORM : sections.length).map(renderLayer())}
               <ParallaxLayer
-                offset={factor(length + 0.1)}
+                offset={factor((SINGLE_LENGTH ? SECTION_FORM : length) + 0.15)}
                 speed={PARALLAX_SPEED}>
                 <section className="quote">
                   <div>
@@ -490,6 +514,7 @@ export default class extends Page {
                   </div>
                 </section>
               </ParallaxLayer>
+              {SINGLE_LENGTH ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 1)) : <></>}
               <ParallaxLayer
                 offset={factor(length + 0.85)}
                 factor={scale}
@@ -499,7 +524,7 @@ export default class extends Page {
               <Footer/>
             </Parallax> : <>
               {this.header}
-              {sections.filter(filter)}
+              {sections}
               {this.content}
               <Footer/>
             </>}
