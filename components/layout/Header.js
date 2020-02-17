@@ -6,6 +6,8 @@ import {Header} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {Logo} from '@fox-zero/web/components/layout';
 
+const PROGRESS_INCREMENT = 100;
+
 @connect((state, props) => ({
   slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0,
   initial: state['@boilerplatejs/core'].Transition['slide.initial']
@@ -43,6 +45,7 @@ export default class extends Header {
   };
 
   timer = null;
+  progress = null;
 
   componentWillUnmount() {
     this.setState({ animating: false, index: 0, previous: undefined });
@@ -83,13 +86,39 @@ export default class extends Header {
   }
 
   clearTimer = () => {
+    if (__CLIENT__ && this.progress) {
+      document.querySelector('.header.container header .preview > div').style.transform = `scale3d(0, 1, 1)`;
+    }
+
     window.clearTimeout(this.timer);
     this.timer = null;
+    window.clearInterval(this.progress);
+    this.progress = null;
+
     return this;
   };
 
   startTimer = () => {
-    this.timer = setTimeout(this.next.bind(this), this.props.timer * 1000);
+    const { timer } = this.props;
+    const duration = timer * 1000;
+    let progress = 0;
+
+    this.timer = setTimeout(this.next.bind(this), duration);
+
+    if (__CLIENT__) {
+      const bar = document.querySelector('.header.container header .preview > div');
+
+      this.progress = setInterval(() => {
+        progress += PROGRESS_INCREMENT;
+        bar.style.transform = `scale3d(${Math.min(progress / duration, 100)}, 1, 1)`;
+
+        if (progress >= duration) {
+          window.clearInterval(this.progress);
+          this.progress = null;
+        }
+      }, PROGRESS_INCREMENT);
+    }
+
     return this;
   };
 

@@ -43,7 +43,7 @@ export default class extends Section {
                   onClick={this.openSolution}
                   icon={solution.icon}>
                   <>
-                    Read more about our <span>{[solution.section.toLowerCase(), solution.category.toLowerCase()].join(' ')}</span>
+                    Contact us about our <span>{[solution.section.toLowerCase(), solution.category.toLowerCase()].join(' ')}</span>
                   </>
                 </Solution>
               </div>

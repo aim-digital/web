@@ -17,7 +17,7 @@ import ReactGA from 'react-ga';
 import {solutions} from '@fox-zero/web/data';
 import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
-const HEADER_TIMER = 15;
+const HEADER_TIMER = 10;
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
@@ -88,8 +88,7 @@ export default class extends Page {
 
   componentDidMount = () => {
     if (__CLIENT__) {
-      const { props, elements, section } = this;
-      const { transition } = props;
+      const { elements } = this;
       const { app, parallax } = elements;
       document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
       app.classList.add('home');
@@ -371,7 +370,7 @@ export default class extends Page {
             {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(length + 2.35)} style={{ left: 0 }}>
               <ParallaxLayer offset={factor(0)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
               <ParallaxLayer offset={factor(2)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
-              <ParallaxLayer offset={factor(4)} speed={0.35} style={{ backgroundColor: '#FC6600', opacity: '.65', height: '125vh' }} />
+              <ParallaxLayer offset={factor(4)} speed={0.35} style={{ backgroundColor: '#FC6600', opacity: '.35', height: '125vh' }} />
               <ParallaxLayer offset={factor(6)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
               <ParallaxLayer offset={factor(8)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />

@@ -45,6 +45,7 @@ export default class extends Header {
           <span>{heading || title}</span>
         </h2>
         <section className="preview">
+          <div/>
           <p>{summary}</p>
         </section>
       </div>
