@@ -169,6 +169,8 @@
     margin: 0 auto 10px;
     text-align: left;
     font-weight: 600;
+    z-index: 2;
+    pointer-events:none;
 
     &.text-right {
       text-align: right;
@@ -184,28 +186,7 @@
   h2 {
     color: #FCD700;
     font-size: 3.5em;
-    z-index: 2;
     margin-bottom: 15px;
-
-    span {
-      position: relative;
-      z-index: 2;
-    }
-
-    i {
-      position: absolute;
-      z-index: 2;
-      bottom: 0;
-      left: 0;
-      color: rgba(89, 159, 198, 1);
-      font-size: 3.5em;
-      width: 100%;
-      display: block;
-      opacity: .9;
-      text-align: right;
-      max-width: 340px;
-      text-shadow: 0px 0px 15px $black-color;
-    }
   }
 
   .preview {
@@ -238,7 +219,7 @@
       width: 100%;
       top: 0;
       left: 0;
-      height: 5px;
+      height: 3px;
       border-radius: 2px;
       z-index: 2;
       background: rgba(89, 159, 198, 1);
@@ -258,6 +239,61 @@
       position: relative;
       z-index: 2;
       text-shadow: 1px 1px 3px $black-color;
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      margin-top: -20px;
+      color: #fff;
+      text-shadow: 1px 1px 3px $black-color;
+      background: $primary-green-color;
+      box-shadow: 0px 0px 15px $black-color;
+      font-family: $font-family-fjalla;
+      text-transform: uppercase;
+      outline: none;
+      border: none;
+      border-radius: 50%;
+      display: block;
+      width: 4.25em;
+      height: 4.25em;
+      z-index: 1;
+      font-size: 1.5em;
+      line-height: 1.1;
+      text-align: center;
+      opacity: .9;
+      transition: all .15s ease-in;
+      transform: scale3d(.9, .9, 1);
+
+      &:hover {
+        opacity: 1;
+        transform: scale3d(1.1, 1.1, 1);
+      }
+
+      > span {
+        font-size: .9;
+        display: block;
+        margin-top: -.5em;
+        position: relative;
+        z-index: 2;
+
+        span {
+          color: $black-color;
+          text-shadow: none;
+          font-weight: 600;
+        }
+      }
+
+      i {
+        z-index: 1;
+        position: absolute;
+        top: 70%;
+        left: 65%;
+        font-size: 2.5em;
+        transform: translate(-35%, -30%);
+        opacity: .65;
+      }
     }
   }
 

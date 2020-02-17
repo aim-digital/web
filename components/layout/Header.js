@@ -110,7 +110,7 @@ export default class extends Header {
 
       this.progress = setInterval(() => {
         progress += PROGRESS_INCREMENT;
-        bar.style.transform = `scale3d(${Math.min(progress / duration, 100)}, 1, 1)`;
+        bar.style.transform = `scale3d(${Math.min(progress / duration, 95)}, 1, 1)`;
 
         if (progress >= duration) {
           window.clearInterval(this.progress);

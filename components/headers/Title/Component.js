@@ -3,13 +3,17 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 // import ReactGA from 'react-ga';
 import {Header} from '@fox-zero/web/components/layout';
+import {load} from '@boilerplatejs/strapi/actions/Entry';
+import {open} from '@fox-zero/web/actions/Solution';
 import {solutions} from '@fox-zero/web/data';
 
-@connect(state => ({ timer: state['@boilerplatejs/core'].Transition.timer }))
+@connect(state => ({ timer: state['@boilerplatejs/core'].Transition.timer }), {load, open})
 
 export default class extends Header {
   static propTypes = {
-    timer: PropTypes.number
+    timer: PropTypes.number,
+    load: PropTypes.func.isRequired,
+    open: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -18,6 +22,12 @@ export default class extends Header {
 
   state = {
     loaded: false
+  };
+
+  openSolution = async (solution) => {
+    const { load, open } = this.props;
+    const { slug } = solution;
+    open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug), published: true }) });
   };
 
   transitionBegin = () => {
@@ -35,16 +45,18 @@ export default class extends Header {
   };
 
   renderTitle = (i, className = '', heading) => {
-    const { section, icon, title, summary } = solutions[i];
+    const solution = solutions[i];
+    const { section, title, summary } = solution;
 
     return (
       <div className={`${className} content`} key={`slide-${i}`}>
         <h1>{section}</h1>
-        <h2>
-          <i className={`fa fa-${icon}`}></i>
-          <span>{heading || title}</span>
-        </h2>
+        <h2>{heading || title}</h2>
         <section className="preview">
+          <button onClick={() => this.openSolution(solution)}>
+            <i className="fa fa-ellipsis-h"/>
+            <span>Learn <span>More</span></span>
+          </button>
           <div/>
           <p>{summary}</p>
         </section>
