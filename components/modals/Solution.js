@@ -61,7 +61,7 @@ export default class extends Modal {
     const { location = {} } = global;
     const [hero = {}] = media;
     const share = {
-      url: `${location.protocol}//${location.host}/${(slug || '').toLowerCase()}?detail`,
+      url: `${location.protocol}//${location.host}/${(slug || '').toLowerCase()}`,
       caption: summary,
       subject: `${section} - ${title}`
     };

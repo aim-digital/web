@@ -36,8 +36,8 @@ const SECTIONS = {
   'strategy': { slide: 3 },
   'subscription': { slide: 4 },
   'warranty': { slide: 5 },
-  'process': { slide: 6 },
-  'on-demand': { slide: 7 }
+  'on-demand': { slide: 6 },
+  'process': { slide: 7 }
 };
 
 @connect(state => {
@@ -100,14 +100,6 @@ export default class extends Page {
     }
   }
 
-  cycleHeader = (timer = HEADER_TIMER) => {
-    const { transition } = this.props;
-
-    if (__CLIENT__) {
-      transition('timer', this.sections.length > 1 ? timer : 0);
-    }
-  }
-
   componentWillMount = () => {
     const { section, props } = this;
     const { transition, query } = props;
@@ -148,10 +140,16 @@ export default class extends Page {
   };
 
   componentDidUpdate = () => {
-    this.cycleHeader();
-
     if (!this.positions.length) {
       this.getSectionPositions();
+    }
+  };
+
+  cycleHeader = (timer = HEADER_TIMER) => {
+    const { transition } = this.props;
+
+    if (__CLIENT__) {
+      transition('timer', this.sections.length > 1 ? timer : 0);
     }
   };
 
@@ -179,7 +177,8 @@ export default class extends Page {
           slide = section ? SECTIONS[section].slide : i;
     } else if (this.scrollTop >= first) {
       timer = HEADER_TIMER;
-      slide = SECTIONS[section || SECTION_DEFAULT].slide;
+      // slide = SECTIONS[section || SECTION_DEFAULT].slide;
+      slide = section ? SECTIONS[section].slide : (props.slide === this.length - 1 ? 0 : props.slide + 1);
     }
 
     this.scrollTop = scrollTop;

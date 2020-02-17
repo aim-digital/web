@@ -83,8 +83,8 @@ export default class extends Header {
             <>Introducing<br />FAST™ PLM</>,
             <>Velocity™<br />Plan Pricing</>,
             <>Waypoint™<br />Worry-Free<br />Guarantee</>,
-            <>FoxZero™ JIRA<br />Custom Tracker</>,
-            <>Point &amp; Pay™<br />Sprint Pricing</>
+            <>Point &amp; Pay™<br />Sprint Pricing</>,
+            <>FoxZero™ JIRA<br />Custom Tracker</>
           ].map((title, i) => renderTitle(i, content, title))}
         </Header>
     );

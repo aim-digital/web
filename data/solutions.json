@@ -61,16 +61,6 @@
     },
     {
         "index": 6,
-        "section": "Process",
-        "slug": "process",
-        "title": "FoxZero™ JIRA Custom Tracker",
-        "icon": "tasks",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Framework",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2ff6e0cc7cb140e889db44d3d679c24f.jpg" }]
-    },
-    {
-        "index": 7,
         "section": "On Demand",
         "slug": "on-demand",
         "title": "Point & Pay™ Sprint Pricing",
@@ -78,5 +68,15 @@
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Pricing",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/a111ee2d21684fb9a81d6410a8e765ec.jpg" }]
+    },
+    {
+        "index": 7,
+        "section": "Process",
+        "slug": "process",
+        "title": "FoxZero™ JIRA Custom Tracker",
+        "icon": "tasks",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": "Framework",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2ff6e0cc7cb140e889db44d3d679c24f.jpg" }]
     }
 ]
