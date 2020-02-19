@@ -273,8 +273,9 @@ export default class extends Page {
   };
 
   openSolution = async (solution) => {
-    const { load, open } = this.props;
+    const { load, open, transition } = this.props;
     const { slug } = solution;
+    await transition('timer.pause', true);
     open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug), published: true }) });
   };
 
@@ -342,9 +343,15 @@ export default class extends Page {
     return section ? component.key.replace(RE_SECTION_KEY, '$1').toLowerCase() === section.toLowerCase().replace('-', '') : true;
   }
 
+  closeSolution = () => {
+    const { close, transition } = this.props;
+    transition('timer.pause', false);
+    close();
+  };
+
   render() {
-    const { props, state, sections, length } = this;
-    const { className, classNames = {}, solution, close } = props;
+    const { props, state, sections, length, closeSolution } = this;
+    const { className, classNames = {}, solution } = props;
     const { animating, contact, isMobile, isLandscape } = state;
     const { message } = state.form;
     const hasMany = sections.length > 1;
@@ -502,7 +509,7 @@ export default class extends Page {
               <Footer/>
             </>}
           </section>
-          <modals.Solution show={!!solution} solution={solution || {}} onHide={close}/>
+          <modals.Solution show={!!solution} solution={solution || {}} onHide={closeSolution}/>
         </Page>
     );
   }

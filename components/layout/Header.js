@@ -10,6 +10,7 @@ const PROGRESS_INCREMENT = 100;
 
 @connect((state, props) => ({
   slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0,
+  pause: state['@boilerplatejs/core'].Transition['timer.pause'],
   initial: state['@boilerplatejs/core'].Transition['slide.initial']
 }), {transition})
 
@@ -19,6 +20,7 @@ export default class extends Header {
     onTransitionBegin: PropTypes.func,
     runOnMount: PropTypes.bool,
     cycle: PropTypes.bool,
+    pause: PropTypes.bool,
     timer: PropTypes.number,
     children: PropTypes.any,
     classNames: PropTypes.object,
@@ -35,7 +37,8 @@ export default class extends Header {
     cycle: false,
     images: [],
     timer: 0,
-    initial: null
+    initial: null,
+    pause: false
   };
 
   state = {
@@ -53,7 +56,11 @@ export default class extends Header {
   }
 
   componentDidUpdate() {
-    this.resetTimer();
+    if (this.props.pause) {
+      this.clearTimer();
+    } else {
+      this.resetTimer();
+    }
   }
 
   componentWillReceiveProps(next) {

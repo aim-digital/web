@@ -3,17 +3,19 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 // import ReactGA from 'react-ga';
 import {Header} from '@fox-zero/web/components/layout';
+import {transition} from '@boilerplatejs/core/actions/Transition';
 import {load} from '@boilerplatejs/strapi/actions/Entry';
 import {open} from '@fox-zero/web/actions/Solution';
 import {solutions} from '@fox-zero/web/data';
 
-@connect(state => ({ timer: state['@boilerplatejs/core'].Transition.timer }), {load, open})
+@connect(state => ({ timer: state['@boilerplatejs/core'].Transition.timer }), {load, open, transition})
 
 export default class extends Header {
   static propTypes = {
     timer: PropTypes.number,
     load: PropTypes.func.isRequired,
-    open: PropTypes.func.isRequired
+    open: PropTypes.func.isRequired,
+    transition: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -25,8 +27,9 @@ export default class extends Header {
   };
 
   openSolution = async (solution) => {
-    const { load, open } = this.props;
+    const { load, open, transition } = this.props;
     const { slug } = solution;
+    await transition('timer.pause', true);
     open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug), published: true }) });
   };
 
