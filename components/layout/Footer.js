@@ -105,7 +105,7 @@ export default class extends Footer {
               <p><strong>Operating Hours:</strong><br />9am-6pm (EST), M-F</p>
             </div>
             <div className="col-xs-12 text-center">
-              <img src="/@fox-zero/web/images/logo-transparent.png" title="FoxZero"/>
+              <img src="/@fox-zero/web/images/logo.png" title="FoxZero (a VitruvianTech® brand)"/>
               <p><small>&copy; FoxZero (a VitruvianTech® brand)</small></p>
             </div>
           </div>

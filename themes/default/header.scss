@@ -131,6 +131,7 @@
       top: 50%;
       border: solid 1px rgba(21, 21, 21, 1);
       opacity: .9;
+      font-family: $font-family-fjalla;
     }
 
     &.left {
@@ -242,7 +243,7 @@
       position: absolute;
       right: 0;
       top: 100%;
-      margin: -20px;
+      margin: -10px -5px;
       color: #fff;
       text-shadow: 1px 1px 3px $black-color;
       background: $primary-green-color;
