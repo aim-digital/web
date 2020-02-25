@@ -107,10 +107,12 @@ footer {
 
   a img {
     width: 100%;
-    box-shadow: 0 0 .5em $black-color;
     min-width: 0;
-    background: $black-color;
-    border-radius: 50%;
+    margin-bottom: 1.25em;
+    // background: $white-color;
+    // box-shadow: 0 0 .5em $black-color;
+    // border-radius: 50%;
+    // padding: .25em;
   }
 
   .logo {
@@ -122,8 +124,8 @@ footer {
       top: 50%;
       height: 1px;
       background: #efefef;
-      width: 35%;
-      margin: 5px 40px;
+      width: 30%;
+      margin: 0 55px;
       box-shadow: 0 0 0.5em $black-color;
     }
 
@@ -138,7 +140,7 @@ footer {
     a {
       display: block;
       margin: 0 auto;
-      max-width: 64px;
+      max-width: 96px;
     }
   }
 

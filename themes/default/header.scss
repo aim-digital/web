@@ -243,7 +243,7 @@
       position: absolute;
       right: 0;
       top: 100%;
-      margin: -10px -5px;
+      margin: -10px 0;
       color: #fff;
       text-shadow: 1px 1px 3px $black-color;
       background: $primary-green-color;
@@ -358,8 +358,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: $white-color url(/@fox-zero/web/images/loading.gif) center no-repeat;
+    background: transparent url(/@fox-zero/web/images/loading.gif) center no-repeat;
   }
 
   .hero {

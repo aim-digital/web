@@ -140,7 +140,7 @@ nav > ul {
     opacity: .65;
     pointer-events: none;
     z-index: 1;
-    filter: blur(5px);
+    filter: blur(7px);
     background: $background-color url('/@fox-zero/web/images/iStock-962093578.jpg') no-repeat;
     background-color: rgba(0,159,221, .65);
     background-position: 60%;
@@ -148,7 +148,7 @@ nav > ul {
   }
 
   &:after {
-    content: '\A9 FoxZero (a VitruvianTech® brand)';
+    content: '\A9 Fox Zero (a VitruvianTech® brand)';
     font-size: .65em;
     padding: 1.25em 1.75em;
     display: block;
@@ -260,16 +260,16 @@ nav li.active {
 
 nav li.home {
   transition: all .15s ease-in;
-  transform: scale3d(.7, .7, 1);
-  margin: 2.75em 0 15px;
+  transform: scale3d(1, 1, 1);
+  margin: 3.5em 0 1.5em;
 
   &:after {
     content: none;
   }
 
   a {
-    box-shadow: 0 0 20px $black-color;
-    border-radius: 50%;
+    // box-shadow: 0 0 20px $black-color;
+    // border-radius: 50%;
     opacity: .95;
     transition: transform .15s ease-in;
 
@@ -285,7 +285,7 @@ nav li.home:focus {
   background: none;
   color: inherit;
   opacity: 1;
-  transform: scale3d(.8, .8, 1);
+  transform: scale3d(1.1, 1.1, 1);
 }
 
 nav li li:hover,
@@ -336,12 +336,12 @@ nav > ul > li > ul > li {
 }
 
 nav li > a.logo {
-  background: url(/@fox-zero/web/images/icon.png) no-repeat;
+  background: url(/@fox-zero/web/images/logo.png) no-repeat;
   display: block;
   margin: 0 auto;
   background-size: 100%;
-  width: 128px;
-  height: 128px;
+  width: 5.75em;
+  height: 5.75em;
 }
 
 nav > a.toggle {
