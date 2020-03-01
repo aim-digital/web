@@ -1,3 +1,12 @@
+@keyframes rotate-tagline {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .home.page .logo  {
   @media (max-width: 991px) and (orientation: landscape) {
     display: none;
@@ -9,43 +18,46 @@
 }
 
 .modal .logo, .page .logo {
-  text-align: center;
-  padding: 5.25em 0 15px;
+  &, .tagline {
+    text-align: center;
+    padding: 6.5em 0 15px;
+  }
 
   > img {
     width: 8.5em;
     position: relative;
-
-    &.text {
-      width: 7em;
-    }
-  }
-
-  .text {
-    opacity: .9;
-    box-shadow: 0 0 0.25em #151515;
   }
 
   .graphic {
-    // border-radius: 50%;
-    // box-shadow: 0 0 0.5em #202020;
     margin: auto -5px;
     z-index: 1;
+  }
+
+  .tagline {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 13em;
+      margin: -2.25em 0;
+      animation-name: rotate-tagline;
+      animation-iteration-count: infinite;
+      animation-duration: 20s;
+      animation-timing-function: linear;
+    }
   }
 }
 
 .modal .logo {
-  padding-top: 2.25em;
+  padding-top: 3.5em;
+
+  .tagline img {
+    margin: -5.25em 0 !important;
+  }
 }
 
 .footer .logo {
   padding: 0;
-}
-
-.page .logo > img.text {
-  display: none;
-
-  @media only screen and (min-width: 769px) {
-    display: inline;
-  }
 }
