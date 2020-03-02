@@ -33,7 +33,7 @@ export default class extends Footer {
           <div className="row">
             <div className="col-xs-12 logo text-center">
               <Link to="/" onClick={scrollTo}>
-                <img src="/@fox-zero/web/images/logo.png" title="Fox Zero™ - The High-Performance/Zero-Latency Agency™"/>
+                <img src="/@fox-zero/web/images/logo.png" title="Fox Zero™ - High-Performance/Zero-Latency Consultancy™"/>
               </Link>
             </div>
             <div className="col-sm-9 col-xs-12">
@@ -42,27 +42,27 @@ export default class extends Footer {
                   <h4><i>@</i> Follow Us</h4>
                   <ul className="social">
                     <li>
-                      <a title="Facebook: @agent.foxzero" href="https://www.facebook.com/agent.foxzero" target="_blank">
+                      <a title="Facebook: @fox.zero.agency" href="https://www.facebook.com/fox.zero.agency" target="_blank">
                         <i className="fa fa-facebook-official"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Twitter: @agent_foxzero" href="https://twitter.com/agent_foxzero" target="_blank">
+                      <a title="Twitter: @fox_zero_agency" href="https://twitter.com/fox_zero_agency" target="_blank">
                         <i className="fa fa-twitter"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Instagram: @agent_foxzero" href="https://www.instagram.com/agent_foxzero" target="_blank">
+                      <a title="Instagram: @fox_zero_agency" href="https://www.instagram.com/fox_zero_agency" target="_blank">
                         <i className="fa fa-instagram"/>
                       </a>
                     </li>
                     <li>
-                      <a title="GitHub: FoxZero™" href="https://github.com/fox-zero" target="_blank">
+                      <a title="GitHub: Fox Zero™" href="https://github.com/fox-zero" target="_blank">
                         <i className="fa fa-github"/>
                       </a>
                     </li>
                     <li>
-                      <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/foxzero" target="_blank">
+                      <a title="LinkedIn: Fox Zero™" href="https://www.linkedin.com/company/fox-zero" target="_blank">
                         <i className="fa fa-linkedin-square"/>
                       </a>
                     </li>
@@ -105,7 +105,7 @@ export default class extends Footer {
               <p><strong>Operating Hours:</strong><br />9am-6pm (EST), M-F</p>
             </div>
             <div className="col-xs-12 text-center">
-              <img src="/@fox-zero/web/images/seal.png" title="FoxZero (a VitruvianTech® brand)"/>
+              <img src="/@fox-zero/web/images/seal.png" title="Fox Zero (a VitruvianTech® brand)"/>
               <p><small>&copy; Fox Zero (a VitruvianTech® brand)</small></p>
             </div>
           </div>

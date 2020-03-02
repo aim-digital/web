@@ -24,37 +24,37 @@ export default class extends Header {
               <ul className={'columns'}>
                 <li>
                   <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">
-                    <i className="fa fa-envelope"/> hello@aimdigital...
+                    <i className="fa fa-envelope"/> hello@foxzero.io
                   </a>
                 </li>
                 <li>
-                  <a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank" className={styles.phone}>
-                    <i className="fa fa-phone"/> +1 (646) 204-1732
+                  <a title="Phone/SMS: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank" className={styles.phone}>
+                    <i className="fa fa-phone"/> +1 (855) FOX-ZERO
                   </a>
                 </li>
                 <li>
-                  <a title="Facebook: @fox_zero_media" href="https://www.facebook.com/fox_zero_media" target="_blank">
-                    <i className="fa fa-facebook-official"/> @fox_zero_media
+                  <a title="Facebook: @fox.zero.agency" href="https://www.facebook.com/fox.zero.agency" target="_blank">
+                    <i className="fa fa-facebook-official"/> @fox_zero_agency
                   </a>
                 </li>
                 <li>
-                  <a title="GitHub: FoxZero™ Digital" href="https://github.com/fox-zero" target="_blank">
+                  <a title="GitHub: Fox Zero™" href="https://github.com/fox-zero" target="_blank">
                     <i className="fa fa-github"/> FoxZero™ Digital
                   </a>
                 </li>
                 <li>
-                  <a title="Twitter: @fox_zero_media" href="https://twitter.com/fox_zero_media" target="_blank">
-                    <i className="fa fa-twitter"/> @fox_zero_media
+                  <a title="Twitter: @fox_zero_agency" href="https://twitter.com/fox_zero_agency" target="_blank">
+                    <i className="fa fa-twitter"/> @fox_zero_agency
                   </a>
                 </li>
                 <li>
-                  <a title="LinkedIn: FoxZero™" href="https://www.linkedin.com/company/american-interactive-media" target="_blank">
-                    <i className="fa fa-linkedin-square"/> FoxZero™
+                  <a title="LinkedIn: Fox Zero™" href="https://www.linkedin.com/company/fox-zero" target="_blank">
+                    <i className="fa fa-linkedin-square"/> Fox Zero™
                   </a>
                 </li>
                 <li>
-                  <a title="Instagram: @fox_zero_media" href="https://www.instagram.com/fox_zero_media" target="_blank">
-                    <i className="fa fa-instagram"/> @fox_zero_media
+                  <a title="Instagram: @fox_zero_agency" href="https://www.instagram.com/fox_zero_agency" target="_blank">
+                    <i className="fa fa-instagram"/> @fox_zero_agency
                   </a>
                 </li>
                 <li style={{ marginLeft: '6px' }} className={'more'} data-next="Headquarters"/>
@@ -75,8 +75,8 @@ export default class extends Header {
                   <span className={styles.code}>Hours of Operation</span>
                 </li>
                 <li className={styles.caption}>
-                  <small><a title="Phone/SMS: +1 (646) 204-1732" href="tel:+16462041732" target="_blank" className={styles.phone}>
-                    <i className="fa fa-phone"/> <strong>+1 (646) 204-1732</strong>
+                  <small><a title="Phone/SMS: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank" className={styles.phone}>
+                    <i className="fa fa-phone"/> <strong>+1 (855) FOX-ZERO</strong>
                   </a>
                   </small>
                   <span className={styles.code}>Support Line</span>

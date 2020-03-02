@@ -63,7 +63,7 @@ export default class extends Modal {
     const share = {
       url: `${location.protocol}//${location.host}/${(slug || '').toLowerCase()}`,
       caption: summary,
-      subject: `${section} - ${title}`
+      subject: `${section} · ${title}`
     };
 
     return (
