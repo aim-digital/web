@@ -22,7 +22,7 @@ const HEADER_TIMER = 10;
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
 
-const PARALLAX_SCALE = 750;
+const PARALLAX_SCALE = 790;
 const PARALLAX_SPEED = 0.2;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
@@ -376,9 +376,9 @@ export default class extends Page {
             {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(length + 2.35)} style={{ left: 0 }}>
               <ParallaxLayer offset={factor(0)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
               <ParallaxLayer offset={factor(2)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
-              <ParallaxLayer offset={factor(4)} speed={0.35} style={{ backgroundColor: '#FC6600', opacity: '.35', height: '125vh' }} />
-              <ParallaxLayer offset={factor(6)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
-              <ParallaxLayer offset={factor(8)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
+              <ParallaxLayer offset={factor(4)} speed={0.35} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
+              <ParallaxLayer offset={factor(6)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
+              <ParallaxLayer offset={factor(8)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
               <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
               <ParallaxLayer offset={5} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
               <ParallaxLayer offset={10} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
