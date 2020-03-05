@@ -94,7 +94,7 @@
   }
 }
 
-.home.page .section.container .section .plan {
+.subscription .plan {
   display: table;
   width: 100%;
 
@@ -111,7 +111,7 @@
   }
 
   h4 {
-    margin-bottom: .5em;
+    margin-bottom: .5em !important;
   }
 
   ul {

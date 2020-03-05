@@ -356,7 +356,7 @@ export default class extends Page {
     const { animating, contact, isMobile, isLandscape } = state;
     const { message } = state.form;
 
-    const SECTION_HEIGHTS = [0, 0, 0, 0, isMobile ? 0.2 : 0, 0, 0, 0];
+    const SECTION_HEIGHTS = [0, 0, 0, 0, isMobile ? 0.275 : 0, 0, 0, 0];
     const aggregateHeight = offset => SECTION_HEIGHTS.slice(0, offset).reduce((a, b) => a + b, 0);
     const hasMany = sections.length > 1;
     const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;

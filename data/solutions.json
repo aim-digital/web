@@ -47,7 +47,11 @@
         "icon": "refresh",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Pricing",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/550f11bf456e469186ff666e8044bee0.jpg" }]
+        "cta": "Contact us",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/550f11bf456e469186ff666e8044bee0.jpg" }],
+        "components": [
+            { "slot": 1, "path": "pricing.Subscription" }
+        ]
     },
     {
         "index": 5,
@@ -55,7 +59,7 @@
         "slug": "warranty",
         "title": "Wingman™ Surety Coverage",
         "icon": "umbrella",
-        "summary": "Development projects are bonded up to 25% of the total subscription price to guarantee minimum risk of delivery time, budget, and quality, valid until final acceptance.",
+        "summary": "Development projects are bonded up to 25% of the total subscription price to guarantee minimum risk of delivery time, budget, and quality, valid until 120 days following release acceptance.",
         "category": "Coverage",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/4aba938de6b84a27aa9f514e9072b09a.jpg" }]
     },
@@ -67,6 +71,7 @@
         "icon": "power-off",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Pricing",
+        "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/a111ee2d21684fb9a81d6410a8e765ec.jpg" }]
     },
     {

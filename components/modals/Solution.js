@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import ReactGA from 'react-ga';
 import _ from 'lodash';
 import {connect} from 'react-redux';
+import {ShareButtons} from 'react-share';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
 import {Contact} from '@boilerplatejs/core/components/forms';
 import {Modal} from '@fox-zero/web/components/layout';
-import {ShareButtons} from 'react-share';
+import * as components from '@fox-zero/web/components';
 
 const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
@@ -57,7 +58,7 @@ export default class extends Modal {
     const { solution } = this.props;
     const { contact } = this.state;
     const { message } = this.state.form;
-    const { slug, content, summary, title, icon, section, media = [] } = solution;
+    const { slug, content, summary, title, icon, section, media = [], components: slots = [] } = solution;
     const { location = {} } = global;
     const [hero = {}] = media;
     const share = {
@@ -77,7 +78,16 @@ export default class extends Modal {
         hero={hero.url}>
         {slug && <section>
           <section className="content">
-            <p>{content[0].copy}</p>
+            {content.map((content, i) => {
+              const { path } = _.find(slots, { slot: i }) || {};
+              const Component = _.get(components, path);
+
+              return <Fragment key={`content-${i}`}>
+                {Component && <Component />}
+                {content.type === 'paragraph' && <p>{content.copy}</p>}
+                {content.type === 'image' && <img src={content.media[0].url} />}
+              </Fragment>
+            })}
           </section>
           <section className="quote">
             <div>
