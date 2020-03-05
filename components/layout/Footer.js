@@ -84,7 +84,7 @@ export default class extends Footer {
                   <h4><i className="fa fa-cubes"/> Framework</h4>
                   <ul>
                     <li><Link to="/strategy" onClick={scrollTo}><i className="fa fa-road"/> Strategy</Link></li>
-                    <li><Link to="/process" onClick={scrollTo}><i className="fa fa-tasks"/> Process</Link></li>
+                    <li><Link to="/process" onClick={scrollTo}><i className="fa fa-fighter-jet"/> Process</Link></li>
                   </ul>
                 </li>
               </ul>

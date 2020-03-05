@@ -22,7 +22,7 @@ const HEADER_TIMER = 10;
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
 
-const PARALLAX_SCALE = 790;
+const PARALLAX_SCALE = 750;
 const PARALLAX_SPEED = 0.2;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
@@ -351,12 +351,16 @@ export default class extends Page {
   };
 
   render() {
-    const { props, state, sections, length, closeSolution } = this;
+    const { props, state, sections, length, closeSolution, section } = this;
     const { className, classNames = {}, solution } = props;
     const { animating, contact, isMobile, isLandscape } = state;
     const { message } = state.form;
+
+    const SECTION_HEIGHTS = [0, 0, 0, 0, isMobile ? 0.2 : 0, 0, 0, 0];
+    const aggregateHeight = offset => SECTION_HEIGHTS.slice(0, offset).reduce((a, b) => a + b, 0);
     const hasMany = sections.length > 1;
     const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
+    const height = length + (hasMany ? aggregateHeight(length - 1) : SECTION_HEIGHTS[SECTIONS[section].slide]);
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
@@ -364,8 +368,8 @@ export default class extends Page {
       <ParallaxLayer
         className={`section-${i + index}`}
         key={`section-${i + index}`}
-        offset={factor(i + index + offset)}
-        factor={scale}
+        offset={factor(i + index + offset) + (hasMany ? aggregateHeight(i) : 0)}
+        factor={scale + (hasMany ? SECTION_HEIGHTS[i] : SECTION_HEIGHTS[SECTIONS[section].slide])}
         speed={PARALLAX_SPEED}>
         {component}
       </ParallaxLayer>
@@ -374,7 +378,7 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(length + 2.35)} style={{ left: 0 }}>
+            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(height + 2.35)} style={{ left: 0 }}>
               <ParallaxLayer offset={factor(0)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
               <ParallaxLayer offset={factor(2)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
               <ParallaxLayer offset={factor(4)} speed={0.35} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
@@ -482,7 +486,7 @@ export default class extends Page {
               </ParallaxLayer>}
               {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
               <ParallaxLayer
-                offset={factor((hasMany ? SECTION_FORM : length) + 0.1)}
+                offset={factor((hasMany ? SECTION_FORM : height) + 0.1)}
                 speed={PARALLAX_SPEED}>
                 <section className="quote">
                   <div>
@@ -497,7 +501,7 @@ export default class extends Page {
               </ParallaxLayer>
               {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 0.75)) : <></>}
               <ParallaxLayer
-                offset={factor(length + (hasMany ? 0.75 : 0.68))}
+                offset={factor(height + (hasMany ? (isMobile ? 0.65 : 0.75) : 0.68))}
                 factor={scale}
                 speed={PARALLAX_SPEED}>
                 {this.content}

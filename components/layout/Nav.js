@@ -79,7 +79,7 @@ export default class extends Nav {
               <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Framework</a>
               <ul>
                 <li><Link rel="nofollow" to="/home/strategy" onClick={update(3)}><i className="fa fa-road"/> Strategy</Link></li>
-                <li><Link rel="nofollow" to="/home/process" onClick={update(4)}><i className="fa fa-tasks"/> Process</Link></li>
+                <li><Link rel="nofollow" to="/home/process" onClick={update(4)}><i className="fa fa-fighter-jet"/> Process</Link></li>
               </ul>
             </li>
             <li className="subnav">

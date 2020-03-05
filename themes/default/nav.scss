@@ -239,9 +239,15 @@ nav > ul > li {
     transition: background-color .2s;
     opacity: .9;
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       opacity: 1;
       background-color: rgba(153, 202, 62, .75);
+    }
+
+    a {
+      transform: scale3d(1.1, 1.1, 1.1);
     }
   }
 }
