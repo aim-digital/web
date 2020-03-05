@@ -63,7 +63,7 @@ export default class extends Section {
           </div>
         </div>
         <br />
-        <p><small>Plans can be additive. Additional ad-hoc partners, associates, and interns are available at no monthly commitment at respective day rates. Remaining last month balance refunded upon project delivery or cancellation.</small></p>
+        <p><small>Plans can be additive. Additional ad-hoc partners, associates, and interns are available at no monthly commitment at respective day rates. Remaining last month balance refunded upon project acceptance or cancellation.</small></p>
       </Section>
     );
   }

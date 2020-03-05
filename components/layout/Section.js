@@ -41,7 +41,8 @@ export default class extends Section {
               <div>
                 <Solution
                   onClick={this.openSolution}
-                  icon={solution.icon}>
+                  icon={solution.icon}
+                  tooltip="Click to open overlay screen">
                   <>
                     Read more about our <span>{[solution.section.toLowerCase(), solution.category.toLowerCase()].join(' ')}</span>
                   </>

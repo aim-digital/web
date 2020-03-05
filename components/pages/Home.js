@@ -287,15 +287,16 @@ export default class extends Page {
       className={`${ready && slide === solution.index ? 'active' : ''}`}
       key={`detail-button-${i}`}
       icon={solution.icon}
+      tooltip="Click to open overlay screen"
       transition={transition(i)}
       onClick={() => {
         this.openSolution(solution);
 
-        ReactGA.event({
-          category: `Solution`,
-          action: `Click`,
-          label: solution.title
-        });
+        // ReactGA.event({
+        //   category: `Solution`,
+        //   action: `Click`,
+        //   label: solution.title
+        // });
       }}>
         <>
           <span>{solution.section} &bull;</span> {solution.title}
