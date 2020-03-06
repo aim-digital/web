@@ -11,7 +11,7 @@
     height: 100%;
     display: block;
 
-    @media only screen and (min-width: 769px) {
+    @media (min-width: 769px) {
       display: block;
     }
   }
@@ -321,7 +321,7 @@ nav > ul > li > ul {
   opacity: 0;
   margin-top: -2px;
 
-  @media only screen and (min-width: 992px) {
+  @media (min-width: 992px) {
     margin-top: 0;
   }
 }
@@ -378,7 +378,7 @@ nav > a.toggle {
   background-image: url(/@fox-zero/web/images/nav-close.svg);
   opacity: 1;
 
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     background-image: url(/@fox-zero/web/images/nav-open.svg);
     opacity: 0;
   }

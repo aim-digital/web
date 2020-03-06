@@ -144,7 +144,7 @@
     font-weight: 600;
   }
 
-  @media only screen and (min-width: 992px) {
+  @media (min-width: 992px) {
     &, & > div {
       display: block;
       width: auto;
