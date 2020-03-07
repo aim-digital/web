@@ -79,12 +79,11 @@ export default class extends Modal {
         {slug && <section>
           <section className="content">
             {content.map((content, i) => {
-              const { path } = _.find(slots, { slot: i }) || {};
-              const Component = _.get(components, path);
+              const Component = content.type === 'paragraph' && _.get(components, content.url);
 
               return <Fragment key={`content-${i}`}>
                 {Component && <Component />}
-                {content.type === 'paragraph' && <p>{content.copy}</p>}
+                {(content.type === 'paragraph' && !Component) && <p>{content.copy}</p>}
                 {content.type === 'image' && <img src={content.media[0].url} />}
               </Fragment>
             })}

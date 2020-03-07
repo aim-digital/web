@@ -48,10 +48,7 @@
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Pricing",
         "cta": "Contact us",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/550f11bf456e469186ff666e8044bee0.jpg" }],
-        "components": [
-            { "slot": 1, "path": "pricing.Subscription" }
-        ]
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/550f11bf456e469186ff666e8044bee0.jpg" }]
     },
     {
         "index": 5,
