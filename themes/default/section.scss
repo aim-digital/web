@@ -13,8 +13,16 @@
   .no-js .home.page & {
     overflow: hidden;
 
+    @media print {
+      overflow: visible;
+    }
+
     .section {
       display: none;
+
+      @media print {
+          display: block;
+      }
     }
   }
 

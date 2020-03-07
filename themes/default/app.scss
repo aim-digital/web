@@ -14,6 +14,10 @@ body {
     @media (min-width: 4000px) {
       font-size: 1.5em;
     }
+
+    @media print {
+        overflow: visible;
+    }
 }
 
 #app {
@@ -22,6 +26,10 @@ body {
 
     &.home {
         overflow: hidden;
+
+        @media print {
+            overflow: visible;
+        }
     }
 
     &.scroll-lock {

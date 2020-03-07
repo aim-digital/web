@@ -11,6 +11,10 @@
   @media (max-width: 991px) and (orientation: landscape) {
     display: none;
   }
+
+  @media print {
+    display: block !important;
+  }
 }
 
 .home.page .footer .logo {
