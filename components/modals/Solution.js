@@ -83,7 +83,7 @@ export default class extends Modal {
 
               return <Fragment key={`content-${i}`}>
                 {Component && <Component />}
-                {content.type === 'paragraph' && <p>{content.value}</p>}
+                {content.type === 'paragraph' && <p>{content.copy}</p>}
                 {content.type === 'image' && <img src={content.media[0].url} />}
               </Fragment>
             })}
