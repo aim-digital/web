@@ -251,15 +251,15 @@ nav > ul > li {
       background-color: rgba(153, 202, 62, .75);
     }
 
-    a {
-      transition: all .25s;
-    }
+    // a {
+    //   transition: all .25s;
+    // }
 
-    a:active,
-    a:focus {
-      transform: scale3d(1.1, 1.1, 1.1);
-      margin-left: .35em;
-    }
+    // a:active,
+    // a:focus {
+    //   transform: scale3d(1.1, 1.1, 1.1);
+    //   margin-left: .35em;
+    // }
   }
 }
 
