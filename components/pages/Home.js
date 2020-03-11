@@ -12,7 +12,7 @@ import {Solution} from '@fox-zero/web/components/buttons';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
 import {load} from '@boilerplatejs/strapi/actions/Entry';
 import * as modals from '@fox-zero/web/components/modals';
-import * as forms from '@boilerplatejs/core/components/forms';
+import * as forms from '@fox-zero/web/components/forms';
 import ReactGA from 'react-ga';
 import {solutions} from '@fox-zero/web/data';
 import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
@@ -499,9 +499,9 @@ export default class extends Page {
                   </div>
                 </section>
               </ParallaxLayer>
-              {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 0.75)) : <></>}
+              {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 0.8)) : <></>}
               <ParallaxLayer
-                offset={factor(height + (hasMany ? (isMobile ? 0.65 : 0.75) : 0.68))}
+                offset={factor(height + (hasMany ? (isMobile ? 0.7 : 0.8) : 0.75))}
                 factor={scale}
                 speed={PARALLAX_SPEED}>
                 {this.content}

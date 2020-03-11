@@ -7,5 +7,6 @@ export * as headers from './headers';
 // Include bundle specific namespaces:
 export * as modals from './modals';
 export * as buttons from './buttons';
+export * as forms from './forms';
 
 export * as pricing from './pricing';

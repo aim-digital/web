@@ -4,7 +4,7 @@ import _ from 'lodash';
 import {connect} from 'react-redux';
 import {ShareButtons} from 'react-share';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
-import {Contact} from '@boilerplatejs/core/components/forms';
+import {Contact} from '@fox-zero/web/components/forms';
 import {Modal} from '@fox-zero/web/components/layout';
 import * as components from '@fox-zero/web/components';
 

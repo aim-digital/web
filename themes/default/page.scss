@@ -67,20 +67,23 @@ section.quote {
 
     form {
       .firstName,
-      .lastName {
+      .lastName,
+      .email,
+      .phone {
         width: 50%;
         float: left;
       }
 
-      .firstName {
-        padding-right: 10px;
-      }
-
-      .lastName {
-        padding-left: 10px;
-      }
-
       .email {
+        padding-right: 5px;
+      }
+
+      .phone {
+        padding-left: 5px;
+      }
+
+      .email,
+      .company {
         clear: left;
       }
 
