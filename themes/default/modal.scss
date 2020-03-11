@@ -191,10 +191,10 @@
     text-transform: uppercase;
     font-family: $font-family-oswald;
     letter-spacing: -1px;
-    padding: 2.75em 15px .25em;
+    padding: 2.75em 20px 0;
     display: table;
     text-align: left;
-    margin: 0 auto;
+    max-width: 640px;
 
     div, span {
       display: table-cell;
@@ -210,7 +210,7 @@
         font-size: .95em;
         position: absolute;
         bottom: 100%;
-        margin-bottom: 5px;
+        margin-bottom: 7px;
         color: $white-color;
         white-space: nowrap;
       }
@@ -238,11 +238,15 @@
     color: $white-color;
     padding: 45px 0;
     margin: 0 auto;
-    font-size: 1.1em;
+    font-size: 1em;
     text-shadow: 1px 1px 3px $black-color;
 
-    h3, h4 {
+    h2, h3, h4 {
       text-shadow: 0 2px 1px $black-color;
+    }
+
+    p {
+      font-size: 1.25em;
     }
   }
 
@@ -262,16 +266,18 @@
 }
 
 .solution.modal {
-  h3 {
-    text-align: center;
-    font-size: 2em !important;
-    font-family: $font-family-oswald;
-    margin: .25em auto;
-    text-transform: uppercase;
+  .modal-title {
+    h3 {
+      text-align: center;
+      font-size: 2em !important;
+      font-family: $font-family-oswald;
+      margin: .25em auto;
+      text-transform: uppercase;
+    }
   }
 
   .content {
-    padding: 0 15px;
+    padding: 0 20px 30px;
 
     h4 {
       padding: 0;
@@ -306,7 +312,6 @@
 
     .subscription {
       margin-top: 30px;
-      font-size: .9em;
       padding: 0;
     }
   }
@@ -335,15 +340,25 @@
   }
 
   .quote {
-    background: none;
-    padding: 0;
+    padding: 45px 0;
 
-    > div {
-      padding-top: 3em;
+    h2, h3, p {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
     }
 
-    &:first-child > div {
-      margin-top: -1.5em !important;
+    .form {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    > div:first-child {
+      font-size: .9em;
+
+      p {
+        padding: 2em 0;
+        margin-top: -2em !important;
+      }
     }
   }
 }

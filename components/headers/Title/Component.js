@@ -58,7 +58,7 @@ export default class extends Header {
         <section className="preview">
           <button onClick={() => this.openSolution(solution)} title="Click to open overlay screen">
             <i className="fa fa-ellipsis-h"/>
-            <span>Learn <span>More</span></span>
+            <span>Read <span>More</span></span>
           </button>
           <div/>
           <p>{summary}</p>

@@ -309,6 +309,8 @@ export default class extends Page {
     const { email } = values;
     const ga = { category: 'Quote Form', action: 'Submit' };
 
+    const format = section => section.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
     if (email) {
       ReactGA.event({ ...ga, label: `Attempt` });
 
@@ -319,7 +321,10 @@ export default class extends Page {
           email,
           message: values.comment,
           firstname: values.firstName,
-          lastname: values.lastName
+          lastname: values.lastName,
+          phone: values.phone,
+          company: values.company,
+          section: format(this.section || 'Home')
         }
       })
         .then(contact => this.setState({ contact, form: { message: null } }))
@@ -486,12 +491,13 @@ export default class extends Page {
               </ParallaxLayer>}
               {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
               <ParallaxLayer
-                offset={factor((hasMany ? SECTION_FORM : height) + 0.1)}
+                offset={factor((hasMany ? SECTION_FORM : height) + 0.05)}
                 speed={PARALLAX_SPEED}>
-                <section className="quote">
-                  <div>
-                    <h3>Get a Free Consultation</h3>
-                    <p>Say hello to our guaranteed services and fair prices!</p>
+                <section className="quote section">
+                  <h2>Talk to Me</h2>
+                  <h3>Book a Free<br />Consultation</h3>
+                  <p>Interested in our services? Connect with us to learn more about how we can help your business!</p>
+                  <div className="form">
                     {contact ?
                       <div className="success"><strong>Thank you, {contact.firstname.value}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
                       <forms.Contact quote newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
@@ -499,9 +505,9 @@ export default class extends Page {
                   </div>
                 </section>
               </ParallaxLayer>
-              {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 0.8)) : <></>}
+              {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 0.85)) : <></>}
               <ParallaxLayer
-                offset={factor(height + (hasMany ? (isMobile ? 0.7 : 0.8) : 0.75))}
+                offset={factor(height + (hasMany ? (isMobile ? 0.75 : 0.85) : 0.9))}
                 factor={scale}
                 speed={PARALLAX_SPEED}>
                 {this.content}

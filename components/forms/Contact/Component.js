@@ -79,9 +79,9 @@ export default class extends Component {
       <form className="form-horizontal" onSubmit={handleSubmit}>
         {renderInput(firstName, 'Name', 'First name')}
         {renderInput(lastName, 'Name', 'Last name')}
+        {quote && renderInput(company, 'Company', 'Company name')}
         {renderInput(email, 'Email', 'Email address', true)}
         {quote && renderInput(phone, 'Phone', 'Phone number')}
-        {quote && renderInput(company, 'Company', 'Company name')}
         {quote && <div className={'form-group ' + comment.name + (comment.error && comment.touched ? ' has-error' : '')}>
           <div className={styles.inputGroup} data-label="Message" data-error={comment.error && comment.touched && comment.error}>
             <textarea placeholder="Please tell us a little bit about your project/needs." id={comment.name} className="form-control" {...domOnlyProps(comment)} />

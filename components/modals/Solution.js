@@ -45,7 +45,9 @@ export default class extends Modal {
           message: values.comment,
           firstname: values.firstName,
           lastname: values.lastName,
-          solution: section
+          phone: values.phone,
+          company: values.company,
+          section
         }
       })
         .then(contact => this.setState({ contact, form: { message: null } }))
@@ -90,8 +92,11 @@ export default class extends Modal {
           </section>
           <section className="quote">
             <div>
-              <h3>Talk to Me</h3>
-              <p>Interested in our products or services? Connect with us to learn more about how we can help your business!</p>
+              <h2>Talk to Me</h2>
+              <h3>Book a Free<br />Consultation</h3>
+              <p>Interested in our services? Connect with us to learn more about how we can help your business!</p>
+            </div>
+            <div className="form">
               {contact ?
                 <div className="success">
                   <strong>Thank you, {contact.firstname.value}, for your inquiry!</strong><br />We will contact you within 24 hours.

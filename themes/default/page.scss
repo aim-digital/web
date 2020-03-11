@@ -9,40 +9,75 @@
 }
 
 section.quote {
-  background: $white-color;
+  max-width: 360px !important;
+  margin: 0 auto;
 
   .home.page & {
     position: relative;
     z-index: 1;
-    box-shadow: 0 0 20px $black-color;
-    max-width: 290px;
-    margin: 0 auto;
-
-    @media (min-width: 992px) {
-      max-width: 300px;
-    }
+    width: 100%;
   }
 
-  > div {
-    font-size: .9em;
+  h2, h3 {
+    font-family: $font-family-oswald;
     margin: 0 auto !important;
-    max-width: 270px;
-    padding: 2em 0 1.5em;
+    min-width: 320px;
+    max-width: 992px;
+    text-shadow: 1px 1px 3px #151515;
+    color: #f8f8f8;
+    padding: 1em 30px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
 
-    p {
-      margin: 1.5em auto 3em !important;
-      text-align: center;
-      font-size: .9em !important;
-    }
+  h2 {
+    font-size: 2em !important;
+    padding-bottom: 0;
+  }
 
-    h3 {
-      text-align: center;
-      text-shadow: 0 2px 1px $humility;
-      font-size: 2em !important;
-      font-family: $font-family-oswald;
-      margin: .25em auto;
-      text-transform: uppercase;
-    }
+  h3 {
+    color: #FCD700;
+    display: block;
+    font-size: 3.5em;
+    margin-top: .25em;
+    padding-top: .25em;
+  }
+
+  input,
+  textarea {
+    font-size: 1em;
+  }
+
+  h2, h3 {
+    text-align: left;
+    min-width: auto !important;
+    max-width: auto !important;
+    padding: 0 0 .25em !important;
+    font-size: 2.5em !important;
+  }
+
+  > p {
+    padding: 2em 0;
+    margin-top: -2em !important;
+    color: $white-color !important;
+    text-shadow: 0 2px 1px $black-color;
+  }
+
+  h2, h3, p {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  .form {
+    box-shadow: 0 0 20px $black-color;
+    font-size: 1em;
+    background: $white-color;
+    padding: 1.5em 15px 1em;
+    margin: 0 30px;
+    border-radius: 2px;
+    color: $background-color !important;
+    text-shadow: none !important;
 
     .error,
     .success {
