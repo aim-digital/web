@@ -276,7 +276,7 @@ export default class extends Page {
     const { load, open, transition } = this.props;
     const { slug } = solution;
     await transition('timer.pause', true);
-    open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug), published: true }) });
+    open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug) }) });
   };
 
   renderSolution = transition => (solution, i) => {
