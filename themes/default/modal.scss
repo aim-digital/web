@@ -263,6 +263,10 @@
   .modal-footer {
     border: none;
   }
+
+  &.contact .modal-body {
+    padding-top: 30px;
+  }
 }
 
 .solution.modal {

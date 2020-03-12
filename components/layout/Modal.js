@@ -25,10 +25,11 @@ export default class extends Component {
   };
 
   render() {
-    const { children, title, dek, icon, className, share: { url, caption, subject }, hero } = this.props;
+    const { id, children, title, dek, icon, className, share = {}, hero } = this.props;
+    const { url, caption, subject } = share;
 
     return (
-      <Modal {..._.omit(this.props, ['share', 'title', 'icon', 'hero'])} className={`${className}`} title="">
+      <Modal {..._.omit(this.props, ['share', 'title', 'icon', 'hero'])} className={`${className}`} title="" id={id}>
         {hero ? <div className="modal-hero" style={{ backgroundImage: `url(${hero})` }} /> : <></>}
         <div className="modal-nav">
           <Modal.Dismiss className="dismiss">
@@ -48,9 +49,9 @@ export default class extends Component {
         </div>
         <Modal.Header>
           <Logo/>
-          <Modal.Title>
+          {title && <Modal.Title>
             {icon && <div data-dek={dek}><i className={`fa fa-${icon}`}></i></div>}<span>{title}</span>
-          </Modal.Title>
+          </Modal.Title>}
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
         <Modal.Footer>

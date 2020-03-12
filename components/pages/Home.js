@@ -14,7 +14,7 @@ import {load} from '@boilerplatejs/strapi/actions/Entry';
 import * as modals from '@fox-zero/web/components/modals';
 import * as forms from '@fox-zero/web/components/forms';
 import ReactGA from 'react-ga';
-import {solutions} from '@fox-zero/web/data';
+import {solutions, brand} from '@fox-zero/web/data';
 import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
 const HEADER_TIMER = 10;
@@ -355,6 +355,31 @@ export default class extends Page {
     close();
   };
 
+  openContact = () => {
+    const { open } = this.props;
+    const { isMobile, contact } = this.state;
+    const { title, summary } = brand;
+
+    if (isMobile && !contact) {
+      transition('timer.pause', true);
+      open({ subject: title, summary });
+
+      setTimeout(() => {
+        const dialog = document.getElementById('solution-modal').querySelector('.modal-dialog');
+        const body = dialog.querySelector('.modal-body');
+        const form = body.querySelector('.form');
+
+        if (dialog.scrollTo) {
+          dialog.scrollTo({ top: body.offsetTop, left: 0, behavior: 'smooth' });
+        } else {
+          dialog.scrollTop = body.offsetTop;
+        }
+
+        form.querySelector('.firstName input').focus();
+      }, 0);
+    }
+  };
+
   render() {
     const { props, state, sections, length, closeSolution, section } = this;
     const { className, classNames = {}, solution } = props;
@@ -491,13 +516,13 @@ export default class extends Page {
               </ParallaxLayer>}
               {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
               <ParallaxLayer
-                offset={factor((hasMany ? SECTION_FORM : height) + 0.05)}
+                offset={factor((hasMany ? SECTION_FORM : height) + 0.1)}
                 speed={PARALLAX_SPEED}>
                 <section className="quote section">
                   <h2>Talk to Me</h2>
                   <h3>Book a Free<br />Consultation</h3>
                   <p>Interested in our services? Connect with us to learn more about how we can help your business!</p>
-                  <div className="form">
+                  <div className="form" onClick={this.openContact}>
                     {contact ?
                       <div className="success"><strong>Thank you, {contact.firstname.value}, for your inquiry!</strong><br />We will contact you within 24 hours.</div> :
                       <forms.Contact quote newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
@@ -505,9 +530,9 @@ export default class extends Page {
                   </div>
                 </section>
               </ParallaxLayer>
-              {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 0.85)) : <></>}
+              {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 0.9)) : <></>}
               <ParallaxLayer
-                offset={factor(height + (hasMany ? (isMobile ? 0.75 : 0.85) : 0.9))}
+                offset={factor(height + (hasMany ? (isMobile ? 0.8 : 0.9) : 0.95))}
                 factor={scale}
                 speed={PARALLAX_SPEED}>
                 {this.content}
@@ -520,7 +545,7 @@ export default class extends Page {
               <Footer/>
             </>}
           </section>
-          <modals.Solution show={!!solution} solution={solution || {}} onHide={closeSolution}/>
+          <modals.Solution id="solution-modal" show={!!solution} solution={solution || {}} onHide={closeSolution}/>
         </Page>
     );
   }

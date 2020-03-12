@@ -30,7 +30,7 @@ export default class extends Modal {
 
   submit = values => {
     const { update, solution } = this.props;
-    const { section } = solution;
+    const { section = 'Home' } = solution;
     const { email } = values;
     const ga = { category: 'Solution Form', label: section };
 
@@ -60,26 +60,26 @@ export default class extends Modal {
     const { solution } = this.props;
     const { contact } = this.state;
     const { message } = this.state.form;
-    const { slug, content, summary, title, icon, section, media = [], components: slots = [] } = solution;
+    const { slug, content, summary, title, subject, icon, section, media = [] } = solution;
     const { location = {} } = global;
     const [hero = {}] = media;
     const share = {
       url: `${location.protocol}//${location.host}/${(slug || '').toLowerCase()}`,
       caption: summary,
-      subject: `${section} · ${title}`
+      subject: section ? `${section} · ${subject || title}` : subject || title
     };
 
     return (
       <Modal {..._.omit(this.props, ['update', 'solution'])}
         onHide={this.onHide}
-        className="solution"
+        className={`solution ${slug ? '' : 'contact'}`}
         title={title}
         dek={section}
         icon={icon}
         share={share}
         hero={hero.url}>
-        {slug && <section>
-          <section className="content">
+        <section>
+          {slug && <section className="content">
             {content.map((content, i) => {
               const Component = content.type === 'component' && _.get(components, content.value);
 
@@ -89,7 +89,7 @@ export default class extends Modal {
                 {content.type === 'image' && <img src={content.media[0].url} />}
               </Fragment>
             })}
-          </section>
+          </section>}
           <section className="quote">
             <div>
               <h2>Talk to Me</h2>
@@ -122,7 +122,7 @@ export default class extends Modal {
               {message && <div className="error">{message}</div>}
             </div>
           </section>
-        </section>}
+        </section>
       </Modal>
     );
   }
