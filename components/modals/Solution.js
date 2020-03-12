@@ -4,20 +4,21 @@ import _ from 'lodash';
 import {connect} from 'react-redux';
 import {ShareButtons} from 'react-share';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
+import {create, destroy} from '@fox-zero/web/actions/Contact';
 import {Contact} from '@fox-zero/web/components/forms';
 import {Modal} from '@fox-zero/web/components/layout';
 import * as components from '@fox-zero/web/components';
 
 const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
 
-@connect(() => ({}), {update})
+@connect(state => ({contact: state['@fox-zero/web'].Contact.current}), {update, create, destroy})
 export default class extends Modal {
   static defaultProps = {
-    onHide: () => {}
+    onHide: () => {},
+    contact: null
   };
 
   state = {
-    contact: null,
     form: {
       message: null
     }
@@ -25,11 +26,11 @@ export default class extends Modal {
 
   onHide = (...args) => {
     this.props.onHide.apply(this, args);
-    this.setState({ contact: null, form: { message: null } });
+    this.setState({ form: { message: null } });
   };
 
   submit = values => {
-    const { update, solution } = this.props;
+    const { update, solution, create } = this.props;
     const { section = 'Home' } = solution;
     const { email } = values;
     const ga = { category: 'Solution Form', label: section };
@@ -50,15 +51,17 @@ export default class extends Modal {
           section
         }
       })
-        .then(contact => this.setState({ contact, form: { message: null } }))
+        .then(contact => {
+          create(contact);
+          this.setState({ form: { message: null } });
+        })
         .then(() => ReactGA.event({ ...ga, action: `Success` }))
         .catch(({message}) => this.setState({ form: { message } }));
     }
   };
 
   render() {
-    const { solution } = this.props;
-    const { contact } = this.state;
+    const { solution, contact } = this.props;
     const { message } = this.state.form;
     const { slug, content, summary, title, subject, icon, section, media = [] } = solution;
     const { location = {} } = global;
@@ -93,7 +96,7 @@ export default class extends Modal {
           <section className="quote">
             <div>
               <h2>Talk to Me</h2>
-              <h3>Book a Free<br />Consultation</h3>
+              <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
               <p>Interested in our services? Connect with us to learn more about how we can help your business!</p>
             </div>
             <div className="form">
@@ -103,7 +106,7 @@ export default class extends Modal {
                   <br />
                   <br />
                   <div className="share">
-                    <strong>Share this Solution</strong>
+                    <strong>Spread the word!</strong>
                     <br />
                     <FacebookShareButton url={share.url} quote={share.caption}>
                       <i className="fa fa-facebook-official"/>

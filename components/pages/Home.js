@@ -7,6 +7,7 @@ import {Page} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {dismiss} from '@fox-zero/web/actions/Nav';
 import {open, close} from '@fox-zero/web/actions/Solution';
+import {create, destroy} from '@fox-zero/web/actions/Contact';
 import {Footer} from '@fox-zero/web/components/layout';
 import {Solution} from '@fox-zero/web/components/buttons';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
@@ -46,9 +47,10 @@ const SECTIONS = {
   return ({
     param: state.router.params,
     slide, query: state.router.location.query,
+    contact: state['@fox-zero/web'].Contact.current,
     solution
   });
-}, {transition, dismiss, update, load, open, close})
+}, {transition, dismiss, update, load, open, close, create, destroy})
 
 export default class extends Page {
   static propTypes = {
@@ -58,8 +60,11 @@ export default class extends Page {
     load: PropTypes.func.isRequired,
     open: PropTypes.func.isRequired,
     close: PropTypes.func.isRequired,
+    create: PropTypes.func.isRequired,
+    destroy: PropTypes.func.isRequired,
     classNames: PropTypes.object,
     solution: PropTypes.object,
+    contact: PropTypes.object,
     param: PropTypes.object,
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
@@ -69,12 +74,12 @@ export default class extends Page {
   static defaultProps = {
     className: '',
     classNames: {},
-    solution: null
+    solution: null,
+    contact: null
   };
 
   state = {
     animating: false,
-    contact: null,
     isMobile: true,
     isLandscape: false,
     ready: false,
@@ -305,7 +310,7 @@ export default class extends Page {
   }
 
   submit = values => {
-    const { update } = this.props;
+    const { update, create } = this.props;
     const { email } = values;
     const ga = { category: 'Quote Form', action: 'Submit' };
 
@@ -327,7 +332,10 @@ export default class extends Page {
           section: format(this.section || 'Home')
         }
       })
-        .then(contact => this.setState({ contact, form: { message: null } }))
+        .then(contact => {
+          create(contact);
+          this.setState({ form: { message: null } });
+        })
         .then(() => ReactGA.event({ ...ga, label: `Success` }))
         .catch(({message}) => this.setState({ form: { message } }));
     }
@@ -382,8 +390,8 @@ export default class extends Page {
 
   render() {
     const { props, state, sections, length, closeSolution, section } = this;
-    const { className, classNames = {}, solution } = props;
-    const { animating, contact, isMobile, isLandscape } = state;
+    const { className, classNames = {}, solution, contact } = props;
+    const { animating, isMobile, isLandscape } = state;
     const { message } = state.form;
 
     const SECTION_HEIGHTS = [0, 0, 0, 0, isMobile ? 0.275 : 0, 0, 0, 0];
@@ -520,7 +528,7 @@ export default class extends Page {
                 speed={PARALLAX_SPEED}>
                 <section className="quote section">
                   <h2>Talk to Me</h2>
-                  <h3>Book a Free<br />Consultation</h3>
+                  <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
                   <p>Interested in our services? Connect with us to learn more about how we can help your business!</p>
                   <div className="form" onClick={this.openContact}>
                     {contact ?
