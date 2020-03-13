@@ -25,11 +25,32 @@ button.btn {
   &.btn-success {
     font-size: 1.35em;
     background: $black-color;
-    color: $primary-yellow-color;
 
-    &:hover, &:active {
+    &, & a {
+      color: $primary-yellow-color;
+      text-decoration: none;
+    }
+
+    a, i {
+      display: table-cell;
+    }
+
+    i {
+      opacity: .85;
+      padding-left: 5px;
+      text-align: center;
+      width: 1em;
+      font-size: 75%;
+      vertical-align: middle;
+    }
+
+    &:hover, &:active, &:focus {
       background: $secondary-green-color;
       color: $black-color;
+
+      &, & a {
+        color: $black-color;
+      }
     }
   }
 

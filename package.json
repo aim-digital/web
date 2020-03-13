@@ -1,6 +1,6 @@
 {
   "name": "@fox-zero/web",
-  "version": "1.0.0-a.8",
+  "version": "1.0.0-a.9",
   "scripts": {
     "lint": "boilerplate lint --bundle $(pwd)",
     "mount": "boilerplate mount --bundle $(pwd)",

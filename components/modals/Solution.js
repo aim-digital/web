@@ -60,8 +60,13 @@ export default class extends Modal {
     }
   };
 
+  formatCalendarParams = ({ email, firstname, lastname, company = { value: '' }, message = { value: '' } }) => {
+    const e = encodeURIComponent;
+    return `email=${e(email.value)}&name=${e([firstname.value, lastname.value].join(' '))}&a1=${e(company.value)}&a2=${e(message.value)}`;
+  };
+
   render() {
-    const { solution, contact } = this.props;
+    const { solution, contact, destroy: reset } = this.props;
     const { message } = this.state.form;
     const { slug, content, summary, title, subject, icon, section, media = [] } = solution;
     const { location = {} } = global;
@@ -73,7 +78,7 @@ export default class extends Modal {
     };
 
     return (
-      <Modal {..._.omit(this.props, ['update', 'solution'])}
+      <Modal {..._.omit(this.props, ['update', 'solution', 'create', 'destroy'])}
         onHide={this.onHide}
         className={`solution ${slug ? '' : 'contact'}`}
         title={title}
@@ -97,17 +102,30 @@ export default class extends Modal {
             <div>
               <h2>Talk to Me</h2>
               <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
-              <p>Interested in our services? Connect with us to learn more about how we can help your business!</p>
+              <p>Our services can accelerate and enhance your software projects. Use the form (<i className="fa color-primary-green fa-hand-o-down" />) to get started with a free 30 minute call with a senior partner.</p>
             </div>
-            <div className="form">
-              {contact ?
-                <div className="success">
-                  <strong>Thank you, {contact.firstname.value}, for your inquiry!</strong><br />We will contact you within 24 hours.
+            <div className={`form ${contact ? 'success' : ''}`}>
+              <div>
+                <div>
+                  {contact && <>
+                    <h4>Schedule a Call</h4>
+                    <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
+                    <button className="btn btn-success">
+                      <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
+                      <i className="fa fa-link" />
+                    </button>
+                  </>}
                   <br />
                   <br />
+                  <h4>Spread the Word</h4>
+                  <p>Shout-outs can get you a <strong>5% discount</strong>!</p>
+                  <ul>
+                    <li>Use the buttons below to share us.</li>
+                    <li>20 aggregate "likes" discounts 2.5%.</li>
+                    <li>10 aggregate comments discounts 2.5%.</li>
+                    <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
+                  </ul>
                   <div className="share">
-                    <strong>Spread the word!</strong>
-                    <br />
                     <FacebookShareButton url={share.url} quote={share.caption}>
                       <i className="fa fa-facebook-official"/>
                     </FacebookShareButton>
@@ -119,10 +137,12 @@ export default class extends Modal {
                     </EmailShareButton>
                   </div>
                   <br />
-                  <button className="btn btn-success" onClick={this.onHide}>Close</button>
-                </div> :
-                <Contact quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>}
-              {message && <div className="error">{message}</div>}
+                  <br />
+                  <button className="btn btn-success" onClick={reset}>Reset Form</button>
+                </div>
+              </div>
+              <Contact quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
+              {!contact && message && <div className="error">{message}</div>}
             </div>
           </section>
         </section>
