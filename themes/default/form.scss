@@ -5,8 +5,7 @@ form {
   }
 
   button:focus {
-    box-shadow: 0 0 8px $primary-yellow-color;
-    outline: solid 2px $primary-yellow-color !important;
+    box-shadow: 0 0 6px $primary-yellow-color;
   }
 
   .quote &,
@@ -59,7 +58,7 @@ form {
       }
 
       &:focus {
-        box-shadow: 0 0 6px $primary-yellow-color;
+        box-shadow: 0 0 5px $primary-yellow-color;
         outline: solid 1px $primary-yellow-color !important;
       }
     }

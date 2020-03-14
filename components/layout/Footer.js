@@ -42,6 +42,16 @@ export default class extends Footer {
                   <h4><i>@</i> Follow Us</h4>
                   <ul className="social">
                     <li>
+                      <a title="LinkedIn: Fox Zero™" href="https://www.linkedin.com/company/fox-zero" target="_blank">
+                        <i className="fa fa-linkedin-square"/>
+                      </a>
+                    </li>
+                    <li>
+                      <a title="GitHub: Fox Zero™" href="https://github.com/fox-zero" target="_blank">
+                        <i className="fa fa-github"/>
+                      </a>
+                    </li>
+                    <li>
                       <a title="Facebook: @fox.zero.agency" href="https://www.facebook.com/fox.zero.agency" target="_blank">
                         <i className="fa fa-facebook-official"/>
                       </a>
@@ -54,16 +64,6 @@ export default class extends Footer {
                     <li>
                       <a title="Instagram: @fox_zero_agency" href="https://www.instagram.com/fox_zero_agency" target="_blank">
                         <i className="fa fa-instagram"/>
-                      </a>
-                    </li>
-                    <li>
-                      <a title="GitHub: Fox Zero™" href="https://github.com/fox-zero" target="_blank">
-                        <i className="fa fa-github"/>
-                      </a>
-                    </li>
-                    <li>
-                      <a title="LinkedIn: Fox Zero™" href="https://www.linkedin.com/company/fox-zero" target="_blank">
-                        <i className="fa fa-linkedin-square"/>
                       </a>
                     </li>
                   </ul>

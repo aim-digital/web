@@ -5,7 +5,12 @@ import {Logo} from '@fox-zero/web/components/layout';
 import {ShareButtons} from 'react-share';
 import _ from 'lodash';
 
-const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
+const {
+  FacebookShareButton,
+  TwitterShareButton,
+  EmailShareButton,
+  LinkedinShareButton
+} = ShareButtons;
 
 export default class extends Component {
   static propTypes = {
@@ -26,7 +31,7 @@ export default class extends Component {
 
   render() {
     const { id, children, title, dek, icon, className, share = {}, hero } = this.props;
-    const { url, caption, subject } = share;
+    const { url, caption, subject, hashtags } = share;
 
     return (
       <Modal {..._.omit(this.props, ['share', 'title', 'icon', 'hero'])} className={`${className}`} title="" id={id}>
@@ -36,10 +41,13 @@ export default class extends Component {
             <i className="fa fa-arrow-circle-left"></i>
           </Modal.Dismiss>
           {url && <div className="share">
-            <FacebookShareButton url={url} quote={caption}>
+            <LinkedinShareButton url={url} title={title} source="Fox Zero™" summary={caption}>
+              <i className="fa fa-linkedin-square"/>
+            </LinkedinShareButton>
+            <FacebookShareButton url={url} quote={caption} hashtag={hashtags.map(tag => `#${tag}`).join(',')}>
               <i className="fa fa-facebook-official"/>
             </FacebookShareButton>
-            <TwitterShareButton url={url} title={caption}>
+            <TwitterShareButton url={url} title={caption} hashtags={share.hashtags} related="@fox_zero_agency">
               <i className="fa fa-twitter"/>
             </TwitterShareButton>
             <EmailShareButton url={url} subject={`Fox Zero™ · ${subject}`} body={`${caption}\n\nRead More: ${url}\n\n`}>

@@ -9,7 +9,12 @@ import {Contact} from '@fox-zero/web/components/forms';
 import {Modal} from '@fox-zero/web/components/layout';
 import * as components from '@fox-zero/web/components';
 
-const { FacebookShareButton, TwitterShareButton, EmailShareButton } = ShareButtons;
+const {
+  FacebookShareButton,
+  TwitterShareButton,
+  EmailShareButton,
+  LinkedinShareButton
+} = ShareButtons;
 
 @connect(state => ({contact: state['@fox-zero/web'].Contact.current}), {update, create, destroy})
 export default class extends Modal {
@@ -65,6 +70,12 @@ export default class extends Modal {
     return `email=${e(email.value)}&name=${e([firstname.value, lastname.value].join(' '))}&a1=${e(company.value)}&a2=${e(message.value)}`;
   };
 
+  onShare = (source, { email, shares }) => async () => {
+    const { update, create, contact } = this.props;
+    const updated = await update({ lead: true, properties: { email: email.value, shares: [shares.value].concat(source).join(';') } });
+    contact && create(updated);
+  };
+
   render() {
     const { solution, contact, destroy: reset } = this.props;
     const { message } = this.state.form;
@@ -74,7 +85,8 @@ export default class extends Modal {
     const share = {
       url: `${location.protocol}//${location.host}/${(slug || '').toLowerCase()}`,
       caption: summary,
-      subject: section ? `${section} · ${subject || title}` : subject || title
+      subject: section ? `${section} · ${subject || title}` : subject || title,
+      hashtags: ['software', 'agency', (section || 'consulting').toLowerCase()]
     };
 
     return (
@@ -125,17 +137,20 @@ export default class extends Modal {
                     <li>10 aggregate comments discounts 2.5%.</li>
                     <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
                   </ul>
-                  <div className="share">
-                    <FacebookShareButton url={share.url} quote={share.caption}>
+                  {contact && <div className="share">
+                    <LinkedinShareButton url={share.url} title={subject || title} source="Fox Zero™" summary={share.caption} onShareWindowClose={this.onShare('linkedin', contact)}>
+                      <i className="fa fa-linkedin-square"/>
+                    </LinkedinShareButton>
+                    <FacebookShareButton url={share.url} quote={share.caption} hashtag={share.hashtags.map(tag => `#${tag}`).join(' ')} onShareWindowClose={this.onShare('facebook', contact)}>
                       <i className="fa fa-facebook-official"/>
                     </FacebookShareButton>
-                    <TwitterShareButton url={share.url} title={share.caption}>
+                    <TwitterShareButton url={share.url} title={share.caption} hashtags={share.hashtags} related="@fox_zero_agency" onShareWindowClose={this.onShare('twitter', contact)}>
                       <i className="fa fa-twitter"/>
                     </TwitterShareButton>
-                    <EmailShareButton url={share.url} subject={`Hello! ${share.caption}`} body={`${share.message}\n\n${share.url}\n\n`}>
+                    <EmailShareButton url={share.url} subject={`Fox Zero™ · ${share.subject}`} body={`${share.caption}\n\nRead More: ${share.url}\n\n`} onShareWindowClose={this.onShare('email', contact)}>
                       <i className="fa fa-envelope"/>
                     </EmailShareButton>
-                  </div>
+                  </div>}
                   <br />
                   <br />
                   <button className="btn btn-success" onClick={reset}>Reset Form</button>
