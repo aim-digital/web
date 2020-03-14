@@ -24,7 +24,7 @@
 .modal .logo, .page .logo {
   &, .tagline {
     text-align: center;
-    padding: 6.5em 0 15px;
+    padding: 7em 0 15px;
   }
 
   > img {
@@ -44,21 +44,21 @@
     left: 0;
 
     img {
-      width: 13em;
-      margin: -2.25em 0;
+      width: 14em;
+      margin: -2.75em 0;
       animation-name: rotate-tagline;
       animation-iteration-count: infinite;
-      animation-duration: 20s;
+      animation-duration: 25s;
       animation-timing-function: linear;
     }
   }
 }
 
 .modal .logo {
-  padding-top: 3.5em;
+  padding-top: 3.75em;
 
   .tagline img {
-    margin: -5.25em 0 !important;
+    margin: -6em 0 !important;
   }
 }
 
