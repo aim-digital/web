@@ -96,6 +96,7 @@ export default class extends Page {
     }
   };
 
+  form = {};
   positions = [];
   scrollTop = 0;
 
@@ -156,6 +157,8 @@ export default class extends Page {
     if (!this.positions.length) {
       this.getSectionPositions();
     }
+
+    this.getFormProperties();
   };
 
   cycleHeader = (timer = HEADER_TIMER) => {
@@ -174,11 +177,19 @@ export default class extends Page {
       this.positions[i] = parallax.querySelector(`.section-${i}`).getBoundingClientRect().top - global.innerHeight - (i * SECTION_OFFSET);
   };
 
+  getFormProperties = () => {
+    const { elements, form } = this;
+    const { form: element } = elements;
+
+    form.height = element.offsetHeight;
+  };
+
   onScroll = () => {
-    const { positions, elements, section, props } = this;
+    const { positions, elements, section, props, form } = this;
     const { length } = positions;
     const { transition } = props;
-    const { parallax: { scrollTop } } = elements;
+    const { parallax: { scrollTop }, form: formElement } = elements;
+    const pageHeight = global.innerHeight;
     const first = positions[0];
     let timer, slide;
 
@@ -188,6 +199,17 @@ export default class extends Page {
       for (let i = 0; i < length; i++)
         if (scrollTop >= positions[i])
           slide = section ? SECTIONS[section].slide : i;
+
+      form.start = formElement.getBoundingClientRect().top
+      form.end = form.start + form.height
+
+      if (form.start <= pageHeight * 0.7 && form.end >= pageHeight * 0.9) {
+        if (!form.impression) {
+          form.impression = true;
+        }
+      } else {
+        form.impression = false;
+      }
     } else if (this.scrollTop >= first) {
       timer = HEADER_TIMER;
       // slide = SECTIONS[section || SECTION_DEFAULT].slide;
@@ -207,7 +229,8 @@ export default class extends Page {
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
     const section = parallax.querySelector(`.section-${slide}`);
-    return { app, parallax, section };
+    const form = parallax.querySelector(`.section-form`);
+    return { app, parallax, section, form };
   }
 
   get solutions() {
@@ -325,7 +348,7 @@ export default class extends Page {
     const format = section => section.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     if (email) {
-      ReactGA.event({ ...ga, label: `Attempt` });
+      // ReactGA.event({ ...ga, label: `Attempt` });
 
       update({
         lead: true,
@@ -344,7 +367,7 @@ export default class extends Page {
           create(contact);
           this.setState({ form: { message: null } });
         })
-        .then(() => ReactGA.event({ ...ga, label: `Success` }))
+        // .then(() => ReactGA.event({ ...ga, label: `Success` }))
         .catch(({message}) => this.setState({ form: { message } }));
     }
   };
@@ -568,6 +591,7 @@ export default class extends Page {
               </ParallaxLayer>}
               {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
               <ParallaxLayer
+                className="section-form"
                 offset={factor((hasMany ? SECTION_FORM : height) + 0.1)}
                 speed={PARALLAX_SPEED}>
                 <section className="quote section">

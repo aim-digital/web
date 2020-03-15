@@ -41,7 +41,7 @@ export default class extends Modal {
     const ga = { category: 'Solution Form', label: section };
 
     if (email) {
-      ReactGA.event({ ...ga, action: `Submit` });
+      // ReactGA.event({ ...ga, action: `Submit` });
 
       update({
         lead: true,
@@ -60,7 +60,7 @@ export default class extends Modal {
           create(contact);
           this.setState({ form: { message: null } });
         })
-        .then(() => ReactGA.event({ ...ga, action: `Success` }))
+        // .then(() => ReactGA.event({ ...ga, action: `Success` }))
         .catch(({message}) => this.setState({ form: { message } }));
     }
   };
