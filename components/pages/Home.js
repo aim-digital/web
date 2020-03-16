@@ -26,7 +26,7 @@ const {
   LinkedinShareButton
 } = ShareButtons;
 
-const HEADER_TIMER = 10;
+const HEADER_TIMER = 12.5;
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
@@ -35,7 +35,6 @@ const PARALLAX_SCALE = 750;
 const PARALLAX_SPEED = 0.2;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
-const SECTION_OFFSET = 250;
 const SECTION_DEFAULT = 'consulting';
 const SECTION_FORM = 6;
 const SECTIONS = {
@@ -96,15 +95,15 @@ export default class extends Page {
     }
   };
 
-  form = {};
-  positions = [];
+  impressions = [];
   scrollTop = 0;
 
   componentDidMount = () => {
     if (__CLIENT__) {
-      const { elements } = this;
+      const elements = this.elements = this.getElements();
+
       const { app, parallax } = elements;
-      document.querySelector('#app .nav + .page').addEventListener('click', this.props.dismiss);
+      document.querySelector('#app > section > .page').addEventListener('click', this.props.dismiss);
       app.classList.add('home');
       parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 950, { leading: true, trailing: true }));
       global.addEventListener('resize', this.updateViewport);
@@ -135,7 +134,7 @@ export default class extends Page {
   componentWillUnmount = () => {
     if (__CLIENT__) {
       const { app, parallax } = this.elements;
-      document.querySelector('#app .nav + .page').removeEventListener('click', this.props.dismiss);
+      document.querySelector('#app > section > .page').removeEventListener('click', this.props.dismiss);
       this.props.transition({ progress: 0.2 });
       app.classList.remove('home');
       parallax.removeEventListener('scroll', this.onScroll);
@@ -154,11 +153,7 @@ export default class extends Page {
   };
 
   componentDidUpdate = () => {
-    if (!this.positions.length) {
-      this.getSectionPositions();
-    }
-
-    this.getFormProperties();
+    this.elements = this.getElements();
   };
 
   cycleHeader = (timer = HEADER_TIMER) => {
@@ -169,50 +164,76 @@ export default class extends Page {
     }
   };
 
-  getSectionPositions = () => {
-    const { length, elements } = this;
-    const { parallax } = elements;
+  getElements() {
+    const { length, props } = this;
+    const { slide } = props;
+    const app = document.querySelector('#app');
+    const parallax = app.querySelector('.section.container > .parallax');
+    const section = parallax.querySelector(`.section-${slide}`);
+    const form = parallax.querySelector(`.section-form`);
+    const sections = [];
 
-    for (let i = 0; i < length; i++)
-      this.positions[i] = parallax.querySelector(`.section-${i}`).getBoundingClientRect().top - global.innerHeight - (i * SECTION_OFFSET);
-  };
+    for (let i = 0; i < length; i++) {
+      let section = parallax.querySelector(`.section-${i}`);
 
-  getFormProperties = () => {
-    const { elements, form } = this;
-    const { form: element } = elements;
+      sections[i] = {
+        element: section,
+        height: section && section.offsetHeight
+      };
+    }
 
-    form.height = element.offsetHeight;
-  };
+    return {
+      app,
+      parallax,
+      section,
+      sections,
+      form: {
+        element: form,
+        height: form && form.offsetHeight
+      }
+    };
+  }
 
   onScroll = () => {
-    const { positions, elements, section, props, form } = this;
-    const { length } = positions;
+    const { elements, section, props, impressions } = this;
     const { transition } = props;
-    const { parallax: { scrollTop }, form: formElement } = elements;
+    const { parallax: { scrollTop }, sections, form } = elements;
+    const { length } = sections;
     const pageHeight = global.innerHeight;
-    const first = positions[0];
+    const first = sections[0].element.getBoundingClientRect().top - pageHeight;
     let timer, slide;
 
     if (scrollTop >= first) {
+      let start, end;
       timer = 0;
 
-      for (let i = 0; i < length; i++)
-        if (scrollTop >= positions[i])
-          slide = section ? SECTIONS[section].slide : i;
+      for (let i = 0; i < length; i++) {
+        start = sections[i].element.getBoundingClientRect().top;
+        end = start + sections[i].height;
 
-      form.start = formElement.getBoundingClientRect().top
-      form.end = form.start + form.height
+        if (start <= pageHeight * 0.5 && end >= pageHeight * 0.35) {
+          if (!impressions[i]) {
+            impressions[i] = true;
+            slide = section ? SECTIONS[section].slide : i;
+          }
+        } else {
+          impressions[i] = false;
+        }
+      }
 
-      if (form.start <= pageHeight * 0.7 && form.end >= pageHeight * 0.9) {
+      start = form.element.getBoundingClientRect().top
+      end = start + form.height
+
+      if (start <= pageHeight * 0.7 && end >= pageHeight * 0.9) {
         if (!form.impression) {
           form.impression = true;
+          slide = section ? SECTIONS[section].slide : SECTION_FORM - 1;
         }
       } else {
         form.impression = false;
       }
     } else if (this.scrollTop >= first) {
       timer = HEADER_TIMER;
-      // slide = SECTIONS[section || SECTION_DEFAULT].slide;
       slide = section ? SECTIONS[section].slide : (props.slide === this.length - 1 ? 0 : props.slide + 1);
     }
 
@@ -223,15 +244,6 @@ export default class extends Page {
       this.cycleHeader(timer);
     }
   };
-
-  get elements() {
-    const { slide } = this.props;
-    const app = document.querySelector('#app');
-    const parallax = app.querySelector('.section.container > .parallax');
-    const section = parallax.querySelector(`.section-${slide}`);
-    const form = parallax.querySelector(`.section-form`);
-    return { app, parallax, section, form };
-  }
 
   get solutions() {
     const { renderSolution } = this;

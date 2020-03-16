@@ -397,17 +397,17 @@ body.nav-open,
   overflow: hidden;
 }
 
-#app .nav + .page {
+#app > section > .page {
   position: relative;
   z-index: 1;
   left: 0;
 }
 
-#app.nav-loaded .nav + .page {
+#app.nav-loaded > section > .page {
   transition: left .3s;
 }
 
-#app .nav + .page:before {
+#app > section > .page:before {
   content: '';
   position: fixed;
   width: 100vw;
@@ -422,17 +422,17 @@ body.nav-open,
   display: none;
 }
 
-#app.nav-loaded .nav + .page:before {
+#app.nav-loaded > section > .page:before {
   display: block;
 }
 
-#app.nav-open .nav + .page {
+#app.nav-open > section > .page {
   // -webkit-transform: translate3d(20em, 0, 0);
   // transform: translate3d(20em 0, 0);
   left: 20em;
 }
 
-#app.nav-open .nav + .page:before {
+#app.nav-open > section > .page:before {
   background-color: rgba(32,173,228, .65);
   pointer-events: auto;
 }
