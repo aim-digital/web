@@ -34,6 +34,9 @@ const SOLUTION_AVG = solutions.length / 2;
 const PARALLAX_SCALE = 750;
 const PARALLAX_SPEED = 0.2;
 
+const IMPRESSION_START = 0.5;
+const IMPRESSION_END = 0.35;
+
 const RE_SECTION_KEY = /.*\:(.*)$/;
 const SECTION_DEFAULT = 'consulting';
 const SECTION_FORM = 6;
@@ -99,7 +102,6 @@ export default class extends Page {
   };
 
   impressions = [];
-  scrollTop = 0;
 
   componentDidMount = () => {
     if (__CLIENT__) {
@@ -108,7 +110,7 @@ export default class extends Page {
       const { app, parallax } = elements;
       document.querySelector('#app > section > .page').addEventListener('click', this.props.dismiss);
       app.classList.add('home');
-      parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 950, { leading: true, trailing: true }));
+      parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 950, { trailing: true }));
       global.addEventListener('resize', this.updateViewport);
       global.setTimeout(() => { this.setState({ ready: true }); }, 1000);
       this.updateViewport();
@@ -155,7 +157,7 @@ export default class extends Page {
     }
   };
 
-  componentDidUpdate = props => {
+  componentDidUpdate = () => {
     this.elements = this.getElements();
   };
 
@@ -198,15 +200,14 @@ export default class extends Page {
   }
 
   onScroll = () => {
-    const { elements, section, props, impressions } = this;
-    const { transition, reset } = props;
-    const { parallax: { scrollTop }, sections, form } = elements;
+    const { elements, section, props, impression, impressions } = this;
+    const { transition, reset, slide: current } = props;
+    const { sections, form } = elements;
     const { length } = sections;
     const pageHeight = global.innerHeight;
-    const first = sections[0].element.getBoundingClientRect().top - pageHeight;
     let timer, slide;
 
-    if (scrollTop >= first) {
+    if (sections[0].element.getBoundingClientRect().top <= pageHeight * IMPRESSION_START) {
       let start, end;
       timer = 0;
 
@@ -214,13 +215,18 @@ export default class extends Page {
         start = sections[i].element.getBoundingClientRect().top;
         end = start + sections[i].height;
 
-        if (start <= pageHeight * 0.5 && end >= pageHeight * 0.35) {
-          if (!impressions[i]) {
-            impressions[i] = true;
-            slide = section ? SECTIONS[section].slide : i;
+        if (start <= pageHeight * IMPRESSION_START) {
+          this.impression = true;
+          slide = section ? SECTIONS[section].slide : i;
+
+          if (end >= pageHeight * IMPRESSION_END) {
+            if (!impressions[i]) {
+              impressions[i] = true;
+              // Section:Page:Impression:${i}
+            }
+          } else {
+            impressions[i] = false;
           }
-        } else {
-          impressions[i] = false;
         }
       }
 
@@ -230,20 +236,19 @@ export default class extends Page {
       if (start <= pageHeight * 0.7 && end >= pageHeight * 0.9) {
         if (!form.impression) {
           form.impression = true;
-          slide = section ? SECTIONS[section].slide : SECTION_FORM - 1;
+          // Form:Page:Impression:${section || 'Home'}
         }
       } else {
         form.impression = false;
       }
-    } else if (this.scrollTop >= first) {
+    } else if (impression) {
+      this.impression = false;
       timer = HEADER_TIMER;
       slide = section ? SECTIONS[section].slide : (reset ? 0 : (props.slide === this.length - 1 ? 0 : props.slide + 1));
     }
 
-    this.scrollTop = scrollTop;
-
     if (typeof slide !== 'undefined') {
-      transition('slide', slide);
+      slide !== current && transition('slide', slide);
       transition('slide.reset', false);
       this.cycleHeader(timer);
     }
