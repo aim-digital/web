@@ -211,17 +211,19 @@ export default class extends Page {
     if (sections[0].element.getBoundingClientRect().top <= pageHeight * IMPRESSION_START) {
       let start, end;
       timer = 0;
+      transition('page.impression', this.impression = true);
 
       for (let i = 0; i < length; i++) {
         start = sections[i].element.getBoundingClientRect().top;
         end = start + sections[i].height;
 
         if (start <= pageHeight * IMPRESSION_START) {
-          this.impression = true;
           slide = section ? SECTIONS[section].slide : i;
 
           if (end >= pageHeight * IMPRESSION_END) {
             if (!impressions[i]) {
+              this.impressions = [];
+              form.impression = false;
               impressions[i] = true;
               analytics.Section.Page.Impression.track(i);
             }
@@ -236,6 +238,7 @@ export default class extends Page {
 
       if (start <= pageHeight * 0.7 && end >= pageHeight * 0.9) {
         if (!form.impression) {
+          this.impressions = [];
           form.impression = true;
           analytics.Form.Page.Impression.track(formatters.section(section || 'Home'));
         }
@@ -243,9 +246,9 @@ export default class extends Page {
         form.impression = false;
       }
     } else if (impression) {
-      this.impression = false;
       timer = HEADER_TIMER;
       slide = section ? SECTIONS[section].slide : (reset ? 0 : (props.slide === this.length - 1 ? 0 : props.slide + 1));
+      transition('page.impression', this.impression = false);
     }
 
     if (typeof slide !== 'undefined') {

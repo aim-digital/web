@@ -6,6 +6,9 @@ import {Nav} from '@boilerplatejs/core/components/layout';
 import {Progress} from '@boilerplatejs/core/components/layout';
 import {load, dismiss} from '@fox-zero/web/actions/Nav';
 import {transition} from '@boilerplatejs/core/actions/Transition';
+import {solutions} from '@fox-zero/web/data';
+import formatters from '@fox-zero/web/lib/formatters';
+import * as analytics from '@fox-zero/web/lib/analytics';
 
 @connect(state => ({section: state.router.params.section}), {load, dismiss, transition})
 
@@ -19,7 +22,7 @@ export default class extends Nav {
 
   componentDidMount = () => this.props.load();
 
-  scrollTo = id => {
+  scrollTo = (id, track) => {
     const { transition, dismiss, section } = this.props;
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
@@ -42,6 +45,7 @@ export default class extends Nav {
     } else {
       app.scrollTop = 0;
       parallax && (parallax.scrollTop = 0);
+      track && analytics.Section.Navigation.Click.track(formatters.section(id));
     }
 
     this.id = id;
@@ -50,7 +54,7 @@ export default class extends Nav {
   render() {
     const preventDefault = e => e.preventDefault();
     const { scrollTo } = this;
-    const update = id => () => scrollTo(id);
+    const update = (id, track) => () => scrollTo(id, track);
 
     return (
       <section className="nav">
@@ -77,41 +81,41 @@ export default class extends Nav {
           </div>
           <ul>
             <li className="home">
-              <Link rel="nofollow" to="/" className="logo" onClick={update(0)}/>
+              <Link rel="nofollow" to="/" className="logo" onClick={update('home', true)}/>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/consulting" onClick={update(1)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
-                <li><Link rel="nofollow" to="/home/development" onClick={update(2)}><i className="fa fa-wrench"/> Development</Link></li>
-                <li><Link rel="nofollow" to="/home/maintenance" onClick={update(3)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
+                <li><Link rel="nofollow" to="/home/consulting" onClick={update(solutions[0].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
+                <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[1].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
+                <li><Link rel="nofollow" to="/home/maintenance" onClick={update(solutions[2].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Framework</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/strategy" onClick={update(4)}><i className="fa fa-road"/> Strategy</Link></li>
-                <li><Link rel="nofollow" to="/home/process" onClick={update(5)}><i className="fa fa-fighter-jet"/> Process</Link></li>
+                <li><Link rel="nofollow" to="/home/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-road"/> Strategy</Link></li>
+                <li><Link rel="nofollow" to="/home/process" onClick={update(solutions[7].slug, true)}><i className="fa fa-fighter-jet"/> Process</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/subscription" onClick={update(6)}><i className="fa fa-refresh"/> Subscription</Link></li>
-                <li><Link rel="nofollow" to="/home/warranty" onClick={update(7)}><i className="fa fa-umbrella"/> Warranty</Link></li>
-                <li><Link rel="nofollow" to="/home/on-demand" onClick={update(8)}><i className="fa fa-power-off"/> On Demand</Link></li>
+                <li><Link rel="nofollow" to="/home/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
+                <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
+                <li><Link rel="nofollow" to="/home/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off"/> On Demand</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-info-circle"/> Support</a>
               <ul>
-                <li><Link to="/contact" onClick={update(9)}><i className="fa fa-envelope"/> Contact Us</Link></li>
-                <li><Link to="/about" onClick={update(10)}><i className="fa fa-id-card-o"/> About Us</Link></li>
-                <li><Link to="/privacy" onClick={update(11)}><i className="fa fa-legal"/> Privacy Policy</Link></li>
+                <li><Link to="/contact" onClick={update('contact')}><i className="fa fa-envelope"/> Contact Us</Link></li>
+                <li><Link to="/about" onClick={update('about')}><i className="fa fa-id-card-o"/> About Us</Link></li>
+                <li><Link to="/privacy" onClick={update('privacy')}><i className="fa fa-legal"/> Privacy Policy</Link></li>
               </ul>
             </li>
             <li>
-              <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update(12)}>
+              <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update('stream')}>
                 <i className="fa fa-television"/> FoxStream™ TV
               </Link>
             </li>
