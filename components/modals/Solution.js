@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react';
-import ReactGA from 'react-ga';
 import _ from 'lodash';
 import {connect} from 'react-redux';
 import {ShareButtons} from 'react-share';
@@ -8,6 +7,7 @@ import {create, destroy} from '@fox-zero/web/actions/Contact';
 import {Contact} from '@fox-zero/web/components/forms';
 import {Modal} from '@fox-zero/web/components/layout';
 import * as components from '@fox-zero/web/components';
+// import * as analytics from '@fox-zero/web/lib/analytics';
 
 const {
   FacebookShareButton,
@@ -53,7 +53,8 @@ export default class extends Modal {
           lastname: values.lastName,
           phone: values.phone,
           company: values.company,
-          section
+          section,
+          application: 'Fox Zero™ Marketing App'
         }
       })
         .then(contact => {

@@ -15,8 +15,9 @@ import {update} from '@boilerplatejs/hubspot/actions/Contact';
 import {load} from '@boilerplatejs/strapi/actions/Entry';
 import * as modals from '@fox-zero/web/components/modals';
 import * as forms from '@fox-zero/web/components/forms';
-import ReactGA from 'react-ga';
+import formatters from '@fox-zero/web/lib/formatters';
 import {solutions, brand} from '@fox-zero/web/data';
+import * as analytics from '@fox-zero/web/lib/analytics';
 import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
 const {
@@ -222,7 +223,7 @@ export default class extends Page {
           if (end >= pageHeight * IMPRESSION_END) {
             if (!impressions[i]) {
               impressions[i] = true;
-              // Section:Page:Impression:${i}
+              analytics.Section.Page.Impression.track(i);
             }
           } else {
             impressions[i] = false;
@@ -236,7 +237,7 @@ export default class extends Page {
       if (start <= pageHeight * 0.7 && end >= pageHeight * 0.9) {
         if (!form.impression) {
           form.impression = true;
-          // Form:Page:Impression:${section || 'Home'}
+          analytics.Form.Page.Impression.track(formatters.section(section || 'Home'));
         }
       } else {
         form.impression = false;
@@ -366,8 +367,6 @@ export default class extends Page {
     const { email } = values;
     const ga = { category: 'Quote Form', action: 'Submit' };
 
-    const format = section => section.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-
     if (email) {
       // ReactGA.event({ ...ga, label: `Attempt` });
 
@@ -381,7 +380,8 @@ export default class extends Page {
           lastname: values.lastName,
           phone: values.phone,
           company: values.company,
-          section: format(this.section || 'Home')
+          section: formatters.section(this.section || 'Home'),
+          application: 'Fox Zero™ Marketing App'
         }
       })
         .then(contact => {
