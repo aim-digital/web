@@ -49,12 +49,14 @@ const SECTIONS = {
 };
 
 @connect(state => {
-  const { slide = 0 } = state['@boilerplatejs/core'].Transition;
+  const { Transition } = state['@boilerplatejs/core'];
+  const { slide = 0 } = Transition;
   const { current: solution = null } = state['@fox-zero/web'].Solution;
   return ({
     param: state.router.params,
     slide, query: state.router.location.query,
     contact: state['@fox-zero/web'].Contact.current,
+    reset: Transition['slide.reset'],
     solution
   });
 }, {transition, dismiss, update, load, open, close, create, destroy})
@@ -75,6 +77,7 @@ export default class extends Page {
     param: PropTypes.object,
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
+    reset: PropTypes.bool,
     section: PropTypes.string
   };
 
@@ -134,8 +137,8 @@ export default class extends Page {
   componentWillUnmount = () => {
     if (__CLIENT__) {
       const { app, parallax } = this.elements;
-      document.querySelector('#app > section > .page').removeEventListener('click', this.props.dismiss);
       this.props.transition({ progress: 0.2 });
+      document.querySelector('#app > section > .page').removeEventListener('click', this.props.dismiss);
       app.classList.remove('home');
       parallax.removeEventListener('scroll', this.onScroll);
       global.removeEventListener('resize', this.updateViewport);
@@ -152,7 +155,7 @@ export default class extends Page {
     }
   };
 
-  componentDidUpdate = () => {
+  componentDidUpdate = props => {
     this.elements = this.getElements();
   };
 
@@ -196,7 +199,7 @@ export default class extends Page {
 
   onScroll = () => {
     const { elements, section, props, impressions } = this;
-    const { transition } = props;
+    const { transition, reset } = props;
     const { parallax: { scrollTop }, sections, form } = elements;
     const { length } = sections;
     const pageHeight = global.innerHeight;
@@ -234,13 +237,14 @@ export default class extends Page {
       }
     } else if (this.scrollTop >= first) {
       timer = HEADER_TIMER;
-      slide = section ? SECTIONS[section].slide : (props.slide === this.length - 1 ? 0 : props.slide + 1);
+      slide = section ? SECTIONS[section].slide : (reset ? 0 : (props.slide === this.length - 1 ? 0 : props.slide + 1));
     }
 
     this.scrollTop = scrollTop;
 
     if (typeof slide !== 'undefined') {
       transition('slide', slide);
+      transition('slide.reset', false);
       this.cycleHeader(timer);
     }
   };
@@ -479,7 +483,7 @@ export default class extends Page {
     const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
     const height = length + (hasMany ? aggregateHeight(length - 1) : SECTION_HEIGHTS[SECTIONS[section].slide]);
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
-    const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
+    const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://s3.amazonaws.com/foxzero.io/${name}.svg${wrap ? ')' : ''}`;
 
     const renderLayer = (index = 0, offset = 0) => (component, i) => (
       <ParallaxLayer

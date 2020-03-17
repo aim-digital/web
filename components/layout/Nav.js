@@ -4,41 +4,51 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {Nav} from '@boilerplatejs/core/components/layout';
 import {Progress} from '@boilerplatejs/core/components/layout';
-import {load} from '@fox-zero/web/actions/Nav';
+import {load, dismiss} from '@fox-zero/web/actions/Nav';
 import {transition} from '@boilerplatejs/core/actions/Transition';
+import {solutions} from '@fox-zero/web/data';
 
-@connect(() => ({}), {load, transition})
+@connect(state => ({section: state.router.params.section}), {load, dismiss, transition})
 
 export default class extends Nav {
   static propTypes = {
     load: PropTypes.func.isRequired,
-    transition: PropTypes.func.isRequired
+    transition: PropTypes.func.isRequired,
+    dismiss: PropTypes.func.isRequired,
+    section: PropTypes.string
   };
 
   componentDidMount = () => this.props.load();
 
-  scrollTo = slide => {
-    const { transition } = this.props;
+  scrollTo = slug => {
+    const { transition, dismiss, section } = this.props;
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
 
-    if (parallax && parallax.scrollTop >= (global.innerHeight - 40)) {
+    if (section === slug) {
+      if (!section)
+        transition('slide.reset', true);
+
       if (app.scrollTo) {
         app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         parallax && parallax.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        clearTimeout(this.dismiss);
+        this.dismiss = setTimeout(dismiss, parallax.scrollTop * 0.25);
       } else {
         app.scrollTop = 0;
         parallax && (parallax.scrollTop = 0);
+        dismiss();
       }
     } else {
-      transition('slide', slide);
+      app.scrollTop = 0;
+      parallax && (parallax.scrollTop = 0);
     }
   };
 
   render() {
     const preventDefault = e => e.preventDefault();
     const { scrollTo } = this;
-    const update = i => () => scrollTo(i);
+    const update = slide => () => scrollTo(solutions[slide] ? solutions[slide].slug : solutions[slide]);
 
     return (
       <section className="nav">
@@ -65,7 +75,7 @@ export default class extends Nav {
           </div>
           <ul>
             <li className="home">
-              <Link rel="nofollow" to="/" className="logo" onClick={update(0)}/>
+              <Link rel="nofollow" to="/" className="logo" onClick={update()}/>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
@@ -79,15 +89,15 @@ export default class extends Nav {
               <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Framework</a>
               <ul>
                 <li><Link rel="nofollow" to="/home/strategy" onClick={update(3)}><i className="fa fa-road"/> Strategy</Link></li>
-                <li><Link rel="nofollow" to="/home/process" onClick={update(4)}><i className="fa fa-fighter-jet"/> Process</Link></li>
+                <li><Link rel="nofollow" to="/home/process" onClick={update(7)}><i className="fa fa-fighter-jet"/> Process</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/subscription" onClick={update(6)}><i className="fa fa-refresh"/> Subscription</Link></li>
+                <li><Link rel="nofollow" to="/home/subscription" onClick={update(4)}><i className="fa fa-refresh"/> Subscription</Link></li>
                 <li><Link rel="nofollow" to="/home/warranty" onClick={update(5)}><i className="fa fa-umbrella"/> Warranty</Link></li>
-                <li><Link rel="nofollow" to="/home/on-demand" onClick={update(7)}><i className="fa fa-power-off"/> On Demand</Link></li>
+                <li><Link rel="nofollow" to="/home/on-demand" onClick={update(6)}><i className="fa fa-power-off"/> On Demand</Link></li>
               </ul>
             </li>
             <li className="subnav">
