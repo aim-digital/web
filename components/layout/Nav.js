@@ -10,6 +10,8 @@ import {solutions} from '@fox-zero/web/data';
 import formatters from '@fox-zero/web/lib/formatters';
 import * as analytics from '@fox-zero/web/lib/analytics';
 
+const DEFAULT_ID = 'home';
+
 @connect(state => ({section: state.router.params.section}), {load, dismiss, transition})
 
 export default class extends Nav {
@@ -19,6 +21,8 @@ export default class extends Nav {
     dismiss: PropTypes.func.isRequired,
     section: PropTypes.string
   };
+
+  id = DEFAULT_ID;
 
   componentDidMount = () => this.props.load();
 
@@ -81,7 +85,7 @@ export default class extends Nav {
           </div>
           <ul>
             <li className="home">
-              <Link rel="nofollow" to="/" className="logo" onClick={update('home', true)}/>
+              <Link rel="nofollow" to="/" className="logo" onClick={update(DEFAULT_ID, true)}/>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>

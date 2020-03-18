@@ -7,7 +7,14 @@
         "icon": "lightbulb-o",
         "summary": "Teams of expert partners, paired with younger associates, operate remotely and are all integrated within our FAST™ PLM methodology to guarantee the fullest productivity, quality, and customer satisfaction per every hour worked.",
         "category": "Services",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }]
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
+        "content": [{
+            "type": "image",
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/Logo-01.png" }]
+        }, {
+            "type": "paragraph",
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        }]
     },
     {
         "index": 1,
@@ -17,7 +24,14 @@
         "icon": "wrench",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Services",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/b08c0d15bb08409cb6a9b7cad20e10d2.png" }]
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/b08c0d15bb08409cb6a9b7cad20e10d2.png" }],
+        "content": [{
+            "type": "image",
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/Logo-01.png" }]
+        }, {
+            "type": "paragraph",
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        }]
     },
     {
         "index": 2,
@@ -27,7 +41,14 @@
         "icon": "heartbeat",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Services",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg" }]
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg" }],
+        "content": [{
+            "type": "image",
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/Logo-01.png" }]
+        }, {
+            "type": "paragraph",
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        }]
     },
     {
         "index": 3,
@@ -37,7 +58,14 @@
         "icon": "road",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Framework",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }]
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
+        "content": [{
+            "type": "image",
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/Logo-01.png" }]
+        }, {
+            "type": "paragraph",
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        }]
     },
     {
         "index": 4,
@@ -58,7 +86,14 @@
         "icon": "umbrella",
         "summary": "Development projects are bonded up to 25% of the total subscription price to guarantee minimum risk of delivery time, budget, and quality, valid until 120 days following release acceptance.",
         "category": "Coverage",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }]
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
+        "content": [{
+            "type": "image",
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/Logo-01.png" }]
+        }, {
+            "type": "paragraph",
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        }]
     },
     {
         "index": 6,
@@ -69,7 +104,14 @@
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Pricing",
         "cta": "Contact us",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg" }]
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg" }],
+        "content": [{
+            "type": "image",
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/Logo-01.png" }]
+        }, {
+            "type": "paragraph",
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        }]
     },
     {
         "index": 7,
@@ -79,6 +121,13 @@
         "icon": "fighter-jet",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Framework",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }]
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
+        "content": [{
+            "type": "image",
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/Logo-01.png" }]
+        }, {
+            "type": "paragraph",
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        }]
     }
 ]

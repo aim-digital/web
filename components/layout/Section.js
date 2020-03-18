@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import {transition} from '@boilerplatejs/core/actions/Transition';
@@ -37,7 +37,15 @@ export default class extends Section {
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">
-              {children}
+              <p><span>{solution.summary}</span></p>
+              {children || <>
+                {(solution.content || []).map((content, i) => {
+                  return <Fragment key={`page-content-${i}`}>
+                    {content.type === 'paragraph' && <p>{content.copy}</p>}
+                    {content.type === 'image' && <img src={content.media[0].url} />}
+                  </Fragment>
+                })}
+              </>}
               <div>
                 <Solution
                   onClick={this.openSolution}

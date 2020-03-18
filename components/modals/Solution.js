@@ -104,7 +104,7 @@ export default class extends Modal {
             {content.map((content, i) => {
               const Component = content.type === 'component' && _.get(components, content.value);
 
-              return <Fragment key={`content-${i}`}>
+              return <Fragment key={`detail-content-${i}`}>
                 {Component && <Component />}
                 {content.type === 'paragraph' && <p>{content.copy}</p>}
                 {content.type === 'image' && <img src={content.media[0].url} />}

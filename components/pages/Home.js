@@ -491,7 +491,7 @@ export default class extends Page {
     const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
     const height = length + (hasMany ? aggregateHeight(length - 1) : SECTION_HEIGHTS[SECTIONS[section].slide]);
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
-    const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://s3.amazonaws.com/foxzero.io/${name}.svg${wrap ? ')' : ''}`;
+    const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://d3w33imimg0eu8.cloudfront.net/${name}.svg${wrap ? ')' : ''}`;
 
     const renderLayer = (index = 0, offset = 0) => (component, i) => (
       <ParallaxLayer
