@@ -47,12 +47,17 @@ export default class extends Nav {
           dismiss();
         }
     } else {
-      label = formatters.section(id);
       app.scrollTop = 0;
       parallax && (parallax.scrollTop = 0);
-      track && analytics.Section.Navigation.Click.track(label);
-      transition('analytics.sources', [['Section.Navigation.Click', label].join('|')]);
       transition('page.impression', false);
+
+      if (track) {
+        label = formatters.section(id);
+        analytics.Section.Navigation.Click.track(label);
+        transition('analytics.sources', [['Section.Navigation.Click', label].join('|')]);
+      } else {
+        transition('analytics.sources', undefined);
+      }
     }
 
     this.id = id;

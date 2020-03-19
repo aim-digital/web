@@ -1,11 +1,28 @@
 import React from 'react';
+import {PropTypes} from 'prop-types';
+import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {Footer} from '@boilerplatejs/core/components/layout';
+import {transition} from '@boilerplatejs/core/actions/Transition';
+import {solutions} from '@fox-zero/web/data';
+import formatters from '@fox-zero/web/lib/formatters';
+import * as analytics from '@fox-zero/web/lib/analytics';
 
+const DEFAULT_ID = 'home';
+
+@connect(() => ({}), {transition})
 export default class extends Footer {
-  scrollTo = () => {
+  static propTypes = {
+    transition: PropTypes.func.isRequired
+  };
+
+  id = DEFAULT_ID;
+
+  scrollTo = (id, track) => {
+    const { transition } = this.props;
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
+    let label;
 
     if (app.scrollTo) {
       app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -14,10 +31,21 @@ export default class extends Footer {
       app.scrollTop = 0;
       parallax && (parallax.scrollTop = 0);
     }
+
+    transition('page.impression', false);
+
+    if (track) {
+      label = formatters.section(id);
+      analytics.Section.Footer.Click.track(label);
+      transition('analytics.sources', [['Section.Footer.Click', label].join('|')]);
+    } else {
+      transition('analytics.sources', undefined);
+    }
   };
 
   render() {
     const { scrollTo } = this;
+    const update = (id, track) => () => scrollTo(id, track);
 
     return (
       <Footer>
@@ -32,7 +60,7 @@ export default class extends Footer {
         <div className="content container">
           <div className="row">
             <div className="col-xs-12 logo text-center">
-              <Link to="/" onClick={scrollTo}>
+              <Link to="/" onClick={update(DEFAULT_ID, true)}>
                 <img src="/@fox-zero/web/images/logo.png" title="Fox Zero™ - High-Performance/Zero-Latency Consultancy™"/>
               </Link>
             </div>
@@ -73,9 +101,9 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-cogs"/> Services</h4>
                   <ul>
-                    <li><Link to="/consulting" onClick={scrollTo}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
-                    <li><Link to="/development" onClick={scrollTo}><i className="fa fa-wrench"/> Development</Link></li>
-                    <li><Link to="/maintenance" onClick={scrollTo}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
+                    <li><Link to="/consulting" onClick={update(solutions[0].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
+                    <li><Link to="/development" onClick={update(solutions[1].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
+                    <li><Link to="/maintenance" onClick={update(solutions[2].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -83,8 +111,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-cubes"/> Framework</h4>
                   <ul>
-                    <li><Link to="/strategy" onClick={scrollTo}><i className="fa fa-road"/> Strategy</Link></li>
-                    <li><Link to="/process" onClick={scrollTo}><i className="fa fa-fighter-jet"/> Process</Link></li>
+                    <li><Link to="/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-road"/> Strategy</Link></li>
+                    <li><Link to="/process" onClick={update(solutions[7].slug, true)}><i className="fa fa-fighter-jet"/> Process</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -92,9 +120,9 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/subscription" onClick={scrollTo}><i className="fa fa-refresh"/> Subscription</Link></li>
-                    <li><Link to="/warranty" onClick={scrollTo}><i className="fa fa-umbrella"/> Warranty</Link></li>
-                    <li><Link to="/on-demand" onClick={scrollTo}><i className="fa fa-power-off"/> On Demand</Link></li>
+                    <li><Link to="/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
+                    <li><Link to="/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
+                    <li><Link to="/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off"/> On Demand</Link></li>
                   </ul>
                 </li>
               </ul>
