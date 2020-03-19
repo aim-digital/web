@@ -12,12 +12,14 @@ import * as analytics from '@fox-zero/web/lib/analytics';
 @connect(state => ({
   timer: state['@boilerplatejs/core'].Transition.timer,
   slide: state['@boilerplatejs/core'].Transition.slide,
+  sources: state['@boilerplatejs/core'].Transition['analytics.sources'],
   impression: state['@boilerplatejs/core'].Transition['page.impression']
 }), {load, open, transition})
 
 export default class extends Header {
   static propTypes = {
     timer: PropTypes.number,
+    sources: PropTypes.any,
     slide: PropTypes.number,
     impression: PropTypes.bool,
     load: PropTypes.func.isRequired,
@@ -37,10 +39,11 @@ export default class extends Header {
   impressions = [];
 
   openSolution = async (solution) => {
-    const { load, open, transition } = this.props;
-    const { slug } = solution;
+    const { load, open, transition, sources } = this.props;
+    const { slug, section } = solution;
     await transition('timer.pause', true);
-    open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug) }) });
+    analytics.Section.Header.Click.track(section, sources);
+    open({ ...solution, ...{ sources: (sources || []).concat(['Section.Header.Click']) }, ...await load('posts', { slug: encodeURIComponent(slug) }) });
   };
 
   transitionBegin = () => {
@@ -49,13 +52,13 @@ export default class extends Header {
 
   transitionComplete = () => {
     const { impressions, props } = this;
-    const { impression, slide } = props;
+    const { impression, slide, sources } = props;
 
     this.setState({ loaded: true });
 
     if (!impression && !impressions[slide]) {
       impressions[slide] = true;
-      analytics.Section.Header.Impression.track(slide);
+      analytics.Section.Header.Impression.track(solutions[slide].section, sources);
     }
   };
 

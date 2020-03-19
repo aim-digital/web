@@ -63,6 +63,7 @@ const RE_LEGACY_IE = /Trident\/7/;
     slide, query: state.router.location.query,
     contact: state['@fox-zero/web'].Contact.current,
     reset: Transition['slide.reset'],
+    sources: state['@boilerplatejs/core'].Transition['analytics.sources'],
     solution
   });
 }, {transition, dismiss, update, load, open, close, create, destroy})
@@ -84,7 +85,8 @@ export default class extends Page {
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
     reset: PropTypes.bool,
-    section: PropTypes.string
+    section: PropTypes.string,
+    sources: PropTypes.any
   };
 
   static defaultProps = {
@@ -204,7 +206,7 @@ export default class extends Page {
 
   onScroll = () => {
     const { elements, section, props, impression, impressions } = this;
-    const { transition, reset, slide: current } = props;
+    const { transition, reset, slide: current, sources } = props;
     const { sections, form } = elements;
     const { length } = sections;
     const pageHeight = global.innerHeight;
@@ -227,7 +229,10 @@ export default class extends Page {
               this.impressions = [];
               form.impression = false;
               impressions[i] = true;
-              analytics.Section.Page.Impression.track(i);
+              analytics.Section.Page.Impression.track(
+                section ? formatters.section(section) : ['Home', solutions[i].section].join(','),
+                sources
+              );
             }
           } else {
             impressions[i] = false;
@@ -242,7 +247,7 @@ export default class extends Page {
         if (!form.impression) {
           this.impressions = [];
           form.impression = true;
-          analytics.Form.Page.Impression.track(formatters.section(section || 'Home'));
+          analytics.Form.Page.Impression.track(formatters.section(section || 'Home'), sources);
         }
       } else {
         form.impression = false;
@@ -335,15 +340,15 @@ export default class extends Page {
     }
   };
 
-  openSolution = async (solution) => {
+  openSolution = async (solution, sources) => {
     const { load, open, transition } = this.props;
     const { slug } = solution;
     await transition('timer.pause', true);
-    open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug) }) });
+    open({ ...solution, ...{ sources }, ...await load('posts', { slug: encodeURIComponent(slug) }) });
   };
 
   renderSolution = transition => (solution, i) => {
-    const { slide } = this.props;
+    const { slide, sources } = this.props;
     const { ready } = this.state;
 
     return <Solution
@@ -353,13 +358,8 @@ export default class extends Page {
       tooltip="Click to open overlay screen"
       transition={transition(i)}
       onClick={() => {
-        this.openSolution(solution);
-
-        // ReactGA.event({
-        //   category: `Solution`,
-        //   action: `Click`,
-        //   label: solution.title
-        // });
+        analytics.Section.Click.track(solution.section, sources);
+        this.openSolution(solution, (sources || []).concat(['Section.App.Click']));
       }}>
         <>
           <span>{solution.section} &bull;</span> {solution.title}

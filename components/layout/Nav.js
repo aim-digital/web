@@ -30,6 +30,7 @@ export default class extends Nav {
     const { transition, dismiss, section } = this.props;
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
+    let label;
 
     if (this.id === id) {
       if (!section)
@@ -37,7 +38,6 @@ export default class extends Nav {
 
         if (app.scrollTo) {
           app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-
           parallax && parallax.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
           clearTimeout(this.dismiss);
           this.dismiss = setTimeout(dismiss, parallax ? parallax.scrollTop * 0.25 : 500);
@@ -47,9 +47,12 @@ export default class extends Nav {
           dismiss();
         }
     } else {
+      label = formatters.section(id);
       app.scrollTop = 0;
       parallax && (parallax.scrollTop = 0);
-      track && analytics.Section.Navigation.Click.track(formatters.section(id));
+      track && analytics.Section.Navigation.Click.track(label);
+      transition('analytics.sources', [['Section.Navigation.Click', label].join('|')]);
+      transition('page.impression', false);
     }
 
     this.id = id;

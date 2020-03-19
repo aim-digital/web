@@ -6,12 +6,14 @@ import {load} from '@boilerplatejs/strapi/actions/Entry';
 import {open} from '@fox-zero/web/actions/Solution';
 import {Section} from '@boilerplatejs/core/components/layout';
 import {Solution} from '@fox-zero/web/components/buttons';
+import * as analytics from '@fox-zero/web/lib/analytics';
 
-@connect(() => ({}), {transition, load, open})
+@connect(state => ({sources: state['@boilerplatejs/core'].Transition['analytics.sources']}), {transition, load, open})
 
 export default class extends Section {
   static propTypes = {
     children: PropTypes.any,
+    sources: PropTypes.any,
     transition: PropTypes.func.isRequired,
     load: PropTypes.func.isRequired,
     open: PropTypes.func.isRequired,
@@ -21,9 +23,10 @@ export default class extends Section {
   };
 
   openSolution = async () => {
-    const { load, open, solution } = this.props;
-    const { slug } = solution;
-    open({ ...solution, ...await load('posts', { slug: encodeURIComponent(slug) }) });
+    const { load, open, solution, sources } = this.props;
+    const { slug, section } = solution;
+    analytics.Section.Page.Click.track(section, sources);
+    open({ ...solution, ...{ sources: (sources || []).concat(['Section.Page.Click']) }, ...await load('posts', { slug: encodeURIComponent(slug) }) });
   };
 
   render() {

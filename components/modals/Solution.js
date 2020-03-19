@@ -7,7 +7,7 @@ import {create, destroy} from '@fox-zero/web/actions/Contact';
 import {Contact} from '@fox-zero/web/components/forms';
 import {Modal} from '@fox-zero/web/components/layout';
 import * as components from '@fox-zero/web/components';
-// import * as analytics from '@fox-zero/web/lib/analytics';
+import * as analytics from '@fox-zero/web/lib/analytics';
 
 const {
   FacebookShareButton,
@@ -79,7 +79,7 @@ export default class extends Modal {
   render() {
     const { solution, contact, destroy: reset } = this.props;
     const { message } = this.state.form;
-    const { slug, content, summary, title, subject, icon, section, media = [] } = solution;
+    const { slug, content, summary, title, subject, icon, section, media = [], sources } = solution;
     const { location = {} } = global;
     const [hero = {}] = media;
     const share = {
@@ -88,6 +88,10 @@ export default class extends Modal {
       subject: section ? `${section} · ${subject || title}` : subject || title,
       hashtags: ['software', 'agency', (section || 'consulting').toLowerCase()]
     };
+
+    if (slug) {
+      analytics.Section.Detail.Impression.track(section, sources);
+    }
 
     return (
       <Modal {..._.omit(this.props, ['update', 'solution', 'create', 'destroy'])}
