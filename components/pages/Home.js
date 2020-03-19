@@ -52,6 +52,8 @@ const SECTIONS = {
   'process': { slide: 7 }
 };
 
+const RE_LEGACY_IE = /Trident\/7/;
+
 @connect(state => {
   const { Transition } = state['@boilerplatejs/core'];
   const { slide = 0 } = Transition;
@@ -368,7 +370,6 @@ export default class extends Page {
   submit = values => {
     const { update, create } = this.props;
     const { email } = values;
-    const ga = { category: 'Quote Form', action: 'Submit' };
 
     if (email) {
       // ReactGA.event({ ...ga, label: `Attempt` });
@@ -423,7 +424,7 @@ export default class extends Page {
     const { isMobile } = this.state;
     const { title, summary } = brand;
 
-    if (isMobile && !contact) {
+    if ((isMobile || RE_LEGACY_IE.test(window.navigator.userAgent)) && !contact) {
       transition('timer.pause', true);
       open({ subject: title, summary });
 

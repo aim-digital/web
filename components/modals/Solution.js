@@ -38,7 +38,6 @@ export default class extends Modal {
     const { update, solution, create } = this.props;
     const { section = 'Home' } = solution;
     const { email } = values;
-    const ga = { category: 'Solution Form', label: section };
 
     if (email) {
       // ReactGA.event({ ...ga, action: `Submit` });
