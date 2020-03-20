@@ -301,6 +301,10 @@ export default class extends Page {
     return this.section ? 1 : this.props.sections.length;
   }
 
+  get formatted() {
+    return formatters.section(this.section || 'Home');
+  }
+
   get content() {
     const headerClass = this.length % 2 ? 'text-right' : '';
 
@@ -368,11 +372,12 @@ export default class extends Page {
   }
 
   submit = values => {
-    const { update, create } = this.props;
+    const { formatted } = this;
+    const { update, create, sources } = this.props;
     const { email } = values;
 
     if (email) {
-      // ReactGA.event({ ...ga, label: `Attempt` });
+      analytics.Form.Page.Submission.track(formatted, sources);
 
       update({
         lead: true,
@@ -384,7 +389,7 @@ export default class extends Page {
           lastname: values.lastName,
           phone: values.phone,
           company: values.company,
-          section: formatters.section(this.section || 'Home'),
+          section: formatted,
           application: 'Fox Zero™ Marketing App'
         }
       })
@@ -392,8 +397,14 @@ export default class extends Page {
           create(contact);
           this.setState({ form: { message: null } });
         })
-        // .then(() => ReactGA.event({ ...ga, label: `Success` }))
-        .catch(({message}) => this.setState({ form: { message } }));
+        .then(() => {
+          analytics.Form.Page.Success.track(formatted, sources);
+          analytics.Confirmation.Page.Impression.track(formatted, sources);
+        })
+        .catch(({message, status, code, errorCode}) => {
+          this.setState({ form: { message } });
+          analytics.Form.Page.Failure.track([formatted, status || code || errorCode].join(','), sources);
+        });
     }
   };
 
@@ -454,9 +465,10 @@ export default class extends Page {
   };
 
   onShare = (source, { email, shares }) => async () => {
-    const { update, create, contact } = this.props;
-    const updated = await update({ lead: true, properties: { email: email.value, shares: [shares.value].concat(source).join(';') } });
+    const { update, create, contact, sources } = this.props;
+    const updated = await update({ lead: true, properties: { email: email.value, shares: [shares ? shares.value : []].concat(source).join(';') } });
     contact && create(updated);
+    analytics.Confirmation.Page.Share.track([this.formatted, source].join(','), sources);
   };
 
   renderShare = ({ slug, summary, title, subject, section }) => {
@@ -485,8 +497,8 @@ export default class extends Page {
   };
 
   render() {
-    const { props, state, sections, length, closeSolution, section } = this;
-    const { className, classNames = {}, solution, contact, destroy: reset } = props;
+    const { props, state, sections, length, closeSolution, section, formatted } = this;
+    const { className, classNames = {}, solution, contact, destroy: reset, sources } = props;
     const { animating, isMobile, isLandscape } = state;
     const { message } = state.form;
 
@@ -633,7 +645,7 @@ export default class extends Page {
                         {contact && <>
                           <h4>Schedule a Call</h4>
                           <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
-                          <button className="btn btn-success">
+                          <button className="btn btn-success" onClick={() => analytics.Confirmation.Page.Booking.track(formatted, sources)}>
                             <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
                             <i className="fa fa-link" />
                           </button>
@@ -651,7 +663,7 @@ export default class extends Page {
                         {contact && this.renderShare(this.section ? solutions[SECTIONS[this.section].slide] : brand)}
                         <br />
                         <br />
-                        <button className="btn btn-success" onClick={reset}>Reset Form</button>
+                        <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
                       </div>
                     </div>
                     <forms.Contact quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
