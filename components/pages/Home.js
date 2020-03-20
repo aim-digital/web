@@ -420,13 +420,17 @@ export default class extends Page {
   };
 
   openContact = () => {
-    const { open, contact } = this.props;
+    const { section } = this;
+    const { open, contact, sources } = this.props;
     const { isMobile } = this.state;
     const { title, summary } = brand;
+    let label;
 
     if ((isMobile || RE_LEGACY_IE.test(window.navigator.userAgent)) && !contact) {
+      label = formatters.section(section || 'Home');
+      analytics.Form.Page.Click.track(label, sources);
       transition('timer.pause', true);
-      open({ subject: title, summary });
+      open({ subject: title, summary, section: label, sources: (sources || []).concat(['Form.Page.Click']) });
 
       setTimeout(() => {
         const dialog = document.getElementById('solution-modal').querySelector('.modal-dialog');

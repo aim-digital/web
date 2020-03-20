@@ -29,6 +29,14 @@ export default class extends Modal {
     }
   };
 
+  componentDidUpdate(props) {
+    const { solution: { slug, section = ' Home', sources } } = this.props;
+
+    if (slug && props.solution.slug !== slug) {
+      analytics.Section.Detail.Impression.track(section, sources);
+    }
+  }
+
   onHide = (...args) => {
     this.props.onHide.apply(this, args);
     this.setState({ form: { message: null } });
@@ -36,11 +44,11 @@ export default class extends Modal {
 
   submit = values => {
     const { update, solution, create } = this.props;
-    const { section = 'Home' } = solution;
+    const { section = 'Home', sources } = solution;
     const { email } = values;
 
     if (email) {
-      // ReactGA.event({ ...ga, action: `Submit` });
+      analytics.Form.Detail.Submission.track(section, sources);
 
       update({
         lead: true,
@@ -60,8 +68,14 @@ export default class extends Modal {
           create(contact);
           this.setState({ form: { message: null } });
         })
-        // .then(() => ReactGA.event({ ...ga, action: `Success` }))
-        .catch(({message}) => this.setState({ form: { message } }));
+        .then(() => {
+          analytics.Form.Detail.Success.track(section, sources);
+          analytics.Confirmation.Detail.Impression.track(section, sources);
+        })
+        .catch(({message, status, code, errorCode}) => {
+          this.setState({ form: { message } });
+          analytics.Form.Detail.Failure.track([section, status || code || errorCode].join(','), sources);
+        });
     }
   };
 
@@ -71,9 +85,10 @@ export default class extends Modal {
   };
 
   onShare = (source, { email, shares }) => async () => {
-    const { update, create, contact } = this.props;
-    const updated = await update({ lead: true, properties: { email: email.value, shares: [shares.value].concat(source).join(';') } });
+    const { update, create, contact, solution: { section = 'Home', sources } } = this.props;
+    const updated = await update({ lead: true, properties: { email: email.value, shares: [shares ? shares.value : []].concat(source).join(';') } });
     contact && create(updated);
+    analytics.Confirmation.Detail.Share.track([section, source].join(','), sources);
   };
 
   render() {
@@ -88,10 +103,6 @@ export default class extends Modal {
       subject: section ? `${section} · ${subject || title}` : subject || title,
       hashtags: ['software', 'agency', (section || 'consulting').toLowerCase()]
     };
-
-    if (slug) {
-      analytics.Section.Detail.Impression.track(section, sources);
-    }
 
     return (
       <Modal {..._.omit(this.props, ['update', 'solution', 'create', 'destroy'])}
@@ -126,7 +137,7 @@ export default class extends Modal {
                   {contact && <>
                     <h4>Schedule a Call</h4>
                     <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
-                    <button className="btn btn-success">
+                    <button className="btn btn-success" onClick={() => analytics.Confirmation.Detail.Booking.track(section || 'Home', sources)}>
                       <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
                       <i className="fa fa-link" />
                     </button>
@@ -157,7 +168,7 @@ export default class extends Modal {
                   </div>}
                   <br />
                   <br />
-                  <button className="btn btn-success" onClick={reset}>Reset Form</button>
+                  <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Detail.Reset.track(section || 'Home', sources); }}>Reset Form</button>
                 </div>
               </div>
               <Contact quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
