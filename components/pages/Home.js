@@ -6,6 +6,7 @@ import {Link} from 'react-router';
 import {ShareButtons} from 'react-share';
 import {Page} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
+import {check} from '@fox-zero/web/actions/Verification';
 import {dismiss} from '@fox-zero/web/actions/Nav';
 import {open, close} from '@fox-zero/web/actions/Solution';
 import {create, destroy} from '@fox-zero/web/actions/Contact';
@@ -54,6 +55,9 @@ const SECTIONS = {
 
 const RE_LEGACY_IE = /Trident\/7/;
 
+const VERIFY_ACTION = 'form_page_submission';
+const VERIFY_GRADE = 0.65;
+
 @connect(state => {
   const { Transition } = state['@boilerplatejs/core'];
   const { slide = 0 } = Transition;
@@ -64,9 +68,10 @@ const RE_LEGACY_IE = /Trident\/7/;
     contact: state['@fox-zero/web'].Contact.current,
     reset: Transition['slide.reset'],
     sources: state['@boilerplatejs/core'].Transition['analytics.sources'],
+    config: state['@boilerplatejs/core'].Config['@boilerplatejs/core'],
     solution
   });
-}, {transition, dismiss, update, load, open, close, create, destroy})
+}, {transition, dismiss, update, load, open, close, create, destroy, check})
 
 export default class extends Page {
   static propTypes = {
@@ -81,6 +86,7 @@ export default class extends Page {
     classNames: PropTypes.object,
     solution: PropTypes.object,
     contact: PropTypes.object,
+    config: PropTypes.object,
     param: PropTypes.object,
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
@@ -373,38 +379,54 @@ export default class extends Page {
 
   submit = values => {
     const { formatted } = this;
-    const { update, create, sources } = this.props;
+    const { update, create, sources, config: { recaptchaSiteKey }, check } = this.props;
     const { email } = values;
 
-    if (email) {
-      analytics.Form.Page.Submission.track(formatted, sources);
+    const submit = async () => {
+      try {
+        const { score } = recaptchaSiteKey ? await grecaptcha.execute(recaptchaSiteKey, { action: VERIFY_ACTION }).then(token => check(token, VERIFY_ACTION)) : {};
 
-      update({
-        lead: true,
-        newsletter: !(values.newsletter === false),
-        properties: {
-          email,
-          message: values.comment,
-          firstname: values.firstName,
-          lastname: values.lastName,
-          phone: values.phone,
-          company: values.company,
-          section: formatted,
-          application: 'Fox Zero™ Marketing App'
+        if (score && score < VERIFY_GRADE) {
+          let e = new Error('Unauthorized submission reported by bot verification check.');
+          e.name = 'Verification';
+          e.code = 403;
+          throw e;
         }
-      })
-        .then(contact => {
-          create(contact);
-          this.setState({ form: { message: null } });
-        })
-        .then(() => {
-          analytics.Form.Page.Success.track(formatted, sources);
-          analytics.Confirmation.Page.Impression.track(formatted, sources);
-        })
-        .catch(({message, status, code, errorCode}) => {
-          this.setState({ form: { message } });
-          analytics.Form.Page.Failure.track([formatted, status || code || errorCode].join(','), sources);
+
+        analytics.Form.Page.Submission.track(formatted, sources);
+
+        const contact = await update({
+          lead: true,
+          newsletter: !(values.newsletter === false),
+          properties: {
+            email,
+            message: values.comment,
+            firstname: values.firstName,
+            lastname: values.lastName,
+            phone: values.phone,
+            company: values.company,
+            section: formatted,
+            application: 'Fox Zero™ Marketing App'
+          }
         });
+
+        create(contact);
+        this.setState({ form: { message: null } });
+        analytics.Form.Page.Success.track(formatted, sources);
+        analytics.Confirmation.Page.Impression.track(formatted, sources);
+      } catch (e) {
+        const { message, status, code, errorCode, name } = e;
+        this.setState({ form: { message } });
+        analytics.Form.Page.Failure.track([formatted].concat(name || []).concat(status || code || errorCode || []).join(','), sources);
+      }
+    };
+
+    if (email) {
+      if (recaptchaSiteKey) {
+        grecaptcha.ready(submit);
+      } else {
+        submit();
+      }
     }
   };
 
@@ -667,7 +689,7 @@ export default class extends Page {
                       </div>
                     </div>
                     <forms.Contact quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
-                    {!contact && message && <div className="error">{message}</div>}
+                    {!contact && message && <span className="error">{message}</span>}
                   </div>
                 </section>
               </ParallaxLayer>

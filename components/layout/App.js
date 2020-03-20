@@ -25,10 +25,14 @@ import * as Session from '@boilerplatejs/core/actions/Session';
   }
 }])
 
-@connect(state => ({ user: state['@boilerplatejs/core'].Session.user }), {pushState})
+@connect(state => ({
+  user: state['@boilerplatejs/core'].Session.user,
+  config: state['@boilerplatejs/core'].Config['@boilerplatejs/core']
+}), {pushState})
 
 export default class extends App {
   static propTypes = {
+    config: PropTypes.object,
     children: PropTypes.object.isRequired,
     user: PropTypes.object,
     pushState: PropTypes.func.isRequired
@@ -45,10 +49,15 @@ export default class extends App {
   }
 
   render() {
+    const { recaptchaSiteKey } = this.props.config;
+
     return (
       <App {...this.props} nav={<Nav/>}>
         {this.props.children}
-        {/*<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>*/}
+        {recaptchaSiteKey && <>
+          <script async src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}></script>
+        </>}
+        <script async type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4265573.js"></script>
       </App>
     );
   }

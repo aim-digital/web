@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {ShareButtons} from 'react-share';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
 import {create, destroy} from '@fox-zero/web/actions/Contact';
+import {check} from '@fox-zero/web/actions/Verification';
 import {Contact} from '@fox-zero/web/components/forms';
 import {Modal} from '@fox-zero/web/components/layout';
 import * as components from '@fox-zero/web/components';
@@ -16,7 +17,13 @@ const {
   LinkedinShareButton
 } = ShareButtons;
 
-@connect(state => ({contact: state['@fox-zero/web'].Contact.current}), {update, create, destroy})
+const VERIFY_ACTION = 'form_detail_submission';
+const VERIFY_GRADE = 0.65;
+
+@connect(state => ({
+  contact: state['@fox-zero/web'].Contact.current,
+  config: state['@boilerplatejs/core'].Config['@boilerplatejs/core']
+}), {update, create, destroy, check})
 export default class extends Modal {
   static defaultProps = {
     onHide: () => {},
@@ -43,39 +50,55 @@ export default class extends Modal {
   };
 
   submit = values => {
-    const { update, solution, create } = this.props;
+    const { update, solution, create, config: { recaptchaSiteKey }, check } = this.props;
     const { section = 'Home', sources } = solution;
     const { email } = values;
 
-    if (email) {
-      analytics.Form.Detail.Submission.track(section, sources);
+    const submit = async () => {
+      try {
+        const { score } = recaptchaSiteKey ? await grecaptcha.execute(recaptchaSiteKey, { action: VERIFY_ACTION }).then(token => check(token, VERIFY_ACTION)) : {};
 
-      update({
-        lead: true,
-        newsletter: !(values.newsletter === false),
-        properties: {
-          email,
-          message: values.comment,
-          firstname: values.firstName,
-          lastname: values.lastName,
-          phone: values.phone,
-          company: values.company,
-          section,
-          application: 'Fox Zero™ Marketing App'
+        if (score && score < VERIFY_GRADE) {
+          let e = new Error('Unauthorized submission reported by bot verification check.');
+          e.name = 'Verification';
+          e.code = 403;
+          throw e;
         }
-      })
-        .then(contact => {
-          create(contact);
-          this.setState({ form: { message: null } });
-        })
-        .then(() => {
-          analytics.Form.Detail.Success.track(section, sources);
-          analytics.Confirmation.Detail.Impression.track(section, sources);
-        })
-        .catch(({message, status, code, errorCode}) => {
-          this.setState({ form: { message } });
-          analytics.Form.Detail.Failure.track([section, status || code || errorCode].join(','), sources);
+
+        analytics.Form.Detail.Submission.track(section, sources);
+
+        const contact = await update({
+          lead: true,
+          newsletter: !(values.newsletter === false),
+          properties: {
+            email,
+            message: values.comment,
+            firstname: values.firstName,
+            lastname: values.lastName,
+            phone: values.phone,
+            company: values.company,
+            section,
+            application: 'Fox Zero™ Marketing App'
+          }
         });
+
+        create(contact);
+        this.setState({ form: { message: null } });
+        analytics.Form.Detail.Success.track(section, sources);
+        analytics.Confirmation.Detail.Impression.track(section, sources);
+      } catch (e) {
+        const { message, status, code, errorCode, name } = e;
+        this.setState({ form: { message } });
+        analytics.Form.Detail.Failure.track([section].concat(name || []).concat(status || code || errorCode || []).join(','), sources);
+      }
+    };
+
+    if (email) {
+      if (recaptchaSiteKey) {
+        grecaptcha.ready(submit);
+      } else {
+        submit();
+      }
     }
   };
 
@@ -105,7 +128,7 @@ export default class extends Modal {
     };
 
     return (
-      <Modal {..._.omit(this.props, ['update', 'solution', 'create', 'destroy'])}
+      <Modal {..._.omit(this.props, ['update', 'solution', 'create', 'destroy', 'check'])}
         onHide={this.onHide}
         className={`solution ${slug ? '' : 'contact'}`}
         title={title}
@@ -172,7 +195,7 @@ export default class extends Modal {
                 </div>
               </div>
               <Contact quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
-              {!contact && message && <div className="error">{message}</div>}
+              {!contact && message && <span className="error">{message}</span>}
             </div>
           </section>
         </section>
