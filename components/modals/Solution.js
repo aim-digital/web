@@ -3,8 +3,8 @@ import _ from 'lodash';
 import {connect} from 'react-redux';
 import {ShareButtons} from 'react-share';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
+import {check} from '@boilerplatejs/core/actions/Verification';
 import {create, destroy} from '@fox-zero/web/actions/Contact';
-import {check} from '@fox-zero/web/actions/Verification';
 import {Contact} from '@fox-zero/web/components/forms';
 import {Modal} from '@fox-zero/web/components/layout';
 import * as components from '@fox-zero/web/components';
@@ -22,7 +22,7 @@ const VERIFY_GRADE = 0.65;
 
 @connect(state => ({
   contact: state['@fox-zero/web'].Contact.current,
-  config: state['@boilerplatejs/core'].Config['@boilerplatejs/core']
+  recaptchaSiteKey: state['@boilerplatejs/core'].Config['@boilerplatejs/core'].recaptchaSiteKey
 }), {update, create, destroy, check})
 export default class extends Modal {
   static defaultProps = {
@@ -51,7 +51,7 @@ export default class extends Modal {
   };
 
   submit = values => {
-    const { update, solution, create, config: { recaptchaSiteKey }, check } = this.props;
+    const { update, solution, create, recaptchaSiteKey, check } = this.props;
     const { section = 'Home', sources } = solution;
     const { email } = values;
 
@@ -199,7 +199,7 @@ export default class extends Modal {
               </div>
               <Contact status={status} quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
               {!contact && message && <span className="error">{message}</span>}
-              {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>}
+              {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
             </div>
           </section>
         </section>

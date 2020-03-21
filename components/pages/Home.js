@@ -6,7 +6,7 @@ import {Link} from 'react-router';
 import {ShareButtons} from 'react-share';
 import {Page} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
-import {check} from '@fox-zero/web/actions/Verification';
+import {check} from '@boilerplatejs/core/actions/Verification';
 import {dismiss} from '@fox-zero/web/actions/Nav';
 import {open, close} from '@fox-zero/web/actions/Solution';
 import {create, destroy} from '@fox-zero/web/actions/Contact';
@@ -68,7 +68,7 @@ const VERIFY_GRADE = 0.65;
     contact: state['@fox-zero/web'].Contact.current,
     reset: Transition['slide.reset'],
     sources: state['@boilerplatejs/core'].Transition['analytics.sources'],
-    config: state['@boilerplatejs/core'].Config['@boilerplatejs/core'],
+    recaptchaSiteKey: state['@boilerplatejs/core'].Config['@boilerplatejs/core'].recaptchaSiteKey,
     solution
   });
 }, {transition, dismiss, update, load, open, close, create, destroy, check})
@@ -86,7 +86,7 @@ export default class extends Page {
     classNames: PropTypes.object,
     solution: PropTypes.object,
     contact: PropTypes.object,
-    config: PropTypes.object,
+    recaptchaSiteKey: PropTypes.any,
     param: PropTypes.object,
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
@@ -380,7 +380,7 @@ export default class extends Page {
 
   submit = values => {
     const { formatted } = this;
-    const { update, create, sources, config: { recaptchaSiteKey }, check } = this.props;
+    const { update, create, sources, recaptchaSiteKey, check } = this.props;
     const { email } = values;
 
     const submit = async () => {
@@ -693,7 +693,7 @@ export default class extends Page {
                     </div>
                     <forms.Contact status={status} quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
                     {!contact && message && <span className="error">{message}</span>}
-                    {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>}
+                    {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
                   </div>
                 </section>
               </ParallaxLayer>
