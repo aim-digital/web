@@ -44,10 +44,12 @@ export default class extends Component {
     cancelText: PropTypes.string,
     onCancel: PropTypes.func,
     newsletterText: PropTypes.string,
+    status: PropTypes.string,
     quote: PropTypes.bool
   };
 
   static defaultProps = {
+    status: null,
     submitText: 'Submit',
     cancelText: 'Cancel',
     newsletterText: 'Sign up for our newsletter!',
@@ -66,7 +68,8 @@ export default class extends Component {
       cancelText,
       onCancel,
       newsletterText,
-      quote
+      quote,
+      status
     } = this.props;
 
     const renderInput = (field, label, placeholder, showAsyncValidating) =>
@@ -96,11 +99,11 @@ export default class extends Component {
           </label>
         </div>}
         <div className="form-group submit">
-          <button className="btn btn-success" type="submit">{submitText}</button>
-          {onCancel && <button type="button" className="btn btn-danger" onClick={onCancel}>{cancelText}</button>}
-          {/*<button className="btn btn-warning" onClick={resetForm} style={{marginLeft: 15}}>
-            <i className="fa fa-undo"/> Reset
-          </button>*/}
+          <button className="btn btn-success" type="submit" disabled={!!status} data-status={status ? `${status}...` : ''}>
+            <span>{submitText}</span>
+            {status && <i className="fa fa-cogs" />}
+          </button>
+          {onCancel && <button type="button" className="btn btn-danger" disabled={!!status} onClick={onCancel}>{cancelText}</button>}
         </div>
       </form>
     );

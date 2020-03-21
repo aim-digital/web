@@ -89,6 +89,14 @@ section.quote {
     padding-right: 30px !important;
   }
 
+  .legal {
+    font-size: .65em;
+    color: $humility;
+    line-height: 1.25;
+    display: block;
+    padding: 5px 0;
+  }
+
   .form {
     box-shadow: 0 0 20px $black-color;
     font-size: 1em;
@@ -203,18 +211,20 @@ section.quote {
         pointer-events: auto;
       }
 
-      form {
+      form, .legal {
         opacity: 0;
         pointer-events: none;
         z-index: 1;
       }
     }
 
-    form {
+    form, .legal {
       transition: opacity .25s;
       position: relative;
       z-index: 2;
+    }
 
+    form {
       .firstName,
       .lastName,
       .email,

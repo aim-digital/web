@@ -1,3 +1,12 @@
+@keyframes rotate-icon {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 button {
   @media print {
     display: none !important;
@@ -25,13 +34,14 @@ button.btn {
   &.btn-success {
     font-size: 1.35em;
     background: $black-color;
+    position: relative;
 
     &, & a {
       color: $primary-yellow-color;
       text-decoration: none;
     }
 
-    a, i {
+    span, a, i {
       display: table-cell;
     }
 
@@ -52,16 +62,55 @@ button.btn {
         color: $black-color;
       }
     }
+
+    &[disabled] {
+      &:before {
+        position: absolute;
+        content: attr(data-status);
+        top: 0;
+        left: 0;
+        font-size: .65em;
+        color: $black-color;
+        margin-top: -15px;
+        margin-left: -15px;
+        font-family: $font-family-sans-serif;
+        text-transform: none;
+        background: $primary-green-color;
+        border-radius: 5px;
+        display: block;
+        padding: 2px 10px;
+        font-weight: bold;
+      }
+
+      &:hover, &:active, &:focus {
+        background: $black-color;
+
+        &, & a {
+          color: $primary-yellow-color;
+        }
+      }
+
+      i:before {
+        animation-name: rotate-icon;
+        animation-iteration-count: infinite;
+        animation-duration: 2.5s;
+        animation-timing-function: linear;
+        display: inline-block;
+      }
+    }
   }
 
   &.btn-danger {
     font-size: 1em;
-    background: $black-color;
-    color: $humility;
 
     &:hover, &:active {
       background: $primary-yellow-color;
       color: $black-color;
+    }
+
+    &, &[disabled] {
+      background: $black-color;
+      color: $humility;
     }
   }
 }

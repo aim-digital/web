@@ -108,7 +108,8 @@ export default class extends Page {
     isLandscape: false,
     ready: false,
     form: {
-      message: null
+      message: null,
+      status: null
     }
   };
 
@@ -393,6 +394,7 @@ export default class extends Page {
           throw e;
         }
 
+        this.setState({ form: { message: null, status: 'Submitting' } });
         analytics.Form.Page.Submission.track(formatted, sources);
 
         const contact = await update({
@@ -411,18 +413,19 @@ export default class extends Page {
         });
 
         create(contact);
-        this.setState({ form: { message: null } });
+        this.setState({ form: { message: null, status: null } });
         analytics.Form.Page.Success.track(formatted, sources);
         analytics.Confirmation.Page.Impression.track(formatted, sources);
       } catch (e) {
         const { message, status, code, errorCode, name } = e;
-        this.setState({ form: { message } });
+        this.setState({ form: { message, status: null } });
         analytics.Form.Page.Failure.track([formatted].concat(name || []).concat(status || code || errorCode || []).join(','), sources);
       }
     };
 
     if (email) {
       if (recaptchaSiteKey) {
+        this.setState({ form: { message: null, status: 'Verifying' } });
         grecaptcha.ready(submit);
       } else {
         submit();
@@ -522,7 +525,7 @@ export default class extends Page {
     const { props, state, sections, length, closeSolution, section, formatted } = this;
     const { className, classNames = {}, solution, contact, destroy: reset, sources } = props;
     const { animating, isMobile, isLandscape } = state;
-    const { message } = state.form;
+    const { message, status } = state.form;
 
     const SECTION_HEIGHTS = [0, 0, 0, 0, isMobile ? 0.275 : 0, 0, 0, 0];
     const aggregateHeight = offset => SECTION_HEIGHTS.slice(0, offset).reduce((a, b) => a + b, 0);
@@ -688,8 +691,9 @@ export default class extends Page {
                         <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
                       </div>
                     </div>
-                    <forms.Contact quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
+                    <forms.Contact status={status} quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
                     {!contact && message && <span className="error">{message}</span>}
+                    {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>}
                   </div>
                 </section>
               </ParallaxLayer>

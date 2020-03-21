@@ -32,7 +32,8 @@ export default class extends Modal {
 
   state = {
     form: {
-      message: null
+      message: null,
+      status: null
     }
   };
 
@@ -65,6 +66,7 @@ export default class extends Modal {
           throw e;
         }
 
+        this.setState({ form: { message: null, status: 'Submitting' } });
         analytics.Form.Detail.Submission.track(section, sources);
 
         const contact = await update({
@@ -83,18 +85,19 @@ export default class extends Modal {
         });
 
         create(contact);
-        this.setState({ form: { message: null } });
+        this.setState({ form: { message: null, status: null } });
         analytics.Form.Detail.Success.track(section, sources);
         analytics.Confirmation.Detail.Impression.track(section, sources);
       } catch (e) {
         const { message, status, code, errorCode, name } = e;
-        this.setState({ form: { message } });
+        this.setState({ form: { message, status: null } });
         analytics.Form.Detail.Failure.track([section].concat(name || []).concat(status || code || errorCode || []).join(','), sources);
       }
     };
 
     if (email) {
       if (recaptchaSiteKey) {
+        this.setState({ form: { message: null, status: 'Verifying' } });
         grecaptcha.ready(submit);
       } else {
         submit();
@@ -116,7 +119,7 @@ export default class extends Modal {
 
   render() {
     const { solution, contact, destroy: reset } = this.props;
-    const { message } = this.state.form;
+    const { message, status } = this.state.form;
     const { slug, content, summary, title, subject, icon, section, media = [], sources } = solution;
     const { location = {} } = global;
     const [hero = {}] = media;
@@ -194,8 +197,9 @@ export default class extends Modal {
                   <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Detail.Reset.track(section || 'Home', sources); }}>Reset Form</button>
                 </div>
               </div>
-              <Contact quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
+              <Contact status={status} quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
               {!contact && message && <span className="error">{message}</span>}
+              {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>}
             </div>
           </section>
         </section>
