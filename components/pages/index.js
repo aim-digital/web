@@ -7,3 +7,4 @@ export Subscription from './Subscription';
 export Warranty from './Warranty';
 export OnDemand from './OnDemand';
 export Process from './Process';
+export About from './About';

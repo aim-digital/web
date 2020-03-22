@@ -1,7 +1,6 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-// import ReactGA from 'react-ga';
 import {Header} from '@fox-zero/web/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {load} from '@boilerplatejs/strapi/actions/Entry';
@@ -62,12 +61,12 @@ export default class extends Header {
     }
   };
 
-  renderTitle = (i, className = '', heading) => {
+  renderTitle = (i, heading) => {
     const solution = solutions[i];
     const { section, title, summary } = solution;
 
     return (
-      <div className={`${className} content`} key={`slide-${i}`}>
+      <div className="content" key={`slide-${i}`}>
         <h1>{section}</h1>
         <h2>{heading || title}</h2>
         <section className="preview">
@@ -85,12 +84,10 @@ export default class extends Header {
   render() {
     const { renderTitle, props } = this;
     const { timer } = props;
-    const { slide, content } = require('./Component.scss');
 
     return (
         <Header timer={timer}
           runOnMount={__CLIENT__}
-          className={slide}
           onTransitionComplete={this.transitionComplete}
           onTransitionBegin={this.transitionBegin}
           images={solutions.map(solution => solution.media[0].url)}>
@@ -103,7 +100,7 @@ export default class extends Header {
             <>Wingman™<br />Surety Coverage</>,
             <>Point &amp; Pay™<br />Sprint Pricing</>,
             <>Tactical Project<br />Management</>
-          ].map((title, i) => renderTitle(i, content, title))}
+          ].map((title, i) => renderTitle(i, title))}
         </Header>
     );
   }

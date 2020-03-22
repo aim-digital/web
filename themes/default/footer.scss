@@ -20,6 +20,12 @@ footer {
     width: 100%;
   }
 
+  .home.about.page & {
+    bottom: auto;
+    position: relative;
+    width: auto;
+  }
+
   .no-js .home.page & {
     opacity: 0 !important;
     pointer-events: none;

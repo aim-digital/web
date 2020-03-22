@@ -8,3 +8,6 @@ export Warranty from './Warranty';
 export OnDemand from './OnDemand';
 export Process from './Process';
 export Error from './Error';
+export About from './About';
+export Contact from './Contact';
+export Privacy from './Privacy';

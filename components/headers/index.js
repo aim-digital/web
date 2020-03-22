@@ -1,2 +1,4 @@
-export Title from './Title/Component';
-export Contact from './Contact/Component';
+export Title from './Home';
+export About from './About';
+export Contact from './Contact';
+export Privacy from './Privacy';
