@@ -35,13 +35,13 @@
     },
     {
         "index": 2,
-        "section": "Maintenance",
-        "slug": "maintenance",
-        "title": "Hosting, LTS, Monitoring",
-        "icon": "heartbeat",
+        "section": "Portfolio",
+        "slug": "portfolio",
+        "title": "Verticals & Applications",
+        "icon": "bullseye",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Services",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg" }],
+        "category": "Experience",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/Logo-01.png" }]
@@ -55,7 +55,7 @@
         "section": "Strategy",
         "slug": "strategy",
         "title": "Introducing FAST™ PLM",
-        "icon": "road",
+        "icon": "fighter-jet",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
         "category": "Framework",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
@@ -69,17 +69,6 @@
     },
     {
         "index": 4,
-        "section": "Subscription",
-        "slug": "subscription",
-        "title": "Velocity™ Plan Pricing",
-        "icon": "refresh",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Pricing",
-        "cta": "Contact us",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]
-    },
-    {
-        "index": 5,
         "section": "Warranty",
         "slug": "warranty",
         "title": "Wingman™ Surety Coverage",
@@ -94,6 +83,17 @@
             "type": "paragraph",
             "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
         }]
+    },
+    {
+        "index": 5,
+        "section": "Subscription",
+        "slug": "subscription",
+        "title": "Velocity™ Plan Pricing",
+        "icon": "refresh",
+        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "category": "Pricing",
+        "cta": "Contact us",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]
     },
     {
         "index": 6,
@@ -115,13 +115,13 @@
     },
     {
         "index": 7,
-        "section": "Process",
-        "slug": "process",
-        "title": "Tactical Project Management",
-        "icon": "fighter-jet",
+        "section": "Maintenance",
+        "slug": "maintenance",
+        "title": "Hosting, LTS, Monitoring",
+        "icon": "heartbeat",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Framework",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
+        "category": "Services",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/Logo-01.png" }]

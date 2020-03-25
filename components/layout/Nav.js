@@ -96,25 +96,25 @@ export default class extends Nav {
               <Link rel="nofollow" to="/" className="logo" onClick={update(DEFAULT_ID, true)}/>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Services</a>
               <ul>
                 <li><Link rel="nofollow" to="/home/consulting" onClick={update(solutions[0].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
                 <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[1].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
-                <li><Link rel="nofollow" to="/home/maintenance" onClick={update(solutions[2].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
+                <li><Link rel="nofollow" to="/home/maintenance" onClick={update(solutions[7].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Framework</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-certificate"/> Experience</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-road"/> Strategy</Link></li>
-                <li><Link rel="nofollow" to="/home/process" onClick={update(solutions[7].slug, true)}><i className="fa fa-fighter-jet"/> Process</Link></li>
+                <li><Link rel="nofollow" to="/home/portfolio" onClick={update(solutions[2].slug, true)}><i className="fa fa-bullseye"/> Portfolio</Link></li>
+                <li><Link rel="nofollow" to="/home/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-fighter-jet"/> Strategy</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
-                <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
+                <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
+                <li><Link rel="nofollow" to="/home/subscription" onClick={update(solutions[5].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
                 <li><Link rel="nofollow" to="/home/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off"/> On Demand</Link></li>
               </ul>
             </li>

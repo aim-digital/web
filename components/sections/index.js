@@ -1,12 +1,12 @@
 
 export Consulting from './Consulting';
 export Development from './Development';
-export Maintenance from './Maintenance';
+export Portfolio from './Portfolio';
 export Strategy from './Strategy';
-export Subscription from './Subscription';
 export Warranty from './Warranty';
+export Subscription from './Subscription';
 export OnDemand from './OnDemand';
-export Process from './Process';
+export Maintenance from './Maintenance';
 export Error from './Error';
 export About from './About';
 export Contact from './Contact';

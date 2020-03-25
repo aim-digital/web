@@ -4,6 +4,6 @@ import {solutions} from '@fox-zero/web/data';
 
 export default class extends Section {
   render() {
-    return <Section solution={solutions[2]} title={<>Hosting, LTS,<br />Monitoring</>} />;
+    return <Section solution={solutions[7]} title={<>Hosting, LTS,<br />Monitoring</>} right />;
   }
 }

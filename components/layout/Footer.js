@@ -99,20 +99,20 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-cogs"/> Services</h4>
+                  <h4><i className="fa fa-cubes"/> Services</h4>
                   <ul>
                     <li><Link to="/consulting" onClick={update(solutions[0].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
                     <li><Link to="/development" onClick={update(solutions[1].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
-                    <li><Link to="/maintenance" onClick={update(solutions[2].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
+                    <li><Link to="/maintenance" onClick={update(solutions[7].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
                   </ul>
                 </li>
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-cubes"/> Framework</h4>
+                  <h4><i className="fa fa-certificate"/> Experience</h4>
                   <ul>
-                    <li><Link to="/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-road"/> Strategy</Link></li>
-                    <li><Link to="/process" onClick={update(solutions[7].slug, true)}><i className="fa fa-fighter-jet"/> Process</Link></li>
+                    <li><Link to="/portfolio" onClick={update(solutions[2].slug, true)}><i className="fa fa-bullseye"/> Portfolio</Link></li>
+                    <li><Link to="/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-fighter-jet"/> Strategy</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -120,8 +120,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-usd"/> Pricing</h4>
                   <ul>
-                    <li><Link to="/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
-                    <li><Link to="/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
+                    <li><Link to="/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
+                    <li><Link to="/subscription" onClick={update(solutions[5].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
                     <li><Link to="/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off"/> On Demand</Link></li>
                   </ul>
                 </li>

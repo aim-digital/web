@@ -94,12 +94,12 @@ export default class extends Header {
           {[
             <>100% Power<br />Every Hour</>,
             <>Full Service<br />Digital Agency</>,
-            <>Hosting, LTS,<br />Monitoring</>,
+            <>Verticals<br />&amp; Applications</>,
             <>Introducing<br />FAST™ PLM</>,
-            <>Velocity™<br />Plan Pricing</>,
             <>Wingman™<br />Surety Coverage</>,
+            <>Velocity™<br />Plan Pricing</>,
             <>Point &amp; Pay™<br />Sprint Pricing</>,
-            <>Tactical Project<br />Management</>
+            <>Hosting, LTS,<br />Monitoring</>
           ].map((title, i) => renderTitle(i, title))}
         </Header>
     );
