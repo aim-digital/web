@@ -38,6 +38,15 @@ section.quote {
     }
   }
 
+  .about.page & .form .form-group {
+    pointer-events: auto;
+
+    &.comment textarea {
+      height: auto;
+      overflow: auto;
+    }
+  }
+
   h2, h3 {
     font-family: $font-family-oswald;
     margin: 0 auto !important;

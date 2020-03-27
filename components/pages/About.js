@@ -5,7 +5,7 @@ import {Page} from '@boilerplatejs/core/components/layout';
 import {dismiss} from '@fox-zero/web/actions/Nav';
 import {Footer} from '@fox-zero/web/components/layout';
 
-@connect(() => {}, {dismiss})
+@connect(() => ({}), {dismiss})
 
 export default class extends Page {
   static propTypes = {

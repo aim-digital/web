@@ -92,7 +92,8 @@ export default class extends Page {
     slide: PropTypes.number.isRequired,
     reset: PropTypes.bool,
     section: PropTypes.string,
-    sources: PropTypes.any
+    sources: PropTypes.any,
+    check: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -691,7 +692,7 @@ export default class extends Page {
                         <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
                       </div>
                     </div>
-                    <forms.Contact status={status} quote cancelText="Close" onCancel={this.onHide} newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
+                    <forms.Contact status={status} quote newsletterText="Join the FoxStream™ newsletter for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
                     {!contact && message && <span className="error">{message}</span>}
                     {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
                   </div>
