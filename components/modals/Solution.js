@@ -67,7 +67,7 @@ export default class extends Modal {
         }
 
         this.setState({ form: { message: null, status: 'Submitting' } });
-        analytics.Form.Detail.Submission.track(section, sources);
+        const tracking = analytics.Form.Detail.Submission.track(section, sources);
 
         const contact = await update({
           lead: true,
@@ -80,7 +80,8 @@ export default class extends Modal {
             phone: values.phone,
             company: values.company,
             section,
-            application: 'Fox Zero™ Marketing App'
+            application: 'Fox Zero™ Marketing App',
+            tracking
           }
         });
 

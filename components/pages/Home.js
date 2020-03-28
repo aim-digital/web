@@ -396,7 +396,7 @@ export default class extends Page {
         }
 
         this.setState({ form: { message: null, status: 'Submitting' } });
-        analytics.Form.Page.Submission.track(formatted, sources);
+        const tracking = analytics.Form.Page.Submission.track(formatted, sources);
 
         const contact = await update({
           lead: true,
@@ -409,7 +409,8 @@ export default class extends Page {
             phone: values.phone,
             company: values.company,
             section: formatted,
-            application: 'Fox Zero™ Marketing App'
+            application: 'Fox Zero™ Marketing App',
+            tracking
           }
         });
 

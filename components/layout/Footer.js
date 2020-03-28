@@ -18,7 +18,7 @@ export default class extends Footer {
 
   id = DEFAULT_ID;
 
-  scrollTo = (id, track) => {
+  scrollTo = (id, source) => {
     const { transition } = this.props;
     const app = document.querySelector('#app');
     const parallax = app.querySelector('.section.container > .parallax');
@@ -32,11 +32,12 @@ export default class extends Footer {
       parallax && (parallax.scrollTop = 0);
     }
 
+    label = formatters.section(id);
+    analytics.Section.Footer.Click.track(label);
+
     transition('page.impression', false);
 
-    if (track) {
-      label = formatters.section(id);
-      analytics.Section.Footer.Click.track(label);
+    if (source) {
       transition('analytics.sources', [['Section.Footer.Click', label].join('|')]);
     } else {
       transition('analytics.sources', undefined);
