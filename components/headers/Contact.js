@@ -6,7 +6,7 @@ export default class extends Header {
     return (
       <Header timer={0}
         runOnMount={__CLIENT__}
-        images={['https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg']}>
+        images={['https://d3w33imimg0eu8.cloudfront.net/new-york-3.png']}>
         <div className="content" >
           <h1>About Us</h1>
           <h2>Welcome!</h2>

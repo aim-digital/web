@@ -372,3 +372,9 @@
     transform: scale3d(1, 1, 1);
   }
 }
+
+.about.page .header.container .logo {
+  opacity: 1 !important;
+  transform: scale3d(1, 1, 1) !important;
+  transition: none !important;
+}
