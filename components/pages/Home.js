@@ -28,7 +28,7 @@ const {
   LinkedinShareButton
 } = ShareButtons;
 
-const HEADER_TIMER = 12.5;
+const HEADER_TIMER = 12.5 + 0.5;
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
