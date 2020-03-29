@@ -1,6 +1,7 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
+import Helmet from 'react-helmet';
 import {asyncConnect} from 'redux-async-connect-react16';
 import {push as pushState} from 'react-router-redux';
 import {App} from '@boilerplatejs/core/components/layout';
@@ -53,6 +54,9 @@ export default class extends App {
 
     return (
       <App {...this.props} nav={<Nav/>}>
+        <Helmet>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One" />
+        </Helmet>
         {this.props.children}
         {recaptchaSiteKey && <>
           <script async src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}></script>

@@ -319,7 +319,7 @@ export default class extends Page {
     return (
       <section className="section">
         <h2 className={headerClass}>Content</h2>
-        <h3 className={headerClass}>Channel<br />FoxStream™</h3>
+        <h3 className={headerClass}>Channel<br />Fox Stream™</h3>
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">
@@ -330,7 +330,7 @@ export default class extends Page {
                 <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                   <Solution
                     icon="television">
-                    View <span>FoxStream™ TV</span>
+                    View <span>Fox Stream™ TV</span>
                   </Solution>
                 </Link>
               </div>
@@ -551,7 +551,7 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(height + 2.35)} style={{ left: 0 }}>
+            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(height + (isMobile && !hasMany ? 2.5 : 2.35))} style={{ left: 0 }}>
               <ParallaxLayer offset={factor(0)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
               <ParallaxLayer offset={factor(2)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
               <ParallaxLayer offset={factor(4)} speed={0.35} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
