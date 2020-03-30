@@ -144,8 +144,7 @@ nav > ul {
     opacity: .65;
     pointer-events: none;
     z-index: 1;
-    filter: blur(7px);
-    background: $background-color url('/@fox-zero/web/images/iStock-962093578.jpg') no-repeat;
+    background: $background-color url('https://d3w33imimg0eu8.cloudfront.net/iStock-962093578-blur.jpg') no-repeat;
     background-color: rgba(0,159,221, .65);
     background-position: 60%;
     background-size: cover;
@@ -353,7 +352,7 @@ nav > ul > li > ul > li {
 }
 
 nav li > a.logo {
-  background: url(/@fox-zero/web/images/logo.png) no-repeat;
+  background: url(https://d3w33imimg0eu8.cloudfront.net/logo.png) no-repeat;
   display: block;
   margin: 0 auto;
   background-size: 100%;
@@ -363,7 +362,7 @@ nav li > a.logo {
 
 nav > a.toggle {
   position: absolute;
-  background: url(/@fox-zero/web/images/nav-open.svg) no-repeat;
+  background: url(https://d3w33imimg0eu8.cloudfront.net/nav-open.svg) no-repeat;
   width: 40px;
   height: 40px;
   background-size: 100%;
@@ -379,11 +378,11 @@ nav > a.toggle {
 }
 
 #app.nav-open nav > a.toggle {
-  background-image: url(/@fox-zero/web/images/nav-close.svg);
+  background-image: url(https://d3w33imimg0eu8.cloudfront.net/nav-close.svg);
   opacity: 1;
 
   @media (min-width: 1025px) {
-    background-image: url(/@fox-zero/web/images/nav-open.svg);
+    background-image: url(https://d3w33imimg0eu8.cloudfront.net/nav-open.svg);
     opacity: 0;
   }
 }

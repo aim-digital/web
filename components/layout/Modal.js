@@ -29,12 +29,24 @@ export default class extends Component {
     share: {}
   };
 
+  state = {
+    ready: false
+  };
+
+  componentWillReceiveProps(next) {
+    if (next.hero !== this.props.hero) {
+      this.setState({ ready: false });
+      global.setTimeout(() => this.setState({ ready: true }), 250);
+    }
+  }
+
   render() {
     const { id, children, title, dek, icon, className, share = {}, hero } = this.props;
+    const { ready } = this.state;
     const { url, caption, subject, hashtags } = share;
 
     return (
-      <Modal {..._.omit(this.props, ['share', 'title', 'icon', 'hero'])} className={`${className}`} title="" id={id}>
+      <Modal {..._.omit(this.props, ['share', 'title', 'icon', 'hero'])} className={`${className} ${ready ? 'ready' : ''}`} title="" id={id}>
         {hero ? <div className="modal-hero" style={{ backgroundImage: `url(${hero})` }} /> : <></>}
         <div className="modal-nav">
           <Modal.Dismiss className="dismiss">
