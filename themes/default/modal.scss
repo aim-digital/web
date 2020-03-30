@@ -46,10 +46,6 @@
 
   &.ready .modal-hero {
     opacity: 1;
-
-    @media (min-width: 768px) {
-      filter: blur(10px);
-    }
   }
 
   .modal-dialog {

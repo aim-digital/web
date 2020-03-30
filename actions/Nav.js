@@ -89,7 +89,7 @@ export function load() {
         setTimeout(() => {
           app.classList.add('nav-loaded');
           resolve({ loaded: true });
-        }, 1000);
+        }, 500);
       } catch (e) {
         reject(e);
       }

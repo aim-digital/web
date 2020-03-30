@@ -121,7 +121,7 @@ export default class extends Modal {
   render() {
     const { solution, contact, destroy: reset } = this.props;
     const { message, status } = this.state.form;
-    const { slug, content, summary, title, subject, icon, section, media = [], sources } = solution;
+    const { slug, content = [], summary, title, subject, icon, section, media = [], sources } = solution;
     const { location = {} } = global;
     const [hero = {}] = media;
     const share = {
@@ -140,8 +140,8 @@ export default class extends Modal {
         icon={icon}
         share={share}
         hero={hero.url}>
-        <section>
-          {slug && <section className="content">
+        {section && <section>
+          <section className="content">
             {content.map((content, i) => {
               const Component = content.type === 'component' && _.get(components, content.value);
 
@@ -151,7 +151,7 @@ export default class extends Modal {
                 {content.type === 'image' && <img src={content.media[0].url} />}
               </Fragment>
             })}
-          </section>}
+          </section>
           <section className="quote">
             <div>
               <h2>Talk to Me</h2>
@@ -203,7 +203,7 @@ export default class extends Modal {
               {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
             </div>
           </section>
-        </section>
+        </section>}
       </Modal>
     );
   }
