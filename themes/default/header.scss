@@ -4,6 +4,15 @@
   to { transform: scale3d(1, 1, 1); box-shadow: 0 0 1.5em rgba(89, 159, 198, .25); }
 }
 
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes caret {
   from { top: 0; opacity: .25; }
   50% { top: 10px; opacity: .85; }
@@ -293,6 +302,13 @@
         font-size: 2.5em;
         transform: translate(-35%, -30%);
         opacity: .65;
+
+        &.loading {
+          animation-name: pulse;
+          animation-iteration-count: infinite;
+          animation-duration: .25s;
+          animation-timing-function: linear;
+        }
       }
     }
   }

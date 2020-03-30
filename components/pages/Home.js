@@ -355,7 +355,7 @@ export default class extends Page {
   openSolution = async (solution, sources) => {
     const { load, open, transition } = this.props;
     const { slug, media } = solution;
-    new Image(media[0].url);
+    (new Image()).src = media[0].url;
     await transition('timer.pause', true);
     open({ ...solution, ...{ sources }, ...await load('posts', { slug: encodeURIComponent(slug) }) });
   };

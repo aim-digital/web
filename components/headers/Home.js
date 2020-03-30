@@ -32,7 +32,7 @@ export default class extends Header {
   };
 
   state = {
-    loaded: false
+    loading: false
   };
 
   impressions = [];
@@ -40,20 +40,20 @@ export default class extends Header {
   openSolution = async (solution) => {
     const { load, open, transition, sources } = this.props;
     const { slug, section } = solution;
+    let entry;
     await transition('timer.pause', true);
     analytics.Section.Header.Click.track(section, sources);
-    open({ ...solution, ...{ sources: (sources || []).concat(['Section.Header.Click']) }, ...await load('posts', { slug: encodeURIComponent(slug) }) });
+    this.setState({ loading: true });
+    entry = await load('posts', { slug: encodeURIComponent(slug) });
+    this.setState({ loading: false });
+    open({ ...solution, ...{ sources: (sources || []).concat(['Section.Header.Click']) }, ...entry });
   };
 
-  transitionBegin = () => {
-    this.setState({ loaded: false });
-  };
+  transitionBegin = () => {};
 
   transitionComplete = () => {
     const { impressions, props } = this;
     const { impression, slide, sources } = props;
-
-    this.setState({ loaded: true });
 
     if (!impression && !impressions[slide]) {
       impressions[slide] = true;
@@ -62,6 +62,7 @@ export default class extends Header {
   };
 
   renderTitle = (i, heading) => {
+    const { loading } = this.state;
     const solution = solutions[i];
     const { section, title, summary } = solution;
 
@@ -71,7 +72,7 @@ export default class extends Header {
         <h2>{heading || title}</h2>
         <section className="preview">
           <button onClick={() => this.openSolution(solution)} title="Click to open overlay screen">
-            <i className="fa fa-ellipsis-h"/>
+            <i className={`fa fa-ellipsis-h ${loading ? 'loading' : ''}`}/>
             <span>Read <span>More</span></span>
           </button>
           <div/>
