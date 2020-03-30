@@ -15,7 +15,9 @@
 }
 
 .nav-open .header.container .slide .hero {
-  filter: blur(10px);
+  @media (min-width: 768px) {
+    filter: blur(10px);
+  }
 }
 
 .header.container {

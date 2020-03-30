@@ -5,7 +5,7 @@ export default class extends Section {
   render() {
     return (
       <Section>
-        <h2>About Us</h2>
+        <h2>Privacy Policy</h2>
         <h3>Welcome!</h3>
         <div className="container">
           <div className="row">

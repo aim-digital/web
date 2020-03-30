@@ -128,7 +128,7 @@ export default class extends Nav {
             </li>
             <li>
               <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update('stream')}>
-                <i className="fa fa-television"/> Fox Stream™ TV
+                <i className="fa fa-television"/> Fox Zero™ TV
               </Link>
             </li>
           </ul>
