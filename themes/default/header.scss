@@ -1,16 +1,12 @@
-@-webkit-keyframes glow {
-  from { transform: scale3d(1, 1, 1); box-shadow: 0 0 1.5em rgba(89, 159, 198, .25); }
-  50% { transform: scale3d(1.15, 1.15, 1); box-shadow: 0 0 1.25em rgba(89, 159, 198, .5); }
-  to { transform: scale3d(1, 1, 1); box-shadow: 0 0 1.5em rgba(89, 159, 198, .25); }
-}
+// @-webkit-keyframes glow {
+//   from { transform: scale3d(1, 1, 1); box-shadow: 0 0 1.5em rgba(89, 159, 198, .25); }
+//   50% { transform: scale3d(1.15, 1.15, 1); box-shadow: 0 0 1.25em rgba(89, 159, 198, .5); }
+//   to { transform: scale3d(1, 1, 1); box-shadow: 0 0 1.5em rgba(89, 159, 198, .25); }
+// }
 
 @keyframes pulse {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @-webkit-keyframes caret {
