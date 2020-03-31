@@ -128,11 +128,7 @@ export default class extends Page {
       app.classList.add('home');
       global.addEventListener('resize', this.updateViewport);
       global.setTimeout(() => this.setState({ ready: true }), 1000);
-      global.setTimeout(() => {
-        transition('parallax', true);
-        this.elements = this.getElements();
-        parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 950, { trailing: true }));
-      }, 1500);
+      global.setTimeout(() => transition('parallax', true), 1500);
       this.updateViewport();
       this.cycleHeader();
     }
@@ -179,8 +175,12 @@ export default class extends Page {
     }
   };
 
-  componentDidUpdate = () => {
+  componentDidUpdate = next => {
     this.elements = this.getElements();
+
+    if (next.parallax !== this.props.parallax) {
+      this.elements.parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 950, { trailing: true }));
+    }
   };
 
   cycleHeader = (timer = HEADER_TIMER) => {
