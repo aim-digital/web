@@ -106,8 +106,8 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-certificate"/> Experience</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/portfolio" onClick={update(solutions[2].slug, true)}><i className="fa fa-bullseye"/> Portfolio</Link></li>
-                <li><Link rel="nofollow" to="/home/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-fighter-jet"/> Strategy</Link></li>
+                <li><Link rel="nofollow" to="/home/strategy" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Strategy</Link></li>
+                <li><Link rel="nofollow" to="/home/portfolio" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Portfolio</Link></li>
               </ul>
             </li>
             <li className="subnav">

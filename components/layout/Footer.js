@@ -112,8 +112,8 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-certificate"/> Experience</h4>
                   <ul>
-                    <li><Link to="/portfolio" onClick={update(solutions[2].slug, true)}><i className="fa fa-bullseye"/> Portfolio</Link></li>
-                    <li><Link to="/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-fighter-jet"/> Strategy</Link></li>
+                    <li><Link to="/strategy" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Strategy</Link></li>
+                    <li><Link to="/portfolio" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Portfolio</Link></li>
                   </ul>
                 </li>
               </ul>

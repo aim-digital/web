@@ -45,8 +45,8 @@ const SECTION_FORM = 6;
 const SECTIONS = {
   'consulting': { slide: 0 },
   'development': { slide: 1 },
-  'portfolio': { slide: 2 },
-  'strategy': { slide: 3 },
+  'strategy': { slide: 2 },
+  'portfolio': { slide: 3 },
   'warranty': { slide: 4 },
   'subscription': { slide: 5 },
   'on-demand': { slide: 6 },

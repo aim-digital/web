@@ -95,8 +95,8 @@ export default class extends Header {
           {[
             <>100% Power<br />Every Hour</>,
             <>Full Service<br />Digital Agency</>,
-            <>Verticals<br />&amp; Applications</>,
             <>Introducing<br />FAST™ PLM</>,
+            <>Target Verticals<br />&amp; Applications</>,
             <>Wingman™<br />Surety Coverage</>,
             <>Velocity™<br />Plan Pricing</>,
             <>Point &amp; Pay™<br />Sprint Pricing</>,

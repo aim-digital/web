@@ -35,13 +35,13 @@
     },
     {
         "index": 2,
-        "section": "Portfolio",
-        "slug": "portfolio",
-        "title": "Verticals & Applications",
-        "icon": "bullseye",
+        "section": "Strategy",
+        "slug": "strategy",
+        "title": "Introducing FAST™ PLM",
+        "icon": "fighter-jet",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Experience",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
+        "category": "Framework",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/logo.png" }]
@@ -52,13 +52,13 @@
     },
     {
         "index": 3,
-        "section": "Strategy",
-        "slug": "strategy",
-        "title": "Introducing FAST™ PLM",
-        "icon": "fighter-jet",
+        "section": "Portfolio",
+        "slug": "portfolio",
+        "title": "Target Verticals & Applications",
+        "icon": "bullseye",
         "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
-        "category": "Framework",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
+        "category": "Experience",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/logo.png" }]
