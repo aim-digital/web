@@ -68,6 +68,7 @@ const VERIFY_GRADE = 0.65;
     contact: state['@fox-zero/web'].Contact.current,
     reset: Transition['slide.reset'],
     sources: state['@boilerplatejs/core'].Transition['analytics.sources'],
+    parallax: state['@boilerplatejs/core'].Transition.parallax,
     recaptchaSiteKey: state['@boilerplatejs/core'].Config['@boilerplatejs/core'].recaptchaSiteKey,
     solution
   });
@@ -91,6 +92,7 @@ export default class extends Page {
     query: PropTypes.object,
     slide: PropTypes.number.isRequired,
     reset: PropTypes.bool,
+    parallax: PropTypes.bool,
     section: PropTypes.string,
     sources: PropTypes.any,
     check: PropTypes.func.isRequired
@@ -118,14 +120,19 @@ export default class extends Page {
 
   componentDidMount = () => {
     if (__CLIENT__) {
+      const { transition } = this.props;
       const elements = this.elements = this.getElements();
 
       const { app, parallax } = elements;
       document.querySelector('#app > section > .page').addEventListener('click', this.props.dismiss);
       app.classList.add('home');
-      parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 950, { trailing: true }));
       global.addEventListener('resize', this.updateViewport);
       global.setTimeout(() => this.setState({ ready: true }), 1000);
+      global.setTimeout(() => {
+        transition('parallax', true);
+        this.elements = this.getElements();
+        parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 950, { trailing: true }));
+      }, 1500);
       this.updateViewport();
       this.cycleHeader();
     }
@@ -151,12 +158,14 @@ export default class extends Page {
 
   componentWillUnmount = () => {
     if (__CLIENT__) {
+      const { transition } = this.props;
       const { app, parallax } = this.elements;
       this.props.transition({ progress: 0.2 });
       document.querySelector('#app > section > .page').removeEventListener('click', this.props.dismiss);
       app.classList.remove('home');
       parallax.removeEventListener('scroll', this.onScroll);
       global.removeEventListener('resize', this.updateViewport);
+      transition('parallax', false);
     }
   }
 
@@ -526,8 +535,8 @@ export default class extends Page {
 
   render() {
     const { props, state, sections, length, closeSolution, section, formatted } = this;
-    const { className, classNames = {}, solution, contact, destroy: reset, sources } = props;
-    const { animating, isMobile, isLandscape, ready } = state;
+    const { className, classNames = {}, solution, contact, destroy: reset, sources, parallax } = props;
+    const { animating, isMobile, isLandscape } = state;
     const { message, status } = state.form;
 
     const SECTION_HEIGHTS = [0, 0, 0, 0, 0, isMobile ? 0.275 : 0, 0, 0];
@@ -569,7 +578,7 @@ export default class extends Page {
                 style={{ pointerEvents: 'none', zIndex: 1 }}>
                 {this.solutions}
               </ParallaxLayer>}
-              {ready && <>
+              {parallax && <>
                 <ParallaxLayer offset={factor(0)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
                 <ParallaxLayer offset={factor(2)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
                 <ParallaxLayer offset={factor(4)} speed={0.35} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />

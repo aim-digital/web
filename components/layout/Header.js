@@ -12,7 +12,8 @@ const PROGRESS_INCREMENT = 100;
 @connect((state, props) => ({
   slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0,
   pause: state['@boilerplatejs/core'].Transition['timer.pause'],
-  initial: state['@boilerplatejs/core'].Transition['slide.initial']
+  initial: state['@boilerplatejs/core'].Transition['slide.initial'],
+  parallax: state['@boilerplatejs/core'].Transition.parallax
 }), {transition})
 
 export default class extends Header {
@@ -22,6 +23,7 @@ export default class extends Header {
     runOnMount: PropTypes.bool,
     cycle: PropTypes.bool,
     pause: PropTypes.bool,
+    parallax: PropTypes.bool,
     timer: PropTypes.number,
     children: PropTypes.any,
     classNames: PropTypes.object,
@@ -39,7 +41,8 @@ export default class extends Header {
     images: [],
     timer: 0,
     initial: null,
-    pause: false
+    pause: false,
+    parallax: false
   };
 
   state = {
@@ -56,10 +59,10 @@ export default class extends Header {
     this.clearTimer();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(next) {
     if (this.props.pause) {
       this.clearTimer();
-    } else {
+    } else if (next.parallax === this.props.parallax) {
       this.resetTimer();
     }
   }
@@ -170,7 +173,7 @@ export default class extends Header {
   };
 
   render() {
-    const { className, classNames, children, runOnMount, slide, images, cycle, initial: initialSlide } = this.props;
+    const { className, classNames, children, runOnMount, slide, images, cycle, initial: initialSlide, parallax } = this.props;
     const { animating, previous } = this.state;
     const { length } = children;
     const initial = global.SLIDE_INITIAL || initialSlide || 0;
@@ -203,7 +206,7 @@ export default class extends Header {
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left" data-section={(solutions[!slide ? solutions.length - 1 : slide - 1]).section}>&larr;</button>
               <button {...getFlipState('next')} onClick={this.next} className="flip right" data-section={(solutions[slide === solutions.length - 1 ? 0 : slide + 1]).section}>&rarr;</button>
               <div className="scroll">
-                <button disabled={__CLIENT__ && !this.hasScroll()} onClick={this.scrollTo}><span/></button>
+                <button disabled={__CLIENT__ && parallax && !this.hasScroll()} onClick={this.scrollTo}><span/></button>
               </div>
             </div>
           </div>
