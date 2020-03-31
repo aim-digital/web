@@ -24,8 +24,9 @@ export default class extends Section {
 
   openSolution = async () => {
     const { load, open, solution, sources } = this.props;
-    const { slug, section } = solution;
+    const { slug, section, media } = solution;
     analytics.Section.Page.Click.track(section, sources);
+    (new Image()).src = media[0].url;
     open({ ...solution, ...{ sources: (sources || []).concat(['Section.Page.Click']) }, ...await load('posts', { slug: encodeURIComponent(slug) }) });
   };
 

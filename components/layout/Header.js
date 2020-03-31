@@ -45,11 +45,16 @@ export default class extends Header {
   state = {
     index: 0,
     previous: undefined,
-    animating: true
+    animating: true,
+    ready: false
   };
 
   timer = null;
   progress = null;
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ ready: true }), 0);
+  }
 
   componentWillUnmount() {
     this.setState({ animating: false, index: 0, previous: undefined });
@@ -171,7 +176,7 @@ export default class extends Header {
 
   render() {
     const { className, classNames, children, runOnMount, slide, images, cycle, initial: initialSlide } = this.props;
-    const { animating, previous } = this.state;
+    const { animating, previous, ready } = this.state;
     const { length } = children;
     const initial = global.SLIDE_INITIAL || initialSlide || 0;
 
@@ -187,8 +192,8 @@ export default class extends Header {
           const main = __SERVER__ ? initial : slide;
           const current = i === main;
           const next = i - 1 === main;
-          const className = current || images.length === 1 ? 'current' : i === previous ? 'previous' : '';
-          const fetch = current || next;
+          const className = (ready && current) || images.length === 1 ? 'current' : i === previous ? 'previous' : '';
+          const fetch = (!ready && current) || className || next;
           return <div key={i} className={`hero ${className} hero-${i}`} style={{ opacity: 0, backgroundImage: fetch ? `url(${image})` : '' }}/>;
         })}
         <Logo/>
