@@ -53,7 +53,7 @@ export default class extends Section {
 
   onShare = (source, { email, shares }) => async () => {
     const { update, create, contact, sources } = this.props;
-    const updated = await update({ lead: true, properties: { email: email.value, shares: [shares ? shares.value : []].concat(source).join(';') } });
+    const updated = await update({ lead: true, newsletter: true, properties: { email: email.value, shares: [shares ? shares.value : []].concat(source).join(';') } });
     contact && create(updated);
     analytics.Confirmation.Contact.Share.track(source, sources);
   };

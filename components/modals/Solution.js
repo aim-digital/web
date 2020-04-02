@@ -113,7 +113,7 @@ export default class extends Modal {
 
   onShare = (source, { email, shares }) => async () => {
     const { update, create, contact, solution: { section = 'Home', sources } } = this.props;
-    const updated = await update({ lead: true, properties: { email: email.value, shares: [shares ? shares.value : []].concat(source).join(';') } });
+    const updated = await update({ lead: true, newsletter: true, properties: { email: email.value, shares: [shares ? shares.value : []].concat(source).join(';') } });
     contact && create(updated);
     analytics.Confirmation.Detail.Share.track([section, source].join(','), sources);
   };

@@ -494,7 +494,7 @@ export default class extends Page {
 
   onShare = (source, { email, shares }) => async () => {
     const { update, create, contact, sources } = this.props;
-    const updated = await update({ lead: true, properties: { email: email.value, shares: [shares ? shares.value : []].concat(source).join(';') } });
+    const updated = await update({ lead: true, newsletter: true, properties: { email: email.value, shares: [shares ? shares.value : []].concat(source).join(';') } });
     contact && create(updated);
     analytics.Confirmation.Page.Share.track([this.formatted, source].join(','), sources);
   };
