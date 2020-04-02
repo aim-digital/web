@@ -5,7 +5,7 @@
         "slug": "consulting",
         "title": "100% Power Every Hour",
         "icon": "lightbulb-o",
-        "summary": "Each of our software consultants is expertly trained in both management and development of digital transformation and operate off-site - limiting the need for individual roles, maximizing value per every hour worked.",
+        "summary": "Each of our software consultants is expertly trained in both management and development of digital transformation, and operate off-site - limiting the need for individual roles, maximizing value per every hour worked.",
         "category": "Services",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
         "content": [{
@@ -73,7 +73,7 @@
         "slug": "warranty",
         "title": "Wingman™ Surety Coverage",
         "icon": "umbrella",
-        "summary": "Development projects are bonded up to 25% of the total subscription price to guarantee minimum risk of delivery time, budget, and quality, valid until 120 days following release acceptance.",
+        "summary": "Development projects are bonded up to 25% of the total project price to guarantee minimum risk of delivery time, budget, and quality, valid from kick-off until 120 days after release acceptance.",
         "category": "Coverage",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
         "content": [{
