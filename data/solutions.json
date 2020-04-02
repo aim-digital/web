@@ -56,7 +56,7 @@
         "slug": "portfolio",
         "title": "Target Verticals & Applications",
         "icon": "bullseye",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "summary": "Exclusively within private and government sectors, clients have historically been VC-backed start-ups, SME, and Fortune 500 companies requiring greenfield software development, integration, or digital transformation.",
         "category": "Experience",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [{
@@ -73,7 +73,7 @@
         "slug": "warranty",
         "title": "Wingman™ Surety Coverage",
         "icon": "umbrella",
-        "summary": "Development projects are bonded up to 25% of the total project price to guarantee minimum risk of delivery time, budget, and quality, valid from kick-off until 120 days after release acceptance.",
+        "summary": "Development projects are Wingman™ bonded up to 25% of the total project price to guarantee minimum risk of delivery time, budget, and quality, valid from kick-off until 120 days after release acceptance.",
         "category": "Coverage",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
         "content": [{
@@ -90,7 +90,7 @@
         "slug": "subscription",
         "title": "Velocity™ Plan Pricing",
         "icon": "refresh",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "summary": "Reduce billing overhead while increasing team morale and project success with our Velocity™ pricing. Fixed teams of versatile full-stack seniors and juniors are curated to 3 monthly subscription plans for maximum value.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]
@@ -101,7 +101,7 @@
         "slug": "on-demand",
         "title": "Point & Pay™ Sprint Pricing",
         "icon": "power-off",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "summary": "Need help fast? Activate any of our senior partners at any time with our Point & Pay™ pricing. Plan a sprint, estimate story points with us, pay for each consultant's estimated point before sprint kick-off, and get stuff done.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg" }],
@@ -119,7 +119,7 @@
         "slug": "maintenance",
         "title": "Hosting, LTS, Monitoring",
         "icon": "heartbeat",
-        "summary": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.",
+        "summary": "We offer secure hosting, monitoring, and LTS maintenance for a 25% fee of cost as curated SLA arrangements after project release, and as material costs during development, managed by our certified cloud consultants.",
         "category": "Services",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg" }],
         "content": [{

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Section} from '@boilerplatejs/core/components/layout';
+import {brand} from '@fox-zero/web/data';
 
 export default class extends Section {
   render() {
@@ -10,7 +11,7 @@ export default class extends Section {
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">
-              <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec dictum lacus, et dictum ex. Proin nec semper turpis, vel tincidunt lacus. Nulla at aliquet felis. Curabitur ac posuere felis.</span></p>
+              <p><span>{brand.summary}</span></p>
             </div>
           </div>
         </div>

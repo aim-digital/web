@@ -1,5 +1,6 @@
 import React from 'react';
 import {Header} from '@fox-zero/web/components/layout';
+import {brand} from '@fox-zero/web/data';
 
 export default class extends Header {
   render() {
@@ -11,7 +12,7 @@ export default class extends Header {
           <h1>About Us</h1>
           <h2>Welcome!</h2>
           <section className="preview">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec dictum lacus, et dictum ex. Proin nec semper turpis, vel tincidunt lacus. Nulla at aliquet felis. Curabitur ac posuere felis.</p>
+          <p>{brand.summary}</p>
           </section>
         </div>
       </Header>
