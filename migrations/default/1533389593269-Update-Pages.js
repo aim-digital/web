@@ -5,7 +5,7 @@ export default class {
     const {Layout, Page} = getModels();
 
     await Layout.update({
-      title: 'Fox Zero™ · High-Performance/Zero-Latency Consultancy™'
+      title: 'Fox Zero · High-Performance/Zero-Latency Consultancy™'
     }, {
       where: {
         theme: '@fox-zero/web'
