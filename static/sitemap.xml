@@ -1,55 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+      xmlns="https://sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="https://w3.org/2001/XMLSchema-instance"
+      xmlns:image="https://google.com/schemas/sitemap-image/1.1"
+      xsi:schemaLocation="https://sitemaps.org/schemas/sitemap/0.9
+            https://sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
   <url>
     <loc>http://foxzero.io/</loc>
     <image:image>
-      <image:loc>http://www.foxzero.io/@fox-zero/web/images/cover.jpg</image:loc>
-      <image:title>The Digital Special Forces for custom software and marketing solutions.</image:title>
-      <image:caption>Based in NYC, Vitruvian Technology, Corp. specializes in Web/Software Development, Marketing, Design, QA, Studio Production, Sourcing, IT/System Administration, Security, and Investigatory services.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>http://www.foxzero.io/@fox-zero/web/images/logo.png</image:loc>
-      <image:title>The Digital Special Forces for custom software and marketing solutions.</image:title>
-      <image:caption>Based in NYC, Vitruvian Technology, Corp. specializes in Web/Software Development, Marketing, Design, QA, Studio Production, Sourcing, IT/System Administration, Security, and Investigatory services.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>http://www.foxzero.io/@fox-zero/web/images/insignia.png</image:loc>
-      <image:title>Vitruvian Technology, Corp.</image:title>
-      <image:caption>Roman Inspired Software Designers</image:caption>
+      <image:loc>https://foxzero.io/@fox-zero/web/images/logo.png</image:loc>
+      <image:title>Fox Zero · High-Performance/Zero-Latency Consultancy™</image:title>
+      <image:caption>Our software consulting and digital agency services combine zero-latency development tactics with versatile talent as simple monthly subscriptions to enhance project accuracy and morale, reducing complexity and waste.</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>http://www.foxzero.io/missions</loc>
+    <loc>https://foxzero.io/consulting</loc>
   </url>
   <url>
-    <loc>http://www.foxzero.io/services</loc>
+    <loc>https://foxzero.io/development</loc>
   </url>
   <url>
-    <loc>http://www.foxzero.io/plans</loc>
+    <loc>https://foxzero.io/portfolio</loc>
   </url>
   <url>
-    <loc>http://www.foxzero.io/rates</loc>
+    <loc>https://foxzero.io/strategy</loc>
   </url>
   <url>
-    <loc>http://www.foxzero.io/hosting</loc>
+    <loc>https://foxzero.io/warranty</loc>
   </url>
   <url>
-    <loc>http://www.foxzero.io/leadership</loc>
+    <loc>https://foxzero.io/subscription</loc>
   </url>
   <url>
-    <loc>http://www.foxzero.io/network</loc>
+    <loc>https://foxzero.io/on-demand</loc>
   </url>
   <url>
-    <loc>http://www.foxzero.io/communications</loc>
+    <loc>https://foxzero.io/maintenance</loc>
   </url>
   <url>
-    <loc>http://www.foxzero.io/headquarters</loc>
+    <loc>https://foxzero.io/contact</loc>
+  </url>
+  <url>
+    <loc>https://foxzero.io/about</loc>
+  </url>
+  <url>
+    <loc>https://foxzero.io/privacy</loc>
   </url>
 </urlset>
