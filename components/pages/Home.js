@@ -324,7 +324,7 @@ export default class extends Page {
           <div className="row">
             <div className="col-md-12 card">
               <p><span>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</span></p>
-              <img src="https://d3w33imimg0eu8.cloudfront.net/logo.png" />
+              <img src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" />
               <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
               <div>
                 <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
@@ -536,7 +536,7 @@ export default class extends Page {
     const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
     const height = length + (hasMany ? aggregateHeight(length - 1) : SECTION_HEIGHTS[SECTIONS[section].slide]);
     const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
-    const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://d3w33imimg0eu8.cloudfront.net/${name}.svg${wrap ? ')' : ''}`;
+    const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://d3w33imimg0eu8.cloudfront.net/images/${name}.svg${wrap ? ')' : ''}`;
 
     const renderLayer = (index = 0, offset = 0) => (component, i) => (
       <ParallaxLayer

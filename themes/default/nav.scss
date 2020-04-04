@@ -144,14 +144,14 @@ nav > ul {
     opacity: .65;
     pointer-events: none;
     z-index: 1;
-    background: $background-color url('https://d3w33imimg0eu8.cloudfront.net/iStock-962093578-blur.jpg') no-repeat;
+    background: $background-color url('https://d3w33imimg0eu8.cloudfront.net/images/iStock-962093578-blur.jpg') no-repeat;
     background-color: rgba(0,159,221, .65);
     background-position: 60%;
     background-size: cover;
   }
 
   &:after {
-    content: '\A9 Fox Zero (a VitruvianTech® brand)';
+    content: attr(data-copyright);
     font-size: .65em;
     padding: 1.25em 1.75em;
     display: block;
@@ -352,7 +352,7 @@ nav > ul > li > ul > li {
 }
 
 nav li > a.logo {
-  background: url(https://d3w33imimg0eu8.cloudfront.net/logo.png) no-repeat;
+  background: url(https://d3w33imimg0eu8.cloudfront.net/images/logo.png) no-repeat;
   display: block;
   margin: 0 auto;
   background-size: 100%;
@@ -362,7 +362,7 @@ nav li > a.logo {
 
 nav > a.toggle {
   position: absolute;
-  background: url(https://d3w33imimg0eu8.cloudfront.net/nav-open.svg) no-repeat;
+  background: url(https://d3w33imimg0eu8.cloudfront.net/images/nav-open.svg) no-repeat;
   width: 40px;
   height: 40px;
   background-size: 100%;
@@ -378,11 +378,11 @@ nav > a.toggle {
 }
 
 #app.nav-open nav > a.toggle {
-  background-image: url(https://d3w33imimg0eu8.cloudfront.net/nav-close.svg);
+  background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/nav-close.svg);
   opacity: 1;
 
   @media (min-width: 1025px) {
-    background-image: url(https://d3w33imimg0eu8.cloudfront.net/nav-open.svg);
+    background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/nav-open.svg);
     opacity: 0;
   }
 }

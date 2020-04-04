@@ -5,9 +5,9 @@ export default class extends Component {
     return (
       <div className="logo">
         <div className="tagline">
-          <img src="https://d3w33imimg0eu8.cloudfront.net/tagline.png" />
+          <img src="https://d3w33imimg0eu8.cloudfront.net/images/tagline.png" alt="Fox Zero" />
         </div>
-        <img className="graphic" src="https://d3w33imimg0eu8.cloudfront.net/logo.png" />
+        <img className="graphic" src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" alt="High-Performance/Zero-Latency Consultancy™" />
       </div>
     );
   }

@@ -91,7 +91,7 @@ export default class extends Nav {
               <i className="fa fa-instagram"/>
             </a>
           </div>
-          <ul>
+          <ul data-copyright={`© ${(new Date()).getFullYear()} · Fox Zero · A VitruvianTech Brand`}>
             <li className="home">
               <Link rel="nofollow" to="/" className="logo" onClick={update(DEFAULT_ID, true)}/>
             </li>

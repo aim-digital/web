@@ -7,17 +7,17 @@ export default class {
     const NAME = 'Fox Zero™';
     const TITLE = 'High-Performance/Zero-Latency Consultancy™';
     const DESCRIPTION = 'Our software consulting and digital agency services combine zero-latency development tactics with versatile talent as simple monthly subscriptions to enhance project accuracy and morale, reducing complexity and waste.';
-    const IMAGE = 'https://d3w33imimg0eu8.cloudfront.net/logo.png';
+    const IMAGE = 'https://d3w33imimg0eu8.cloudfront.net/images/logo.png';
 
     await Link.update({
-      href: 'https://d3w33imimg0eu8.cloudfront.net/Icon.png'
+      href: 'https://d3w33imimg0eu8.cloudfront.net/images/Icon.png'
     }, {
       where: { rel: 'shortcut icon' }
     });
 
     await Script.create({
       external: false,
-      content: '(new Image()).src="https://d3w33imimg0eu8.cloudfront.net/loading-beat.gif"'
+      content: '(new Image()).src="https://d3w33imimg0eu8.cloudfront.net/images/loading-beat.gif"'
     });
 
     await MetaTag.update({
