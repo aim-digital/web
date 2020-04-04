@@ -134,7 +134,7 @@ export default class extends Footer {
               <p><strong>Operating Hours:</strong><br />9am-6pm (EST), M-F</p>
             </div>
             <div className="col-xs-12 text-center">
-              <img src="https://d3w33imimg0eu8.cloudfront.net/images/seal.png" title="Fox Zero (a VitruvianTech® brand)"/>
+              <img src="https://d3w33imimg0eu8.cloudfront.net/images/seal.png" alt="Fox Zero · A VitruvianTech Brand"/>
               <p><small>&copy; {(new Date()).getFullYear()} · Fox Zero · A <a href="https://vitruviantech.com">VitruvianTech</a> Brand</small></p>
             </div>
           </div>
