@@ -62,7 +62,7 @@ export default class extends Footer {
           <div className="row">
             <div className="col-xs-12 logo text-center">
               <Link to="/" onClick={update(DEFAULT_ID, true)}>
-                <img src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" alt="Fox Zero · High-Performance/Zero-Latency Consultancy™"/>
+                <img src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" alt="Fox Zero · Zero Latency Software Consultancy™"/>
               </Link>
             </div>
             <div className="col-sm-9 col-xs-12">

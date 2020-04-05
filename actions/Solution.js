@@ -1,7 +1,3 @@
-const CREATE = '@fox-zero/web/Solution/CREATE';
-const CREATE_SUCCESS = '@fox-zero/web/Solution/CREATE_SUCCESS';
-const CREATE_FAIL = '@fox-zero/web/Solution/CREATE_FAIL';
-
 const OPEN = '@fox-zero/web/Solution/OPEN';
 const OPEN_SUCCESS = '@fox-zero/web/Solution/OPEN_SUCCESS';
 const OPEN_FAIL = '@fox-zero/web/Solution/OPEN_FAIL';
@@ -11,21 +7,8 @@ const CLOSE_SUCCESS = '@fox-zero/web/Solution/CLOSE_SUCCESS';
 const CLOSE_FAIL = '@fox-zero/web/Solution/CLOSE_FAIL';
 
 const initialState = {
-  error: null,
   current: null
 };
-
-export function create(data) {
-  return {
-    types: [CREATE, CREATE_SUCCESS, CREATE_FAIL],
-    promise: (client) => client
-        .post('/@boilerplatejs/core/Contact/create', { data })
-        .then(async () => {
-            await client.post('/@fox-zero/web/Solution/create', { data });
-            return data;
-        })
-  };
-}
 
 export function open(solution) {
   return {
@@ -46,28 +29,13 @@ export default (state = initialState, action = {}) => {
     case OPEN_SUCCESS:
       return {
         ...state,
-        current: action.result,
-        error: null,
+        current: action.result
       };
     case CLOSE_SUCCESS:
       return {
         ...state,
-        current: null,
-        error: null,
+        current: null
       };
-    case CREATE:
-      return state;
-    case CREATE_SUCCESS:
-      return {
-        ...state,
-        ...action.result,
-        error: null,
-      };
-    case CREATE_FAIL:
-      return typeof action.error === 'string' ? {
-        ...state,
-        error: action.error
-      } : state;
     default:
       return state;
   }

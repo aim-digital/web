@@ -205,8 +205,12 @@ export default class extends Header {
               </VelocityTransitionGroup>
             )}
             <div className="flippers">
-              <button {...getFlipState('previous')} onClick={this.previous} className="flip left" data-section={(solutions[!slide ? solutions.length - 1 : slide - 1]).section}>&larr;</button>
-              <button {...getFlipState('next')} onClick={this.next} className="flip right" data-section={(solutions[slide === solutions.length - 1 ? 0 : slide + 1]).section}>&rarr;</button>
+              <button {...getFlipState('previous')} onClick={this.previous} className="flip left" data-section={(solutions[!slide ? solutions.length - 1 : slide - 1]).section}>
+                <i className="fa fa-arrow-circle-left"></i>
+              </button>
+              <button {...getFlipState('next')} onClick={this.next} className="flip right" data-section={(solutions[slide === solutions.length - 1 ? 0 : slide + 1]).section}>
+                <i className="fa fa-arrow-circle-right"></i>
+              </button>
               <div className="scroll">
                 <button disabled={__CLIENT__ && !this.hasScroll()} onClick={this.scrollTo}><span/></button>
               </div>
