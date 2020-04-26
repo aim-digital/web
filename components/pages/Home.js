@@ -347,7 +347,7 @@ export default class extends Page {
 
     this.setState({ isMobile: global.innerWidth < 992, isLandscape });
 
-    if (ready && isLandscape !== currentOrientation) {
+    if (!this.props.solution && ready && isLandscape !== currentOrientation) {
       global.location.reload();
     }
   };
