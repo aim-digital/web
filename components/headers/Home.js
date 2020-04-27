@@ -41,12 +41,13 @@ export default class extends Header {
     const { load, open, transition, sources } = this.props;
     const { slug, section, media } = solution;
     let entry;
-    await transition('timer.pause', true);
+    transition('timer.pause', true);
     analytics.Section.Header.Click.track(section, sources);
     this.setState({ loading: true });
     (new Image()).src = media[0].url;
     entry = await load('posts', { slug: encodeURIComponent(slug) });
     this.setState({ loading: false });
+    transition('modal.open', true);
     open({ ...solution, ...{ sources: (sources || []).concat(['Section.Header.Click']) }, ...entry });
   };
 

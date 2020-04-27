@@ -8,13 +8,12 @@ import {Page} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {check} from '@boilerplatejs/core/actions/Verification';
 import {dismiss} from '@fox-zero/web/actions/Nav';
-import {open, close} from '@fox-zero/web/actions/Solution';
+import {open} from '@fox-zero/web/actions/Solution';
 import {create, destroy} from '@fox-zero/web/actions/Contact';
 import {Footer} from '@fox-zero/web/components/layout';
 import {Solution} from '@fox-zero/web/components/buttons';
 import {update} from '@boilerplatejs/hubspot/actions/Contact';
 import {load} from '@boilerplatejs/strapi/actions/Entry';
-import * as modals from '@fox-zero/web/components/modals';
 import * as forms from '@fox-zero/web/components/forms';
 import formatters from '@fox-zero/web/lib/formatters';
 import {solutions, brand} from '@fox-zero/web/data';
@@ -68,10 +67,11 @@ const VERIFY_GRADE = 0.65;
     contact: state['@fox-zero/web'].Contact.current,
     reset: Transition['slide.reset'],
     sources: state['@boilerplatejs/core'].Transition['analytics.sources'],
+    isModalOpen: state['@boilerplatejs/core'].Transition['modal.open'],
     recaptchaSiteKey: state['@boilerplatejs/core'].Config['@boilerplatejs/core'].recaptchaSiteKey,
     solution
   });
-}, {transition, dismiss, update, load, open, close, create, destroy, check})
+}, {transition, dismiss, update, load, open, create, destroy, check})
 
 export default class extends Page {
   static propTypes = {
@@ -80,7 +80,6 @@ export default class extends Page {
     update: PropTypes.func.isRequired,
     load: PropTypes.func.isRequired,
     open: PropTypes.func.isRequired,
-    close: PropTypes.func.isRequired,
     create: PropTypes.func.isRequired,
     destroy: PropTypes.func.isRequired,
     classNames: PropTypes.object,
@@ -93,14 +92,16 @@ export default class extends Page {
     reset: PropTypes.bool,
     section: PropTypes.string,
     sources: PropTypes.any,
-    check: PropTypes.func.isRequired
+    check: PropTypes.func.isRequired,
+    isModalOpen: PropTypes.bool
   };
 
   static defaultProps = {
     className: '',
     classNames: {},
     solution: null,
-    contact: null
+    contact: null,
+    isModalOpen: false
   };
 
   state = {
@@ -342,12 +343,13 @@ export default class extends Page {
   }
 
   updateViewport = () => {
+    const { isModalOpen } = this.props;
     const { isLandscape: currentOrientation, ready } = this.state;
     const isLandscape = global.innerWidth > global.innerHeight;
 
     this.setState({ isMobile: global.innerWidth < 992, isLandscape });
 
-    if (!this.props.solution && ready && isLandscape !== currentOrientation) {
+    if (!isModalOpen && !this.props.solution && ready && isLandscape !== currentOrientation) {
       global.location.reload();
     }
   };
@@ -356,7 +358,8 @@ export default class extends Page {
     const { load, open, transition } = this.props;
     const { slug, media } = solution;
     (new Image()).src = media[0].url;
-    await transition('timer.pause', true);
+    transition('timer.pause', true);
+    transition('modal.open', true);
     open({ ...solution, ...{ sources }, ...await load('posts', { slug: encodeURIComponent(slug) }) });
   };
 
@@ -452,12 +455,6 @@ export default class extends Page {
     return section ? component.key.replace(RE_SECTION_KEY, '$1').toLowerCase() === section.toLowerCase().replace('-', '') : true;
   }
 
-  closeSolution = () => {
-    const { close, transition } = this.props;
-    transition('timer.pause', false);
-    close();
-  };
-
   openContact = () => {
     const { section } = this;
     const { open, contact, sources } = this.props;
@@ -525,8 +522,8 @@ export default class extends Page {
   };
 
   render() {
-    const { props, state, sections, length, closeSolution, section, formatted } = this;
-    const { className, classNames = {}, solution, contact, destroy: reset, sources } = props;
+    const { props, state, sections, length, section, formatted } = this;
+    const { className, classNames = {}, contact, destroy: reset, sources } = props;
     const { animating, isMobile, isLandscape } = state;
     const { message, status } = state.form;
 
@@ -716,7 +713,6 @@ export default class extends Page {
               <Footer/>
             </>}
           </section>
-          <modals.Solution id="solution-modal" show={!!solution} solution={solution || {}} onHide={closeSolution}/>
         </Page>
     );
   }
