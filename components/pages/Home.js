@@ -466,6 +466,7 @@ export default class extends Page {
       label = formatters.section(section || 'Home');
       analytics.Form.Page.Click.track(label, sources);
       transition('timer.pause', true);
+      transition('modal.open', true);
       open({ subject: title, summary, section: label, sources: (sources || []).concat(['Form.Page.Click']) });
 
       setTimeout(() => {
