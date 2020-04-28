@@ -1,6 +1,23 @@
 [
     {
         "index": 0,
+        "section": "Fox Zero",
+        "slug": "about",
+        "title": "Speed, Accuracy, Value. Repeat.",
+        "icon": "bullseye",
+        "summary": "Our software consulting and digital agency services combine zero-latency development tactics with versatile talent as simple monthly subscriptions to enhance project accuracy and morale, reducing complexity and waste.",
+        "category": "",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
+        "content": [{
+            "type": "image",
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
+        }, {
+            "type": "paragraph",
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        }]
+    },
+    {
+        "index": 1,
         "section": "Consulting",
         "slug": "consulting",
         "title": "100% Power Every Hour",
@@ -17,7 +34,7 @@
         }]
     },
     {
-        "index": 1,
+        "index": 2,
         "section": "Development",
         "slug": "development",
         "title": "Full Service Digital Agency",
@@ -34,7 +51,7 @@
         }]
     },
     {
-        "index": 2,
+        "index": 3,
         "section": "Strategy",
         "slug": "strategy",
         "title": "Introducing FAST™ PLM",
@@ -42,23 +59,6 @@
         "summary": "Our FAST™ production framework uses an incremental 3-phased lifecycle strategy to manage multiple projects and programs, relying on real-time processes and versatile consultants to lower feedback latency and cost.",
         "category": "Framework",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
-        "content": [{
-            "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
-        }, {
-            "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
-        }]
-    },
-    {
-        "index": 3,
-        "section": "Portfolio",
-        "slug": "portfolio",
-        "title": "Target Verticals & Applications",
-        "icon": "bullseye",
-        "summary": "Exclusively within private and government sectors, clients have historically been VC-backed start-ups, SME, and Fortune 500 companies requiring greenfield software development, integration, or digital transformation.",
-        "category": "Experience",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]

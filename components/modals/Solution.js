@@ -128,7 +128,7 @@ export default class extends Modal {
       url: `${location.protocol}//${location.host}/${(slug || '').toLowerCase()}`,
       caption: summary,
       subject: section ? `${section} · ${subject || title}` : subject || title,
-      hashtags: ['software', 'agency', (section || 'consulting').toLowerCase()]
+      hashtags: _.uniq(['software', 'consulting', (section || 'foxzero').replace(' ', '').toLowerCase()])
     };
 
     return (

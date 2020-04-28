@@ -121,8 +121,8 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-info-circle"/> Support</a>
               <ul>
-                <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-envelope"/> Contact Us</Link></li>
                 <li><Link to="/about" onClick={update('about')}><i className="fa fa-id-card-o"/> About Us</Link></li>
+                <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-envelope"/> Contact Us</Link></li>
                 <li><Link to="/privacy" onClick={update('privacy')}><i className="fa fa-legal"/> Privacy Policy</Link></li>
               </ul>
             </li>

@@ -39,13 +39,13 @@ const IMPRESSION_START = 0.5;
 const IMPRESSION_END = 0.35;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
-const SECTION_DEFAULT = 'consulting';
+const SECTION_DEFAULT = 'about';
 const SECTION_FORM = 6;
 const SECTIONS = {
-  'consulting': { slide: 0 },
-  'development': { slide: 1 },
-  'strategy': { slide: 2 },
-  'portfolio': { slide: 3 },
+  'about': { slide: 0 },
+  'consulting': { slide: 1 },
+  'development': { slide: 2 },
+  'strategy': { slide: 3 },
   'warranty': { slide: 4 },
   'subscription': { slide: 5 },
   'on-demand': { slide: 6 },
@@ -503,7 +503,7 @@ export default class extends Page {
       url: `${location.protocol}//${location.host}/${(slug || '').toLowerCase()}`,
       caption: summary,
       subject: section ? `${section} · ${subject || title}` : subject || title,
-      hashtags: ['software', 'agency', (section || 'consulting').toLowerCase()]
+      hashtags: ['software', 'consulting', (section || 'foxzero').replace(' ', '').toLowerCase()]
     };
 
     return <div className="share">
