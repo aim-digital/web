@@ -344,12 +344,12 @@ export default class extends Page {
 
   updateViewport = () => {
     const { isModalOpen } = this.props;
-    const { isLandscape: currentOrientation, ready } = this.state;
+    const { isLandscape: currentOrientation, isMobile, ready } = this.state;
     const isLandscape = global.innerWidth > global.innerHeight;
 
     this.setState({ isMobile: global.innerWidth < 992, isLandscape });
 
-    if (!isModalOpen && !this.props.solution && ready && isLandscape !== currentOrientation) {
+    if (!isMobile && !isModalOpen && !this.props.solution && ready && isLandscape !== currentOrientation) {
       global.location.reload();
     }
   };
