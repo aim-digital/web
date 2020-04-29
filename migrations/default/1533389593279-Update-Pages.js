@@ -5,7 +5,7 @@ export default class {
     const {Page, Script} = getModels();
 
     await Page.update({
-      meta: '[{"property":"og:url","content":"https://foxzero.io/about"},{"property":"og:image:secure_url","content":"https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg"},{"property":"og:image","content":"https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg"},{"property":"twitter:image","content":"https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg"},{"property":"twitter:image:alt","content":"Speed, Accuracy, Value. Repeat. · Zero Latency Software Consultancy™"},{"itemprop":"name","content":"Fox Zero™ · Speed, Accuracy, Value. Repeat. · Zero Latency Software Consultancy™"},{"property":"og:title","content":"Speed, Accuracy, Value. Repeat. · Zero Latency Software Consultancy™"},{"property":"twitter:title","content":"Speed, Accuracy, Value. Repeat. · Zero Latency Software Consultancy™"}]'
+      meta: '[{"property":"og:url","content":"https://foxzero.io/about"},{"property":"og:image:secure_url","content":"https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg"},{"property":"og:image","content":"https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg"},{"property":"twitter:image","content":"https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg"},{"property":"twitter:image:alt","content":"Speed, Accuracy, Value. Repeat."},{"itemprop":"name","content":"Fox Zero™ · Speed, Accuracy, Value. Repeat."},{"property":"og:title","content":"Speed, Accuracy, Value. Repeat."},{"property":"twitter:title","content":"Speed, Accuracy, Value. Repeat."}]'
     }, {
       where: {
         route: 'about'
