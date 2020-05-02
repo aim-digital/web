@@ -107,6 +107,10 @@ footer {
   a.support {
     display: block;
     font-size: 1em;
+
+    @media (min-width: 1280px) {
+      font-size: .75em;
+    }
   }
 
   img {
