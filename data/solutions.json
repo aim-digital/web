@@ -5,6 +5,7 @@
         "slug": "about",
         "title": "Speed, Accuracy, Value. Repeat.",
         "icon": "fighter-jet",
+        "ctaCategory": "Mission Culture",
         "summary": "Our software consulting and digital agency services combine zero-latency development tactics with versatile talent as simple monthly subscriptions to enhance project accuracy and morale, reducing complexity and waste.",
         "category": "",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
@@ -57,7 +58,8 @@
         "title": "Introducing FAST™ PLM",
         "icon": "bullseye",
         "summary": "Our FAST™ production framework uses an incremental 3-phased lifecycle strategy to manage multiple projects and programs, relying on real-time processes and versatile consultants to lower feedback latency and cost.",
-        "category": "Framework",
+        "category": "Mission",
+        "ctaCategory": "Strategic Mission",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
         "content": [{
             "type": "image",

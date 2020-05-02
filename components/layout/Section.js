@@ -56,11 +56,7 @@ export default class extends Section {
                   onClick={this.openSolution}
                   icon={solution.icon}
                   tooltip="Click to open overlay screen">
-                  {solution.slug === 'about' ? <>
-                    Read more about our<br /><span>Mission &amp; Values</span>
-                  </> : <>
-                    {solution.cta || 'Read more'} about our<br /><span>{[solution.section.toLowerCase(), solution.category.toLowerCase()].join(' ')}</span>
-                  </>}
+                  {solution.cta || 'Read more'} about our<br /><span>{solution.ctaCategory || [solution.section.toLowerCase(), solution.category.toLowerCase()].join(' ')}</span>
                 </Solution>
               </div>
             </div>

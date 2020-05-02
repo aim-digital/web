@@ -96,18 +96,18 @@ export default class extends Nav {
               <Link rel="nofollow" to="/" className="logo" onClick={update(DEFAULT_ID, true)}/>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Services</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-shield"/> Mission</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/consulting" onClick={update(solutions[0].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
-                <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[1].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
-                <li><Link rel="nofollow" to="/home/maintenance" onClick={update(solutions[7].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
+                <li><Link to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Fox Zero</Link></li>
+                <li><Link rel="nofollow" to="/home/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Strategy</Link></li>
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-certificate"/> Experience</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Services</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/strategy" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Strategy</Link></li>
-                <li><Link rel="nofollow" to="/home/portfolio" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Portfolio</Link></li>
+                <li><Link rel="nofollow" to="/home/consulting" onClick={update(solutions[1].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
+                <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
+                <li><Link rel="nofollow" to="/home/maintenance" onClick={update(solutions[7].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
               </ul>
             </li>
             <li className="subnav">
@@ -121,14 +121,13 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-info-circle"/> Support</a>
               <ul>
-                <li><Link to="/about" onClick={update('about')}><i className="fa fa-id-card-o"/> About Us</Link></li>
                 <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-envelope"/> Contact Us</Link></li>
-                <li><Link to="/privacy" onClick={update('privacy')}><i className="fa fa-legal"/> Privacy Policy</Link></li>
+                <li><Link to="/privacy" onClick={update('privacy', true)}><i className="fa fa-legal"/> Privacy Policy</Link></li>
               </ul>
             </li>
             <li>
               <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update('stream')}>
-                <i className="fa fa-television"/> Fox Zero™ TV
+                <i className="fa fa-television"/> Content
               </Link>
             </li>
           </ul>

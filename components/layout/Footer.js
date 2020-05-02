@@ -100,20 +100,20 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-cubes"/> Services</h4>
+                  <h4><i className="fa fa-shield"/> Mission</h4>
                   <ul>
-                    <li><Link to="/consulting" onClick={update(solutions[0].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
-                    <li><Link to="/development" onClick={update(solutions[1].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
-                    <li><Link to="/maintenance" onClick={update(solutions[7].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
+                    <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Fox Zero</Link></li>
+                    <li><Link to="/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Strategy</Link></li>
                   </ul>
                 </li>
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-certificate"/> Experience</h4>
+                  <h4><i className="fa fa-cubes"/> Services</h4>
                   <ul>
-                    <li><Link to="/strategy" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Strategy</Link></li>
-                    <li><Link to="/portfolio" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Portfolio</Link></li>
+                    <li><Link to="/consulting" onClick={update(solutions[1].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
+                    <li><Link to="/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
+                    <li><Link to="/maintenance" onClick={update(solutions[7].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -130,6 +130,8 @@ export default class extends Footer {
             </div>
             <div className="col-sm-3 col-xs-12">
               <h4><i className="fa fa-info-circle"/> Support</h4>
+              <Link className="support" to="/contact" onClick={update('contact', true)}><i className="fa fa-envelope"/> Contact Us</Link>
+              <Link className="support" to="/privacy" onClick={update('privacy', true)}><i className="fa fa-legal"/> Privacy Policy</Link>
               <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (855) FOX-ZERO" href="tel:+18553473369" target="_blank">+1 (855) FOX-ZERO</a>, or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
               <p><strong>Operating Hours:</strong><br />9am-6pm (EST), M-F</p>
             </div>
