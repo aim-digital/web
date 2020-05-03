@@ -86,13 +86,13 @@ export default class extends Footer {
                       </a>
                     </li>
                     <li>
-                      <a title="Twitter: @fox_zero_agency" href="https://twitter.com/fox_zero_agency" target="_blank">
-                        <i className="fa fa-twitter"/>
+                      <a title="Instagram: @fox.zero.agency" href="https://www.instagram.com/fox.zero.agency" target="_blank">
+                        <i className="fa fa-instagram"/>
                       </a>
                     </li>
                     <li>
-                      <a title="Instagram: @fox_zero_agency" href="https://www.instagram.com/fox_zero_agency" target="_blank">
-                        <i className="fa fa-instagram"/>
+                      <a title="Twitter: @fox_zero_agency" href="https://twitter.com/fox_zero_agency" target="_blank">
+                        <i className="fa fa-twitter"/>
                       </a>
                     </li>
                   </ul>
