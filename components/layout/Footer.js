@@ -100,9 +100,9 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-shield"/> Mission</h4>
+                  <h4><i className="fa fa-id-badge"/> Dossier</h4>
                   <ul>
-                    <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Fox Zero</Link></li>
+                    <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Mission</Link></li>
                     <li><Link to="/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Strategy</Link></li>
                   </ul>
                 </li>

@@ -19,6 +19,19 @@
       display: block;
     }
   }
+
+  li.content {
+    span {
+      color: $humility;
+    }
+
+    marquee {
+      display: inline-block;
+      width: 75%;
+      line-height: 1;
+      margin-left: 2px;
+    }
+  }
 }
 
 nav .fa {

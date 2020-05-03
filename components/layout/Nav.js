@@ -40,11 +40,15 @@ export default class extends Nav {
           app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
           parallax && parallax.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
           clearTimeout(this.dismiss);
-          this.dismiss = setTimeout(dismiss, parallax ? parallax.scrollTop * 0.25 : 500);
+          this.dismiss = setTimeout(() => {
+            dismiss();
+            transition('slide', 0);
+          }, parallax ? parallax.scrollTop * 0.25 : 500);
         } else {
           app.scrollTop = 0;
           parallax && (parallax.scrollTop = 0);
           dismiss();
+          transition('slide', 0);
         }
     } else {
       app.scrollTop = 0;
@@ -96,9 +100,9 @@ export default class extends Nav {
               <Link rel="nofollow" to="/" className="logo" onClick={update(DEFAULT_ID, true)}/>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-shield"/> Mission</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-id-badge"/> Dossier</a>
               <ul>
-                <li><Link to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Fox Zero</Link></li>
+                <li><Link to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Mission</Link></li>
                 <li><Link rel="nofollow" to="/home/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Strategy</Link></li>
               </ul>
             </li>
@@ -121,14 +125,29 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-info-circle"/> Support</a>
               <ul>
-                <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-envelope"/> Contact Us</Link></li>
+                <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-phone"/> Contact Us</Link></li>
                 <li><Link to="/privacy" onClick={update('privacy', true)}><i className="fa fa-legal"/> Privacy Policy</Link></li>
               </ul>
             </li>
-            <li>
-              <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update('stream')}>
-                <i className="fa fa-television"/> Content
-              </Link>
+            <li className="content subnav">
+              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> Content</a>
+              <ul>
+                <li>
+                  <Link to="/stream" onClick={update('stream.home')}>
+                    <i className="fa fa-home"/> <span>Fox Zero™ TV ·</span> Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/stream/music" onClick={update('stream.category')}>
+                    <i className="fa fa-tag"/> <span>···</span> Music
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update('stream.post')}>
+                    <i className="fa fa-file-text-o"/> <span>···</span> <marquee>Music, Tech, and Steven Tyler Collide in NOLA</marquee>
+                  </Link>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>

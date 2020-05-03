@@ -27,7 +27,7 @@ const {
   LinkedinShareButton
 } = ShareButtons;
 
-const HEADER_TIMER = 15;
+const HEADER_TIMER = 13.5;
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
@@ -674,7 +674,7 @@ export default class extends Page {
                           <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
                           <button className="btn btn-success" onClick={() => analytics.Confirmation.Page.Booking.track(formatted, sources)}>
                             <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
-                            <i className="fa fa-link" />
+                            <i className="fa fa-calendar" />
                           </button>
                         </>}
                         <br />

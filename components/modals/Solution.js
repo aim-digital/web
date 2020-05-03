@@ -166,7 +166,7 @@ export default class extends Modal {
                     <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
                     <button className="btn btn-success" onClick={() => analytics.Confirmation.Detail.Booking.track(section || 'Home', sources)}>
                       <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
-                      <i className="fa fa-link" />
+                      <i className="fa fa-calendar" />
                     </button>
                   </>}
                   <br />
