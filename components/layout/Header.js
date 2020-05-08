@@ -53,11 +53,16 @@ export default class extends Header {
   progress = null;
 
   componentDidMount() {
-    setTimeout(() => this.setState({ ready: true }), 0);
+    setTimeout(() => {
+      this.setState({ ready: true });
+      document.querySelector('.header.container header > div.hidden').classList.remove('hidden');
+    }, 0);
+    setTimeout(() => this.setState({ animating: false }), 250);
   }
 
   componentWillUnmount() {
     this.setState({ animating: false, index: 0, previous: undefined });
+    document.querySelector('.header.container header > div.hidden').classList.add('hidden');
     this.clearTimer();
   }
 
@@ -70,6 +75,13 @@ export default class extends Header {
 
     if (props.slide !== this.props.slide) {
       this.setState({ previous: props.slide });
+    }
+  }
+
+  componentWillUpdate(props) {
+    if (props.slide !== this.props.slide) {
+      this.setState({ animating: true });
+      setTimeout(() => this.setState({ animating: false }), 250);
     }
   }
 
@@ -194,12 +206,13 @@ export default class extends Header {
         })}
         <Logo/>
         {length ? (
-          <div>
-            {__SERVER__ ? children[initial] : (
+          <div className={__CLIENT__ ? 'hidden' : ''}>
+            {/* {__SERVER__ ? children[initial] : (
               <VelocityTransitionGroup runOnMount={runOnMount} enter={{easing: [ 0.17, 0.67, 0.83, 0.67 ], animation: 'transition.whirlIn', duration: 250, begin: this.begin, complete: this.complete }}>
                 {children[slide]}
               </VelocityTransitionGroup>
-            )}
+            )} */}
+            {children[__SERVER__ ? initial : slide]}
             <div className="flippers">
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left" data-section={(solutions[!slide ? solutions.length - 1 : slide - 1]).section}>
                 <i className="fa fa-angle-left"></i>
