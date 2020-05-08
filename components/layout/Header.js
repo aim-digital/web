@@ -57,12 +57,13 @@ export default class extends Header {
       this.setState({ ready: true });
       document.querySelector('.header.container header > div.hidden').classList.remove('hidden');
     }, 0);
-    setTimeout(() => this.setState({ animating: false }), 250);
+    setTimeout(() => this.setState({ animating: false }), 350);
   }
 
   componentWillUnmount() {
+    const preview = document.querySelector('.header.container header > div.hidden');
     this.setState({ animating: false, index: 0, previous: undefined });
-    document.querySelector('.header.container header > div.hidden').classList.add('hidden');
+    preview && preview.classList.add('hidden');
     this.clearTimer();
   }
 
@@ -81,7 +82,7 @@ export default class extends Header {
   componentWillUpdate(props) {
     if (props.slide !== this.props.slide) {
       this.setState({ animating: true });
-      setTimeout(() => this.setState({ animating: false }), 250);
+      setTimeout(() => this.setState({ animating: false }), 350);
     }
   }
 
