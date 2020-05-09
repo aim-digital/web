@@ -57,7 +57,7 @@ export default class extends Header {
       this.setState({ ready: true });
       document.querySelector('.header.container header > div.hidden').classList.remove('hidden');
     }, 0);
-    setTimeout(() => this.setState({ animating: false }), 350);
+    setTimeout(this.complete, 500);
   }
 
   componentWillUnmount() {
@@ -81,8 +81,8 @@ export default class extends Header {
 
   componentWillUpdate(props) {
     if (props.slide !== this.props.slide) {
-      this.setState({ animating: true });
-      setTimeout(() => this.setState({ animating: false }), 350);
+      this.begin();
+      setTimeout(this.complete, 500);
     }
   }
 
@@ -114,7 +114,7 @@ export default class extends Header {
 
     window.clearTimeout(this.timer);
     this.timer = null;
-    window.clearInterval(this.progress);
+    window.cancelAnimationFrame(this.progress);
     this.progress = null;
 
     return this;
@@ -123,22 +123,25 @@ export default class extends Header {
   startTimer = () => {
     const { timer } = this.props;
     const duration = timer * 1000;
-    let progress = 0;
+    let start = 0;
 
     this.timer = setTimeout(this.next.bind(this), duration);
 
     if (__CLIENT__) {
       const bar = document.querySelector('.header.container header .preview > div');
 
-      this.progress = setInterval(() => {
-        progress += PROGRESS_INCREMENT;
-        bar.style.transform = `scale3d(${Math.min(progress / duration, 1)}, 1, 1)`;
+      const step = timestamp => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
 
-        if (progress >= duration) {
-          window.clearInterval(this.progress);
-          this.progress = null;
+        bar.style.transform = `scale3d(${Math.min(progress / duration, .99)}, 1, 1)`;
+
+        if (progress < duration) {
+          this.progress = window.requestAnimationFrame(step);
         }
-      }, PROGRESS_INCREMENT);
+      };
+
+      this.progress = window.requestAnimationFrame(step);
     }
 
     return this;

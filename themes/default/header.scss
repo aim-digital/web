@@ -114,7 +114,7 @@
   }
 
   h1, h2, .preview, .flippers button {
-    transition: opacity 1s, transform .25s;
+    transition: opacity .05s, transform .5s;
   }
 
   > div:last-of-type {

@@ -157,10 +157,11 @@ nav > ul {
     opacity: .65;
     pointer-events: none;
     z-index: 1;
+    display: none;
     background: $background-color url('https://d3w33imimg0eu8.cloudfront.net/images/iStock-962093578-blur.jpg') no-repeat;
     background-color: rgba(0,159,221, .65);
-    background-position: 60%;
-    background-size: cover;
+    background-position: 72.5% 5%;
+    // background-size: cover;
   }
 
   &:after {
@@ -180,6 +181,10 @@ nav > ul {
 
 #app.nav-loaded nav > ul {
   transition: transform .3s;
+
+  &:before {
+    display: block;
+  }
 }
 
 #app.nav-open nav {
