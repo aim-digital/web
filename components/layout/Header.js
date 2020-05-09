@@ -12,7 +12,8 @@ const PROGRESS_INCREMENT = 100;
 @connect((state, props) => ({
   slide: state['@boilerplatejs/core'].Transition.slide || props.slide || 0,
   pause: state['@boilerplatejs/core'].Transition['timer.pause'],
-  initial: state['@boilerplatejs/core'].Transition['slide.initial']
+  initial: state['@boilerplatejs/core'].Transition['slide.initial'],
+  rendered: state['@boilerplatejs/core'].Transition['page.rendered']
 }), {transition})
 
 export default class extends Header {
@@ -28,7 +29,8 @@ export default class extends Header {
     slide: PropTypes.number.isRequired,
     initial: PropTypes.any,
     transition: PropTypes.func.isRequired,
-    images: PropTypes.array
+    images: PropTypes.array,
+    rendered: PropTypes.bool
   };
 
   static defaultProps = {
@@ -39,7 +41,8 @@ export default class extends Header {
     images: [],
     timer: 0,
     initial: null,
-    pause: false
+    pause: false,
+    rendered: false
   };
 
   state = {
@@ -57,7 +60,7 @@ export default class extends Header {
       this.setState({ ready: true });
       document.querySelector('.header.container header > div.hidden').classList.remove('hidden');
     }, 0);
-    setTimeout(this.complete, 500);
+    setTimeout(this.complete, 450);
   }
 
   componentWillUnmount() {
@@ -82,7 +85,7 @@ export default class extends Header {
   componentWillUpdate(props) {
     if (props.slide !== this.props.slide) {
       this.begin();
-      setTimeout(this.complete, 500);
+      setTimeout(this.complete, 450);
     }
   }
 
@@ -187,7 +190,7 @@ export default class extends Header {
   };
 
   render() {
-    const { className, classNames, children, runOnMount, slide, images, cycle, initial: initialSlide } = this.props;
+    const { className, classNames, children, runOnMount, slide, images, cycle, initial: initialSlide, rendered } = this.props;
     const { animating, previous, ready } = this.state;
     const { length } = children;
     const initial = global.SLIDE_INITIAL || initialSlide || 0;
@@ -225,7 +228,7 @@ export default class extends Header {
                 <i className="fa fa-angle-right"></i>
               </button>
               <div className="scroll">
-                <button disabled={__CLIENT__ && !this.hasScroll()} onClick={this.scrollTo}><span/></button>
+                <button disabled={__CLIENT__ && (!rendered || !this.hasScroll())} onClick={this.scrollTo}><span/></button>
               </div>
             </div>
           </div>
