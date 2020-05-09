@@ -58,6 +58,10 @@
     }
   }
 
+  &.rendered .preview > div {
+    visibility: visible;
+  }
+
   .flippers {
     margin-top: -15px;
 
@@ -257,6 +261,7 @@
       will-change: transform;
       transform-origin: left;
       transform: scale3d(0, 1, 1);
+      visibility: hidden;
     }
 
     p {
