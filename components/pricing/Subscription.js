@@ -9,13 +9,20 @@ export default class extends Component {
             <div className="plan">
               <div>
                 <h4>Fox<br />One</h4>
+                <div className="discount">
+                  <i className="fa fa-certificate">
+                    <span>Ask about our <strong>Shout-Out</strong> 10% Discount!</span>
+                  </i>
+                </div>
               </div>
               <div>
-                <span className="price">$35k<sub>/mo.</sub></span>
+                <span className="price">$39k<sub>/mo.</sub></span>
                 <ul>
-                  <li><i className="fa fa-lightbulb-o" /> Consulting</li>
-                  <li><i className="fa fa-unlock" /> No commitment</li>
+                  <li><i className="fa fa-lightbulb-o" /> General Consulting</li>
+                  <li><i className="fa fa-clipboard" /> Project Discovery</li>
                   <li><i className="fa fa-user" /> 1.5 Partners</li>
+                  <li><i className="fa fa-user-plus" /> Add'l. Consultants *</li>
+                  <li><i className="fa fa-unlock" /> No commitment *</li>
                 </ul>
               </div>
             </div>
@@ -25,15 +32,20 @@ export default class extends Component {
             <div className="plan">
               <div>
                 <h4>Fox<br />Two</h4>
+                <div className="discount">
+                  <i className="fa fa-certificate">
+                    <span>Ask about our <strong>Rapid Fire</strong> 7.5% Discount!</span>
+                  </i>
+                </div>
               </div>
               <div>
-                <span className="price">$75k<sub>/mo.</sub></span>
+                <span className="price">$79k<sub>/mo.</sub></span>
                 <ul>
-                  <li><i className="fa fa-wrench" /> Development</li>
-                  <li><i className="fa fa-umbrella" /> Wingman™ warranty</li>
-                  <li><i className="fa fa-lock" /> 1-3 mo. commitment</li>
+                  <li><i className="fa fa-wrench" /> Product Development</li>
+                  <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> warranty</li>
                   <li><i className="fa fa-user" /> 2 Partners</li>
                   <li><i className="fa fa-user-plus" /> 1 Associate</li>
+                  <li><i className="fa fa-lock" /> 1-3 mo. commitment *</li>
                 </ul>
               </div>
             </div>
@@ -43,15 +55,20 @@ export default class extends Component {
             <div className="plan">
               <div>
                 <h4>Fox<br />Three</h4>
+                <div className="discount">
+                  <i className="fa fa-certificate">
+                    <span>Ask about our <strong>Rapid Fire</strong> 7.5% Discount!</span>
+                  </i>
+                </div>
               </div>
               <div>
-                <span className="price">$145k<sub>/mo.</sub></span>
+                <span className="price">$149k<sub>/mo.</sub></span>
                 <ul>
-                  <li><i className="fa fa-wrench" /> Development</li>
-                  <li><i className="fa fa-umbrella" /> Wingman™ warranty</li>
-                  <li><i className="fa fa-lock" /> 1-3 mo. commitment</li>
+                  <li><i className="fa fa-wrench" /> Product Development</li>
+                  <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> warranty</li>
                   <li><i className="fa fa-user" /> 3 Partners</li>
                   <li><i className="fa fa-user-plus" /> 3 Associates</li>
+                  <li><i className="fa fa-lock" /> 1-3 mo. commitment *</li>
                 </ul>
               </div>
             </div>
@@ -59,7 +76,8 @@ export default class extends Component {
         </div>
       </div>
       <br />
-      <p><small>Plans can be additive. Additional ad-hoc partners, associates, and interns are available at no monthly commitment at respective day rates. Remaining last month balance refunded upon project acceptance or cancellation.</small></p>
+      <br />
+      <p><small>* Plans can be additive. Additional <i>Fox One</i> partners, associates, and interns are available at no monthly commitment at respective day rates. Remaining balance refunded upon project acceptance or cancellation.</small></p>
     </>;
   }
 }

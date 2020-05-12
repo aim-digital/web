@@ -23,6 +23,33 @@
   to { top: 90%; opacity: .25; }
 }
 
+.header.container {
+  color: white;
+  text-align: center;
+  padding: 0!important;
+  height: 100%;
+  background: $background-color;
+  position: relative;
+
+  &.single {
+    min-height: $page-height;
+    display: table !important;
+    height: 0;
+    width: 100%;
+
+    @media (min-height: 900px) {
+      min-height: $page-height-xl!important;
+    }
+
+    .slide {
+      display: table-cell;
+      vertical-align: middle;
+      height: 100%!important;
+      width: 100%!important;
+    }
+  }
+}
+
 .header.container .slider .slider-frame .slider-list .slider-slide {
   min-height: 96vh !important;
 }

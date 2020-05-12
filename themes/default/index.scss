@@ -2,14 +2,17 @@
 
 /**
  * Import core platform styles (after imported bundle variables.)
- * 
+ *
  * Example (if bundle/package name has a scope):
  *  - `@import "../../../../@boilerplatejs/core/themes/default/components.scss";`
 
  * Example (if bundle/package name does not have a scope):
  *  - `@import "../../../@boilerplatejs/core/themes/default/components.scss";`
  */
-@import "../../../../@boilerplatejs/core/themes/default/components.scss";
+@import "../../../../@boilerplatejs/core/themes/default/app.scss";
+@import "../../../../@boilerplatejs/core/themes/default/page.scss";
+@import "../../../../@boilerplatejs/core/themes/default/section.scss";
+@import "../../../../@boilerplatejs/core/themes/default/footer.scss";
 
 @import "./typography.scss";
 @import "./components.scss";

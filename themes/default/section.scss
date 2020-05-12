@@ -119,6 +119,7 @@
   width: 100%;
 
   & > div {
+    position: relative;
     display: table-cell;
     width: 50%;
   }
@@ -134,6 +135,58 @@
     margin-bottom: .5em !important;
   }
 
+  h4, .price {
+    position: relative;
+    z-index: 2;
+  }
+
+  .discount {
+    z-index: 1;
+    position: absolute;
+    font-size: 8.25em;
+    color: #FCD700;
+    text-shadow: 1px 1px 3px $black-color;
+    left: 20%;
+    top: 50%;
+    margin: -5px -10px;
+
+    @media (min-width: 992px) {
+      left: 45%;
+      top: -65%;
+      margin: -5px 0;
+    }
+
+    i {
+      position: absolute;
+      top: 0;
+
+      &:before {
+        opacity: .65;
+      }
+    }
+
+    span {
+      font-size: .15em;
+      position: absolute;
+      white-space: nowrap;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: $white-color;
+      font-family: $font-family-fjalla;
+      display: inline-block;
+      transform: translate(-15%, -50%);
+      width: 140%;
+      line-height: 1.25;
+
+      strong {
+        font-size: 1.05em;
+        display: block;
+      }
+    }
+  }
+
   ul {
     margin: 1.5em 0 0;
     padding: 0;
@@ -146,12 +199,12 @@
       list-style-type: none;
       white-space: nowrap;
     }
-  }
 
-  i {
-    display: inline-block;
-    width: 20px;
-    text-align: center;
+    i {
+      display: inline-block;
+      width: 20px;
+      text-align: center;
+    }
   }
 
   .price {
