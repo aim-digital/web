@@ -406,22 +406,31 @@ section.solutions {
   }
 
   .card {
-    img {
-      display: block;
-      width: 75%;
-      max-width: 360px;
+    .image {
+      text-align: center;
+
+      &:after {
+        content: attr(data-caption);
+        text-align: center;
+        width: 100%;
+        display: block;
+      }
+
+      img {
+        max-width: 100%;
+      }
     }
 
     > div, p {
       padding: 15px;
     }
 
-    p, img {
+    p, .image {
       margin-left: auto;
       margin-right: auto;
     }
 
-    p {
+    p, .image {
       text-shadow: 1px 1px 3px #151515;
       color: #fff;
       font-size: 1.15em;
@@ -447,8 +456,8 @@ section.solutions {
     }
 
     p + p,
-    p + img,
-    img + p {
+    p + .image,
+    .iamge + p {
       margin-top: 1em !important;
     }
 

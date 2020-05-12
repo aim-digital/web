@@ -112,6 +112,11 @@
   @media (min-width: 992px) {
     max-width: none;
   }
+
+  & + p {
+    margin-top: 2em !important;
+    opacity: .85;
+  }
 }
 
 .subscription .plan {
@@ -138,10 +143,6 @@
   h4, .price {
     position: relative;
     z-index: 2;
-  }
-
-  p > small {
-    opacity: .85;
   }
 
   strong {

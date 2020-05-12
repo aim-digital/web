@@ -75,8 +75,6 @@ export default class extends Component {
           </div>
         </div>
       </div>
-      <br />
-      <br />
       <p><small>* Plans can be additive. Additional <i>Fox One</i> partners, associates, and interns are available at no monthly commitment at respective day rates. Remaining balance refunded upon project acceptance or cancellation.</small></p>
     </>;
   }

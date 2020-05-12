@@ -5,16 +5,14 @@
         "slug": "about",
         "title": "Speed, Accuracy, Value. Repeat.",
         "icon": "fighter-jet",
-        "ctaCategory": "Mission & Values",
+        "ctaCategory": "Mission & Value",
         "summary": "Speed, accuracy, value, and iteration are the core mission themes applied through our software consulting services to guard against software waste. Read through each section to see how we can save you money.",
         "category": "Dossier",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [{
             "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
-        }, {
-            "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+            "url": "https://d3w33imimg0eu8.cloudfront.net/images/768ccb56-a555-4f86-94b1-8f4c4c5d9450.png",
+            "value": "A bird's eye view of our value to you."
         }]
     },
     {

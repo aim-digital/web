@@ -296,7 +296,7 @@
   .content {
     padding: 0 20px 30px;
 
-    h4 {
+    h2, h3, h4 {
       padding: 0;
       margin: 0;
       text-align: left;
@@ -311,20 +311,49 @@
 
     p {
       margin: 0;
+      position: relative;
+      z-index: 2;
     }
 
+    h2 {
+      position: relative;
+      z-index: 1;
+      padding-right: 4em;
+
+      img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 2em;
+        margin-bottom: -.25em;
+      }
+    }
+
+    h2 + p,
+    h2 + .image,
     p + p,
-    p + img,
-    img + p {
+    p + h2,
+    p + .image,
+    .image + p,
+    .image + h2 {
       margin-top: 1.5em !important;
     }
 
-    img {
-      display: block;
-      width: 75%;
-      max-width: 360px;
+    .image {
       margin-left: auto;
       margin-right: auto;
+      text-align: center;
+
+      &:after {
+        content: attr(data-caption);
+        text-align: center;
+        width: 100%;
+        display: block;
+      }
+
+      img {
+        max-width: 100%;
+      }
     }
 
     .subscription {
