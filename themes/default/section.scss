@@ -140,6 +140,14 @@
     z-index: 2;
   }
 
+  p > small {
+    opacity: .85;
+  }
+
+  strong {
+    text-transform: uppercase;
+  }
+
   .discount {
     z-index: 1;
     position: absolute;
@@ -204,6 +212,11 @@
       display: inline-block;
       width: 20px;
       text-align: center;
+    }
+
+    strong {
+      font-weight: 600;
+      font-size: .9em;
     }
   }
 
