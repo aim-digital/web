@@ -13,6 +13,12 @@
             "type": "image",
             "url": "https://d3w33imimg0eu8.cloudfront.net/images/768ccb56-a555-4f86-94b1-8f4c4c5d9450.png",
             "value": "A bird's eye view of our value to you."
+        }, {
+            "type": "paragraph",
+            "copy": "Recent statistics show that 70% of software projects fail, with $50-150 billion attributed to software waste annually in the U.S."
+        }, {
+            "type": "paragraph",
+            "copy": "Whether it's lack of transparency at the account level, poor project management, or less-than-average talent, we've identified common issues throughout our extensive experience that has led us to our mission of solving the software waste problem by optimizing the major pain points of software development."
         }]
     },
     {
@@ -26,10 +32,14 @@
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
         "content": [{
             "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
+            "url": "https://d3w33imimg0eu8.cloudfront.net/images/e5803c3e-a859-4246-9dca-f84d9ee3dd21.png",
+            "value": "Just 2 of our multi-role experts can do the work of 3 competing consultants."
         }, {
             "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+            "copy": "Universal skill-sets mitigate communication bottlenecks, ensuring zero latency between task objectives and maximum productivity per every hour worked."
+        }, {
+            "type": "paragraph",
+            "copy": "We take a federated approach to consulting. All of our consultants are remote and operate autonomously within the domestic U.S. With an emphasis on exemplary written and communication skills, all consultants command mastery in their respective trade disciplines, but are also trained in each crucial role of digital development."
         }]
     },
     {

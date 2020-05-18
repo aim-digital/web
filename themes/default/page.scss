@@ -439,25 +439,25 @@ section.solutions {
       small {
         font-size: 80%;
       }
+    }
 
-      &:first-of-type {
-        margin-bottom: 2.5em;
-        margin-top: -2.5em;
+    p:first-of-type {
+      margin-bottom: 2.5em;
+      margin-top: -2.5em !important;
 
-        span {
-          padding: 10px;
-          display: inline-block;
-          border-radius: 2px;
-          background: rgba(89, 159, 198, 0.85);
-          border-top: solid 2px rgba(89, 159, 198, 1);
-          box-shadow: 0 5px 10px rgba(41, 41, 41, 0.25);
-        }
+      span {
+        padding: 10px;
+        display: inline-block;
+        border-radius: 2px;
+        background: rgba(89, 159, 198, 0.85);
+        border-top: solid 2px rgba(89, 159, 198, 1);
+        box-shadow: 0 5px 10px rgba(41, 41, 41, 0.25);
       }
     }
 
     p + p,
     p + .image,
-    .iamge + p {
+    .image + p {
       margin-top: 1em !important;
     }
 

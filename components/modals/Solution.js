@@ -147,7 +147,7 @@ export default class extends Modal {
 
               return <Fragment key={`detail-content-${i}`}>
                 {Component && <Component />}
-                {content.type === 'heading' && <h2><img src={content.url || content.media[0].url} />{content.value}</h2>}
+                {content.type === 'heading' && <h2>{content.url || content.media[0] ? <img src={content.url || content.media[0].url} /> : <>/</>}{content.value}</h2>}
                 {content.type === 'image' && <div className="image" data-caption={content.value}><img alt={content.value} src={content.url || content.media[0].url} /></div>}
                 {content.type === 'paragraph' && <p>{content.copy}</p>}
               </Fragment>
