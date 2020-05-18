@@ -341,7 +341,9 @@ export default class extends Page {
           <div className="row">
             <div className="col-md-12 card">
               <p><span>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</span></p>
-              <img src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" />
+              <div className="image">
+                <img src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" />
+              </div>
               <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
               <div>
                 <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
