@@ -53,7 +53,8 @@
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/b08c0d15bb08409cb6a9b7cad20e10d2.png" }],
         "content": [{
             "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/Development-01.png" }],
+            "value": "Just 2 of our multi-role experts can do the work of 3 competing consultants."
         }, {
             "type": "paragraph",
             "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
