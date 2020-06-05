@@ -47,7 +47,7 @@ export default class extends Section {
                 {(solution.content || []).map((content, i) => {
                   return <Fragment key={`page-content-${i}`}>
                     {content.type === 'paragraph' && <p>{content.copy}</p>}
-                    {content.type === 'image' && <div className="image" data-caption={content.value}><img alt={content.value} src={content.url || content.media[0].url} /></div>}
+                    {content.type === 'image' && <div className="image"><img alt={content.value} src={content.url || content.media[0].url} />{content.value ? <div>{content.value}</div> : <></>}</div>}
                   </Fragment>
                 })}
               </>}

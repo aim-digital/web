@@ -586,11 +586,11 @@ export default class extends Page {
                 {this.solutions}
               </ParallaxLayer>}
               {rendered && <>
-                <ParallaxLayer offset={factor(0)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
-                <ParallaxLayer offset={factor(2)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
-                <ParallaxLayer offset={factor(4)} speed={0.35} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
-                <ParallaxLayer offset={factor(6)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '125vh' }} />
-                <ParallaxLayer offset={factor(8)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '125vh' }} />
+                {/* <ParallaxLayer offset={factor(0)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '200vh' }} />
+                <ParallaxLayer offset={factor(2)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '200vh' }} />
+                <ParallaxLayer offset={factor(5)} speed={0.35} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '200vh' }} />
+                <ParallaxLayer offset={factor(6)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '200vh' }} />
+                <ParallaxLayer offset={factor(9)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '200vh' }} /> */}
                 <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
                   <img src={url('earth')} style={{ width: '60%', opacity: '.8' }} />
                 </ParallaxLayer>
@@ -686,28 +686,30 @@ export default class extends Page {
                     <p>Our services can accelerate and enhance your software projects. Use the form (<i className="fa color-primary-green fa-hand-o-down" />) to get started with a free 30 minute call with a senior partner.</p>
                     <div className={`form ${contact ? 'success' : ''}`} onClick={this.openContact}>
                       <div>
-                        {contact && <>
-                          <h4>Schedule a Call</h4>
-                          <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
-                          <button className="btn btn-success" onClick={() => analytics.Confirmation.Page.Booking.track(formatted, sources)}>
-                            <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
-                            <i className="fa fa-calendar" />
-                          </button>
-                        </>}
-                        <br />
-                        <br />
-                        <h4>Spread the Word</h4>
-                        <p>Shout-outs can get you a <strong>5% discount</strong>!</p>
-                        <ul>
-                          <li>Use the buttons below to share us.</li>
-                          <li>20 aggregate "likes" discounts 2.5%.</li>
-                          <li>10 aggregate comments discounts 2.5%.</li>
-                          <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
-                        </ul>
-                        {contact && this.renderShare(this.section ? solutions[SECTIONS[this.section].slide] : brand)}
-                        <br />
-                        <br />
-                        <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
+                          <div>
+                            {contact && <>
+                              <h4>Schedule a Call</h4>
+                              <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
+                              <button className="btn btn-success" onClick={() => analytics.Confirmation.Page.Booking.track(formatted, sources)}>
+                                <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
+                                <i className="fa fa-calendar" />
+                              </button>
+                            </>}
+                            <br />
+                            <br />
+                            <h4>Spread the Word</h4>
+                            <p>Shout-outs can get you a <strong>5% discount</strong>!</p>
+                            <ul>
+                              <li>Use the buttons below to share us.</li>
+                              <li>20 aggregate "likes" discounts 2.5%.</li>
+                              <li>10 aggregate comments discounts 2.5%.</li>
+                              <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
+                            </ul>
+                            {contact && this.renderShare(this.section ? solutions[SECTIONS[this.section].slide] : brand)}
+                            <br />
+                            <br />
+                            <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
+                          </div>
                       </div>
                       <forms.Contact status={status} quote newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
                       {!contact && message && <span className="error">{message}</span>}

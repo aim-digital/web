@@ -107,7 +107,32 @@
 }
 
 .subscription {
+  padding: 30px 15px !important;
+  position: relative;
   max-width: 360px;
+  position: relative;
+  z-index: 2;
+  background: rgba(15, 15, 15, .5);
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    width: 25vw;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+  }
+
+  &:before {
+    right: 100%;
+    background: linear-gradient(90deg, rgba(89, 159, 198, 0), rgba(15, 15, 15, 0.5));
+  }
+
+  &:after {
+    left: 100%;
+    background: linear-gradient(90deg, rgba(15, 15, 15, 0.5), rgba(89, 159, 198, 0));
+  }
 
   @media (min-width: 992px) {
     max-width: none;
