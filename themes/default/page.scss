@@ -17,6 +17,10 @@ section.quote {
     z-index: 1;
     width: 100%;
 
+    @media (min-width: 992px) {
+      max-width: 400px !important;
+    }
+
     .form {
       .form-group {
         pointer-events: none;
@@ -25,7 +29,7 @@ section.quote {
           pointer-events: auto;
 
           &.comment textarea {
-            height: 190px;
+            height: 160px;
             resize: none;
             overflow: hidden;
           }
@@ -42,8 +46,8 @@ section.quote {
     pointer-events: auto;
 
     &.comment textarea {
-      height: auto;
       overflow: auto;
+      resize: auto;
     }
   }
 
@@ -439,7 +443,7 @@ section.solutions {
         padding: 10px;
         color: #c0c0c0;
         background: rgba(21, 21, 21, .8);
-        box-shadow: 0px -1px 5px #0a0a0a;
+        box-shadow: 0px -2px 6px #0a0a0a;
         font-size: 90%;
       }
 

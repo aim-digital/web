@@ -683,7 +683,7 @@ export default class extends Page {
                   <section className="quote section">
                     <h2>Talk to Me</h2>
                     <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
-                    <p>Our services can accelerate and enhance your software projects. Use the form (<i className="fa color-primary-green fa-hand-o-down" />) to get started with a free 30 minute call with a senior partner.</p>
+                    <p>Our services can accelerate and enhance your software projects. Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 30 minute call with a senior partner.</p>
                     <div className={`form ${contact ? 'success' : ''}`} onClick={this.openContact}>
                       <div>
                           <div>

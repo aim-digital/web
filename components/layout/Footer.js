@@ -65,7 +65,7 @@ export default class extends Footer {
                 <img src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" alt="Fox Zero · Zero Latency Software Consultancy™"/>
               </Link>
             </div>
-            <div className="col-sm-9 col-xs-12">
+            <div className="col-xs-12">
               <ul className="col-sm-3 col-xs-6">
                 <li>
                   <h4><i>@</i> Follow Us</h4>
@@ -127,13 +127,23 @@ export default class extends Footer {
                   </ul>
                 </li>
               </ul>
-            </div>
-            <div className="col-sm-3 col-xs-12">
-              <h4><i className="fa fa-info-circle"/> Support</h4>
-              <Link className="support" to="/contact" onClick={update('contact', true)}><i className="fa fa-envelope"/> Contact Us</Link>
-              <Link className="support" to="/privacy" onClick={update('privacy', true)}><i className="fa fa-legal"/> Privacy Policy</Link>
-              <p>For sales and customer service, please call or text <a title="Phone/SMS: +1 (855) FOX-ZERO" href="tel:+18553473369" target="_blank">+1 (855) FOX-ZERO</a>, or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
-              <p><strong>Operating Hours:</strong><br />9am-6pm (EST), M-F</p>
+              <ul className="col-md-3 col-xs-12">
+                <li className="subnav">
+                  <div>
+                    <h4><i className="fa fa-info-circle"/> Support</h4>
+                    <ul>
+                      <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-envelope"/> Contact Us</Link></li>
+                      <li><Link to="/privacy" onClick={update('privacy', true)}><i className="fa fa-legal"/> Privacy Policy</Link></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p>For customer service or sales, please call <a title="Phone: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank">(855) FOX-ZERO</a> or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
+                  </div>
+                  <div>
+                    <p><strong>Operating Hours:</strong><br />9am-1pm / 4pm-6pm<br />Eastern Time<br />Monday-Friday</p>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div className="col-xs-12 text-center">
               <img src="https://d3w33imimg0eu8.cloudfront.net/images/corp-transparent.png" alt="Fox Zero · A VitruvianTech Brand"/>

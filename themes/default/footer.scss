@@ -1,6 +1,4 @@
 footer {
-  @extend .well;
-
   font-size: 1.25em !important;
   color: #f8f8f8;
   margin: 0 auto;
@@ -99,18 +97,12 @@ footer {
   }
 
   p {
-    padding-bottom: 1em;
-    max-width: 970px;
-    margin: 0 auto;
+    font-size: .9em;
+    padding: 0 0 1.5em;
   }
 
-  a.support {
-    display: block;
+  ul p {
     font-size: 1em;
-
-    @media (min-width: 1280px) {
-      font-size: .75em;
-    }
   }
 
   img {
@@ -124,10 +116,6 @@ footer {
     width: 100%;
     min-width: 0;
     margin-bottom: 1.25em;
-    // background: $white-color;
-    // box-shadow: 0 0 .5em $black-color;
-    // border-radius: 50%;
-    // padding: .25em;
   }
 
   .logo {
@@ -179,8 +167,13 @@ footer {
     }
 
     .social li {
-      display: inline-block;
-      width: 33%;
+      float: left;
+      width: 2.5em;
+      font-size: 1.25em;
+
+      &:nth-child(3n + 1) {
+        clear: left;
+      }
 
       a {
         font-size: 1.75em;
@@ -203,6 +196,10 @@ footer {
       padding-left: 1em !important;
     }
 
+    @media (min-width: 992px) {
+      width: 20%;
+    }
+
     @media (min-width: 768px) {
       text-align: left;
     }
@@ -221,18 +218,54 @@ footer {
     &:first-child {
       padding-left: 0 !important;
     }
+
+    @media (min-width: 768px) {
+      &:last-child {
+        padding-left: 0 !important;
+
+        > .subnav > div {
+          width: 50%;
+          float: left;
+
+          & + div {
+            padding-left: 1em;
+          }
+
+          &:first-child,
+          &:last-child {
+            width: 25%;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      &:last-child {
+        padding-left: 1em !important;
+
+        > .subnav > div {
+          width: auto;
+          float: none;
+
+          & + div {
+            padding-left: 0;
+          }
+
+          &:first-child,
+          &:last-child {
+            width: auto;
+          }
+        }
+      }
+    }
   }
 
   li li {
     font-size: 1.25em;
     white-space: nowrap;
 
-    @media (min-width: 768px) {
-      font-size: .9em;
-    }
-
-    @media (min-width: 1280px) {
-      font-size: 1.25em;
+    @media (min-width: 992px) {
+      font-size: 1.35em;
     }
 
     i {
@@ -240,10 +273,6 @@ footer {
       width: 1.5em;
       text-align: center;
     }
-  }
-
-  p {
-    font-size: .9em;
   }
 
   small {
@@ -257,9 +286,14 @@ footer {
     overflow: hidden;
     position: relative;
     z-index: 3;
+    padding: 0 15px;
 
     @media (min-width: 768px) {
-      padding: 0 1.5em;
+      padding: 0 30px;
+    }
+
+    @media (min-width: 992px) {
+      padding: 0 60px;
     }
   }
 
@@ -290,8 +324,13 @@ footer {
       top: 0;
       right: -175%;
       margin-top: 20%;
-      margin-right: 10%;
+      margin-right: 20%;
       box-shadow: -10px -5px 10px rgba(41, 41, 41, 0.35);
+
+      @media (min-width: 768px) {
+        margin-top: 70%;
+        margin-right: 90%;
+      }
     }
 
     &:after {
