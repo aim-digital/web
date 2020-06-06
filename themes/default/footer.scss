@@ -226,6 +226,7 @@ footer {
         > .subnav > div {
           width: 50%;
           float: left;
+          max-width: 320px;
 
           & + div {
             padding-left: 1em;

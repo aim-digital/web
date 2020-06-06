@@ -109,7 +109,7 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-cubes"/> Services</h4>
+                  <h4><i className="fa fa-cogs"/> Services</h4>
                   <ul>
                     <li><Link to="/consulting" onClick={update(solutions[1].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
                     <li><Link to="/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
@@ -119,7 +119,7 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-usd"/> Pricing</h4>
+                  <h4><i className="fa fa-tags"/> Products</h4>
                   <ul>
                     <li><Link to="/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
                     <li><Link to="/subscription" onClick={update(solutions[5].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
@@ -140,7 +140,7 @@ export default class extends Footer {
                     <p>For customer service or sales, please call <a title="Phone: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank">(855) FOX-ZERO</a> or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
                   </div>
                   <div>
-                    <p><strong>Operating Hours:</strong><br />9am-1pm / 4pm-6pm<br />Eastern Time<br />Monday-Friday</p>
+                    <p><strong>Operating Hours:</strong><br />9am-1pm, 4pm-6pm<br />EST / Mon.-Fri.</p>
                   </div>
                 </li>
               </ul>

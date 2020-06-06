@@ -107,7 +107,7 @@ export default class extends Nav {
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Services</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
               <ul>
                 <li><Link rel="nofollow" to="/home/consulting" onClick={update(solutions[1].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
                 <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
@@ -115,7 +115,7 @@ export default class extends Nav {
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-usd"/> Pricing</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-tags"/> Products</a>
               <ul>
                 <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
                 <li><Link rel="nofollow" to="/home/subscription" onClick={update(solutions[5].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
@@ -139,7 +139,7 @@ export default class extends Nav {
                 </li>
                 <li>
                   <Link to="/stream/music" onClick={update('stream.category')}>
-                    <i className="fa fa-tag"/> <span>···</span> Music
+                    <i className="fa fa-hashtag"/> <span>···</span> Music
                   </Link>
                 </li>
                 <li>
