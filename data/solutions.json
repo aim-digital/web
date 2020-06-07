@@ -18,7 +18,7 @@
             "copy": "Recent statistics show that 70% of software projects fail, with $50-150 billion attributed to software waste annually in the U.S."
         }, {
             "type": "paragraph",
-            "copy": "Whether it's lack of transparency at the account level, poor project management, or less-than-average talent, we've identified common issues throughout our extensive experience that has led us to our mission of solving the software waste problem by optimizing the major pain points of software development."
+            "copy": "Our extensive experience has led us to our mission of solving this problem by abstracting much of the major pain points of digital development. Efficiency means better value, and better value means a healthier economy for all."
         }]
     },
     {
@@ -33,13 +33,13 @@
         "content": [{
             "type": "image",
             "url": "https://d3w33imimg0eu8.cloudfront.net/images/e5803c3e-a859-4246-9dca-f84d9ee3dd21.png",
-            "value": "Just 2 of our multi-role experts can do the work of 3 competing consultants."
+            "value": "One of our multi-role experts can do the work of two competing consultants."
         }, {
             "type": "paragraph",
             "copy": "Universal skill-sets mitigate communication bottlenecks, ensuring zero latency between task objectives and maximum productivity per every hour worked."
         }, {
             "type": "paragraph",
-            "copy": "We take a federated approach to consulting. All of our consultants are remote and operate autonomously within the domestic U.S. With an emphasis on exemplary written and communication skills, all consultants command mastery in their respective trade disciplines, but are also trained in each crucial role of digital development."
+            "copy": "All of our consultants operate remotely within the domestic U.S. while integrated with your team, providing exemplary written and communication skills along with mastery in their respective trade disciplines, as well as expert training in each crucial role of digital development."
         }]
     },
     {
@@ -54,10 +54,10 @@
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/Development-01.png" }],
-            "value": "Just 2 of our multi-role experts can do the work of 3 competing consultants."
+            "value": "Get the tech outta here!"
         }, {
             "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+            "copy": "Pairing dedicated hands-on development services with our higher level consulting services bridges the gaps between creative, management, and implementation, fulfilling a role as a full service agency."
         }]
     },
     {
@@ -84,7 +84,7 @@
         "slug": "subscription",
         "title": "Velocity™ Plan Pricing",
         "icon": "refresh",
-        "summary": "No more nickel-and-diming over hours. We’re bottom-line thinkers who know what projects cost, and know what motivates staff. Why not make project planning simpler while retaining happier talented workers?",
+        "summary": "No more nickel-and-diming over hours. We’re bottom-line thinkers who know what projects cost and what motivates staff. Why not make project planning simpler while retaining highly talented and dedicated workers?",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]
@@ -95,7 +95,7 @@
         "slug": "on-demand",
         "title": "Point & Pay™ Sprint Pricing",
         "icon": "power-off",
-        "summary": "For a small monthly fee, senior consultants can be retained within your team and activated as needed with a surcharge on each Agile point delivered and verified. Includes up to 10 hours of consulting per month.",
+        "summary": "Individual consultants can be retained within your team and activated as needed for a surcharge on each point-based task delivered and verified. Includes up to 10 senior partner hours of consulting per month.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg" }],

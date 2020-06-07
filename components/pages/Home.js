@@ -546,7 +546,7 @@ export default class extends Page {
     const { animating, isMobile, isLandscape } = state;
     const { message, status } = state.form;
 
-    const SECTION_HEIGHTS = [0, 0, 0, 0, isMobile ? 0.275 : 0, 0, 0, 0];
+    const SECTION_HEIGHTS = [0, 0, 0, 0.1, 0, 0.3, 0, 0];
     const aggregateHeight = offset => SECTION_HEIGHTS.slice(0, offset).reduce((a, b) => a + b, 0);
     const hasMany = sections.length > 1;
     const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
@@ -678,7 +678,7 @@ export default class extends Page {
                 {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
                 <ParallaxLayer
                   className="section-form"
-                  offset={factor((hasMany ? SECTION_FORM : height) + 0.1)}
+                  offset={factor((hasMany ? SECTION_FORM : height) + 0.15)}
                   speed={PARALLAX_SPEED}>
                   <section className="quote section">
                     <h2>Talk to Me</h2>
@@ -717,9 +717,9 @@ export default class extends Page {
                     </div>
                   </section>
                 </ParallaxLayer>
-                {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 0.9 + (isMobile ? 0 : 0.05))) : <></>}
+                {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 1.1 + (isMobile ? 0 : 0.05))) : <></>}
                 <ParallaxLayer
-                  offset={factor(height + (hasMany ? (isMobile ? 0.8 : 0.9) : 0.95) + (isMobile ? 0 : 0.05))}
+                  offset={factor(height + (hasMany ? (isMobile ? 0.8 : 0.8) : 0.95) + (isMobile ? 0 : 0.05))}
                   factor={scale}
                   speed={PARALLAX_SPEED}>
                   {this.content}

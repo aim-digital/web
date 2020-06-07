@@ -412,7 +412,6 @@ section.solutions {
   .card {
     .image {
       position: relative;
-      padding: 0 15px;
 
       &:after,
       &:before {
@@ -445,6 +444,7 @@ section.solutions {
         background: rgba(21, 21, 21, .8);
         box-shadow: 0px -2px 6px #0a0a0a;
         font-size: 90%;
+        text-align: center;
       }
 
       img {
@@ -455,10 +455,6 @@ section.solutions {
         padding: 15px 5px;
         width: 100%;
       }
-    }
-
-    > div, p {
-      padding: 15px;
     }
 
     p, .image {
@@ -477,9 +473,14 @@ section.solutions {
       }
     }
 
+    p:last-of-type,
+    .image:last-of-type {
+      padding-bottom: 15px !important;
+    }
+
     p:first-of-type {
-      margin-bottom: 2.5em;
       margin-top: -2.5em !important;
+      padding-bottom: 15px !important;
 
       span {
         padding: 10px;
@@ -491,14 +492,9 @@ section.solutions {
       }
     }
 
-    p + p,
-    p + .image,
-    .image + p {
-      margin-top: 1em !important;
-    }
-
-    > div {
-      margin-top: 15px;
+    p, > div {
+      margin-top: 30px !important;
+      padding: 0 15px;
     }
 
     .solution {
