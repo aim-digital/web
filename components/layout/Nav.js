@@ -107,7 +107,7 @@ export default class extends Nav {
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Services</a>
               <ul>
                 <li><Link rel="nofollow" to="/home/consulting" onClick={update(solutions[1].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
                 <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
@@ -117,16 +117,16 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-tags"/> Products</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
-                <li><Link rel="nofollow" to="/home/subscription" onClick={update(solutions[5].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
-                <li><Link rel="nofollow" to="/home/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off"/> On Demand</Link></li>
+                <li><Link rel="nofollow" to="/home/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
+                <li><Link rel="nofollow" to="/home/on-demand" onClick={update(solutions[5].slug, true)}><i className="fa fa-power-off"/> On Demand</Link></li>
+                <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[6].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-info-circle"/> Support</a>
               <ul>
                 <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-phone"/> Contact Us</Link></li>
-                <li><Link to="/privacy" onClick={update('privacy', true)}><i className="fa fa-legal"/> Privacy Policy</Link></li>
+                <li><Link to="/privacy" onClick={update('privacy', true)}><i className="fa fa-user-secret"/> Privacy Policy</Link></li>
               </ul>
             </li>
             <li className="content subnav">

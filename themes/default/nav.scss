@@ -167,7 +167,7 @@ nav > ul {
   &:after {
     content: attr(data-copyright);
     font-size: .65em;
-    padding: 1.25em 1.75em;
+    padding: 2em 1.75em;
     display: block;
     color: $humility;
     position: fixed;
@@ -185,6 +185,14 @@ nav > ul {
   &:before {
     display: block;
   }
+}
+
+#hubspot-messages-iframe-container {
+  transition: transform .25s;
+}
+
+body.nav-open #hubspot-messages-iframe-container {
+  transform: translate3d(-100%, 0, 0);
 }
 
 #app.nav-open nav {

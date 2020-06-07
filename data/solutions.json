@@ -68,7 +68,7 @@
         "icon": "bullseye",
         "summary": "Adopted from the automotive industry, our strategy is built on a curated Agile product lifecycle framework. Paired with military-based day-to-day processes, real cost savings are met with real-time collaboration.",
         "category": "Dossier",
-        "ctaCategory": "Strategic Framework",
+        "ctaCategory": "Strategy Framework",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
         "content": [{
             "type": "image",
@@ -80,23 +80,6 @@
     },
     {
         "index": 4,
-        "section": "Warranty",
-        "slug": "warranty",
-        "title": "Wingman™ Surety Coverage",
-        "icon": "umbrella",
-        "summary": "Every development project we manage is insured up to 10% of the total project price to guarantee minimum risk of delivery time, budget, and quality. Valid from kick-off until 120 days after project acceptance.",
-        "category": "Coverage",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
-        "content": [{
-            "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
-        }, {
-            "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
-        }]
-    },
-    {
-        "index": 5,
         "section": "Subscription",
         "slug": "subscription",
         "title": "Velocity™ Plan Pricing",
@@ -107,7 +90,7 @@
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]
     },
     {
-        "index": 6,
+        "index": 5,
         "section": "On Demand",
         "slug": "on-demand",
         "title": "Point & Pay™ Sprint Pricing",
@@ -116,6 +99,23 @@
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg" }],
+        "content": [{
+            "type": "image",
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
+        }, {
+            "type": "paragraph",
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+        }]
+    },
+    {
+        "index": 6,
+        "section": "Warranty",
+        "slug": "warranty",
+        "title": "Wingman™ Surety Coverage",
+        "icon": "umbrella",
+        "summary": "Every development project we manage is insured up to 10% of the total project price to guarantee minimum risk of delivery time, budget, and quality. Valid from kick-off until 120 days after project acceptance.",
+        "category": "Coverage",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
