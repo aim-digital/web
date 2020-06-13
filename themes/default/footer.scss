@@ -13,9 +13,9 @@ footer {
   text-shadow: -1px 1px 1px $black-color;
 
   .home.page & {
-    bottom: 0;
-    position: absolute;
+    position: relative;
     width: 100%;
+    z-index: 3;
   }
 
   .home.about.page & {
