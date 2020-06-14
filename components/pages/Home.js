@@ -374,9 +374,9 @@ export default class extends Page {
 
     this.setState({ isMobile: global.innerWidth < 992, isLandscape });
 
-    if (!isMobile && !isModalOpen && !this.props.solution && ready && isLandscape !== currentOrientation) {
-      global.location.reload();
-    }
+    // if (!isMobile && !isModalOpen && !this.props.solution && ready && isLandscape !== currentOrientation) {
+    //   global.location.reload();
+    // }
   };
 
   openSolution = async (solution, sources) => {
@@ -572,13 +572,16 @@ export default class extends Page {
           <section className="section container">
             {__CLIENT__ ? <div className={`parallax ${isLandscape ? 'landscape' : ''}`}>
               {rendered && <>
-                <div className="layer" style={{ transform: 'translate3d(0,0,-4px) scale3d(1.75, 1.75, 1.75)' }}>
+                <div className="layer" style={{ transform: 'translate3d(0, -50%, -4px) scale3d(2, 2, 2)', left: '50%', width: '180%' }}>
+                  <img src={url('stars')} style={{ width: '100%', opacity: '.65' }} />
+                </div>
+                <div className="layer" style={{ transform: 'translate3d(0, -50%, -4px) scale3d(2, 2, 2)', left: '50%', width: '180%', top: '750vh' }}>
                   <img src={url('stars')} style={{ width: '100%', opacity: '.65' }} />
                 </div>
                 <div className="layer">
                   <img src={url('earth')} style={{ width: '90%', opacity: '.65' }} />
                 </div>
-                <div className="layer" offset={1.3} speed={-0.3} style={{ transform: 'translate3d(0,0,-3px) scale3d(1.5, 1.5, 1.5)' }}>
+                <div className="layer" offset={1.3} speed={-0.3} style={{ transform: 'translate3d(0, 0, -3px) scale3d(1.5, 1.5, 1.5)' }}>
                   <img src={url('satellite4')} style={{ width: '20%', marginLeft: '75%' }} />
                 </div>
               </>}
@@ -679,7 +682,7 @@ export default class extends Page {
                       <h2>Talk to Me</h2>
                       <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
                       <p>Our services can accelerate and enhance your software projects. Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 30 minute call with a senior partner.</p>
-                      <div className={`form ${contact ? 'success' : ''}`} onClick={this.openContact}>
+                      <div className={`form ${contact ? 'success' : ''}`}>
                         <div>
                             <div>
                               {contact && <>
