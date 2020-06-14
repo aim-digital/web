@@ -18,7 +18,6 @@ import * as forms from '@fox-zero/web/components/forms';
 import formatters from '@fox-zero/web/lib/formatters';
 import {solutions, brand} from '@fox-zero/web/data';
 import * as analytics from '@fox-zero/web/lib/analytics';
-import {Parallax, ParallaxLayer} from '@react-spring/addons/parallax.cjs';
 
 const {
   FacebookShareButton,
@@ -31,9 +30,6 @@ const HEADER_TIMER = 13.5;
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
-
-const PARALLAX_SCALE = 750;
-const PARALLAX_SPEED = 0.2;
 
 const IMPRESSION_START = 0.5;
 const IMPRESSION_END = 0.35;
@@ -51,8 +47,6 @@ const SECTIONS = {
   'warranty': { slide: 6 },
   'maintenance': { slide: 7 }
 };
-
-const RE_LEGACY_IE = /Trident\/7/;
 
 const VERIFY_ACTION = 'form_page_submission';
 const VERIFY_GRADE = 0.65;
@@ -159,6 +153,7 @@ export default class extends Page {
       document.querySelector('#app > section > .page').removeEventListener('click', this.props.dismiss);
       document.querySelector('#app').classList.remove('home');
       parallax && parallax.removeEventListener('scroll', this.onScroll);
+      parallax && parallax.removeEventListener('scroll', this.onSolutionScroll);
       global.removeEventListener('resize', this.updateViewport);
     }
   };
@@ -173,17 +168,24 @@ export default class extends Page {
     }
   };
 
-  componentDidUpdate = () => {
-    if (!this.state.rendered && document.querySelector('#app').querySelector('.section.container > .parallax')) {
+  componentDidUpdate = (props, state) => {
+    if (!this.state.rendered && document.querySelector('#app').querySelector('.section.container > .parallax') && this.setupParallax) {
       this.setupParallax();
     }
   };
 
   setupParallax = () => {
     this.elements = this.getElements();
-    this.elements.parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 950, { trailing: true }));
+    this.elements.parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 250, { trailing: true }));
+    this.elements.parallax.addEventListener('scroll', this.onSolutionScroll);
     this.setState({ rendered: true });
-    this.setupParallax = () => {};
+    this.setupParallax = null;
+  };
+
+  onSolutionScroll = () => {
+    if (!this.state.isMobile) {
+      this.elements.parallax.querySelector('.section-solution').style.transform = `translate3d(0px, ${this.elements.parallax.scrollTop}px, 0px)`;
+    }
   };
 
   cycleHeader = (timer = HEADER_TIMER) => {
@@ -293,7 +295,7 @@ export default class extends Page {
     const { renderSolution } = this;
 
     return (
-      global.innerWidth < 992 ? <></> :
+      this.state.isMobile ? <></> :
       <section className="solutions">
         <div className="left">{solutions.slice(0, SOLUTION_AVG).map(renderSolution(i => ({ delay: (5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(-200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .8 } })))}</div>
         <div className="right">{solutions.slice(SOLUTION_AVG).map(renderSolution(i => ({ delay: (7.5 - i) * SOLUTION_DELAY, from: { transform: 'translate3d(200%, 0, 0)', opacity: 0 }, to: { transform: 'translate3d(0, 0, 0)', opacity: .8 } })))}</div>
@@ -334,42 +336,36 @@ export default class extends Page {
     const headerClass = this.length % 2 ? 'text-right' : '';
 
     return (
-      <section className="section">
-        <h2 className={headerClass}>Content</h2>
-        <h3 className={headerClass}>Channel<br />Fox Zero™</h3>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12 card">
-              <p><span>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</span></p>
-              <div className="image">
-                <img src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" />
-              </div>
-              <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
-              <div>
-                <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
-                  <Solution
-                    icon="television">
-                    View <span>Fox Zero™ TV</span>
-                  </Solution>
-                </Link>
+      <div className="section-layer">
+        <section className="section">
+          <h2 className={headerClass}>Content</h2>
+          <h3 className={headerClass}>Channel<br />Fox Zero™</h3>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 card">
+                <p><span>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</span></p>
+                <div className="image">
+                  <img src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" />
+                </div>
+                <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                <div>
+                  <Link className="link" to="/stream">
+                    <Solution
+                      icon="television">
+                      View <span>Fox Zero™ TV</span>
+                    </Solution>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     );
   }
 
   updateViewport = () => {
-    const { isModalOpen } = this.props;
-    const { isLandscape: currentOrientation, isMobile, ready } = this.state;
-    const isLandscape = global.innerWidth > global.innerHeight;
-
-    this.setState({ isMobile: global.innerWidth < 992, isLandscape });
-
-    if (!isMobile && !isModalOpen && !this.props.solution && ready && isLandscape !== currentOrientation) {
-      global.location.reload();
-    }
+    this.setState({ isMobile: global.innerWidth < 992 });
   };
 
   openSolution = async (solution, sources) => {
@@ -473,36 +469,6 @@ export default class extends Page {
     return section ? component.key.replace(RE_SECTION_KEY, '$1').toLowerCase() === section.toLowerCase().replace('-', '') : true;
   }
 
-  openContact = () => {
-    const { section } = this;
-    const { open, contact, sources } = this.props;
-    const { isMobile } = this.state;
-    const { title, summary } = brand;
-    let label;
-
-    if ((isMobile || RE_LEGACY_IE.test(window.navigator.userAgent)) && !contact) {
-      label = formatters.section(section || 'Home');
-      analytics.Form.Page.Click.track(label, sources);
-      transition('timer.pause', true);
-      transition('modal.open', true);
-      open({ subject: title, summary, section: label, sources: (sources || []).concat(['Form.Page.Click']) });
-
-      setTimeout(() => {
-        const dialog = document.getElementById('solution-modal').querySelector('.modal-dialog');
-        const body = dialog.querySelector('.modal-body');
-        const form = body.querySelector('.form');
-
-        if (dialog.scrollTo) {
-          dialog.scrollTo({ top: body.offsetTop, left: 0, behavior: 'smooth' });
-        } else {
-          dialog.scrollTop = body.offsetTop;
-        }
-
-        form.querySelector('.firstName input').focus();
-      }, 0);
-    }
-  };
-
   formatCalendarParams = ({ email, firstname, lastname, company = { value: '' }, message = { value: '' } }) => {
     const e = encodeURIComponent;
     return `email=${e(email.value)}&name=${e([firstname.value, lastname.value].join(' '))}&a1=${e(company.value)}&a2=${e(message.value)}`;
@@ -541,192 +507,81 @@ export default class extends Page {
   };
 
   render() {
-    const { props, state, sections, length, section, formatted } = this;
+    const { props, state, sections, formatted } = this;
     const { className, classNames = {}, contact, destroy: reset, sources, rendered } = props;
-    const { animating, isMobile, isLandscape } = state;
+    const { animating, isMobile } = state;
     const { message, status } = state.form;
-
-    const SECTION_HEIGHTS = [0, 0, 0, 0.1, 0, 0.3, 0, 0];
-    const aggregateHeight = offset => SECTION_HEIGHTS.slice(0, offset).reduce((a, b) => a + b, 0);
     const hasMany = sections.length > 1;
-    const scale = global.innerHeight ? PARALLAX_SCALE / global.innerHeight : 1;
-    const height = length + (hasMany ? aggregateHeight(length - 1) : SECTION_HEIGHTS[SECTIONS[section].slide]);
-    const factor = offset => 1.1 + (offset * scale) + (offset * 0.4);
+
     const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://d3w33imimg0eu8.cloudfront.net/images/${name}.svg${wrap ? ')' : ''}`;
 
-    const renderLayer = (index = 0, offset = 0) => (component, i) => (
-      <ParallaxLayer
-        className={`section-${i + index}`}
-        key={`section-${i + index}`}
-        offset={factor(i + index + offset) + (hasMany ? aggregateHeight(i) : 0)}
-        factor={scale + (hasMany ? SECTION_HEIGHTS[i] : SECTION_HEIGHTS[SECTIONS[section].slide])}
-        speed={PARALLAX_SPEED}>
+    const renderLayer = (index = 0) => (component, i) => (
+      <div className={`section-layer section-${i + index}`} key={`section-${i + index}`}>
         {component}
-      </ParallaxLayer>
+      </div>
     );
 
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            {__CLIENT__ ? <Parallax className={`parallax ${isLandscape ? 'landscape' : ''}`} pages={factor(height + (isMobile && !hasMany ? 2.5 : 2.35))} style={{ left: 0 }}>
-              <ParallaxLayer offset={0} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
-              <ParallaxLayer offset={5} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
-              <ParallaxLayer offset={10} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
-              <ParallaxLayer offset={12} speed={0} factor={10} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
-              <ParallaxLayer
-                offset={0}
-                speed={0}
-                style={{ height: '100vh' }}>
+            {__CLIENT__ ? <div className="parallax">
+              <div>
                 {this.header}
-              </ParallaxLayer>
-              {!isMobile && <ParallaxLayer
-                offset={0}
-                speed={-1}
-                style={{ pointerEvents: 'none', zIndex: 1 }}>
-                {this.solutions}
-              </ParallaxLayer>}
-              {rendered && <>
-                {/* <ParallaxLayer offset={factor(0)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '200vh' }} />
-                <ParallaxLayer offset={factor(2)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '200vh' }} />
-                <ParallaxLayer offset={factor(5)} speed={0.35} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '200vh' }} />
-                <ParallaxLayer offset={factor(6)} speed={1} style={{ backgroundColor: '#009fdd', opacity: '.5', height: '200vh' }} />
-                <ParallaxLayer offset={factor(9)} speed={1} style={{ backgroundColor: '#76a8c7', opacity: '.35', height: '200vh' }} /> */}
-                <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                  <img src={url('earth')} style={{ width: '60%', opacity: '.8' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={6.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                  <img src={url('earth')} style={{ width: '60%', opacity: '.8' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={10.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                  <img src={url('earth')} style={{ width: '60%', opacity: '.8' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
-                  <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={5} speed={-0.5} style={{ pointerEvents: 'none' }}>
-                  <img src={url('satellite4')} style={{ width: '15%', marginLeft: '15%', transform: 'rotate(270deg)' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={9} speed={-0.3} style={{ pointerEvents: 'none' }}>
-                  <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={12} speed={-0.5} style={{ pointerEvents: 'none' }}>
-                  <img src={url('satellite4')} style={{ width: '15%', marginLeft: '15%', transform: 'rotate(270deg)' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={1} speed={0.5} style={{ opacity: 0.1 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.2 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={1.75} speed={0.75} style={{ opacity: 0.2 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '70%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '45%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={3} speed={0.2} style={{ opacity: 0.2 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={3.6} speed={0.2} style={{ opacity: 0.2 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={4} speed={0.4} style={{ opacity: 0.6 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={5} speed={0.8} style={{ opacity: 0.1 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-                  <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={5.75} speed={0.5} style={{ opacity: 0.1 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={6.6} speed={0.4} style={{ opacity: 0.6 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-                  <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={7.6} speed={0.2} style={{ opacity: 0.2 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={8} speed={0.4} style={{ opacity: 0.6 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '65%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={9} speed={0.8} style={{ opacity: 0.1 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-                  <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={9.75} speed={0.5} style={{ opacity: 0.1 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={10.6} speed={0.4} style={{ opacity: 0.6 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-                  <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={11.6} speed={0.2} style={{ opacity: 0.2 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                  <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={12.1} speed={0.4} style={{ opacity: 0.6 }}>
-                  <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '65%' }} />
-                </ParallaxLayer>
-                {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
-                <ParallaxLayer
-                  className="section-form"
-                  offset={factor((hasMany ? SECTION_FORM : height) + 0.15)}
-                  speed={PARALLAX_SPEED}>
-                  <section className="quote section">
-                    <h2>Talk to Me</h2>
-                    <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
-                    <p>Our services can accelerate and enhance your software projects. Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 30 minute call with a senior partner.</p>
-                    <div className={`form ${contact ? 'success' : ''}`} onClick={this.openContact}>
-                      <div>
-                          <div>
-                            {contact && <>
-                              <h4>Schedule a Call</h4>
-                              <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
-                              <button className="btn btn-success" onClick={() => analytics.Confirmation.Page.Booking.track(formatted, sources)}>
-                                <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
-                                <i className="fa fa-calendar" />
-                              </button>
-                            </>}
-                            <br />
-                            <br />
-                            <h4>Spread the Word</h4>
-                            <p>Shout-outs can get you a <strong>5% discount</strong>!</p>
-                            <ul>
-                              <li>Use the buttons below to share us.</li>
-                              <li>20 aggregate "likes" discounts 2.5%.</li>
-                              <li>10 aggregate comments discounts 2.5%.</li>
-                              <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
-                            </ul>
-                            {contact && this.renderShare(this.section ? solutions[SECTIONS[this.section].slide] : brand)}
-                            <br />
-                            <br />
-                            <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
-                          </div>
+                {<div className="section-solution">{this.solutions}</div>}
+                {rendered && <>
+                  <div className="stars layer" style={{ top: '100vh' }} />
+                  <div className="stars layer" style={{ top: '400vh' }} />
+                  <div className="stars layer" style={{ top: '800vh' }} />
+                  <div className="stars layer" style={{ top: '1200vh' }} />
+                  <div className="earth layer" style={{ top: '165vh' }} />
+                  <div className="cloud layer" style={{ top: '200vh', left: '-75%' }} />
+                  <div className="cloud layer farther" style={{ top: '60vh', left: '-75%' }} />
+                  <div className="satellite layer" style={{ top: '140vh' }} />
+                  {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
+                  <div className="section-layer section-form">
+                    <section className="quote section">
+                      <h2>Talk to Me</h2>
+                      <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
+                      <p>Our services can accelerate and enhance your software projects. Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 30 minute call with a senior partner.</p>
+                      <div className={`form ${contact ? 'success' : ''}`}>
+                        <div>
+                            <div>
+                              {contact && <>
+                                <h4>Schedule a Call</h4>
+                                <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
+                                <button className="btn btn-success" onClick={() => analytics.Confirmation.Page.Booking.track(formatted, sources)}>
+                                  <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
+                                  <i className="fa fa-calendar" />
+                                </button>
+                              </>}
+                              <br />
+                              <br />
+                              <h4>Spread the Word</h4>
+                              <p>Shout-outs can get you a <strong>10% discount</strong>!</p>
+                              <ul>
+                                <li>Use the buttons below to share us.</li>
+                                <li>20 aggregate "likes" discounts 5%.</li>
+                                <li>10 aggregate comments discounts 5%.</li>
+                                <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
+                              </ul>
+                              {contact && this.renderShare(this.section ? solutions[SECTIONS[this.section].slide] : brand)}
+                              <br />
+                              <br />
+                              <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
+                            </div>
+                        </div>
+                        <forms.Contact status={status} quote newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
+                        {!contact && message && <span className="error">{message}</span>}
+                        {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
                       </div>
-                      <forms.Contact status={status} quote newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
-                      {!contact && message && <span className="error">{message}</span>}
-                      {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
-                    </div>
-                  </section>
-                </ParallaxLayer>
-                {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 1.1 + (isMobile ? 0 : 0.05))) : <></>}
-                <ParallaxLayer
-                  offset={factor(height + (hasMany ? (isMobile ? 0.8 : 0.8) : 0.95) + (isMobile ? 0 : 0.05))}
-                  factor={scale}
-                  speed={PARALLAX_SPEED}>
+                    </section>
+                  </div>
+                  {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 1.1 + (isMobile ? 0 : 0.05))) : <></>}
                   {this.content}
-                </ParallaxLayer>
-              </>}
-              <Footer/>
-            </Parallax> : <>
+                  <Footer/>
+                </>}
+              </div>
+            </div> : <>
               {this.header}
               {sections}
               {this.content}
