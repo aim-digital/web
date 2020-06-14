@@ -529,105 +529,14 @@ export default class extends Page {
                 {this.header}
                 {<div className="section-solution">{this.solutions}</div>}
                 {rendered && <>
-                  <div className="layer" style={{ transform: 'translate3d(0, -50%, -4px) scale3d(2, 2, 2)', left: '50%', width: '180%' }}>
-                    <img src={url('stars')} style={{ width: '100%', opacity: '.65' }} />
-                  </div>
-                  <div className="layer" style={{ transform: 'translate3d(0, -50%, -4px) scale3d(2, 2, 2)', left: '50%', width: '180%', top: '750vh' }}>
-                    <img src={url('stars')} style={{ width: '100%', opacity: '.65' }} />
-                  </div>
-                  <div className="layer">
-                    <img src={url('earth')} style={{ width: '90%', opacity: '.65' }} />
-                  </div>
-                  <div className="layer" offset={1.3} speed={-0.3} style={{ transform: 'translate3d(0, 0, -3px) scale3d(1.5, 1.5, 1.5)' }}>
-                    <img src={url('satellite4')} style={{ width: '20%', marginLeft: '75%' }} />
-                  </div>
-                  {/* <div className="layer">
-                    <img src={url('earth')} style={{ width: '100%', opacity: '.8' }} />
-                  </div>
-                  <div className="layer" offset={1.3} speed={-0.3} style={{ transform: 'translate3d(0,0,-3px) scale3d(1.5, 1.5, 1.5)' }}>
-                    <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
-                  </div> */}
-                  {/* <div className="layer" offset={6.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                    <img src={url('earth')} style={{ width: '60%', opacity: '.8' }} />
-                  </div>
-                  <div className="layer" offset={10.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-                    <img src={url('earth')} style={{ width: '60%', opacity: '.8' }} />
-                  </div> */}
-                  {/* <div className="layer" offset={1.3} speed={-0.3} style={{ transform: 'translate3d(0,0,-3px) scale3d(1.5, 1.5, 1.5)' }}>
-                    <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
-                  </div> */}
-                  {/* <div className="layer" offset={5} speed={-0.5} style={{ pointerEvents: 'none' }}>
-                    <img src={url('satellite4')} style={{ width: '15%', marginLeft: '15%', transform: 'rotate(270deg)' }} />
-                  </div>
-                  <div className="layer" offset={9} speed={-0.3} style={{ pointerEvents: 'none' }}>
-                    <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
-                  </div>
-                  <div className="layer" offset={12} speed={-0.5} style={{ pointerEvents: 'none' }}>
-                    <img src={url('satellite4')} style={{ width: '15%', marginLeft: '15%', transform: 'rotate(270deg)' }} />
-                  </div>
-                  <div className="layer" offset={1} speed={0.5} style={{ opacity: 0.1 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-                  </div>
-                  <div className="layer" offset={1} speed={0.8} style={{ opacity: 0.2 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-                  </div>
-                  <div className="layer" offset={1.75} speed={0.75} style={{ opacity: 0.2 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '70%' }} />
-                  </div>
-                  <div className="layer" offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '45%' }} />
-                  </div>
-                  <div className="layer" offset={3} speed={0.2} style={{ opacity: 0.2 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-                  </div>
-                  <div className="layer" offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-                  </div>
-                  <div className="layer" offset={3.6} speed={0.2} style={{ opacity: 0.2 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                  </div>
-                  <div className="layer" offset={4} speed={0.4} style={{ opacity: 0.6 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-                  </div>
-                  <div className="layer" offset={5} speed={0.8} style={{ opacity: 0.1 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-                  </div>
-                  <div className="layer" offset={5.75} speed={0.5} style={{ opacity: 0.1 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
-                  </div>
-                  <div className="layer" offset={6.6} speed={0.4} style={{ opacity: 0.6 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-                  </div>
-                  <div className="layer" offset={7.6} speed={0.2} style={{ opacity: 0.2 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-                  </div>
-                  <div className="layer" offset={8} speed={0.4} style={{ opacity: 0.6 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '65%' }} />
-                  </div>
-                  <div className="layer" offset={9} speed={0.8} style={{ opacity: 0.1 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-                  </div>
-                  <div className="layer" offset={9.75} speed={0.5} style={{ opacity: 0.1 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
-                  </div>
-                  <div className="layer" offset={10.6} speed={0.4} style={{ opacity: 0.6 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-                  </div>
-                  <div className="layer" offset={11.6} speed={0.2} style={{ opacity: 0.2 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-                    <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-                  </div>
-                  <div className="layer" offset={12.1} speed={0.4} style={{ opacity: 0.6 }}>
-                    <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '65%' }} />
-                  </div> */}
+                  <div className="stars layer" style={{ top: '100vh' }} />
+                  <div className="stars layer" style={{ top: '400vh' }} />
+                  <div className="stars layer" style={{ top: '800vh' }} />
+                  <div className="stars layer" style={{ top: '1200vh' }} />
+                  <div className="earth layer" style={{ top: '165vh' }} />
+                  <div className="cloud layer" style={{ top: '200vh', left: '-75%' }} />
+                  <div className="cloud layer farther" style={{ top: '60vh', left: '-75%' }} />
+                  <div className="satellite layer" style={{ top: '140vh' }} />
                   {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
                   <div className="section-layer section-form">
                     <section className="quote section">
