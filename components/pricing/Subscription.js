@@ -16,12 +16,12 @@ export default class extends Component {
                 </div>
               </div>
               <div>
-                <span className="price">$39k<sub>/mo.</sub></span>
+                <span className="price">$49k<sub>/mo.</sub></span>
                 <ul>
-                  <li><i className="fa fa-lightbulb-o" /> General Consulting</li>
-                  <li><i className="fa fa-clipboard" /> Project Discovery</li>
                   <li><i className="fa fa-user" /> 1.5 Partners</li>
                   <li><i className="fa fa-user-plus" /> Add'l. Consultants *</li>
+                  <li><i className="fa fa-lightbulb-o" /> General Consulting</li>
+                  <li><i className="fa fa-clipboard" /> Project Discovery</li>
                   <li><i className="fa fa-unlock" /> No commitment *</li>
                 </ul>
               </div>
@@ -34,17 +34,17 @@ export default class extends Component {
                 <h4>Fox<br />Two</h4>
                 <div className="discount">
                   <i className="fa fa-certificate">
-                    <span>Ask about our <strong>Rapid Fire</strong> 7.5% Discount!</span>
+                    <span>Ask about our <strong>Rapid Fire</strong> 7% Discount!</span>
                   </i>
                 </div>
               </div>
               <div>
                 <span className="price">$79k<sub>/mo.</sub></span>
                 <ul>
-                  <li><i className="fa fa-wrench" /> Product Development</li>
-                  <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> warranty</li>
                   <li><i className="fa fa-user" /> 2 Partners</li>
                   <li><i className="fa fa-user-plus" /> 1 Associate</li>
+                  <li><i className="fa fa-wrench" /> Product Development</li>
+                  <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> warranty</li>
                   <li><i className="fa fa-lock" /> 1-3 mo. commitment *</li>
                 </ul>
               </div>
@@ -57,17 +57,17 @@ export default class extends Component {
                 <h4>Fox<br />Three</h4>
                 <div className="discount">
                   <i className="fa fa-certificate">
-                    <span>Ask about our <strong>Rapid Fire</strong> 7.5% Discount!</span>
+                    <span>Ask about our <strong>Rapid Fire</strong> 7% Discount!</span>
                   </i>
                 </div>
               </div>
               <div>
                 <span className="price">$149k<sub>/mo.</sub></span>
                 <ul>
-                  <li><i className="fa fa-wrench" /> Product Development</li>
-                  <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> warranty</li>
                   <li><i className="fa fa-user" /> 3 Partners</li>
                   <li><i className="fa fa-user-plus" /> 3 Associates</li>
+                  <li><i className="fa fa-wrench" /> Product Development</li>
+                  <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> warranty</li>
                   <li><i className="fa fa-lock" /> 1-3 mo. commitment *</li>
                 </ul>
               </div>

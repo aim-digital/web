@@ -57,8 +57,9 @@ export default class extends Header {
 
   componentDidMount() {
     setTimeout(() => {
+      const preview = document.querySelector('.header.container header > div.hidden');
       this.setState({ ready: true });
-      document.querySelector('.header.container header > div.hidden').classList.remove('hidden');
+      preview && preview.classList.remove('hidden');
     }, 0);
     setTimeout(this.complete, 450);
   }
@@ -175,10 +176,8 @@ export default class extends Header {
   };
 
   scrollTo = () => {
-    const OFFSET = 250;
-    const { slide, initial } = this.props;
     const { app, parallax, section } = this.getElements();
-    const top = section.getBoundingClientRect().top - OFFSET - (initial === null ? slide * OFFSET : 0);
+    const top = section.getBoundingClientRect().top + (parallax ? parallax.scrollTop : 0);
 
     if (app.scrollTo) {
       app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });

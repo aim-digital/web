@@ -12,33 +12,17 @@ section.quote {
   max-width: 360px !important;
   margin: 0 auto;
 
+  @media (min-width: 992px) {
+    max-width: 400px !important;
+  }
+
   .home.page & {
     position: relative;
     z-index: 1;
     width: 100%;
 
-    @media (min-width: 992px) {
-      max-width: 400px !important;
-    }
-
-    .form {
-      .form-group {
-        // pointer-events: none;
-
-        @media (min-width: 992px) {
-          pointer-events: auto;
-
-          &.comment textarea {
-            height: 160px;
-            resize: none;
-            overflow: hidden;
-          }
-        }
-      }
-
-      & > div {
-        font-size: 95%;
-      }
+    .form > div {
+      font-size: 95%;
     }
   }
 
@@ -263,7 +247,7 @@ section.quote {
         position: relative;
 
         &:before {
-          content: "140 character limit";
+          content: "300 character limit";
           position: absolute;
           top: 0;
           right: 0;
@@ -541,6 +525,7 @@ section.solutions {
     overflow: hidden;
     position: relative;
     width: 100%;
+    min-height: 400%;
   }
 
   .layer {
@@ -553,10 +538,17 @@ section.solutions {
     transform: translate3d(0,0,-2px) scale3d(1.5, 1.5, 1.5);
     pointer-events: none;
     width: 100%;
+    min-height: auto;
   }
 
   .section-layer {
-    padding: 8vh 0 !important;
+    position: relative;
+    z-index: 2;
+    padding: 60px 0;
+
+    & + .section-layer {
+      padding-top: 90px;
+    }
   }
 
   .section-solution {

@@ -89,7 +89,7 @@ export default class extends Component {
         {quote && renderInput(phone, 'Phone', 'Phone number')}
         {quote && <div className={'form-group ' + comment.name + (comment.error && comment.touched ? ' has-error' : '')}>
           <div className={styles.inputGroup} data-label="Message" data-error={comment.error && comment.touched && comment.error}>
-            <textarea maxLength="140" placeholder="Please give us a brief description of your project/needs." id={comment.name} className="form-control" {...domOnlyProps(comment)} />
+            <textarea maxLength="300" placeholder="Please give us a brief description of your project/needs." id={comment.name} className="form-control" {...domOnlyProps(comment)} />
           </div>
         </div>}
         {quote && <div className={'form-group ' + newsletter.name}>
