@@ -154,6 +154,7 @@ export default class extends Page {
       document.querySelector('#app').classList.remove('home');
       parallax && parallax.removeEventListener('scroll', this.onScroll);
       parallax && parallax.removeEventListener('scroll', this.onSolutionScroll);
+      parallax && parallax.removeEventListener('scroll', this.onParallaxScroll);
       global.removeEventListener('resize', this.updateViewport);
     }
   };
@@ -177,9 +178,14 @@ export default class extends Page {
   setupParallax = () => {
     this.elements = this.getElements();
     this.elements.parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 250, { trailing: true }));
-    this.elements.parallax.addEventListener('scroll', this.onSolutionScroll);
+    this.elements.parallax.addEventListener('scroll', this.onSolutionScroll = _.debounce(this.onSolutionScroll, 30, { trailing: true }));
+    this.elements.parallax.addEventListener('scroll', this.onParallaxScroll);
     this.setState({ rendered: true });
     this.setupParallax = null;
+  };
+
+  onParallaxScroll = () => {
+    this.elements.parallax.querySelector('.scroll-layer').scrollTop = this.elements.parallax.scrollTop;
   };
 
   onSolutionScroll = () => {
@@ -525,18 +531,19 @@ export default class extends Page {
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
             {__CLIENT__ ? <div className="parallax">
-              <div>
-                {this.header}
-                {<div className="section-solution">{this.solutions}</div>}
-                {rendered && <>
-                  <div className="stars layer" style={{ top: '100vh' }} />
+              <div className="scroll-layer">
+                  <div className="stars layer" />
                   <div className="stars layer" style={{ top: '400vh' }} />
                   <div className="stars layer" style={{ top: '800vh' }} />
                   <div className="stars layer" style={{ top: '1200vh' }} />
-                  <div className="earth layer" style={{ top: '165vh' }} />
-                  <div className="cloud layer" style={{ top: '200vh', left: '-75%' }} />
-                  <div className="cloud layer farther" style={{ top: '60vh', left: '-75%' }} />
-                  <div className="satellite layer" style={{ top: '140vh' }} />
+                  <div className="earth layer" style={{ top: '65vh' }} />
+                  <div className="cloud layer" style={{ top: '100vh', left: '-75%' }} />
+                  <div className="cloud layer farther" style={{ top: '-40vh', left: '-75%' }} />
+                  <div className="satellite layer" style={{ top: '40vh', left: '85%' }} />
+              </div>
+                {this.header}
+                {<div className="section-solution">{this.solutions}</div>}
+                {rendered && <>
                   {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
                   <div className="section-layer section-form">
                     <section className="quote section">
@@ -578,9 +585,8 @@ export default class extends Page {
                   </div>
                   {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 1.1 + (isMobile ? 0 : 0.05))) : <></>}
                   {this.content}
-                  <Footer/>
                 </>}
-              </div>
+                <Footer/>
             </div> : <>
               {this.header}
               {sections}

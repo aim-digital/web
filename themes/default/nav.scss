@@ -428,7 +428,8 @@ body.nav-open,
   left: 0;
 }
 
-#app.nav-loaded > section > .page {
+#app.nav-loaded > section > .page,
+#app.nav-loaded .parallax .scroll-layer {
   transition: left .3s;
 }
 
@@ -451,9 +452,10 @@ body.nav-open,
   display: block;
 }
 
-#app.nav-open > section > .page {
+#app.nav-open > section > .page,
+#app.nav-open .parallax .scroll-layer {
   // -webkit-transform: translate3d(20em, 0, 0);
-  // transform: translate3d(20em 0, 0);
+  // transform: translate3d(20em, 0, 0);
   left: 20em;
 }
 

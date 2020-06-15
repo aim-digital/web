@@ -11,6 +11,7 @@ footer {
   z-index: 1;
   box-shadow: 0 -1px 10px rgba(41, 41, 41,.5);
   text-shadow: -1px 1px 1px $black-color;
+  overflow: hidden;
 
   .home.page & {
     position: relative;
