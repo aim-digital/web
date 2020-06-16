@@ -148,13 +148,12 @@ export default class extends Page {
 
   componentWillUnmount = () => {
     if (__CLIENT__) {
-      const { parallax } = this.elements;
       this.props.transition({ progress: 0.2 });
       document.querySelector('#app > section > .page').removeEventListener('click', this.props.dismiss);
       document.querySelector('#app').classList.remove('home');
-      parallax && parallax.removeEventListener('scroll', this.onScroll);
-      parallax && parallax.removeEventListener('scroll', this.onSolutionScroll);
-      parallax && parallax.removeEventListener('scroll', this.onParallaxScroll);
+      global.removeEventListener('scroll', this.onScroll);
+      global.removeEventListener('scroll', this.onSolutionScroll);
+      global.removeEventListener('scroll', this.onParallaxScroll);
       global.removeEventListener('resize', this.updateViewport);
     }
   };
@@ -170,27 +169,27 @@ export default class extends Page {
   };
 
   componentDidUpdate = (props, state) => {
-    if (!this.state.rendered && document.querySelector('#app').querySelector('.section.container > .parallax') && this.setupParallax) {
+    if (!this.state.rendered && this.setupParallax) {
       this.setupParallax();
     }
   };
 
   setupParallax = () => {
     this.elements = this.getElements();
-    this.elements.parallax.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 250, { trailing: true }));
-    this.elements.parallax.addEventListener('scroll', this.onSolutionScroll = _.debounce(this.onSolutionScroll, 30, { trailing: true }));
-    this.elements.parallax.addEventListener('scroll', this.onParallaxScroll);
+    global.addEventListener('scroll', this.onScroll = _.debounce(this.onScroll, 500, { trailing: true }));
+    global.addEventListener('scroll', this.onSolutionScroll = _.debounce(this.onSolutionScroll, 1, { trailing: true }));
+    global.addEventListener('scroll', this.onParallaxScroll);
     this.setState({ rendered: true });
     this.setupParallax = null;
   };
 
   onParallaxScroll = () => {
-    this.elements.parallax.querySelector('.scroll-layer').scrollTop = this.elements.parallax.scrollTop;
+    this.elements.parallax.querySelector('.parallax').scrollTop = window.scrollY;
   };
 
   onSolutionScroll = () => {
     if (!this.state.isMobile) {
-      this.elements.parallax.querySelector('.section-solution').style.transform = `translate3d(0px, ${this.elements.parallax.scrollTop}px, 0px)`;
+      this.elements.parallax.querySelector('.section-solution').style.transform = `translate3d(0px, ${window.scrollY}px, 0px)`;
     }
   };
 
@@ -206,14 +205,14 @@ export default class extends Page {
     const { length, props } = this;
     const { slide } = props;
     const app = document.querySelector('#app');
-    const parallax = app.querySelector('.section.container > .parallax');
-    const section = parallax && parallax.querySelector(`.section-${slide}`);
-    const form = parallax && parallax.querySelector(`.section-form`);
+    const parallax = document.body;
+    const section = parallax.querySelector(`.home .section-${slide}`);
+    const form = parallax.querySelector(`.home .section-form`);
     const sections = [];
 
-    if (parallax) {
+    if (parallax.querySelector(`.home .parallax`)) {
       for (let i = 0; i < length; i++) {
-        let section = parallax.querySelector(`.section-${i}`);
+        let section = parallax.querySelector(`.home .section-${i}`);
 
         sections[i] = {
           element: section,
@@ -260,7 +259,7 @@ export default class extends Page {
             if (!impressions[i]) {
               this.impressions = [];
               form.impression = false;
-              impressions[i] = true;
+              this.impressions[i] = true;
               analytics.Section.Page.Impression.track(
                 section ? formatters.section(section) : ['Home', solutions[i].section].join(','),
                 sources
@@ -275,7 +274,7 @@ export default class extends Page {
       start = form.element.getBoundingClientRect().top
       end = start + form.height
 
-      if (start <= pageHeight * 0.7 && end >= pageHeight * 0.9) {
+      if (start <= pageHeight * IMPRESSION_START && end >= pageHeight * IMPRESSION_END) {
         if (!form.impression) {
           this.impressions = [];
           form.impression = true;
@@ -342,7 +341,7 @@ export default class extends Page {
     const headerClass = this.length % 2 ? 'text-right' : '';
 
     return (
-      <div className="section-layer">
+      <div className="wrapper">
         <section className="section">
           <h2 className={headerClass}>Content</h2>
           <h3 className={headerClass}>Channel<br />Fox Zero™</h3>
@@ -515,14 +514,12 @@ export default class extends Page {
   render() {
     const { props, state, sections, formatted } = this;
     const { className, classNames = {}, contact, destroy: reset, sources, rendered } = props;
-    const { animating, isMobile } = state;
+    const { animating } = state;
     const { message, status } = state.form;
     const hasMany = sections.length > 1;
 
-    const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://d3w33imimg0eu8.cloudfront.net/images/${name}.svg${wrap ? ')' : ''}`;
-
-    const renderLayer = (index = 0) => (component, i) => (
-      <div className={`section-layer section-${i + index}`} key={`section-${i + index}`}>
+    const wrap = (offset = 0) => (component, i) => (
+      <div className={`wrapper section-${i + offset}`} key={`section-${i + offset}`}>
         {component}
       </div>
     );
@@ -530,64 +527,66 @@ export default class extends Page {
     return (
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
-            {__CLIENT__ ? <div className="parallax">
-              <div className="scroll-layer">
-                  <div className="stars layer" />
-                  <div className="stars layer" style={{ top: '400vh' }} />
-                  <div className="stars layer" style={{ top: '800vh' }} />
-                  <div className="stars layer" style={{ top: '1200vh' }} />
-                  <div className="earth layer" style={{ top: '65vh' }} />
-                  <div className="cloud layer" style={{ top: '100vh', left: '-75%' }} />
-                  <div className="cloud layer farther" style={{ top: '-40vh', left: '-75%' }} />
-                  <div className="satellite layer" style={{ top: '40vh', left: '85%' }} />
-              </div>
-                {this.header}
-                {<div className="section-solution">{this.solutions}</div>}
-                {rendered && <>
-                  {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(renderLayer())}
-                  <div className="section-layer section-form">
-                    <section className="quote section">
-                      <h2>Talk to Me</h2>
-                      <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
-                      <p>Our services can accelerate and enhance your software projects. Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 30 minute call with a senior partner.</p>
-                      <div className={`form ${contact ? 'success' : ''}`}>
-                        <div>
-                            <div>
-                              {contact && <>
-                                <h4>Schedule a Call</h4>
-                                <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
-                                <button className="btn btn-success" onClick={() => analytics.Confirmation.Page.Booking.track(formatted, sources)}>
-                                  <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
-                                  <i className="fa fa-calendar" />
-                                </button>
-                              </>}
-                              <br />
-                              <br />
-                              <h4>Spread the Word</h4>
-                              <p>Shout-outs can get you a <strong>10% discount</strong>!</p>
-                              <ul>
-                                <li>Use the buttons below to share us.</li>
-                                <li>20 aggregate "likes" discounts 5%.</li>
-                                <li>10 aggregate comments discounts 5%.</li>
-                                <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
-                              </ul>
-                              {contact && this.renderShare(this.section ? solutions[SECTIONS[this.section].slide] : brand)}
-                              <br />
-                              <br />
-                              <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
-                            </div>
-                        </div>
-                        <forms.Contact status={status} quote newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
-                        {!contact && message && <span className="error">{message}</span>}
-                        {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
+            {__CLIENT__ ? <>
+              {rendered && <>
+                <div className="parallax">
+                  <div className="stars" />
+                  <div className="stars" style={{ top: '400vh' }} />
+                  <div className="stars" style={{ top: '800vh' }} />
+                  <div className="stars" style={{ top: '1200vh' }} />
+                  <div className="earth" style={{ top: '65vh' }} />
+                  <div className="cloud" style={{ top: '100vh', left: '-75%' }} />
+                  <div className="cloud farther" style={{ top: '-40vh', left: '-75%' }} />
+                  <div className="satellite" style={{ top: '40vh', left: '85%' }} />
+                </div>
+              </>}
+              {this.header}
+              {<div className="section-solution wrapper">{this.solutions}</div>}
+              {rendered && <>
+                {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(wrap())}
+                <div className="section-form wrapper">
+                  <section className="quote section">
+                    <h2>Talk to Me</h2>
+                    <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
+                    <p>Our services can accelerate and enhance your software projects. Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 30 minute call with a senior partner.</p>
+                    <div className={`form ${contact ? 'success' : ''}`}>
+                      <div>
+                          <div>
+                            {contact && <>
+                              <h4>Schedule a Call</h4>
+                              <p>Hey <strong>{contact.firstname.value}</strong>, thanks for contacting us! You can use the button below to schedule an appointment for your consultation call. We look forward to chatting with you!</p>
+                              <button className="btn btn-success" onClick={() => analytics.Confirmation.Page.Booking.track(formatted, sources)}>
+                                <a href={`https://calendly.com/fox-zero/consultation?${this.formatCalendarParams(contact)}`} target="_blank">Book Now</a>
+                                <i className="fa fa-calendar" />
+                              </button>
+                            </>}
+                            <br />
+                            <br />
+                            <h4>Spread the Word</h4>
+                            <p>Shout-outs can get you a <strong>10% discount</strong>!</p>
+                            <ul>
+                              <li>Use the buttons below to share us.</li>
+                              <li>20 aggregate "likes" discounts 5%.</li>
+                              <li>10 aggregate comments discounts 5%.</li>
+                              <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
+                            </ul>
+                            {contact && this.renderShare(this.section ? solutions[SECTIONS[this.section].slide] : brand)}
+                            <br />
+                            <br />
+                            <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
+                          </div>
                       </div>
-                    </section>
-                  </div>
-                  {hasMany ? sections.slice(SECTION_FORM).map(renderLayer(SECTION_FORM, 1.1 + (isMobile ? 0 : 0.05))) : <></>}
-                  {this.content}
-                </>}
-                <Footer/>
-            </div> : <>
+                      <forms.Contact status={status} quote newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
+                      {!contact && message && <span className="error">{message}</span>}
+                      {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
+                    </div>
+                  </section>
+                </div>
+                {hasMany ? sections.slice(SECTION_FORM).map(wrap(SECTION_FORM)) : <></>}
+                {this.content}
+              </>}
+              <Footer/>
+            </> : <>
               {this.header}
               {sections}
               {this.content}

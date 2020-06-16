@@ -513,106 +513,90 @@ section.solutions {
   }
 }
 
-.home.page {
-  height: 100vh !important;
-  overflow: hidden !important;
-}
-
-.about.page {
-  height: auto !important;
-  overflow: auto !important;
-}
-
-.parallax {
-  position: relative;
-  overflow-x: hidden;
-  height: 100vh;
-  // -webkit-overflow-scrolling: touch;
-
-  .scroll-layer {
-    // pointer-events: none;
+.section.container {
+  .parallax {
     perspective: 2px;
     z-index: 1;
     position: fixed;
     height: 100%;
-    width: 102%;
-    top: 0;
-    left: -1%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
-
-  .layer {
-    position: absolute;
+    width: 104%;
     top: 0;
     left: 0;
-    margin-top: 100vh;
-    z-index: 1;
-    padding: 0;
-    transform: translate3d(0, 0, -1px) scale3d(1.5, 1.5, 1.5);
-    pointer-events: none;
-    width: 100%;
-    min-height: auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    opacity: .5;
+    overflow-x: hidden;
 
-    &.farther {
-      transform: translate3d(0, 0, -6px) scale3d(1.5, 1.5, 1.5) !important;
-    }
-
-    &.farthest {
-      transform: translate3d(0, 0, -8px) scale3d(1.5, 1.5, 1.5) !important;
-    }
-
-    &.stars {
-      background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/stars.svg);
-      height: 400vh;
-      background-size: cover;
-      opacity: .65;
-    }
-
-    &.earth {
-      transform: translate3d(0, 0, -2px) scale3d(1.5, 1.5, 1.5);
-      background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/earth.svg);
-      height: 100vh;
-      opacity: .6;
-    }
-
-    &.cloud {
-      transform: translate3d(0, 0, -3px) scale3d(1.5, 1.5, 1.5);
-      background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/cloud.svg);
-      opacity: .3;
-      height: 30vw;
-
-      @media (min-width: 992px) {
-        height: 15vw;
-      }
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 100vh;
+      margin-left: -4%;
+      z-index: 1;
+      padding: 0;
+      transform: translate3d(0, 0, -1px) scale3d(1.5, 1.5, 1.5);
+      pointer-events: none;
+      width: 100%;
+      min-height: auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      opacity: .5;
 
       &.farther {
-        opacity: .2;
+        transform: translate3d(0, 0, -6px) scale3d(1.5, 1.5, 1.5) !important;
       }
-    }
 
-    &.satellite {
-      transform: translate3d(0, 0, -4px) scale3d(1.5, 1.5, 1.5);
-      background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/satellite4.svg);
-      opacity: .75;
-      height: 60vw;
+      &.farthest {
+        transform: translate3d(0, 0, -8px) scale3d(1.5, 1.5, 1.5) !important;
+      }
 
-      @media (min-width: 992px) {
+      &.stars {
+        background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/stars.svg);
+        height: 400vh;
+        background-size: cover;
+        opacity: .65;
+      }
+
+      &.earth {
+        transform: translate3d(0, 0, -2px) scale3d(1.5, 1.5, 1.5);
+        background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/earth.svg);
+        height: 100vh;
+        opacity: .6;
+      }
+
+      &.cloud {
+        transform: translate3d(0, 0, -3px) scale3d(1.5, 1.5, 1.5);
+        background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/cloud.svg);
+        opacity: .3;
         height: 30vw;
+
+        @media (min-width: 992px) {
+          height: 15vw;
+        }
+
+        &.farther {
+          opacity: .2;
+        }
+      }
+
+      &.satellite {
+        transform: translate3d(0, 0, -4px) scale3d(1.5, 1.5, 1.5);
+        background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/satellite4.svg);
+        opacity: .75;
+        height: 60vw;
+
+        @media (min-width: 992px) {
+          height: 30vw;
+        }
       }
     }
   }
 
-  .section-layer {
+  .wrapper {
     position: relative;
     z-index: 2;
     padding: 60px 0;
 
-    & + .section-layer {
+    & + .wrapper {
       padding-top: 90px;
     }
   }
@@ -624,7 +608,7 @@ section.solutions {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    transition: transform .1s ease-in-out;
+    transition: transform .25s .25s ease-in-out;
     top: 0;
   }
 }

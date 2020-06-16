@@ -27,7 +27,7 @@
 
     marquee {
       display: inline-block;
-      width: 75%;
+      width: 70%;
       line-height: 1;
       margin-left: 2px;
     }
@@ -371,6 +371,7 @@ nav > ul > li > ul > li {
   font-size: .9em;
   line-height: 3em;
   border-bottom: solid 1px #292929;
+  white-space: nowrap;
 
   &:last-child {
     border-bottom: none;
@@ -429,7 +430,7 @@ body.nav-open,
 }
 
 #app.nav-loaded > section > .page,
-#app.nav-loaded .parallax .scroll-layer {
+#app.nav-loaded .parallax {
   transition: left .3s;
 }
 
@@ -453,7 +454,7 @@ body.nav-open,
 }
 
 #app.nav-open > section > .page,
-#app.nav-open .parallax .scroll-layer {
+#app.nav-open .parallax {
   // -webkit-transform: translate3d(20em, 0, 0);
   // transform: translate3d(20em, 0, 0);
   left: 20em;

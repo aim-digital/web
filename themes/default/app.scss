@@ -15,8 +15,7 @@ body {
 }
 
 #app {
-    overflow-x: hidden;
-    height: 100vh;
+    overflow: hidden;
 
     &.scroll-lock {
         pointer-events: none;
