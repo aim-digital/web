@@ -528,8 +528,8 @@ export default class extends Page {
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
             {__CLIENT__ ? <>
-              {rendered && <>
-                <div className="parallax">
+              <div className="parallax">
+                {rendered && <>
                   <div className="stars" />
                   <div className="stars" style={{ top: '400vh' }} />
                   <div className="stars" style={{ top: '800vh' }} />
@@ -538,8 +538,8 @@ export default class extends Page {
                   <div className="cloud" style={{ top: '100vh', left: '-75%' }} />
                   <div className="cloud farther" style={{ top: '-40vh', left: '-75%' }} />
                   <div className="satellite" style={{ top: '40vh', left: '85%' }} />
-                </div>
-              </>}
+                </>}
+              </div>
               {this.header}
               {<div className="section-solution wrapper">{this.solutions}</div>}
               {rendered && <>
