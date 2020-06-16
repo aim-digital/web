@@ -101,7 +101,7 @@ export default class extends Header {
   getElements = () => {
     const { slide, initial } = this.props;
     const app = document.querySelector('#app');
-    const parallax = app.querySelector('.section.container > .parallax');
+    const parallax = document.body;
     const section = parallax && parallax.querySelector(`.section-${initial === null ? slide : 0}`);
     return { app, parallax, section };
   }
@@ -176,15 +176,15 @@ export default class extends Header {
   };
 
   scrollTo = () => {
-    const { app, parallax, section } = this.getElements();
-    const top = section.getBoundingClientRect().top + (parallax ? parallax.scrollTop : 0);
+    const { app, section } = this.getElements();
+    const top = section.getBoundingClientRect().top + window.scrollY;
 
     if (app.scrollTo) {
       app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      parallax && parallax.scrollTo({ top, left: 0, behavior: 'smooth' });
+      global.scrollTo({ top, left: 0, behavior: 'smooth' });
     } else {
       app.scrollTop = 0;
-      parallax && (parallax.scrollTop = top);
+      window.scroll(top, 0);
     }
   };
 

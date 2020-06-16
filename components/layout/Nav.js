@@ -29,7 +29,6 @@ export default class extends Nav {
   scrollTo = (id, source) => {
     const { transition, dismiss, section } = this.props;
     const app = document.querySelector('#app');
-    const parallax = app.querySelector('.section.container > .parallax');
     let label;
 
     if (this.id === id) {
@@ -38,21 +37,21 @@ export default class extends Nav {
 
         if (app.scrollTo) {
           app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-          parallax && parallax.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+          global.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
           clearTimeout(this.dismiss);
           this.dismiss = setTimeout(() => {
             dismiss();
             transition('slide', 0);
-          }, parallax ? parallax.scrollTop * 0.25 : 500);
+          }, window.scrollY * 0.25);
         } else {
           app.scrollTop = 0;
-          parallax && (parallax.scrollTop = 0);
+          window.scroll(0, 0);
           dismiss();
           transition('slide', 0);
         }
     } else {
       app.scrollTop = 0;
-      parallax && (parallax.scrollTop = 0);
+      window.scroll(0, 0);
       label = formatters.section(id);
       analytics.Section.Navigation.Click.track(label);
       transition('page.impression', false);
@@ -139,12 +138,12 @@ export default class extends Nav {
                 </li>
                 <li>
                   <Link to="/stream/music" onClick={update('stream.category')}>
-                    <i className="fa fa-hashtag"/> <span>···</span> Music
+                    <i className="fa fa-hashtag"/> Music
                   </Link>
                 </li>
                 <li>
                   <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update('stream.post')}>
-                    <i className="fa fa-file-text-o"/> <span>···</span> <marquee>Music, Tech, and Steven Tyler Collide in NOLA</marquee>
+                    <i className="fa fa-file-text-o"/> <marquee>Music, Tech, and Steven Tyler Collide in NOLA</marquee>
                   </Link>
                 </li>
               </ul>
