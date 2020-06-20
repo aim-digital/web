@@ -357,6 +357,7 @@ body.modal-open {
         height: 100%;
         top: 0;
         z-index: 1;
+        min-width: 160px;
       }
 
       &:before {

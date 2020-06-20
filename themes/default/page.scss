@@ -406,6 +406,7 @@ section.solutions {
         top: 0;
         margin: 0 -15px;
         z-index: 1;
+        min-width: 160px;
       }
 
       &:before {
@@ -539,10 +540,9 @@ section.solutions {
       top: 0;
       left: 0;
       margin-top: 100vh;
-      margin-left: -4%;
       z-index: 1;
       padding: 0;
-      transform: translate3d(0, 0, -1px) scale3d(1.5, 1.5, 1.5);
+      transform: translate3d(-4%, 0, -1px) scale3d(1.5, 1.5, 1.5);
       pointer-events: none;
       width: 100%;
       min-height: auto;
@@ -551,12 +551,20 @@ section.solutions {
       background-position: 50% 0;
       opacity: .5;
 
+      &.left {
+        margin-left: 0;
+      }
+
+      &.right {
+        margin-left: 0;
+      }
+
       &.farther {
-        transform: translate3d(0, 0, -6px) scale3d(1.5, 1.5, 1.5) !important;
+        transform: translate3d(-4%, 0, -6px) scale3d(1.5, 1.5, 1.5) !important;
       }
 
       &.farthest {
-        transform: translate3d(0, 0, -8px) scale3d(1.5, 1.5, 1.5) !important;
+        transform: translate3d(-4%, 0, -8px) scale3d(1.5, 1.5, 1.5) !important;
       }
 
       &.stars {
@@ -567,14 +575,14 @@ section.solutions {
       }
 
       &.earth {
-        transform: translate3d(0, 0, -2px) scale3d(1.5, 1.5, 1.5);
+        transform: translate3d(-4%, 0, -2px) scale3d(1.5, 1.5, 1.5);
         background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/earth.svg);
         height: 100vh;
         opacity: .6;
       }
 
       &.cloud {
-        transform: translate3d(0, 0, -3px) scale3d(1.5, 1.5, 1.5);
+        transform: translate3d(-4%, 0, -3px) scale3d(1.5, 1.5, 1.5);
         background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/cloud.svg);
         opacity: .3;
         height: 30vw;
@@ -589,7 +597,7 @@ section.solutions {
       }
 
       &.satellite {
-        transform: translate3d(0, 0, -4px) scale3d(1.5, 1.5, 1.5);
+        transform: translate3d(-4%, 0, -4px) scale3d(1.5, 1.5, 1.5);
         background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/satellite4.svg);
         opacity: .75;
         height: 60vw;

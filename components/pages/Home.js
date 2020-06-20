@@ -537,9 +537,9 @@ export default class extends Page {
                   <div className="stars" style={{ top: '800vh' }} />
                   <div className="stars" style={{ top: '1200vh' }} />
                   <div className="earth" style={{ top: '65vh' }} />
-                  <div className="cloud" style={{ top: '100vh', left: '-75%' }} />
-                  <div className="cloud farther" style={{ top: '-40vh', left: '-75%' }} />
-                  <div className="satellite" style={{ top: '40vh', left: '85%' }} />
+                  <div className="cloud left" style={{ top: '100vh', left: '-75%' }} />
+                  <div className="cloud farther left" style={{ top: '-40vh', left: '-75%' }} />
+                  <div className="satellite right" style={{ top: '40vh', left: '85%' }} />
                 </>}
               </div>
               {this.header}
