@@ -514,6 +514,8 @@ section.solutions {
 }
 
 .section.container {
+  background: #29292A linear-gradient(rgba(89,159,198,0.45), rgba(89,159,198,0.1)) !important;
+
   .parallax {
     perspective: 2px;
     z-index: 1;
@@ -523,6 +525,14 @@ section.solutions {
     top: 0;
     left: 0;
     overflow-x: hidden;
+
+    &.hide > div {
+      display: none;
+
+      &.stars {
+        display: block;
+      }
+    }
 
     > div {
       position: absolute;

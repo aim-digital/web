@@ -26,6 +26,8 @@ const {
   LinkedinShareButton
 } = ShareButtons;
 
+const RE_iOS_13 = /^.*iPhone.*(?:OS\s13|Version\/13)/;
+
 const HEADER_TIMER = 13.5;
 
 const SOLUTION_DELAY = 100;
@@ -528,7 +530,7 @@ export default class extends Page {
         <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
             {__CLIENT__ ? <>
-              <div className="parallax">
+              <div className={`parallax ${RE_iOS_13.test(global.navigator.userAgent) ? 'hide' : ''}`}>
                 {rendered && <>
                   <div className="stars" />
                   <div className="stars" style={{ top: '400vh' }} />
