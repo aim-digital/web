@@ -396,6 +396,7 @@ section.solutions {
   .card {
     .image {
       position: relative;
+      background: rgba(15, 15, 15, .5);
 
       &:after,
       &:before {
@@ -404,7 +405,6 @@ section.solutions {
         width: 25vw;
         height: 100%;
         top: 0;
-        margin: 0 -15px;
         z-index: 1;
         min-width: 160px;
       }
@@ -422,21 +422,26 @@ section.solutions {
       div {
         position: relative;
         z-index: 3;
-        width: 100%;
         display: block;
         padding: 10px;
-        color: #c0c0c0;
-        background: rgba(21, 21, 21, .8);
-        box-shadow: 0px -2px 6px #0a0a0a;
+        color: #f8f8f8;
         font-size: 90%;
-        text-align: center;
+        font-family: 'Fjalla One';
+        left: -1em;
+        bottom: 0em;
+        transform: rotate(-10deg);
+        width: 11em;
+        font-size: 150%;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 6px #151515;
+        opacity: .65;
+        line-height: 1.1;
       }
 
       img {
         position: relative;
         z-index: 2;
         max-width: 100%;
-        background: rgba(15, 15, 15, .5);
         padding: 15px 5px;
         width: 100%;
       }
