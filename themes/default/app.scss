@@ -16,6 +16,11 @@ body {
 
 #app {
     overflow: hidden;
+    height: 100vh;
+
+    &.nav-loaded {
+        height: auto;
+    }
 
     &.scroll-lock {
         pointer-events: none;
