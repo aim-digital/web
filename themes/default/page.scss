@@ -427,15 +427,32 @@ section.solutions {
         color: #f8f8f8;
         font-size: 90%;
         font-family: 'Fjalla One';
-        left: -1em;
+        left: 50%;
         bottom: 0em;
+        margin-left: -5.5em;
         transform: rotate(-10deg);
         width: 11em;
         font-size: 150%;
         text-transform: uppercase;
-        text-shadow: 1px 1px 6px #151515;
-        opacity: .65;
+        text-shadow: 1px 1px 6px #fcd600;
+        opacity: .8;
         line-height: 1.1;
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 70%;
+          width: 5vw;
+          height: 60px;
+          transform: rotate(10deg);
+          opacity: 1;
+          border-bottom: solid 2px #fcd700;
+          border-left: solid 2px #fcd700;
+          right: 100%;
+          border-image: linear-gradient( to bottom, rgba(0,0,0,0), #fcd700 );
+          border-image-slice: 1;
+          margin-right: -10px;
+        }
       }
 
       img {
