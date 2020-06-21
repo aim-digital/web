@@ -21,7 +21,8 @@ export default class extends Component {
                   <li><i className="fa fa-user" /> 1.5 Partners</li>
                   <li><i className="fa fa-user-plus" /> Add'l. Consultants *</li>
                   <li><i className="fa fa-lightbulb-o" /> General Consulting</li>
-                  <li><i className="fa fa-clipboard" /> Project Discovery</li>
+                  <li><i className="fa fa-clipboard" /> Project Planning</li>
+                  {/* <li><i className="fa fa-diamond" /> Architecture &amp; Design</li> */}
                   <li><i className="fa fa-unlock" /> No commitment *</li>
                 </ul>
               </div>
@@ -34,12 +35,12 @@ export default class extends Component {
                 <h4>Fox<br />Two</h4>
                 <div className="discount">
                   <i className="fa fa-certificate">
-                    <span>Ask about our <strong>Rapid Fire</strong> 7% Discount!</span>
+                    <span>Ask about our <strong>Rapid Fire</strong> 10% Discount!</span>
                   </i>
                 </div>
               </div>
               <div>
-                <span className="price">$79k<sub>/mo.</sub></span>
+                <span className="price">$89k<sub>/mo.</sub></span>
                 <ul>
                   <li><i className="fa fa-user" /> 2 Partners</li>
                   <li><i className="fa fa-user-plus" /> 1 Associate</li>
@@ -57,12 +58,12 @@ export default class extends Component {
                 <h4>Fox<br />Three</h4>
                 <div className="discount">
                   <i className="fa fa-certificate">
-                    <span>Ask about our <strong>Rapid Fire</strong> 7% Discount!</span>
+                    <span>Ask about our <strong>Rapid Fire</strong> 10% Discount!</span>
                   </i>
                 </div>
               </div>
               <div>
-                <span className="price">$149k<sub>/mo.</sub></span>
+                <span className="price">$159k<sub>/mo.</sub></span>
                 <ul>
                   <li><i className="fa fa-user" /> 3 Partners</li>
                   <li><i className="fa fa-user-plus" /> 3 Associates</li>
