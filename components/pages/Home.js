@@ -590,7 +590,7 @@ export default class extends Page {
               <Footer/>
             </> : <>
               {this.header}
-              {sections[0]}
+              {sections}
               {this.content}
               <Footer/>
             </>}
