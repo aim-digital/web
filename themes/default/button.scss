@@ -131,6 +131,7 @@ button.btn {
   }
 
   &.active {
+    outline: solid 2px rgba(252, 214, 0, .65);
     transform: scale3d(1.1, 1.1, 1) !important;
     opacity: 1 !important;
   }

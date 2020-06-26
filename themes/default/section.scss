@@ -165,6 +165,24 @@
 
   h4 {
     margin-bottom: .5em !important;
+    padding-bottom: .65em !important;
+    position: relative;
+
+    &:after {
+      content: attr(data-type);
+      font-size: .35em;
+      font-family: $font-family-sans-serif;
+      text-transform: none;
+      display: block;
+      padding: 3px 5px;
+      font-weight: normal;
+      color: #fff;
+      background: linear-gradient(to left, $primary-blue-color, $background-color);
+      border: solid 1px $primary-blue-color;
+      border-radius: 3px;
+      position: absolute;
+      bottom: 0;
+    }
   }
 
   h4, .price {
@@ -227,7 +245,7 @@
     margin: 1.5em 0 0;
     padding: 0;
     color: #f8f8f8;
-    font-size: 1.1em;
+    font-size: 1em;
     text-shadow: 1px 1px 3px $black-color;
     min-width: 150px;
 
@@ -236,7 +254,7 @@
       white-space: nowrap;
     }
 
-    i {
+    .fa {
       display: inline-block;
       width: 20px;
       text-align: center;
@@ -256,6 +274,8 @@
     font-size: 2.75em;
     display: block;
     font-weight: 600;
+    border-bottom: solid 3px $primary-blue-color;
+    padding-bottom: .75em;
   }
 
   @media (min-width: 992px) {
@@ -267,5 +287,12 @@
     &+hr {
       display: none;
     }
+  }
+}
+
+.subscription,
+.home.page .section.container .section .card > div.subscription {
+  @media only screen and (min-width: 992px) {
+    margin-top: 60px !important;
   }
 }
