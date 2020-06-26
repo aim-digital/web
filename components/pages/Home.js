@@ -565,11 +565,11 @@ export default class extends Page {
                             <br />
                             <br />
                             <h4>Spread the Word</h4>
-                            <p>Shout-outs can get you a <strong>10% discount</strong>!</p>
+                            <p>Shout-outs can get you a <strong>15% discount</strong>!</p>
                             <ul>
                               <li>Use the buttons below to share us.</li>
-                              <li>20 aggregate "likes" discounts 5%.</li>
-                              <li>10 aggregate comments discounts 5%.</li>
+                              <li>20 aggregate "likes" discounts 7.5%.</li>
+                              <li>10 aggregate comments discounts 7.5%.</li>
                               <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
                             </ul>
                             {contact && this.renderShare(this.section ? solutions[SECTIONS[this.section].slide] : brand)}
@@ -590,7 +590,7 @@ export default class extends Page {
               <Footer/>
             </> : <>
               {this.header}
-              {sections}
+              {sections[0]}
               {this.content}
               <Footer/>
             </>}
