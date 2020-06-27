@@ -10,8 +10,8 @@ export default class extends Component {
               <div>
                 <h4 data-type="Consulting">Fox<br />One</h4>
                 <div className="discount">
-                  <i className="fa fa-certificate">
-                    <span>Ask about our <strong>Shout-Out</strong> 15% Discount!</span>
+                  <i className="fa fa-sun-o">
+                    <span>Ask about our<br /><strong>15% Shout-Out</strong><br />discount!</span>
                   </i>
                 </div>
               </div>
@@ -38,8 +38,8 @@ export default class extends Component {
               <div>
                 <h4 data-type="Development">Fox<br />Two</h4>
                 <div className="discount">
-                  <i className="fa fa-certificate">
-                    <span>Ask about our <strong>Rapid Fire</strong> 15% Discount!</span>
+                  <i className="fa fa-sun-o">
+                    <span>Ask about our<br /><strong>15% Rapid Fire</strong><br />discount!</span>
                   </i>
                 </div>
               </div>
@@ -69,8 +69,8 @@ export default class extends Component {
               <div>
                 <h4 data-type="Development">Fox<br />Three</h4>
                 <div className="discount">
-                  <i className="fa fa-certificate">
-                    <span>Ask about our <strong>Rapid Fire</strong> 15% Discount!</span>
+                  <i className="fa fa-sun-o">
+                    <span>Ask about our<br /><strong>15% Rapid Fire</strong><br />discount!</span>
                   </i>
                 </div>
               </div>

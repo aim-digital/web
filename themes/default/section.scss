@@ -154,6 +154,12 @@
     position: relative;
     display: table-cell;
     width: 50%;
+    z-index: 2;
+
+    &:first-child {
+      z-index: 1;
+      min-width: 100px;
+    }
   }
 
   &+hr {
@@ -198,16 +204,15 @@
     z-index: 1;
     position: absolute;
     font-size: 8.25em;
-    color: #FCD700;
+    color: $primary-yellow-color;
     text-shadow: 1px 1px 3px $black-color;
-    left: 20%;
-    top: 50%;
-    margin: -5px -10px;
+    left: 0;
+    top: 0;
+    margin: 1.15em 0;
 
     @media (min-width: 992px) {
-      left: 45%;
-      top: -65%;
-      margin: -5px 0;
+      top: 3px;
+      margin: -.75em .55em;
     }
 
     i {
@@ -215,34 +220,41 @@
       top: 0;
 
       &:before {
-        opacity: .65;
+        opacity: .35;
       }
-    }
 
-    span {
-      font-size: .15em;
-      position: absolute;
-      white-space: nowrap;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      text-align: center;
-      color: $white-color;
-      font-family: $font-family-fjalla;
-      display: inline-block;
-      transform: translate(-15%, -50%);
-      width: 140%;
-      line-height: 1.25;
+      > span {
+        font-size: .15em;
+        position: absolute;
+        white-space: nowrap;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: $white-color;
+        font-family: $font-family-fjalla;
+        display: inline-block;
+        transform: translate(-15%, -50%);
+        width: 140%;
+        line-height: 1.25;
+        opacity: 1;
 
-      strong {
-        font-size: 1.05em;
-        display: block;
+        strong {
+          font-size: 1.05em;
+          display: inline-block;
+          padding: 0 2px;
+          background: linear-gradient(to left, $primary-yellow-color, #FC6600);
+          color: $black-color;
+          text-shadow: 0px 0px 3px $white-color;
+          border: solid 1px #FC6600;
+          border-radius: 3px;
+        }
       }
     }
   }
 
   ul {
-    margin: 1.5em 0 0;
+    margin: 1em 0 0;
     padding: 0;
     color: #f8f8f8;
     font-size: 1em;
@@ -258,6 +270,7 @@
       display: inline-block;
       width: 20px;
       text-align: center;
+      color: $primary-blue-color;
     }
 
     strong {
@@ -279,10 +292,11 @@
       content: '';
       display: block;
       width: 75%;
-      margin-top: .75em;
+      margin-top: .5em;
       height: 3px;
-      box-shadow: -5px 3px 6px #151515;
-      background: linear-gradient(to right, #fcd700, rgba(0, 0, 0, 0));
+      box-shadow: -6px 2px 6px $black-color;
+      background: linear-gradient(to right, $primary-yellow-color, rgba(0, 0, 0, 0));
+      opacity: .9;
     }
   }
 
