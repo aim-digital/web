@@ -56,7 +56,8 @@ export default class extends Component {
                   <li><i className="fa fa-check" /> Database Management</li>
                   <li><i className="fa fa-check" /> Cloud Networking</li>
                   <li><i className="fa fa-check" /> Service Integration</li>
-                  <li><i className="fa fa-check" /> Hardware Programming</li>
+                  <li><i className="fa fa-check" /> Embedded Programming</li>
+                  <li><i className="fa fa-check" /> Testing &amp; Automation</li>
                   <li><i className="fa fa-lock" /> 1-3 mo. commitment *</li>
                 </ul>
               </div>
@@ -86,16 +87,17 @@ export default class extends Component {
                   <li><i className="fa fa-check" /> Database Management</li>
                   <li><i className="fa fa-check" /> Cloud Networking</li>
                   <li><i className="fa fa-check" /> Service Integration</li>
-                  <li><i className="fa fa-check" /> Hardware Programming</li>
-                  <li><i className="fa fa-rocket" /> 2x <i>Fox Two</i> TTM *</li>
+                  <li><i className="fa fa-check" /> Embedded Programming</li>
+                  <li><i className="fa fa-check" /> Testing &amp; Automation</li>
+                  <li><i className="fa fa-rocket" /> ½ <i>Fox Two</i> TTM *</li>
                   <li><i className="fa fa-lock" /> 1-3 mo. commitment *</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
+        <p><small>* Additional <i>Fox One</i> support partners and associates are available as add-ons at no monthly commitment; remaining last month balance refunded upon <i>Fox Two</i>/<i>Fox Three</i> project release completions or <i>Fox One</i> cancellations; simultaneous plan subscriptions allowed; "TTM" is defined as "time to market".</small></p>
       </div>
-      <p><small>* Additional <i>Fox One</i> partners, associates, and interns are available as add-ons at no monthly commitment. Remaining balance refunded upon project acceptance or <i>Fox One</i> cancellation. Plans can be additive. "TTM" refers to "Time to market".</small></p>
     </>;
   }
 }
