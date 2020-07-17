@@ -61,6 +61,7 @@ export default class {
     image = 'https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg';
 
     await Page.update({
+      title: `${title} · ${section} · Fox Zero™`,
       meta: JSON.stringify([
         { property: 'og:url', content: `${SITE}/${route}` },
         { property: 'og:image:secure_url', content: image },
@@ -86,6 +87,7 @@ export default class {
     image = 'https://s3.amazonaws.com/content.foxzero.io/b08c0d15bb08409cb6a9b7cad20e10d2.png';
 
     await Page.update({
+      title: `${title} · ${section} · Fox Zero™`,
       meta: JSON.stringify([
         { property: 'og:url', content: `${SITE}/${route}` },
         { property: 'og:image:secure_url', content: image },
@@ -111,6 +113,7 @@ export default class {
     image = 'https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg';
 
     await Page.update({
+      title: `${title} · ${section} · Fox Zero™`,
       meta: JSON.stringify([
         { property: 'og:url', content: `${SITE}/${route}` },
         { property: 'og:image:secure_url', content: image },
@@ -136,6 +139,7 @@ export default class {
     image = 'https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg';
 
     await Page.update({
+      title: `${title} · ${section} · Fox Zero™`,
       meta: JSON.stringify([
         { property: 'og:url', content: `${SITE}/${route}` },
         { property: 'og:image:secure_url', content: image },
@@ -161,6 +165,7 @@ export default class {
     image = 'https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg';
 
     await Page.update({
+      title: `${title} · ${section} · Fox Zero™`,
       meta: JSON.stringify([
         { property: 'og:url', content: `${SITE}/${route}` },
         { property: 'og:image:secure_url', content: image },
@@ -186,6 +191,7 @@ export default class {
     image = 'https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg';
 
     await Page.update({
+      title: `${title} · ${section} · Fox Zero™`,
       meta: JSON.stringify([
         { property: 'og:url', content: `${SITE}/${route}` },
         { property: 'og:image:secure_url', content: image },
@@ -211,6 +217,7 @@ export default class {
     image = 'https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg';
 
     await Page.update({
+      title: `${title} · ${section} · Fox Zero™`,
       meta: JSON.stringify([
         { property: 'og:url', content: `${SITE}/${route}` },
         { property: 'og:image:secure_url', content: image },
