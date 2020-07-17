@@ -101,16 +101,16 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-id-badge"/> Dossier</a>
               <ul>
-                <li><Link to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Mission</Link></li>
-                <li><Link rel="nofollow" to="/home/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Strategy</Link></li>
+                <li><Link to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-bullseye"/> Mission</Link></li>
+                <li><Link rel="nofollow" to="/home/framework" onClick={update(solutions[7].slug, true)}><i className="fa fa-cubes"/> Framework</Link></li>
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-cubes"/> Services</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/consulting" onClick={update(solutions[1].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
-                <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
-                <li><Link rel="nofollow" to="/home/maintenance" onClick={update(solutions[7].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
+                <li><Link rel="nofollow" to="/home/planning" onClick={update(solutions[1].slug, true)}><i className="fa fa-road"/> Planning</Link></li>
+                <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Development</Link></li>
+                <li><Link rel="nofollow" to="/home/performance" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Performance</Link></li>
               </ul>
             </li>
             <li className="subnav">

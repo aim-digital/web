@@ -41,13 +41,13 @@ const SECTION_DEFAULT = 'about';
 const SECTION_FORM = 6;
 const SECTIONS = {
   'about': { slide: 0 },
-  'consulting': { slide: 1 },
+  'planning': { slide: 1 },
   'development': { slide: 2 },
-  'strategy': { slide: 3 },
+  'performance': { slide: 3 },
   'subscription': { slide: 4 },
   'on-demand': { slide: 5 },
   'warranty': { slide: 6 },
-  'maintenance': { slide: 7 }
+  'framework': { slide: 7 }
 };
 
 const VERIFY_ACTION = 'form_page_submission';

@@ -101,18 +101,18 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-id-badge"/> Dossier</h4>
                   <ul>
-                    <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Mission</Link></li>
-                    <li><Link to="/strategy" onClick={update(solutions[3].slug, true)}><i className="fa fa-bullseye"/> Strategy</Link></li>
+                    <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-bullseye"/> Mission</Link></li>
+                    <li><Link to="/framework" onClick={update(solutions[7].slug, true)}><i className="fa fa-cubes"/> Framework</Link></li>
                   </ul>
                 </li>
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-cubes"/> Services</h4>
+                  <h4><i className="fa fa-cogs"/> Services</h4>
                   <ul>
-                    <li><Link to="/consulting" onClick={update(solutions[1].slug, true)}><i className="fa fa-lightbulb-o"/> Consulting</Link></li>
-                    <li><Link to="/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-wrench"/> Development</Link></li>
-                    <li><Link to="/maintenance" onClick={update(solutions[7].slug, true)}><i className="fa fa-heartbeat"/> Maintenance</Link></li>
+                    <li><Link to="/planning" onClick={update(solutions[1].slug, true)}><i className="fa fa-road"/> Planning</Link></li>
+                    <li><Link to="/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Development</Link></li>
+                    <li><Link to="/performance" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Performance</Link></li>
                   </ul>
                 </li>
               </ul>

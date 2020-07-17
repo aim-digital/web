@@ -211,7 +211,7 @@
     margin: 1.15em 0;
 
     @media (min-width: 992px) {
-      top: 5px;
+      top: 8px;
       margin: -.75em .55em;
     }
 
@@ -317,7 +317,7 @@
   & > p {
     color: $humility;
     margin-top: 30px !important;
-    padding-bottom: 0 !important;
+    padding: 0 !important;
 
     small {
       font-size: 80%;
