@@ -112,7 +112,7 @@ export default class {
     });
 
     route = 'support';
-    section = 'support';
+    section = 'Support';
     title = 'Maintained Performance';
     description = "We offer secure at-cost cloud hosting during development, as well as post-project LTS and monitoring for a nominal fee per server per month, managed by our certified industry-leading cloud consultants.";
     image = 'https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg';
@@ -216,7 +216,7 @@ export default class {
     });
 
     route = 'agents';
-    section = 'agents';
+    section = 'Agents';
     title = 'Top Tier Consulting';
     description = 'All of our remote consultants are universally trained in every aspect of digital development and management. Integrating our multi-role experts within your team means more speed and up to 30% less cost for you.';
     image = 'https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg';
