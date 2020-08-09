@@ -131,7 +131,7 @@ export default class extends Nav {
               </ul>
             </li>
             <li className="content subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> Content <span>Fox<br />Zero™<br/>TV</span></a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> Content <span>Fox<br />Zero™<br/><span>TV</span></span></a>
               <ul>
                 <li>
                   <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update('stream.post')}>

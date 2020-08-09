@@ -102,7 +102,7 @@ export default class extends Header {
             <>Velocity™<br />Plan Pricing</>,
             <>Point &amp; Pay™<br />Sprint Pricing</>,
             <>Wingman™<br />Surety Coverage</>,
-            <>100% Power<br />Every Hour</>
+            <>Top Tier<br />Consulting</>
           ].map((title, i) => renderTitle(i, title))}
         </Header>
     );

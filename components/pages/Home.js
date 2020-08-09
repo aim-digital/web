@@ -359,7 +359,7 @@ export default class extends Page {
                   <Link className="link" to="/stream">
                     <Solution
                       icon="television">
-                      View <span>Fox Zero™ TV</span>
+                      Go to <span>Fox Zero™ TV</span>
                     </Solution>
                   </Link>
                 </div>

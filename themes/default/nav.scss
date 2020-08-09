@@ -23,18 +23,30 @@
   li.content {
     margin-top: 1.5em;
 
-    span {
+    a > span {
       color: $white-color;
       background: $primary-red-color;
       border-radius: 6px;
       font-size: .65em;
       padding: .35em;
-      line-height: 1;
+      line-height: 1.1;
       display: inline-block;
-      max-width: 3.65em;
+      max-width: 3.85em;
       position: absolute;
-      margin: -3px 15px;
+      margin: -6px 15px;
       box-shadow: -1px 0px 2px $black-color;
+
+      span {
+        color: $black-color;
+        text-shadow: none;
+        font-weight: 600;
+        letter-spacing: 1px;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding-top: 2px;
+        letter-spacing: 0px;
+      }
     }
 
     marquee {

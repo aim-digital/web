@@ -6,7 +6,7 @@
         "title": "Introducing FAST™ PLM",
         "icon": "bullseye",
         "ctaCategory": "Mission & Value",
-        "summary": "Speed, value, accuracy, and iteration are the core mission themes applied through our software consulting services to guard against software waste. Read through each section to see how we can save you money.",
+        "summary": "Statistics show that 70% of software projects fail, with $150B spent on software waste annually. Our consulting experience has led us to our mission of solving this problem.",
         "category": "Dossier",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [{
@@ -15,10 +15,7 @@
             "value": "A bird's eye-view of our value to you."
         }, {
             "type": "paragraph",
-            "copy": "Recent statistics show that 70% of software projects fail, with $50-150 billion attributed to software waste annually in the U.S."
-        }, {
-            "type": "paragraph",
-            "copy": "Our extensive experience has led us to our mission of solving this problem by abstracting much of the major pain points of digital development. Efficiency means better value, and better value means a healthier economy for all."
+            "copy": "As an answer to the software waste problem (and the focal point of all our products and services), our FAST™ framework is the product of diligent analysis and abstraction of the major pain points of digital development, based on our extensive careers in software development."
         }]
     },
     {
@@ -123,7 +120,7 @@
         "index": 7,
         "section": "Agents",
         "slug": "agents",
-        "title": "100% Power Every Hour",
+        "title": "Top Tier Consulting",
         "icon": "id-badge",
         "summary": "All of our remote consultants are universally trained in every aspect of digital development and management. Integrating our multi-role experts within your team means more speed and up to 30% less cost for you.",
         "category": "Dossier",
