@@ -21,8 +21,20 @@
   }
 
   li.content {
+    margin-top: 1.5em;
+
     span {
-      color: $humility;
+      color: $white-color;
+      background: $primary-red-color;
+      border-radius: 6px;
+      font-size: .65em;
+      padding: .35em;
+      line-height: 1;
+      display: inline-block;
+      max-width: 3.65em;
+      position: absolute;
+      margin: -3px 15px;
+      box-shadow: -1px 0px 2px $black-color;
     }
 
     marquee {
@@ -160,7 +172,7 @@ nav > ul {
     display: none;
     background: $background-color url('https://d3w33imimg0eu8.cloudfront.net/images/iStock-962093578-blur.jpg') no-repeat;
     background-color: rgba(0,159,221, .65);
-    background-position: 72.5% 5%;
+    background-position: 61% 0%;
     // background-size: cover;
   }
 
@@ -211,6 +223,8 @@ nav > ul > li {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: -1px 1px 1px $black-color;
+  box-shadow: 0 0 15px $black-color;
+  margin-bottom: .5em;
 
   a {
     color: inherit;
@@ -304,6 +318,7 @@ nav li.active {
 nav li.home {
   transition: all .15s ease-in;
   transform: scale3d(1, 1, 1);
+  box-shadow: none;
   margin: 3.5em 0 1.5em;
 
   &:after {
@@ -316,8 +331,23 @@ nav li.home {
     opacity: .95;
     transition: transform .15s ease-in;
 
+    i {
+      margin: -.85em -1.1em;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      font-size: 1.25em;
+      opacity: .65;
+      left: 0;
+      transform: rotate(-25deg);
+    }
+
     &:hover {
       transform: rotate(360deg);
+
+      i {
+        opacity: 1;
+      }
     }
   }
 }

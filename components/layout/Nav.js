@@ -96,13 +96,15 @@ export default class extends Nav {
           </div>
           <ul data-copyright={`© ${(new Date()).getFullYear()} · Fox Zero · A VitruvianTech Brand`}>
             <li className="home">
-              <Link rel="nofollow" to="/" className="logo" onClick={update(DEFAULT_ID, true)}/>
+              <Link rel="nofollow" to="/" className="logo" onClick={update(DEFAULT_ID, true)}>
+                <i className="fa fa-home"/>
+              </Link>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-id-badge"/> Dossier</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-file-text-o"/> Dossier</a>
               <ul>
-                <li><Link to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-bullseye"/> Mission</Link></li>
-                <li><Link rel="nofollow" to="/home/framework" onClick={update(solutions[7].slug, true)}><i className="fa fa-cubes"/> Framework</Link></li>
+                <li><Link rel="nofollow" to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-bullseye"/> Mission</Link></li>
+                <li><Link rel="nofollow" to="/home/agents" onClick={update(solutions[7].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
               </ul>
             </li>
             <li className="subnav">
@@ -110,7 +112,7 @@ export default class extends Nav {
               <ul>
                 <li><Link rel="nofollow" to="/home/planning" onClick={update(solutions[1].slug, true)}><i className="fa fa-road"/> Planning</Link></li>
                 <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Development</Link></li>
-                <li><Link rel="nofollow" to="/home/performance" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Performance</Link></li>
+                <li><Link rel="nofollow" to="/home/support" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Support</Link></li>
               </ul>
             </li>
             <li className="subnav">
@@ -122,28 +124,28 @@ export default class extends Nav {
               </ul>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-info-circle"/> Support</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-question-circle"/> Help</a>
               <ul>
                 <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-phone"/> Contact Us</Link></li>
                 <li><Link to="/privacy" onClick={update('privacy', true)}><i className="fa fa-user-secret"/> Privacy Policy</Link></li>
               </ul>
             </li>
             <li className="content subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> Content</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-television"/> Content <span>Fox<br />Zero™<br/>TV</span></a>
               <ul>
                 <li>
+                  <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update('stream.post')}>
+                    <i className="fa fa-star"/> <marquee>Music, Tech, and Steven Tyler Collide in NOLA</marquee>
+                  </Link>
+                </li>
+                <li>
                   <Link to="/stream" onClick={update('stream.home')}>
-                    <i className="fa fa-home"/> <span>Fox Zero™ TV ·</span> Home
+                    <i className="fa fa-exclamation"/> New
                   </Link>
                 </li>
                 <li>
                   <Link to="/stream/music" onClick={update('stream.category')}>
                     <i className="fa fa-hashtag"/> Music
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018" onClick={update('stream.post')}>
-                    <i className="fa fa-file-text-o"/> <marquee>Music, Tech, and Steven Tyler Collide in NOLA</marquee>
                   </Link>
                 </li>
               </ul>

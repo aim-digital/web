@@ -43,11 +43,11 @@ const SECTIONS = {
   'about': { slide: 0 },
   'planning': { slide: 1 },
   'development': { slide: 2 },
-  'performance': { slide: 3 },
+  'support': { slide: 3 },
   'subscription': { slide: 4 },
   'on-demand': { slide: 5 },
   'warranty': { slide: 6 },
-  'framework': { slide: 7 }
+  'agents': { slide: 7 }
 };
 
 const VERIFY_ACTION = 'form_page_submission';

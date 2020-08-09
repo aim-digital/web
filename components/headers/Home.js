@@ -97,12 +97,12 @@ export default class extends Header {
           {[
             <>Introducing<br />FAST™ PLM</>,
             <>Accelerated<br />Roadmapping</>,
-            <>100% Power<br />Every Hour</>,
-            <>Tune, Tweak,<br />Support, Succeed.</>,
+            <>Guaranteed<br />Accuracy</>,
+            <>Maintained<br />Performance</>,
             <>Velocity™<br />Plan Pricing</>,
             <>Point &amp; Pay™<br />Sprint Pricing</>,
             <>Wingman™<br />Surety Coverage</>,
-            <>Speed, Value,<br />Accuracy. Repeat.</>
+            <>100% Power<br />Every Hour</>
           ].map((title, i) => renderTitle(i, title))}
         </Header>
     );

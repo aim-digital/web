@@ -99,10 +99,10 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-id-badge"/> Dossier</h4>
+                  <h4><i className="fa fa-file-text-o"/> Dossier</h4>
                   <ul>
                     <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-bullseye"/> Mission</Link></li>
-                    <li><Link to="/framework" onClick={update(solutions[7].slug, true)}><i className="fa fa-cubes"/> Framework</Link></li>
+                    <li><Link to="/agents" onClick={update(solutions[7].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -112,7 +112,7 @@ export default class extends Footer {
                   <ul>
                     <li><Link to="/planning" onClick={update(solutions[1].slug, true)}><i className="fa fa-road"/> Planning</Link></li>
                     <li><Link to="/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Development</Link></li>
-                    <li><Link to="/performance" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Performance</Link></li>
+                    <li><Link to="/support" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Support</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -129,7 +129,7 @@ export default class extends Footer {
               <ul className="col-md-3 col-xs-12">
                 <li className="subnav">
                   <div>
-                    <h4><i className="fa fa-info-circle"/> Support</h4>
+                    <h4><i className="fa fa-question-circle"/> Help</h4>
                     <ul>
                       <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-envelope"/> Contact Us</Link></li>
                       <li><Link to="/privacy" onClick={update('privacy', true)}><i className="fa fa-user-secret"/> Privacy Policy</Link></li>

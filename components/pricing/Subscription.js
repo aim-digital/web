@@ -11,7 +11,7 @@ export default class extends Component {
                 <h4 data-type="Planning">Fox<br />One</h4>
                 <div className="discount">
                   <i className="fa fa-sun-o">
-                    <span>Includes<br /><strong>15% New Project</strong><br />discount!</span>
+                    <span>Price includes<br /><strong>15% New Project</strong><br />discount.</span>
                   </i>
                 </div>
               </div>
@@ -22,7 +22,7 @@ export default class extends Component {
                   <li><i className="fa fa-user" /> 320+ Partner Hours</li>
                   <li><i className="fa fa-check" /> Project Management</li>
                   <li><i className="fa fa-check" /> Accelerated Waterfall</li>
-                  <li><i className="fa fa-check" /> Agile <i>(SQUAD, XP)</i></li>
+                  <li><i className="fa fa-check" /> Agile <i>(SQUAD)</i> *</li>
                   <li><i className="fa fa-check" /> Discovery</li>
                   <li><i className="fa fa-check" /> Research &amp; Innovation</li>
                   <li><i className="fa fa-check" /> Business Analysis</li>
@@ -46,7 +46,7 @@ export default class extends Component {
                 <h4 data-type="Development">Fox<br />Two</h4>
                 <div className="discount">
                   <i className="fa fa-sun-o">
-                    <span>Ask about our<br /><strong>20% Rapid Fire</strong><br />discount!</span>
+                    <span>Eligible for<br /><strong>20% Rapid Fire</strong><br />discount!</span>
                   </i>
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default class extends Component {
                   <li><i className="fa fa-user" /> 240+ Partner Hours</li>
                   <li><i className="fa fa-user-plus" /> 320+ Associate Hours</li>
                   <li><i className="fa fa-check" /> Project Management</li>
-                  <li><i className="fa fa-check" /> Agile <i>(SQUAD)</i></li>
+                  <li><i className="fa fa-check" /> Agile <i>(SQUAD)</i> *</li>
                   <li><i className="fa fa-check" /> UI Design</li>
                   <li><i className="fa fa-check" /> UX Development</li>
                   <li><i className="fa fa-check" /> API Programming</li>
@@ -77,30 +77,31 @@ export default class extends Component {
           <div className="col-md-4">
             <div className="plan">
               <div>
-                <h4 data-type="Performance">Fox<br />Three</h4>
+                <h4 data-type="Support">Fox<br />Three</h4>
                 <div className="discount">
                   <i className="fa fa-sun-o">
-                    <span>Ask about our<br /><strong>10% Shout-Out</strong><br />discount!</span>
+                    <span>Eligible for<br /><strong>25% Shout-Out</strong><br />discount!</span>
                   </i>
                 </div>
               </div>
               <div>
-                <span className="price">$29k<sub>/mo.</sub></span>
+                <span className="price">$39k<sub>/mo.</sub></span>
                 <ul>
                   <li><i className="fa fa-user"></i> 50+ Partner Hours</li>
                   <li><i className="fa fa-user-plus" /> 160+ Associate Hours</li>
                   <li><i className="fa fa-user-plus" /> Available Add-Ons *</li>
                   <li><i className="fa fa-check" /> Process Management</li>
-                  <li><i className="fa fa-check" /> Agile <i>(SQUAD, XP)</i></li>
+                  <li><i className="fa fa-check" /> Agile <i>(SQUAD)</i> *</li>
                   <li><i className="fa fa-check" /> Long-Term Support</li>
                   <li><i className="fa fa-check" /> Client Team Integration</li>
-                  <li><i className="fa fa-lock" /> No commitment *</li>
+                  <li><i className="fa fa-clock-o" /> Continuous Delivery</li>
+                  <li><i className="fa fa-unlock" /> No commitment *</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <p><small>* Remaining last month balance refunded upon <i>Fox One/Fox Three</i> cancellations or <i>Fox Two</i> project release completions; additional <i>Fox Three</i> support partners and associates are available as add-ons at no monthly commitment; simultaneous plan subscriptions allowed.</small></p>
+        <p><small>* Remaining last month balance refunded upon <i>Fox One/Fox Three</i> cancellations or <i>Fox Two</i> project release completions; additional <i>Fox Three</i> support partners and associates are available as add-ons at no monthly commitment; simultaneous plan subscriptions allowed; <i>SQUAD</i> is our custom Agile methodology: a lean version of Scrum with Extreme Programming.</small></p>
       </div>
     </>;
   }

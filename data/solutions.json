@@ -27,26 +27,22 @@
         "slug": "planning",
         "title": "Accelerated Roadmapping",
         "icon": "road",
-        "summary": "All of our remote consultants are universally trained in every aspect of digital development and management. Integrating our multi-role experts within your team means more speed and up to 30% less cost for you.",
+        "summary": "Stop the churn by letting us manage, and guarantee, your entire project. From conception to production, with a focus on UX, our strategy and warranty ensures that you’ll never be a statistic of software waste.",
         "category": "Services",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
         "content": [{
             "type": "image",
-            "url": "https://d3w33imimg0eu8.cloudfront.net/images/e5803c3e-a859-4246-9dca-f84d9ee3dd21.png",
-            "value": "One of our multi-role experts can do the work of two competing consultants."
+            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
         }, {
             "type": "paragraph",
-            "copy": "Universal skill-sets mitigate communication bottlenecks, ensuring zero latency between task objectives and maximum productivity per every hour worked."
-        }, {
-            "type": "paragraph",
-            "copy": "All of our consulting agents operate remotely within the domestic U.S. while integrated with your team, providing exemplary written and communication skills along with mastery in their respective trade disciplines, as well as expert training in each crucial role of digital development."
+            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
         }]
     },
     {
         "index": 2,
         "section": "Development",
         "slug": "development",
-        "title": "100% Power Every Hour",
+        "title": "Guaranteed Accuracy",
         "icon": "fighter-jet",
         "summary": "Stop the churn by letting us manage, and guarantee, your entire project. From conception to production, with a focus on UX, our strategy and warranty ensures that you’ll never be a statistic of software waste.",
         "category": "Services",
@@ -62,9 +58,9 @@
     },
     {
         "index": 3,
-        "section": "Performance",
-        "slug": "performance",
-        "title": "Tune, Tweak, Support, Succeed.",
+        "section": "Support",
+        "slug": "support",
+        "title": "Maintained Performance",
         "icon": "wrench",
         "summary": "We offer secure at-cost cloud hosting during development, as well as post-project LTS and monitoring for a nominal fee per server per month, managed by our certified industry-leading cloud consultants.",
         "category": "Services",
@@ -125,20 +121,24 @@
     },
     {
         "index": 7,
-        "section": "Framework",
-        "slug": "framework",
-        "title": "Speed, Value, Accuracy. Repeat.",
-        "icon": "cubes",
-        "summary": "Adopted from the automotive industry, our strategy is built on a curated Agile product lifecycle framework. Paired with military-based day-to-day processes, real cost savings are met with real-time collaboration.",
+        "section": "Agents",
+        "slug": "agents",
+        "title": "100% Power Every Hour",
+        "icon": "id-badge",
+        "summary": "All of our remote consultants are universally trained in every aspect of digital development and management. Integrating our multi-role experts within your team means more speed and up to 30% less cost for you.",
         "category": "Dossier",
-        "ctaCategory": "Strategy Framework",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
+        "ctaCategory": "Elite Agents",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
         "content": [{
             "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
+            "url": "https://d3w33imimg0eu8.cloudfront.net/images/e5803c3e-a859-4246-9dca-f84d9ee3dd21.png",
+            "value": "One of our multi-role experts can do the work of two competing consultants."
         }, {
             "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
+            "copy": "Universal skill-sets mitigate communication bottlenecks, ensuring zero latency between task objectives and maximum productivity per every hour worked."
+        }, {
+            "type": "paragraph",
+            "copy": "All of our consulting agents operate remotely within the domestic U.S. while integrated with your team, providing exemplary written and communication skills along with mastery in their respective trade disciplines, as well as expert training in each crucial role of digital development."
         }]
     }
 ]
