@@ -61,7 +61,6 @@ export default class {
     });
 
     await Page.update({
-      route: 'support',
       page: '@fox-zero/web:Help'
     }, {
       where: {
@@ -70,7 +69,6 @@ export default class {
     });
 
     await Page.update({
-      route: 'agents',
       page: '@fox-zero/web:Help'
     }, {
       where: {
