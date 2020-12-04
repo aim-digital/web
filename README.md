@@ -6,4 +6,4 @@ Bundle designed for use within the BoilerplateJS™ app development platform.
 
 ---
 
-© 2019 VitruvianTech
+© 2021 VitruvianTech

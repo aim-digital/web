@@ -101,7 +101,7 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-file-text-o"/> Dossier</h4>
                   <ul>
-                    <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-bullseye"/> Mission</Link></li>
+                    <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Mission</Link></li>
                     <li><Link to="/agents" onClick={update(solutions[7].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
                   </ul>
                 </li>
@@ -111,7 +111,7 @@ export default class extends Footer {
                   <h4><i className="fa fa-cogs"/> Services</h4>
                   <ul>
                     <li><Link to="/planning" onClick={update(solutions[1].slug, true)}><i className="fa fa-road"/> Planning</Link></li>
-                    <li><Link to="/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Development</Link></li>
+                    <li><Link to="/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-bullseye"/> Development</Link></li>
                     <li><Link to="/support" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Support</Link></li>
                   </ul>
                 </li>

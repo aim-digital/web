@@ -95,14 +95,14 @@ export default class extends Header {
           onTransitionBegin={this.transitionBegin}
           images={solutions.map(solution => solution.media[0].url)}>
           {[
-            <>Introducing<br />FAST™ PLM</>,
-            <>Accelerated<br />Roadmapping</>,
-            <>Guaranteed<br />Accuracy</>,
+            <>Introducing<br />SQUAD™ PLM</>,
+            <>Runway to<br />Success</>,
+            <>Guaranteed<br />Target Delivery</>,
             <>Maintained<br />Performance</>,
-            <>Velocity™<br />Plan Pricing</>,
-            <>Point &amp; Pay™<br />Sprint Pricing</>,
-            <>Wingman™<br />Surety Coverage</>,
-            <>Top Tier<br />Consulting</>
+            <>SQUAD™ PLM<br />Pricing</>,
+            <>Point &amp; Pay™<br />Agile Pricing</>,
+            <>Wingman™<br />Bonded Coverage</>,
+            <>Top Tier<br />Engineers</>
           ].map((title, i) => renderTitle(i, title))}
         </Header>
     );

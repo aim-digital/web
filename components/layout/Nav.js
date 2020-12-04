@@ -103,7 +103,7 @@ export default class extends Nav {
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-file-text-o"/> Dossier</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-bullseye"/> Mission</Link></li>
+                <li><Link rel="nofollow" to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Mission</Link></li>
                 <li><Link rel="nofollow" to="/home/agents" onClick={update(solutions[7].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
               </ul>
             </li>
@@ -111,7 +111,7 @@ export default class extends Nav {
               <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
               <ul>
                 <li><Link rel="nofollow" to="/home/planning" onClick={update(solutions[1].slug, true)}><i className="fa fa-road"/> Planning</Link></li>
-                <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> Development</Link></li>
+                <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-bullseye"/> Development</Link></li>
                 <li><Link rel="nofollow" to="/home/support" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Support</Link></li>
               </ul>
             </li>
