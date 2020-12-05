@@ -6,9 +6,9 @@ import {solutions} from '@fox-zero/web/data';
 export default class extends Section {
   render() {
     return (
-      <Section solution={solutions[4]} title={<>SQUAD™ PLM<br />Pricing</>}>
+      <Section solution={solutions[4]} title={<>SQUAD™<br />Packaged Pricing</>}>
         <Subscription />
-        <p>Click below to learn more or contact us about our subscription model.</p>
+        <p>Click below to learn more and to contact us about our subscription packages!</p>
       </Section>
     );
   }

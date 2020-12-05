@@ -19,20 +19,20 @@ export default class extends Component {
                 <span className="price">$59k<sub>/version</sub></span>
                 <ul>
                   <li><i className="fa fa-user" /> 320+ Partner Hours</li>
-                  <li><i className="fa fa-fighter-jet" /> <strong>SQUAD™</strong> PLM Training</li>
-                  <li><i className="fa fa-clock-o" /> 2-6 wk. Delivery</li>
-                  <li><i className="fa fa-unlock" /> No Commitment *</li>
-                  <li><i className="fa fa-plus" /> Discovery</li>
-                  <li><i className="fa fa-plus" /> Research &amp; Innovation</li>
-                  <li><i className="fa fa-plus" /> Solution Architecture</li>
-                  <li><i className="fa fa-plus" /> Prototyping</li>
-                  <li><i className="fa fa-plus" /> Wireframing</li>
-                  <li><i className="fa fa-plus" /> Initiative Roadmapping</li>
-                  <li><i className="fa fa-plus" /> Project Management</li>
-                  <li><i className="fa fa-plus" /> Business Consulting</li>
-                  <li><i className="fa fa-plus" /> Business Analysis</li>
-                  <li><i className="fa fa-plus" /> Technical Design</li>
-                  <li><i className="fa fa-plus" /> UX &amp; UI Design</li>
+                  <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
+                  <li><i className="fa fa-clock-o" /> 3-6 wk. Delivery</li>
+                  <li><i className="fa fa-unlock" /> No Commitment <sup>*</sup></li>
+                  <li><i className="fa fa-thumbs-o-up" /> Ideal for Consulting</li>
+                  <li><i className="fa fa-check" /> Discovery</li>
+                  <li><i className="fa fa-check" /> Research &amp; Innovation</li>
+                  <li><i className="fa fa-check" /> Solution Architecture</li>
+                  <li><i className="fa fa-check" /> Prototyping</li>
+                  <li><i className="fa fa-check" /> Wireframing</li>
+                  <li><i className="fa fa-check" /> Initiative Roadmapping</li>
+                  <li><i className="fa fa-check" /> Project Management</li>
+                  <li><i className="fa fa-check" /> Business Analysis</li>
+                  <li><i className="fa fa-check" /> Technical Design</li>
+                  <li><i className="fa fa-check" /> UX &amp; UI Design</li>
                 </ul>
               </div>
             </div>
@@ -52,29 +52,28 @@ export default class extends Component {
                 <span className="price">$79k<sub>/mo.</sub></span>
                 <ul>
                   <li><i className="fa fa-user" /> 240+ Partner Hours</li>
-                  <li><i className="fa fa-user-plus" /> 320+ Associate Hours</li>
-                  <li><i className="fa fa-fighter-jet" /> <strong>SQUAD™</strong> PLM Training</li>
+                  <li><i className="fa fa-users" /> 320+ Associate Hours</li>
+                  <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
                   <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> Warranty</li>
-                  <li><i className="fa fa-info-circle" /> Requires <i>Fox One</i> (x1)</li>
+                  <li><i className="fa fa-info-circle" /> Requires <i>Fox One</i> <sup>†</sup></li>
                   <li><i className="fa fa-clock-o" /> 3-4 mo. Delivery</li>
-                  <li><i className="fa fa-lock" /> 3-4 mo. Commitment *</li>
-                  <li><i className="fa fa-plus" /> Project Management</li>
-                  <li><i className="fa fa-plus" /> Business Consulting</li>
-                  <li><i className="fa fa-plus" /> Business Analysis</li>
-                  <li><i className="fa fa-plus" /> Technical Design</li>
-                  <li><i className="fa fa-plus" /> UX &amp; UI Design</li>
-                  <li><i className="fa fa-plus" /> Process Management</li>
-                  <li><i className="fa fa-plus" /> UX Development</li>
-                  <li><i className="fa fa-plus" /> API Programming</li>
-                  <li><i className="fa fa-plus" /> Database Management</li>
-                  <li><i className="fa fa-plus" /> Desktop &amp; Mobile</li>
-                  <li><i className="fa fa-plus" /> Offline Caching</li>
-                  <li><i className="fa fa-plus" /> Web-based Technologies</li>
-                  <li><i className="fa fa-plus" /> Cloud Networking</li>
-                  <li><i className="fa fa-plus" /> Service Orchestration</li>
-                  <li><i className="fa fa-plus" /> Enterprise Authentication</li>
-                  <li><i className="fa fa-plus" /> Third-Party Integration</li>
-                  <li><i className="fa fa-plus" /> Testing &amp; Automation</li>
+                  <li><i className="fa fa-lock" /> 3-4 mo. Commitment <sup>*</sup></li>
+                  <li><i className="fa fa-thumbs-o-up" /> Ideal Agency Solution</li>
+                  <li><i className="fa fa-check" /> Project Management</li>
+                  <li><i className="fa fa-check" /> Business Analysis</li>
+                  <li><i className="fa fa-check" /> Technical Design</li>
+                  <li><i className="fa fa-check" /> UX &amp; UI Design</li>
+                  <li><i className="fa fa-check" /> UX Development</li>
+                  <li><i className="fa fa-check" /> API Programming</li>
+                  <li><i className="fa fa-check" /> Database Management</li>
+                  <li><i className="fa fa-check" /> Desktop &amp; Mobile</li>
+                  <li><i className="fa fa-check" /> Offline Caching</li>
+                  <li><i className="fa fa-check" /> Web-based Technologies</li>
+                  <li><i className="fa fa-check" /> Cloud Networking</li>
+                  <li><i className="fa fa-check" /> Service Orchestration</li>
+                  <li><i className="fa fa-check" /> Enterprise Authentication</li>
+                  <li><i className="fa fa-check" /> Third-Party Integration</li>
+                  <li><i className="fa fa-check" /> Testing &amp; Automation</li>
                 </ul>
               </div>
             </div>
@@ -94,23 +93,27 @@ export default class extends Component {
                 <span className="price">$29k<sub>/mo.</sub></span>
                 <ul>
                   <li><i className="fa fa-user"></i> 50+ Partner Hours</li>
-                  <li><i className="fa fa-user-plus" /> 160+ Associate Hours</li>
-                  <li><i className="fa fa-user-plus" /> Available Add-Ons *</li>
-                  <li><i className="fa fa-fighter-jet" /> <strong>SQUAD™</strong> PLM Training</li>
-                  <li><i className="fa fa-info-circle" /> Includes <i>Fox Two</i> Services</li>
+                  <li><i className="fa fa-users" /> 160+ Associate Hours</li>
+                  <li><i className="fa fa-user-plus" /> Available Add-Ons <sup>††</sup></li>
+                  <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
+                  <li><i className="fa fa-plus" /> Includes <i>Fox Two</i> Services</li>
                   <li><i className="fa fa-clock-o" /> Continuous Delivery</li>
-                  <li><i className="fa fa-unlock" /> No Commitment *</li>
-                  <li><i className="fa fa-plus" /> Long-Term Support</li>
-                  <li><i className="fa fa-plus" /> Data Migration</li>
-                  <li><i className="fa fa-plus" /> Analytics &amp; Reporting</li>
-                  <li><i className="fa fa-plus" /> Marketing Consulting</li>
-                  <li><i className="fa fa-plus" /> Client Staff Integration</li>
+                  <li><i className="fa fa-unlock" /> No Commitment <sup>*</sup></li>
+                  <li><i className="fa fa-thumbs-o-up" /> Ideal for Recruiting</li>
+                  <li><i className="fa fa-check" /> Client Staff Integration</li>
+                  <li><i className="fa fa-check" /> Data Migration</li>
+                  <li><i className="fa fa-check" /> Analytics &amp; Reporting</li>
+                  <li><i className="fa fa-check" /> Marketing Consulting</li>
+                  <li><i className="fa fa-check" /> Managed Services</li>
+                  <li><i className="fa fa-check" /> Long-Term Support</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <p><small>* Remaining balance refunded upon <i>Fox One/Fox Three</i> completion or cancellation. or <i>Fox Two</i> project version completion; additional <i>Fox Three</i> support partners and associates are available as add-ons at no monthly commitment; simultaneous plan subscriptions allowed.</small></p>
+        <p><sup>*</sup> <small>Balance of non-working days refunded upon <i>Fox One/Fox Three</i> early completion or cancellation, or <i>Fox Two</i> early version completion. <i>Fox Two</i> packages cannot be cancelled.</small></p>
+        <p><sup>†</sup> <small><i>Fox Two</i> package, including warranty, is only available following a binding project version roadmap (<i>Statement of Work</i>) as produced by a one-time <i>Fox One</i> package subscription per version (each <i>Fox Two</i> package requires a discretely planned project version roadmap.)</small></p>
+        <p><sup>††</sup> <small>Additional full-time <i>Fox Three</i> partners and associates are available at $24k/mo. and $21k/mo., respectively.</small></p>
       </div>
     </>;
   }

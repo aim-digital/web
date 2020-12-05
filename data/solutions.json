@@ -6,7 +6,7 @@
         "title": "Introducing SQUAD™ PLM",
         "icon": "fighter-jet",
         "ctaCategory": "Mission & Value",
-        "summary": "Statistics show that 70% of software projects fail, with $150B spent on software waste annually. Our consulting experience has led us to our mission of solving this problem.",
+        "summary": "The SQUAD™ product lifecycle is our software management consulting framework designed to help solve the industry-wide problem of $150 billion attributed to software waste annually.",
         "category": "Dossier",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [{
@@ -24,7 +24,7 @@
         "slug": "planning",
         "title": "Runway to Success",
         "icon": "road",
-        "summary": "Stop the churn by letting us manage, and guarantee, your entire project. From conception to production, with a focus on UX, our strategy and warranty ensures that you’ll never be a statistic of software waste.",
+        "summary": "Get off the ground with confidence using our time-boxed roadmap planning approach, allowing us to guarantee all development project milestones and affording you peace of mind.",
         "category": "Services",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
         "content": [{
@@ -74,9 +74,9 @@
         "index": 4,
         "section": "Subscription",
         "slug": "subscription",
-        "title": "SQUAD™ PLM Pricing",
+        "title": "SQUAD™ Packaged Pricing",
         "icon": "refresh",
-        "summary": "No more nickel-and-diming over hours. We’re bottom-line thinkers who know what software projects cost. Why not make project planning simpler with bottom-line monthly pricing?",
+        "summary": "Make project planning simpler with packaged monthly pricing. Forget the nickel-and-diming over hours. We’re bottom-line experts who know what software projects cost.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]
@@ -103,7 +103,7 @@
         "index": 6,
         "section": "Warranty",
         "slug": "warranty",
-        "title": "Wingman™ Bonded Coverage",
+        "title": "Wingman™ Bond Protection",
         "icon": "umbrella",
         "summary": "Every development project we manage is insured up to 10% of the total project price to guarantee minimum risk of delivery time, budget, and quality. Valid from kick-off until 120 days after project acceptance.",
         "category": "Coverage",

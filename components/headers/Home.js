@@ -99,9 +99,9 @@ export default class extends Header {
             <>Runway to<br />Success</>,
             <>Guaranteed<br />Target Delivery</>,
             <>Maintained<br />Performance</>,
-            <>SQUAD™ PLM<br />Pricing</>,
+            <>SQUAD™<br />Packaged Pricing</>,
             <>Point &amp; Pay™<br />Agile Pricing</>,
-            <>Wingman™<br />Bonded Coverage</>,
+            <>Wingman™ Bond<br />Protection</>,
             <>Top Tier<br />Engineers</>
           ].map((title, i) => renderTitle(i, title))}
         </Header>
