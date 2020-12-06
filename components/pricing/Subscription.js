@@ -68,7 +68,7 @@ export default class extends Component {
                   <li><i className="fa fa-check" /> Database Management</li>
                   <li><i className="fa fa-check" /> Desktop &amp; Mobile</li>
                   <li><i className="fa fa-check" /> Offline Caching</li>
-                  <li><i className="fa fa-check" /> Web-based Technologies</li>
+                  <li><i className="fa fa-check" /> All Web-Based Tech</li>
                   <li><i className="fa fa-check" /> Cloud Networking</li>
                   <li><i className="fa fa-check" /> Service Orchestration</li>
                   <li><i className="fa fa-check" /> Enterprise Authentication</li>
