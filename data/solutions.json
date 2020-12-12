@@ -6,7 +6,7 @@
         "title": "Introducing SQUAD™ PLM",
         "icon": "fighter-jet",
         "ctaCategory": "Mission & Value",
-        "summary": "The SQUAD™ product lifecycle is our software management consulting framework designed to help solve the industry-wide problem of $150 billion attributed to software waste annually.",
+        "summary": "The SQUAD™ product lifecycle is our software management framework designed to prevent projects from burning through capital fuel. Extensive experience has led to a mission of solving the software waste problem.",
         "category": "Dossier",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [{
@@ -41,7 +41,7 @@
         "slug": "development",
         "title": "Guaranteed Target Delivery",
         "icon": "bullseye",
-        "summary": "Stop the churn by letting us manage, and guarantee, your entire project. From conception to production, with a focus on UX, our strategy and warranty ensures that you’ll never be a statistic of software waste.",
+        "summary": "Stop the churn by letting us manage and guarantee your entire project. From conception to production - with a focus on UX - our strategy and warranty ensures that you’ll never be a statistic of software waste.",
         "category": "Services",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/b08c0d15bb08409cb6a9b7cad20e10d2.png" }],
         "content": [{
@@ -76,7 +76,7 @@
         "slug": "subscription",
         "title": "SQUAD™ Packaged Pricing",
         "icon": "refresh",
-        "summary": "Make project planning simpler with packaged monthly pricing. Forget the nickel-and-diming over hours. We’re bottom-line experts who know what software projects cost.",
+        "summary": "Make project planning simpler with packaged monthly pricing. Forget the nickel-and-diming over hours - we’re bottom-line experts who know what software projects cost.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]

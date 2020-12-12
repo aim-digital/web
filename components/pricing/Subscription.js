@@ -55,7 +55,7 @@ export default class extends Component {
                   <li><i className="fa fa-users" /> 320+ Associate Hours</li>
                   <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
                   <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> Warranty</li>
-                  <li><i className="fa fa-info-circle" /> Requires <i>Fox One</i> <sup>†</sup></li>
+                  <li><i className="fa fa-info-circle" /> Requires (1) <i>Fox One</i> <sup>†</sup></li>
                   <li><i className="fa fa-clock-o" /> 3-4 mo. Delivery</li>
                   <li><i className="fa fa-lock" /> 3-4 mo. Commitment <sup>*</sup></li>
                   <li><i className="fa fa-thumbs-o-up" /> Ideal Agency Solution</li>
@@ -66,12 +66,13 @@ export default class extends Component {
                   <li><i className="fa fa-check" /> UX Development</li>
                   <li><i className="fa fa-check" /> API Programming</li>
                   <li><i className="fa fa-check" /> Database Management</li>
+                  <li><i className="fa fa-check" /> 100% Web-Based</li>
                   <li><i className="fa fa-check" /> Desktop &amp; Mobile</li>
-                  <li><i className="fa fa-check" /> Offline Caching</li>
-                  <li><i className="fa fa-check" /> All Web-Based Tech</li>
+                  <li><i className="fa fa-check" /> Offline Operation</li>
                   <li><i className="fa fa-check" /> Cloud Networking</li>
                   <li><i className="fa fa-check" /> Service Orchestration</li>
                   <li><i className="fa fa-check" /> Enterprise Authentication</li>
+                  <li><i className="fa fa-check" /> User Access Controls</li>
                   <li><i className="fa fa-check" /> Third-Party Integration</li>
                   <li><i className="fa fa-check" /> Testing &amp; Automation</li>
                 </ul>
@@ -102,6 +103,7 @@ export default class extends Component {
                   <li><i className="fa fa-thumbs-o-up" /> Ideal for Recruiting</li>
                   <li><i className="fa fa-check" /> Client Staff Integration</li>
                   <li><i className="fa fa-check" /> Data Migration</li>
+                  <li><i className="fa fa-check" /> SEO &amp; SMO</li>
                   <li><i className="fa fa-check" /> Analytics &amp; Reporting</li>
                   <li><i className="fa fa-check" /> Marketing Consulting</li>
                   <li><i className="fa fa-check" /> Managed Services</li>
@@ -111,7 +113,7 @@ export default class extends Component {
             </div>
           </div>
         </div>
-        <p><sup>*</sup> <small>Balance of non-working days refunded upon <i>Fox One/Fox Three</i> early completion or cancellation, or <i>Fox Two</i> early version completion. <i>Fox Two</i> packages cannot be cancelled.</small></p>
+        <p><sup>*</sup> <small>Balance of non-working days refunded upon <i>Fox One/Fox Three</i> early completion or cancellation, or <i>Fox Two</i> early version completion. <i>Fox Two</i> cancellations void warranty.</small></p>
         <p><sup>†</sup> <small><i>Fox Two</i> package, including warranty, is only available following a binding project version roadmap (<i>Statement of Work</i>) as produced by a one-time <i>Fox One</i> package subscription per version (each <i>Fox Two</i> package requires a discretely planned project version roadmap.)</small></p>
         <p><sup>††</sup> <small>Additional full-time <i>Fox Three</i> partners and associates are available at $24k/mo. and $21k/mo., respectively.</small></p>
       </div>
