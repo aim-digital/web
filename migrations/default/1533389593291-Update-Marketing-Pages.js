@@ -132,6 +132,31 @@ export default class {
       where: { route }
     });
 
+    route = 'support';
+    title = 'Maintained Performance';
+    description = 'We offer secure at-cost cloud hosting during development, as well as post-project LTS and monitoring for a nominal fee per server per month, managed by our certified industry-leading cloud consultants.';
+    image = 'https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.png';
+
+    await Page.update({
+      title: `${title} · ${NAME}`,
+      meta: JSON.stringify([
+        { property: 'og:url', content: `${SITE}/${route}` },
+        { property: 'og:image:secure_url', content: image },
+        { property: 'og:image', content: image },
+        { property: 'twitter:image', content: image },
+        { property: 'twitter:image:alt', content: `${title}` },
+        { itemprop: 'name', content: `${NAME} · ${title}` },
+        { property: 'og:title', content: `${title}` },
+        { property: 'twitter:title', content: `${title}` },
+        { name: 'description', content: description },
+        { itemprop: 'description', content: description },
+        { property: 'og:description', content: description },
+        { property: 'twitter:description', content: description },
+      ])
+    }, {
+      where: { route }
+    });
+
     route = 'subscription';
     title = 'SQUAD™ Packaged Pricing';
     description = 'Make project planning simpler with packaged monthly pricing. We’re bottom-line experts who know what software projects cost.';
