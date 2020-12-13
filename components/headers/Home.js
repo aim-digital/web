@@ -100,8 +100,8 @@ export default class extends Header {
             <>Guaranteed<br />Target Delivery</>,
             <>Maintained<br />Performance</>,
             <>SQUAD™<br />Packaged Pricing</>,
-            <>Point &amp; Pay™<br />Agile Pricing</>,
             <>Wingman™ Bond<br />Protection</>,
+            <>Point &amp; Pay™<br />Agile Pricing</>,
             <>Top Tier<br />Engineers</>
           ].map((title, i) => renderTitle(i, title))}
         </Header>

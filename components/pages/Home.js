@@ -28,7 +28,7 @@ const {
 
 const RE_iOS_13 = /^.*iPhone.*(?:OS\s13|Version\/13)/;
 
-const HEADER_TIMER = 13.5;
+const HEADER_TIMER = 15;
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
@@ -45,8 +45,8 @@ const SECTIONS = {
   'development': { slide: 2 },
   'support': { slide: 3 },
   'subscription': { slide: 4 },
-  'on-demand': { slide: 5 },
-  'warranty': { slide: 6 },
+  'warranty': { slide: 5 },
+  'on-demand': { slide: 6 },
   'agents': { slide: 7 }
 };
 
