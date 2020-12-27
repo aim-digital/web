@@ -37,7 +37,7 @@ const IMPRESSION_START = 0.5;
 const IMPRESSION_END = 0.35;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
-const SECTION_DEFAULT = 'about';
+const SECTION_DEFAULT = 'agents';
 const SECTION_FORM = 6;
 const SECTIONS = {
   'about': { slide: 0 },
@@ -52,6 +52,8 @@ const SECTIONS = {
 
 const VERIFY_ACTION = 'form_page_submission';
 const VERIFY_GRADE = 0.65;
+
+const RESET_SLIDE = 7;
 
 @connect(state => {
   const { Transition } = state['@boilerplatejs/core'];
@@ -287,7 +289,7 @@ export default class extends Page {
       }
     } else if (impression) {
       timer = HEADER_TIMER;
-      slide = section ? SECTIONS[section].slide : (reset ? 0 : (props.slide === this.length - 1 ? 0 : props.slide + 1));
+      slide = section ? SECTIONS[section].slide : (reset ? RESET_SLIDE : (props.slide === this.length - 1 ? 0 : props.slide + 1));
       transition('page.impression', this.impression = false);
     }
 

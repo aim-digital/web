@@ -41,7 +41,7 @@ export default class extends Component {
   }
 
   render() {
-    const { id, children, title, dek, icon, className, share = {}, hero } = this.props;
+    const { id, children, title, dek, icon, slug, className, share = {}, hero } = this.props;
     const { ready } = this.state;
     const { url, caption, subject, hashtags } = share;
 

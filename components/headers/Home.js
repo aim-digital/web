@@ -66,12 +66,12 @@ export default class extends Header {
   renderTitle = (i, heading) => {
     const { loading } = this.state;
     const solution = solutions[i];
-    const { section, title, summary } = solution;
+    const { section, title, summary, slug } = solution;
 
     return (
       <div className="content" key={`slide-${i}`}>
         <h1>{section}</h1>
-        <h2>{heading || title}</h2>
+        <h2 className={`${slug}-header`}><span>{heading || title}</span></h2>
         <section className="preview">
           <button onClick={() => this.openSolution(solution)} title="Click to open overlay screen">
             <i className={`fa fa-ellipsis-h ${loading ? 'loading' : ''}`}/>

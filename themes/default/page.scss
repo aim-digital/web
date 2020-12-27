@@ -375,6 +375,48 @@ section.solutions {
     font-size: 3.35em;
     margin-top: .25em;
     padding-top: .25em;
+    padding-bottom: 0;
+
+    &.about-header,
+    &.planning-header,
+    &.development-header,
+    &.support-header,
+    &.subscription-header {
+      &:before {
+        content: '';
+        background-size: 30%;
+        margin-right: 10px;
+      }
+
+      &:after {
+        content: '';
+        margin-bottom: -.35em;
+        left: 80%;
+      }
+    }
+
+    &.text-right.about-header,
+    &.text-right.planning-header,
+    &.text-right.development-header,
+    &.text-right.support-header,
+    &.text-right.subscription-header {
+      &:before {
+        content: '';
+        margin-right: 0;
+        margin-left: 10px;
+        right: auto;
+        left: 0;
+        background-position: left;
+        transform: rotate(-15deg);
+      }
+
+      &:after {
+        content: '';
+        margin-bottom: -.35em;
+        left: auto;
+        right: 80%;
+      }
+    }
   }
 
   h4 {
@@ -390,6 +432,8 @@ section.solutions {
   }
 
   .card {
+    margin-top: 4em;
+
     .image {
       position: relative;
       background: rgba(15, 15, 15, .5);

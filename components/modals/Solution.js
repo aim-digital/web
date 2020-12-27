@@ -134,7 +134,7 @@ export default class extends Modal {
     return (
       <Modal {..._.omit(this.props, ['update', 'solution', 'create', 'destroy', 'check', 'recaptchaSiteKey', 'contact'])}
         onHide={this.onHide}
-        className={`solution ${slug ? '' : 'contact'}`}
+        className={`solution ${slug ? `${slug}-modal` : 'contact'}`}
         title={title}
         dek={section}
         icon={icon}

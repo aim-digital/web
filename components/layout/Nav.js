@@ -11,6 +11,7 @@ import formatters from '@fox-zero/web/lib/formatters';
 import * as analytics from '@fox-zero/web/lib/analytics';
 
 const DEFAULT_ID = 'home';
+const RESET_SLIDE = 7;
 
 @connect(state => ({section: state.router.params.section}), {load, dismiss, transition})
 
@@ -41,13 +42,13 @@ export default class extends Nav {
           clearTimeout(this.dismiss);
           this.dismiss = setTimeout(() => {
             dismiss();
-            transition('slide', 0);
+            transition('slide', RESET_SLIDE);
           }, window.scrollY * 0.25);
         } else {
           app.scrollTop = 0;
           window.scroll(0, 0);
           dismiss();
-          transition('slide', 0);
+          transition('slide', RESET_SLIDE);
         }
     } else {
       app.scrollTop = 0;

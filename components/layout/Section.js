@@ -38,7 +38,7 @@ export default class extends Section {
     return (
       <Section>
         <h2 className={headerClass}>{solution.section}</h2>
-        <h3 className={headerClass}>{title || solution.title}</h3>
+        <h3 className={`${headerClass} ${solution.slug}-header`}><span>{title || solution.title}</span></h3>
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">
