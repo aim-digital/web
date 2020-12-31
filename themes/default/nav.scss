@@ -155,8 +155,10 @@ nav li a {
 nav li.products li a {
   font-size: .9em;
   color: $humility;
+  text-align: right;
 
   .fa {
+    text-align: left;
     float: left;
     width: 7em;
     font-size: 1.1em;
