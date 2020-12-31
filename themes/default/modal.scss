@@ -483,20 +483,5 @@ body.modal-open {
       transform: rotate(-15deg);
       margin: -20px 5px 0 0;
     }
-
-    // &:after {
-    //   content: '';
-    //   z-index: 1;
-    //   position: absolute;
-    //   width: 0;
-    //   height: 115%;
-    //   left: 82%;
-    //   bottom: 0;
-    //   margin-bottom: -15px;
-    //   border-left: solid 2px #2bbfe2;
-    //   border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #2bbfe2);
-    //   border-image-slice: 1;
-    //   opacity: .8;
-    // }
   }
 }

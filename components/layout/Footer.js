@@ -120,9 +120,9 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-tags"/> Products</h4>
                   <ul>
-                    <li><Link to="/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
-                    <li><Link to="/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
-                    <li><Link to="/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off"/> On Demand</Link></li>
+                    <li><Link to="/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh"/> SQUAD™ PLM</Link></li>
+                    <li><Link to="/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella"/> Wingman™</Link></li>
+                    <li><Link to="/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off"/> Point &amp; Pay™</Link></li>
                   </ul>
                 </li>
               </ul>

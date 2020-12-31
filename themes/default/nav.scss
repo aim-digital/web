@@ -62,8 +62,12 @@ nav .fa {
   font-size: inherit;
   line-height: inherit;
   margin-right: .5em;
-  width: 1em;
   text-align: center;
+
+  &:before {
+    width: 1em;
+    display: block;
+  }
 }
 
 nav .social {
@@ -146,6 +150,34 @@ nav li {
 
 nav li a {
   display: block;
+}
+
+nav li.products li a {
+  font-size: .9em;
+  color: $humility;
+
+  .fa {
+    float: left;
+    width: 7em;
+    font-size: 1.1em;
+    color: #efefef;
+
+    &:before {
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: .65em;
+    }
+
+    &:after {
+      content: attr(data-product);
+      display: table-cell;
+      vertical-align: middle;
+      text-align: left;
+      font-family: $font-family-fjalla;
+      white-space: normal;
+      line-height: 1;
+    }
+  }
 }
 
 nav li a,

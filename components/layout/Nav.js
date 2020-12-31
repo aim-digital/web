@@ -116,12 +116,12 @@ export default class extends Nav {
                 <li><Link rel="nofollow" to="/home/support" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Support</Link></li>
               </ul>
             </li>
-            <li className="subnav">
+            <li className="subnav products">
               <a href="#" onClick={preventDefault}><i className="fa fa-tags"/> Products</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh"/> Subscription</Link></li>
-                <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella"/> Warranty</Link></li>
-                <li><Link rel="nofollow" to="/home/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off"/> On Demand</Link></li>
+                <li><Link rel="nofollow" to="/home/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh" data-product="SQUAD™ PLM"/> Subscription</Link></li>
+                <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella" data-product="Wingman™"/> Warranty</Link></li>
+                <li><Link rel="nofollow" to="/home/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off" data-product="Point &amp; Pay™"/> On Demand</Link></li>
               </ul>
             </li>
             <li className="subnav">
