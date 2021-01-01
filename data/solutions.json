@@ -24,15 +24,12 @@
         "slug": "planning",
         "title": "Runway to Success",
         "icon": "road",
-        "summary": "Get the first stage of your MVP off the ground with confidence using our time-boxed roadmap planning approach, allowing us to guarantee all software project milestones and affording you peace of mind.",
+        "summary": "Get the first stage of your MVP off the ground with confidence by using the SQUAD™ time-boxed roadmap planning approach, clearing the sky for guaranteed software versions and peace of mind.",
         "category": "Services",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
-        }, {
-            "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
         }]
     },
     {
@@ -41,16 +38,13 @@
         "slug": "development",
         "title": "Guaranteed Target Delivery",
         "icon": "bullseye",
-        "summary": "Stop the churn by letting us manage and guarantee your entire project. From conception to production - with a focus on UX - our strategy and warranty ensures that you’ll never be a statistic of software waste.",
+        "summary": "Following a briefly planned version roadmap, we commit up to 4 months of guaranteed software development services as the second SQUAD™ lifecycle stage, using modern web technologies for rapid development.",
         "category": "Services",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/b08c0d15bb08409cb6a9b7cad20e10d2.png" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/Development-01.png" }],
             "value": "Get the tech outta here!"
-        }, {
-            "type": "paragraph",
-            "copy": "Pairing dedicated hands-on development services with our higher level consulting services bridges the gaps between creative, management, and implementation, fulfilling a role as a full service agency."
         }]
     },
     {
@@ -59,15 +53,12 @@
         "slug": "support",
         "title": "Maintained Performance",
         "icon": "wrench",
-        "summary": "We offer secure at-cost cloud hosting during development, as well as post-project LTS and monitoring for a nominal fee per server per month, managed by our certified industry-leading cloud consultants.",
+        "summary": "The last stage of the SQUAD™ lifecycle is dedicated to providing on-going marketing and tech support, managed services, and continuous delivery of new features. Our Support subscription plan is perfect for existing projects!",
         "category": "Services",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
-        }, {
-            "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
         }]
     },
     {
@@ -76,7 +67,7 @@
         "slug": "subscription",
         "title": "SQUAD™ Packaged Pricing",
         "icon": "refresh",
-        "summary": "Build your MVP within 6 months for under $350k with our simple packaged monthly pricing, curated by bottom-line experts who know what software projects cost.",
+        "summary": "Build your MVP within 6 months for under $350k with our simple monthly SQUAD™ plans, curated by bottom-line consulting experts who know what software projects cost.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]
@@ -87,15 +78,12 @@
         "slug": "warranty",
         "title": "Wingman™ Bond Protection",
         "icon": "umbrella",
-        "summary": "Every software project we plan and develop is insured to guarantee minimum risk of delivery time, budget, and quality. Valid from kick-off until 120 days after project acceptance.",
+        "summary": "Stay covered with our Wingman™ warranty to guarantee minimum risk of project delivery time, budget, and quality so that you'll never be a statistic of software waste. Included with every project that we plan and develop.",
         "category": "Coverage",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
-        }, {
-            "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
         }]
     },
     {
@@ -104,16 +92,13 @@
         "slug": "on-demand",
         "title": "Point & Pay™ Agile Pricing",
         "icon": "power-off",
-        "summary": "Individual consultants can be retained within your team and activated as needed for a surcharge on each point-based task delivered and verified. Includes up to 10 senior partner hours of consulting per month.",
+        "summary": "Agents are kept on standby, ready anytime you need us, on a sprint and story point basis with our Point & Pay™ plan. We stay up-to-date with your systems, estimate with your team, and charge per accepted story point.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg" }],
         "content": [{
             "type": "image",
             "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
-        }, {
-            "type": "paragraph",
-            "copy": "Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies."
         }]
     },
     {
@@ -122,9 +107,9 @@
         "slug": "agents",
         "title": "Top Tier Engineers",
         "icon": "id-badge",
-        "summary": "From web programming to project management, each of our software consultants is expertly trained in multiple roles to provide zero latency between digital development tasks, operating remotely within the U.S.A.",
+        "summary": "From web programming to project management, each of our software consultants is expertly trained in multi-role autonomy to provide zero latency between development tasks, operating remotely within the U.S.A.",
         "category": "Dossier",
-        "ctaCategory": "Elite Agents",
+        "ctaCategory": "Multi-Role Agents",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
         "content": [{
             "type": "image",

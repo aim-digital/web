@@ -577,6 +577,30 @@ section.solutions {
   & > h2, & > h3 {
     text-align: left !important;
   }
+
+  & > h3 {
+    &.about-header,
+    &.planning-header,
+    &.development-header,
+    &.support-header,
+    &.subscription-header {
+      &:before {
+        content: '';
+        margin-right: 10px;
+        margin-left: 0;
+        right: auto;
+        left: 0;
+        background-position: right;
+        transform: rotate(15deg);
+      }
+
+      &:after {
+        content: '';
+        left: 80%;
+        right: auto;
+      }
+    }
+  }
 }
 
 .section.container {
