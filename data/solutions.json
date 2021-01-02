@@ -92,7 +92,7 @@
         "slug": "on-demand",
         "title": "Point & Pay™ Agile Pricing",
         "icon": "power-off",
-        "summary": "Agents are kept on standby, ready anytime you need us, on a sprint and story point basis with our Point & Pay™ plan. We stay up-to-date with your systems, estimate with your team, and charge per accepted story point.",
+        "summary": "Agents are kept on standby, ready anytime you need us, on a story point basis with our Point & Pay™ plan. We stay up-to-date with your systems, estimate sprints with your team, and charge per accepted story point.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg" }],
