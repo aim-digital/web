@@ -7,8 +7,13 @@ export default class extends Section {
   render() {
     return (
       <Section solution={solutions[4]} title={<>SQUAD™<br />Packaged Pricing</>}>
+        <div className="paragraph">
+          <p>SQUAD™ pricing plans are curated flat-fee monthly subscription SQUAD™ PLM consulting team bundles with each process stage objectives serviced by Fox Zero™ agents, brokered U.S.A.-based trusted partners, and/or client team members.</p>
+        </div>
         <Subscription />
-        <p>Click below to learn more and to contact us about our subscription packages!</p>
+        <div className="paragraph">
+          <p>Click below to learn more and to contact us about our subscription packages!</p>
+        </div>
       </Section>
     );
   }

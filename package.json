@@ -14,6 +14,7 @@
   "author": "Peter C. Romano <pete@vitruvian.tech> (http://github.com/fox-zero)",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "marked": "^1.2.7",
     "react-bootstrap-modal": "^4.1.1",
     "react-share": "^1.19.1"
   }

@@ -504,7 +504,7 @@ section.solutions {
       }
     }
 
-    p, .image {
+    > p, .paragraph, .image {
       margin-left: auto;
       margin-right: auto;
     }
@@ -520,12 +520,12 @@ section.solutions {
       }
     }
 
-    p:last-of-type,
+    .paragraph:last-of-type,
     .image:last-of-type {
       padding-bottom: 15px !important;
     }
 
-    p:first-of-type {
+    > p:first-of-type {
       margin-top: -2.5em !important;
       padding-bottom: 15px !important;
 
@@ -539,7 +539,7 @@ section.solutions {
       }
     }
 
-    p, > div {
+    > p, > div {
       margin-top: 30px !important;
       padding: 0 15px;
     }
@@ -586,8 +586,7 @@ section.solutions {
     &.subscription-header {
       &:before {
         content: '';
-        margin-right: 10px;
-        margin-left: 0;
+        margin-left: -10px;
         right: auto;
         left: 0;
         background-position: right;
@@ -667,7 +666,7 @@ section.solutions {
         transform: translate3d(-4%, 0, -2px) scale3d(1.5, 1.5, 1.5);
         background-image: url(https://d3w33imimg0eu8.cloudfront.net/images/earth.svg);
         height: 100vh;
-        opacity: .6;
+        opacity: .5;
       }
 
       &.cloud {

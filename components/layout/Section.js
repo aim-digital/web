@@ -7,6 +7,7 @@ import {open} from '@fox-zero/web/actions/Solution';
 import {Section} from '@boilerplatejs/core/components/layout';
 import {Solution} from '@fox-zero/web/components/buttons';
 import * as analytics from '@fox-zero/web/lib/analytics';
+import marked from 'marked';
 
 @connect(state => ({sources: state['@boilerplatejs/core'].Transition['analytics.sources']}), {transition, load, open})
 
@@ -46,7 +47,7 @@ export default class extends Section {
               {children || <>
                 {(solution.content || []).map((content, i) => {
                   return <Fragment key={`page-content-${i}`}>
-                    {content.type === 'paragraph' && <p>{content.copy}</p>}
+                    {content.type === 'paragraph' && <div className="paragraph" dangerouslySetInnerHTML={{ __html: marked(content.copy) }} />}
                     {content.type === 'image' && <div className="image"><img alt={content.value} src={content.url || content.media[0].url} />{content.value ? <div>{content.value}</div> : <></>}</div>}
                   </Fragment>
                 })}

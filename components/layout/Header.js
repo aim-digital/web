@@ -1,7 +1,6 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
-import {VelocityTransitionGroup} from 'velocity-react';
 import {Header} from '@boilerplatejs/core/components/layout';
 import {transition} from '@boilerplatejs/core/actions/Transition';
 import {Logo} from '@fox-zero/web/components/layout';

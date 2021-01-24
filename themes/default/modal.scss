@@ -252,7 +252,7 @@ body.modal-open {
 
   .modal-body {
     color: $white-color;
-    padding: 45px 0;
+    padding: 50px 0;
     margin: 0 auto;
     font-size: 1em;
     text-shadow: 1px 1px 3px $black-color;
@@ -262,7 +262,7 @@ body.modal-open {
     }
 
     p {
-      font-size: 1.25em;
+      font-size: 1.15em;
     }
   }
 
@@ -312,11 +312,11 @@ body.modal-open {
       line-height: 1;
       font-family: $font-family-oswald;
       text-transform: uppercase;
-      font-size: 3em;
+      font-size: 2.65em;
       font-weight: 600;
     }
 
-    p {
+    .paragraph {
       margin: 0;
       position: relative;
       z-index: 2;
@@ -325,23 +325,25 @@ body.modal-open {
     h2 {
       position: relative;
       z-index: 1;
-      padding-right: 4em;
 
-      img {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 2em;
-        margin-bottom: -.25em;
+      &.icon {
+        padding-left: 2em;
+
+        img {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 1.5em;
+        }
       }
     }
 
-    h2 + p,
+    h2 + .paragraph,
     h2 + .image,
-    p + p,
-    p + h2,
-    p + .image,
-    .image + p,
+    .paragraph + .paragraph,
+    .paragraph + h2,
+    .paragraph + .image,
+    .image + .paragraph,
     .image + h2 {
       margin-top: 1.5em !important;
     }
@@ -387,7 +389,7 @@ body.modal-open {
         margin-left: -5.5em;
         transform: rotate(-10deg);
         width: 11em;
-        font-size: 150%;
+        font-size: 175%;
         text-transform: uppercase;
         text-shadow: 1px 1px 6px #fcd600;
         opacity: .8;
