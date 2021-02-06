@@ -14,14 +14,14 @@
             "copy": "Statistics show that 70% of software development projects fail, with $50-150 billion of wasted capital spent annually in the U.S. on the mismanagement of analyses, scheduling, personnel, budgeting, or implementation."
         }, {
             "type": "paragraph",
-            "copy": "Our mission of solving the software waste problem has led to the creation of our SQUAD™ methodology, which is the product of diligent analysis and abstraction of the major pain points of digital development based on our extensive consulting careers in software development, and the motivation behind all Fox Zero™ service offerings and products."
+            "copy": "Our mission of solving the software waste problem has led to the creation of our SQUAD™ methodology, which is the result of decades worth of CTO and project management experience, and the motivation behind all Fox Zero™ service offerings and products."
         }, {
             "type": "image",
             "url": "https://d3w33imimg0eu8.cloudfront.net/images/768ccb56-a555-4f86-94b1-8f4c4c5d9450.png",
             "value": "You need predictable process people"
         }, {
             "type": "paragraph",
-            "copy": "SQUAD™ is a simple hybrid methodology and process framework of both waterfall and agile project management principles and practices in the practical form of an iterative three-staged product lifecycle (PLM), applicable to the planning and processes of business initiatives and teams in any industry, especially software development."
+            "copy": "SQUAD™ is a simple hybrid methodology and process framework of both waterfall and agile project management principles and practices in the form of an iterative three-staged product lifecycle (PLM), applicable to the planning and processes of business initiatives and teams in any industry."
         }]
     },
     {
@@ -73,7 +73,7 @@
         "slug": "subscription",
         "title": "SQUAD™ Packaged Pricing",
         "icon": "refresh",
-        "summary": "Build your MVP in 6 months for under $450k with our simple monthly SQUAD™ plans, curated by bottom-line consulting experts who know what software projects cost.",
+        "summary": "Build your MVP in 6 months for under $400k with our simple monthly SQUAD™ plans, curated by bottom-line consulting experts who know what software projects cost.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]

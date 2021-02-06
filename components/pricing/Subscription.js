@@ -16,10 +16,10 @@ export default class extends Component {
                 </div>
               </div>
               <div>
-                <span className="price">$59k<sub>/version</sub></span>
+                <span className="price">$39k<sub>/version</sub></span>
                 <ul>
                   <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
-                  {/* <li><i className="fa fa-user" /> 320+ Partner Hours</li> */}
+                  {/* <li><i className="fa fa-user" /> 210+ Partner Hours</li> */}
                   <li><i className="fa fa-clock-o" /> 3-6 wk. Delivery</li>
                   <li><i className="fa fa-unlock" /> No Commitment <sup>*</sup></li>
                   <li><i className="fa fa-thumbs-o-up" /> Ideal for Consulting</li>
@@ -54,7 +54,7 @@ export default class extends Component {
                   <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
                   <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> Warranty</li>
                   <li><i className="fa fa-info-circle" /> Requires (1) <i>Fox One</i> <sup>†</sup></li>
-                  {/* <li><i className="fa fa-user" /> 270+ Partner Hours</li>
+                  {/* <li><i className="fa fa-user" /> 240+ Partner Hours</li>
                   <li><i className="fa fa-users" /> 320+ Associate Hours</li> */}
                   <li><i className="fa fa-clock-o" /> 3-4 mo. Delivery</li>
                   <li><i className="fa fa-lock" /> 3-4 mo. Commitment <sup>*</sup></li>
@@ -113,7 +113,7 @@ export default class extends Component {
             </div>
           </div>
         </div>
-        <p><sup>*</sup> <small>Balance of non-working days refunded upon <i>Fox One/Fox Three</i> early completion or cancellation, or <i>Fox Two</i> early version completion. <i>Fox Two</i> cancellations void warranty.</small></p>
+        <p><sup>*</sup> <small>Balance of non-working days refunded or credited upon <i>Fox One/Fox Three</i> early completion or cancellation, or <i>Fox Two</i> early version completion. <i>Fox Two</i> cancellations void warranty.</small></p>
         <p><sup>†</sup> <small><i>Fox Two</i> package, including warranty, is only available following a binding project version roadmap (<i>Statement of Work</i>) as produced by a one-time <i>Fox One</i> package subscription per version (each <i>Fox Two</i> package requires a discretely planned project version roadmap.)</small></p>
         <p><sup>††</sup> <small>Additional full-time <i>Fox Three</i> partners and associates are available at $24k/mo. and $21k/mo., respectively.</small></p>
       </div>

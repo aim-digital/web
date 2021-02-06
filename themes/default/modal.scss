@@ -308,7 +308,7 @@ body.modal-open {
       margin: 0;
       text-align: left;
       text-shadow: 1px 1px 3px #151515;
-      color: #f8f8f8;
+      color: #fcd700;
       line-height: 1;
       font-family: $font-family-oswald;
       text-transform: uppercase;
@@ -325,6 +325,14 @@ body.modal-open {
     h2 {
       position: relative;
       z-index: 1;
+      line-height: 1.15;
+
+      &:before {
+        content: attr(data-annotation);
+        color: #f8f8f8;
+        display: block;
+        font-size: 80%;
+      }
 
       &.icon {
         padding-left: 2em;

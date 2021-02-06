@@ -159,7 +159,7 @@ export default class {
 
     route = 'subscription';
     title = 'SQUAD™ Packaged Pricing';
-    description = 'Build your MVP in 6 months for under $450k with our simple monthly SQUAD™ plans.';
+    description = 'Build your MVP in 6 months for under $400k with our simple monthly SQUAD™ plans.';
     image = 'https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg';
 
     await Page.update({
