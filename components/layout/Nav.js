@@ -139,7 +139,7 @@ export default class extends Nav {
                     <i className="fa fa-star"/> <marquee>Music, Tech, and Steven Tyler Collide in NOLA</marquee>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/stream" onClick={update('stream.home')}>
                     <i className="fa fa-exclamation"/> New
                   </Link>
@@ -148,7 +148,7 @@ export default class extends Nav {
                   <Link to="/stream/music" onClick={update('stream.category')}>
                     <i className="fa fa-hashtag"/> Music
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </li>
           </ul>

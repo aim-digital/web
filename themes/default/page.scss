@@ -693,6 +693,14 @@ section.solutions {
         @media (min-width: 992px) {
           height: 30vw;
         }
+
+        &.left {
+          transform: translate3d(-4%, 0, -4px) scale3d(1.5, 1.5, 1.5) rotate(-90deg);
+        }
+
+        &.farther.left {
+          transform: translate3d(-4%, 0, -6px) scale3d(1.5, 1.5, 1.5) rotate(-90deg) !important;
+        }
       }
     }
   }

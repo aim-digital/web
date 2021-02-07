@@ -87,10 +87,7 @@
         "summary": "Stay covered with our Wingman™ warranty to guarantee minimum risk of project delivery time, budget, and quality so that you'll never be a statistic of software waste. Included with every project that we plan and develop.",
         "category": "Coverage",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
-        "content": [{
-            "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
-        }]
+        "content": []
     },
     {
         "index": 6,
@@ -102,10 +99,7 @@
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg" }],
-        "content": [{
-            "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
-        }]
+        "content": []
     },
     {
         "index": 7,

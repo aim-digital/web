@@ -173,14 +173,14 @@ export default class extends Modal {
                   </>}
                   <br />
                   <br />
-                  <h4>Spread the Word</h4>
-                  <p>Shout-outs can get you a <strong>15% discount</strong>!</p>
+                  <h4>Follow Us</h4>
+                  {/* <p>Shout-outs can get you a <strong>15% discount</strong>!</p>
                   <ul>
                     <li>Use the buttons below to share us.</li>
                     <li>20 aggregate "likes" discounts 7.5%.</li>
                     <li>10 aggregate comments discounts 7.5%.</li>
                     <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
-                  </ul>
+                  </ul> */}
                   {contact && <div className="share">
                     <LinkedinShareButton url={share.url} title={subject || title} source="Fox Zero™" summary={share.caption} onShareWindowClose={this.onShare('linkedin', contact)}>
                       <i className="fa fa-linkedin-square"/>

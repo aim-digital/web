@@ -14,9 +14,10 @@
     width: 40px;
     height: 100%;
     display: block;
+    margin-top: 40px;
 
-    @media (min-width: 769px) {
-      display: block;
+    @media (max-width: 991px) and (orientation: landscape) {
+      pointer-events: none;
     }
   }
 
@@ -466,18 +467,40 @@ nav li > a.logo {
 
 nav > a.toggle {
   position: absolute;
-  background: url(https://d3w33imimg0eu8.cloudfront.net/images/nav-open.svg) no-repeat;
+  background: url(https://d3w33imimg0eu8.cloudfront.net/images/nav-open.svg) no-repeat center;
   width: 40px;
   height: 40px;
-  background-size: 100%;
+  background-size: 120%;
   top: 0;
   left: 0;
   transition: opacity .35s;
   transform: scale3d(1.25, 1.25, 1);
   opacity: .65;
 
+  @media (min-width: 769px) {
+    pointer-events: none;
+  }
+
   @media (max-width: 991px) and (orientation: landscape) {
     display: none;
+  }
+
+  &:after {
+    @media (min-width: 769px) {
+      content: 'menu';
+      font-family: $font-family-brand;
+      left: 100%;
+      position: absolute;
+      white-space: nowrap;
+      color: #fff;
+      background: $background-color;
+      border-radius: .25em;
+      padding: 0 .5em;
+      margin: -1em -.25em 0;
+      font-size: .8em;
+      line-height: 2em;
+      top: 50%;
+    }
   }
 }
 

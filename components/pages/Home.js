@@ -352,16 +352,15 @@ export default class extends Page {
           <div className="container">
             <div className="row">
               <div className="col-md-12 card">
-                <p><span>Optimized for efficient innovation, design, development, hosting, and marketing services, we manage digital media products and web-based apps for Fortune 500 and VC-backed companies.</span></p>
-                <div className="image">
+                <p><span>Check out our content channel and follow us on our social media for project management tips, industry trends, free-to-use software, and more!</span></p>
+                {/* <div className="image">
                   <img src="https://d3w33imimg0eu8.cloudfront.net/images/logo.png" />
-                </div>
-                <p>With over 100 years of combined experience in the software development and digital marketing industries, our senior partners have curated a well-oiled "one-stop-shop" product lifecycle management (PLM) process, without the added weight of current industry standards.</p>
+                </div> */}
                 <div>
-                  <Link className="link" to="/stream">
+                  <Link className="link" to="/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018">
                     <Solution
                       icon="television">
-                      Watch on <span>Fox Zero™ TV</span>
+                      Browse our content at <span>Fox Zero™ TV</span>
                     </Solution>
                   </Link>
                 </div>
@@ -542,6 +541,12 @@ export default class extends Page {
                   <div className="cloud left" style={{ top: '100vh', left: '-75%' }} />
                   <div className="cloud farther left" style={{ top: '-40vh', left: '-75%' }} />
                   <div className="satellite right" style={{ top: '40vh', left: '85%' }} />
+                  <div className="cloud left" style={{ top: '320vh', left: '-90%' }} />
+                  <div className="cloud farther left" style={{ top: '260vh', left: 'auto', right: '-95%' }} />
+                  <div className="cloud right" style={{ top: '520vh', left: 'auto', right: '-75%' }} />
+                  <div className="cloud farthest" style={{ top: '410vh', left: '-90%' }} />
+                  <div className="satellite farther left" style={{ top: '460vh', left: 'auto', right: '90%' }} />
+                  <div className="earth" style={{ top: '600vh' }} />
                 </>}
               </div>
               {this.header}
@@ -566,14 +571,14 @@ export default class extends Page {
                             </>}
                             <br />
                             <br />
-                            <h4>Spread the Word</h4>
-                            <p>Shout-outs can get you a <strong>15% discount</strong>!</p>
+                            <h4>Follow Us</h4>
+                            {/* <p>Shout-outs can get you a <strong>15% discount</strong>!</p>
                             <ul>
                               <li>Use the buttons below to share us.</li>
                               <li>20 aggregate "likes" discounts 7.5%.</li>
                               <li>10 aggregate comments discounts 7.5%.</li>
                               <li><small><i>Shout-Out Discount</i> applies to all subscription plans for the first 6 billing cycles.</small></li>
-                            </ul>
+                            </ul> */}
                             {contact && this.renderShare(this.section ? solutions[SECTIONS[this.section].slide] : brand)}
                             <br />
                             <br />
