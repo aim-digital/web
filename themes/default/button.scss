@@ -121,6 +121,7 @@ button.btn {
   line-height: 1.5em;
   background: $black-color;
   color: $primary-green-color;
+  border: solid 2px transparent;
 
   @media print {
     display: none;
@@ -131,9 +132,11 @@ button.btn {
   }
 
   &.active {
-    outline: solid 2px rgba(251, 170, 25, .85);
     transform: scale3d(1.1, 1.1, 1) !important;
     opacity: 1 !important;
+    border: solid 2px rgba(251, 170, 25, .85);
+    border-image: linear-gradient(to bottom, #fcd600, #FC6600);
+    border-image-slice: 1;
   }
 
   &:hover {

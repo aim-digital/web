@@ -325,13 +325,15 @@ body.modal-open {
     h2 {
       position: relative;
       z-index: 1;
-      line-height: 1.15;
+      line-height: 1.1;
+      font-size: 2.5em;
 
       &:before {
         content: attr(data-annotation);
         color: #f8f8f8;
         display: block;
-        font-size: 80%;
+        font-size: 90%;
+        margin-bottom: .1em;
       }
 
       &.icon {
@@ -344,6 +346,10 @@ body.modal-open {
           width: 1.5em;
         }
       }
+    }
+
+    .subscription h4 {
+      color: #f8f8f8;
     }
 
     h2 + .paragraph,
