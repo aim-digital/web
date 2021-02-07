@@ -137,7 +137,7 @@ export default class extends Footer {
                   </div>
                   <div>
                     <p>For customer service or sales, please call <a title="Phone: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank">(855) FOX-ZERO</a> or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
-                    <p><strong>Operating Hours:</strong><br />9am-1pm, 4pm-6pm<br />EST / Mon.-Fri.</p>
+                    <p><strong>Operating Hours:</strong><br />9am-3pm, 6pm-8pm<br />EST / Mon.-Fri.</p>
                   </div>
                 </li>
               </ul>

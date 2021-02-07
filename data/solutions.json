@@ -34,8 +34,8 @@
         "category": "Process",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
         "content": [{
-            "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
+            "type": "paragraph",
+            "copy": "* Advisement, brokerage, and management of objectives: Discovery, Research & Innovation, Solution Architecture, Prototyping, Wireframing, Initiative Roadmapping, Project Management, Business Analysis, Technical Design, UX & UI Design\n* Goal is to define or update a new or existing initiative roadmap, loosely planned by major or minor version iterations, by high-level feature-specific epics, targeting tentative estimations of epic delivery due dates\n* Time-boxed 3-6 week roadmap delivery, relative to a subsequent 3-4 month development stage; must be completed before, but not exceeding, 6 weeks (ideally 3-4 weeks, with a 2 week buffer)\n* Performed as-needed to refresh the roadmap, typically 2-3 times per year as development stages (versions) are completed\n* Required to scope agile development stage versions, critical to the ability of offering guaranteed product delivery and predictability of development time and cost\n* Can be performed simultaneously along with active development and support stages\n* Standard recommended team: ⅓ project manager, ⅓ tech lead, ⅓ designer, ⅓ business analyst\n* Operations: Daily 30-40 minute stakeholder SQUAD™ management sessions\n* Recommended tracking tools: JIRA, Gitlab, Excel"
         }]
     },
     {
@@ -48,9 +48,8 @@
         "category": "Process",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/b08c0d15bb08409cb6a9b7cad20e10d2.png" }],
         "content": [{
-            "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/Development-01.png" }],
-            "value": "Get the tech outta here!"
+            "type": "paragraph",
+            "copy": "* Advisement, brokerage, and management of objectives: _Includes limited planning objectives_, UX Development, API Programming, Database Management, Offline Operation, Cloud Networking, Service Orchestration, Enterprise Authentication, User Access Control, Third-Party Integration, Testing & Automation\n* Each software version’s deliverable timeframe should be kept brief for more manageable and predictable outcomes, in the form of 3-4 month stages against an already planned version roadmap\n* Short iterations allow for better budget forecasting and the warranty of each version’s deliverables\n* Single baseline recommended team: 2 junior resources, 1 senior tech lead, ½ (split) project manager, designer, and business analyst\n* Can have multiple teams per development stage for more aggressive timelines\n* Operations: Daily 30-40 minute stakeholder SQUAD™ management sessions, Extreme Programming (agile), continuous delivery, weekly sprint kick-off and retrospective team meetings\n* Recommended tracking tools: JIRA, Gitlab, Excel\n* Recommended technology stack: Vue.js, Hasura GraphQL, Postgres DB, Docker, Amazon Web Services, Node.js, Python, Django, Git; embedded systems, Javascript, Golang, Digital Ocean"
         }]
     },
     {
@@ -63,8 +62,8 @@
         "category": "Process",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg" }],
         "content": [{
-            "type": "image",
-            "media": [{ "url": "https://d3w33imimg0eu8.cloudfront.net/images/logo.png" }]
+            "type": "paragraph",
+            "copy": "* Advisement, brokerage, and management of objectives: Includes continued development objectives, Client Staff Integration, Data Migration, SEO & SMO, Analytics & Reporting, Marketing Consulting, Managed Services, Long-Term Support\n* Minimum recommended team: 1 junior resource, ⅓ project manager\n* Can add additional senior and junior resources, as needed\n* Can overlap with development stage to support small feature additions and defect corrections to current production version, or as team gap augmentation for next-version development stage\n* Operations: Daily 30-40 minute stakeholder SQUAD™ management sessions, Extreme Programming (agile), continuous delivery, weekly sprint kick-off and retrospective team meetings\n* Recommended tracking tools: JIRA, Gitlab, Excel"
         }]
     },
     {
@@ -112,12 +111,12 @@
         "ctaCategory": "Multi-Role Agents",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
         "content": [{
+            "type": "paragraph",
+            "copy": "Universal skill-sets mitigate communication bottlenecks, ensuring zero latency between task objectives and maximum productivity per every hour worked."
+        }, {
             "type": "image",
             "url": "https://d3w33imimg0eu8.cloudfront.net/images/e5803c3e-a859-4246-9dca-f84d9ee3dd21.png",
             "value": "One of our multi-role experts can do the work of two competing consultants."
-        }, {
-            "type": "paragraph",
-            "copy": "Universal skill-sets mitigate communication bottlenecks, ensuring zero latency between task objectives and maximum productivity per every hour worked."
         }, {
             "type": "paragraph",
             "copy": "All of our consulting agents operate remotely within the domestic U.S. while integrated with your team, providing exemplary written and communication skills along with mastery in their respective trade disciplines, as well as expert training in each crucial role of digital development."

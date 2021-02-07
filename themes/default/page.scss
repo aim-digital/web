@@ -539,6 +539,19 @@ section.solutions {
       }
     }
 
+    .paragraph ul {
+      margin: 0;
+      padding: 0;
+      padding-left: 30px;
+      line-height: 1.35;
+      text-shadow: 1px 1px 3px #151515;
+      color: #f8f8f8;
+
+      li + li {
+        padding-top: 10px;
+      }
+    }
+
     > p, > div {
       margin-top: 30px !important;
       padding: 0 15px;
