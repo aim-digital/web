@@ -6,7 +6,7 @@
         "title": "Introducing SQUAD™ PLM",
         "icon": "fighter-jet",
         "ctaCategory": "Mission Methodology",
-        "summary": "The SQUAD™ product lifecycle is our project management framework, inspired by our mission to prevent projects from burning through capital.",
+        "summary": "The SQUAD™ product lifecycle is our project management and budget planning framework, inspired by our mission to prevent projects from burning through capital.",
         "category": "Dossier",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [{
@@ -14,7 +14,7 @@
             "copy": "Statistics show that 70% of software development projects fail, with $50-150 billion of wasted capital spent annually in the U.S. on the mismanagement of analyses, scheduling, personnel, budgeting, or implementation."
         }, {
             "type": "paragraph",
-            "copy": "Our mission of solving the software waste problem has led to the creation of our SQUAD™ methodology, which is the result of decades worth of CTO and project management experience, and the motivation behind all Fox Zero™ service offerings and products."
+            "copy": "Our mission of solving the software waste problem has led to the creation of our SQUAD™ budget planning methodology, which is the result of decades worth of CTO and project management experience, and the motivation behind all Fox Zero™ service offerings and products."
         }, {
             "type": "image",
             "url": "https://d3w33imimg0eu8.cloudfront.net/images/768ccb56-a555-4f86-94b1-8f4c4c5d9450.png",
@@ -30,7 +30,7 @@
         "slug": "planning",
         "title": "Runway to Success",
         "icon": "road",
-        "summary": "Get the first stage of your MVP off the ground with confidence by using the SQUAD™ time-boxed roadmap planning approach, clearing the sky for predictable project versions and peace of mind.",
+        "summary": "Get the first stage of your MVP off the ground with confidence by using the SQUAD™ budgeted roadmap planning approach, clearing the sky for predictable project versions and peace of mind.",
         "category": "Process",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
         "content": [{
@@ -44,7 +44,7 @@
         "slug": "development",
         "title": "Guaranteed Target Delivery",
         "icon": "bullseye",
-        "summary": "Following a briefly planned version roadmap, we broker up to 4 months of guaranteed software development services as the second SQUAD™ lifecycle stage, using modern web technologies for rapid development.",
+        "summary": "Following a briefly planned version roadmap, we broker and budget up to 4 months of guaranteed software development services as the second SQUAD™ lifecycle stage, using modern web technologies for rapid development.",
         "category": "Process",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/b08c0d15bb08409cb6a9b7cad20e10d2.png" }],
         "content": [{
@@ -58,7 +58,7 @@
         "slug": "support",
         "title": "Maintained Performance",
         "icon": "wrench",
-        "summary": "The last stage of the SQUAD™ lifecycle is dedicated to managing live production marketing and tech support, DevOps, and continuous delivery of micro software versions.",
+        "summary": "The last stage of the SQUAD™ lifecycle is dedicated to budgeting and managing live production marketing and tech support, DevOps, and continuous delivery of micro software versions.",
         "category": "Process",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg" }],
         "content": [{
@@ -72,7 +72,7 @@
         "slug": "subscription",
         "title": "SQUAD™ Packaged Pricing",
         "icon": "refresh",
-        "summary": "Build your MVP in 6 months for under $400k with our simple monthly SQUAD™ plans, curated by bottom-line consulting experts who know what software projects cost.",
+        "summary": "Build your MVP in 9 months for under $500k with our simple monthly SQUAD™ budgeted plans, curated by bottom-line consulting experts who know what software projects cost.",
         "category": "Pricing",
         "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]
