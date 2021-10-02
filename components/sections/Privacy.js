@@ -6,7 +6,7 @@ export default class extends Section {
     return (
       <Section>
         <h2>Privacy Policy</h2>
-        <h3>Welcome!</h3>
+        <h3>TBD</h3>
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">

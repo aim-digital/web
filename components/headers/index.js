@@ -1,3 +1,5 @@
 export Title from './Home';
-export Contact from './Contact';
+export Design from './Design';
+export Development from './Development';
+export Support from './Support';
 export Privacy from './Privacy';

@@ -5,8 +5,8 @@ export default class extends Section {
   render() {
     return (
       <Section>
-        <h2>Development</h2>
-        <h3 className="squad-header">Guaranteed<br />Target Delivery</h3>
+        <h2>Design</h2>
+        <h3 className="squad-header">Runway to<br />Success</h3>
         <div className="container">
           <div className="row">
             <div className="col-md-12 card">

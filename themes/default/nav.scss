@@ -168,7 +168,7 @@ nav li.products li a {
     &:before {
       display: table-cell;
       vertical-align: middle;
-      padding-right: .65em;
+      padding-right: 1.25em;
     }
 
     &:after {
@@ -179,6 +179,10 @@ nav li.products li a {
       font-family: $font-family-fjalla;
       white-space: normal;
       line-height: 1;
+    }
+
+    &[data-product="SQUAD™"] {
+      margin-left: 5px;
     }
   }
 }
@@ -249,6 +253,7 @@ nav > ul {
 #hubspot-messages-iframe-container {
   transition: transform .25s;
   margin: -.35em;
+  transform: scale(.9, .9, .9);
 }
 
 body.nav-open #hubspot-messages-iframe-container {
@@ -338,6 +343,9 @@ nav > ul > li {
       background-color: rgba(153, 202, 62, .75);
     }
 
+    .fa {
+      margin-right: 15px;
+    }
     // a {
     //   transition: all .25s;
     // }

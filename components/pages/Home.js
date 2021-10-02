@@ -37,23 +37,21 @@ const IMPRESSION_START = 0.5;
 const IMPRESSION_END = 0.35;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
-const SECTION_DEFAULT = 'agents';
+const SECTION_DEFAULT = 'about';
 const SECTION_FORM = 6;
 const SECTIONS = {
   'about': { slide: 0 },
-  'planning': { slide: 1 },
-  'development': { slide: 2 },
-  'support': { slide: 3 },
-  'subscription': { slide: 4 },
-  'warranty': { slide: 5 },
-  'on-demand': { slide: 6 },
-  'agents': { slide: 7 }
+  'agents': { slide: 1 },
+  'squad': { slide: 2 },
+  'packages': { slide: 3 },
+  'warranty': { slide: 4 },
+  'contact': { slide: 5 },
 };
 
 const VERIFY_ACTION = 'form_page_submission';
 const VERIFY_GRADE = 0.65;
 
-const RESET_SLIDE = 7;
+const RESET_SLIDE = 0;
 
 @connect(state => {
   const { Transition } = state['@boilerplatejs/core'];

@@ -3,6 +3,6 @@ import Home from './Home';
 
 export default class extends Home {
   render() {
-    return <Home section="planning" {...this.props} />;
+    return <Home section="squad" {...this.props} />;
   }
 }

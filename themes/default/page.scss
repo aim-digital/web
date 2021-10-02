@@ -377,14 +377,11 @@ section.solutions {
     padding-top: .25em;
     padding-bottom: 0;
 
-    &.about-header,
-    &.planning-header,
-    &.development-header,
-    &.support-header,
-    &.subscription-header {
+    &.squad-header,
+    &.packages-header {
       &:before {
         content: '';
-        background-size: 30%;
+        background-size: 34%;
         margin-right: 10px;
       }
 
@@ -395,11 +392,8 @@ section.solutions {
       }
     }
 
-    &.text-right.about-header,
-    &.text-right.planning-header,
-    &.text-right.development-header,
-    &.text-right.support-header,
-    &.text-right.subscription-header {
+    &.text-right.squad-header,
+    &.text-right.packages-header {
       &:before {
         content: '';
         margin-right: 0;
@@ -592,11 +586,8 @@ section.solutions {
   }
 
   & > h3 {
-    &.about-header,
-    &.planning-header,
-    &.development-header,
-    &.support-header,
-    &.subscription-header {
+    &.squad-header,
+    &.packages-header {
       &:before {
         content: '';
         margin-left: -10px;
