@@ -251,13 +251,24 @@ nav > ul {
 }
 
 #hubspot-messages-iframe-container {
-  transition: transform .25s;
-  margin: -.35em;
-  transform: scale(.9, .9, .9);
+  transition: all .25s;
+  margin: -.5em -.35em;
+  transform: scale3d(.85, .85, .85);
+  opacity: .9;
+  top: 40px!important;
+
+  @media (min-width: 769px) {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 body.nav-open #hubspot-messages-iframe-container {
-  transform: translate3d(-100%, 0, 0);
+  transform: translate3d(200%, 0, 0);
 }
 
 #app.nav-open nav {
