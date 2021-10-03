@@ -56,7 +56,7 @@ export default class extends Section {
                 <Solution
                   onClick={this.openSolution}
                   icon={solution.icon}
-                  tooltip="Click to open overlay screen">
+                  tooltip="Click to learn more">
                   {solution.cta || 'Read more'} about our<br /><span>{solution.ctaCategory || [solution.section.toLowerCase(), solution.category.toLowerCase()].join(' ')}</span>
                 </Solution>
               </div>

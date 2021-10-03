@@ -102,7 +102,7 @@ export default class extends Nav {
               </Link>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-file-text-o"/> Dossier</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-file-text-o"/> About</a>
               <ul>
                 <li><Link rel="nofollow" to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-flag"/> Mission</Link></li>
                 <li><Link rel="nofollow" to="/home/agents" onClick={update(solutions[1].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>

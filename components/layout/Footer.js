@@ -99,7 +99,7 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-file-text-o"/> Dossier</h4>
+                  <h4><i className="fa fa-file-text-o"/> About</h4>
                   <ul>
                     <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-flag"/> Mission</Link></li>
                     <li><Link to="/agents" onClick={update(solutions[1].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
@@ -117,12 +117,12 @@ export default class extends Footer {
                   </ul>
                 </li>
               </ul>
-              <ul className="col-sm-3 col-xs-6">
+              <ul className="col-sm-3 col-xs-6 products">
                 <li className="subnav">
                   <h4><i className="fa fa-tags"/> Products</h4>
                   <ul>
-                    <li><Link to="/packages" onClick={update(solutions[3].slug, true)}><i className="fa fa-dollar"/> SQUAD™ Packages</Link></li>
-                    <li><Link to="/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella"/> Wingman™ Warranty</Link></li>
+                    <li><Link to="/packages" onClick={update(solutions[3].slug, true)}><i className="fa fa-dollar"/> <span><strong>SQUAD™</strong><sub>Packages</sub></span></Link></li>
+                    <li><Link to="/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella"/> <span><strong>Wingman™</strong><sub>Warranty</sub></span></Link></li>
                   </ul>
                 </li>
               </ul>
@@ -136,8 +136,21 @@ export default class extends Footer {
                     </ul>
                   </div>
                   <div>
-                    <p>For customer service or sales, please call <a title="Phone: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank">(855) FOX-ZERO</a> or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
-                    <p><strong>Operating Hours:</strong><br />9am-1pm, 5pm-7pm<br />EST / Mon.-Fri.</p>
+                    <p>
+                      <strong>Customer Service:</strong>
+                      <br />
+                      <small><strong>Email:</strong></small> <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">hello@foxzero.io</a>
+                      <br />
+                      <small><strong>Phone:</strong></small> <a title="Phone: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank">+1 (855) FOX-ZERO</a>
+                      <br />
+                      <small><strong>Office Hours:</strong></small>
+                      <br />
+                      Mon. - Fri.
+                      <br />
+                      9am - 1pm <sup>(EST)</sup>
+                      <br />
+                      5pm - 7pm <sup>(EST)</sup>
+                    </p>
                   </div>
                 </li>
               </ul>

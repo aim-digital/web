@@ -8,7 +8,7 @@ export default class extends Component {
           <div className="col-md-4">
             <div className="plan">
               <div>
-                <h4 data-type="Design"><i className="fa fa-road" /><span>Fox<br />One</span></h4>
+                <h4 data-type="Design"><i className="fa fa-road" /><span>Fox 1</span></h4>
                 <div className="discount">
                   <i className="fa fa-sun-o">
                     <span>Price includes<br /><strong>15% New Project</strong><br />discount.</span>
@@ -20,7 +20,7 @@ export default class extends Component {
                 <ul>
                   <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
                   {/* <li><i className="fa fa-user" /> 315+ Partner Hours</li> */}
-                  <li><i className="fa fa-clock-o" /> 6-8 wk. Delivery</li>
+                  <li><i className="fa fa-clock-o" /> Appx. 6 wk. Delivery</li>
                   <li><i className="fa fa-unlock" /> No Commitment <sup>*</sup></li>
                   <li><i className="fa fa-thumbs-o-up" /> Ideal for Consulting</li>
                   <li><i className="fa fa-check" /> Discovery</li>
@@ -41,7 +41,7 @@ export default class extends Component {
           <div className="col-md-4">
             <div className="plan">
               <div>
-                <h4 data-type="Development"><i className="fa fa-bullseye" /><span>Fox<br />Two</span></h4>
+                <h4 data-type="Development"><i className="fa fa-bullseye" /><span>Fox 2</span></h4>
                 <div className="discount">
                   <i className="fa fa-sun-o">
                     <span>Eligible for<br /><strong>20% Rapid Fire</strong><br />discount!</span>
@@ -83,7 +83,7 @@ export default class extends Component {
           <div className="col-md-4">
             <div className="plan">
               <div>
-                <h4 data-type="Support"><i className="fa fa-wrench" /><span>Fox<br />Three</span></h4>
+                <h4 data-type="Support"><i className="fa fa-wrench" /><span>Fox 3</span></h4>
                 <div className="discount">
                   <i className="fa fa-sun-o">
                     <span>Eligible for<br /><strong>25% Shout-Out</strong><br />discount!</span>

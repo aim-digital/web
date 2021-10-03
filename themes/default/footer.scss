@@ -100,6 +100,7 @@ footer {
   p {
     font-size: .9em;
     padding: 0 0 1.5em;
+    white-space: nowrap;
   }
 
   ul p {
@@ -107,7 +108,7 @@ footer {
   }
 
   img {
-    margin: 1em auto 0;
+    margin: 0 auto;
     max-width: 128px;
     width: 10%;
     min-width: 250px;
@@ -277,11 +278,44 @@ footer {
     }
   }
 
+  .row > div > ul.products {
+    li li {
+      float: right;
+      clear: right;
+      text-align: left;
+
+      @media (min-width: 768px) {
+        float: none;
+        clear: none;
+      }
+
+      i, span {
+        display: table-cell;
+        padding-bottom: .35em;
+      }
+
+      strong {
+        display: block;
+        line-height: .35;
+      }
+
+      sub {
+        font-size: inherit;
+        position: relative;
+        margin-left: 1px;
+      }
+    }
+  }
+
   small {
     font-size: .75em;
     color: #c0c0c0;
     line-height: 1.75;
     display: inline-block;
+  }
+
+  ul small {
+    font-size: .85em;
   }
 
   .content {

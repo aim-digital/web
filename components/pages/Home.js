@@ -391,7 +391,7 @@ export default class extends Page {
       className={`${ready && slide === solution.index ? 'active' : ''}`}
       key={`detail-button-${i}`}
       icon={solution.icon}
-      tooltip="Click to open overlay screen"
+      tooltip="Click to learn more"
       transition={transition(i)}
       onClick={() => {
         analytics.Section.Click.track(solution.section, sources);

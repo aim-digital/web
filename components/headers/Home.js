@@ -73,7 +73,7 @@ export default class extends Header {
         <h1>{section}</h1>
         <h2 className={`${slug}-header`}><span>{heading || title}</span></h2>
         <section className="preview">
-          <button onClick={() => this.openSolution(solution)} title="Click to open overlay screen">
+          <button onClick={() => this.openSolution(solution)} title="Click to learn more">
             <i className={`fa fa-ellipsis-h ${loading ? 'loading' : ''}`}/>
             <span>Read <span>More</span></span>
           </button>
