@@ -519,14 +519,14 @@ export default class extends Page {
     const { message, status } = state.form;
     const hasMany = sections.length > 1;
 
-    const wrap = (offset = 0) => (component, i) => (
-      <div className={`wrapper section-${i + offset}`} key={`section-${i + offset}`}>
+    const wrap = (offset = 0) => (component, i) => {
+      return <div className={`wrapper section-${i + offset}`} key={`section-${i + offset}`}>
         {component}
       </div>
-    );
+    };
 
     return (
-        <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
+        <Page {...this.props} className={`home home-${props.param.section || 'index'} ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
             {__CLIENT__ ? <>
               <div className={`parallax ${RE_iOS_13.test(global.navigator.userAgent) ? 'hide' : ''}`}>
@@ -555,7 +555,7 @@ export default class extends Page {
                   <section className="quote section">
                     <h2>Talk to Me</h2>
                     <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
-                    <p>Our services can accelerate and enhance your software projects. Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 30 minute call with a senior partner.</p>
+                    <p>Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 20 minute call with a senior partner.</p>
                     <div className={`form ${contact ? 'success' : ''}`}>
                       <div>
                           <div>
@@ -583,7 +583,7 @@ export default class extends Page {
                             <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
                           </div>
                       </div>
-                      <forms.Contact status={status} quote newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
+                      <forms.Contact status={status} quote newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>
                       {!contact && message && <span className="error">{message}</span>}
                       {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
                     </div>

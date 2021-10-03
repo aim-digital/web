@@ -5,11 +5,11 @@
         "slug": "about",
         "title": "Zero Latency Software Agency",
         "icon": "flag",
-        "ctaCategory": "Culture",
         "summary": "Stop burning capital on software waste with our zero latency product lifecycle and budget planning framework, and guaranteed consulting services.",
         "category": "Dossier",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
-        "content": []
+        "content": [],
+        "cta": ["Read more about our", "Warranty Protection"]
     },
     {
         "index": 1,
@@ -18,8 +18,6 @@
         "title": "Top Tier Engineers",
         "icon": "id-badge",
         "summary": "From web programming to project management, each of our software consultants is expertly trained in multi-role autonomy to provide zero latency between development tasks, operating remotely within the U.S.A.",
-        "category": "Dossier",
-        "ctaCategory": "Multi-Role Agents",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
         "content": [{
             "type": "paragraph",
@@ -31,7 +29,8 @@
         }, {
             "type": "paragraph",
             "copy": "All of our consulting agents operate remotely within the domestic U.S. while integrated with your team, providing exemplary written and communication skills along with mastery in their respective trade disciplines, as well as expert training in each crucial role of digital development."
-        }]
+        }],
+        "cta": ["Read more about our", "Warranty Protection"]
     },
     {
         "index": 2,
@@ -40,7 +39,6 @@
         "title": "Managed Chaos, Timeboxed.",
         "icon": "fighter-jet",
         "summary": "The SQUAD™ product lifecycle is our project management and budget planning framework, inspired by our mission to prevent projects from burning through capital.",
-        "category": "Process",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/c8394613925c41afa42fc9f094312a9e.jpg" }],
         "content": [{
             "type": "paragraph",
@@ -55,7 +53,8 @@
         }, {
             "type": "paragraph",
             "copy": "SQUAD™ is a simple hybrid methodology and process framework of both waterfall and agile project management principles and practices in the form of an iterative three-staged product lifecycle (PLM), applicable to the planning and processes of business initiatives and teams in any industry."
-        }]
+        }],
+        "cta": ["Read more about our", "Warranty Protection"]
     },
     {
         "index": 3,
@@ -63,10 +62,9 @@
         "slug": "packages",
         "title": "SQUAD™ Pricing",
         "icon": "dollar",
-        "summary": "Build your MVP in 9 months for under $500k with our simple monthly SQUAD™ budgeted plans, curated by bottom-line consulting experts who know what software projects cost.",
-        "category": "Pricing",
-        "cta": "Contact us",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7a5cad1eb076473b8175a89d411d15a0.jpg" }]
+        "summary": "Build or scale your product in 9 months for under $500k with our simple monthly SQUAD™ budgeted plans, curated by bottom-line consulting experts who know what software projects cost.",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7a5cad1eb076473b8175a89d411d15a0.jpg" }],
+        "cta": ["Read more about our", "Warranty Protection"]
     },
     {
         "index": 4,
@@ -75,9 +73,9 @@
         "title": "Wingman™ Bond Protection",
         "icon": "umbrella",
         "summary": "Stay covered with our Wingman™ warranty to guarantee minimum risk of project delivery time, budget, and quality so that you'll never be a statistic of software waste. Included with every project that we plan and develop.",
-        "category": "Coverage",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
-        "content": []
+        "content": [],
+        "cta": ["Read more about our", "Warranty Protection"]
     },
     {
         "index": 5,
@@ -86,9 +84,8 @@
         "title": "Talk to Me.",
         "icon": "phone",
         "summary": "Stop burning capital on software waste with our zero latency product lifecycle and budget planning framework, and guaranteed consulting services.",
-        "category": "Pricing",
-        "cta": "Contact us",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fdb3120bacb849119fde903ddaaa2fed.jpg" }],
-        "content": []
+        "content": [],
+        "cta": null
     }
 ]

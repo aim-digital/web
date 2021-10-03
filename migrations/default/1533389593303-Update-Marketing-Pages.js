@@ -176,7 +176,7 @@ export default class {
 
     route = 'packages';
     title = 'SQUAD™ Pricing';
-    description = 'Build your MVP in 9 months for under $500k with our simple monthly SQUAD™ budgeted plans.';
+    description = 'Build or scale your product in 9 months for under $500k with our simple monthly SQUAD™ budgeted plans.';
     image = 'https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg';
 
     await Page.update({

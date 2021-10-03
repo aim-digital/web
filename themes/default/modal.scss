@@ -486,7 +486,19 @@ body.modal-open {
   }
 }
 
+.contact-modal {
+  .quote {
+    padding: 0;
 
+    > div {
+      display: none;
+    }
+
+    > .form {
+      display: block;
+    }
+  }
+}
 
 .squad-modal,
 .packages-modal {

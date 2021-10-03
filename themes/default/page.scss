@@ -712,10 +712,10 @@ section.solutions {
   .wrapper {
     position: relative;
     z-index: 2;
-    padding: 60px 0;
+    padding: 90px 0 60px;
 
-    & + .wrapper {
-      padding-top: 90px;
+    &.section-0 {
+      padding-top: 60px;
     }
   }
 
@@ -728,5 +728,24 @@ section.solutions {
     pointer-events: none;
     transition: transform .25s .25s ease-in-out;
     top: 0;
+  }
+}
+
+.home.page.home-about,
+.home.page.home-agents,
+.home.page.home-squad,
+.home.page.home-packages,
+.home.page.home-warranty,
+.home.page.home-contact {
+  .section-0 {
+    .section > div > div {
+      > h2, > h3, > .container > .row > .card > p:first-child {
+        display: none !important;
+      }
+
+      > .container > .row > .card {
+        margin-top: 0;
+      }
+    }
   }
 }
