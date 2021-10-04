@@ -467,7 +467,9 @@ body.modal-open {
     }
 
     > div:first-child {
-      font-size: .9em;
+      h2, h3 {
+        font-size: 2.35em !important;
+      }
 
       p {
         padding: 2em 0;
