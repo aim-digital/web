@@ -5,5 +5,4 @@ export SQUAD from './SQUAD';
 export Packages from './Packages';
 export Warranty from './Warranty';
 export Contact from './Contact';
-export Services from './Services';
-export Help from './Help';
+export Post from './Post';

@@ -530,7 +530,7 @@ export default class extends Page {
           <section className="section container">
             {__CLIENT__ ? <>
               <div className={`parallax ${RE_iOS_13.test(global.navigator.userAgent) ? 'hide' : ''}`}>
-                {rendered && <>
+                {<>
                   <div className="stars" />
                   <div className="stars" style={{ top: '400vh' }} />
                   <div className="stars" style={{ top: '800vh' }} />
@@ -549,7 +549,7 @@ export default class extends Page {
               </div>
               {this.header}
               {<div className="section-solution wrapper">{this.solutions}</div>}
-              {rendered && <>
+              {<>
                 {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(wrap())}
                 <div className="section-form wrapper">
                   <section className="quote section">

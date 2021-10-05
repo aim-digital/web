@@ -307,7 +307,7 @@ nav li.subnav:before {
   right: 30px;
   width: 10px;
   height: 10px;
-  top: 15px;
+  top: .9em;
   border-right: 2px solid #efefef;
   border-bottom: 2px solid #efefef;
   transform: rotate(45deg);
@@ -317,7 +317,7 @@ nav li.subnav:before {
 
 nav li.subnav.active:before {
   transform: rotate(225deg);
-  top: 20px;
+  top: 1.1em;
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
 }

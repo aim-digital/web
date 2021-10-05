@@ -405,7 +405,7 @@
       top: 0;
       left: 15px;
       -webkit-animation-name: caret;
-      -webkit-animation-duration: 1.5s;
+      -webkit-animation-duration: 1.85s;
       -webkit-animation-iteration-count: infinite;
     }
 
@@ -504,4 +504,8 @@
     border-image-slice: 1;
     opacity: .8;
   }
+}
+
+.detail.page .header.container.single {
+  min-height: 80vh !important;
 }

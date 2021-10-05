@@ -736,16 +736,17 @@ section.solutions {
 .home.page.home-squad,
 .home.page.home-packages,
 .home.page.home-warranty,
-.home.page.home-contact {
+.home.page.home-contact,
+.detail.page {
   .section-0 {
     .section > div > div {
       > h2, > h3, > .container > .row > .card > p:first-child {
         display: none !important;
       }
+    }
 
-      > .container > .row > .card {
-        margin-top: 0;
-      }
+    .container > .row > .card {
+      margin-top: 0;
     }
   }
 }
