@@ -19,12 +19,6 @@ footer {
     z-index: 3;
   }
 
-  .home.about.page & {
-    bottom: auto;
-    position: relative;
-    width: auto;
-  }
-
   .no-js .home.page & {
     opacity: 0 !important;
     pointer-events: none;

@@ -26,15 +26,6 @@ section.quote {
     }
   }
 
-  .about.page & .form .form-group {
-    pointer-events: auto;
-
-    &.comment textarea {
-      overflow: auto;
-      resize: auto;
-    }
-  }
-
   h2, h3 {
     font-family: $font-family-oswald;
     margin: 0 auto !important;
@@ -731,6 +722,10 @@ section.solutions {
   }
 }
 
+.detail.page .wrapper.section-0 {
+  padding-top: 30px;
+}
+
 .home.page.home-about,
 .home.page.home-agents,
 .home.page.home-squad,
@@ -743,10 +738,50 @@ section.solutions {
       > h2, > h3, > .container > .row > .card > p:first-child {
         display: none !important;
       }
+
+      > .container > .row > .card {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.home.page {
+  @media (min-width: 768px) {
+    .section > div > div {
+      > h2, > h3, > .container > .row > .card > p:first-child {
+        transform: scale3d(1.135, 1.135, 1.135);
+      }
+
+      > h3:after {
+        bottom: 15%;
+        height: 100%;
+        min-height: 0;
+      }
     }
 
-    .container > .row > .card {
-      margin-top: 0;
+    .section {
+      > h2, > h3, > .container > .row > .card > p:first-child {
+        transform: scale3d(1.135, 1.135, 1.135);
+      }
+
+      > h3:after {
+        bottom: 15%;
+        height: 100%;
+        min-height: 0;
+      }
+    }
+
+    .section-form {
+      > h2, > h3, > .container > .row > .card > p:first-child {
+        transform: none;
+      }
+
+      .section {
+        > h2, > h3, > .container > .row > .card > p:first-child {
+          transform: none;
+        }
+      }
     }
   }
 }

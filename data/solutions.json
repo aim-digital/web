@@ -9,7 +9,7 @@
         "category": "Dossier",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [],
-        "cta": ["Read more about our", "Warranty Protection"]
+        "cta": ["Read more about", "who we are"]
     },
     {
         "index": 1,
@@ -30,7 +30,7 @@
             "type": "paragraph",
             "copy": "All of our consulting agents operate remotely within the domestic U.S. while integrated with your team, providing exemplary written and communication skills along with mastery in their respective trade disciplines, as well as expert training in each crucial role of digital development."
         }],
-        "cta": ["Read more about our", "Warranty Protection"]
+        "cta": ["Read more about our", "multi-role agents"]
     },
     {
         "index": 2,
@@ -54,7 +54,7 @@
             "type": "paragraph",
             "copy": "SQUAD™ is a simple hybrid methodology and process framework of both waterfall and agile project management principles and practices in the form of an iterative three-staged product lifecycle (PLM), applicable to the planning and processes of business initiatives and teams in any industry."
         }],
-        "cta": ["Read more about our", "Warranty Protection"]
+        "cta": ["Read more about", "chaos management"]
     },
     {
         "index": 3,
@@ -64,7 +64,7 @@
         "icon": "dollar",
         "summary": "Build or scale your product in 9 months for under $500k with our simple monthly SQUAD™ budgeted plans, curated by bottom-line consulting experts who know what software projects cost.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7a5cad1eb076473b8175a89d411d15a0.jpg" }],
-        "cta": ["Read more about our", "Warranty Protection"]
+        "cta": ["Learn more about our", "packaged pricing"]
     },
     {
         "index": 4,
@@ -75,7 +75,7 @@
         "summary": "Stay covered with our Wingman™ warranty to guarantee minimum risk of project delivery time, budget, and quality so that you'll never be a statistic of software waste. Included with every project that we plan and develop.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
         "content": [],
-        "cta": ["Read more about our", "Warranty Protection"]
+        "cta": ["Learn more about our", "bonded guarantee"]
     },
     {
         "index": 5,
@@ -84,7 +84,7 @@
         "title": "Talk to Me.",
         "icon": "phone",
         "summary": "Stop burning capital on software waste with our zero latency product lifecycle and budget planning framework, and guaranteed consulting services.",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fdb3120bacb849119fde903ddaaa2fed.jpg" }],
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/e7336b23ceab4934a3218e0a1ef465e9.png" }],
         "content": [],
         "cta": null
     }

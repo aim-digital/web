@@ -456,12 +456,6 @@
   }
 }
 
-.about.page .header.container .logo {
-  opacity: 1 !important;
-  transform: scale3d(1, 1, 1) !important;
-  transition: none !important;
-}
-
 .squad-header,
 .packages-header {
   position: relative;
@@ -509,3 +503,21 @@
 .detail.page .header.container.single {
   min-height: 80vh !important;
 }
+
+// .post.page .header .logo {
+//   transform: scale3d(.8, .8, .8);
+//   padding: 3.5em 0 15px;
+
+//   .tagline {
+//     display: none;
+//   }
+// }
+
+// .post.page .header.container.single {
+//   min-height: 80vh !important;
+// }
+
+// .post.page .section h1,
+// .post.page .section h2 {
+//   display: none;
+// }
