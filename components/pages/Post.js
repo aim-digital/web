@@ -12,6 +12,8 @@ import {Contact} from '@fox-zero/web/components/forms';
 import {ShareButtons} from 'react-share';
 import {Link} from 'react-router';
 import {Solution} from '@fox-zero/web/components/buttons';
+import {dismiss} from '@fox-zero/web/actions/Nav';
+import {transition} from '@boilerplatejs/core/actions/Transition';
 
 const {
   FacebookShareButton,
@@ -57,15 +59,46 @@ const getHeroImage = hero => hero ? hero.url : `${HOST}/@fox-zero/web/images/log
       {property: 'twitter:image', content: image}
     ]
   };
-}, {update, create, destroy, check})
+}, {dismiss, transition, update, create, destroy, check})
 
 export default class extends Page {
   state = {
     animating: false,
+    isMobile: true,
+    isLandscape: false,
+    ready: false,
     form: {
       message: null,
       status: null
     }
+  };
+
+  componentDidMount = () => {
+    if (__CLIENT__) {
+      document.querySelector('#app > section > .page').addEventListener('click', this.props.dismiss);
+      document.querySelector('#app').classList.add('home');
+      global.addEventListener('resize', this.updateViewport);
+      global.setTimeout(() => this.setState({ ready: true }), 1000);
+      global.setTimeout(() => this.props.transition('page.rendered', true), 1500);
+      this.updateViewport();
+    }
+  }
+
+  componentWillMount = () => {
+    this.props.transition('page.rendered', false);
+  };
+
+  componentWillUnmount = () => {
+    if (__CLIENT__) {
+      this.props.transition({ progress: 0.2 });
+      document.querySelector('#app > section > .page').removeEventListener('click', this.props.dismiss);
+      document.querySelector('#app').classList.remove('home');
+      global.removeEventListener('resize', this.updateViewport);
+    }
+  };
+
+  updateViewport = () => {
+    this.setState({ isMobile: global.innerWidth < 992 });
   };
 
   get header() {

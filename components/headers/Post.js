@@ -16,7 +16,7 @@ export default class extends Header {
   scrollTo = () => {
     const app = document.querySelector('#app');
     const top = app.querySelector('.section-0').getBoundingClientRect().top + window.scrollY;
-    console.log(top)
+
     if (app.scrollTo) {
       app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
       global.scrollTo({ top, left: 0, behavior: 'smooth' });
@@ -36,7 +36,7 @@ export default class extends Header {
         images={media.map(file => file.url)}>
         <div className="content" >
           <h1>{dek}</h1>
-          <h2 className={`${['design', 'development', 'support'].indexOf(slug) >= 0 ? 'squad-header': ''}`} dangerouslySetInnerHTML={{ __html: marked(title.replace(regex, replace)) }} />
+          <h2 className={`${['design', 'development', 'support', 'packages', 'squad'].indexOf(slug) >= 0 ? 'squad-header': ''}`} dangerouslySetInnerHTML={{ __html: marked(title.replace(regex, replace)) }} />
           <section className="preview">
             <p>{summary}</p>
           </section>
