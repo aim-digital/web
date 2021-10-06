@@ -41,7 +41,8 @@ export default class extends Header {
     timer: 0,
     initial: null,
     pause: false,
-    rendered: false
+    rendered: false,
+    forceAnimation: false
   };
 
   state = {
@@ -188,7 +189,7 @@ export default class extends Header {
   };
 
   render() {
-    const { className, classNames, children, slide, images, cycle, initial: initialSlide, rendered } = this.props;
+    const { className, classNames, children, slide, images, cycle, initial: initialSlide, rendered, forceAnimation } = this.props;
     const { animating, previous, ready } = this.state;
     const { length } = children;
     const initial = global.SLIDE_INITIAL || initialSlide || 0;
@@ -200,7 +201,7 @@ export default class extends Header {
     };
 
     return (
-      <Header className={['slide', rendered ? 'rendered' : '', className, length && animating ? `${classNames.animating || ''} animating` : ''].join(' ')}>
+      <Header className={['slide', rendered ? 'rendered' : '', className, (length || forceAnimation) && animating ? `${classNames.animating || ''} animating` : ''].join(' ')}>
         {images.map((image, i) => {
           const main = __SERVER__ ? initial : slide;
           const current = i === main;
@@ -211,7 +212,7 @@ export default class extends Header {
         })}
         <Logo/>
         {length ? (
-          <div className={__CLIENT__ ? 'hidden' : ''}>
+          <div className={__CLIENT__ ? 'hidden presentation' : 'presentation'}>
             {children[__SERVER__ ? initial : slide]}
             <div className="flippers">
               <button {...getFlipState('previous')} onClick={this.previous} className="flip left" data-section={(solutions[!slide ? solutions.length - 1 : slide - 1]).section}>

@@ -32,6 +32,7 @@ export default class extends Header {
 
     return (
       <Header timer={0}
+        forceAnimation
         runOnMount={__CLIENT__}
         images={media.map(file => file.url)}>
         <div className="content" >

@@ -40,7 +40,7 @@ section.quote {
   }
 
   h2 {
-    font-size: 2em !important;
+    font-size: 2.35em !important;
     padding-bottom: 0;
   }
 
@@ -48,8 +48,7 @@ section.quote {
     color: #FCD700;
     display: block;
     font-size: 3.5em;
-    margin-top: .25em;
-    padding-top: .25em;
+    margin-top: 5px;
   }
 
   input,
@@ -356,16 +355,15 @@ section.solutions {
   }
 
   h2 {
-    font-size: 2em !important;
+    font-size: 2.35em !important;
     padding-bottom: 0;
   }
 
   h3 {
     color: #FCD700;
     display: block;
-    font-size: 3.35em;
-    margin-top: .25em;
-    padding-top: .25em;
+    font-size: 3.5em;
+    padding-top: 5px;
     padding-bottom: 0;
 
     &.squad-header,
@@ -722,23 +720,13 @@ section.solutions {
   }
 }
 
-.detail.page .wrapper.section-0 {
-  padding-top: 30px;
+.wrapper.section-0 {
+  padding-top: 30px !important;
 }
 
-.home.page.home-about,
-.home.page.home-agents,
-.home.page.home-squad,
-.home.page.home-packages,
-.home.page.home-warranty,
-.home.page.home-contact,
 .detail.page {
   .section-0 {
     .section > div > div {
-      > h2, > h3, > .container > .row > .card > p:first-child {
-        display: none !important;
-      }
-
       > .container > .row > .card {
         margin-top: 0;
       }
@@ -746,15 +734,39 @@ section.solutions {
   }
 }
 
+// .home.page.home-about,
+// .home.page.home-agents,
+// .home.page.home-squad,
+// .home.page.home-packages,
+// .home.page.home-warranty,
+// .home.page.home-contact,
+// .detail.page {
+//   .section-0 {
+//     .section > div > div {
+//       > h2, > h3, > .container > .row > .card > p:first-child {
+//         display: none !important;
+//       }
+
+//       > .container > .row > .card {
+//         margin-top: 0;
+//       }
+//     }
+//   }
+// }
+
 .home.page {
   @media (min-width: 768px) {
     .section > div > div {
       > h2, > h3, > .container > .row > .card > p:first-child {
-        transform: scale3d(1.135, 1.135, 1.135);
+        transform: scale3d(1.125, 1.125, 1.125);
+      }
+
+      > h2, > h3 {
+        padding-bottom: 10px !important;
       }
 
       > h3:after {
-        bottom: 15%;
+        bottom: 13.5%;
         height: 100%;
         min-height: 0;
       }
@@ -762,13 +774,11 @@ section.solutions {
 
     .section {
       > h2, > h3, > .container > .row > .card > p:first-child {
-        transform: scale3d(1.135, 1.135, 1.135);
+        transform: scale3d(1.125, 1.125, 1.125);
       }
 
-      > h3:after {
-        bottom: 15%;
-        height: 100%;
-        min-height: 0;
+      > h2, > h3 {
+        padding-bottom: 10px !important;
       }
     }
 

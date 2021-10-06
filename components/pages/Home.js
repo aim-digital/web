@@ -121,6 +121,7 @@ export default class extends Page {
       document.querySelector('#app > section > .page').addEventListener('click', this.props.dismiss);
       document.querySelector('#app').classList.add('home');
       global.addEventListener('resize', this.updateViewport);
+      global.addEventListener('scroll', this.onHeaderScroll);
       global.setTimeout(() => this.setState({ ready: true }), 1000);
       global.setTimeout(() => this.props.transition('page.rendered', true), 1500);
       this.updateViewport();
@@ -157,6 +158,7 @@ export default class extends Page {
       global.removeEventListener('scroll', this.onSolutionScroll);
       global.removeEventListener('scroll', this.onParallaxScroll);
       global.removeEventListener('resize', this.updateViewport);
+      global.removeEventListener('scroll', this.onHeaderScroll);
     }
   };
 
@@ -234,6 +236,16 @@ export default class extends Page {
       }
     };
   }
+
+  onHeaderScroll = () => {
+    const pageHeight = global.innerHeight;
+    const element = this.firstSectionElement = this.firstSectionElement || document.querySelector('#app').querySelector(`.home .section-0`);
+    const percent = Math.max(element.getBoundingClientRect().top, 0) / pageHeight;
+
+    if(percent) {
+      document.querySelector('#app').querySelector(`.slide .presentation`).style.opacity = percent.toFixed(2);
+    }
+  };
 
   onScroll = () => {
     const { section, props, impression, impressions } = this;
