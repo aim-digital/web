@@ -91,7 +91,7 @@
   }
 
   .flippers {
-    margin-top: -15px;
+    margin-top: -5px;
 
     button {
       color: $humility !important;
@@ -264,15 +264,15 @@
     &:after {
       content: '';
       position: absolute;
-      height: 120%;
+      height: 90%;
       width: 100%;
-      background: linear-gradient(rgba(89, 159, 198, 0.5), rgba(21, 21, 21, 0));
+      background: linear-gradient(rgba(89, 159, 198, 0.65), rgba(89, 159, 198, 1));
       top: 0;
       left: 0;
       margin: 0;
       border-top: solid 2px rgba(89, 159, 198, .65);
-      box-shadow: 0 -5px 10px rgba(41, 41, 41, 0.25);
-      border-radius: 2px;
+      box-shadow: 0 5px 10px rgba(41, 41, 41, 0.25);
+      border-radius: 3px;
     }
 
     > div {
@@ -283,7 +283,7 @@
       height: 3px;
       border-radius: 2px;
       z-index: 2;
-      background: rgba(89, 159, 198, 1);
+      background: $primary-green-color;
       margin: 2px;
       box-shadow: 5px 1px 5px rgba(41, 41, 41, .5);
       transition: transform .2s;
@@ -300,14 +300,15 @@
       text-align: left;
       position: relative;
       z-index: 2;
+      margin-top: 3px;
       text-shadow: 1px 1px 3px $black-color;
     }
 
     button {
       position: absolute;
-      right: 0;
+      right: -.5em;
       top: 100%;
-      margin: -10px 0;
+      margin: -1.15em 0;
       color: #fff;
       text-shadow: 1px 1px 3px $black-color;
       background: $primary-green-color;
@@ -321,12 +322,16 @@
       width: 4.25em;
       height: 4.25em;
       z-index: 1;
-      font-size: 1.5em;
+      font-size: 1.35em;
       line-height: 1.1;
       text-align: center;
       opacity: .9;
       transition: all .15s ease-in;
       transform: scale3d(.9, .9, 1);
+
+      @media (min-width: 769px) {
+        font-size: 1.5em;
+      }
 
       &:hover {
         opacity: 1;
@@ -502,6 +507,10 @@
 
 .detail.page .header.container.single {
   min-height: 80vh !important;
+}
+
+.no-js .detail.page .header.container.single {
+  min-height: 100vh !important;
 }
 
 // .post.page .header .logo {

@@ -15,7 +15,7 @@ export default class extends Header {
 
   scrollTo = () => {
     const app = document.querySelector('#app');
-    const top = app.querySelector('.section-0').getBoundingClientRect().top + window.scrollY;
+    const top = app.querySelector('.section-0').getBoundingClientRect().top + window.scrollY - 30;
 
     if (app.scrollTo) {
       app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });

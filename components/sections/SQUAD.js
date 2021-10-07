@@ -4,6 +4,6 @@ import {solutions} from '@fox-zero/web/data';
 
 export default class extends Section {
   render() {
-    return <Section solution={solutions[2]} title={<>Managed Chaos,<br />Timeboxed.</>} />;
+    return <Section solution={solutions[2]} title={<>Rapid Timebox<br />Methodology</>} />;
   }
 }

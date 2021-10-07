@@ -5,8 +5,7 @@
         "slug": "about",
         "title": "Zero Latency Software Agency",
         "icon": "flag",
-        "summary": "Stop burning capital on software waste with our zero latency product lifecycle and budget planning framework, and guaranteed consulting services.",
-        "category": "Dossier",
+        "summary": "Get a guaranteed ROI at a fast pace and zero waste when you use our zero latency software consulting services to obliterate the waste.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [],
         "cta": ["Read more about", "who we are"]
@@ -17,7 +16,7 @@
         "slug": "agents",
         "title": "Top Tier Engineers",
         "icon": "id-badge",
-        "summary": "From web programming to project management, each of our software consultants is expertly trained in multi-role autonomy to provide zero latency between development tasks, operating remotely within the U.S.A.",
+        "summary": "Top market, multi-role software consultants are the foundation of our methodology and value.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
         "content": [{
             "type": "paragraph",
@@ -36,9 +35,9 @@
         "index": 2,
         "section": "SQUAD™",
         "slug": "squad",
-        "title": "Managed Chaos, Timeboxed.",
+        "title": "Rapid Timebox Methodology",
         "icon": "fighter-jet",
-        "summary": "The SQUAD™ product lifecycle is our project management and budget planning framework, inspired by our mission to prevent projects from burning through capital.",
+        "summary": "Manage chaos by timeboxing fixed iterations of the product lifecycle, budget, and daily processes.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/c8394613925c41afa42fc9f094312a9e.jpg" }],
         "content": [{
             "type": "paragraph",

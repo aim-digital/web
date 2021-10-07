@@ -28,7 +28,7 @@ const {
 
 const RE_iOS_13 = /^.*iPhone.*(?:OS\s13|Version\/13)/;
 
-const HEADER_TIMER = 15;
+const HEADER_TIMER = 10;
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
@@ -244,6 +244,7 @@ export default class extends Page {
 
     if(percent) {
       document.querySelector('#app').querySelector(`.slide .presentation`).style.opacity = percent.toFixed(2);
+      Array.prototype.map.call(document.querySelectorAll(`#app .section.container .wrapper .section`), section => section.style.opacity = Math.min(1, (1 - percent) + ((1 - percent) * 1.3)).toFixed(2));
     }
   };
 

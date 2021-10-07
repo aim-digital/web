@@ -177,7 +177,7 @@ export default class extends Header {
 
   scrollTo = () => {
     const { app, section } = this.getElements();
-    const top = section.getBoundingClientRect().top + window.scrollY;
+    const top = section.getBoundingClientRect().top + window.scrollY - 30;
 
     if (app.scrollTo) {
       app.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
