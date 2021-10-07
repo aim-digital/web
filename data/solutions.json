@@ -5,10 +5,10 @@
         "slug": "about",
         "title": "Zero Latency Software Agency",
         "icon": "flag",
-        "summary": "Get a guaranteed ROI at a fast pace and zero waste when you use our zero latency software consulting services to obliterate the waste.",
+        "summary": "Maximize your ROI at a fast pace without the waste when you use our zero overhead software development services.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
         "content": [],
-        "cta": ["Read more about", "who we are"]
+        "cta": ["Read more about us", "and our mission"]
     },
     {
         "index": 1,
@@ -16,8 +16,8 @@
         "slug": "agents",
         "title": "Top Tier Engineers",
         "icon": "id-badge",
-        "summary": "Top market, multi-role software consultants are the foundation of our methodology and value.",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
+        "summary": "Multi-role U.S.A.-based software consultants are the foundation of our zero latency services and values.",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/288528901687426da9cead2a0a7dab49.jpg" }],
         "content": [{
             "type": "paragraph",
             "copy": "Universal skill-sets mitigate communication bottlenecks, ensuring zero latency between task objectives and maximum productivity per every hour worked."
@@ -37,7 +37,7 @@
         "slug": "squad",
         "title": "Rapid Timebox Methodology",
         "icon": "fighter-jet",
-        "summary": "Manage chaos by timeboxing fixed iterations of the product lifecycle, budget, and daily processes.",
+        "summary": "We manage chaos by timeboxing rapid iterations of the product lifecycle, project budget planning, and daily team operations.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/c8394613925c41afa42fc9f094312a9e.jpg" }],
         "content": [{
             "type": "paragraph",
@@ -53,7 +53,7 @@
             "type": "paragraph",
             "copy": "SQUAD™ is a simple hybrid methodology and process framework of both waterfall and agile project management principles and practices in the form of an iterative three-staged product lifecycle (PLM), applicable to the planning and processes of business initiatives and teams in any industry."
         }],
-        "cta": ["Read more about", "chaos management"]
+        "cta": ["Read more about our", "SQUAD™ lifecycle"]
     },
     {
         "index": 3,
@@ -61,7 +61,7 @@
         "slug": "packages",
         "title": "SQUAD™ Pricing",
         "icon": "dollar",
-        "summary": "Build or scale your product in 9 months for under $500k with our simple monthly SQUAD™ budgeted plans, curated by bottom-line consulting experts who know what software projects cost.",
+        "summary": "Build, launch, and scale a premium product in 9 months for under $500k with our simple monthly budgeted pricing packages.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7a5cad1eb076473b8175a89d411d15a0.jpg" }],
         "cta": ["Learn more about our", "packaged pricing"]
     },
@@ -69,12 +69,12 @@
         "index": 4,
         "section": "Warranty",
         "slug": "warranty",
-        "title": "Wingman™ Bond Protection",
+        "title": "Wingman™ Protection",
         "icon": "umbrella",
-        "summary": "Stay covered with our Wingman™ warranty to guarantee minimum risk of project delivery time, budget, and quality so that you'll never be a statistic of software waste. Included with every project that we plan and develop.",
+        "summary": "Monthly risk protection covers you for when your project needs it most. Included FREE with every product iteration we build.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
         "content": [],
-        "cta": ["Learn more about our", "bonded guarantee"]
+        "cta": ["Learn more about our", "premium coverage"]
     },
     {
         "index": 5,
@@ -82,7 +82,7 @@
         "slug": "contact",
         "title": "Talk to Me.",
         "icon": "phone",
-        "summary": "Stop burning capital on software waste with our zero latency product lifecycle and budget planning framework, and guaranteed consulting services.",
+        "summary": "Call or message us to start optimizing your software investment today!",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/e7336b23ceab4934a3218e0a1ef465e9.png" }],
         "content": [],
         "cta": null

@@ -99,7 +99,7 @@ export default class extends Header {
             <>Top Tier<br />Engineers</>,
             <>Rapid Timebox<br />Methodology</>,
             <>SQUAD™ Pricing</>,
-            <>Wingman™ Bond<br />Protection</>,
+            <>Wingman™<br />Protection</>,
             <>Talk to Me.</>
           ].map((title, i) => renderTitle(i, title))}
         </Header>

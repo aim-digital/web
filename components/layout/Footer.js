@@ -141,15 +141,15 @@ export default class extends Footer {
                       <br />
                       <small><strong>Email:</strong></small> <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">hello@foxzero.io</a>
                       <br />
-                      <small><strong>Phone:</strong></small> <a title="Phone: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank">+1 (855) FOX-ZERO</a>
+                      <small><strong>Phone:</strong></small> <a title="Phone: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank"><small>+1</small> 855-FOX-ZERO</a>
                       <br />
                       <small><strong>Office Hours:</strong></small>
                       <br />
-                      Mon. - Fri.
+                      Mon.-Fri.
                       <br />
-                      9am - 1pm <sup>(EST)</sup>
+                      9am-1pm <sup>(EST)</sup>
                       <br />
-                      5pm - 7pm <sup>(EST)</sup>
+                      5pm-7pm <sup>(EST)</sup>
                     </p>
                   </div>
                 </li>

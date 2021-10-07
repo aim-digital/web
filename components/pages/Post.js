@@ -46,7 +46,7 @@ const getHeroImage = hero => hero ? hero.url : `${HOST}/@fox-zero/web/images/log
     className: 'home detail',
     title: `${title} · ${dek || 'Fox Zero'}`,
     meta: [
-      {name: 'description', content: title},
+      {name: 'description', content: summary},
       {property: 'og:type', content: 'article'},
       {property: 'og:url', content: [HOST, pathname].join('')},
       {property: 'og:title', content: title},

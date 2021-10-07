@@ -368,36 +368,36 @@ section.solutions {
 
     &.squad-header,
     &.packages-header {
-      &:before {
-        content: '';
-        background-size: 34%;
+      &:before,
+      &:after {
         margin-right: 10px;
       }
 
       &:after {
-        content: '';
-        margin-bottom: -.35em;
-        left: 80%;
+        bottom: -13px;
+
+        @media (min-width: 768px) {
+          bottom: -4px;
+        }
       }
     }
 
     &.text-right.squad-header,
     &.text-right.packages-header {
-      &:before {
-        content: '';
+      &:before,
+      &:after {
+        right: auto;
         margin-right: 0;
         margin-left: 10px;
-        right: auto;
+      }
+
+      &:before {
         left: 0;
-        background-position: left;
         transform: rotate(-15deg);
       }
 
       &:after {
-        content: '';
-        margin-bottom: -.35em;
-        left: auto;
-        right: 80%;
+        left: 1.75em;
       }
     }
   }
@@ -514,6 +514,7 @@ section.solutions {
 
       span {
         padding: 10px;
+        width: 100%;
         display: inline-block;
         border-radius: 2px;
         background: rgba(89, 159, 198, 0.85);
@@ -577,19 +578,20 @@ section.solutions {
   & > h3 {
     &.squad-header,
     &.packages-header {
+      &:before,
+      &:after {
+        left: auto;
+        margin-right: 10px;
+        margin-left: 0;
+      }
+
       &:before {
-        content: '';
-        margin-left: -10px;
-        right: auto;
-        left: 0;
-        background-position: right;
+        right: 0;
         transform: rotate(15deg);
       }
 
       &:after {
-        content: '';
-        left: 80%;
-        right: auto;
+        right: 1.75em;
       }
     }
   }
@@ -763,12 +765,6 @@ section.solutions {
 
       > h2, > h3 {
         padding-bottom: 10px !important;
-      }
-
-      > h3:after {
-        bottom: 13.5%;
-        height: 100%;
-        min-height: 0;
       }
     }
 

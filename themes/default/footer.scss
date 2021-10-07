@@ -313,6 +313,10 @@ footer {
     font-size: .85em;
   }
 
+  a small {
+    color: inherit;
+  }
+
   .content {
     overflow: hidden;
     position: relative;
