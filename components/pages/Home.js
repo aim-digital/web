@@ -28,7 +28,7 @@ const {
 
 const RE_iOS_13 = /^.*iPhone.*(?:OS\s13|Version\/13)/;
 
-const HEADER_TIMER = 15;
+const HEADER_TIMER = 10;
 
 const SOLUTION_DELAY = 100;
 const SOLUTION_AVG = solutions.length / 2;
@@ -37,23 +37,21 @@ const IMPRESSION_START = 0.5;
 const IMPRESSION_END = 0.35;
 
 const RE_SECTION_KEY = /.*\:(.*)$/;
-const SECTION_DEFAULT = 'agents';
+const SECTION_DEFAULT = 'about';
 const SECTION_FORM = 6;
 const SECTIONS = {
   'about': { slide: 0 },
-  'planning': { slide: 1 },
-  'development': { slide: 2 },
-  'support': { slide: 3 },
-  'subscription': { slide: 4 },
-  'warranty': { slide: 5 },
-  'on-demand': { slide: 6 },
-  'agents': { slide: 7 }
+  'agents': { slide: 1 },
+  'squad': { slide: 2 },
+  'packages': { slide: 3 },
+  'warranty': { slide: 4 },
+  'contact': { slide: 5 },
 };
 
 const VERIFY_ACTION = 'form_page_submission';
 const VERIFY_GRADE = 0.65;
 
-const RESET_SLIDE = 7;
+const RESET_SLIDE = 0;
 
 @connect(state => {
   const { Transition } = state['@boilerplatejs/core'];
@@ -123,6 +121,7 @@ export default class extends Page {
       document.querySelector('#app > section > .page').addEventListener('click', this.props.dismiss);
       document.querySelector('#app').classList.add('home');
       global.addEventListener('resize', this.updateViewport);
+      global.addEventListener('scroll', this.onHeaderScroll);
       global.setTimeout(() => this.setState({ ready: true }), 1000);
       global.setTimeout(() => this.props.transition('page.rendered', true), 1500);
       this.updateViewport();
@@ -159,6 +158,7 @@ export default class extends Page {
       global.removeEventListener('scroll', this.onSolutionScroll);
       global.removeEventListener('scroll', this.onParallaxScroll);
       global.removeEventListener('resize', this.updateViewport);
+      global.removeEventListener('scroll', this.onHeaderScroll);
     }
   };
 
@@ -236,6 +236,17 @@ export default class extends Page {
       }
     };
   }
+
+  onHeaderScroll = () => {
+    const pageHeight = global.innerHeight;
+    const element = this.firstSectionElement = this.firstSectionElement || document.querySelector('#app').querySelector(`.home .section-0`);
+    const percent = Math.max(element.getBoundingClientRect().top, 0) / pageHeight;
+
+    if(percent) {
+      document.querySelector('#app').querySelector(`.slide .presentation`).style.opacity = percent.toFixed(2);
+      Array.prototype.map.call(document.querySelectorAll(`#app .section.container .wrapper .section`), section => section.style.opacity = Math.min(1, (1 - percent) + ((1 - percent) * 1.3)).toFixed(2));
+    }
+  };
 
   onScroll = () => {
     const { section, props, impression, impressions } = this;
@@ -393,7 +404,7 @@ export default class extends Page {
       className={`${ready && slide === solution.index ? 'active' : ''}`}
       key={`detail-button-${i}`}
       icon={solution.icon}
-      tooltip="Click to open overlay screen"
+      tooltip="Click to learn more"
       transition={transition(i)}
       onClick={() => {
         analytics.Section.Click.track(solution.section, sources);
@@ -521,18 +532,18 @@ export default class extends Page {
     const { message, status } = state.form;
     const hasMany = sections.length > 1;
 
-    const wrap = (offset = 0) => (component, i) => (
-      <div className={`wrapper section-${i + offset}`} key={`section-${i + offset}`}>
+    const wrap = (offset = 0) => (component, i) => {
+      return <div className={`wrapper section-${i + offset}`} key={`section-${i + offset}`}>
         {component}
       </div>
-    );
+    };
 
     return (
-        <Page {...this.props} className={`home ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
+        <Page {...this.props} className={`home home-${props.param.section || 'index'} ${className} ${animating ? `${classNames.animating || ''} animating` : ''}`}>
           <section className="section container">
             {__CLIENT__ ? <>
               <div className={`parallax ${RE_iOS_13.test(global.navigator.userAgent) ? 'hide' : ''}`}>
-                {rendered && <>
+                {<>
                   <div className="stars" />
                   <div className="stars" style={{ top: '400vh' }} />
                   <div className="stars" style={{ top: '800vh' }} />
@@ -551,13 +562,13 @@ export default class extends Page {
               </div>
               {this.header}
               {<div className="section-solution wrapper">{this.solutions}</div>}
-              {rendered && <>
+              {<>
                 {sections.slice(0, hasMany ? SECTION_FORM : sections.length).map(wrap())}
                 <div className="section-form wrapper">
                   <section className="quote section">
                     <h2>Talk to Me</h2>
                     <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
-                    <p>Our services can accelerate and enhance your software projects. Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 30 minute call with a senior partner.</p>
+                    <p>Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 20 minute call with a senior partner.</p>
                     <div className={`form ${contact ? 'success' : ''}`}>
                       <div>
                           <div>
@@ -585,7 +596,7 @@ export default class extends Page {
                             <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Page.Reset.track(formatted, sources); }}>Reset Form</button>
                           </div>
                       </div>
-                      <forms.Contact status={status} quote newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
+                      <forms.Contact status={status} quote newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>
                       {!contact && message && <span className="error">{message}</span>}
                       {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
                     </div>

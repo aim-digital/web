@@ -26,10 +26,6 @@
     }
   }
 
-  .about.page & .section {
-    padding: 3em 0;
-  }
-
   .post.page & {
     padding: 0;
 
@@ -184,15 +180,15 @@
       position: absolute;
       z-index: 1;
       display: block;
-      font-size: 2.35em;
-      margin: 0 .15em;
-      color: $primary-green-color;
-      opacity: .5;
+      font-size: 2em;
+      margin: -7px .8em;
+      color: #599fc6;
+      opacity: .65;
     }
 
     &:after {
       content: attr(data-type);
-      font-size: .35em;
+      font-size: .4em;
       font-family: $font-family-sans-serif;
       text-transform: none;
       display: block;
@@ -348,4 +344,8 @@
       font-size: 80%;
     }
   }
+}
+
+.detail.page .section.container {
+  min-height: 0 !important;
 }

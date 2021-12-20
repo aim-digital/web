@@ -10,6 +10,7 @@ import {Nav} from '@fox-zero/web/components/layout';
 import {close} from '@fox-zero/web/actions/Solution';
 import * as Config from '@boilerplatejs/core/actions/Config';
 import * as Session from '@boilerplatejs/core/actions/Session';
+import {solutions} from '@fox-zero/web/data';
 
 @asyncConnect([{
   promise: ({store: {dispatch, getState}}) => {
@@ -56,10 +57,14 @@ export default class extends App {
   }
 
   closeSolution = () => {
-    const { close, transition } = this.props;
+    const { close, transition, solution } = this.props;
     transition('timer.pause', false);
     close();
     setTimeout(() => transition('modal.open', false), 5000);
+
+    if (__CLIENT__ && solution && global.scrollY < (global.innerHeight * 0.5)) {
+      transition('slide', solution.index === solutions.length - 1 ? 0 : solution.index + 1);
+    }
   };
 
   render() {

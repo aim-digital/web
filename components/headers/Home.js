@@ -73,7 +73,7 @@ export default class extends Header {
         <h1>{section}</h1>
         <h2 className={`${slug}-header`}><span>{heading || title}</span></h2>
         <section className="preview">
-          <button onClick={() => this.openSolution(solution)} title="Click to open overlay screen">
+          <button onClick={() => this.openSolution(solution)} title="Click to learn more">
             <i className={`fa fa-ellipsis-h ${loading ? 'loading' : ''}`}/>
             <span>Read <span>More</span></span>
           </button>
@@ -95,14 +95,12 @@ export default class extends Header {
           onTransitionBegin={this.transitionBegin}
           images={solutions.map(solution => solution.media[0].url)}>
           {[
-            <>Introducing<br />SQUAD™ PLM</>,
-            <>Runway to<br />Success</>,
-            <>Guaranteed<br />Target Delivery</>,
-            <>Maintained<br />Performance</>,
-            <>SQUAD™<br />Packaged Pricing</>,
-            <>Wingman™ Bond<br />Protection</>,
-            <>Point &amp; Pay™<br />Agile Pricing</>,
-            <>Top Tier<br />Engineers</>
+            <>Zero Latency<br />Software Agency</>,
+            <>Top Tier<br />Engineers</>,
+            <>Rapid Timebox<br />Methodology</>,
+            <>SQUAD™ Pricing</>,
+            <>Wingman™<br />Protection</>,
+            <>Talk to Me.</>
           ].map((title, i) => renderTitle(i, title))}
         </Header>
     );

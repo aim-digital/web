@@ -158,7 +158,7 @@ export default class extends Modal {
             <div>
               <h2>Talk to Me</h2>
               <h3>{contact ? <>Get it on<br />the Calendar!</> : <>Book a Free<br />Consultation!</>}</h3>
-              <p>Our services can accelerate and enhance your software projects. Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 30 minute call with a senior partner.</p>
+              <p>Use the form <i className="fa color-primary-green fa-hand-o-down" /> to get started with a free 20 minute call with a senior partner.</p>
             </div>
             <div className={`form ${contact ? 'success' : ''}`}>
               <div>
@@ -200,7 +200,7 @@ export default class extends Modal {
                   <button className="btn btn-success" onClick={() => { reset(); analytics.Confirmation.Detail.Reset.track(section || 'Home', sources); }}>Reset Form</button>
                 </div>
               </div>
-              <Contact status={status} quote cancelText="Close" onCancel={this.onHide} newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends,  free-to-use software, and more." onSubmit={this.submit}/>
+              <Contact status={status} quote cancelText="Close" onCancel={this.onHide} newsletterText="Subscribe to Fox Zero™ TV emails for project management tips, industry trends, free-to-use software, and more." onSubmit={this.submit}/>
               {!contact && message && <span className="error">{message}</span>}
               {!contact && <span className="legal">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</span>}
             </div>

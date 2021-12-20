@@ -467,7 +467,9 @@ body.modal-open {
     }
 
     > div:first-child {
-      font-size: .9em;
+      h2, h3 {
+        font-size: 2.35em !important;
+      }
 
       p {
         padding: 2em 0;
@@ -486,13 +488,22 @@ body.modal-open {
   }
 }
 
+.contact-modal {
+  .quote {
+    padding: 0;
 
+    > div {
+      display: none;
+    }
 
-.about-modal,
-.planning-modal,
-.development-modal,
-.support-modal,
-.subscription-modal {
+    > .form {
+      display: block;
+    }
+  }
+}
+
+.squad-modal,
+.packages-modal {
   .modal-header {
     position: relative;
     overflow: visible;
@@ -502,15 +513,15 @@ body.modal-open {
       content: '';
       z-index: 1;
       position: absolute;
-      right: 0;
-      top: 100%;
-      width: 100%;
-      height: 35%;
+      left: 50%;
+      bottom: 0;
+      width: 400px;
+      height: 160px;
       background: url(https://d3w33imimg0eu8.cloudfront.net/images/Logo-03.png) no-repeat;
-      background-size: 32%;
-      background-position: right;
-      transform: rotate(-15deg);
-      margin: -20px 5px 0 0;
+      background-size: contain;
+      background-position: center;
+      transform: rotate(-15deg) translate(-50%, 0);
+      opacity: .35;
     }
   }
 }

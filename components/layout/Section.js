@@ -52,14 +52,14 @@ export default class extends Section {
                   </Fragment>
                 })}
               </>}
-              <div>
+              {solution.cta && <div>
                 <Solution
                   onClick={this.openSolution}
                   icon={solution.icon}
-                  tooltip="Click to open overlay screen">
-                  {solution.cta || 'Read more'} about our<br /><span>{solution.ctaCategory || [solution.section.toLowerCase(), solution.category.toLowerCase()].join(' ')}</span>
+                  tooltip="Click to learn more">
+                  {solution.cta[0]}<br /><span>{solution.cta[1]}</span>
                 </Solution>
-              </div>
+              </div>}
             </div>
           </div>
         </div>

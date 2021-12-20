@@ -11,7 +11,7 @@ import formatters from '@fox-zero/web/lib/formatters';
 import * as analytics from '@fox-zero/web/lib/analytics';
 
 const DEFAULT_ID = 'home';
-const RESET_SLIDE = 7;
+const RESET_SLIDE = 0;
 
 @connect(state => ({section: state.router.params.section}), {load, dismiss, transition})
 
@@ -102,32 +102,32 @@ export default class extends Nav {
               </Link>
             </li>
             <li className="subnav">
-              <a href="#" onClick={preventDefault}><i className="fa fa-file-text-o"/> Dossier</a>
+              <a href="#" onClick={preventDefault}><i className="fa fa-file-text-o"/> About</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/agents" onClick={update(solutions[7].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
-                <li><Link rel="nofollow" to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Mission</Link></li>
+                <li><Link rel="nofollow" to="/home/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-flag"/> Mission</Link></li>
+                <li><Link rel="nofollow" to="/home/agents" onClick={update(solutions[1].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
+                <li><Link rel="nofollow" to="/home/squad" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> SQUAD™</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-cogs"/> Services</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/planning" onClick={update(solutions[1].slug, true)}><i className="fa fa-road"/> Planning</Link></li>
-                <li><Link rel="nofollow" to="/home/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-bullseye"/> Development</Link></li>
-                <li><Link rel="nofollow" to="/home/support" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Support</Link></li>
+                <li><Link rel="nofollow" to="/design" onClick={update('design', true)}><i className="fa fa-road"/> Design</Link></li>
+                <li><Link rel="nofollow" to="/development" onClick={update('development', true)}><i className="fa fa-bullseye"/> Development</Link></li>
+                <li><Link rel="nofollow" to="/support" onClick={update('support', true)}><i className="fa fa-wrench"/> Support</Link></li>
               </ul>
             </li>
             <li className="subnav products">
               <a href="#" onClick={preventDefault}><i className="fa fa-tags"/> Products</a>
               <ul>
-                <li><Link rel="nofollow" to="/home/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh" data-product="SQUAD™"/> Subscription</Link></li>
-                <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella" data-product="Wingman™"/> Warranty</Link></li>
-                <li><Link rel="nofollow" to="/home/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off" data-product="Point &amp; Pay™"/> On Demand</Link></li>
+                <li><Link rel="nofollow" to="/home/packages" onClick={update(solutions[3].slug, true)}><i className="fa fa-dollar" data-product="SQUAD™"/> Packages</Link></li>
+                <li><Link rel="nofollow" to="/home/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella" data-product="Wingman™"/> Warranty</Link></li>
               </ul>
             </li>
             <li className="subnav">
               <a href="#" onClick={preventDefault}><i className="fa fa-question-circle"/> Help</a>
               <ul>
-                <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-phone"/> Contact Us</Link></li>
+                <li><Link to="/home/contact" onClick={update(solutions[5].slug, true)}><i className="fa fa-phone"/> Contact Us</Link></li>
                 <li><Link to="/privacy" onClick={update('privacy', true)}><i className="fa fa-user-secret"/> Privacy Policy</Link></li>
               </ul>
             </li>

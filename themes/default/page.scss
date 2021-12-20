@@ -26,15 +26,6 @@ section.quote {
     }
   }
 
-  .about.page & .form .form-group {
-    pointer-events: auto;
-
-    &.comment textarea {
-      overflow: auto;
-      resize: auto;
-    }
-  }
-
   h2, h3 {
     font-family: $font-family-oswald;
     margin: 0 auto !important;
@@ -49,7 +40,7 @@ section.quote {
   }
 
   h2 {
-    font-size: 2em !important;
+    font-size: 2.35em !important;
     padding-bottom: 0;
   }
 
@@ -57,8 +48,7 @@ section.quote {
     color: #FCD700;
     display: block;
     font-size: 3.5em;
-    margin-top: .25em;
-    padding-top: .25em;
+    margin-top: 5px;
   }
 
   input,
@@ -365,56 +355,49 @@ section.solutions {
   }
 
   h2 {
-    font-size: 2em !important;
+    font-size: 2.35em !important;
     padding-bottom: 0;
   }
 
   h3 {
     color: #FCD700;
     display: block;
-    font-size: 3.35em;
-    margin-top: .25em;
-    padding-top: .25em;
+    font-size: 3.5em;
+    padding-top: 5px;
     padding-bottom: 0;
 
-    &.about-header,
-    &.planning-header,
-    &.development-header,
-    &.support-header,
-    &.subscription-header {
-      &:before {
-        content: '';
-        background-size: 30%;
+    &.squad-header,
+    &.packages-header {
+      &:before,
+      &:after {
         margin-right: 10px;
       }
 
       &:after {
-        content: '';
-        margin-bottom: -.35em;
-        left: 80%;
+        bottom: -13px;
+
+        @media (min-width: 768px) {
+          bottom: -4px;
+        }
       }
     }
 
-    &.text-right.about-header,
-    &.text-right.planning-header,
-    &.text-right.development-header,
-    &.text-right.support-header,
-    &.text-right.subscription-header {
-      &:before {
-        content: '';
+    &.text-right.squad-header,
+    &.text-right.packages-header {
+      &:before,
+      &:after {
+        right: auto;
         margin-right: 0;
         margin-left: 10px;
-        right: auto;
+      }
+
+      &:before {
         left: 0;
-        background-position: left;
         transform: rotate(-15deg);
       }
 
       &:after {
-        content: '';
-        margin-bottom: -.35em;
-        left: auto;
-        right: 80%;
+        left: 1.75em;
       }
     }
   }
@@ -531,6 +514,7 @@ section.solutions {
 
       span {
         padding: 10px;
+        width: 100%;
         display: inline-block;
         border-radius: 2px;
         background: rgba(89, 159, 198, 0.85);
@@ -592,24 +576,22 @@ section.solutions {
   }
 
   & > h3 {
-    &.about-header,
-    &.planning-header,
-    &.development-header,
-    &.support-header,
-    &.subscription-header {
+    &.squad-header,
+    &.packages-header {
+      &:before,
+      &:after {
+        left: auto;
+        margin-right: 10px;
+        margin-left: 0;
+      }
+
       &:before {
-        content: '';
-        margin-left: -10px;
-        right: auto;
-        left: 0;
-        background-position: right;
+        right: 0;
         transform: rotate(15deg);
       }
 
       &:after {
-        content: '';
-        left: 80%;
-        right: auto;
+        right: 1.75em;
       }
     }
   }
@@ -721,10 +703,10 @@ section.solutions {
   .wrapper {
     position: relative;
     z-index: 2;
-    padding: 60px 0;
+    padding: 90px 0 60px;
 
-    & + .wrapper {
-      padding-top: 90px;
+    &.section-0 {
+      padding-top: 60px;
     }
   }
 
@@ -737,5 +719,75 @@ section.solutions {
     pointer-events: none;
     transition: transform .25s .25s ease-in-out;
     top: 0;
+  }
+}
+
+.wrapper.section-0 {
+  padding-top: 30px !important;
+}
+
+.detail.page {
+  .section-0 {
+    .section > div > div {
+      > .container > .row > .card {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+// .home.page.home-about,
+// .home.page.home-agents,
+// .home.page.home-squad,
+// .home.page.home-packages,
+// .home.page.home-warranty,
+// .home.page.home-contact,
+// .detail.page {
+//   .section-0 {
+//     .section > div > div {
+//       > h2, > h3, > .container > .row > .card > p:first-child {
+//         display: none !important;
+//       }
+
+//       > .container > .row > .card {
+//         margin-top: 0;
+//       }
+//     }
+//   }
+// }
+
+.home.page {
+  @media (min-width: 768px) {
+    .section > div > div {
+      > h2, > h3, > .container > .row > .card > p:first-child {
+        transform: scale3d(1.125, 1.125, 1.125);
+      }
+
+      > h2, > h3 {
+        padding-bottom: 10px !important;
+      }
+    }
+
+    .section {
+      > h2, > h3, > .container > .row > .card > p:first-child {
+        transform: scale3d(1.125, 1.125, 1.125);
+      }
+
+      > h2, > h3 {
+        padding-bottom: 10px !important;
+      }
+    }
+
+    .section-form {
+      > h2, > h3, > .container > .row > .card > p:first-child {
+        transform: none;
+      }
+
+      .section {
+        > h2, > h3, > .container > .row > .card > p:first-child {
+          transform: none;
+        }
+      }
+    }
   }
 }

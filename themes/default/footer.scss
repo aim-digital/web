@@ -19,12 +19,6 @@ footer {
     z-index: 3;
   }
 
-  .home.about.page & {
-    bottom: auto;
-    position: relative;
-    width: auto;
-  }
-
   .no-js .home.page & {
     opacity: 0 !important;
     pointer-events: none;
@@ -100,6 +94,7 @@ footer {
   p {
     font-size: .9em;
     padding: 0 0 1.5em;
+    white-space: nowrap;
   }
 
   ul p {
@@ -107,7 +102,7 @@ footer {
   }
 
   img {
-    margin: 1em auto 0;
+    margin: 0 auto;
     max-width: 128px;
     width: 10%;
     min-width: 250px;
@@ -117,6 +112,7 @@ footer {
     width: 100%;
     min-width: 0;
     margin-bottom: 1.25em;
+    margin-top: 1em;
   }
 
   .logo {
@@ -277,11 +273,48 @@ footer {
     }
   }
 
+  .row > div > ul.products {
+    li li {
+      float: right;
+      clear: right;
+      text-align: left;
+
+      @media (min-width: 768px) {
+        float: none;
+        clear: none;
+      }
+
+      i, span {
+        display: table-cell;
+        padding-bottom: .35em;
+      }
+
+      strong {
+        display: block;
+        line-height: .35;
+      }
+
+      sub {
+        font-size: inherit;
+        position: relative;
+        margin-left: 1px;
+      }
+    }
+  }
+
   small {
     font-size: .75em;
     color: #c0c0c0;
     line-height: 1.75;
     display: inline-block;
+  }
+
+  ul small {
+    font-size: .85em;
+  }
+
+  a small {
+    color: inherit;
   }
 
   .content {

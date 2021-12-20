@@ -99,10 +99,11 @@ export default class extends Footer {
               </ul>
               <ul className="col-sm-3 col-xs-6">
                 <li className="subnav">
-                  <h4><i className="fa fa-file-text-o"/> Dossier</h4>
+                  <h4><i className="fa fa-file-text-o"/> About</h4>
                   <ul>
-                    <li><Link to="/agents" onClick={update(solutions[7].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
-                    <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-fighter-jet"/> Mission</Link></li>
+                    <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-flag"/> Mission</Link></li>
+                    <li><Link to="/agents" onClick={update(solutions[1].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
+                    <li><Link to="/squad" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> SQUAD™</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -110,19 +111,18 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-cogs"/> Services</h4>
                   <ul>
-                    <li><Link to="/planning" onClick={update(solutions[1].slug, true)}><i className="fa fa-road"/> Planning</Link></li>
-                    <li><Link to="/development" onClick={update(solutions[2].slug, true)}><i className="fa fa-bullseye"/> Development</Link></li>
-                    <li><Link to="/support" onClick={update(solutions[3].slug, true)}><i className="fa fa-wrench"/> Support</Link></li>
+                    <li><Link to="/design" onClick={update('design', true)}><i className="fa fa-road"/> Design</Link></li>
+                    <li><Link to="/development" onClick={update('development', true)}><i className="fa fa-bullseye"/> Development</Link></li>
+                    <li><Link to="/support" onClick={update('support', true)}><i className="fa fa-wrench"/> Support</Link></li>
                   </ul>
                 </li>
               </ul>
-              <ul className="col-sm-3 col-xs-6">
+              <ul className="col-sm-3 col-xs-6 products">
                 <li className="subnav">
                   <h4><i className="fa fa-tags"/> Products</h4>
                   <ul>
-                    <li><Link to="/subscription" onClick={update(solutions[4].slug, true)}><i className="fa fa-refresh"/> SQUAD™</Link></li>
-                    <li><Link to="/warranty" onClick={update(solutions[5].slug, true)}><i className="fa fa-umbrella"/> Wingman™</Link></li>
-                    <li><Link to="/on-demand" onClick={update(solutions[6].slug, true)}><i className="fa fa-power-off"/> Point &amp; Pay™</Link></li>
+                    <li><Link to="/packages" onClick={update(solutions[3].slug, true)}><i className="fa fa-dollar"/> <span><strong>SQUAD™</strong><sub>Packages</sub></span></Link></li>
+                    <li><Link to="/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella"/> <span><strong>Wingman™</strong><sub>Warranty</sub></span></Link></li>
                   </ul>
                 </li>
               </ul>
@@ -131,13 +131,26 @@ export default class extends Footer {
                   <div>
                     <h4><i className="fa fa-question-circle"/> Help</h4>
                     <ul>
-                      <li><Link to="/contact" onClick={update('contact', true)}><i className="fa fa-envelope"/> Contact Us</Link></li>
+                      <li><Link to="/contact" onClick={update(solutions[5].slug, true)}><i className="fa fa-phone"/> Contact Us</Link></li>
                       <li><Link to="/privacy" onClick={update('privacy', true)}><i className="fa fa-user-secret"/> Privacy Policy</Link></li>
                     </ul>
                   </div>
                   <div>
-                    <p>For customer service or sales, please call <a title="Phone: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank">(855) FOX-ZERO</a> or <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">email us</a>.</p>
-                    <p><strong>Operating Hours:</strong><br />9am-3pm, 6pm-8pm<br />EST / Mon.-Fri.</p>
+                    <p>
+                      <strong>Customer Service:</strong>
+                      <br />
+                      <small><strong>Email:</strong></small> <a title="Email: hello@foxzero.io" href="mailto:hello@foxzero.io?subject=Hello!">hello@foxzero.io</a>
+                      <br />
+                      <small><strong>Phone:</strong></small> <a title="Phone: +1 (855) FOX-ZERO" href="tel:+18553699376" target="_blank"><small>+1</small> 855-FOX-ZERO</a>
+                      <br />
+                      <small><strong>Office Hours:</strong></small>
+                      <br />
+                      Mon.-Fri.
+                      <br />
+                      9am-1pm <sup>(EST)</sup>
+                      <br />
+                      5pm-7pm <sup>(EST)</sup>
+                    </p>
                   </div>
                 </li>
               </ul>

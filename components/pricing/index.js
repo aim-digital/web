@@ -1,2 +1,2 @@
 
-export Subscription from './Subscription';
+export Packages from './Packages';

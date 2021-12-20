@@ -3,113 +3,21 @@
         "index": 0,
         "section": "Mission",
         "slug": "about",
-        "title": "Introducing SQUAD™ PLM",
-        "icon": "fighter-jet",
-        "ctaCategory": "Mission Methodology",
-        "summary": "The SQUAD™ product lifecycle is our project management and budget planning framework, inspired by our mission to prevent projects from burning through capital.",
-        "category": "Dossier",
+        "title": "Zero Latency Software Agency",
+        "icon": "flag",
+        "summary": "Maximize your ROI at a fast pace without the waste when you use our zero overhead software development services.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/27a51da50140413ca0de9c44d98f510f.jpg" }],
-        "content": [{
-            "type": "paragraph",
-            "copy": "Statistics show that 70% of software development projects fail, with $50-150 billion of wasted capital spent annually in the U.S. on the mismanagement of analyses, scheduling, personnel, budgeting, or implementation."
-        }, {
-            "type": "paragraph",
-            "copy": "Our mission of solving the software waste problem has led to the creation of our SQUAD™ budget planning methodology, which is the result of decades worth of CTO and project management experience, and the motivation behind all Fox Zero™ service offerings and products."
-        }, {
-            "type": "image",
-            "url": "https://d3w33imimg0eu8.cloudfront.net/images/768ccb56-a555-4f86-94b1-8f4c4c5d9450.png",
-            "value": "You need predictable process people"
-        }, {
-            "type": "paragraph",
-            "copy": "SQUAD™ is a simple hybrid methodology and process framework of both waterfall and agile project management principles and practices in the form of an iterative three-staged product lifecycle (PLM), applicable to the planning and processes of business initiatives and teams in any industry."
-        }]
+        "content": [],
+        "cta": ["Read more about us", "and our mission"]
     },
     {
         "index": 1,
-        "section": "Planning",
-        "slug": "planning",
-        "title": "Runway to Success",
-        "icon": "road",
-        "summary": "Get the first stage of your MVP off the ground with confidence by using the SQUAD™ budgeted roadmap planning approach, clearing the sky for predictable project versions and peace of mind.",
-        "category": "Process",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/fd561bcc988d4fca849d74b8f812e82a.jpg" }],
-        "content": [{
-            "type": "paragraph",
-            "copy": "* Advisement, brokerage, and management of objectives: Discovery, Research & Innovation, Solution Architecture, Prototyping, Wireframing, Initiative Roadmapping, Project Management, Business Analysis, Technical Design, UX & UI Design\n* Goal is to define or update a new or existing initiative roadmap, loosely planned by major or minor version iterations, by high-level feature-specific epics, targeting tentative estimations of epic delivery due dates\n* Time-boxed 3-6 week roadmap delivery, relative to a subsequent 3-4 month development stage; must be completed before, but not exceeding, 6 weeks (ideally 3-4 weeks, with a 2 week buffer)\n* Performed as-needed to refresh the roadmap, typically 2-3 times per year as development stages (versions) are completed\n* Required to scope agile development stage versions, critical to the ability of offering guaranteed product delivery and predictability of development time and cost\n* Can be performed simultaneously along with active development and support stages\n* Standard recommended team: ⅓ project manager, ⅓ tech lead, ⅓ designer, ⅓ business analyst\n* Operations: Daily 30-40 minute stakeholder SQUAD™ management sessions\n* Recommended tracking tools: JIRA, Gitlab, Excel"
-        }]
-    },
-    {
-        "index": 2,
-        "section": "Development",
-        "slug": "development",
-        "title": "Guaranteed Target Delivery",
-        "icon": "bullseye",
-        "summary": "Following a briefly planned version roadmap, we broker and budget up to 4 months of guaranteed software development services as the second SQUAD™ lifecycle stage, using modern web technologies for rapid development.",
-        "category": "Process",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/b08c0d15bb08409cb6a9b7cad20e10d2.png" }],
-        "content": [{
-            "type": "paragraph",
-            "copy": "* Advisement, brokerage, and management of objectives: _Includes limited planning objectives_, UX Development, API Programming, Database Management, Offline Operation, Cloud Networking, Service Orchestration, Enterprise Authentication, User Access Control, Third-Party Integration, Testing & Automation\n* Each software version’s deliverable timeframe should be kept brief for more manageable and predictable outcomes, in the form of 3-4 month stages against an already planned version roadmap\n* Short iterations allow for better budget forecasting and the warranty of each version’s deliverables\n* Single baseline recommended team: 2 junior resources, 1 senior tech lead, ½ (split) project manager, designer, and business analyst\n* Can have multiple teams per development stage for more aggressive timelines\n* Operations: Daily 30-40 minute stakeholder SQUAD™ management sessions, Extreme Programming (agile), continuous delivery, weekly sprint kick-off and retrospective team meetings\n* Recommended tracking tools: JIRA, Gitlab, Excel\n* Recommended technology stack: Vue.js, Hasura GraphQL, Postgres DB, Docker, Amazon Web Services, Node.js, Python, Django, Git; embedded systems, Javascript, Golang, Digital Ocean"
-        }]
-    },
-    {
-        "index": 3,
-        "section": "Support",
-        "slug": "support",
-        "title": "Maintained Performance",
-        "icon": "wrench",
-        "summary": "The last stage of the SQUAD™ lifecycle is dedicated to budgeting and managing live production marketing and tech support, DevOps, and continuous delivery of micro software versions.",
-        "category": "Process",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/04dd9f5bc99e4ea59b41d48a83690cb3.jpg" }],
-        "content": [{
-            "type": "paragraph",
-            "copy": "* Advisement, brokerage, and management of objectives: Includes continued development objectives, Client Staff Integration, Data Migration, SEO & SMO, Analytics & Reporting, Marketing Consulting, Managed Services, Long-Term Support\n* Minimum recommended team: 1 junior resource, ⅓ project manager\n* Can add additional senior and junior resources, as needed\n* Can overlap with development stage to support small feature additions and defect corrections to current production version, or as team gap augmentation for next-version development stage\n* Operations: Daily 30-40 minute stakeholder SQUAD™ management sessions, Extreme Programming (agile), continuous delivery, weekly sprint kick-off and retrospective team meetings\n* Recommended tracking tools: JIRA, Gitlab, Excel"
-        }]
-    },
-    {
-        "index": 4,
-        "section": "Subscription",
-        "slug": "subscription",
-        "title": "SQUAD™ Packaged Pricing",
-        "icon": "refresh",
-        "summary": "Build your MVP in 9 months for under $500k with our simple monthly SQUAD™ budgeted plans, curated by bottom-line consulting experts who know what software projects cost.",
-        "category": "Pricing",
-        "cta": "Contact us",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7d11051f875d4ff59496386500739afe.jpg" }]
-    },
-    {
-        "index": 5,
-        "section": "Warranty",
-        "slug": "warranty",
-        "title": "Wingman™ Bond Protection",
-        "icon": "umbrella",
-        "summary": "Stay covered with our Wingman™ warranty to guarantee minimum risk of project delivery time, budget, and quality so that you'll never be a statistic of software waste. Included with every project that we plan and develop.",
-        "category": "Coverage",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
-        "content": []
-    },
-    {
-        "index": 6,
-        "section": "On Demand",
-        "slug": "on-demand",
-        "title": "Point & Pay™ Agile Pricing",
-        "icon": "power-off",
-        "summary": "Agents are kept on standby, ready anytime you need us, on a story point basis with our Point & Pay™ plan. We stay up-to-date with your systems, estimate sprints with your team, and charge per accepted story point.",
-        "category": "Pricing",
-        "cta": "Contact us",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/6fae639325ce4ebcb766ef7881860bb6.jpg" }],
-        "content": []
-    },
-    {
-        "index": 7,
         "section": "Agents",
         "slug": "agents",
         "title": "Top Tier Engineers",
         "icon": "id-badge",
-        "summary": "From web programming to project management, each of our software consultants is expertly trained in multi-role autonomy to provide zero latency between development tasks, operating remotely within the U.S.A.",
-        "category": "Dossier",
-        "ctaCategory": "Multi-Role Agents",
-        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/2333b821b9104bb2ac0d62e38d7dbb97.jpg" }],
+        "summary": "Multi-role U.S.A.-based software consultants are the foundation of our zero latency services and values.",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/288528901687426da9cead2a0a7dab49.jpg" }],
         "content": [{
             "type": "paragraph",
             "copy": "Universal skill-sets mitigate communication bottlenecks, ensuring zero latency between task objectives and maximum productivity per every hour worked."
@@ -120,6 +28,63 @@
         }, {
             "type": "paragraph",
             "copy": "All of our consulting agents operate remotely within the domestic U.S. while integrated with your team, providing exemplary written and communication skills along with mastery in their respective trade disciplines, as well as expert training in each crucial role of digital development."
-        }]
+        }],
+        "cta": ["Read more about our", "multi-role agents"]
+    },
+    {
+        "index": 2,
+        "section": "SQUAD™",
+        "slug": "squad",
+        "title": "Rapid Timebox Methodology",
+        "icon": "fighter-jet",
+        "summary": "We manage chaos by timeboxing rapid iterations of the product lifecycle, project budget planning, and daily team operations.",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/c8394613925c41afa42fc9f094312a9e.jpg" }],
+        "content": [{
+            "type": "paragraph",
+            "copy": "Statistics show that 70% of software development projects fail, with $50-150 billion of wasted capital spent annually in the U.S. on the mismanagement of analyses, scheduling, personnel, budgeting, or implementation."
+        }, {
+            "type": "paragraph",
+            "copy": "Our mission of solving the software waste problem has led to the creation of our SQUAD™ budget planning methodology, which is the result of decades worth of CTO and project management experience, and the motivation behind all Fox Zero™ service offerings and products."
+        }, {
+            "type": "image",
+            "url": "https://d3w33imimg0eu8.cloudfront.net/images/768ccb56-a555-4f86-94b1-8f4c4c5d9450.png",
+            "value": "You need practical process people"
+        }, {
+            "type": "paragraph",
+            "copy": "SQUAD™ is a simple hybrid methodology and process framework of both waterfall and agile project management principles and practices in the form of an iterative three-staged product lifecycle (PLM), applicable to the planning and processes of business initiatives and teams in any industry."
+        }],
+        "cta": ["Read more about our", "SQUAD™ lifecycle"]
+    },
+    {
+        "index": 3,
+        "section": "Packages",
+        "slug": "packages",
+        "title": "SQUAD™ Pricing",
+        "icon": "dollar",
+        "summary": "Build, launch, and scale a premium product in 9 months for under $500k with our simple monthly budgeted pricing packages.",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7a5cad1eb076473b8175a89d411d15a0.jpg" }],
+        "cta": ["Learn more about our", "packaged pricing"]
+    },
+    {
+        "index": 4,
+        "section": "Warranty",
+        "slug": "warranty",
+        "title": "Wingman™ Protection",
+        "icon": "umbrella",
+        "summary": "Monthly risk protection covers you for when your project needs it most. Included FREE with every product iteration we build.",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/218eca8dcd514c6f8aa35e8f7aa27318.jpg" }],
+        "content": [],
+        "cta": ["Learn more about our", "premium coverage"]
+    },
+    {
+        "index": 5,
+        "section": "Contact",
+        "slug": "contact",
+        "title": "Talk to Me.",
+        "icon": "phone",
+        "summary": "Call or message us to start optimizing your software investment today!",
+        "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/e7336b23ceab4934a3218e0a1ef465e9.png" }],
+        "content": [],
+        "cta": null
     }
 ]
