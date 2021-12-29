@@ -13,7 +13,7 @@ export default class {
       sections: '["@fox-zero/web:Post"]'
     }, {
       where: {
-        route: 'planning'
+        route: 'design'
       }
     });
 
