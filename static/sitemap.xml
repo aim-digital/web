@@ -8,14 +8,29 @@
     <image:image>
       <image:loc>https://foxzero.io/@fox-zero/web/images/logo.png</image:loc>
       <image:title>Fox Zero · Zero Latency Software Agency™</image:title>
-      <image:caption>Stop burning capital fuel on software waste with our zero latency product lifecycle framework and guaranteed consulting services.</image:caption>
+      <image:caption>Maximize your ROI at a fast pace without the waste when you use our zero overhead software development services.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://foxzero.io/about</loc>
   </url>
   <url>
-    <loc>https://foxzero.io/planning</loc>
+    <loc>https://foxzero.io/agents</loc>
+  </url>
+  <url>
+    <loc>https://foxzero.io/squad</loc>
+  </url>
+  <url>
+    <loc>https://foxzero.io/packages</loc>
+  </url>
+  <url>
+    <loc>https://foxzero.io/warranty</loc>
+  </url>
+  <url>
+    <loc>https://foxzero.io/contact</loc>
+  </url>
+  <url>
+    <loc>https://foxzero.io/design</loc>
   </url>
   <url>
     <loc>https://foxzero.io/development</loc>
@@ -24,21 +39,9 @@
     <loc>https://foxzero.io/support</loc>
   </url>
   <url>
-    <loc>https://foxzero.io/subscription</loc>
-  </url>
-  <url>
-    <loc>https://foxzero.io/on-demand</loc>
-  </url>
-  <url>
-    <loc>https://foxzero.io/agents</loc>
-  </url>
-  <url>
-    <loc>https://foxzero.io/contact</loc>
-  </url>
-  <url>
     <loc>https://foxzero.io/privacy</loc>
   </url>
   <url>
-    <loc>https://foxzero.io/stream</loc>
+    <loc>https://foxzero.io/stream/music/music-tech-steven-tyler-collision-nola/5/4/2018</loc>
   </url>
 </urlset>
