@@ -252,7 +252,7 @@ body.modal-open {
 
   .modal-body {
     color: $white-color;
-    padding: 45px 0;
+    padding: 30px 0;
     margin: 0 auto;
     font-size: 1em;
     text-shadow: 1px 1px 3px $black-color;
@@ -514,11 +514,11 @@ body.modal-open {
       z-index: 1;
       position: absolute;
       left: 50%;
-      margin-left: -42.5vw;
-      margin-top: -2px;
-      top: 6.5em;
-      width: 85vw;
-      height: 160px;
+      margin-left: -40vw;
+      margin-top: -6px;
+      top: 9em;
+      width: 80vw;
+      height: 8em;
       background: url(https://d3w33imimg0eu8.cloudfront.net/images/Logo-03.png) no-repeat;
       background-size: contain;
       background-position: center;
