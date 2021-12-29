@@ -33,7 +33,7 @@
     },
     {
         "index": 2,
-        "section": "SQUAD™",
+        "section": "SQUAD",
         "slug": "squad",
         "title": "Rapid Timebox Methodology",
         "icon": "fighter-jet",
@@ -53,13 +53,13 @@
             "type": "paragraph",
             "copy": "SQUAD™ is a simple hybrid methodology and process framework of both waterfall and agile project management principles and practices in the form of an iterative three-staged product lifecycle (PLM), applicable to the planning and processes of business initiatives and teams in any industry."
         }],
-        "cta": ["Read more about our", "SQUAD™ lifecycle"]
+        "cta": ["Read more about our", "SQUAD lifecycle"]
     },
     {
         "index": 3,
         "section": "Packages",
         "slug": "packages",
-        "title": "SQUAD™ Pricing",
+        "title": "SQUAD Pricing",
         "icon": "dollar",
         "summary": "Build, launch, and scale a premium product in 9 months for under $500k with our simple monthly budgeted pricing packages.",
         "media": [{ "url": "https://s3.amazonaws.com/content.foxzero.io/7a5cad1eb076473b8175a89d411d15a0.jpg" }],

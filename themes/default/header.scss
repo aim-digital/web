@@ -180,13 +180,13 @@
       color: $background-color;
     }
 
-    &:before {
+    > span {
       position: absolute;
       white-space: nowrap;
       color: #efefef;
       background: rgba(21, 21, 21, .75);
       border-radius: .25em;
-      padding: 0 .5em;
+      padding: 2px .5em 0;
       margin: -.75em .35em .5em;
       font-size: 1.25em;
       line-height: 1.5em;
@@ -198,15 +198,13 @@
     }
 
     &.left {
-      &:before {
-        content: attr(data-section);
+      > span {
         right: 100%;
       }
     }
 
     &.right {
-      &:before {
-        content: attr(data-section);
+      > span {
         left: 100%;
       }
     }

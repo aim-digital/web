@@ -411,7 +411,7 @@ export default class extends Page {
         this.openSolution(solution, (sources || []).concat(['Section.App.Click']));
       }}>
         <>
-          <span>{solution.section} &bull;</span> {solution.title}
+          <span>{solution.section}{solution.section === 'SQUAD' ? <sup>®</sup> : ''} &bull;</span> {solution.title === 'SQUAD Pricing' ? <>SQUAD<sup>®</sup> Pricing</>: solution.title}
         </>
       </Solution>;
   }

@@ -18,7 +18,7 @@ export default class extends Component {
               <div>
                 <span className="price">$39k<sub>/version</sub></span>
                 <ul>
-                  <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
+                  <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD<sup>®</sup></strong> Sessions</li>
                   {/* <li><i className="fa fa-user" /> 210+ Partner Hours</li> */}
                   <li><i className="fa fa-clock-o" /> Appx. 1 mo. Delivery</li>
                   <li><i className="fa fa-unlock" /> No Commitment <sup>*</sup></li>
@@ -51,7 +51,7 @@ export default class extends Component {
               <div>
                 <span className="price">$79k<sub>/mo.</sub></span>
                 <ul>
-                  <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
+                  <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD<sup>®</sup></strong> Sessions</li>
                   <li><i className="fa fa-umbrella" /> <strong>Wingman™</strong> Warranty</li>
                   <li><i className="fa fa-info-circle" /> Requires (1) <i>Fox One</i> <sup>†</sup></li>
                   {/* <li><i className="fa fa-user" /> 240+ Partner Hours</li>
@@ -93,7 +93,7 @@ export default class extends Component {
               <div>
                 <span className="price">$29k<sub>/mo.</sub></span>
                 <ul>
-                  <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD™</strong> Sessions</li>
+                  <li><i className="fa fa-fighter-jet" /> Daily <strong>SQUAD<sup>®</sup></strong> Sessions</li>
                   <li><i className="fa fa-plus" /> Includes <i>Fox Two</i> Services</li>
                   <li><i className="fa fa-user"></i> 50+ Partner Hours</li>
                   <li><i className="fa fa-users" /> 160+ Associate Hours</li>

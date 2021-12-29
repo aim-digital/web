@@ -221,14 +221,14 @@ body.modal-open {
       background: $primary-green-color;
       position: relative;
 
-      &:before {
-        content: attr(data-dek);
+      > span {
         font-size: .95em;
         position: absolute;
         bottom: 100%;
         margin-bottom: 7px;
         color: $white-color;
         white-space: nowrap;
+        padding: 0;
       }
     }
 
@@ -252,7 +252,7 @@ body.modal-open {
 
   .modal-body {
     color: $white-color;
-    padding: 60px 0;
+    padding: 45px 0;
     margin: 0 auto;
     font-size: 1em;
     text-shadow: 1px 1px 3px $black-color;
@@ -514,14 +514,16 @@ body.modal-open {
       z-index: 1;
       position: absolute;
       left: 50%;
-      bottom: 0;
-      width: 400px;
+      margin-left: -5px;
+      margin-top: -3vh;
+      top: 50px;
+      width: 85vw;
       height: 160px;
       background: url(https://d3w33imimg0eu8.cloudfront.net/images/Logo-03.png) no-repeat;
       background-size: contain;
       background-position: center;
       transform: rotate(-15deg) translate(-50%, 0);
-      opacity: .35;
+      filter: brightness(0.5) saturate(90%) contrast(115%);
     }
   }
 }

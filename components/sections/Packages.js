@@ -6,7 +6,7 @@ import {solutions} from '@fox-zero/web/data';
 export default class extends Section {
   render() {
     return (
-      <Section solution={solutions[3]} title={<>SQUAD™ Pricing</>} right>
+      <Section solution={solutions[3]} title={<>SQUAD<sup>®</sup> Pricing</>} right>
         <div className="paragraph">
           <p>SQUAD™ pricing plans are curated flat-fee monthly subscription consulting team bundles with each stage objectives serviced by Fox Zero™ agents, brokered U.S.A.-based trusted partners, and/or client team members.</p>
         </div>

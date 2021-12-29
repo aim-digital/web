@@ -215,10 +215,12 @@ export default class extends Header {
           <div className={__CLIENT__ ? 'hidden presentation' : 'presentation'}>
             {children[__SERVER__ ? initial : slide]}
             <div className="flippers">
-              <button {...getFlipState('previous')} onClick={this.previous} className="flip left" data-section={(solutions[!slide ? solutions.length - 1 : slide - 1]).section}>
+              <button {...getFlipState('previous')} onClick={this.previous} className="flip left">
+                <span>{(solutions[!slide ? solutions.length - 1 : slide - 1]).section}{(solutions[!slide ? solutions.length - 1 : slide - 1]).section === 'SQUAD' ? <sup>®</sup> : ''}</span>
                 <i className="fa fa-angle-left"></i>
               </button>
-              <button {...getFlipState('next')} onClick={this.next} className="flip right" data-section={(solutions[slide === solutions.length - 1 ? 0 : slide + 1]).section}>
+              <button {...getFlipState('next')} onClick={this.next} className="flip right">
+                <span>{(solutions[slide === solutions.length - 1 ? 0 : slide + 1]).section}{(solutions[slide === solutions.length - 1 ? 0 : slide + 1]).section === 'SQUAD' ? <sup>®</sup> : ''}</span>
                 <i className="fa fa-angle-right"></i>
               </button>
               <div className="scroll">

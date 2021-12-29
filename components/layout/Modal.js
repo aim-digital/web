@@ -70,7 +70,7 @@ export default class extends Component {
         <Modal.Header>
           <Logo/>
           {title && <Modal.Title>
-            {icon && <div data-dek={dek}><i className={`fa fa-${icon}`}></i></div>}<span>{title}</span>
+            {icon && <div><span>{dek === 'SQUAD' ? <>SQUAD<sup>®</sup></> : dek}</span><i className={`fa fa-${icon}`}></i></div>}<span>{title === 'SQUAD Pricing' ? <>SQUAD<sup>®</sup> Pricing</> : title}</span>
           </Modal.Title>}
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>

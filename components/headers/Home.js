@@ -70,7 +70,7 @@ export default class extends Header {
 
     return (
       <div className="content" key={`slide-${i}`}>
-        <h1>{section}</h1>
+        <h1>{section}{section === 'SQUAD' ? <sup>®</sup> : ''}</h1>
         <h2 className={`${slug}-header`}><span>{heading || title}</span></h2>
         <section className="preview">
           <button onClick={() => this.openSolution(solution)} title="Click to learn more">
@@ -98,7 +98,7 @@ export default class extends Header {
             <>Zero Latency<br />Software Agency</>,
             <>Top Tier<br />Engineers</>,
             <>Rapid Timebox<br />Methodology</>,
-            <>SQUAD™ Pricing</>,
+            <>SQUAD<sup>®</sup> Pricing</>,
             <>Wingman™<br />Protection</>,
             <>Talk to Me.</>
           ].map((title, i) => renderTitle(i, title))}

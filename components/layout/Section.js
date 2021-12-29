@@ -38,7 +38,7 @@ export default class extends Section {
 
     return (
       <Section>
-        <h2 className={headerClass}>{solution.section}</h2>
+        <h2 className={headerClass}>{solution.section}{solution.section === 'SQUAD' ? <sup>®</sup> : ''}</h2>
         <h3 className={`${headerClass} ${solution.slug}-header`}><span>{title || solution.title}</span></h3>
         <div className="container">
           <div className="row">
@@ -57,7 +57,7 @@ export default class extends Section {
                   onClick={this.openSolution}
                   icon={solution.icon}
                   tooltip="Click to learn more">
-                  {solution.cta[0]}<br /><span>{solution.cta[1]}</span>
+                  {solution.cta[0]}<br /><span>{solution.cta[1] === 'SQUAD lifecycle' ? <>SQUAD<sup>®</sup> lifecycle</> : solution.cta[1]}</span>
                 </Solution>
               </div>}
             </div>

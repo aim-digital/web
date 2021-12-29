@@ -103,7 +103,7 @@ export default class extends Footer {
                   <ul>
                     <li><Link to="/about" onClick={update(solutions[0].slug, true)}><i className="fa fa-flag"/> Mission</Link></li>
                     <li><Link to="/agents" onClick={update(solutions[1].slug, true)}><i className="fa fa-id-badge"/> Agents</Link></li>
-                    <li><Link to="/squad" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> SQUAD™</Link></li>
+                    <li><Link to="/squad" onClick={update(solutions[2].slug, true)}><i className="fa fa-fighter-jet"/> SQUAD<sup>®</sup></Link></li>
                   </ul>
                 </li>
               </ul>
@@ -121,7 +121,7 @@ export default class extends Footer {
                 <li className="subnav">
                   <h4><i className="fa fa-tags"/> Products</h4>
                   <ul>
-                    <li><Link to="/packages" onClick={update(solutions[3].slug, true)}><i className="fa fa-dollar"/> <span><strong>SQUAD™</strong><sub>Packages</sub></span></Link></li>
+                    <li><Link to="/packages" onClick={update(solutions[3].slug, true)}><i className="fa fa-dollar"/> <span><strong>SQUAD<sup>®</sup></strong><sub>Packages</sub></span></Link></li>
                     <li><Link to="/warranty" onClick={update(solutions[4].slug, true)}><i className="fa fa-umbrella"/> <span><strong>Wingman™</strong><sub>Warranty</sub></span></Link></li>
                   </ul>
                 </li>
