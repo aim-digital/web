@@ -57,7 +57,7 @@ export default class extends Section {
                   onClick={this.openSolution}
                   icon={solution.icon}
                   tooltip="Click to learn more">
-                  {solution.cta[0]}<br /><span>{solution.cta[1] === 'SQUAD lifecycle' ? <>SQUAD<sup>®</sup> lifecycle</> : solution.cta[1]}</span>
+                  {solution.cta[0]}<br /><span>{solution.cta[1] === 'SQUAD methodology' ? <>SQUAD<sup>®</sup> methodology</> : solution.cta[1]}</span>
                 </Solution>
               </div>}
             </div>

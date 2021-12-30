@@ -97,7 +97,7 @@ export default class extends Header {
           {[
             <>Zero Latency<br />Software Agency</>,
             <>Top Tier<br />Engineers</>,
-            <>Rapid Timebox<br />Methodology</>,
+            <>Rapid, Lean<br />Timebox Machine</>,
             <>SQUAD<sup>®</sup> Pricing</>,
             <>Wingman™<br />Protection</>,
             <>Talk to Me.</>
