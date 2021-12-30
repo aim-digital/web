@@ -370,8 +370,16 @@ section.solutions {
     &.packages-header {
       &:before,
       &:after {
-        margin-right: 10px;
+        margin-right: 25px;
       }
+
+      // &:before {
+      //   height: 1.5em;
+      // }
+
+      // &:after {
+      //   height: 153%;
+      // }
 
       &:after {
         bottom: -13px;
@@ -388,12 +396,12 @@ section.solutions {
       &:after {
         right: auto;
         margin-right: 0;
-        margin-left: 10px;
+        margin-left: 15px;
       }
 
       &:before {
         left: 0;
-        transform: rotate(-15deg);
+        transform: rotate(-10deg);
       }
 
       &:after {
@@ -587,7 +595,7 @@ section.solutions {
 
       &:before {
         right: 0;
-        transform: rotate(15deg);
+        transform: rotate(10deg);
       }
 
       &:after {

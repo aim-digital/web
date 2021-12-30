@@ -478,12 +478,13 @@
     right: 0;
     bottom: 100%;
     width: 3.65em;
-    height: 1.5em;
+    height: 2.5em;
+    margin: 0 5px 3%;
     background: url(https://d3w33imimg0eu8.cloudfront.net/images/Logo-03.png) no-repeat;
     background-size: contain;
     background-position: center;
-    transform: rotate(15deg);
-    margin: 0 -10px 3% 0;
+    transform: rotate(10deg) scale3d(1.1, 1.1, 1.1);
+    filter: brightness(0.9) saturate(100%) contrast(135%) drop-shadow(0 7px 7px rgba(41, 41, 41, .85));
   }
 
   &:after {
@@ -491,10 +492,10 @@
     z-index: 1;
     position: absolute;
     width: 0;
-    height: 153%;
+    height: 180%;
     right: 1.75em;
     bottom: -10px;
-    margin: 0 -10px -1px 0;
+    margin: 0 5px -1px 0;
     border-left: solid 2px #2bbfe2;
     border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #2bbfe2);
     border-image-slice: 1;
